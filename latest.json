@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T22:18:06.584Z",
+  "publishedAt": "2026-09-30T22:19:09.474Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-16",
-    "nextLot": "LN-15B",
-    "launchedAt": "2026-09-30T21:55:29.589Z",
-    "lastProgressAt": "2026-09-30T22:16:24.928Z",
-    "lastChatCheckAt": "2026-09-30T21:55:29.589Z",
-    "lastObservedMainSha": "d11c9d1f29df02c9a72ea15336bae874b9ec4638",
+    "currentLot": "LN-15B",
+    "nextLot": "LN-17",
+    "launchedAt": "2026-09-30T22:19:02.204Z",
+    "lastProgressAt": "2026-09-30T22:19:02.204Z",
+    "lastChatCheckAt": "2026-09-30T22:19:02.204Z",
+    "lastObservedMainSha": "571e17eacc98db64d00a6c3c631fb301e298d917",
     "nudges": 0,
-    "lastMessage": "main moved while LN-16 is active",
+    "lastMessage": "Launched LN-15B",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T22:17:59.244Z",
-    "nextTickAt": "2026-09-30T22:22:59.244Z",
+    "lastSuccessfulTickAt": "2026-09-30T22:19:02.204Z",
+    "nextTickAt": "2026-09-30T22:24:02.204Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-07B",
-        "completedAt": "2026-09-30T11:17:29.421Z",
-        "restartedAt": null,
-        "mainSha": "4a88d67dc1f031b7b2eed148393c61c8e594e9a2",
-        "reason": null
-      },
       {
         "lot": "LN-07C",
         "completedAt": "2026-09-30T11:26:04.339Z",
@@ -101,11 +94,18 @@
         "restartedAt": "2026-09-30T21:55:20.619Z",
         "mainSha": "43e4e8e9d682887abd33d5b547056cfe903d59c4",
         "reason": "manual_restart"
+      },
+      {
+        "lot": "LN-16",
+        "completedAt": "2026-09-30T22:18:47.921Z",
+        "restartedAt": null,
+        "mainSha": "571e17eacc98db64d00a6c3c631fb301e298d917",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "d11c9d1f29df02c9a72ea15336bae874b9ec4638",
+    "mainSha": "571e17eacc98db64d00a6c3c631fb301e298d917",
     "lots": [
       {
         "id": "LN-00",
@@ -1537,7 +1537,7 @@
       {
         "id": "LN-16",
         "title": "Browser E2E and release gate",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "protect the stable critical path.",
         "business": {
           "summary": "Créer la grande validation navigateur de bout en bout avant de considérer le MVP comme réellement prêt.",
@@ -3809,71 +3809,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 23,
+    "done": 24,
     "total": 61,
-    "percent": 38,
+    "percent": 39,
     "current": {
-      "id": "LN-16",
-      "title": "Browser E2E and release gate",
-      "status": "TODO",
-      "goal": "protect the stable critical path.",
-      "business": {
-        "summary": "Créer la grande validation navigateur de bout en bout avant de considérer le MVP comme réellement prêt.",
-        "why": "Les lots précédents avancent vite sans bloquer sur la QA navigateur ; ce lot concentre la vérification complète du parcours critique.",
-        "builds": [
-          "tests navigateur du parcours complet",
-          "création ou sélection d'un programme",
-          "démarrage et saisie d'une séance",
-          "fin de séance",
-          "vérification de l'historique d'exercice",
-          "validation finale des migrations, du build et des intégrations"
-        ],
-        "userImpact": [
-          "le parcours principal est vérifié comme un tout, pas seulement fonction par fonction"
-        ],
-        "notInThisLot": [
-          "ce lot valide le produit ; il n'est pas destiné à ajouter de nouvelles fonctions métier majeures"
-        ],
-        "doneWhen": [
-          "le parcours critique passe de bout en bout sans régression majeure"
-        ],
-        "journey": [
-          "Le workflow de validation démarre sur un environnement propre.",
-          "Il entre dans LiftNote, crée ou sélectionne un programme.",
-          "Il démarre une séance et saisit plusieurs séries de Bench Press.",
-          "Il termine la séance.",
-          "Il ouvre l’historique du Bench Press et vérifie que la performance terminée est présente.",
-          "Les migrations, le build et les intégrations partagées sont vérifiés comme un tout."
-        ],
-        "rules": [
-          "Ce lot est un release gate, pas un prétexte pour ajouter de nouvelles fonctions.",
-          "Le test navigateur doit couvrir le vrai parcours critique complet.",
-          "Les migrations doivent être dans l’état attendu avant de déclarer la release prête.",
-          "Les changements partagés doivent déclencher la vérification appropriée du repository complet."
-        ],
-        "examples": [
-          "Un parcours create/select program → start → log → finish → history passe sans intervention manuelle.",
-          "Une régression d’auth, de migration ou de routage partagée bloque la release même si les unités isolées passent."
-        ],
-        "data": [
-          "fixtures/comptes de test",
-          "état des migrations Supabase",
-          "résultats de workflow et déploiement"
-        ],
-        "dependencies": [
-          "tous les lots MVP précédents",
-          "workflow navigateur manuel dédié",
-          "environnement Vercel et Supabase utilisable"
-        ],
-        "attention": [
-          "ne pas confondre déploiement READY et QA navigateur réussie",
-          "protéger les autres produits du repository pendant la validation globale",
-          "garder le scénario E2E stable et peu fragile"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-15B",
       "title": "Shared Supabase passkeys for Unicorn Prog + LiftNote",
       "status": "TODO",
@@ -3926,6 +3865,66 @@
           "ne pas coder contre une documentation Supabase obsolète",
           "prévoir les fallbacks de connexion",
           "tester les différences preview/production pour WebAuthn"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-17",
+      "title": "Superset and grouped-exercise blocks",
+      "status": "TODO",
+      "goal": "introduce grouped exercise blocks after the MVP release gate, starting with supersets while keeping the model extensible to trisets/circuits.",
+      "business": {
+        "summary": "Ajouter les supersets et préparer un modèle extensible vers trisets et circuits.",
+        "why": "Les exercices groupés changent la logique d'ordre, de repos et de navigation ; Solo les introduit seulement après stabilisation du MVP.",
+        "builds": [
+          "groupement de deux exercices en superset",
+          "retour à des exercices indépendants",
+          "ordre A1 puis A2 puis repos",
+          "gestion des nombres de séries différents",
+          "conservation de l'historique et des records par exercice"
+        ],
+        "userImpact": [
+          "l'utilisateur peut exécuter naturellement des supersets sans perdre l'historique individuel de chaque mouvement"
+        ],
+        "notInThisLot": [
+          "le modèle doit rester générique pour pouvoir accueillir plus tard trisets et circuits"
+        ],
+        "doneWhen": [
+          "les séances classiques restent inchangées",
+          "les supersets s'exécutent et s'historisent correctement"
+        ],
+        "journey": [
+          "Dans une séance modèle, l’utilisateur sélectionne deux exercices et les regroupe en superset.",
+          "LiftNote les affiche comme A1/A2 ou équivalent.",
+          "Pendant la séance, l’ordre devient A1 → A2 → repos → tour suivant.",
+          "Les séries restent enregistrées individuellement sur chacun des deux exercices.",
+          "L’utilisateur peut ensuite retirer le groupement sans détruire les exercices."
+        ],
+        "rules": [
+          "Le modèle doit être générique pour pouvoir évoluer vers trisets/circuits.",
+          "Le groupement est snapshoté au démarrage de la séance.",
+          "L’historique et les records restent attachés aux exercices individuels.",
+          "Des nombres de séries différents doivent produire un ordre déterministe.",
+          "Les séances ordinaires non groupées doivent continuer à fonctionner exactement comme avant."
+        ],
+        "examples": [
+          "Bench Press A1 + Row A2 avec 4 tours et repos seulement après A2.",
+          "A1 possède 4 séries et A2 seulement 3 : le dernier passage doit suivre une règle explicite, pas un comportement implicite."
+        ],
+        "data": [
+          "métadonnées de bloc/groupe dans les templates",
+          "ordre au sein d’un bloc",
+          "snapshot de groupement dans la séance"
+        ],
+        "dependencies": [
+          "LN-07/LN-08 pour le flux de séance et repos",
+          "LN-06 pour snapshotter la structure"
+        ],
+        "attention": [
+          "éviter une table ou un modèle trop spécifique au mot « superset »",
+          "ne pas casser le timer de repos",
+          "préserver les requêtes d’historique par exercice"
         ]
       },
       "contractAvailable": true
