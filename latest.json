@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T23:40:12.718Z",
+  "publishedAt": "2026-09-30T23:41:35.394Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "IDLE",
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "9eb469183b54ce546c186d06be9ded9f9ab02d62",
+    "mainSha": "f0fc2e9ab67c13f9bd6cef21c5c2abc9a22f90c3",
     "lots": [
       {
         "id": "LN-00",
