@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T21:31:37.114Z",
+  "publishedAt": "2026-09-30T21:32:28.463Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "CONSISTENCY_ERROR",
-    "currentLot": "LN-13B",
-    "nextLot": "LN-15",
-    "launchedAt": "2026-09-30T13:49:37.237Z",
-    "lastProgressAt": "2026-09-30T13:54:11.043Z",
-    "lastChatCheckAt": "2026-09-30T13:49:37.237Z",
-    "lastObservedMainSha": "eb05b82c1f4210af5e84bd47cc1324f1b83b54ce",
+    "status": "RUNNING",
+    "currentLot": "LN-16",
+    "nextLot": "LN-15B",
+    "launchedAt": "2026-09-30T21:32:23.720Z",
+    "lastProgressAt": "2026-09-30T21:32:23.720Z",
+    "lastChatCheckAt": "2026-09-30T21:32:23.720Z",
+    "lastObservedMainSha": "3862ec5c76f98c7ecd74cfcf2da6110aa1a86ebb",
     "nudges": 0,
-    "lastMessage": "LN-13B is DONE but completion invariants failed; next lot not launched.",
-    "lastError": "LN-13B has no Completion record section. LN-13B completion record does not identify a PR. LN-13B completion record does not record a merge SHA. LN-15 does not mention LN-13B; explicit previous-lot handoff is missing.",
-    "lastSuccessfulTickAt": "2026-09-30T14:08:09.609Z",
-    "nextTickAt": "2026-09-30T21:20:10.149Z",
+    "lastMessage": "Launched LN-16",
+    "lastError": null,
+    "lastSuccessfulTickAt": "2026-09-30T21:32:23.720Z",
+    "nextTickAt": "2026-09-30T21:37:23.720Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-06",
-        "completedAt": "2026-09-30T10:53:19.136Z",
-        "restartedAt": null,
-        "mainSha": "eccfee1eb184acc8250a43b7b8c0acd0d932bc9c",
-        "reason": null
-      },
       {
         "lot": "LN-07",
         "completedAt": "2026-09-30T11:01:12.161Z",
@@ -100,6 +93,13 @@
         "completedAt": "2026-09-30T13:49:26.521Z",
         "restartedAt": null,
         "mainSha": "f0deb0dd47a717c33c3253a9292c62c43b50205d",
+        "reason": null
+      },
+      {
+        "lot": "LN-13B",
+        "completedAt": "2026-09-30T21:32:12.932Z",
+        "restartedAt": null,
+        "mainSha": "3862ec5c76f98c7ecd74cfcf2da6110aa1a86ebb",
         "reason": null
       }
     ]
@@ -3813,106 +3813,6 @@
     "total": 61,
     "percent": 38,
     "current": {
-      "id": "LN-13B",
-      "title": "Exercise catalog expansion, metadata enrichment and licensed media",
-      "status": "DONE",
-      "goal": null,
-      "business": {
-        "summary": "Transformer le petit catalogue initial en un vrai catalogue d’exercices riche, illustré et exploitable à grande échelle.",
-        "why": "Jusqu’ici LiftNote fonctionne avec un nombre limité de mouvements et presque uniquement des métadonnées internes. Ce lot construit le catalogue produit réel : beaucoup plus d’exercices, des visuels utilisables légalement, des muscles ciblés, de vraies instructions et des données suffisamment riches pour alimenter la recherche, les fiches exercice et les futurs usages.",
-        "builds": [
-          "prendre RepDB comme source pivot pour sélectionner les exercices dont le visuel peut réellement être utilisé dans LiftNote",
-          "limiter cette première grande extension aux mouvements disposant d’une illustration RepDB autorisée",
-          "faire correspondre chacun de ces mouvements avec les autres bases déjà étudiées afin de récupérer les meilleures informations disponibles",
-          "conserver les identifiants LiftNote existants lorsqu’un mouvement correspond à un exercice déjà présent, afin de ne jamais casser l’historique",
-          "augmenter fortement le nombre d’exercices système disponibles dans le catalogue",
-          "enrichir chaque exercice avec son muscle principal, ses muscles secondaires, sa région corporelle, son équipement et sa mécanique",
-          "ajouter les alias utiles en français et en anglais pour améliorer la recherche",
-          "récupérer des instructions de réalisation réutilisables légalement et les présenter de façon structurée lorsque les sources le permettent",
-          "ajouter les données nécessaires aux visuels : référence média, provenance, licence, attribution et informations techniques utiles",
-          "comparer tous les champs proposés par les différentes bases avec notre schéma actuel avant de créer une migration",
-          "ajouter de nouveaux champs LiftNote uniquement lorsqu’ils ont un vrai sens produit et une utilisation claire",
-          "mettre en place un pipeline reproductible qui peut être relancé à partir de versions précises des sources",
-          "enregistrer la provenance multi-source de chaque exercice pour savoir exactement d’où viennent ses données",
-          "détecter les doublons, variantes et conflits entre bases au lieu de fusionner automatiquement deux mouvements qui ont seulement un nom proche",
-          "intégrer le catalogue enrichi dans la bibliothèque, la recherche, le choix d’exercice dans les séances modèles, la fiche exercice et le contexte de séance active",
-          "ajouter l’attribution RepDB requise dans le produit avant d’afficher les illustrations"
-        ],
-        "userImpact": [
-          "l’utilisateur dispose enfin d’un catalogue beaucoup plus large sans devoir recréer manuellement des mouvements courants",
-          "chaque exercice devient immédiatement identifiable grâce à une illustration",
-          "la fiche exercice explique quels muscles travaillent, quel matériel est utilisé et comment réaliser le mouvement",
-          "la recherche devient plus efficace grâce aux alias, aux équipements et aux métadonnées anatomiques",
-          "les programmes deviennent plus simples à construire car davantage de variantes et de machines sont déjà disponibles",
-          "l’historique existant reste intact : un exercice déjà connu par LiftNote garde son identité même si ses données sont enrichies",
-          "les futures fonctions pourront exploiter ces métadonnées sans dépendre directement d’une base externe"
-        ],
-        "notInThisLot": [
-          "pas d’import d’exercices dépourvus de visuel autorisé dans cette première extension",
-          "pas d’utilisation des images Gym visual dont les droits ne sont pas acquis par LiftNote",
-          "pas de synchronisation automatique avec les bases externes à chaque déploiement ou à chaque requête",
-          "pas de reprise aveugle de tous les champs d’une source externe",
-          "pas de fusion automatique de variantes ambiguës sur la seule similarité du nom",
-          "pas d’utilisation des visuels tiers comme matériau d’entrée pour générer de nouvelles images par IA lorsque la licence l’interdit",
-          "pas encore de recommandations d’entraînement automatiques basées sur les muscles ou les métadonnées"
-        ],
-        "doneWhen": [
-          "le catalogue système est nettement plus riche que les 49 exercices initiaux",
-          "chaque exercice importé dans cette première vague dispose d’un visuel autorisé et traçable",
-          "les mouvements existants conservent leurs identifiants et donc tout leur historique",
-          "les muscles principaux et secondaires, la région corporelle, l’équipement et le type de suivi sont renseignés lorsque les sources le permettent",
-          "les instructions de réalisation sont présentes pour les exercices pour lesquels une source fiable et réutilisable a été trouvée",
-          "les nouveaux champs éventuels du schéma sont justifiés par un usage produit concret",
-          "les différentes sources utilisées pour enrichir un mouvement sont enregistrées dans sa provenance",
-          "les doublons et variantes litigieuses ont fait l’objet d’une règle ou d’une décision explicite",
-          "l’attribution RepDB exigée par la licence est visible dans le produit",
-          "la recherche et le sélecteur d’exercices restent agréables malgré l’augmentation importante du volume",
-          "le catalogue peut être reconstruit de manière déterministe à partir de versions de sources figées"
-        ],
-        "journey": [
-          "L’utilisateur ouvre la bibliothèque d’exercices et dispose d’un catalogue beaucoup plus large.",
-          "Il cherche par nom, alias, équipement ou caractéristiques pertinentes.",
-          "Chaque exercice importé de cette première vague dispose d’un visuel autorisé et de métadonnées utiles.",
-          "Depuis une fiche exercice, il comprend le mouvement, les muscles principaux/secondaires et l’équipement.",
-          "Lorsqu’il ajoute un exercice à une séance, l’identité canonique existante est conservée si le mouvement était déjà connu."
-        ],
-        "rules": [
-          "RepDB sert d’ancre d’éligibilité média pour cette première vague, sous réserve de revalidation de licence.",
-          "Aucun visuel dont les droits sont incertains ne doit être publié.",
-          "Les exercices existants gardent leurs IDs pour ne jamais casser l’historique.",
-          "Les métadonnées de plusieurs sources peuvent enrichir un même exercice, mais leur provenance doit rester traçable.",
-          "Une similarité de nom ne suffit jamais pour fusionner deux exercices.",
-          "L’attribution exigée par la licence doit être visible avant mise en production."
-        ],
-        "examples": [
-          "Un exercice existant reçoit muscles secondaires, équipement et instructions sans changer d’identité.",
-          "Deux variantes aux noms proches restent séparées si leur mécanique ou matériel diffère réellement.",
-          "Un exercice sans illustration autorisée n’entre pas dans cette première extension même si ses métadonnées sont excellentes."
-        ],
-        "data": [
-          "catalogue canonique d’exercices",
-          "alias",
-          "muscles principaux et secondaires",
-          "région corporelle",
-          "équipement",
-          "instructions d’exécution",
-          "métadonnées média et provenance multi-source"
-        ],
-        "dependencies": [
-          "LN-03R pour les décisions de licence et de sources",
-          "schéma d’exercices existant depuis LN-04/LN-05",
-          "LN-14/LN-16 devront valider l’ergonomie avec un catalogue de taille réaliste"
-        ],
-        "attention": [
-          "risque de casser l’historique si les IDs existants sont remplacés",
-          "risque de doublons si les rapprochements sont trop agressifs",
-          "risque légal si attribution/licence média n’est pas respectée",
-          "la recherche doit rester rapide avec un catalogue nettement plus grand"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-16",
       "title": "Browser E2E and release gate",
       "status": "TODO",
@@ -3969,6 +3869,63 @@
           "ne pas confondre déploiement READY et QA navigateur réussie",
           "protéger les autres produits du repository pendant la validation globale",
           "garder le scénario E2E stable et peu fragile"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-15B",
+      "title": "Shared Supabase passkeys for Unicorn Prog + LiftNote",
+      "status": "TODO",
+      "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
+      "business": {
+        "summary": "Ajouter les passkeys comme moyen de connexion partagé entre LiftNote et Unicorn Prog.",
+        "why": "Solo améliore la sécurité et réduit la friction de connexion sans supprimer brutalement les méthodes existantes.",
+        "builds": [
+          "configuration des passkeys sur le projet d'authentification commun",
+          "enregistrement d'une passkey depuis un compte connecté",
+          "connexion par passkey depuis les deux produits",
+          "gestion de ses passkeys : liste, renommage et suppression"
+        ],
+        "userImpact": [
+          "l'utilisateur peut se connecter rapidement avec la biométrie ou la sécurité de son appareil"
+        ],
+        "notInThisLot": [
+          "les autres méthodes de connexion restent disponibles sauf décision produit contraire"
+        ],
+        "doneWhen": [
+          "les passkeys fonctionnent sur les domaines autorisés et restent gérables par l'utilisateur"
+        ],
+        "journey": [
+          "Un utilisateur connecté ouvre la sécurité de son compte.",
+          "Il enregistre une passkey sur son appareil.",
+          "Lors d’une future connexion, il peut choisir la passkey depuis LiftNote ou Unicorn Prog.",
+          "Il peut lister, renommer et supprimer ses passkeys.",
+          "Une autre méthode de connexion reste disponible en secours tant qu’aucune décision produit ne la retire."
+        ],
+        "rules": [
+          "La passkey appartient à l’identité partagée, pas à un produit isolé.",
+          "Le RP ID et les origines autorisées doivent être choisis à partir des vrais domaines déployés.",
+          "Les APIs Supabase passkeys étant expérimentales/bêta, leur syntaxe doit être revalidée au moment de l’exécution.",
+          "La suppression d’une passkey ne doit pas verrouiller involontairement le compte."
+        ],
+        "examples": [
+          "Passkey enregistrée depuis LiftNote puis utilisée pour se connecter à Unicorn Prog.",
+          "Deux passkeys nommées « iPhone » et « PC bureau » visibles dans la même surface de sécurité."
+        ],
+        "data": [
+          "credentials/passkeys gérés par Supabase Auth",
+          "nom utilisateur de la passkey",
+          "RP ID et origines WebAuthn"
+        ],
+        "dependencies": [
+          "LN-15 pour la surface auth LiftNote",
+          "configuration de domaine réelle Vercel/production"
+        ],
+        "attention": [
+          "ne pas coder contre une documentation Supabase obsolète",
+          "prévoir les fallbacks de connexion",
+          "tester les différences preview/production pour WebAuthn"
         ]
       },
       "contractAvailable": true
