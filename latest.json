@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T21:06:58.695Z",
+  "publishedAt": "2026-09-30T21:07:42.558Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "CONSISTENCY_ERROR",
@@ -14,7 +14,7 @@
     "lastMessage": "LN-13B is DONE but completion invariants failed; next lot not launched.",
     "lastError": "LN-15 does not mention LN-13B; explicit previous-lot handoff is missing.",
     "lastSuccessfulTickAt": "2026-09-30T14:08:09.609Z",
-    "nextTickAt": "2026-09-30T21:11:53.919Z",
+    "nextTickAt": "2026-09-30T21:12:37.569Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
