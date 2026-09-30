@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T22:25:49.359Z",
+  "publishedAt": "2026-09-30T22:26:34.163Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-15B is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T22:25:43.243Z",
-    "nextTickAt": "2026-09-30T22:30:43.243Z",
+    "lastSuccessfulTickAt": "2026-09-30T22:26:28.115Z",
+    "nextTickAt": "2026-09-30T22:31:28.115Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
