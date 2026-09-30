@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T22:50:24.534Z",
+  "publishedAt": "2026-09-30T22:55:45.168Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "RUNNING",
+    "status": "PAUSED",
     "currentLot": "LN-15B",
     "nextLot": "LN-15C",
     "launchedAt": "2026-09-30T22:19:02.204Z",
     "lastProgressAt": "2026-09-30T22:46:32.435Z",
     "lastChatCheckAt": "2026-09-30T22:19:02.204Z",
-    "lastObservedMainSha": "92b22097ddbe10e313471085551da01980722792",
+    "lastObservedMainSha": "12d56fb3737dd93a7f48b4b2eedc29e76b709912",
     "nudges": 0,
-    "lastMessage": "main moved while LN-15B is active",
+    "lastMessage": "LN-15B is BLOCKED on main; paused as requested.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T22:50:19.241Z",
-    "nextTickAt": "2026-09-30T22:55:19.241Z",
-    "paused": false,
-    "pauseAfterCurrent": true,
+    "lastSuccessfulTickAt": "2026-09-30T22:55:40.448Z",
+    "nextTickAt": "2026-09-30T23:00:40.448Z",
+    "paused": true,
+    "pauseAfterCurrent": false,
     "history": [
       {
         "lot": "LN-07C",
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "92b22097ddbe10e313471085551da01980722792",
+    "mainSha": "12d56fb3737dd93a7f48b4b2eedc29e76b709912",
     "lots": [
       {
         "id": "LN-00",
@@ -1480,55 +1480,55 @@
         "status": "DONE",
         "goal": "use the exact same Supabase Auth identity as Unicorn Prog while giving LiftNote its own sign-up/sign-in experience, routing and visual direction.",
         "business": {
-          "summary": "Donner à LiftNote sa propre expérience de connexion tout en gardant exactement le même compte que Unicorn Prog.",
-          "why": "L'utilisateur ne doit pas créer un deuxième compte simplement parce qu'il utilise un autre produit du même écosystème.",
+          "summary": "Donner à LiftNote une expérience complète de connexion, d’inscription et de récupération de compte à son identité propre.",
+          "why": "L’authentification doit être simple, fiable et cohérente avec LiftNote, sans exposer les choix d’infrastructure au produit.",
           "builds": [
-            "écrans de connexion et d'inscription à l'identité LiftNote",
+            "écrans de connexion et d’inscription propres à LiftNote",
             "retour vers la bonne page après connexion",
-            "réutilisation du même compte Supabase que Unicorn Prog",
-            "maintien strict de l'isolation des données métier LiftNote"
+            "récupération et réinitialisation du mot de passe",
+            "maintien strict de l’isolation des données métier LiftNote"
           ],
           "userImpact": [
-            "un même utilisateur peut se connecter aux deux produits avec la même identité, sans confusion de données"
+            "l’utilisateur dispose d’un parcours de compte LiftNote complet et cohérent"
           ],
           "notInThisLot": [
-            "pas de second système de comptes",
-            "pas de synchronisation artificielle entre deux identités"
+            "aucune promesse marketing sur l’infrastructure d’authentification"
           ],
           "doneWhen": [
-            "le même compte fonctionne sur les deux produits tout en gardant leurs données métier séparées"
+            "les parcours de compte LiftNote fonctionnent de bout en bout avec leurs propres textes et leur propre identité visuelle"
           ],
           "journey": [
-            "Un utilisateur arrive sur une page LiftNote non authentifiée.",
-            "Il voit une expérience de connexion/inscription clairement LiftNote.",
-            "S’il possède déjà un compte Unicorn Prog, il utilise les mêmes identifiants.",
+            "Un utilisateur arrive sur une page LiftNote qui nécessite une authentification.",
+            "Il voit un écran de connexion ou d’inscription entièrement LiftNote.",
+            "Il choisit email, Google ou une autre méthode disponible.",
             "Après authentification, il revient vers la page LiftNote qu’il voulait consulter.",
-            "Ses données métier LiftNote restent séparées des données métier Unicorn Prog malgré l’identité commune."
+            "Il peut se déconnecter, récupérer son mot de passe ou gérer son compte sans quitter l’univers LiftNote."
           ],
           "rules": [
-            "Une personne = une identité Supabase Auth partagée entre les produits.",
-            "Aucun compte miroir ou synchronisation de comptes ne doit être créé.",
-            "Le branding et le routage de connexion peuvent être propres à LiftNote.",
-            "Partager l’identité ne signifie jamais partager automatiquement les données métier.",
-            "Toutes les autorisations LiftNote restent imposées par les RLS LiftNote."
+            "Les textes de compte sont orientés action utilisateur, pas architecture technique.",
+            "Le branding et le routage de connexion sont propres à LiftNote.",
+            "Les données métier LiftNote restent protégées par leurs RLS.",
+            "Aucun écran LiftNote ne doit promouvoir une relation avec un autre produit.",
+            "Les erreurs d’authentification restent compréhensibles sans exposer Supabase ou une architecture interne."
           ],
           "examples": [
-            "Compte créé depuis Unicorn Prog puis connexion à LiftNote avec les mêmes credentials.",
-            "Compte créé depuis LiftNote puis utilisation du même compte sur Unicorn Prog.",
-            "Retour après login directement sur /liftnote/programs plutôt que sur une home générique."
+            "Connexion LiftNote par email puis retour direct sur la séance demandée.",
+            "Création de compte LiftNote puis confirmation email.",
+            "Mot de passe oublié puis retour vers LiftNote après réinitialisation."
           ],
           "data": [
-            "auth.users partagé",
-            "profil/metadata nécessaires à LiftNote",
-            "routes de login/signup/retour"
+            "identité d’authentification interne",
+            "session LiftNote",
+            "route de retour après authentification",
+            "état confirmé/anonyme du compte"
           ],
           "dependencies": [
-            "Supabase Auth existant du repository",
-            "toutes les futures fonctions cross-user LN-22 à LN-24 dépendent d’identités stables"
+            "infrastructure d’authentification existante du repository",
+            "RLS LiftNote pour l’isolation des données"
           ],
           "attention": [
-            "ne pas créer deux utilisateurs pour une même personne",
-            "ne pas exposer les tables Unicorn Prog depuis LiftNote",
+            "ne pas transformer une contrainte d’architecture en argument produit",
+            "ne pas exposer les détails du fournisseur d’authentification dans les erreurs",
             "vérifier les redirections sur preview et production"
           ]
         },
@@ -1601,53 +1601,57 @@
         "status": "BLOCKED",
         "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
         "business": {
-          "summary": "Ajouter les passkeys comme moyen de connexion partagé entre LiftNote et Unicorn Prog.",
-          "why": "Solo améliore la sécurité et réduit la friction de connexion sans supprimer brutalement les méthodes existantes.",
+          "summary": "Ajouter les passkeys comme méthode de connexion et de sécurisation du compte.",
+          "why": "Les passkeys réduisent la friction et permettent une connexion moderne sans supprimer les méthodes de secours existantes.",
           "builds": [
-            "configuration des passkeys sur le projet d'authentification commun",
-            "enregistrement d'une passkey depuis un compte connecté",
-            "connexion par passkey depuis les deux produits",
-            "gestion de ses passkeys : liste, renommage et suppression"
+            "activation et configuration technique des passkeys",
+            "enregistrement d’une passkey depuis un compte connecté",
+            "connexion LiftNote par passkey",
+            "gestion des passkeys : liste, renommage et suppression"
           ],
           "userImpact": [
-            "l'utilisateur peut se connecter rapidement avec la biométrie ou la sécurité de son appareil"
+            "l’utilisateur peut se connecter rapidement avec la biométrie ou la sécurité de son appareil"
           ],
           "notInThisLot": [
-            "les autres méthodes de connexion restent disponibles sauf décision produit contraire"
+            "les autres méthodes de connexion restent disponibles sauf décision produit contraire",
+            "aucun discours cross-produit dans l’interface"
           ],
           "doneWhen": [
-            "les passkeys fonctionnent sur les domaines autorisés et restent gérables par l'utilisateur"
+            "les passkeys sont utilisables, gérables et disposent d’un fallback de connexion"
           ],
           "journey": [
-            "Un utilisateur connecté ouvre la sécurité de son compte.",
+            "Un utilisateur connecté ouvre la sécurité de son compte LiftNote.",
             "Il enregistre une passkey sur son appareil.",
-            "Lors d’une future connexion, il peut choisir la passkey depuis LiftNote ou Unicorn Prog.",
+            "Lors d’une future connexion LiftNote, il peut choisir la passkey.",
             "Il peut lister, renommer et supprimer ses passkeys.",
-            "Une autre méthode de connexion reste disponible en secours tant qu’aucune décision produit ne la retire."
+            "Une autre méthode de connexion reste disponible en secours."
           ],
           "rules": [
-            "La passkey appartient à l’identité partagée, pas à un produit isolé.",
-            "Le RP ID et les origines autorisées doivent être choisis à partir des vrais domaines déployés.",
-            "Les APIs Supabase passkeys étant expérimentales/bêta, leur syntaxe doit être revalidée au moment de l’exécution.",
-            "La suppression d’une passkey ne doit pas verrouiller involontairement le compte."
+            "La passkey est présentée comme une option de sécurité du compte LiftNote.",
+            "Le RP ID et les origines autorisées sont des détails d’implémentation et ne doivent pas devenir du copy produit.",
+            "Les APIs de passkeys doivent être revalidées au moment de l’exécution.",
+            "La suppression d’une passkey ne doit pas verrouiller involontairement le compte.",
+            "Aucun texte visible ne doit expliquer une portée cross-produit."
           ],
           "examples": [
-            "Passkey enregistrée depuis LiftNote puis utilisée pour se connecter à Unicorn Prog.",
-            "Deux passkeys nommées « iPhone » et « PC bureau » visibles dans la même surface de sécurité."
+            "Passkey nommée « iPhone » ajoutée depuis la sécurité du compte LiftNote.",
+            "Connexion LiftNote par passkey puis fallback email si la cérémonie est annulée.",
+            "Suppression d’une ancienne passkey depuis la surface de sécurité."
           ],
           "data": [
-            "credentials/passkeys gérés par Supabase Auth",
+            "credential/passkey d’authentification",
             "nom utilisateur de la passkey",
-            "RP ID et origines WebAuthn"
+            "métadonnées de création/dernier usage",
+            "RP ID et origines WebAuthn internes"
           ],
           "dependencies": [
-            "LN-15 pour la surface auth LiftNote",
-            "configuration de domaine réelle Vercel/production"
+            "LN-15 pour les surfaces d’authentification LiftNote",
+            "configuration WebAuthn réelle des domaines"
           ],
           "attention": [
-            "ne pas coder contre une documentation Supabase obsolète",
+            "ne pas coder contre une documentation fournisseur obsolète",
             "prévoir les fallbacks de connexion",
-            "tester les différences preview/production pour WebAuthn"
+            "ne pas exposer l’architecture commune dans les textes de l’interface"
           ]
         },
         "contractAvailable": true
@@ -1657,7 +1661,105 @@
         "title": "LiftNote user-facing product isolation cleanup",
         "status": "TODO",
         "goal": "remove every user-visible claim, hint or marketing message that presents LiftNote's shared authentication/infrastructure with Unicorn Prog as a product feature.",
-        "business": null,
+        "business": {
+          "summary": "Retirer de LiftNote toute référence visible aux autres produits et aux choix d’infrastructure partagée.",
+          "why": "La mutualisation technique n’est pas une fonctionnalité : pour l’utilisateur, LiftNote doit être présenté comme un produit autonome.",
+          "builds": [
+            "audit complet des textes marketing et de découverte",
+            "nettoyage des écrans connexion, inscription, compte et sécurité",
+            "audit des métadonnées, SEO, Open Graph, PWA, aide et messages d’erreur visibles",
+            "remplacement par des textes qui parlent uniquement de LiftNote",
+            "garde-fous de test empêchant le retour de formulations cross-produit"
+          ],
+          "userImpact": [
+            "l’utilisateur ne voit plus de mention de compte, identifiants, base ou authentification partagés avec un autre produit"
+          ],
+          "notInThisLot": [
+            "aucun changement de base de données",
+            "aucune séparation technique artificielle des comptes ou de l’infrastructure"
+          ],
+          "doneWhen": [
+            "toutes les surfaces utilisateur LiftNote sont autonomes dans leur discours et les parcours auth/passkey continuent de fonctionner"
+          ],
+          "journey": [
+            "Un visiteur arrive sur /liftnote/decouvrir et comprend immédiatement ce que LiftNote fait pour son entraînement, sans référence à un autre produit ou à une infrastructure commune.",
+            "Il parcourt les bénéfices, fonctionnalités, exemples, FAQ et appels à l’action ; chaque texte parle uniquement de LiftNote.",
+            "Il ouvre /liftnote/connexion et voit un parcours de connexion autonome, centré sur son compte LiftNote.",
+            "Il choisit email, Google ou passkey sans qu’aucune méthode soit présentée comme partagée avec un autre produit.",
+            "Il ouvre /liftnote/inscription et crée simplement son compte LiftNote ; aucun titre ou sous-texte ne parle de « deux produits ».",
+            "Si son email correspond déjà à une identité existante, le message lui propose simplement de se connecter, sans expliquer où cette identité a été créée.",
+            "Il utilise mot de passe oublié / réinitialisation et reste dans un parcours entièrement LiftNote.",
+            "Après connexion, il ouvre Compte/Sécurité et gère ses passkeys avec des libellés centrés sur la sécurité de son compte LiftNote.",
+            "Les erreurs, succès, toasts, confirmations et états vides restent eux aussi neutres sur l’architecture sous-jacente.",
+            "Lorsqu’il installe la PWA ou partage un lien, le manifest, les métadonnées, Open Graph et textes de partage restent strictement LiftNote.",
+            "Une navigation clavier ou lecteur d’écran ne révèle pas d’anciens libellés cross-produit cachés dans des aria-labels ou descriptions.",
+            "Une recherche finale du repository confirme que les références restantes à l’infrastructure commune sont limitées à la documentation ou au code technique interne."
+          ],
+          "rules": [
+            "La mutualisation technique reste autorisée mais doit être invisible sur toutes les surfaces utilisateur LiftNote.",
+            "Aucune mention de Unicorn Prog ou SPICY 200 sur une surface LiftNote destinée à l’utilisateur, sauf obligation légale explicite, documentée et vérifiée.",
+            "Aucune formulation « même compte », « mêmes identifiants », « deux produits », « compte partagé », « identité partagée », « Supabase partagé » ou équivalent.",
+            "Ne pas remplacer une formulation interdite par une formulation implicite du type « votre compte existant ailleurs fonctionne ici ».",
+            "Les textes doivent expliquer l’action utilisateur, le bénéfice ou l’état courant, jamais le backend.",
+            "Les messages d’erreur doivent rester actionnables sans révéler inutilement Supabase, un autre produit, le RP ID ou la topologie d’authentification.",
+            "Les passkeys sont présentées comme une méthode de connexion/sécurité LiftNote ; leur portée technique éventuelle reste interne.",
+            "Le nettoyage ne doit modifier ni auth.users, ni sessions, ni cookies, ni RLS, ni ownership, ni stockage métier.",
+            "Aucune migration ou duplication de compte ne doit être introduite pour résoudre un problème de wording.",
+            "Les documents techniques internes conservent les faits d’architecture nécessaires à la maintenance et à la sécurité.",
+            "Les textes de marketing, auth, compte, aide, erreurs, metadata et accessibilité sont tous dans le périmètre du lot.",
+            "Le test anti-régression doit cibler les sources user-facing sans interdire les références légitimes dans les contrats techniques.",
+            "Toute exception user-facing doit être rare, explicitement justifiée dans le completion record et liée à une obligation réelle.",
+            "Les changements de wording doivent préserver l’accessibilité, les intentions de formulaire et les redirections existantes."
+          ],
+          "examples": [
+            "Connexion : « Utilisez le même compte que sur Unicorn Prog » devient « Connectez-vous à LiftNote pour retrouver vos programmes et votre historique. »",
+            "Inscription : « Un compte. Deux produits. » devient « Créez votre compte LiftNote. »",
+            "Email déjà connu : « ce compte existe déjà » + lien vers connexion, sans indiquer dans quel produit il a été créé.",
+            "Passkey : « utilisable dans les deux produits » devient « Connectez-vous plus rapidement avec une passkey. »",
+            "Compte/Sécurité : « passkeys du compte partagé » devient simplement « Vos passkeys ».",
+            "Erreur fournisseur : un code Supabase brut est transformé en message utilisateur du type « Connexion impossible pour le moment. Réessayez ou utilisez une autre méthode. »",
+            "Open Graph : le titre et la description parlent du suivi de musculation LiftNote, jamais de l’écosystème Unicorn.",
+            "PWA : le nom court, la description d’installation et les raccourcis ne contiennent que la marque LiftNote.",
+            "FAQ : une question sur le compte explique comment se connecter/récupérer l’accès dans LiftNote, sans dévoiler l’architecture commune.",
+            "ARIA : un bouton visuellement correct mais portant encore « compte Unicorn » dans son aria-label doit être corrigé lui aussi."
+          ],
+          "data": [
+            "aucune nouvelle donnée métier",
+            "aucune migration attendue",
+            "aucun changement d’ownership ou de RLS",
+            "inventaire des fichiers/surfaces user-facing audités",
+            "inventaire des formulations interdites recherchées",
+            "liste des occurrences restantes classées internal-only",
+            "test automatisé anti-régression de copy",
+            "captures ou preuves QA des surfaces publiques/auth principales",
+            "preuve de fonctionnement connexion/inscription/récupération/passkey après réécriture",
+            "résultat de la recherche repository-wide finale"
+          ],
+          "dependencies": [
+            "LN-15 pour les parcours connexion, inscription, récupération et compte existants",
+            "LN-15B pour auditer la version finale des surfaces passkey et sécurité",
+            "README LiftNote pour la règle permanente « architecture interne, jamais argument produit »",
+            "BRAND.md pour maintenir une identité LiftNote autonome",
+            "layout/metadata/manifest LiftNote pour les surfaces non visibles directement dans le contenu de page",
+            "composants auth partagés : leur logique peut rester commune mais leurs textes rendus dans LiftNote doivent respecter l’isolation produit",
+            "LN-16 pour réutiliser le socle de QA navigateur/release déjà stabilisé",
+            "LN-17 ne peut démarrer qu’après clôture de ce nettoyage"
+          ],
+          "attention": [
+            "auditer metadata, manifest, Open Graph, PWA, aria-labels, descriptions, titles, toasts, erreurs, états vides, emails/redirect copy et textes de boutons",
+            "chercher les références hors du namespace LiftNote qui sont rendues par un layout ou composant partagé dans les routes LiftNote",
+            "ne pas se limiter aux occurrences exactes de « Unicorn Prog » : rechercher aussi les paraphrases de compte/identité/infrastructure partagée",
+            "ne pas supprimer une logique auth nécessaire sous prétexte de supprimer le texte qui l’expliquait",
+            "ne pas casser les scénarios anonymous-to-permanent ou comptes existants en simplifiant les messages",
+            "vérifier que les passkeys restent fonctionnelles après nettoyage du wording",
+            "préserver l’accessibilité et la clarté des formulaires après réécriture",
+            "éviter de faire apparaître des détails Supabase ou WebAuthn internes dans les messages d’erreur user-facing",
+            "vérifier les contenus mobiles avant desktop : plusieurs textes peuvent être tronqués ou dupliqués sur petit écran",
+            "contrôler aussi le code source rendu et les attributs accessibles, pas seulement le texte visible à l’œil",
+            "faire une recherche repository-wide finale avant DONE et classer explicitement chaque hit restant",
+            "documenter toute exception réelle plutôt que d’ajouter silencieusement une allowlist large au test de garde-fou"
+          ]
+        },
         "contractAvailable": true
       },
       {
@@ -3826,53 +3928,57 @@
       "status": "BLOCKED",
       "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
       "business": {
-        "summary": "Ajouter les passkeys comme moyen de connexion partagé entre LiftNote et Unicorn Prog.",
-        "why": "Solo améliore la sécurité et réduit la friction de connexion sans supprimer brutalement les méthodes existantes.",
+        "summary": "Ajouter les passkeys comme méthode de connexion et de sécurisation du compte.",
+        "why": "Les passkeys réduisent la friction et permettent une connexion moderne sans supprimer les méthodes de secours existantes.",
         "builds": [
-          "configuration des passkeys sur le projet d'authentification commun",
-          "enregistrement d'une passkey depuis un compte connecté",
-          "connexion par passkey depuis les deux produits",
-          "gestion de ses passkeys : liste, renommage et suppression"
+          "activation et configuration technique des passkeys",
+          "enregistrement d’une passkey depuis un compte connecté",
+          "connexion LiftNote par passkey",
+          "gestion des passkeys : liste, renommage et suppression"
         ],
         "userImpact": [
-          "l'utilisateur peut se connecter rapidement avec la biométrie ou la sécurité de son appareil"
+          "l’utilisateur peut se connecter rapidement avec la biométrie ou la sécurité de son appareil"
         ],
         "notInThisLot": [
-          "les autres méthodes de connexion restent disponibles sauf décision produit contraire"
+          "les autres méthodes de connexion restent disponibles sauf décision produit contraire",
+          "aucun discours cross-produit dans l’interface"
         ],
         "doneWhen": [
-          "les passkeys fonctionnent sur les domaines autorisés et restent gérables par l'utilisateur"
+          "les passkeys sont utilisables, gérables et disposent d’un fallback de connexion"
         ],
         "journey": [
-          "Un utilisateur connecté ouvre la sécurité de son compte.",
+          "Un utilisateur connecté ouvre la sécurité de son compte LiftNote.",
           "Il enregistre une passkey sur son appareil.",
-          "Lors d’une future connexion, il peut choisir la passkey depuis LiftNote ou Unicorn Prog.",
+          "Lors d’une future connexion LiftNote, il peut choisir la passkey.",
           "Il peut lister, renommer et supprimer ses passkeys.",
-          "Une autre méthode de connexion reste disponible en secours tant qu’aucune décision produit ne la retire."
+          "Une autre méthode de connexion reste disponible en secours."
         ],
         "rules": [
-          "La passkey appartient à l’identité partagée, pas à un produit isolé.",
-          "Le RP ID et les origines autorisées doivent être choisis à partir des vrais domaines déployés.",
-          "Les APIs Supabase passkeys étant expérimentales/bêta, leur syntaxe doit être revalidée au moment de l’exécution.",
-          "La suppression d’une passkey ne doit pas verrouiller involontairement le compte."
+          "La passkey est présentée comme une option de sécurité du compte LiftNote.",
+          "Le RP ID et les origines autorisées sont des détails d’implémentation et ne doivent pas devenir du copy produit.",
+          "Les APIs de passkeys doivent être revalidées au moment de l’exécution.",
+          "La suppression d’une passkey ne doit pas verrouiller involontairement le compte.",
+          "Aucun texte visible ne doit expliquer une portée cross-produit."
         ],
         "examples": [
-          "Passkey enregistrée depuis LiftNote puis utilisée pour se connecter à Unicorn Prog.",
-          "Deux passkeys nommées « iPhone » et « PC bureau » visibles dans la même surface de sécurité."
+          "Passkey nommée « iPhone » ajoutée depuis la sécurité du compte LiftNote.",
+          "Connexion LiftNote par passkey puis fallback email si la cérémonie est annulée.",
+          "Suppression d’une ancienne passkey depuis la surface de sécurité."
         ],
         "data": [
-          "credentials/passkeys gérés par Supabase Auth",
+          "credential/passkey d’authentification",
           "nom utilisateur de la passkey",
-          "RP ID et origines WebAuthn"
+          "métadonnées de création/dernier usage",
+          "RP ID et origines WebAuthn internes"
         ],
         "dependencies": [
-          "LN-15 pour la surface auth LiftNote",
-          "configuration de domaine réelle Vercel/production"
+          "LN-15 pour les surfaces d’authentification LiftNote",
+          "configuration WebAuthn réelle des domaines"
         ],
         "attention": [
-          "ne pas coder contre une documentation Supabase obsolète",
+          "ne pas coder contre une documentation fournisseur obsolète",
           "prévoir les fallbacks de connexion",
-          "tester les différences preview/production pour WebAuthn"
+          "ne pas exposer l’architecture commune dans les textes de l’interface"
         ]
       },
       "contractAvailable": true
@@ -3882,7 +3988,105 @@
       "title": "LiftNote user-facing product isolation cleanup",
       "status": "TODO",
       "goal": "remove every user-visible claim, hint or marketing message that presents LiftNote's shared authentication/infrastructure with Unicorn Prog as a product feature.",
-      "business": null,
+      "business": {
+        "summary": "Retirer de LiftNote toute référence visible aux autres produits et aux choix d’infrastructure partagée.",
+        "why": "La mutualisation technique n’est pas une fonctionnalité : pour l’utilisateur, LiftNote doit être présenté comme un produit autonome.",
+        "builds": [
+          "audit complet des textes marketing et de découverte",
+          "nettoyage des écrans connexion, inscription, compte et sécurité",
+          "audit des métadonnées, SEO, Open Graph, PWA, aide et messages d’erreur visibles",
+          "remplacement par des textes qui parlent uniquement de LiftNote",
+          "garde-fous de test empêchant le retour de formulations cross-produit"
+        ],
+        "userImpact": [
+          "l’utilisateur ne voit plus de mention de compte, identifiants, base ou authentification partagés avec un autre produit"
+        ],
+        "notInThisLot": [
+          "aucun changement de base de données",
+          "aucune séparation technique artificielle des comptes ou de l’infrastructure"
+        ],
+        "doneWhen": [
+          "toutes les surfaces utilisateur LiftNote sont autonomes dans leur discours et les parcours auth/passkey continuent de fonctionner"
+        ],
+        "journey": [
+          "Un visiteur arrive sur /liftnote/decouvrir et comprend immédiatement ce que LiftNote fait pour son entraînement, sans référence à un autre produit ou à une infrastructure commune.",
+          "Il parcourt les bénéfices, fonctionnalités, exemples, FAQ et appels à l’action ; chaque texte parle uniquement de LiftNote.",
+          "Il ouvre /liftnote/connexion et voit un parcours de connexion autonome, centré sur son compte LiftNote.",
+          "Il choisit email, Google ou passkey sans qu’aucune méthode soit présentée comme partagée avec un autre produit.",
+          "Il ouvre /liftnote/inscription et crée simplement son compte LiftNote ; aucun titre ou sous-texte ne parle de « deux produits ».",
+          "Si son email correspond déjà à une identité existante, le message lui propose simplement de se connecter, sans expliquer où cette identité a été créée.",
+          "Il utilise mot de passe oublié / réinitialisation et reste dans un parcours entièrement LiftNote.",
+          "Après connexion, il ouvre Compte/Sécurité et gère ses passkeys avec des libellés centrés sur la sécurité de son compte LiftNote.",
+          "Les erreurs, succès, toasts, confirmations et états vides restent eux aussi neutres sur l’architecture sous-jacente.",
+          "Lorsqu’il installe la PWA ou partage un lien, le manifest, les métadonnées, Open Graph et textes de partage restent strictement LiftNote.",
+          "Une navigation clavier ou lecteur d’écran ne révèle pas d’anciens libellés cross-produit cachés dans des aria-labels ou descriptions.",
+          "Une recherche finale du repository confirme que les références restantes à l’infrastructure commune sont limitées à la documentation ou au code technique interne."
+        ],
+        "rules": [
+          "La mutualisation technique reste autorisée mais doit être invisible sur toutes les surfaces utilisateur LiftNote.",
+          "Aucune mention de Unicorn Prog ou SPICY 200 sur une surface LiftNote destinée à l’utilisateur, sauf obligation légale explicite, documentée et vérifiée.",
+          "Aucune formulation « même compte », « mêmes identifiants », « deux produits », « compte partagé », « identité partagée », « Supabase partagé » ou équivalent.",
+          "Ne pas remplacer une formulation interdite par une formulation implicite du type « votre compte existant ailleurs fonctionne ici ».",
+          "Les textes doivent expliquer l’action utilisateur, le bénéfice ou l’état courant, jamais le backend.",
+          "Les messages d’erreur doivent rester actionnables sans révéler inutilement Supabase, un autre produit, le RP ID ou la topologie d’authentification.",
+          "Les passkeys sont présentées comme une méthode de connexion/sécurité LiftNote ; leur portée technique éventuelle reste interne.",
+          "Le nettoyage ne doit modifier ni auth.users, ni sessions, ni cookies, ni RLS, ni ownership, ni stockage métier.",
+          "Aucune migration ou duplication de compte ne doit être introduite pour résoudre un problème de wording.",
+          "Les documents techniques internes conservent les faits d’architecture nécessaires à la maintenance et à la sécurité.",
+          "Les textes de marketing, auth, compte, aide, erreurs, metadata et accessibilité sont tous dans le périmètre du lot.",
+          "Le test anti-régression doit cibler les sources user-facing sans interdire les références légitimes dans les contrats techniques.",
+          "Toute exception user-facing doit être rare, explicitement justifiée dans le completion record et liée à une obligation réelle.",
+          "Les changements de wording doivent préserver l’accessibilité, les intentions de formulaire et les redirections existantes."
+        ],
+        "examples": [
+          "Connexion : « Utilisez le même compte que sur Unicorn Prog » devient « Connectez-vous à LiftNote pour retrouver vos programmes et votre historique. »",
+          "Inscription : « Un compte. Deux produits. » devient « Créez votre compte LiftNote. »",
+          "Email déjà connu : « ce compte existe déjà » + lien vers connexion, sans indiquer dans quel produit il a été créé.",
+          "Passkey : « utilisable dans les deux produits » devient « Connectez-vous plus rapidement avec une passkey. »",
+          "Compte/Sécurité : « passkeys du compte partagé » devient simplement « Vos passkeys ».",
+          "Erreur fournisseur : un code Supabase brut est transformé en message utilisateur du type « Connexion impossible pour le moment. Réessayez ou utilisez une autre méthode. »",
+          "Open Graph : le titre et la description parlent du suivi de musculation LiftNote, jamais de l’écosystème Unicorn.",
+          "PWA : le nom court, la description d’installation et les raccourcis ne contiennent que la marque LiftNote.",
+          "FAQ : une question sur le compte explique comment se connecter/récupérer l’accès dans LiftNote, sans dévoiler l’architecture commune.",
+          "ARIA : un bouton visuellement correct mais portant encore « compte Unicorn » dans son aria-label doit être corrigé lui aussi."
+        ],
+        "data": [
+          "aucune nouvelle donnée métier",
+          "aucune migration attendue",
+          "aucun changement d’ownership ou de RLS",
+          "inventaire des fichiers/surfaces user-facing audités",
+          "inventaire des formulations interdites recherchées",
+          "liste des occurrences restantes classées internal-only",
+          "test automatisé anti-régression de copy",
+          "captures ou preuves QA des surfaces publiques/auth principales",
+          "preuve de fonctionnement connexion/inscription/récupération/passkey après réécriture",
+          "résultat de la recherche repository-wide finale"
+        ],
+        "dependencies": [
+          "LN-15 pour les parcours connexion, inscription, récupération et compte existants",
+          "LN-15B pour auditer la version finale des surfaces passkey et sécurité",
+          "README LiftNote pour la règle permanente « architecture interne, jamais argument produit »",
+          "BRAND.md pour maintenir une identité LiftNote autonome",
+          "layout/metadata/manifest LiftNote pour les surfaces non visibles directement dans le contenu de page",
+          "composants auth partagés : leur logique peut rester commune mais leurs textes rendus dans LiftNote doivent respecter l’isolation produit",
+          "LN-16 pour réutiliser le socle de QA navigateur/release déjà stabilisé",
+          "LN-17 ne peut démarrer qu’après clôture de ce nettoyage"
+        ],
+        "attention": [
+          "auditer metadata, manifest, Open Graph, PWA, aria-labels, descriptions, titles, toasts, erreurs, états vides, emails/redirect copy et textes de boutons",
+          "chercher les références hors du namespace LiftNote qui sont rendues par un layout ou composant partagé dans les routes LiftNote",
+          "ne pas se limiter aux occurrences exactes de « Unicorn Prog » : rechercher aussi les paraphrases de compte/identité/infrastructure partagée",
+          "ne pas supprimer une logique auth nécessaire sous prétexte de supprimer le texte qui l’expliquait",
+          "ne pas casser les scénarios anonymous-to-permanent ou comptes existants en simplifiant les messages",
+          "vérifier que les passkeys restent fonctionnelles après nettoyage du wording",
+          "préserver l’accessibilité et la clarté des formulaires après réécriture",
+          "éviter de faire apparaître des détails Supabase ou WebAuthn internes dans les messages d’erreur user-facing",
+          "vérifier les contenus mobiles avant desktop : plusieurs textes peuvent être tronqués ou dupliqués sur petit écran",
+          "contrôler aussi le code source rendu et les attributs accessibles, pas seulement le texte visible à l’œil",
+          "faire une recherche repository-wide finale avant DONE et classer explicitement chaque hit restant",
+          "documenter toute exception réelle plutôt que d’ajouter silencieusement une allowlist large au test de garde-fou"
+        ]
+      },
       "contractAvailable": true
     }
   }
