@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T22:30:26.710Z",
+  "publishedAt": "2026-09-30T22:31:12.930Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -11,12 +11,12 @@
     "lastChatCheckAt": "2026-09-30T22:19:02.204Z",
     "lastObservedMainSha": "478a06eba501524ce4fe2350f8e5b622af5ca074",
     "nudges": 0,
-    "lastMessage": "main moved while LN-15B is active",
+    "lastMessage": "Will pause after current lot",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T22:30:20.494Z",
-    "nextTickAt": "2026-09-30T22:35:20.494Z",
+    "lastSuccessfulTickAt": "2026-09-30T22:31:06.617Z",
+    "nextTickAt": "2026-09-30T22:36:06.617Z",
     "paused": false,
-    "pauseAfterCurrent": false,
+    "pauseAfterCurrent": true,
     "history": [
       {
         "lot": "LN-07C",
