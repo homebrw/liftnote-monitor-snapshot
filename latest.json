@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T23:57:14.206Z",
+  "publishedAt": "2026-09-30T23:58:04.160Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-15C is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T23:57:03.789Z",
-    "nextTickAt": "2026-10-01T00:02:03.789Z",
+    "lastSuccessfulTickAt": "2026-09-30T23:57:57.018Z",
+    "nextTickAt": "2026-10-01T00:02:57.018Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "5a928df669ef01a73330b6fd33b5ae9035b33470",
+    "mainSha": "09803c5160a7ec067772166ad8ff021521cc2f96",
     "lots": [
       {
         "id": "LN-00",
