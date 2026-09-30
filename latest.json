@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T23:12:56.724Z",
+  "publishedAt": "2026-09-30T23:13:40.920Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "PAUSED",
@@ -9,12 +9,12 @@
     "launchedAt": "2026-09-30T22:19:02.204Z",
     "lastProgressAt": "2026-09-30T22:46:32.435Z",
     "lastChatCheckAt": "2026-09-30T22:19:02.204Z",
-    "lastObservedMainSha": "6779f040e9967c6ea96b59dffdd343f3219e7e22",
+    "lastObservedMainSha": "03a9a77374adc406b50f28051644f1277d6d6e5d",
     "nudges": 0,
     "lastMessage": "LN-15B is BLOCKED on main; paused as requested.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T23:12:51.887Z",
-    "nextTickAt": "2026-09-30T23:17:51.887Z",
+    "lastSuccessfulTickAt": "2026-09-30T23:13:35.573Z",
+    "nextTickAt": "2026-09-30T23:18:35.573Z",
     "paused": true,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "6779f040e9967c6ea96b59dffdd343f3219e7e22",
+    "mainSha": "03a9a77374adc406b50f28051644f1277d6d6e5d",
     "lots": [
       {
         "id": "LN-00",
