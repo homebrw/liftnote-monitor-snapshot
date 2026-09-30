@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T22:45:04.359Z",
+  "publishedAt": "2026-09-30T22:45:50.772Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-15B is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T22:44:58.067Z",
-    "nextTickAt": "2026-09-30T22:49:58.067Z",
+    "lastSuccessfulTickAt": "2026-09-30T22:45:43.804Z",
+    "nextTickAt": "2026-09-30T22:50:43.804Z",
     "paused": false,
     "pauseAfterCurrent": true,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "ad2f67bd65e6ec1664a373116dd01119958b9b90",
+    "mainSha": "92b22097ddbe10e313471085551da01980722792",
     "lots": [
       {
         "id": "LN-00",
@@ -1598,7 +1598,7 @@
       {
         "id": "LN-15B",
         "title": "Shared Supabase passkeys for Unicorn Prog + LiftNote",
-        "status": "IN PROGRESS",
+        "status": "BLOCKED",
         "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
         "business": {
           "summary": "Ajouter les passkeys comme moyen de connexion partagé entre LiftNote et Unicorn Prog.",
@@ -3823,7 +3823,7 @@
     "current": {
       "id": "LN-15B",
       "title": "Shared Supabase passkeys for Unicorn Prog + LiftNote",
-      "status": "IN PROGRESS",
+      "status": "BLOCKED",
       "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
       "business": {
         "summary": "Ajouter les passkeys comme moyen de connexion partagé entre LiftNote et Unicorn Prog.",
