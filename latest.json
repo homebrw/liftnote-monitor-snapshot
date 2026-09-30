@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T23:29:25.116Z",
+  "publishedAt": "2026-09-30T23:30:08.726Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "PAUSED",
-    "currentLot": "LN-15B",
+    "status": "IDLE",
+    "currentLot": null,
     "nextLot": "LN-15C",
-    "launchedAt": "2026-09-30T22:19:02.204Z",
-    "lastProgressAt": "2026-09-30T22:46:32.435Z",
+    "launchedAt": null,
+    "lastProgressAt": "2026-09-30T23:30:03.313Z",
     "lastChatCheckAt": "2026-09-30T22:19:02.204Z",
-    "lastObservedMainSha": "34c2650983dd6f7c04fee8dacc17b176cc230352",
+    "lastObservedMainSha": "e2964fbf6a19ec4344f52882dc221d192ee14fe9",
     "nudges": 0,
-    "lastMessage": "LN-15B is BLOCKED on main; paused as requested.",
+    "lastMessage": "LN-15B completion detected; validating transition invariants",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T23:29:20.097Z",
-    "nextTickAt": "2026-09-30T23:34:20.097Z",
+    "lastSuccessfulTickAt": "2026-09-30T23:30:03.313Z",
+    "nextTickAt": "2026-09-30T23:35:03.313Z",
     "paused": true,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-07C",
-        "completedAt": "2026-09-30T11:26:04.339Z",
-        "restartedAt": null,
-        "mainSha": "98562884c4ef96a85a8b23307c553e06fccd5e5c",
-        "reason": null
-      },
       {
         "lot": "LN-07D",
         "completedAt": "2026-09-30T11:32:55.254Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "571e17eacc98db64d00a6c3c631fb301e298d917",
         "reason": null
+      },
+      {
+        "lot": "LN-15B",
+        "completedAt": "2026-09-30T23:30:03.313Z",
+        "restartedAt": null,
+        "mainSha": "e2964fbf6a19ec4344f52882dc221d192ee14fe9",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "34c2650983dd6f7c04fee8dacc17b176cc230352",
+    "mainSha": "e2964fbf6a19ec4344f52882dc221d192ee14fe9",
     "lots": [
       {
         "id": "LN-00",
@@ -1598,7 +1598,7 @@
       {
         "id": "LN-15B",
         "title": "Shared Supabase passkeys for Unicorn Prog + LiftNote",
-        "status": "BLOCKED",
+        "status": "DONE",
         "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
         "business": {
           "summary": "Ajouter les passkeys comme méthode de connexion et de sécurisation du compte.",
@@ -3919,70 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 24,
+    "done": 25,
     "total": 62,
-    "percent": 39,
-    "current": {
-      "id": "LN-15B",
-      "title": "Shared Supabase passkeys for Unicorn Prog + LiftNote",
-      "status": "BLOCKED",
-      "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
-      "business": {
-        "summary": "Ajouter les passkeys comme méthode de connexion et de sécurisation du compte.",
-        "why": "Les passkeys réduisent la friction et permettent une connexion moderne sans supprimer les méthodes de secours existantes.",
-        "builds": [
-          "activation et configuration technique des passkeys",
-          "enregistrement d’une passkey depuis un compte connecté",
-          "connexion LiftNote par passkey",
-          "gestion des passkeys : liste, renommage et suppression"
-        ],
-        "userImpact": [
-          "l’utilisateur peut se connecter rapidement avec la biométrie ou la sécurité de son appareil"
-        ],
-        "notInThisLot": [
-          "les autres méthodes de connexion restent disponibles sauf décision produit contraire",
-          "aucun discours cross-produit dans l’interface"
-        ],
-        "doneWhen": [
-          "les passkeys sont utilisables, gérables et disposent d’un fallback de connexion"
-        ],
-        "journey": [
-          "Un utilisateur connecté ouvre la sécurité de son compte LiftNote.",
-          "Il enregistre une passkey sur son appareil.",
-          "Lors d’une future connexion LiftNote, il peut choisir la passkey.",
-          "Il peut lister, renommer et supprimer ses passkeys.",
-          "Une autre méthode de connexion reste disponible en secours."
-        ],
-        "rules": [
-          "La passkey est présentée comme une option de sécurité du compte LiftNote.",
-          "Le RP ID et les origines autorisées sont des détails d’implémentation et ne doivent pas devenir du copy produit.",
-          "Les APIs de passkeys doivent être revalidées au moment de l’exécution.",
-          "La suppression d’une passkey ne doit pas verrouiller involontairement le compte.",
-          "Aucun texte visible ne doit expliquer une portée cross-produit."
-        ],
-        "examples": [
-          "Passkey nommée « iPhone » ajoutée depuis la sécurité du compte LiftNote.",
-          "Connexion LiftNote par passkey puis fallback email si la cérémonie est annulée.",
-          "Suppression d’une ancienne passkey depuis la surface de sécurité."
-        ],
-        "data": [
-          "credential/passkey d’authentification",
-          "nom utilisateur de la passkey",
-          "métadonnées de création/dernier usage",
-          "RP ID et origines WebAuthn internes"
-        ],
-        "dependencies": [
-          "LN-15 pour les surfaces d’authentification LiftNote",
-          "configuration WebAuthn réelle des domaines"
-        ],
-        "attention": [
-          "ne pas coder contre une documentation fournisseur obsolète",
-          "prévoir les fallbacks de connexion",
-          "ne pas exposer l’architecture commune dans les textes de l’interface"
-        ]
-      },
-      "contractAvailable": true
-    },
+    "percent": 40,
+    "current": null,
     "next": {
       "id": "LN-15C",
       "title": "LiftNote user-facing product isolation cleanup",
