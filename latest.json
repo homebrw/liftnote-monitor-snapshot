@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T22:38:07.342Z",
+  "publishedAt": "2026-09-30T22:38:55.781Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-15B",
-    "nextLot": "LN-17",
+    "nextLot": "LN-15C",
     "launchedAt": "2026-09-30T22:19:02.204Z",
-    "lastProgressAt": "2026-09-30T22:22:05.393Z",
+    "lastProgressAt": "2026-09-30T22:38:47.230Z",
     "lastChatCheckAt": "2026-09-30T22:19:02.204Z",
-    "lastObservedMainSha": "478a06eba501524ce4fe2350f8e5b622af5ca074",
+    "lastObservedMainSha": "e8179caf0e483cba462d8b3c7b8606bf9f964282",
     "nudges": 0,
-    "lastMessage": "Will pause after current lot",
+    "lastMessage": "main moved while LN-15B is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T22:38:00.253Z",
-    "nextTickAt": "2026-09-30T22:43:00.253Z",
+    "lastSuccessfulTickAt": "2026-09-30T22:38:47.230Z",
+    "nextTickAt": "2026-09-30T22:43:47.230Z",
     "paused": false,
     "pauseAfterCurrent": true,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "478a06eba501524ce4fe2350f8e5b622af5ca074",
+    "mainSha": "e8179caf0e483cba462d8b3c7b8606bf9f964282",
     "lots": [
       {
         "id": "LN-00",
@@ -1650,6 +1650,14 @@
             "tester les différences preview/production pour WebAuthn"
           ]
         },
+        "contractAvailable": true
+      },
+      {
+        "id": "LN-15C",
+        "title": "LiftNote user-facing product isolation cleanup",
+        "status": "TODO",
+        "goal": "remove every user-visible claim, hint or marketing message that presents LiftNote's shared authentication/infrastructure with Unicorn Prog as a product feature.",
+        "business": null,
         "contractAvailable": true
       },
       {
@@ -3810,7 +3818,7 @@
   },
   "summary": {
     "done": 24,
-    "total": 61,
+    "total": 62,
     "percent": 39,
     "current": {
       "id": "LN-15B",
@@ -3870,63 +3878,11 @@
       "contractAvailable": true
     },
     "next": {
-      "id": "LN-17",
-      "title": "Superset and grouped-exercise blocks",
+      "id": "LN-15C",
+      "title": "LiftNote user-facing product isolation cleanup",
       "status": "TODO",
-      "goal": "introduce grouped exercise blocks after the MVP release gate, starting with supersets while keeping the model extensible to trisets/circuits.",
-      "business": {
-        "summary": "Ajouter les supersets et préparer un modèle extensible vers trisets et circuits.",
-        "why": "Les exercices groupés changent la logique d'ordre, de repos et de navigation ; Solo les introduit seulement après stabilisation du MVP.",
-        "builds": [
-          "groupement de deux exercices en superset",
-          "retour à des exercices indépendants",
-          "ordre A1 puis A2 puis repos",
-          "gestion des nombres de séries différents",
-          "conservation de l'historique et des records par exercice"
-        ],
-        "userImpact": [
-          "l'utilisateur peut exécuter naturellement des supersets sans perdre l'historique individuel de chaque mouvement"
-        ],
-        "notInThisLot": [
-          "le modèle doit rester générique pour pouvoir accueillir plus tard trisets et circuits"
-        ],
-        "doneWhen": [
-          "les séances classiques restent inchangées",
-          "les supersets s'exécutent et s'historisent correctement"
-        ],
-        "journey": [
-          "Dans une séance modèle, l’utilisateur sélectionne deux exercices et les regroupe en superset.",
-          "LiftNote les affiche comme A1/A2 ou équivalent.",
-          "Pendant la séance, l’ordre devient A1 → A2 → repos → tour suivant.",
-          "Les séries restent enregistrées individuellement sur chacun des deux exercices.",
-          "L’utilisateur peut ensuite retirer le groupement sans détruire les exercices."
-        ],
-        "rules": [
-          "Le modèle doit être générique pour pouvoir évoluer vers trisets/circuits.",
-          "Le groupement est snapshoté au démarrage de la séance.",
-          "L’historique et les records restent attachés aux exercices individuels.",
-          "Des nombres de séries différents doivent produire un ordre déterministe.",
-          "Les séances ordinaires non groupées doivent continuer à fonctionner exactement comme avant."
-        ],
-        "examples": [
-          "Bench Press A1 + Row A2 avec 4 tours et repos seulement après A2.",
-          "A1 possède 4 séries et A2 seulement 3 : le dernier passage doit suivre une règle explicite, pas un comportement implicite."
-        ],
-        "data": [
-          "métadonnées de bloc/groupe dans les templates",
-          "ordre au sein d’un bloc",
-          "snapshot de groupement dans la séance"
-        ],
-        "dependencies": [
-          "LN-07/LN-08 pour le flux de séance et repos",
-          "LN-06 pour snapshotter la structure"
-        ],
-        "attention": [
-          "éviter une table ou un modèle trop spécifique au mot « superset »",
-          "ne pas casser le timer de repos",
-          "préserver les requêtes d’historique par exercice"
-        ]
-      },
+      "goal": "remove every user-visible claim, hint or marketing message that presents LiftNote's shared authentication/infrastructure with Unicorn Prog as a product feature.",
+      "business": null,
       "contractAvailable": true
     }
   }
