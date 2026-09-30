@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T22:38:55.781Z",
+  "publishedAt": "2026-09-30T22:39:43.167Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-15B",
     "nextLot": "LN-15C",
     "launchedAt": "2026-09-30T22:19:02.204Z",
-    "lastProgressAt": "2026-09-30T22:38:47.230Z",
+    "lastProgressAt": "2026-09-30T22:39:36.120Z",
     "lastChatCheckAt": "2026-09-30T22:19:02.204Z",
-    "lastObservedMainSha": "e8179caf0e483cba462d8b3c7b8606bf9f964282",
+    "lastObservedMainSha": "68ebb0edc6bbb88696f3bdeeb932f9bde2124824",
     "nudges": 0,
     "lastMessage": "main moved while LN-15B is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T22:38:47.230Z",
-    "nextTickAt": "2026-09-30T22:43:47.230Z",
+    "lastSuccessfulTickAt": "2026-09-30T22:39:36.120Z",
+    "nextTickAt": "2026-09-30T22:44:36.120Z",
     "paused": false,
     "pauseAfterCurrent": true,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "e8179caf0e483cba462d8b3c7b8606bf9f964282",
+    "mainSha": "68ebb0edc6bbb88696f3bdeeb932f9bde2124824",
     "lots": [
       {
         "id": "LN-00",
@@ -1598,7 +1598,7 @@
       {
         "id": "LN-15B",
         "title": "Shared Supabase passkeys for Unicorn Prog + LiftNote",
-        "status": "BLOCKED",
+        "status": "IN PROGRESS",
         "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
         "business": {
           "summary": "Ajouter les passkeys comme moyen de connexion partagé entre LiftNote et Unicorn Prog.",
@@ -3823,7 +3823,7 @@
     "current": {
       "id": "LN-15B",
       "title": "Shared Supabase passkeys for Unicorn Prog + LiftNote",
-      "status": "BLOCKED",
+      "status": "IN PROGRESS",
       "goal": "enable Supabase Auth passkeys as a shared technical authentication capability usable from both Unicorn Prog and LiftNote.",
       "business": {
         "summary": "Ajouter les passkeys comme moyen de connexion partagé entre LiftNote et Unicorn Prog.",
