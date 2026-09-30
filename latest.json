@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T23:05:38.440Z",
+  "publishedAt": "2026-09-30T23:06:22.318Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "PAUSED",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "LN-15B is BLOCKED on main; paused as requested.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T23:05:33.718Z",
-    "nextTickAt": "2026-09-30T23:10:33.718Z",
+    "lastSuccessfulTickAt": "2026-09-30T23:06:16.924Z",
+    "nextTickAt": "2026-09-30T23:11:16.924Z",
     "paused": true,
     "pauseAfterCurrent": false,
     "history": [
