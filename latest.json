@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T23:42:34.009Z",
+  "publishedAt": "2026-10-01T23:43:40.315Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-86",
-    "nextLot": "LN-117",
-    "launchedAt": "2026-10-01T23:26:11.268Z",
-    "lastProgressAt": "2026-10-01T23:39:41.514Z",
-    "lastChatCheckAt": "2026-10-01T23:26:11.268Z",
-    "lastObservedMainSha": "6c001ed0c35c640168d2744507104a14378a420e",
+    "currentLot": "LN-117",
+    "nextLot": "LN-118",
+    "launchedAt": "2026-10-01T23:43:28.120Z",
+    "lastProgressAt": "2026-10-01T23:43:28.120Z",
+    "lastChatCheckAt": "2026-10-01T23:43:28.120Z",
+    "lastObservedMainSha": "646577235ff6c04aeabe0fbd8750c55acbc62b9b",
     "nudges": 0,
-    "lastMessage": "main moved while LN-86 is active",
+    "lastMessage": "Launched LN-117; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T23:42:23.433Z",
-    "nextTickAt": "2026-10-01T23:47:23.433Z",
+    "lastSuccessfulTickAt": "2026-10-01T23:43:28.120Z",
+    "nextTickAt": "2026-10-01T23:48:28.120Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-63",
-        "completedAt": "2026-10-01T19:46:58.109Z",
-        "restartedAt": null,
-        "mainSha": "1bff0a37565e4683140c646f8ed0425c6f0ce688",
-        "reason": null
-      },
       {
         "lot": "LN-64",
         "completedAt": "2026-10-01T19:55:50.481Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "d4bee700c231a6b1cba1e661f29a64ee8e44bcf9",
         "reason": null
+      },
+      {
+        "lot": "LN-86",
+        "completedAt": "2026-10-01T23:43:17.683Z",
+        "restartedAt": null,
+        "mainSha": "646577235ff6c04aeabe0fbd8750c55acbc62b9b",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "6c001ed0c35c640168d2744507104a14378a420e",
+    "mainSha": "646577235ff6c04aeabe0fbd8750c55acbc62b9b",
     "lots": [
       {
         "id": "LN-00",
@@ -9397,7 +9397,7 @@
       {
         "id": "LN-86",
         "title": "Movement Families & Ontology",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Model conceptual movement families separately from concrete exercise identity and historical performance.",
         "business": {
           "phase": "Exercise Intelligence",
@@ -9546,8 +9546,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "775",
+            "mergeSha": "6c001ed0c35c640168d2744507104a14378a420e"
           }
         },
         "contractAvailable": true,
@@ -19225,169 +19225,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 83,
+    "done": 84,
     "total": 138,
-    "percent": 60,
+    "percent": 61,
     "current": {
-      "id": "LN-86",
-      "title": "Movement Families & Ontology",
-      "status": "TODO",
-      "goal": "Model conceptual movement families separately from concrete exercise identity and historical performance.",
-      "business": {
-        "phase": "Exercise Intelligence",
-        "summary": "Model conceptual movement families separately from concrete exercise identity and historical performance.",
-        "why": "Programming, discovery and substitutions need concepts such as squat, hinge, horizontal push and vertical pull without collapsing distinct exercises.",
-        "builds": [
-          "LiftNote-owned movement-family taxonomy",
-          "many-to-one or many-to-many membership only where domain evidence requires it",
-          "hierarchy/labels for concepts such as squat, hinge, horizontal push, vertical push/pull and carry",
-          "explicit distinction between family membership, variant relation and substitution relation",
-          "curated mappings for supported system exercises",
-          "Extend the ontology enough to classify common conditioning patterns such as carries, crawls, jump/plyometric patterns, suspension patterns and core/isometric families where evidence supports them, without creating CrossFit-specific taxonomy.",
-          "Equipment family is evidence/context, not movement identity; TRX/suspension remains equipment/exercise semantics rather than a standalone modality."
-        ],
-        "userImpact": [
-          "family labels become progressive-disclosure filters/context, not mandatory jargon in every workout card",
-          "FR/EN labels are localized at the UI layer",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "family labels become progressive-disclosure filters/context, not mandatory jargon in every workout card",
-          "FR/EN labels are localized at the UI layer",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "no new cross-user access",
-          "custom exercise family assignment remains user-owned unless a later explicit workflow supports it",
-          "feeds exercise search, substitutions, program inspection and future deterministic rules",
-          "analytics may aggregate descriptively by family only with documented semantics"
-        ],
-        "examples": [],
-        "data": [
-          "family identifiers are stable LiftNote domain identifiers",
-          "exercise membership is metadata and may evolve without rewriting set history",
-          "unknown/unclassified is valid"
-        ],
-        "dependencies": [
-          "Requires LN-85 DONE and consumes LN-39/LN-40 anatomy metadata."
-        ],
-        "attention": [
-          "no new cross-user access",
-          "custom exercise family assignment remains user-owned unless a later explicit workflow supports it",
-          "taxonomy validation, duplicate-key and mapping tests",
-          "backward compatibility tests for existing exercise identities",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "do not merge exercise histories by family",
-          "do not claim biomechanical equivalence solely from shared family",
-          "no medical/injury ontology",
-          "no CrossFit- or Hyrox-specific competition/sport ontology solely to support common movements"
-        ],
-        "doneWhen": [
-          "family and concrete-exercise identity are structurally distinct",
-          "representative catalog mappings are reviewed and testable",
-          "search/substitution can consume family metadata without history merging"
-        ],
-        "ux": [
-          "family labels become progressive-disclosure filters/context, not mandatory jargon in every workout card",
-          "FR/EN labels are localized at the UI layer",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "no new cross-user access",
-          "custom exercise family assignment remains user-owned unless a later explicit workflow supports it"
-        ],
-        "implications": [
-          "feeds exercise search, substitutions, program inspection and future deterministic rules",
-          "analytics may aggregate descriptively by family only with documented semantics"
-        ],
-        "validation": [
-          "taxonomy validation, duplicate-key and mapping tests",
-          "backward compatibility tests for existing exercise identities",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Exercise Intelligence",
-        "objective": "Model conceptual movement families separately from concrete exercise identity and historical performance.",
-        "rationale": "Programming, discovery and substitutions need concepts such as squat, hinge, horizontal push and vertical pull without collapsing distinct exercises.",
-        "dependencies": [
-          "Requires LN-85 DONE and consumes LN-39/LN-40 anatomy metadata."
-        ],
-        "scope": [
-          "LiftNote-owned movement-family taxonomy",
-          "many-to-one or many-to-many membership only where domain evidence requires it",
-          "hierarchy/labels for concepts such as squat, hinge, horizontal push, vertical push/pull and carry",
-          "explicit distinction between family membership, variant relation and substitution relation",
-          "curated mappings for supported system exercises",
-          "Extend the ontology enough to classify common conditioning patterns such as carries, crawls, jump/plyometric patterns, suspension patterns and core/isometric families where evidence supports them, without creating CrossFit-specific taxonomy.",
-          "Equipment family is evidence/context, not movement identity; TRX/suspension remains equipment/exercise semantics rather than a standalone modality."
-        ],
-        "exclusions": [
-          "do not merge exercise histories by family",
-          "do not claim biomechanical equivalence solely from shared family",
-          "no medical/injury ontology",
-          "no CrossFit- or Hyrox-specific competition/sport ontology solely to support common movements"
-        ],
-        "data": [
-          "family identifiers are stable LiftNote domain identifiers",
-          "exercise membership is metadata and may evolve without rewriting set history",
-          "unknown/unclassified is valid"
-        ],
-        "ux": [
-          "family labels become progressive-disclosure filters/context, not mandatory jargon in every workout card",
-          "FR/EN labels are localized at the UI layer",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "no new cross-user access",
-          "custom exercise family assignment remains user-owned unless a later explicit workflow supports it"
-        ],
-        "implications": [
-          "feeds exercise search, substitutions, program inspection and future deterministic rules",
-          "analytics may aggregate descriptively by family only with documented semantics"
-        ],
-        "acceptance": [
-          "family and concrete-exercise identity are structurally distinct",
-          "representative catalog mappings are reviewed and testable",
-          "search/substitution can consume family metadata without history merging"
-        ],
-        "validation": [
-          "taxonomy validation, duplicate-key and mapping tests",
-          "backward compatibility tests for existing exercise identities",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-117",
       "title": "Circuit Catalog Source & Coverage Audit",
       "status": "TODO",
@@ -19549,6 +19390,188 @@
           "Spot-check representative families and ambiguous variants.",
           "Documentation/tooling validation only unless implementation adds executable audit tooling.",
           "Do not run expensive product CI for documentation-only output."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-118",
+      "title": "Curated Circuit / Conditioning Canonical Catalog Expansion",
+      "status": "TODO",
+      "goal": "Expand LiftNote's system canonical exercise catalog with curated Circuit / Conditioning movements using the audited source pipeline, while preserving IDs, history, localization, provenance, licensing boundaries, and search quality.",
+      "business": {
+        "phase": "Exercise Intelligence",
+        "summary": "Expand LiftNote's system canonical exercise catalog with curated Circuit / Conditioning movements using the audited source pipeline, while preserving IDs, history, localization, provenance, licensing boundaries, and search quality.",
+        "why": "A Running + Circuit product direction depends on real movement coverage. Better schemas around a strength-heavy catalog are insufficient if kettlebell, TRX, medicine-ball, sandbag, rope, sled, core and related class movements routinely fail to resolve.",
+        "builds": [
+          "Curated canonical additions for the common Circuit / Conditioning families validated by LN-117.",
+          "Coverage of kettlebell; dumbbell conditioning; suspension/TRX; bodyweight conditioning; plank/gainage/isometrics/core; medicine/slam/dead ball; resistance band; sandbag; battle rope; plyo box/step; jump rope; sliders; sled; carries; and other audited relevant families.",
+          "LiftNote-owned canonical IDs for every new system exercise.",
+          "FR/EN canonical/display names and aliases required for practical search.",
+          "Anatomy/equipment/movement-family/mechanics/force/unilateral/bodyweight/load/tracking semantics when supported by evidence.",
+          "Instructions, concise execution cues, common errors/pitfalls, variants, progressions/regressions, and alternatives only where semantically meaningful and source/editorial rights allow.",
+          "Multi-source contribution provenance with editorial-vs-source-owned distinction.",
+          "Media optionality: a useful movement may exist without illustration when no approved media is available; any shipped media still requires verified rights/attribution.",
+          "Deterministic catalog-coverage report refreshed after import."
+        ],
+        "userImpact": [
+          "Catalog growth must not dump hundreds of rows into a default picker.",
+          "LN-87 remains the single search/discovery owner and consumes favorites/recent/frequent, equipment context, aliases and advanced filters through progressive disclosure.",
+          "Strength-only users must not see Circuit complexity unless relevant.",
+          "Exercise detail can disclose richer knowledge progressively; active workout remains concise."
+        ],
+        "journey": [
+          "Catalog growth must not dump hundreds of rows into a default picker.",
+          "LN-87 remains the single search/discovery owner and consumes favorites/recent/frequent, equipment context, aliases and advanced filters through progressive disclosure.",
+          "Strength-only users must not see Circuit complexity unless relevant.",
+          "Exercise detail can disclose richer knowledge progressively; active workout remains concise."
+        ],
+        "rules": [
+          "Historical performance stays attached to stable canonical identities.",
+          "Circuit movement coverage improves deterministic search/substitution and later AI board import.",
+          "No movement-level and protocol-level volume double counting is introduced here.",
+          "AI may use accepted aliases/metadata for recognition but may not create canonical truth."
+        ],
+        "examples": [],
+        "data": [
+          "Existing system exercise IDs are immutable.",
+          "New IDs are LiftNote-owned and stable.",
+          "Multiple source records may enrich one canonical exercise.",
+          "Variant/family/substitution relationships remain distinct.",
+          "Tracking/load semantics must be compatible with existing history/statistics rules.",
+          "Provenance records enough source/version/contribution information to audit later refreshes.",
+          "Missing metadata is explicit; unsupported facts are not invented."
+        ],
+        "dependencies": [
+          "LN-117 — pinned source and coverage audit.",
+          "LN-83 through LN-86 — knowledge model, localization, canonicalization, ontology.",
+          "LN-13B — existing catalog import/provenance/media foundations.",
+          "LN-20/LN-30/LN-31/LN-32 — load, unit, unilateral and duration/distance semantics."
+        ],
+        "attention": [
+          "Catalog identity/duplicate regression tests.",
+          "Provenance and localization completeness checks.",
+          "Tracking/load/unit compatibility tests.",
+          "Deterministic before/after coverage audit.",
+          "Migration/seed rollback or dry-run validation when persistence changes.",
+          "Search fixture sanity checks sufficient to hand off to LN-87.",
+          "Targeted LiftNote validation only; no unrelated full CI."
+        ],
+        "notInThisLot": [
+          "Blind import of complete upstream repositories.",
+          "Automatic canonical creation from unresolved source candidates.",
+          "Replacing existing canonical IDs because a source has a preferred name.",
+          "Rewriting custom user exercises.",
+          "CrossFit Rx/scaled/benchmark competition semantics.",
+          "Treating TRX as a separate product modality.",
+          "Shipping unverified third-party media."
+        ],
+        "doneWhen": [
+          "Required Circuit families have materially improved canonical coverage according to LN-117's reproducible audit.",
+          "Every added movement has stable identity, localization/search aliases sufficient for use, tracking/load semantics, and provenance.",
+          "Existing canonical IDs/history/custom exercises are preserved.",
+          "Unresolved candidates remain unresolved rather than forced into duplicates.",
+          "Media/license state is explicit per affected movement.",
+          "The refreshed coverage report explains remaining gaps.",
+          "LN-87 can search the expanded catalog without a separate Circuit-only picker."
+        ],
+        "ux": [
+          "Catalog growth must not dump hundreds of rows into a default picker.",
+          "LN-87 remains the single search/discovery owner and consumes favorites/recent/frequent, equipment context, aliases and advanced filters through progressive disclosure.",
+          "Strength-only users must not see Circuit complexity unless relevant.",
+          "Exercise detail can disclose richer knowledge progressively; active workout remains concise."
+        ],
+        "security": [],
+        "implications": [
+          "Historical performance stays attached to stable canonical identities.",
+          "Circuit movement coverage improves deterministic search/substitution and later AI board import.",
+          "No movement-level and protocol-level volume double counting is introduced here.",
+          "AI may use accepted aliases/metadata for recognition but may not create canonical truth."
+        ],
+        "validation": [
+          "Catalog identity/duplicate regression tests.",
+          "Provenance and localization completeness checks.",
+          "Tracking/load/unit compatibility tests.",
+          "Deterministic before/after coverage audit.",
+          "Migration/seed rollback or dry-run validation when persistence changes.",
+          "Search fixture sanity checks sufficient to hand off to LN-87.",
+          "Targeted LiftNote validation only; no unrelated full CI."
+        ]
+      },
+      "contract": {
+        "phase": "Exercise Intelligence",
+        "objective": "Expand LiftNote's system canonical exercise catalog with curated Circuit / Conditioning movements using the audited source pipeline, while preserving IDs, history, localization, provenance, licensing boundaries, and search quality.",
+        "rationale": "A Running + Circuit product direction depends on real movement coverage. Better schemas around a strength-heavy catalog are insufficient if kettlebell, TRX, medicine-ball, sandbag, rope, sled, core and related class movements routinely fail to resolve.",
+        "dependencies": [
+          "LN-117 — pinned source and coverage audit.",
+          "LN-83 through LN-86 — knowledge model, localization, canonicalization, ontology.",
+          "LN-13B — existing catalog import/provenance/media foundations.",
+          "LN-20/LN-30/LN-31/LN-32 — load, unit, unilateral and duration/distance semantics."
+        ],
+        "scope": [
+          "Curated canonical additions for the common Circuit / Conditioning families validated by LN-117.",
+          "Coverage of kettlebell; dumbbell conditioning; suspension/TRX; bodyweight conditioning; plank/gainage/isometrics/core; medicine/slam/dead ball; resistance band; sandbag; battle rope; plyo box/step; jump rope; sliders; sled; carries; and other audited relevant families.",
+          "LiftNote-owned canonical IDs for every new system exercise.",
+          "FR/EN canonical/display names and aliases required for practical search.",
+          "Anatomy/equipment/movement-family/mechanics/force/unilateral/bodyweight/load/tracking semantics when supported by evidence.",
+          "Instructions, concise execution cues, common errors/pitfalls, variants, progressions/regressions, and alternatives only where semantically meaningful and source/editorial rights allow.",
+          "Multi-source contribution provenance with editorial-vs-source-owned distinction.",
+          "Media optionality: a useful movement may exist without illustration when no approved media is available; any shipped media still requires verified rights/attribution.",
+          "Deterministic catalog-coverage report refreshed after import."
+        ],
+        "exclusions": [
+          "Blind import of complete upstream repositories.",
+          "Automatic canonical creation from unresolved source candidates.",
+          "Replacing existing canonical IDs because a source has a preferred name.",
+          "Rewriting custom user exercises.",
+          "CrossFit Rx/scaled/benchmark competition semantics.",
+          "Treating TRX as a separate product modality.",
+          "Shipping unverified third-party media."
+        ],
+        "data": [
+          "Existing system exercise IDs are immutable.",
+          "New IDs are LiftNote-owned and stable.",
+          "Multiple source records may enrich one canonical exercise.",
+          "Variant/family/substitution relationships remain distinct.",
+          "Tracking/load semantics must be compatible with existing history/statistics rules.",
+          "Provenance records enough source/version/contribution information to audit later refreshes.",
+          "Missing metadata is explicit; unsupported facts are not invented."
+        ],
+        "ux": [
+          "Catalog growth must not dump hundreds of rows into a default picker.",
+          "LN-87 remains the single search/discovery owner and consumes favorites/recent/frequent, equipment context, aliases and advanced filters through progressive disclosure.",
+          "Strength-only users must not see Circuit complexity unless relevant.",
+          "Exercise detail can disclose richer knowledge progressively; active workout remains concise."
+        ],
+        "security": [],
+        "implications": [
+          "Historical performance stays attached to stable canonical identities.",
+          "Circuit movement coverage improves deterministic search/substitution and later AI board import.",
+          "No movement-level and protocol-level volume double counting is introduced here.",
+          "AI may use accepted aliases/metadata for recognition but may not create canonical truth."
+        ],
+        "acceptance": [
+          "Required Circuit families have materially improved canonical coverage according to LN-117's reproducible audit.",
+          "Every added movement has stable identity, localization/search aliases sufficient for use, tracking/load semantics, and provenance.",
+          "Existing canonical IDs/history/custom exercises are preserved.",
+          "Unresolved candidates remain unresolved rather than forced into duplicates.",
+          "Media/license state is explicit per affected movement.",
+          "The refreshed coverage report explains remaining gaps.",
+          "LN-87 can search the expanded catalog without a separate Circuit-only picker."
+        ],
+        "validation": [
+          "Catalog identity/duplicate regression tests.",
+          "Provenance and localization completeness checks.",
+          "Tracking/load/unit compatibility tests.",
+          "Deterministic before/after coverage audit.",
+          "Migration/seed rollback or dry-run validation when persistence changes.",
+          "Search fixture sanity checks sufficient to hand off to LN-87.",
+          "Targeted LiftNote validation only; no unrelated full CI."
         ],
         "completion": {
           "pr": null,
