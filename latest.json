@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T01:07:21.418Z",
+  "publishedAt": "2026-10-01T01:08:07.814Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-19 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T01:07:15.408Z",
-    "nextTickAt": "2026-10-01T01:12:15.408Z",
+    "lastSuccessfulTickAt": "2026-10-01T01:08:00.220Z",
+    "nextTickAt": "2026-10-01T01:13:00.220Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "777c04dc451fab4b850d86aa5eef8c9be3c5edd2",
+    "mainSha": "b58e75464cfd2a324284aee0e66d91b1ef099c33",
     "lots": [
       {
         "id": "LN-00",
