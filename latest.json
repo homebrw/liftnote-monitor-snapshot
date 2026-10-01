@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T12:03:46.444Z",
+  "publishedAt": "2026-10-01T12:04:41.252Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-46",
-    "nextLot": "LN-47",
-    "launchedAt": "2026-10-01T11:54:10.757Z",
-    "lastProgressAt": "2026-10-01T12:02:13.784Z",
-    "lastChatCheckAt": "2026-10-01T11:54:10.757Z",
-    "lastObservedMainSha": "d6058c21a94b2d3ce18437647a506cee2c1901cc",
+    "currentLot": "LN-47",
+    "nextLot": "LN-48",
+    "launchedAt": "2026-10-01T12:04:35.533Z",
+    "lastProgressAt": "2026-10-01T12:04:35.533Z",
+    "lastChatCheckAt": "2026-10-01T12:04:35.533Z",
+    "lastObservedMainSha": "27d8bf8c1ac712aa4e66afe2f9540c6690e12227",
     "nudges": 0,
-    "lastMessage": "main moved while LN-46 is active",
+    "lastMessage": "Launched LN-47; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T12:03:41.269Z",
-    "nextTickAt": "2026-10-01T12:08:41.269Z",
+    "lastSuccessfulTickAt": "2026-10-01T12:04:35.533Z",
+    "nextTickAt": "2026-10-01T12:09:35.533Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-34",
-        "completedAt": "2026-10-01T07:43:56.813Z",
-        "restartedAt": null,
-        "mainSha": "1f29b9c8b7f095e0633b462bce70a8d19b628482",
-        "reason": null
-      },
       {
         "lot": "LN-35",
         "completedAt": "2026-10-01T07:58:30.319Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "b4adf2c2874a74de0ee78a4e5c6a73711a04132a",
         "reason": null
+      },
+      {
+        "lot": "LN-46",
+        "completedAt": "2026-10-01T12:04:24.013Z",
+        "restartedAt": null,
+        "mainSha": "27d8bf8c1ac712aa4e66afe2f9540c6690e12227",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "d6058c21a94b2d3ce18437647a506cee2c1901cc",
+    "mainSha": "27d8bf8c1ac712aa4e66afe2f9540c6690e12227",
     "lots": [
       {
         "id": "LN-00",
@@ -3458,7 +3458,7 @@
       {
         "id": "LN-46",
         "title": "Workout lock / focus display",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "reduce accidental actions during training and keep current set/rest/next action immediately readable.",
         "business": {
           "summary": "Créer un mode focus pendant la séance pour limiter les mauvaises manipulations.",
@@ -3919,64 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 55,
+    "done": 56,
     "total": 62,
-    "percent": 89,
+    "percent": 90,
     "current": {
-      "id": "LN-46",
-      "title": "Workout lock / focus display",
-      "status": "TODO",
-      "goal": "reduce accidental actions during training and keep current set/rest/next action immediately readable.",
-      "business": {
-        "summary": "Créer un mode focus pendant la séance pour limiter les mauvaises manipulations.",
-        "why": "Entre deux séries, l'écran doit rester simple, lisible et sûr.",
-        "builds": [
-          "mode focus optionnel",
-          "gros contrôles pour la série courante",
-          "protection contre navigation/suppression accidentelle",
-          "minuteur toujours accessible",
-          "maintien d'écran éveillé quand possible"
-        ],
-        "userImpact": [
-          "l'utilisation entre deux efforts devient plus rapide et plus sûre"
-        ],
-        "notInThisLot": [
-          "le mode ne doit jamais piéger l'utilisateur"
-        ],
-        "doneWhen": [
-          "la saisie reste rapide",
-          "les fonctions non supportées se dégradent proprement"
-        ],
-        "journey": [
-          "L’utilisateur active le mode focus pendant la séance.",
-          "Les contrôles courants deviennent plus grands et les actions risquées sont protégées.",
-          "Il peut sortir explicitement du mode à tout moment."
-        ],
-        "rules": [
-          "Le mode focus est optionnel.",
-          "Il ne doit jamais piéger l’utilisateur.",
-          "Les fonctions non supportées par la plateforme se dégradent proprement."
-        ],
-        "examples": [
-          "Écran centré sur série courante + timer.",
-          "Wake lock utilisé seulement si disponible et sûr."
-        ],
-        "data": [
-          "préférence/état focus",
-          "capacité plateforme"
-        ],
-        "dependencies": [
-          "LN-14 ergonomie",
-          "LN-08 timer"
-        ],
-        "attention": [
-          "accessibilité de la sortie",
-          "ne pas masquer des actions nécessaires"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-47",
       "title": "Useful configurable notifications",
       "status": "TODO",
@@ -4027,6 +3973,60 @@
         "attention": [
           "notifications obsolètes",
           "contenu sensible affiché sur écran verrouillé"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-48",
+      "title": "Deep links to LiftNote entities",
+      "status": "TODO",
+      "goal": "create stable safe links to programs, workouts and exercises for notifications and future integrations.",
+      "business": {
+        "summary": "Créer des liens directs vers un programme, une séance ou un exercice.",
+        "why": "Notifications et futures intégrations doivent ouvrir directement le bon contenu.",
+        "builds": [
+          "routes stables par entité",
+          "retour au bon écran après connexion",
+          "gestion des contenus absents/archivés/interdits",
+          "identifiants sûrs"
+        ],
+        "userImpact": [
+          "un lien mène directement à la bonne page"
+        ],
+        "notInThisLot": [
+          "un lien ne donne jamais accès à un contenu non autorisé"
+        ],
+        "doneWhen": [
+          "la destination survit à la connexion",
+          "les liens invalides échouent proprement"
+        ],
+        "journey": [
+          "L’utilisateur ouvre un lien LiftNote.",
+          "S’il doit se connecter, il revient ensuite vers la destination demandée.",
+          "Le contenu s’ouvre seulement s’il est autorisé et encore disponible."
+        ],
+        "rules": [
+          "Un lien ne contourne jamais l’autorisation.",
+          "Les routes entités sont stables.",
+          "Les destinations manquantes/archivées échouent proprement."
+        ],
+        "examples": [
+          "Lien direct vers un exercice depuis une notification.",
+          "Lien vers programme privé refusé sans fuite de titre."
+        ],
+        "data": [
+          "route canonique",
+          "identifiant public/sûr",
+          "return-to auth"
+        ],
+        "dependencies": [
+          "LN-15 auth",
+          "LN-47 notifications"
+        ],
+        "attention": [
+          "éviter les fuites via messages d’erreur",
+          "préserver la destination à travers l’auth"
         ]
       },
       "contractAvailable": true
