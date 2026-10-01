@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T05:46:04.782Z",
+  "publishedAt": "2026-10-01T05:46:57.692Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "CONSISTENCY_ERROR",
-    "currentLot": "LN-30",
-    "nextLot": "LN-31",
-    "launchedAt": "2026-10-01T04:11:30.118Z",
-    "lastProgressAt": "2026-10-01T04:12:58.611Z",
-    "lastChatCheckAt": "2026-10-01T04:11:30.118Z",
-    "lastObservedMainSha": "0873db079279b58cd4296ec9d0b51cd930f4ed8b",
+    "status": "RUNNING",
+    "currentLot": "LN-31",
+    "nextLot": "LN-32",
+    "launchedAt": "2026-10-01T05:46:51.167Z",
+    "lastProgressAt": "2026-10-01T05:46:51.167Z",
+    "lastChatCheckAt": "2026-10-01T05:46:51.167Z",
+    "lastObservedMainSha": "bfa79a0c348711208be797610f637a7db1e1cf69",
     "nudges": 0,
-    "lastMessage": "LN-30 is DONE but completion invariants failed; next lot not launched.",
-    "lastError": "LN-30 completion record does not record a merge SHA.",
-    "lastSuccessfulTickAt": "2026-10-01T04:34:23.028Z",
-    "nextTickAt": "2026-10-01T05:50:55.779Z",
+    "lastMessage": "Launched LN-31; canonical chat persisted before prompt marker became visible",
+    "lastError": null,
+    "lastSuccessfulTickAt": "2026-10-01T05:46:51.167Z",
+    "nextTickAt": "2026-10-01T05:51:51.167Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-18",
-        "completedAt": "2026-10-01T00:52:35.295Z",
-        "restartedAt": null,
-        "mainSha": "98473b33a186d6b8f5283df4a8d25463e3c4aa22",
-        "reason": null
-      },
       {
         "lot": "LN-19",
         "completedAt": "2026-10-01T01:11:01.086Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "62f7d4982794fa07fb16300fbb9e3a9bb994598d",
         "reason": null
+      },
+      {
+        "lot": "LN-30",
+        "completedAt": "2026-10-01T05:46:44.744Z",
+        "restartedAt": null,
+        "mainSha": "bfa79a0c348711208be797610f637a7db1e1cf69",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "562d26ac7e418d38048fa909cc3f00bcab32c871",
+    "mainSha": "bfa79a0c348711208be797610f637a7db1e1cf69",
     "lots": [
       {
         "id": "LN-00",
@@ -3923,60 +3923,6 @@
     "total": 62,
     "percent": 65,
     "current": {
-      "id": "LN-30",
-      "title": "Measurement units across exercise tracking",
-      "status": "DONE",
-      "goal": "support kg/lb plus movement-specific duration, distance, calories and height semantics without losing historical meaning.",
-      "business": {
-        "summary": "Gérer proprement kg/lb et les autres unités : temps, distance, calories, hauteur.",
-        "why": "Un catalogue riche ne peut pas réduire toutes les performances à kg × répétitions.",
-        "builds": [
-          "kg et lb avec conversions stables",
-          "unités de durée",
-          "unités de distance",
-          "calories et hauteur lorsque pertinentes",
-          "préférences d'affichage sans réécrire les données"
-        ],
-        "userImpact": [
-          "chaque exercice utilise une mesure adaptée à ce qui est réellement réalisé"
-        ],
-        "notInThisLot": [
-          "pas de valeur numérique sans unité connue"
-        ],
-        "doneWhen": [
-          "changer d'unité d'affichage ne change pas la performance enregistrée",
-          "chaque métrique garde un sens explicite"
-        ],
-        "journey": [
-          "L’utilisateur choisit ses unités d’affichage.",
-          "LiftNote convertit kg/lb ou affiche durée, distance, calories ou hauteur selon le mouvement.",
-          "L’historique conserve toujours le sens et l’unité d’origine."
-        ],
-        "rules": [
-          "Une préférence d’affichage ne réécrit pas la valeur historique.",
-          "Toute métrique affichée possède une unité connue.",
-          "Les conversions sont déterministes et réversibles."
-        ],
-        "examples": [
-          "100 kg peut s’afficher en lb sans modifier la donnée canonique.",
-          "Farmer carry conserve mètres et charge au lieu d’un champ générique sans unité."
-        ],
-        "data": [
-          "unité canonique",
-          "préférence d’affichage",
-          "valeur convertie"
-        ],
-        "dependencies": [
-          "types de suivi des exercices"
-        ],
-        "attention": [
-          "éviter les arrondis destructifs",
-          "préserver les unités dans partage et coach"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-31",
       "title": "Unilateral exercise semantics",
       "status": "TODO",
@@ -4025,6 +3971,60 @@
         "attention": [
           "ne pas doubler artificiellement les volumes",
           "garder l’interface compacte pendant la séance"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-32",
+      "title": "Timed, isometric and distance-based sets",
+      "status": "TODO",
+      "goal": "track movements such as planks, dead hangs and farmer carries with the metric that actually matters instead of forcing weight × reps.",
+      "business": {
+        "summary": "Suivre correctement les séries basées sur le temps ou la distance.",
+        "why": "Plank, dead hang ou farmer carry ne doivent pas être forcés dans un modèle poids × reps.",
+        "builds": [
+          "séries en durée",
+          "séries en distance",
+          "combinaisons charge + durée ou distance",
+          "types de suivi cohérents entre template, séance et historique"
+        ],
+        "userImpact": [
+          "LiftNote couvre beaucoup plus de mouvements sans fausser les données"
+        ],
+        "notInThisLot": [
+          "pas de comparaison universelle entre tous les types d'exercices"
+        ],
+        "doneWhen": [
+          "un plank s'enregistre en secondes sans fausses reps",
+          "un farmer carry conserve distance, charge et unité"
+        ],
+        "journey": [
+          "L’utilisateur sélectionne un mouvement suivi au temps ou à la distance.",
+          "Le logger présente les bons champs au lieu d’imposer des répétitions.",
+          "Historique et comparaison utilisent ensuite la métrique réellement enregistrée."
+        ],
+        "rules": [
+          "Aucune fausse répétition n’est créée.",
+          "Le type de suivi définit les métriques requises.",
+          "La valeur et son unité restent intactes dans l’historique."
+        ],
+        "examples": [
+          "Plank enregistré 60 s.",
+          "Farmer carry enregistré 40 m avec 32 kg par main si le modèle le prévoit."
+        ],
+        "data": [
+          "durée",
+          "distance",
+          "charge combinée éventuelle",
+          "tracking type"
+        ],
+        "dependencies": [
+          "LN-30 pour les unités"
+        ],
+        "attention": [
+          "ne pas comparer des tracking types incompatibles",
+          "adapter les statistiques sans inventer de tonnage"
         ]
       },
       "contractAvailable": true
