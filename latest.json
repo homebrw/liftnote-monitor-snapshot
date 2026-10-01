@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T23:25:16.406Z",
+  "publishedAt": "2026-10-01T23:26:23.304Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-85",
-    "nextLot": "LN-86",
-    "launchedAt": "2026-10-01T23:11:14.740Z",
-    "lastProgressAt": "2026-10-01T23:24:09.038Z",
-    "lastChatCheckAt": "2026-10-01T23:11:14.740Z",
-    "lastObservedMainSha": "95a570e1b8f0cf7ba6e3c71b4a71606d546a6d80",
+    "currentLot": "LN-86",
+    "nextLot": "LN-117",
+    "launchedAt": "2026-10-01T23:26:11.268Z",
+    "lastProgressAt": "2026-10-01T23:26:11.268Z",
+    "lastChatCheckAt": "2026-10-01T23:26:11.268Z",
+    "lastObservedMainSha": "d4bee700c231a6b1cba1e661f29a64ee8e44bcf9",
     "nudges": 0,
-    "lastMessage": "main moved while LN-85 is active",
+    "lastMessage": "Launched LN-86; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T23:25:04.967Z",
-    "nextTickAt": "2026-10-01T23:30:04.967Z",
+    "lastSuccessfulTickAt": "2026-10-01T23:26:11.269Z",
+    "nextTickAt": "2026-10-01T23:31:11.269Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-62",
-        "completedAt": "2026-10-01T19:32:58.967Z",
-        "restartedAt": null,
-        "mainSha": "aac6e3b4feb9f5e10ca9587ffb139e0a4e69e8e5",
-        "reason": null
-      },
       {
         "lot": "LN-63",
         "completedAt": "2026-10-01T19:46:58.109Z",
@@ -100,6 +93,13 @@
         "completedAt": "2026-10-01T23:09:49.516Z",
         "restartedAt": null,
         "mainSha": "02b9e2c514f88614a35d65933a4f96a53270ecfa",
+        "reason": null
+      },
+      {
+        "lot": "LN-85",
+        "completedAt": "2026-10-01T23:25:59.109Z",
+        "restartedAt": null,
+        "mainSha": "d4bee700c231a6b1cba1e661f29a64ee8e44bcf9",
         "reason": null
       }
     ]
@@ -19183,170 +19183,6 @@
     "total": 138,
     "percent": 60,
     "current": {
-      "id": "LN-85",
-      "title": "Canonicalization & Deduplication v2",
-      "status": "DONE",
-      "goal": "Define and implement explicit merge/alias/variant/unresolved rules for exercise identity without corrupting history.",
-      "business": {
-        "phase": "Exercise Intelligence",
-        "summary": "Define and implement explicit merge/alias/variant/unresolved rules for exercise identity without corrupting history.",
-        "why": "Richer sources and AI imports amplify duplicate-name risk; canonicalization must be deterministic, reviewable and identity-safe.",
-        "builds": [
-          "explicit outcomes: merge, alias, separate variant, unresolved/manual review, source conflict",
-          "candidate detection using normalized multilingual names and metadata",
-          "human-review tooling/contracts for ambiguous system-source candidates",
-          "canonical ID preservation and auditable source mapping changes",
-          "rules for machine/manufacturer, grip, unilateral and equipment variants",
-          "Canonicalization tooling/results must expose the same candidate dispositions required by LN-117: accepted/new canonical, merged into existing canonical, rejected with reason, missing/not yet covered, and unresolved/manual review.",
-          "Deduplication must preserve row/source provenance across multiple upstream repositories and never collapse source obligations into the chosen canonical record."
-        ],
-        "userImpact": [
-          "normal users should see clean canonical results rather than an internal dedupe console",
-          "manual review surfaces are administrative/editorial unless a user import specifically needs conflict resolution",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "normal users should see clean canonical results rather than an internal dedupe console",
-          "manual review surfaces are administrative/editorial unless a user import specifically needs conflict resolution",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "do not expose private custom exercises in global dedupe operations",
-          "cross-user custom exercise equality never authorizes data sharing",
-          "LN-86 movement families remain conceptual and separate from identity",
-          "LN-87 search and LN-77 AI import consume canonicalization decisions and unresolved outcomes"
-        ],
-        "examples": [],
-        "data": [
-          "identity operations must preserve/repoint provenance deliberately and leave historical performance anchored to the intended canonical ID",
-          "record conflict/unresolved state instead of discarding ambiguity",
-          "backfills require explicit mapping artifacts"
-        ],
-        "dependencies": [
-          "Requires LN-83 and LN-84 DONE; builds on LN-03R/LN-13B source provenance and LN-09 history semantics."
-        ],
-        "attention": [
-          "do not expose private custom exercises in global dedupe operations",
-          "cross-user custom exercise equality never authorizes data sharing",
-          "deterministic mapping fixtures and identity-preservation tests",
-          "migration/backfill diff review if canonical mappings change",
-          "license/provenance regression checks",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no name-only automatic merge",
-          "no historical merge merely because exercises share a movement family",
-          "no automatic system-canonical creation from AI/imported user documents"
-        ],
-        "doneWhen": [
-          "each candidate can be resolved to exactly one documented outcome",
-          "existing canonical IDs and history survive source refreshes",
-          "ambiguous cases never silently merge",
-          "tests cover representative duplicate/variant/source-conflict cases",
-          "LN-118 can add Circuit coverage without changing existing canonical IDs or silently merging historical identities."
-        ],
-        "ux": [
-          "normal users should see clean canonical results rather than an internal dedupe console",
-          "manual review surfaces are administrative/editorial unless a user import specifically needs conflict resolution",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "do not expose private custom exercises in global dedupe operations",
-          "cross-user custom exercise equality never authorizes data sharing"
-        ],
-        "implications": [
-          "LN-86 movement families remain conceptual and separate from identity",
-          "LN-87 search and LN-77 AI import consume canonicalization decisions and unresolved outcomes"
-        ],
-        "validation": [
-          "deterministic mapping fixtures and identity-preservation tests",
-          "migration/backfill diff review if canonical mappings change",
-          "license/provenance regression checks",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Exercise Intelligence",
-        "objective": "Define and implement explicit merge/alias/variant/unresolved rules for exercise identity without corrupting history.",
-        "rationale": "Richer sources and AI imports amplify duplicate-name risk; canonicalization must be deterministic, reviewable and identity-safe.",
-        "dependencies": [
-          "Requires LN-83 and LN-84 DONE; builds on LN-03R/LN-13B source provenance and LN-09 history semantics."
-        ],
-        "scope": [
-          "explicit outcomes: merge, alias, separate variant, unresolved/manual review, source conflict",
-          "candidate detection using normalized multilingual names and metadata",
-          "human-review tooling/contracts for ambiguous system-source candidates",
-          "canonical ID preservation and auditable source mapping changes",
-          "rules for machine/manufacturer, grip, unilateral and equipment variants",
-          "Canonicalization tooling/results must expose the same candidate dispositions required by LN-117: accepted/new canonical, merged into existing canonical, rejected with reason, missing/not yet covered, and unresolved/manual review.",
-          "Deduplication must preserve row/source provenance across multiple upstream repositories and never collapse source obligations into the chosen canonical record."
-        ],
-        "exclusions": [
-          "no name-only automatic merge",
-          "no historical merge merely because exercises share a movement family",
-          "no automatic system-canonical creation from AI/imported user documents"
-        ],
-        "data": [
-          "identity operations must preserve/repoint provenance deliberately and leave historical performance anchored to the intended canonical ID",
-          "record conflict/unresolved state instead of discarding ambiguity",
-          "backfills require explicit mapping artifacts"
-        ],
-        "ux": [
-          "normal users should see clean canonical results rather than an internal dedupe console",
-          "manual review surfaces are administrative/editorial unless a user import specifically needs conflict resolution",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "do not expose private custom exercises in global dedupe operations",
-          "cross-user custom exercise equality never authorizes data sharing"
-        ],
-        "implications": [
-          "LN-86 movement families remain conceptual and separate from identity",
-          "LN-87 search and LN-77 AI import consume canonicalization decisions and unresolved outcomes"
-        ],
-        "acceptance": [
-          "each candidate can be resolved to exactly one documented outcome",
-          "existing canonical IDs and history survive source refreshes",
-          "ambiguous cases never silently merge",
-          "tests cover representative duplicate/variant/source-conflict cases",
-          "LN-118 can add Circuit coverage without changing existing canonical IDs or silently merging historical identities."
-        ],
-        "validation": [
-          "deterministic mapping fixtures and identity-preservation tests",
-          "migration/backfill diff review if canonical mappings change",
-          "license/provenance regression checks",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": "770",
-          "mergeSha": "95a570e1b8f0cf7ba6e3c71b4a71606d546a6d80"
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-86",
       "title": "Movement Families & Ontology",
       "status": "TODO",
@@ -19496,6 +19332,177 @@
           "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
           "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
           "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-117",
+      "title": "Circuit Catalog Source & Coverage Audit",
+      "status": "TODO",
+      "goal": "Create a reproducible, source-aware audit of Circuit / Conditioning exercise coverage before any broad catalog expansion, so LiftNote can decide what to add without blind imports or licensing shortcuts.",
+      "business": {
+        "phase": "Exercise Intelligence",
+        "summary": "Create a reproducible, source-aware audit of Circuit / Conditioning exercise coverage before any broad catalog expansion, so LiftNote can decide what to add without blind imports or licensing shortcuts.",
+        "why": "Circuit support is not credible if common equipment families resolve mostly to custom exercises or unknown names. The existing catalog foundations are strong, but coverage must be measured against pinned inputs and explicit inclusion decisions. This lot turns “we should have more movements” into an auditable candidate pipeline.",
+        "builds": [
+          "Define a deterministic catalog-coverage report by equipment family, movement family, tracking type, FR/EN completeness, media/license state, provenance completeness, and duplicate/unresolved source candidates.",
+          "Audit common Circuit / Conditioning families including kettlebell, dumbbell conditioning, suspension/TRX, bodyweight conditioning, plank/gainage/isometrics/core, medicine ball, slam/dead ball, resistance bands, sandbag, battle rope, plyo box/step, jump rope, sliders, sled, carries, plus other clearly relevant families discovered during review.",
+          "Re-review the public GitHub source pool already recorded in BACKLOG_NEW: rthepen/workout-database, yuhonas/free-exercise-db, wrkout/exercises.json, kinetic-place/exercises-db, Glowupp-app/open-exercisedb, hasaneyldrm/exercises-dataset, RepDB/exercise-dataset, and ArelliGoutham/exercise-database as aggregator/reference only.",
+          "Allow additional public repositories only through the same explicit source gate.",
+          "For each source actually proposed for later use: verify exact current data/text license, separate media rights, pin exact commit/tag/version, record required notices/attribution, and classify the source as authoritative, enrichment, aggregator/reference, or media-only.",
+          "Produce candidate-level dispositions explaining accepted, merged, rejected, missing, or unresolved status.",
+          "Preserve LiftNote-owned canonical IDs as the only future system identity."
+        ],
+        "userImpact": [
+          "This is primarily an architecture/data-quality lot; no new end-user catalog browser is required.",
+          "Outputs must be understandable by the next implementation agent and map directly to the later catalog expansion.",
+          "The audit must protect the future picker from catalog bloat by distinguishing canonical coverage from raw source row count."
+        ],
+        "journey": [
+          "This is primarily an architecture/data-quality lot; no new end-user catalog browser is required.",
+          "Outputs must be understandable by the next implementation agent and map directly to the later catalog expansion.",
+          "The audit must protect the future picker from catalog bloat by distinguishing canonical coverage from raw source row count."
+        ],
+        "rules": [
+          "Canonical IDs and historical exercise identity remain unchanged.",
+          "Coverage reporting is deterministic and inspectable.",
+          "AI may not manufacture missing canonical technique facts or licensing conclusions.",
+          "Future AI import can consume richer aliases only after accepted canonical enrichment."
+        ],
+        "examples": [],
+        "data": [
+          "Audit inputs are pinned source revisions plus the current LiftNote canonical catalog snapshot.",
+          "Candidate records must retain upstream source/version identifiers without adopting upstream IDs as LiftNote identity.",
+          "A source wrapper or aggregator cannot erase underlying obligations.",
+          "Data/text rights and media rights are represented separately.",
+          "Unknown licensing, uncertain equivalence, and missing localization are explicit states, not silently coerced.",
+          "Custom user exercises remain outside global source ingestion."
+        ],
+        "dependencies": [
+          "LN-83 — normalized source-aware exercise knowledge model.",
+          "LN-84 — FR/EN localization rules for system exercises.",
+          "LN-85 — canonicalization and deduplication outcomes.",
+          "LN-86 — movement-family ontology.",
+          "LN-13B — shipped catalog/provenance/media foundations.",
+          "docs/liftnote/EXERCISE_CATALOG_SOURCES.md and EXERCISE_DATASET_REFERENCE.md.",
+          "BACKLOG_NEW BN-005 / CO-009 provenance and source-review requirements."
+        ],
+        "attention": [
+          "Deterministic audit rerun against pinned fixtures/snapshots.",
+          "Duplicate-ID and duplicate-disposition checks.",
+          "Source pin/license/provenance completeness checks.",
+          "Spot-check representative families and ambiguous variants.",
+          "Documentation/tooling validation only unless implementation adds executable audit tooling.",
+          "Do not run expensive product CI for documentation-only output."
+        ],
+        "notInThisLot": [
+          "No production exercise import.",
+          "No bulk import because rows exist upstream.",
+          "No copying image/video assets without separately verified rights.",
+          "No runtime dependency on mutable GitHub content.",
+          "No CrossFit- or Hyrox-specific ontology.",
+          "No arbitrary numeric coverage quota unless supported by repository-defined product evidence."
+        ],
+        "doneWhen": [
+          "Every required equipment/movement family has a reportable coverage state.",
+          "Another agent can rerun the audit against pinned inputs and explain why a candidate was accepted, merged, rejected, missing, or unresolved.",
+          "Every source proposed for later use has explicit data/text license, media-rights treatment, pin, attribution requirements, and role classification.",
+          "No source is treated as identity authority.",
+          "Existing canonical IDs/history and custom exercises are preserved.",
+          "The output is sufficient for LN-118 to execute without rediscovering source/legal assumptions."
+        ],
+        "ux": [
+          "This is primarily an architecture/data-quality lot; no new end-user catalog browser is required.",
+          "Outputs must be understandable by the next implementation agent and map directly to the later catalog expansion.",
+          "The audit must protect the future picker from catalog bloat by distinguishing canonical coverage from raw source row count."
+        ],
+        "security": [],
+        "implications": [
+          "Canonical IDs and historical exercise identity remain unchanged.",
+          "Coverage reporting is deterministic and inspectable.",
+          "AI may not manufacture missing canonical technique facts or licensing conclusions.",
+          "Future AI import can consume richer aliases only after accepted canonical enrichment."
+        ],
+        "validation": [
+          "Deterministic audit rerun against pinned fixtures/snapshots.",
+          "Duplicate-ID and duplicate-disposition checks.",
+          "Source pin/license/provenance completeness checks.",
+          "Spot-check representative families and ambiguous variants.",
+          "Documentation/tooling validation only unless implementation adds executable audit tooling.",
+          "Do not run expensive product CI for documentation-only output."
+        ]
+      },
+      "contract": {
+        "phase": "Exercise Intelligence",
+        "objective": "Create a reproducible, source-aware audit of Circuit / Conditioning exercise coverage before any broad catalog expansion, so LiftNote can decide what to add without blind imports or licensing shortcuts.",
+        "rationale": "Circuit support is not credible if common equipment families resolve mostly to custom exercises or unknown names. The existing catalog foundations are strong, but coverage must be measured against pinned inputs and explicit inclusion decisions. This lot turns “we should have more movements” into an auditable candidate pipeline.",
+        "dependencies": [
+          "LN-83 — normalized source-aware exercise knowledge model.",
+          "LN-84 — FR/EN localization rules for system exercises.",
+          "LN-85 — canonicalization and deduplication outcomes.",
+          "LN-86 — movement-family ontology.",
+          "LN-13B — shipped catalog/provenance/media foundations.",
+          "docs/liftnote/EXERCISE_CATALOG_SOURCES.md and EXERCISE_DATASET_REFERENCE.md.",
+          "BACKLOG_NEW BN-005 / CO-009 provenance and source-review requirements."
+        ],
+        "scope": [
+          "Define a deterministic catalog-coverage report by equipment family, movement family, tracking type, FR/EN completeness, media/license state, provenance completeness, and duplicate/unresolved source candidates.",
+          "Audit common Circuit / Conditioning families including kettlebell, dumbbell conditioning, suspension/TRX, bodyweight conditioning, plank/gainage/isometrics/core, medicine ball, slam/dead ball, resistance bands, sandbag, battle rope, plyo box/step, jump rope, sliders, sled, carries, plus other clearly relevant families discovered during review.",
+          "Re-review the public GitHub source pool already recorded in BACKLOG_NEW: rthepen/workout-database, yuhonas/free-exercise-db, wrkout/exercises.json, kinetic-place/exercises-db, Glowupp-app/open-exercisedb, hasaneyldrm/exercises-dataset, RepDB/exercise-dataset, and ArelliGoutham/exercise-database as aggregator/reference only.",
+          "Allow additional public repositories only through the same explicit source gate.",
+          "For each source actually proposed for later use: verify exact current data/text license, separate media rights, pin exact commit/tag/version, record required notices/attribution, and classify the source as authoritative, enrichment, aggregator/reference, or media-only.",
+          "Produce candidate-level dispositions explaining accepted, merged, rejected, missing, or unresolved status.",
+          "Preserve LiftNote-owned canonical IDs as the only future system identity."
+        ],
+        "exclusions": [
+          "No production exercise import.",
+          "No bulk import because rows exist upstream.",
+          "No copying image/video assets without separately verified rights.",
+          "No runtime dependency on mutable GitHub content.",
+          "No CrossFit- or Hyrox-specific ontology.",
+          "No arbitrary numeric coverage quota unless supported by repository-defined product evidence."
+        ],
+        "data": [
+          "Audit inputs are pinned source revisions plus the current LiftNote canonical catalog snapshot.",
+          "Candidate records must retain upstream source/version identifiers without adopting upstream IDs as LiftNote identity.",
+          "A source wrapper or aggregator cannot erase underlying obligations.",
+          "Data/text rights and media rights are represented separately.",
+          "Unknown licensing, uncertain equivalence, and missing localization are explicit states, not silently coerced.",
+          "Custom user exercises remain outside global source ingestion."
+        ],
+        "ux": [
+          "This is primarily an architecture/data-quality lot; no new end-user catalog browser is required.",
+          "Outputs must be understandable by the next implementation agent and map directly to the later catalog expansion.",
+          "The audit must protect the future picker from catalog bloat by distinguishing canonical coverage from raw source row count."
+        ],
+        "security": [],
+        "implications": [
+          "Canonical IDs and historical exercise identity remain unchanged.",
+          "Coverage reporting is deterministic and inspectable.",
+          "AI may not manufacture missing canonical technique facts or licensing conclusions.",
+          "Future AI import can consume richer aliases only after accepted canonical enrichment."
+        ],
+        "acceptance": [
+          "Every required equipment/movement family has a reportable coverage state.",
+          "Another agent can rerun the audit against pinned inputs and explain why a candidate was accepted, merged, rejected, missing, or unresolved.",
+          "Every source proposed for later use has explicit data/text license, media-rights treatment, pin, attribution requirements, and role classification.",
+          "No source is treated as identity authority.",
+          "Existing canonical IDs/history and custom exercises are preserved.",
+          "The output is sufficient for LN-118 to execute without rediscovering source/legal assumptions."
+        ],
+        "validation": [
+          "Deterministic audit rerun against pinned fixtures/snapshots.",
+          "Duplicate-ID and duplicate-disposition checks.",
+          "Source pin/license/provenance completeness checks.",
+          "Spot-check representative families and ambiguous variants.",
+          "Documentation/tooling validation only unless implementation adds executable audit tooling.",
+          "Do not run expensive product CI for documentation-only output."
         ],
         "completion": {
           "pr": null,
