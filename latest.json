@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T18:05:37.938Z",
+  "publishedAt": "2026-10-01T18:06:30.609Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-53",
-    "nextLot": "LN-54",
-    "launchedAt": "2026-10-01T17:52:15.405Z",
-    "lastProgressAt": "2026-10-01T18:04:04.142Z",
-    "lastChatCheckAt": "2026-10-01T17:52:15.405Z",
-    "lastObservedMainSha": "f3da3f333997d408c61937be7a60d79a18e0e897",
+    "currentLot": "LN-54",
+    "nextLot": "LN-55",
+    "launchedAt": "2026-10-01T18:06:24.624Z",
+    "lastProgressAt": "2026-10-01T18:06:24.624Z",
+    "lastChatCheckAt": "2026-10-01T18:06:24.624Z",
+    "lastObservedMainSha": "b29aa541b242714d06fa270cd77b33f2d3667609",
     "nudges": 0,
-    "lastMessage": "main moved while LN-53 is active",
+    "lastMessage": "Launched LN-54; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T18:05:32.303Z",
-    "nextTickAt": "2026-10-01T18:10:32.303Z",
+    "lastSuccessfulTickAt": "2026-10-01T18:06:24.624Z",
+    "nextTickAt": "2026-10-01T18:11:24.624Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-41",
-        "completedAt": "2026-10-01T09:04:57.312Z",
-        "restartedAt": null,
-        "mainSha": "b4930d633ef4574fd7265d76274d1bcff374aa5f",
-        "reason": null
-      },
       {
         "lot": "LN-42",
         "completedAt": "2026-10-01T09:38:34.845Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "13fccb00e09d5eae436612452b0fb321deba1c3e",
         "reason": null
+      },
+      {
+        "lot": "LN-53",
+        "completedAt": "2026-10-01T18:06:17.172Z",
+        "restartedAt": null,
+        "mainSha": "b29aa541b242714d06fa270cd77b33f2d3667609",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "f3da3f333997d408c61937be7a60d79a18e0e897",
+    "mainSha": "b29aa541b242714d06fa270cd77b33f2d3667609",
     "lots": [
       {
         "id": "LN-00",
@@ -3980,7 +3980,7 @@
       {
         "id": "LN-53",
         "title": "LiftNote Design System v2",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Poser un système visuel LiftNote cohérent et réutilisable avant toute nouvelle expansion de surface.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 62,
+    "done": 63,
     "total": 90,
-    "percent": 69,
+    "percent": 70,
     "current": {
-      "id": "LN-53",
-      "title": "LiftNote Design System v2",
+      "id": "LN-54",
+      "title": "Navigation globale et architecture de l'information",
       "status": "TODO",
-      "goal": "Poser un système visuel LiftNote cohérent et réutilisable avant toute nouvelle expansion de surface.",
+      "goal": "Rendre la navigation LiftNote prévisible, compacte et cohérente sur mobile et desktop.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-54",
-      "title": "Navigation globale et architecture de l'information",
+      "id": "LN-55",
+      "title": "Aujourd'hui / dashboard d'entraînement",
       "status": "TODO",
-      "goal": "Rendre la navigation LiftNote prévisible, compacte et cohérente sur mobile et desktop.",
+      "goal": "Faire d’Aujourd’hui un vrai point d’entrée quotidien sans dashboard surchargé.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
