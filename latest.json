@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T08:44:05.064Z",
+  "publishedAt": "2026-10-01T08:46:55.406Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-40",
-    "nextLot": "LN-41",
-    "launchedAt": "2026-10-01T08:33:37.389Z",
-    "lastProgressAt": "2026-10-01T08:42:34.887Z",
-    "lastChatCheckAt": "2026-10-01T08:33:37.389Z",
-    "lastObservedMainSha": "bafdd3783302c64e60d9191843213e27cae3b0de",
+    "currentLot": "LN-41",
+    "nextLot": "LN-42",
+    "launchedAt": "2026-10-01T08:46:50.462Z",
+    "lastProgressAt": "2026-10-01T08:46:50.462Z",
+    "lastChatCheckAt": "2026-10-01T08:46:50.462Z",
+    "lastObservedMainSha": "8c241dee088bd04fcaaff7141dac02509af78f91",
     "nudges": 0,
-    "lastMessage": "main moved while LN-40 is active",
+    "lastMessage": "Launched LN-41; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T08:44:00.069Z",
-    "nextTickAt": "2026-10-01T08:49:00.069Z",
+    "lastSuccessfulTickAt": "2026-10-01T08:46:50.462Z",
+    "nextTickAt": "2026-10-01T08:51:50.462Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-28",
-        "completedAt": "2026-10-01T03:56:28.353Z",
-        "restartedAt": null,
-        "mainSha": "5dab6f3f19e90025a953890bcadcbdbc2ac8c2e1",
-        "reason": null
-      },
       {
         "lot": "LN-29",
         "completedAt": "2026-10-01T04:11:20.109Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "bfbf6f0d6e757e4b5139e648776c57f948bbcd91",
         "reason": null
+      },
+      {
+        "lot": "LN-40",
+        "completedAt": "2026-10-01T08:44:45.944Z",
+        "restartedAt": null,
+        "mainSha": "8c241dee088bd04fcaaff7141dac02509af78f91",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "bafdd3783302c64e60d9191843213e27cae3b0de",
+    "mainSha": "8c241dee088bd04fcaaff7141dac02509af78f91",
     "lots": [
       {
         "id": "LN-00",
@@ -3131,7 +3131,7 @@
       {
         "id": "LN-40",
         "title": "Muscle-distribution visualization",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "visualize relative muscle emphasis in a program or training period without prescribing what the distribution should be.",
         "business": {
           "summary": "Visualiser la répartition musculaire d'un programme ou d'une période.",
@@ -3919,62 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 49,
+    "done": 50,
     "total": 62,
-    "percent": 79,
+    "percent": 81,
     "current": {
-      "id": "LN-40",
-      "title": "Muscle-distribution visualization",
-      "status": "TODO",
-      "goal": "visualize relative muscle emphasis in a program or training period without prescribing what the distribution should be.",
-      "business": {
-        "summary": "Visualiser la répartition musculaire d'un programme ou d'une période.",
-        "why": "La distribution est plus facile à comprendre graphiquement que dans un tableau brut.",
-        "builds": [
-          "visualisation par groupe musculaire",
-          "comparaisons de périodes ou versions",
-          "détail des exercices contributeurs",
-          "vocabulaire descriptif neutre"
-        ],
-        "userImpact": [
-          "l'athlète repère rapidement les zones plus ou moins représentées"
-        ],
-        "notInThisLot": [
-          "LiftNote ne juge pas automatiquement la répartition"
-        ],
-        "doneWhen": [
-          "la visualisation est entièrement explicable à partir des données sous-jacentes"
-        ],
-        "journey": [
-          "L’utilisateur ouvre une visualisation de répartition musculaire.",
-          "Il voit les contributions relatives d’une période ou d’un programme.",
-          "Il peut revenir aux exercices qui expliquent chaque zone."
-        ],
-        "rules": [
-          "La visualisation reste descriptive.",
-          "Les valeurs doivent pouvoir être expliquées par LN-39.",
-          "Les inconnus restent visibles comme inconnus."
-        ],
-        "examples": [
-          "Comparer Bloc 1 et Bloc 2 d’un programme.",
-          "Voir quels exercices contribuent au volume dos."
-        ],
-        "data": [
-          "distribution relative",
-          "contributions musculaires",
-          "liens exercices"
-        ],
-        "dependencies": [
-          "LN-39"
-        ],
-        "attention": [
-          "ne pas qualifier automatiquement une répartition de bonne ou mauvaise",
-          "éviter une précision visuelle supérieure à la qualité des données"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-41",
       "title": "Advanced history search and filters",
       "status": "TODO",
@@ -4025,6 +3973,61 @@
         "attention": [
           "performance des requêtes",
           "respect strict de la confidentialité"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-42",
+      "title": "PDF export for programs and workouts",
+      "status": "TODO",
+      "goal": "export a clean human-readable workout or complete program for printing or sharing outside LiftNote.",
+      "business": {
+        "summary": "Exporter une séance ou un programme en PDF lisible et imprimable.",
+        "why": "Un PDF permet de transmettre un programme à quelqu'un qui n'utilise pas LiftNote.",
+        "builds": [
+          "PDF d'une séance",
+          "PDF d'un programme complet",
+          "objectifs, repos, tempo et charges",
+          "exercices personnalisés",
+          "mise en page impression"
+        ],
+        "userImpact": [
+          "un programme peut être partagé hors de LiftNote facilement"
+        ],
+        "notInThisLot": [
+          "l'historique privé n'est pas inclus par défaut"
+        ],
+        "doneWhen": [
+          "le PDF représente fidèlement la version choisie",
+          "les programmes longs sont correctement paginés"
+        ],
+        "journey": [
+          "L’utilisateur choisit Exporter en PDF sur une séance ou un programme.",
+          "LiftNote génère un document lisible avec les prescriptions utiles.",
+          "Il peut l’imprimer ou le partager hors de l’application."
+        ],
+        "rules": [
+          "Le PDF correspond à la version sélectionnée.",
+          "Les permissions d’accès sont respectées.",
+          "L’historique privé n’est pas inclus par défaut."
+        ],
+        "examples": [
+          "Programme complet avec exercices, reps, repos et tempo.",
+          "Séance unique imprimable pour une utilisation hors ligne."
+        ],
+        "data": [
+          "snapshot exporté",
+          "métadonnées sûres",
+          "mise en page PDF"
+        ],
+        "dependencies": [
+          "LN-27 versioning",
+          "LN-30/LN-33 semantics"
+        ],
+        "attention": [
+          "pagination des programmes longs",
+          "ne pas exporter involontairement des données privées"
         ]
       },
       "contractAvailable": true
