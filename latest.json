@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T20:16:44.138Z",
+  "publishedAt": "2026-10-01T20:17:36.348Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-65",
-    "nextLot": "LN-66",
-    "launchedAt": "2026-10-01T19:55:58.313Z",
-    "lastProgressAt": "2026-10-01T20:15:55.015Z",
-    "lastChatCheckAt": "2026-10-01T19:55:58.313Z",
-    "lastObservedMainSha": "c77b0cf4d734dad777ea2931cc3311b7fb6d7163",
+    "currentLot": "LN-66",
+    "nextLot": "LN-67",
+    "launchedAt": "2026-10-01T20:17:30.548Z",
+    "lastProgressAt": "2026-10-01T20:17:30.548Z",
+    "lastChatCheckAt": "2026-10-01T20:17:30.548Z",
+    "lastObservedMainSha": "e18c74d09e90c3897aee767f136f2e85698cd35f",
     "nudges": 0,
-    "lastMessage": "main moved while LN-65 is active",
+    "lastMessage": "Launched LN-66; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T20:16:38.557Z",
-    "nextTickAt": "2026-10-01T20:21:38.557Z",
+    "lastSuccessfulTickAt": "2026-10-01T20:17:30.548Z",
+    "nextTickAt": "2026-10-01T20:22:30.548Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-53",
-        "completedAt": "2026-10-01T18:06:17.172Z",
-        "restartedAt": null,
-        "mainSha": "b29aa541b242714d06fa270cd77b33f2d3667609",
-        "reason": null
-      },
       {
         "lot": "LN-54",
         "completedAt": "2026-10-01T18:18:55.447Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "01a15c37d05098aaeefb80847e491ae1c47268fa",
         "reason": null
+      },
+      {
+        "lot": "LN-65",
+        "completedAt": "2026-10-01T20:17:22.547Z",
+        "restartedAt": null,
+        "mainSha": "e18c74d09e90c3897aee767f136f2e85698cd35f",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "c77b0cf4d734dad777ea2931cc3311b7fb6d7163",
+    "mainSha": "e18c74d09e90c3897aee767f136f2e85698cd35f",
     "lots": [
       {
         "id": "LN-00",
@@ -4088,7 +4088,7 @@
       {
         "id": "LN-65",
         "title": "Dashboard de revue de performance coach",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Donner au coach une vue synthétique des performances explicitement autorisées.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 74,
+    "done": 75,
     "total": 90,
-    "percent": 82,
+    "percent": 83,
     "current": {
-      "id": "LN-65",
-      "title": "Dashboard de revue de performance coach",
+      "id": "LN-66",
+      "title": "Notes persistantes d'exercice et de setup",
       "status": "TODO",
-      "goal": "Donner au coach une vue synthétique des performances explicitement autorisées.",
+      "goal": "Mémoriser réglages et repères pratiques sans les confondre avec les commentaires de série.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-66",
-      "title": "Notes persistantes d'exercice et de setup",
+      "id": "LN-67",
+      "title": "Structure Programme → Bloc → Semaine → Séance",
       "status": "TODO",
-      "goal": "Mémoriser réglages et repères pratiques sans les confondre avec les commentaires de série.",
+      "goal": "Ajouter une vraie structure hebdomadaire aux blocs/versioning LN-27 sans casser l’historique.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
