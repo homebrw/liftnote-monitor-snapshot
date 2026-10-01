@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T03:16:35.957Z",
+  "publishedAt": "2026-10-01T03:17:27.195Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-26",
-    "nextLot": "LN-27",
-    "launchedAt": "2026-10-01T03:05:27.219Z",
-    "lastProgressAt": "2026-10-01T03:05:27.219Z",
-    "lastChatCheckAt": "2026-10-01T03:05:27.219Z",
-    "lastObservedMainSha": "cff74bae4a74577751107c4c4f6fcdc20bb0be65",
+    "currentLot": "LN-27",
+    "nextLot": "LN-28",
+    "launchedAt": "2026-10-01T03:17:21.981Z",
+    "lastProgressAt": "2026-10-01T03:17:21.981Z",
+    "lastChatCheckAt": "2026-10-01T03:17:21.981Z",
+    "lastObservedMainSha": "d0252f75794c5a1ae0c09b4e3c05f75a6016a97b",
     "nudges": 0,
-    "lastMessage": "Launched LN-26; canonical chat persisted before prompt marker became visible",
+    "lastMessage": "Launched LN-27; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T03:16:31.027Z",
-    "nextTickAt": "2026-10-01T03:21:31.027Z",
+    "lastSuccessfulTickAt": "2026-10-01T03:17:21.981Z",
+    "nextTickAt": "2026-10-01T03:22:21.981Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-16",
-        "completedAt": "2026-09-30T22:18:47.921Z",
-        "restartedAt": null,
-        "mainSha": "571e17eacc98db64d00a6c3c631fb301e298d917",
-        "reason": null
-      },
       {
         "lot": "LN-15B",
         "completedAt": "2026-09-30T23:30:03.313Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "cff74bae4a74577751107c4c4f6fcdc20bb0be65",
         "reason": null
+      },
+      {
+        "lot": "LN-26",
+        "completedAt": "2026-10-01T03:17:14.195Z",
+        "restartedAt": null,
+        "mainSha": "d0252f75794c5a1ae0c09b4e3c05f75a6016a97b",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "cff74bae4a74577751107c4c4f6fcdc20bb0be65",
+    "mainSha": "d0252f75794c5a1ae0c09b4e3c05f75a6016a97b",
     "lots": [
       {
         "id": "LN-00",
@@ -2380,7 +2380,7 @@
       {
         "id": "LN-26",
         "title": "Explicit set types",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "make warm-up, work, AMRAP, failure and drop-set classifications explicit so history, PRs and analytics do not treat every set identically.",
         "business": {
           "summary": "Donner un type explicite aux séries : travail, échauffement, AMRAP, échec et classification drop set.",
@@ -3919,63 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 35,
+    "done": 36,
     "total": 62,
-    "percent": 56,
+    "percent": 58,
     "current": {
-      "id": "LN-26",
-      "title": "Explicit set types",
-      "status": "TODO",
-      "goal": "make warm-up, work, AMRAP, failure and drop-set classifications explicit so history, PRs and analytics do not treat every set identically.",
-      "business": {
-        "summary": "Donner un type explicite aux séries : travail, échauffement, AMRAP, échec et classification drop set.",
-        "why": "Toutes les séries n'ont pas la même signification et ne doivent pas alimenter records et statistiques de la même façon.",
-        "builds": [
-          "un type persistant par série",
-          "un affichage clair en séance et historique",
-          "des règles de PR/statistiques adaptées",
-          "l'alignement avec les échauffements générés"
-        ],
-        "userImpact": [
-          "l'historique reflète beaucoup mieux la vraie structure de l'entraînement"
-        ],
-        "notInThisLot": [
-          "pas encore la mécanique complète d'un drop set multi-paliers"
-        ],
-        "doneWhen": [
-          "un échauffement ne pollue plus les séries de travail",
-          "AMRAP et échec gardent leur sens dans le temps"
-        ],
-        "journey": [
-          "L’utilisateur choisit ou voit le type d’une série.",
-          "Il peut distinguer travail, échauffement, AMRAP, échec et drop set.",
-          "L’historique et les statistiques conservent cette signification."
-        ],
-        "rules": [
-          "Le type de série est persisté, pas seulement affiché.",
-          "Les échauffements ne doivent pas polluer les statistiques de travail ou les PR.",
-          "AMRAP et échec gardent leur sens après la séance."
-        ],
-        "examples": [
-          "Une série warm-up apparaît dans l’historique mais est exclue du volume de travail standard.",
-          "Une série AMRAP reste identifiable plusieurs mois plus tard."
-        ],
-        "data": [
-          "type de série",
-          "règles d’inclusion PR/statistiques"
-        ],
-        "dependencies": [
-          "LN-19 pour les warm-ups",
-          "LN-10 pour les statistiques"
-        ],
-        "attention": [
-          "ne pas ralentir le flux des séries ordinaires",
-          "ne pas confondre classification drop set et mécanique multi-paliers complète"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-27",
       "title": "Program versioning and training cycles",
       "status": "TODO",
@@ -4026,6 +3973,58 @@
         "attention": [
           "éviter de multiplier les programmes sans lien",
           "ne pas modifier l’historique quand le bloc courant change"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-28",
+      "title": "Exercise favorites, recents and frequent picks",
+      "status": "TODO",
+      "goal": "speed up exercise selection with athlete-specific favorites, recent exercises and frequently used exercises.",
+      "business": {
+        "summary": "Accélérer l'ajout d'exercices avec favoris, récents et exercices fréquents.",
+        "why": "Chercher dans tout le catalogue à chaque ajout est inutilement lent en salle.",
+        "builds": [
+          "favoris personnels",
+          "exercices récemment utilisés",
+          "exercices les plus fréquents",
+          "raccourcis dans les différents sélecteurs"
+        ],
+        "userImpact": [
+          "les mouvements habituels deviennent accessibles en quelques secondes"
+        ],
+        "notInThisLot": [
+          "pas de recommandation d'entraînement"
+        ],
+        "doneWhen": [
+          "les raccourcis sont privés, persistants et ne dupliquent jamais les exercices"
+        ],
+        "journey": [
+          "L’utilisateur ouvre un sélecteur d’exercices.",
+          "Ses favoris, récents et exercices fréquents apparaissent avant la recherche complète.",
+          "Il choisit rapidement un mouvement sans créer de nouvelle identité."
+        ],
+        "rules": [
+          "Favoris/récents/fréquents sont personnels à l’athlète.",
+          "Les exercices archivés ou indisponibles doivent être respectés.",
+          "Ces raccourcis ne dupliquent jamais l’exercice canonique."
+        ],
+        "examples": [
+          "Bench et Back Squat remontent comme exercices fréquents.",
+          "Un exercice favori archivé n’est plus proposé comme raccourci normal."
+        ],
+        "data": [
+          "favoris",
+          "usage récent",
+          "compteurs/fréquence"
+        ],
+        "dependencies": [
+          "catalogue canonique LN-02/LN-13B"
+        ],
+        "attention": [
+          "ne pas confondre fréquence et recommandation",
+          "garder les classements privés"
         ]
       },
       "contractAvailable": true
