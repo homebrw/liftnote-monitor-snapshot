@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T17:22:24.055Z",
-  "publisher": "liftnote-local-orchestrator",
+  "publishedAt": "2026-10-01T17:28:03Z",
+  "publisher": "roadmap-integration-maintenance",
   "state": {
     "status": "DONE",
     "currentLot": null,
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "1dc940df575daf7c4c502aba4dc0d5a46277eb31",
+    "mainSha": "f96ee4c73ff61c97604ad243805ff445cd0763a4",
     "lots": [
       {
         "id": "LN-00",
@@ -3914,6 +3914,1242 @@
           ]
         },
         "contractAvailable": true
+      },
+      {
+        "id": "LN-53",
+        "title": "LiftNote Design System v2",
+        "status": "PLANNED",
+        "goal": "Poser un système visuel LiftNote cohérent et réutilisable avant toute nouvelle expansion de surface.",
+        "business": {
+          "phase": "Look & UX/UI",
+          "title": "LiftNote Design System v2",
+          "summary": "Poser un système visuel LiftNote cohérent et réutilisable avant toute nouvelle expansion de surface.",
+          "why": "Phase Look & UX/UI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "tokens couleur/typographie/espacements/rayons/surfaces",
+            "composants boutons, cartes, champs, tabs, modales, bottom sheets, badges et états",
+            "primitives workout et graphiques",
+            "marque Concept 03 et règles anti-AI-slop",
+            "mobile-first et accessibilité"
+          ],
+          "userImpact": [
+            "composants cohérents"
+          ],
+          "dependencies": [
+            "BRAND.md",
+            "LN-01",
+            "LN-14"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "refonte métier complète",
+            "nouvelles fonctions coach"
+          ],
+          "doneWhen": [
+            "composants cohérents",
+            "contrastes et zones tactiles conformes",
+            "identité LiftNote préservée"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-54",
+        "title": "Navigation globale et architecture de l'information",
+        "status": "PLANNED",
+        "goal": "Rendre la navigation LiftNote prévisible, compacte et cohérente sur mobile et desktop.",
+        "business": {
+          "phase": "Look & UX/UI",
+          "title": "Navigation globale et architecture de l'information",
+          "summary": "Rendre la navigation LiftNote prévisible, compacte et cohérente sur mobile et desktop.",
+          "why": "Phase Look & UX/UI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "audit navigation/profondeur",
+            "headers, retour et CTA",
+            "Aujourd’hui, Programmes, Historique, Progression, Coach/Athlètes, Réglages",
+            "deep links/auth round-trip",
+            "bottom navigation mobile si pertinente"
+          ],
+          "userImpact": [
+            "CTA primaires non concurrents"
+          ],
+          "dependencies": [
+            "LN-53",
+            "LN-48"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "refonte détaillée de chaque écran",
+            "permissions coach"
+          ],
+          "doneWhen": [
+            "CTA primaires non concurrents",
+            "deep links stables",
+            "navigation à une main"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-55",
+        "title": "Aujourd'hui / dashboard d'entraînement",
+        "status": "PLANNED",
+        "goal": "Faire d’Aujourd’hui un vrai point d’entrée quotidien sans dashboard surchargé.",
+        "business": {
+          "phase": "Look & UX/UI",
+          "title": "Aujourd'hui / dashboard d'entraînement",
+          "summary": "Faire d’Aujourd’hui un vrai point d’entrée quotidien sans dashboard surchargé.",
+          "why": "Phase Look & UX/UI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "séance active prioritaire",
+            "programme/contexte courant lorsqu’il existe",
+            "séance libre",
+            "dernière activité/progression sobre",
+            "emplacement futures consignes coach",
+            "aucune fausse prochaine séance"
+          ],
+          "userImpact": [
+            "séance active prioritaire"
+          ],
+          "dependencies": [
+            "LN-12B",
+            "LN-25",
+            "LN-53",
+            "LN-54"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "planning automatique",
+            "recommandations IA"
+          ],
+          "doneWhen": [
+            "séance active prioritaire",
+            "aucune prescription inventée",
+            "mobile lisible"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-56",
+        "title": "Refonte UX/UI de la séance active",
+        "status": "PLANNED",
+        "goal": "Optimiser le cœur du produit pour la saisie rapide en salle avec une seule main.",
+        "business": {
+          "phase": "Look & UX/UI",
+          "title": "Refonte UX/UI de la séance active",
+          "summary": "Optimiser le cœur du produit pour la saisie rapide en salle avec une seule main.",
+          "why": "Phase Look & UX/UI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "hiérarchie exercice/séries/charge/reps/RPE-RIR",
+            "validation/correction rapide",
+            "scroll et clavier",
+            "intégration précédent/timer/supersets/warm-up/drop sets/focus",
+            "actions destructives sûres"
+          ],
+          "userImpact": [
+            "friction minimale"
+          ],
+          "dependencies": [
+            "LN-17",
+            "LN-19",
+            "LN-35",
+            "LN-46",
+            "LN-51",
+            "LN-52",
+            "LN-53"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "nouveaux modèles de séries",
+            "nouvelle progression"
+          ],
+          "doneWhen": [
+            "friction minimale",
+            "aucune capacité existante perdue",
+            "contexte conservé avec clavier/scroll"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-57",
+        "title": "Refonte Programmes et séances modèles",
+        "status": "PLANNED",
+        "goal": "Clarifier Programmes → structure/bloc → séance et supprimer les ambiguïtés de contexte.",
+        "business": {
+          "phase": "Look & UX/UI",
+          "title": "Refonte Programmes et séances modèles",
+          "summary": "Clarifier Programmes → structure/bloc → séance et supprimer les ambiguïtés de contexte.",
+          "why": "Phase Look & UX/UI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "listes/détail programme",
+            "séances homonymes distinguées",
+            "création/édition/duplication/versioning cohérents",
+            "préparation structure semaines sans migration anticipée",
+            "provenance personnelle/importée/coachée"
+          ],
+          "userImpact": [
+            "homonymes distinguables"
+          ],
+          "dependencies": [
+            "LN-12B",
+            "LN-21",
+            "LN-22",
+            "LN-24",
+            "LN-27",
+            "LN-53"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "structure semaine réelle",
+            "progression automatique"
+          ],
+          "doneWhen": [
+            "homonymes distinguables",
+            "provenance/version visibles",
+            "permissions d’édition cohérentes"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-58",
+        "title": "Refonte Historique et Progression",
+        "status": "PLANNED",
+        "goal": "Unifier séances, exercices, records, tendances et filtres sans écrans incohérents.",
+        "business": {
+          "phase": "Look & UX/UI",
+          "title": "Refonte Historique et Progression",
+          "summary": "Unifier séances, exercices, records, tendances et filtres sans écrans incohérents.",
+          "why": "Phase Look & UX/UI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "historique séance/exercice",
+            "filtres et recherche LN-41",
+            "graphiques/drill-down vers brut",
+            "calendrier/périodes",
+            "états vide/loading/error"
+          ],
+          "userImpact": [
+            "métriques vérifiables"
+          ],
+          "dependencies": [
+            "LN-09",
+            "LN-10",
+            "LN-36",
+            "LN-37",
+            "LN-38",
+            "LN-41",
+            "LN-53"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "nouveaux moteurs analytiques",
+            "analyse IA"
+          ],
+          "doneWhen": [
+            "métriques vérifiables",
+            "filtres mobiles lisibles",
+            "aucun graphe décoratif"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-59",
+        "title": "Audit accessibilité et qualité UX de bout en bout",
+        "status": "PLANNED",
+        "goal": "Fermer la phase UX par une passe systématique de cohérence, accessibilité et robustesse responsive.",
+        "business": {
+          "phase": "Look & UX/UI",
+          "title": "Audit accessibilité et qualité UX de bout en bout",
+          "summary": "Fermer la phase UX par une passe systématique de cohérence, accessibilité et robustesse responsive.",
+          "why": "Phase Look & UX/UI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "contraste/clavier",
+            "touch targets/safe areas/viewport",
+            "modales/scroll/formulaires",
+            "loading/error/offline",
+            "terminologie/textes longs/localisation",
+            "matrice browser/device"
+          ],
+          "userImpact": [
+            "aucun nouveau warning a11y majeur"
+          ],
+          "dependencies": [
+            "LN-53",
+            "LN-54",
+            "LN-55",
+            "LN-56",
+            "LN-57",
+            "LN-58"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "nouvelles fonctions métier"
+          ],
+          "doneWhen": [
+            "aucun nouveau warning a11y majeur",
+            "parcours mobile/desktop robustes",
+            "états expliqués clairement"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-60",
+        "title": "Workspace coach et cockpit des relations",
+        "status": "PLANNED",
+        "goal": "Donner au coach un vrai espace de travail au-dessus des fondations LN-23/LN-24.",
+        "business": {
+          "phase": "Coach",
+          "title": "Workspace coach et cockpit des relations",
+          "summary": "Donner au coach un vrai espace de travail au-dessus des fondations LN-23/LN-24.",
+          "why": "Phase Coach : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "athlètes actifs/en attente",
+            "affectations gérées",
+            "activité autorisée minimale",
+            "actions relationnelles",
+            "persona coach distincte"
+          ],
+          "userImpact": [
+            "aucune donnée non autorisée"
+          ],
+          "dependencies": [
+            "LN-23",
+            "LN-24",
+            "LN-54",
+            "LN-59"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "analytics coach approfondies",
+            "messagerie générale"
+          ],
+          "doneWhen": [
+            "aucune donnée non autorisée",
+            "compte athlète non possédé par coach",
+            "fin de relation coupe l’accès"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-61",
+        "title": "Affectations coach et historique de versions",
+        "status": "PLANNED",
+        "goal": "Rendre les affectations LN-24 lisibles, traçables et faciles à faire évoluer.",
+        "business": {
+          "phase": "Coach",
+          "title": "Affectations coach et historique de versions",
+          "summary": "Rendre les affectations LN-24 lisibles, traçables et faciles à faire évoluer.",
+          "why": "Phase Coach : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "source/athlète/version/statut",
+            "changements futurs explicites",
+            "provenance/synchronisation",
+            "snapshots intacts",
+            "freeze/detach/archive clair"
+          ],
+          "userImpact": [
+            "pas de réécriture du passé"
+          ],
+          "dependencies": [
+            "LN-24",
+            "LN-27",
+            "LN-60"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "nouveau moteur concurrent",
+            "édition athlète de la source coach"
+          ],
+          "doneWhen": [
+            "pas de réécriture du passé",
+            "état sync/frozen visible",
+            "provenance auditable"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-62",
+        "title": "Consignes coach et notes athlète distinctes",
+        "status": "PLANNED",
+        "goal": "Permettre les consignes coach sans écraser les notes privées de l’athlète.",
+        "business": {
+          "phase": "Coach",
+          "title": "Consignes coach et notes athlète distinctes",
+          "summary": "Permettre les consignes coach sans écraser les notes privées de l’athlète.",
+          "why": "Phase Coach : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "consigne programme",
+            "consigne séance",
+            "consigne exercice",
+            "notes privées athlète séparées",
+            "provenance visuelle"
+          ],
+          "userImpact": [
+            "sources non confondues"
+          ],
+          "dependencies": [
+            "LN-24",
+            "LN-60",
+            "LN-61"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "chat temps réel",
+            "diagnostic"
+          ],
+          "doneWhen": [
+            "sources non confondues",
+            "RLS/server auth",
+            "snapshots historiques cohérents"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-63",
+        "title": "Feedback post-séance coach ↔ athlète",
+        "status": "PLANNED",
+        "goal": "Créer une boucle de retour courte et structurée après séance sans messagerie générale.",
+        "business": {
+          "phase": "Coach",
+          "title": "Feedback post-séance coach ↔ athlète",
+          "summary": "Créer une boucle de retour courte et structurée après séance sans messagerie générale.",
+          "why": "Phase Coach : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "feedback athlète",
+            "commentaire coach lié séance",
+            "vu/non vu si utile",
+            "thread lié séance",
+            "permissions révocables"
+          ],
+          "userImpact": [
+            "feedback sur bonne séance"
+          ],
+          "dependencies": [
+            "LN-23",
+            "LN-24",
+            "LN-60",
+            "LN-62"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "chat libre",
+            "pièces jointes"
+          ],
+          "doneWhen": [
+            "feedback sur bonne séance",
+            "permission obligatoire",
+            "fin relation bloque nouveaux échanges"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-64",
+        "title": "Notifications de coaching utiles",
+        "status": "PLANNED",
+        "goal": "Notifier seulement les événements coach/athlète qui changent l’action suivante.",
+        "business": {
+          "phase": "Coach",
+          "title": "Notifications de coaching utiles",
+          "summary": "Notifier seulement les événements coach/athlète qui changent l’action suivante.",
+          "why": "Phase Coach : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "nouvelle affectation",
+            "mise à jour prescription",
+            "nouvelle consigne/commentaire",
+            "feedback athlète",
+            "deep links + opt-in"
+          ],
+          "userImpact": [
+            "aucune notification sans permission"
+          ],
+          "dependencies": [
+            "LN-47",
+            "LN-48",
+            "LN-61",
+            "LN-62",
+            "LN-63"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "spam d’engagement",
+            "rappels non configurés"
+          ],
+          "doneWhen": [
+            "aucune notification sans permission",
+            "deep link correct",
+            "copie écran verrouillé discrète"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-65",
+        "title": "Dashboard de revue de performance coach",
+        "status": "PLANNED",
+        "goal": "Donner au coach une vue synthétique des performances explicitement autorisées.",
+        "business": {
+          "phase": "Coach",
+          "title": "Dashboard de revue de performance coach",
+          "summary": "Donner au coach une vue synthétique des performances explicitement autorisées.",
+          "why": "Phase Coach : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "permission performance",
+            "séances/adhérence définissable",
+            "performances/mouvements clés",
+            "feedback et RPE/RIR descriptifs",
+            "drill-down source"
+          ],
+          "userImpact": [
+            "aucune donnée hors permission"
+          ],
+          "dependencies": [
+            "LN-23",
+            "LN-24",
+            "LN-35",
+            "LN-37",
+            "LN-38",
+            "LN-52",
+            "LN-60"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "fatigue/readiness score",
+            "diagnostic",
+            "recommandation automatique"
+          ],
+          "doneWhen": [
+            "aucune donnée hors permission",
+            "indicateurs traçables",
+            "révocation effective"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-66",
+        "title": "Notes persistantes d'exercice et de setup",
+        "status": "PLANNED",
+        "goal": "Mémoriser réglages et repères pratiques sans les confondre avec les commentaires de série.",
+        "business": {
+          "phase": "Workout",
+          "title": "Notes persistantes d'exercice et de setup",
+          "summary": "Mémoriser réglages et repères pratiques sans les confondre avec les commentaires de série.",
+          "why": "Phase Workout : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "note persistante exercice",
+            "réglages machine/banc",
+            "cue technique privé",
+            "note séance distincte",
+            "compatibilité consigne coach"
+          ],
+          "userImpact": [
+            "notes retrouvables en séance"
+          ],
+          "dependencies": [
+            "LN-08",
+            "LN-62"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "analyse médicale",
+            "chat coach"
+          ],
+          "doneWhen": [
+            "notes retrouvables en séance",
+            "commentaires série distincts",
+            "provenance visible"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-67",
+        "title": "Structure Programme → Bloc → Semaine → Séance",
+        "status": "PLANNED",
+        "goal": "Ajouter une vraie structure hebdomadaire aux blocs/versioning LN-27 sans casser l’historique.",
+        "business": {
+          "phase": "Programming",
+          "title": "Structure Programme → Bloc → Semaine → Séance",
+          "summary": "Ajouter une vraie structure hebdomadaire aux blocs/versioning LN-27 sans casser l’historique.",
+          "why": "Phase Programming : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "semaines ordonnées",
+            "séances dans semaine",
+            "répétition structures",
+            "migration anciens programmes",
+            "snapshots inchangés"
+          ],
+          "userImpact": [
+            "anciens programmes utilisables"
+          ],
+          "dependencies": [
+            "LN-27",
+            "LN-57"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "progression automatique",
+            "calendrier daté obligatoire"
+          ],
+          "doneWhen": [
+            "anciens programmes utilisables",
+            "semaine optionnelle",
+            "historique exact"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-68",
+        "title": "Règles de progression programmables",
+        "status": "PLANNED",
+        "goal": "Permettre d’exprimer une progression déterministe, explicable et éditable.",
+        "business": {
+          "phase": "Programming",
+          "title": "Règles de progression programmables",
+          "summary": "Permettre d’exprimer une progression déterministe, explicable et éditable.",
+          "why": "Phase Programming : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "charge fixe/+kg",
+            "incrément reps",
+            "double progression",
+            "pourcentage repère explicite",
+            "cible RPE/RIR",
+            "preview avant application"
+          ],
+          "userImpact": [
+            "règle explicable"
+          ],
+          "dependencies": [
+            "LN-30",
+            "LN-34",
+            "LN-52",
+            "LN-67"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "IA de programmation",
+            "modification silencieuse"
+          ],
+          "doneWhen": [
+            "règle explicable",
+            "override utilisateur",
+            "historique jamais écrasé"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-69",
+        "title": "Variantes de prescription par semaine",
+        "status": "PLANNED",
+        "goal": "Faire varier séries/reps/charge/tempo/effort sans dupliquer toute la séance.",
+        "business": {
+          "phase": "Programming",
+          "title": "Variantes de prescription par semaine",
+          "summary": "Faire varier séries/reps/charge/tempo/effort sans dupliquer toute la séance.",
+          "why": "Phase Programming : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "overrides hebdomadaires",
+            "héritage séance base",
+            "diff preview",
+            "compatibilité partage/coach",
+            "snapshot au démarrage"
+          ],
+          "userImpact": [
+            "différences visibles"
+          ],
+          "dependencies": [
+            "LN-33",
+            "LN-52",
+            "LN-67",
+            "LN-68"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "programmation IA"
+          ],
+          "doneWhen": [
+            "différences visibles",
+            "héritage déterministe",
+            "historique immuable"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-70",
+        "title": "Planification datée et rappels de séances",
+        "status": "PLANNED",
+        "goal": "Ajouter une planification explicite pour savoir quoi faire aujourd’hui sans inventer une prochaine séance.",
+        "business": {
+          "phase": "Programming",
+          "title": "Planification datée et rappels de séances",
+          "summary": "Ajouter une planification explicite pour savoir quoi faire aujourd’hui sans inventer une prochaine séance.",
+          "why": "Phase Programming : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "date séance",
+            "déplacer/annuler",
+            "Aujourd’hui basé données réelles",
+            "intégration calendrier",
+            "rappels opt-in"
+          ],
+          "userImpact": [
+            "pas de fausse prochaine séance"
+          ],
+          "dependencies": [
+            "LN-38",
+            "LN-47",
+            "LN-55",
+            "LN-67"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "calendrier externe bidirectionnel",
+            "coaching temps réel"
+          ],
+          "doneWhen": [
+            "pas de fausse prochaine séance",
+            "déplacement sans réécriture",
+            "rappel suit vraie date"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-71",
+        "title": "e1RM et tendances de force",
+        "status": "PLANNED",
+        "goal": "Ajouter des estimations de force clairement dérivées sans les confondre avec les records réels.",
+        "business": {
+          "phase": "Analytics",
+          "title": "e1RM et tendances de force",
+          "summary": "Ajouter des estimations de force clairement dérivées sans les confondre avec les records réels.",
+          "why": "Phase Analytics : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "formules e1RM documentées",
+            "formule cohérente",
+            "courbe temporelle",
+            "séparation record/estimation",
+            "drill-down séries"
+          ],
+          "userImpact": [
+            "estimation explicitement étiquetée"
+          ],
+          "dependencies": [
+            "LN-07B",
+            "LN-07D",
+            "LN-10",
+            "LN-58"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "record basé uniquement e1RM",
+            "prescription médicale"
+          ],
+          "doneWhen": [
+            "estimation explicitement étiquetée",
+            "formules testées",
+            "vrai PR préservé"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-72",
+        "title": "Tendances effort, charge et progression",
+        "status": "PLANNED",
+        "goal": "Croiser données objectives et RPE/RIR de façon descriptive et vérifiable.",
+        "business": {
+          "phase": "Analytics",
+          "title": "Tendances effort, charge et progression",
+          "summary": "Croiser données objectives et RPE/RIR de façon descriptive et vérifiable.",
+          "why": "Phase Analytics : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "charge/reps/volume",
+            "RPE/RIR si données suffisantes",
+            "comparaison périodes",
+            "données manquantes explicites",
+            "liens sources"
+          ],
+          "userImpact": [
+            "pas de conclusion sans données"
+          ],
+          "dependencies": [
+            "LN-37",
+            "LN-52",
+            "LN-58",
+            "LN-71"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "fatigue/readiness score",
+            "cause physiologique"
+          ],
+          "doneWhen": [
+            "pas de conclusion sans données",
+            "cible ≠ réel",
+            "calculs reproductibles"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-73",
+        "title": "Export portable CSV et export de compte",
+        "status": "PLANNED",
+        "goal": "Donner à l’utilisateur une copie exploitable de ses données au-delà du PDF.",
+        "business": {
+          "phase": "Differentiation",
+          "title": "Export portable CSV et export de compte",
+          "summary": "Donner à l’utilisateur une copie exploitable de ses données au-delà du PDF.",
+          "why": "Phase Differentiation : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "CSV séances/séries",
+            "programmes/templates",
+            "métadonnées LiftNote appropriées",
+            "format/version documentés",
+            "protection données coachées"
+          ],
+          "userImpact": [
+            "export relisible hors LiftNote"
+          ],
+          "dependencies": [
+            "LN-42",
+            "LN-44"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "cloud backup tiers",
+            "données non autorisées"
+          ],
+          "doneWhen": [
+            "export relisible hors LiftNote",
+            "unités/provenances préservées",
+            "zéro donnée d’autrui"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-74",
+        "title": "Import/export structuré de programmes et templates",
+        "status": "PLANNED",
+        "goal": "Permettre un échange de fichiers déterministe en complément des codes de partage.",
+        "business": {
+          "phase": "Differentiation",
+          "title": "Import/export structuré de programmes et templates",
+          "summary": "Permettre un échange de fichiers déterministe en complément des codes de partage.",
+          "why": "Phase Differentiation : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "format versionné",
+            "programme",
+            "séance modèle",
+            "preview import",
+            "mapping exercices",
+            "validation erreurs"
+          ],
+          "userImpact": [
+            "preview avant écriture"
+          ],
+          "dependencies": [
+            "LN-21",
+            "LN-22",
+            "LN-73"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "OCR/IA",
+            "sync live"
+          ],
+          "doneWhen": [
+            "preview avant écriture",
+            "fichier invalide sûr",
+            "identités/provenances respectées"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-75",
+        "title": "Fondation Apple Health / Health Connect",
+        "status": "PLANNED",
+        "goal": "Préparer des échanges santé limités et consentis sans transformer LiftNote en dossier médical.",
+        "business": {
+          "phase": "Differentiation",
+          "title": "Fondation Apple Health / Health Connect",
+          "summary": "Préparer des échanges santé limités et consentis sans transformer LiftNote en dossier médical.",
+          "why": "Phase Differentiation : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "matrice données utiles",
+            "permissions granulaires",
+            "import/export explicite",
+            "déduplication",
+            "provenance",
+            "fallback plateforme"
+          ],
+          "userImpact": [
+            "consentement obligatoire"
+          ],
+          "dependencies": [
+            "LN-12",
+            "LN-73"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "diagnostic",
+            "collecte silencieuse",
+            "montres propriétaires"
+          ],
+          "doneWhen": [
+            "consentement obligatoire",
+            "provenance conservée",
+            "intégration optionnelle"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-76",
+        "title": "Compagnons montres et wearables",
+        "status": "PLANNED",
+        "goal": "Définir puis livrer un premier compagnon wearable centré sur la séance active.",
+        "business": {
+          "phase": "Differentiation",
+          "title": "Compagnons montres et wearables",
+          "summary": "Définir puis livrer un premier compagnon wearable centré sur la séance active.",
+          "why": "Phase Differentiation : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "choix plateformes par faisabilité",
+            "exercice/série courante",
+            "validation simple sûre",
+            "timer/repos",
+            "sync robuste",
+            "limites offline"
+          ],
+          "userImpact": [
+            "pas de corruption séance"
+          ],
+          "dependencies": [
+            "LN-45",
+            "LN-47",
+            "LN-75"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "app complète montre",
+            "interception générique notifications"
+          ],
+          "doneWhen": [
+            "pas de corruption séance",
+            "actions idempotentes",
+            "support clairement annoncé"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-77",
+        "title": "Import IA depuis texte, image ou PDF",
+        "status": "PLANNED",
+        "goal": "Transformer un programme reçu en contenu structuré, toujours relu avant enregistrement.",
+        "business": {
+          "phase": "AI",
+          "title": "Import IA depuis texte, image ou PDF",
+          "summary": "Transformer un programme reçu en contenu structuré, toujours relu avant enregistrement.",
+          "why": "Phase AI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "texte/image/PDF",
+            "extraction séries/reps/charges/repos",
+            "mapping catalogue + incertitudes",
+            "review/correction",
+            "écriture après confirmation"
+          ],
+          "userImpact": [
+            "validation avant persistance"
+          ],
+          "dependencies": [
+            "LN-13B",
+            "LN-74"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "écriture silencieuse",
+            "diagnostic"
+          ],
+          "doneWhen": [
+            "validation avant persistance",
+            "incertitudes visibles",
+            "mapping corrigible"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-78",
+        "title": "Résumé IA de progression traçable",
+        "status": "PLANNED",
+        "goal": "Résumer l’évolution à partir des données LiftNote sans masquer les faits sources.",
+        "business": {
+          "phase": "AI",
+          "title": "Résumé IA de progression traçable",
+          "summary": "Résumer l’évolution à partir des données LiftNote sans masquer les faits sources.",
+          "why": "Phase AI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "sélection sources",
+            "résumé court",
+            "liens vers séances/métriques",
+            "incertitude",
+            "aucune métrique inventée"
+          ],
+          "userImpact": [
+            "affirmations vérifiables"
+          ],
+          "dependencies": [
+            "LN-71",
+            "LN-72"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "diagnostic",
+            "conseil opaque"
+          ],
+          "doneWhen": [
+            "affirmations vérifiables",
+            "données manquantes dites",
+            "aucun fait inventé"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-79",
+        "title": "Analyse descriptive de tendances et plateaux",
+        "status": "PLANNED",
+        "goal": "Identifier des tendances observables sans prétendre établir une cause physiologique.",
+        "business": {
+          "phase": "AI",
+          "title": "Analyse descriptive de tendances et plateaux",
+          "summary": "Identifier des tendances observables sans prétendre établir une cause physiologique.",
+          "why": "Phase AI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "stagnation descriptive",
+            "fréquence/volume/intensité",
+            "critères expliqués",
+            "liens sources",
+            "formulations prudentes"
+          ],
+          "userImpact": [
+            "critères explicites"
+          ],
+          "dependencies": [
+            "LN-72",
+            "LN-78"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "surentraînement diagnostic",
+            "prédiction santé",
+            "prescription auto"
+          ],
+          "doneWhen": [
+            "critères explicites",
+            "conclusions descriptives",
+            "sources inspectables"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-80",
+        "title": "Assistant de création de programme",
+        "status": "PLANNED",
+        "goal": "Générer une proposition entièrement éditable et expliquée, jamais un coach autonome opaque.",
+        "business": {
+          "phase": "AI",
+          "title": "Assistant de création de programme",
+          "summary": "Générer une proposition entièrement éditable et expliquée, jamais un coach autonome opaque.",
+          "why": "Phase AI : approfondir LiftNote sans recréer les lots déjà livrés.",
+          "builds": [
+            "contraintes explicites",
+            "programme structuré",
+            "explication choix",
+            "édition avant sauvegarde",
+            "matériel/unités/semantics",
+            "provenance IA"
+          ],
+          "userImpact": [
+            "validation avant activation"
+          ],
+          "dependencies": [
+            "LN-29",
+            "LN-30",
+            "LN-67",
+            "LN-68",
+            "LN-69",
+            "LN-77"
+          ],
+          "attention": [
+            "préserver l’existant livré",
+            "rester dans le scope du lot",
+            "respecter permissions et vérité historique"
+          ],
+          "notInThisLot": [
+            "décisions irréversibles",
+            "coaching médical",
+            "modification autonome actif"
+          ],
+          "doneWhen": [
+            "validation avant activation",
+            "tout éditable",
+            "hypothèses explicites"
+          ]
+        },
+        "contractAvailable": true,
+        "executionState": "planned"
       }
     ],
     "mismatches": []
