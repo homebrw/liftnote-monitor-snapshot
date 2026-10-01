@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T17:46:24.222Z",
+  "publishedAt": "2026-10-01T17:47:01.830Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "DONE",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "All LiftNote lots are DONE",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T17:46:17.688Z",
-    "nextTickAt": "2026-10-01T17:51:17.688Z",
+    "lastSuccessfulTickAt": "2026-10-01T17:46:56.222Z",
+    "nextTickAt": "2026-10-01T17:51:56.222Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -162,7 +162,8 @@
             "ne pas considérer le bootstrap comme une autorisation à créer prématurément le schéma final"
           ]
         },
-        "contractAvailable": false
+        "contractAvailable": false,
+        "executionState": "executable"
       },
       {
         "id": "LN-01",
@@ -216,7 +217,8 @@
             "préserver de bons tap targets et une hiérarchie claire"
           ]
         },
-        "contractAvailable": false
+        "contractAvailable": false,
+        "executionState": "executable"
       },
       {
         "id": "LN-02",
@@ -274,7 +276,8 @@
             "préparer la compatibilité future avec un catalogue beaucoup plus riche"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-02B",
@@ -330,7 +333,8 @@
             "préserver des IDs stables malgré renommage/archivage"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-03",
@@ -388,7 +392,8 @@
             "préparer une copie exacte vers la future persistance"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-03R",
@@ -445,7 +450,8 @@
             "ne pas importer avant d’avoir tranché la provenance"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-04",
@@ -502,7 +508,8 @@
             "tester les accès croisés entre deux utilisateurs réels"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-05",
@@ -561,7 +568,8 @@
             "maintenir l’isolation cross-user"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-06",
@@ -618,7 +626,8 @@
             "préserver les IDs canoniques nécessaires aux analyses futures"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-07",
@@ -686,7 +695,8 @@
             "ne pas perdre le contexte lors du refresh"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-07B",
@@ -743,7 +753,8 @@
             "gérer la correction/suppression d’une série source"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-07C",
@@ -801,7 +812,8 @@
             "ne pas recalculer sur des estimations"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-07D",
@@ -861,7 +873,8 @@
             "préparer LN-20 où certaines charges assistées ne pourront pas utiliser ce modèle"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-08",
@@ -920,7 +933,8 @@
             "éviter qu’un timer local obsolète bloque la reprise de séance"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-09",
@@ -976,7 +990,8 @@
             "préserver l’ordre temporel et les dates réelles"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-10",
@@ -1036,7 +1051,8 @@
             "adapter les métriques aux semantics futures LN-20"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-11",
@@ -1098,7 +1114,8 @@
             "ne pas laisser des agrégats/statistiques en cache devenir incohérents"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-12",
@@ -1157,7 +1174,8 @@
             "ne pas afficher une précision ou une tendance statistique artificielle avec trop peu de mesures"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-12B",
@@ -1250,7 +1268,8 @@
             "garder les actions assez compactes pour un usage réel à une main en salle"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-13",
@@ -1311,7 +1330,8 @@
             "garder une démo rapide à réinitialiser"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-13B",
@@ -1411,7 +1431,8 @@
             "la recherche doit rester rapide avec un catalogue nettement plus grand"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-14",
@@ -1472,7 +1493,8 @@
             "éviter les actions destructrices trop proches ou trop petites"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-15",
@@ -1532,7 +1554,8 @@
             "vérifier les redirections sur preview et production"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-16",
@@ -1593,7 +1616,8 @@
             "garder le scénario E2E stable et peu fragile"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-15B",
@@ -1654,7 +1678,8 @@
             "ne pas exposer l’architecture commune dans les textes de l’interface"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-15C",
@@ -1760,7 +1785,8 @@
             "documenter toute exception réelle plutôt que d’ajouter silencieusement une allowlist large au test de garde-fou"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-17",
@@ -1820,7 +1846,8 @@
             "préserver les requêtes d’historique par exercice"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-18",
@@ -1884,7 +1911,8 @@
             "documenter clairement la fonction de coût de l’optimiseur"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-19",
@@ -1949,7 +1977,8 @@
             "garder chaque proposition modifiable"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-20",
@@ -2021,7 +2050,8 @@
             "ne pas confondre charge ajoutée et charge totale corps + lest"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-21",
@@ -2090,7 +2120,8 @@
             "garantir le rollback si une étape échoue"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-22",
@@ -2168,7 +2199,8 @@
             "ne jamais utiliser une simple égalité de nom pour fusionner des exercices personnalisés"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-23",
@@ -2238,7 +2270,8 @@
             "ne pas confondre partage par code LN-22 et autorisation coach"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-24",
@@ -2321,7 +2354,8 @@
             "ne pas élargir tacitement les permissions coach aux performances privées"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-25",
@@ -2375,7 +2409,8 @@
             "garder l’ajout d’exercice rapide en pleine séance"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-26",
@@ -2428,7 +2463,8 @@
             "ne pas confondre classification drop set et mécanique multi-paliers complète"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-27",
@@ -2483,7 +2519,8 @@
             "ne pas modifier l’historique quand le bloc courant change"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-28",
@@ -2535,7 +2572,8 @@
             "garder les classements privés"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-29",
@@ -2587,7 +2625,8 @@
             "préparer LN-50 sans faire de substitution automatique ici"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-30",
@@ -2641,7 +2680,8 @@
             "préserver les unités dans partage et coach"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-31",
@@ -2694,7 +2734,8 @@
             "garder l’interface compacte pendant la séance"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-32",
@@ -2748,7 +2789,8 @@
             "adapter les statistiques sans inventer de tonnage"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-33",
@@ -2801,7 +2843,8 @@
             "gérer les notations invalides clairement"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-34",
@@ -2855,7 +2898,8 @@
             "documenter exactement la règle"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-35",
@@ -2908,7 +2952,8 @@
             "choisir la bonne séance de référence"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-36",
@@ -2965,7 +3010,8 @@
             "éviter un écran trop chargé"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-37",
@@ -3020,7 +3066,8 @@
             "ne pas transformer une baisse en jugement automatique"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-38",
@@ -3073,7 +3120,8 @@
             "ne pas présenter la heatmap comme score moral d’assiduité"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-39",
@@ -3126,7 +3174,8 @@
             "documenter le poids donné aux secondaires"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-40",
@@ -3178,7 +3227,8 @@
             "éviter une précision visuelle supérieure à la qualité des données"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-41",
@@ -3233,7 +3283,8 @@
             "respect strict de la confidentialité"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-42",
@@ -3288,7 +3339,8 @@
             "ne pas exporter involontairement des données privées"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-43",
@@ -3342,7 +3394,8 @@
             "restauration prévisible"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-44",
@@ -3397,7 +3450,8 @@
             "politique de rétention claire"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-45",
@@ -3453,7 +3507,8 @@
             "tester refresh/background et reconnexion intermittente"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-46",
@@ -3507,7 +3562,8 @@
             "ne pas masquer des actions nécessaires"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-47",
@@ -3562,7 +3618,8 @@
             "contenu sensible affiché sur écran verrouillé"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-48",
@@ -3616,7 +3673,8 @@
             "préserver la destination à travers l’auth"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-49",
@@ -3671,7 +3729,8 @@
             "expiration prévisible selon fuseau/date"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-50",
@@ -3728,7 +3787,8 @@
             "préserver la provenance prescrit/réalisé"
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-51",
@@ -3819,7 +3879,8 @@
             "Rest-pause, myo-reps et cluster sets restent des techniques différentes et ne doivent pas être assimilées automatiquement aux drop sets."
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
       },
       {
         "id": "LN-52",
@@ -3913,7 +3974,260 @@
             "Garder la saisie facultative et très rapide afin qu’elle n’alourdisse pas chaque série."
           ]
         },
-        "contractAvailable": true
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-53",
+        "title": "LiftNote Design System v2",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-54",
+        "title": "Navigation globale et architecture de l'information",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-55",
+        "title": "Aujourd'hui / dashboard d'entraînement",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-56",
+        "title": "Refonte UX/UI de la séance active",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-57",
+        "title": "Refonte Programmes et séances modèles",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-58",
+        "title": "Refonte Historique et Progression",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-59",
+        "title": "Audit accessibilité et qualité UX de bout en bout",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-60",
+        "title": "Workspace coach et cockpit des relations",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-61",
+        "title": "Affectations coach et historique de versions",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-62",
+        "title": "Consignes coach et notes athlète distinctes",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-63",
+        "title": "Feedback post-séance coach ↔ athlète",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-64",
+        "title": "Notifications de coaching utiles",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-65",
+        "title": "Dashboard de revue de performance coach",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-66",
+        "title": "Notes persistantes d'exercice et de setup",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-67",
+        "title": "Structure Programme → Bloc → Semaine → Séance",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-68",
+        "title": "Règles de progression programmables",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-69",
+        "title": "Variantes de prescription par semaine",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-70",
+        "title": "Planification datée et rappels de séances",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-71",
+        "title": "e1RM et tendances de force",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-72",
+        "title": "Tendances effort, charge et progression",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-73",
+        "title": "Export portable CSV et export de compte",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-74",
+        "title": "Import/export structuré de programmes et templates",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-75",
+        "title": "Fondation Apple Health / Health Connect",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-76",
+        "title": "Compagnons montres et wearables",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-77",
+        "title": "Import IA depuis texte, image ou PDF",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-78",
+        "title": "Résumé IA de progression traçable",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-79",
+        "title": "Analyse descriptive de tendances et plateaux",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
+      },
+      {
+        "id": "LN-80",
+        "title": "Assistant de création de programme",
+        "status": "PLANNED",
+        "goal": null,
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "planned"
       }
     ],
     "mismatches": []
