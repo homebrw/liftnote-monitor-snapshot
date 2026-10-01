@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:06:42.884Z",
+  "publishedAt": "2026-10-01T07:09:26.605Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "BLOCKED",
+    "status": "CONSISTENCY_ERROR",
     "currentLot": "LN-32",
     "nextLot": "LN-33",
     "launchedAt": "2026-10-01T06:42:15.244Z",
@@ -11,10 +11,10 @@
     "lastChatCheckAt": "2026-10-01T06:42:15.244Z",
     "lastObservedMainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
     "nudges": 0,
-    "lastMessage": "Watch tick failed",
-    "lastError": "Command failed: git fetch origin main --quiet\nfatal: unable to access 'https://github.com/homebrw/unicorn-cf-prog.git/': Could not resolve host: github.com\n",
+    "lastMessage": "Lot/roadmap status mismatch detected; no dispatch performed.",
+    "lastError": "LN-32: lot=DONE, roadmap=TODO",
     "lastSuccessfulTickAt": "2026-10-01T06:53:06.629Z",
-    "nextTickAt": "2026-10-01T07:03:41.281Z",
+    "nextTickAt": "2026-10-01T07:14:21.444Z",
     "paused": false,
     "pauseAfterCurrent": true,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
+    "mainSha": "0ccdba69b809ec29ac1570e6f9f833191768ea50",
     "lots": [
       {
         "id": "LN-00",
@@ -2699,7 +2699,7 @@
       {
         "id": "LN-32",
         "title": "Timed, isometric and distance-based sets",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "track movements such as planks, dead hangs and farmer carries with the metric that actually matters instead of forcing weight × reps.",
         "business": {
           "summary": "Suivre correctement les séries basées sur le temps ou la distance.",
@@ -3919,13 +3919,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 41,
+    "done": 42,
     "total": 62,
-    "percent": 66,
+    "percent": 68,
     "current": {
       "id": "LN-32",
       "title": "Timed, isometric and distance-based sets",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "track movements such as planks, dead hangs and farmer carries with the metric that actually matters instead of forcing weight × reps.",
       "business": {
         "summary": "Suivre correctement les séries basées sur le temps ou la distance.",
