@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T11:52:36.942Z",
+  "publishedAt": "2026-10-01T11:53:19.665Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 2,
     "lastMessage": "main moved while LN-45 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T11:52:31.383Z",
-    "nextTickAt": "2026-10-01T11:57:31.383Z",
+    "lastSuccessfulTickAt": "2026-10-01T11:53:14.653Z",
+    "nextTickAt": "2026-10-01T11:58:14.653Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
