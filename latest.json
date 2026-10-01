@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T19:32:20.329Z",
+  "publishedAt": "2026-10-01T19:33:12.843Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-62",
-    "nextLot": "LN-63",
-    "launchedAt": "2026-10-01T19:23:32.532Z",
-    "lastProgressAt": "2026-10-01T19:31:31.415Z",
-    "lastChatCheckAt": "2026-10-01T19:23:32.532Z",
-    "lastObservedMainSha": "d362b70b161a6e80aa4399de9ba770971eaf4d83",
+    "currentLot": "LN-63",
+    "nextLot": "LN-64",
+    "launchedAt": "2026-10-01T19:33:06.678Z",
+    "lastProgressAt": "2026-10-01T19:33:06.678Z",
+    "lastChatCheckAt": "2026-10-01T19:33:06.678Z",
+    "lastObservedMainSha": "aac6e3b4feb9f5e10ca9587ffb139e0a4e69e8e5",
     "nudges": 0,
-    "lastMessage": "main moved while LN-62 is active",
+    "lastMessage": "Launched LN-63; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T19:32:14.993Z",
-    "nextTickAt": "2026-10-01T19:37:14.993Z",
+    "lastSuccessfulTickAt": "2026-10-01T19:33:06.678Z",
+    "nextTickAt": "2026-10-01T19:38:06.678Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-50",
-        "completedAt": "2026-10-01T13:25:03.958Z",
-        "restartedAt": null,
-        "mainSha": "890fd78e794b6e33f7b33037231aac03a515b811",
-        "reason": null
-      },
       {
         "lot": "LN-51",
         "completedAt": "2026-10-01T16:33:02.026Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "fb088f348f14d69444c6730b53a6ae399218edfb",
         "reason": null
+      },
+      {
+        "lot": "LN-62",
+        "completedAt": "2026-10-01T19:32:58.967Z",
+        "restartedAt": null,
+        "mainSha": "aac6e3b4feb9f5e10ca9587ffb139e0a4e69e8e5",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "d362b70b161a6e80aa4399de9ba770971eaf4d83",
+    "mainSha": "aac6e3b4feb9f5e10ca9587ffb139e0a4e69e8e5",
     "lots": [
       {
         "id": "LN-00",
@@ -4061,7 +4061,7 @@
       {
         "id": "LN-62",
         "title": "Consignes coach et notes athlète distinctes",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Permettre les consignes coach sans écraser les notes privées de l’athlète.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 71,
+    "done": 72,
     "total": 90,
-    "percent": 79,
+    "percent": 80,
     "current": {
-      "id": "LN-62",
-      "title": "Consignes coach et notes athlète distinctes",
+      "id": "LN-63",
+      "title": "Feedback post-séance coach ↔ athlète",
       "status": "TODO",
-      "goal": "Permettre les consignes coach sans écraser les notes privées de l’athlète.",
+      "goal": "Créer une boucle de retour courte et structurée après séance sans messagerie générale.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-63",
-      "title": "Feedback post-séance coach ↔ athlète",
+      "id": "LN-64",
+      "title": "Notifications de coaching utiles",
       "status": "TODO",
-      "goal": "Créer une boucle de retour courte et structurée après séance sans messagerie générale.",
+      "goal": "Notifier seulement les événements coach/athlète qui changent l’action suivante.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
