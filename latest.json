@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:33:49.504Z",
+  "publishedAt": "2026-10-01T07:34:43.292Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-33",
-    "nextLot": "LN-34",
-    "launchedAt": "2026-10-01T07:20:44.526Z",
-    "lastProgressAt": "2026-10-01T07:33:44.799Z",
-    "lastChatCheckAt": "2026-10-01T07:20:44.526Z",
-    "lastObservedMainSha": "1a490ed7205e4b6f8d6e327eafadf740daca05ab",
+    "currentLot": "LN-34",
+    "nextLot": "LN-35",
+    "launchedAt": "2026-10-01T07:34:37.254Z",
+    "lastProgressAt": "2026-10-01T07:34:37.254Z",
+    "lastChatCheckAt": "2026-10-01T07:34:37.254Z",
+    "lastObservedMainSha": "4de8bf7d0cf39460747286b31d19982498d0dc17",
     "nudges": 0,
-    "lastMessage": "main moved while LN-33 is active",
+    "lastMessage": "Launched LN-34; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T07:33:44.799Z",
-    "nextTickAt": "2026-10-01T07:38:44.799Z",
+    "lastSuccessfulTickAt": "2026-10-01T07:34:37.254Z",
+    "nextTickAt": "2026-10-01T07:39:37.254Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-21",
-        "completedAt": "2026-10-01T01:49:02.225Z",
-        "restartedAt": null,
-        "mainSha": "d5878c2086db1163e303d9ebe99dff30f5a2ef3d",
-        "reason": null
-      },
       {
         "lot": "LN-22",
         "completedAt": "2026-10-01T02:13:30.269Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "a30a3ed2d473d801d2473cb0b08ce0de0e374ab4",
         "reason": null
+      },
+      {
+        "lot": "LN-33",
+        "completedAt": "2026-10-01T07:34:27.724Z",
+        "restartedAt": null,
+        "mainSha": "4de8bf7d0cf39460747286b31d19982498d0dc17",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "1a490ed7205e4b6f8d6e327eafadf740daca05ab",
+    "mainSha": "4de8bf7d0cf39460747286b31d19982498d0dc17",
     "lots": [
       {
         "id": "LN-00",
@@ -2753,7 +2753,7 @@
       {
         "id": "LN-33",
         "title": "Execution tempo prescriptions",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "support structured tempo guidance such as 3-1-X-1 in templates and active workouts.",
         "business": {
           "summary": "Ajouter le tempo d'exécution, par exemple 3-1-X-1, comme consigne structurée.",
@@ -3919,63 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 42,
+    "done": 43,
     "total": 62,
-    "percent": 68,
+    "percent": 69,
     "current": {
-      "id": "LN-33",
-      "title": "Execution tempo prescriptions",
-      "status": "TODO",
-      "goal": "support structured tempo guidance such as 3-1-X-1 in templates and active workouts.",
-      "business": {
-        "summary": "Ajouter le tempo d'exécution, par exemple 3-1-X-1, comme consigne structurée.",
-        "why": "Certains programmes prescrivent aussi la vitesse d'exécution.",
-        "builds": [
-          "tempo optionnel dans les templates",
-          "notation structurée",
-          "affichage en séance",
-          "conservation dans copies, partages et programmes coachés"
-        ],
-        "userImpact": [
-          "l'athlète voit la consigne de tempo au bon moment"
-        ],
-        "notInThisLot": [
-          "LiftNote ne prétend pas mesurer automatiquement le respect réel du tempo"
-        ],
-        "doneWhen": [
-          "le tempo historique ne change pas après modification du programme",
-          "la notation reste valide"
-        ],
-        "journey": [
-          "Le créateur d’une séance renseigne un tempo optionnel.",
-          "L’athlète voit la consigne pendant la séance.",
-          "Le tempo prescrit reste figé dans l’historique de la séance."
-        ],
-        "rules": [
-          "Le tempo est une prescription, pas une mesure automatique de performance.",
-          "La notation doit être validée.",
-          "Copies, partages et programmes coachés doivent conserver le tempo."
-        ],
-        "examples": [
-          "Squat 3-1-X-1 affiché au moment de la série.",
-          "Modifier le tempo du template plus tard ne change pas une séance passée."
-        ],
-        "data": [
-          "tempo structuré",
-          "snapshot de tempo"
-        ],
-        "dependencies": [
-          "LN-06 pour les snapshots",
-          "LN-22/LN-24 pour copie/sync"
-        ],
-        "attention": [
-          "ne pas prétendre vérifier automatiquement l’exécution",
-          "gérer les notations invalides clairement"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-34",
       "title": "Dynamic repetition ranges and progression readiness",
       "status": "TODO",
@@ -4025,6 +3972,59 @@
         "attention": [
           "ne pas transformer le signal en auto-progression",
           "documenter exactement la règle"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-35",
+      "title": "In-workout comparison with previous performance",
+      "status": "TODO",
+      "goal": "show meaningful live deltas against the relevant previous performance while the athlete is training.",
+      "business": {
+        "summary": "Comparer directement la séance en cours à la performance précédente.",
+        "why": "Afficher uniquement l'ancienne valeur oblige encore à calculer mentalement l'écart.",
+        "builds": [
+          "deltas de charge, reps ou volume quand valides",
+          "mise à jour au fil des séries",
+          "valeur précédente toujours visible",
+          "garde-fous sur les comparaisons incompatibles"
+        ],
+        "userImpact": [
+          "l'athlète voit immédiatement s'il progresse"
+        ],
+        "notInThisLot": [
+          "pas de comparaison artificielle entre unités ou sémantiques incompatibles"
+        ],
+        "doneWhen": [
+          "chaque delta est explicable à partir des données brutes"
+        ],
+        "journey": [
+          "L’athlète arrive sur un exercice pendant sa séance.",
+          "LiftNote affiche la performance précédente pertinente.",
+          "Au fil des séries, les écarts valides apparaissent automatiquement."
+        ],
+        "rules": [
+          "Les comparaisons doivent respecter unités, type de série et sémantique de charge.",
+          "Le delta ne modifie aucune donnée sauvegardée.",
+          "La valeur brute précédente reste visible."
+        ],
+        "examples": [
+          "+2,5 kg à reps égales sur Bench.",
+          "+1 rep avec même lest ajouté sur tractions."
+        ],
+        "data": [
+          "performance précédente",
+          "delta calculé",
+          "contexte de compatibilité"
+        ],
+        "dependencies": [
+          "LN-09 historique",
+          "LN-20/LN-30/LN-31/LN-32 semantics"
+        ],
+        "attention": [
+          "ne pas afficher de delta trompeur",
+          "choisir la bonne séance de référence"
         ]
       },
       "contractAvailable": true
