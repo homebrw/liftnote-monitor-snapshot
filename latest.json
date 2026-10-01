@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:43:18.689Z",
+  "publishedAt": "2026-10-01T07:44:12.340Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-34",
-    "nextLot": "LN-35",
-    "launchedAt": "2026-10-01T07:34:37.254Z",
-    "lastProgressAt": "2026-10-01T07:41:07.321Z",
-    "lastChatCheckAt": "2026-10-01T07:34:37.254Z",
-    "lastObservedMainSha": "e1e619def2758121e78df3afbaaf3ecd506edff7",
+    "currentLot": "LN-35",
+    "nextLot": "LN-36",
+    "launchedAt": "2026-10-01T07:44:07.366Z",
+    "lastProgressAt": "2026-10-01T07:44:07.366Z",
+    "lastChatCheckAt": "2026-10-01T07:44:07.366Z",
+    "lastObservedMainSha": "1f29b9c8b7f095e0633b462bce70a8d19b628482",
     "nudges": 0,
-    "lastMessage": "main moved while LN-34 is active",
+    "lastMessage": "Launched LN-35; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T07:43:13.502Z",
-    "nextTickAt": "2026-10-01T07:48:13.502Z",
+    "lastSuccessfulTickAt": "2026-10-01T07:44:07.366Z",
+    "nextTickAt": "2026-10-01T07:49:07.366Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-22",
-        "completedAt": "2026-10-01T02:13:30.269Z",
-        "restartedAt": null,
-        "mainSha": "fb2599316aadf943252e4ca377b7d2728a657890",
-        "reason": null
-      },
       {
         "lot": "LN-23",
         "completedAt": "2026-10-01T02:28:38.735Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "4de8bf7d0cf39460747286b31d19982498d0dc17",
         "reason": null
+      },
+      {
+        "lot": "LN-34",
+        "completedAt": "2026-10-01T07:43:56.813Z",
+        "restartedAt": null,
+        "mainSha": "1f29b9c8b7f095e0633b462bce70a8d19b628482",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "e1e619def2758121e78df3afbaaf3ecd506edff7",
+    "mainSha": "1f29b9c8b7f095e0633b462bce70a8d19b628482",
     "lots": [
       {
         "id": "LN-00",
@@ -2806,7 +2806,7 @@
       {
         "id": "LN-34",
         "title": "Dynamic repetition ranges and progression readiness",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "make ranges such as 3×8–12 first-class and surface deterministic readiness to increase load without automatically changing it.",
         "business": {
           "summary": "Rendre les plages de répétitions comme 3×8–12 réellement intelligentes.",
@@ -3919,64 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 43,
+    "done": 44,
     "total": 62,
-    "percent": 69,
+    "percent": 71,
     "current": {
-      "id": "LN-34",
-      "title": "Dynamic repetition ranges and progression readiness",
-      "status": "TODO",
-      "goal": "make ranges such as 3×8–12 first-class and surface deterministic readiness to increase load without automatically changing it.",
-      "business": {
-        "summary": "Rendre les plages de répétitions comme 3×8–12 réellement intelligentes.",
-        "why": "Une plage de reps sert souvent de règle de progression et doit pouvoir être évaluée.",
-        "builds": [
-          "bornes min/max explicites",
-          "affichage de la plage en séance",
-          "calcul de plage atteinte",
-          "signal déterministe de progression possible"
-        ],
-        "userImpact": [
-          "l'athlète sait quand l'objectif de répétitions est rempli"
-        ],
-        "notInThisLot": [
-          "pas d'augmentation automatique de charge"
-        ],
-        "doneWhen": [
-          "3×8–12 reste distinct de 3×10",
-          "une séance partielle ne déclenche pas un faux signal"
-        ],
-        "journey": [
-          "Le programme prescrit une plage, par exemple 3×8–12.",
-          "Pendant la séance, l’utilisateur voit la plage cible.",
-          "Après les séries, LiftNote indique de manière déterministe si le haut de plage a été atteint."
-        ],
-        "rules": [
-          "Une plage est différente d’une cible fixe.",
-          "Un travail partiel ou manqué ne déclenche pas un faux signal de progression.",
-          "La charge reste sous contrôle manuel dans ce lot."
-        ],
-        "examples": [
-          "3×12 atteint sur toutes les séries → signal prêt à progresser.",
-          "12/10/8 ne déclenche pas le même signal."
-        ],
-        "data": [
-          "rep min",
-          "rep max",
-          "résultat d’évaluation"
-        ],
-        "dependencies": [
-          "logger LN-07",
-          "progression future"
-        ],
-        "attention": [
-          "ne pas transformer le signal en auto-progression",
-          "documenter exactement la règle"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-35",
       "title": "In-workout comparison with previous performance",
       "status": "TODO",
@@ -4025,6 +3971,63 @@
         "attention": [
           "ne pas afficher de delta trompeur",
           "choisir la bonne séance de référence"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-36",
+      "title": "End-of-workout summary",
+      "status": "TODO",
+      "goal": "create a useful completion screen with duration, work completed, records, comparisons and notes.",
+      "business": {
+        "summary": "Créer un vrai résumé de fin de séance.",
+        "why": "La fin d'un entraînement est le bon moment pour résumer les faits marquants.",
+        "builds": [
+          "durée et exercices réalisés",
+          "volume lorsque pertinent",
+          "nouveaux records",
+          "comparaisons avec l'historique",
+          "notes et accès à l'historique"
+        ],
+        "userImpact": [
+          "l'athlète comprend immédiatement ce qu'il vient d'accomplir"
+        ],
+        "notInThisLot": [
+          "pas de volume inventé pour des exercices incompatibles"
+        ],
+        "doneWhen": [
+          "le résumé repose sur les données persistées",
+          "les records affichés sont validés"
+        ],
+        "journey": [
+          "L’utilisateur termine sa séance.",
+          "Un écran récapitule durée, exercices, travail réalisé et records.",
+          "Il peut consulter ses notes ou poursuivre vers l’historique."
+        ],
+        "rules": [
+          "Le résumé est dérivé des données persistées.",
+          "Les volumes non pertinents ne sont pas inventés.",
+          "Fermer le résumé ne modifie pas l’état terminé."
+        ],
+        "examples": [
+          "Résumé de 62 min avec 5 exercices et 1 nouveau PR validé.",
+          "Aucun tonnage affiché pour un mouvement où cette métrique n’a pas de sens."
+        ],
+        "data": [
+          "session terminée",
+          "durée",
+          "PR",
+          "deltas",
+          "notes"
+        ],
+        "dependencies": [
+          "LN-07C records",
+          "LN-35 comparaisons"
+        ],
+        "attention": [
+          "ne pas recalculer différemment de l’historique",
+          "éviter un écran trop chargé"
         ]
       },
       "contractAvailable": true
