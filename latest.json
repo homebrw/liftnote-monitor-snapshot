@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T21:09:31.609Z",
+  "publishedAt": "2026-10-01T21:10:37.863Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "CONSISTENCY_ERROR",
-    "currentLot": "LN-67",
-    "nextLot": "LN-68",
-    "launchedAt": "2026-10-01T20:33:40.582Z",
-    "lastProgressAt": "2026-10-01T20:56:18.563Z",
-    "lastChatCheckAt": "2026-10-01T20:33:40.582Z",
-    "lastObservedMainSha": "d6d9f7c291790a6b88c93e3449bb248c14556825",
+    "status": "RUNNING",
+    "currentLot": "LN-68",
+    "nextLot": "LN-69",
+    "launchedAt": "2026-10-01T21:10:24.771Z",
+    "lastProgressAt": "2026-10-01T21:10:24.771Z",
+    "lastChatCheckAt": "2026-10-01T21:10:24.771Z",
+    "lastObservedMainSha": "a930979b5c49536de0cc055f43083cc2326c4941",
     "nudges": 0,
-    "lastMessage": "LN-67 is DONE but completion invariants failed; next lot not launched.",
-    "lastError": "LN-67 has no Completion record section.",
-    "lastSuccessfulTickAt": "2026-10-01T20:57:02.462Z",
-    "nextTickAt": "2026-10-01T21:14:25.508Z",
+    "lastMessage": "Launched LN-68; canonical chat persisted before prompt marker became visible",
+    "lastError": null,
+    "lastSuccessfulTickAt": "2026-10-01T21:10:24.771Z",
+    "nextTickAt": "2026-10-01T21:15:24.771Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-55",
-        "completedAt": "2026-10-01T18:28:35.682Z",
-        "restartedAt": null,
-        "mainSha": "47df358e63585911e7915c4609c969dc73544153",
-        "reason": null
-      },
       {
         "lot": "LN-56",
         "completedAt": "2026-10-01T18:40:17.617Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "16f8ed9416080fdc275ad97911c86469ee4b3f1b",
         "reason": null
+      },
+      {
+        "lot": "LN-67",
+        "completedAt": "2026-10-01T21:10:14.856Z",
+        "restartedAt": null,
+        "mainSha": "a930979b5c49536de0cc055f43083cc2326c4941",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "c85e047ba606886ba61dc0783851ceccf6db8892",
+    "mainSha": "a930979b5c49536de0cc055f43083cc2326c4941",
     "lots": [
       {
         "id": "LN-00",
@@ -4237,19 +4237,19 @@
     "total": 90,
     "percent": 86,
     "current": {
-      "id": "LN-67",
-      "title": "Structure Programme → Bloc → Semaine → Séance",
-      "status": "DONE",
-      "goal": "Ajouter une vraie structure hebdomadaire aux blocs/versioning LN-27 sans casser l’historique.",
+      "id": "LN-68",
+      "title": "Règles de progression programmables",
+      "status": "TODO",
+      "goal": "Permettre d’exprimer une progression déterministe, explicable et éditable.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-68",
-      "title": "Règles de progression programmables",
+      "id": "LN-69",
+      "title": "Variantes de prescription par semaine",
       "status": "TODO",
-      "goal": "Permettre d’exprimer une progression déterministe, explicable et éditable.",
+      "goal": "Faire varier séries/reps/charge/tempo/effort sans dupliquer toute la séance.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
