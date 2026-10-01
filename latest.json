@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T02:27:59.420Z",
+  "publishedAt": "2026-10-01T02:28:54.083Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-23",
-    "nextLot": "LN-24",
-    "launchedAt": "2026-10-01T02:13:40.445Z",
-    "lastProgressAt": "2026-10-01T02:27:08.214Z",
-    "lastChatCheckAt": "2026-10-01T02:13:40.445Z",
-    "lastObservedMainSha": "7529fe5a4001444993e78143643f36796bf22ee4",
+    "currentLot": "LN-24",
+    "nextLot": "LN-25",
+    "launchedAt": "2026-10-01T02:28:47.051Z",
+    "lastProgressAt": "2026-10-01T02:28:47.051Z",
+    "lastChatCheckAt": "2026-10-01T02:28:47.051Z",
+    "lastObservedMainSha": "92c28065bf75080e29e85317c5302a10c2ab5921",
     "nudges": 0,
-    "lastMessage": "main moved while LN-23 is active",
+    "lastMessage": "Launched LN-24; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T02:27:52.534Z",
-    "nextTickAt": "2026-10-01T02:32:52.534Z",
+    "lastSuccessfulTickAt": "2026-10-01T02:28:47.051Z",
+    "nextTickAt": "2026-10-01T02:33:47.051Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-13",
-        "completedAt": "2026-09-30T13:49:26.521Z",
-        "restartedAt": null,
-        "mainSha": "f0deb0dd47a717c33c3253a9292c62c43b50205d",
-        "reason": null
-      },
       {
         "lot": "LN-13B",
         "completedAt": "2026-09-30T21:32:12.932Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "fb2599316aadf943252e4ca377b7d2728a657890",
         "reason": null
+      },
+      {
+        "lot": "LN-23",
+        "completedAt": "2026-10-01T02:28:38.735Z",
+        "restartedAt": null,
+        "mainSha": "92c28065bf75080e29e85317c5302a10c2ab5921",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "7529fe5a4001444993e78143643f36796bf22ee4",
+    "mainSha": "92c28065bf75080e29e85317c5302a10c2ab5921",
     "lots": [
       {
         "id": "LN-00",
@@ -2173,7 +2173,7 @@
       {
         "id": "LN-23",
         "title": "Coach–athlete relationships and authorization foundation",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "create explicit, consent-based coach–athlete relationships and the server/RLS authorization primitive required before any coach can manage another user's prescription.",
         "business": {
           "summary": "Créer la relation sécurisée entre un coach et un athlète avant d'autoriser le coach à gérer quoi que ce soit sur son compte.",
@@ -3919,80 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 32,
+    "done": 33,
     "total": 62,
-    "percent": 52,
+    "percent": 53,
     "current": {
-      "id": "LN-23",
-      "title": "Coach–athlete relationships and authorization foundation",
-      "status": "TODO",
-      "goal": "create explicit, consent-based coach–athlete relationships and the server/RLS authorization primitive required before any coach can manage another user's prescription.",
-      "business": {
-        "summary": "Créer la relation sécurisée entre un coach et un athlète avant d'autoriser le coach à gérer quoi que ce soit sur son compte.",
-        "why": "Le mode coach implique un accès entre deux utilisateurs. Il faut d'abord construire une autorisation explicite et révocable, plutôt que d'accorder des droits parce qu'une personne connaît simplement l'adresse e-mail d'un athlète.",
-        "builds": [
-          "une invitation coach → athlète",
-          "une demande visible que l'athlète peut accepter ou refuser",
-          "un état clair de la relation : en attente, active, refusée ou terminée",
-          "la possibilité pour les deux parties de mettre fin à la relation",
-          "des règles serveur/RLS qui prouvent qu'un coach est réellement autorisé avant toute future action de gestion"
-        ],
-        "userImpact": [
-          "l'athlète garde le contrôle sur les personnes autorisées à gérer son entraînement",
-          "un même compte peut être coach de certaines personnes tout en restant lui-même athlète",
-          "la fin de la relation coupe immédiatement les futurs droits du coach"
-        ],
-        "notInThisLot": [
-          "le coach ne pousse pas encore de programme dans ce lot",
-          "pas d'accès global aux performances, records ou mensurations de l'athlète",
-          "pas de messagerie ni de facturation"
-        ],
-        "doneWhen": [
-          "un coach ne peut jamais s'autoriser lui-même auprès d'un athlète",
-          "seule une relation explicitement acceptée donne les droits prévus",
-          "une relation terminée ne donne plus aucun droit de gestion",
-          "les relations d'autres utilisateurs restent invisibles"
-        ],
-        "journey": [
-          "Un coach identifie l’athlète qu’il souhaite accompagner via un mécanisme sûr.",
-          "Il envoie une invitation de relation coach–athlète.",
-          "L’athlète voit qui demande l’accès et ce que cette relation permettra.",
-          "Il accepte ou refuse explicitement.",
-          "Une relation active devient alors la seule base autorisant les actions de gestion du LN-24.",
-          "Coach ou athlète peut ensuite mettre fin à la relation."
-        ],
-        "rules": [
-          "Connaître un e-mail, un nom ou un ID n’accorde jamais de droit.",
-          "Le coach ne peut pas auto-activer la relation.",
-          "L’autorisation est relationnelle : un compte peut être coach ici et athlète ailleurs.",
-          "Une relation refusée ou terminée n’autorise aucune écriture coach.",
-          "Le lot n’ouvre pas par défaut l’accès aux mensurations, records, historique complet ou programmes personnels.",
-          "Les règles d’accès sont imposées serveur/RLS, pas par l’interface."
-        ],
-        "examples": [
-          "Coach A invite Athlète B, B accepte : la relation active autorise les futures affectations.",
-          "B refuse : A ne peut rien pousser.",
-          "B met fin à la relation après plusieurs mois : A perd immédiatement ses droits de gestion, l’historique de B reste intact."
-        ],
-        "data": [
-          "relation coach–athlète",
-          "état pending/active/declined/ended",
-          "identité minimale d’affichage",
-          "timestamps d’invitation/acceptation/révocation"
-        ],
-        "dependencies": [
-          "LN-15 pour l’identité partagée",
-          "LN-24 consommera directement cette autorisation"
-        ],
-        "attention": [
-          "éviter de transformer l’invitation en annuaire de comptes",
-          "tester les accès croisés entre plusieurs utilisateurs",
-          "ne pas confondre partage par code LN-22 et autorisation coach"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-24",
       "title": "Coach-managed programs and synchronized prescriptions",
       "status": "TODO",
@@ -4071,6 +4001,60 @@
           "synchronisation atomique/versionnée pour éviter les états partiels",
           "bien définir le sort des affectations quand la relation s’arrête",
           "ne pas élargir tacitement les permissions coach aux performances privées"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-25",
+      "title": "Quick workout / free session",
+      "status": "TODO",
+      "goal": "start an improvised workout without a program/template, build it while training, and optionally save its structure as a reusable template.",
+      "business": {
+        "summary": "Démarrer une séance libre sans programme ni modèle, puis éventuellement la transformer en séance réutilisable.",
+        "why": "Un entraînement réel n'est pas toujours planifié : vacances, séance accessoire, test ou envie du jour.",
+        "builds": [
+          "un bouton Séance libre / Quick workout",
+          "l'ajout et le réordonnancement d'exercices pendant la séance",
+          "la saisie normale des séries",
+          "la sauvegarde optionnelle comme template"
+        ],
+        "userImpact": [
+          "l'athlète peut commencer immédiatement et conserver un historique propre"
+        ],
+        "notInThisLot": [
+          "pas de génération automatique de séance"
+        ],
+        "doneWhen": [
+          "une séance peut être commencée et terminée sans template",
+          "la sauvegarde comme template ne modifie pas la séance passée"
+        ],
+        "journey": [
+          "L’athlète choisit Séance libre sans sélectionner de programme.",
+          "Il ajoute et ordonne ses exercices pendant l’entraînement.",
+          "Il termine la séance puis peut enregistrer sa structure comme modèle réutilisable."
+        ],
+        "rules": [
+          "Aucun programme ou template ne doit être requis pour démarrer.",
+          "La séance libre rejoint le même historique immuable que les séances planifiées.",
+          "Sauvegarder un template après coup ne modifie jamais la séance déjà réalisée."
+        ],
+        "examples": [
+          "Séance vacances créée à la volée puis conservée dans l’historique.",
+          "Une séance improvisée jambes devient ensuite un template personnel."
+        ],
+        "data": [
+          "session sans template source",
+          "exercices ajoutés pendant la session",
+          "template éventuellement créé après coup"
+        ],
+        "dependencies": [
+          "LN-07 pour la saisie active",
+          "LN-06 pour l’historique immuable"
+        ],
+        "attention": [
+          "ne pas créer un historique de seconde zone pour les séances libres",
+          "garder l’ajout d’exercice rapide en pleine séance"
         ]
       },
       "contractAvailable": true
