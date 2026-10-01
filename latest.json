@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T02:12:49.204Z",
+  "publishedAt": "2026-10-01T02:13:46.399Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-22",
-    "nextLot": "LN-23",
-    "launchedAt": "2026-10-01T01:49:11.757Z",
-    "lastProgressAt": "2026-10-01T02:10:27.977Z",
-    "lastChatCheckAt": "2026-10-01T01:49:11.757Z",
-    "lastObservedMainSha": "c5fefe873fc24d589027f4e718d7486392304733",
+    "currentLot": "LN-23",
+    "nextLot": "LN-24",
+    "launchedAt": "2026-10-01T02:13:40.445Z",
+    "lastProgressAt": "2026-10-01T02:13:40.445Z",
+    "lastChatCheckAt": "2026-10-01T02:13:40.445Z",
+    "lastObservedMainSha": "fb2599316aadf943252e4ca377b7d2728a657890",
     "nudges": 0,
-    "lastMessage": "main moved while LN-22 is active",
+    "lastMessage": "Launched LN-23; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T02:12:42.599Z",
-    "nextTickAt": "2026-10-01T02:17:42.599Z",
+    "lastSuccessfulTickAt": "2026-10-01T02:13:40.445Z",
+    "nextTickAt": "2026-10-01T02:18:40.445Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-12B",
-        "completedAt": "2026-09-30T13:13:34.099Z",
-        "restartedAt": null,
-        "mainSha": "577cc615ca77a9b5f27ef746043973a304aba7f2",
-        "reason": null
-      },
       {
         "lot": "LN-13",
         "completedAt": "2026-09-30T13:49:26.521Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "d5878c2086db1163e303d9ebe99dff30f5a2ef3d",
         "reason": null
+      },
+      {
+        "lot": "LN-22",
+        "completedAt": "2026-10-01T02:13:30.269Z",
+        "restartedAt": null,
+        "mainSha": "fb2599316aadf943252e4ca377b7d2728a657890",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "c5fefe873fc24d589027f4e718d7486392304733",
+    "mainSha": "fb2599316aadf943252e4ca377b7d2728a657890",
     "lots": [
       {
         "id": "LN-00",
@@ -2095,7 +2095,7 @@
       {
         "id": "LN-22",
         "title": "Share programs and workouts by short code",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "allow an athlete to publish a program or workout and let another LiftNote user import it by entering a short code.",
         "business": {
           "summary": "Permettre à un athlète de partager un programme ou une séance avec un code court que quelqu'un d'autre peut saisir pour l'importer.",
@@ -3919,88 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 31,
+    "done": 32,
     "total": 62,
-    "percent": 50,
+    "percent": 52,
     "current": {
-      "id": "LN-22",
-      "title": "Share programs and workouts by short code",
-      "status": "TODO",
-      "goal": "allow an athlete to publish a program or workout and let another LiftNote user import it by entering a short code.",
-      "business": {
-        "summary": "Permettre à un athlète de partager un programme ou une séance avec un code court que quelqu'un d'autre peut saisir pour l'importer.",
-        "why": "Le partage doit être extrêmement simple sans créer de lien permanent entre deux comptes. L'auteur publie une version ; le destinataire l'importe et devient propriétaire de sa copie.",
-        "builds": [
-          "une action « Partager » sur un programme ou une séance",
-          "un code unique court, initialement de cinq caractères lisibles",
-          "un aperçu du contenu avant import",
-          "une copie complète et indépendante dans le compte de l'importateur",
-          "la recréation automatique des exercices personnalisés de l'auteur dans le compte de l'importateur",
-          "une version publiée figée pour éviter que les modifications de l'auteur changent silencieusement ce que le code représente",
-          "la possibilité de révoquer un code pour bloquer les futurs imports"
-        ],
-        "userImpact": [
-          "un athlète peut transmettre une séance ou un programme simplement en donnant cinq caractères",
-          "le destinataire récupère immédiatement une version qu'il peut modifier librement",
-          "les exercices spécifiques nécessaires au programme sont créés automatiquement",
-          "une modification ultérieure de l'auteur ne casse ni ne modifie la copie déjà importée"
-        ],
-        "notInThisLot": [
-          "pas de synchronisation automatique après import",
-          "pas de collaboration en direct",
-          "pas de marketplace publique",
-          "aucun historique, record ou mesure corporelle n'est partagé"
-        ],
-        "doneWhen": [
-          "un code valide permet de prévisualiser puis importer un programme ou une séance",
-          "les exercices personnalisés sont correctement rematérialisés chez le destinataire sans doublons internes à l'import",
-          "l'auteur et l'importateur ne peuvent pas modifier les données privées l'un de l'autre",
-          "révoquer le code bloque les nouveaux imports mais laisse les copies existantes intactes"
-        ],
-        "journey": [
-          "L’auteur ouvre son programme ou sa séance et choisit « Partager ».",
-          "LiftNote publie une version figée et génère un code court, par exemple K7MPL.",
-          "Le destinataire ouvre « Importer avec un code » et saisit K7MPL.",
-          "Avant import, LiftNote affiche le titre, le type, le nombre de séances/exercices et les exercices personnalisés qui seront créés.",
-          "Après confirmation, le destinataire obtient une copie personnelle indépendante.",
-          "À partir de ce moment, auteur et importateur peuvent diverger sans se synchroniser."
-        ],
-        "rules": [
-          "Le code est insensible à la casse et ne doit encoder aucun identifiant utilisateur.",
-          "La génération doit être unique côté serveur et gérer les collisions.",
-          "Le code pointe vers une version publiée, pas directement vers le graphe vivant de l’auteur.",
-          "Révoquer un partage bloque les futurs imports mais ne touche jamais aux copies déjà importées.",
-          "Aucun historique, record, mesure corporelle ou note privée hors prescription ne traverse le partage.",
-          "Les exercices personnalisés source deviennent des exercices personnalisés appartenant à l’importateur.",
-          "Un même exercice source utilisé plusieurs fois dans un import ne doit être matérialisé qu’une seule fois."
-        ],
-        "examples": [
-          "Alice partage « Push A » → K7MPL ; Bob importe puis modifie librement ses temps de repos.",
-          "Alice modifie son Push A après l’import : le Push A de Bob reste inchangé.",
-          "Le programme contient « Cable Y Raise » personnalisé : Bob reçoit un exercice Bob-owned correspondant.",
-          "Alice révoque K7MPL : Charlie ne peut plus importer, Bob garde sa copie."
-        ],
-        "data": [
-          "partage publié + code",
-          "version/snapshot sérialisé de programme ou séance",
-          "provenance de l’import",
-          "mapping exercices personnalisés source → exercices importateur",
-          "état actif/révoqué du partage"
-        ],
-        "dependencies": [
-          "LN-21 pour la matérialisation profonde",
-          "LN-15 pour des identités cross-user stables",
-          "LN-20 et futurs champs de prescription doivent survivre au round-trip"
-        ],
-        "attention": [
-          "brute force / taux de tentative sur un espace de code court",
-          "versionner le format sérialisé pour les futures évolutions",
-          "ne jamais utiliser une simple égalité de nom pour fusionner des exercices personnalisés"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-23",
       "title": "Coach–athlete relationships and authorization foundation",
       "status": "TODO",
@@ -4066,6 +3988,89 @@
           "éviter de transformer l’invitation en annuaire de comptes",
           "tester les accès croisés entre plusieurs utilisateurs",
           "ne pas confondre partage par code LN-22 et autorisation coach"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-24",
+      "title": "Coach-managed programs and synchronized prescriptions",
+      "status": "TODO",
+      "goal": "allow an authorized coach to assign/push a program or workout into an athlete account while keeping that prescription visibly coach-managed and synchronized.",
+      "business": {
+        "summary": "Permettre au coach de pousser un programme ou une séance sur le compte de l'athlète et de rester maître des modifications futures.",
+        "why": "Contrairement à un import par code, un programme coaché reste vivant : le coach en contrôle la prescription et ses changements doivent se synchroniser chez l'athlète sans réécrire les entraînements déjà commencés ou terminés.",
+        "builds": [
+          "l'affectation d'un programme complet ou d'une séance par un coach autorisé",
+          "un affichage explicite « Géré par votre coach » dans le compte de l'athlète",
+          "une prescription non modifiable directement par l'athlète",
+          "la synchronisation des changements futurs décidés par le coach",
+          "un versionnement qui évite les synchronisations partielles ou ambiguës",
+          "la conservation immuable des séances déjà démarrées ou terminées",
+          "la gestion des exercices personnalisés créés par le coach sans donner accès à ses autres données",
+          "une action permettant à l'athlète d'en faire une copie personnelle et de couper la synchronisation"
+        ],
+        "userImpact": [
+          "l'athlète sait immédiatement quels programmes sont personnels et lesquels sont pilotés par son coach",
+          "une modification du coach apparaît pour les prochaines séances sans changer l'historique",
+          "l'athlète peut exécuter normalement le programme et conserver ses performances dans son propre historique",
+          "s'il veut reprendre la main, il peut créer une copie personnelle indépendante"
+        ],
+        "notInThisLot": [
+          "pas encore de tableau de bord analytique complet pour le coach",
+          "pas de chat coach-athlète",
+          "pas de facturation, nutrition ou gestion de club",
+          "le coach n'obtient pas automatiquement accès à toutes les données privées de l'athlète"
+        ],
+        "doneWhen": [
+          "un contenu coaché est clairement identifiable et non éditable par l'athlète",
+          "les mises à jour du coach affectent les futures prescriptions",
+          "une séance déjà commencée reste figée même si le coach modifie le programme",
+          "la fin de la relation bloque les nouvelles modifications du coach sans supprimer l'historique",
+          "une copie personnelle se détache complètement de la synchronisation"
+        ],
+        "journey": [
+          "Le coach ouvre un athlète avec lequel il possède une relation active.",
+          "Il crée ou sélectionne une prescription puis l’affecte à cet athlète.",
+          "L’athlète voit le programme dans son compte avec l’indication « Géré par votre coach ».",
+          "Il peut consulter et exécuter la prescription, mais pas modifier sa définition.",
+          "Le coach change ensuite les prochaines cibles ; la vue gérée de l’athlète se met à jour.",
+          "Toute séance déjà démarrée garde cependant son snapshot d’origine.",
+          "L’athlète peut choisir « Copier dans mes programmes » pour obtenir une version personnelle qui ne sera plus synchronisée."
+        ],
+        "rules": [
+          "Seul un coach avec une relation LN-23 active peut créer ou modifier une affectation.",
+          "Le coach reste propriétaire/autorité de la prescription gérée.",
+          "L’athlète reste propriétaire de ses performances et de son historique d’exécution.",
+          "Une synchronisation ne modifie jamais une séance déjà commencée ou terminée.",
+          "Une rupture de relation bloque immédiatement les nouvelles modifications du coach.",
+          "Après rupture, la prescription existante devient figée en lecture seule jusqu’à copie personnelle ou archivage.",
+          "Le coach n’obtient pas automatiquement l’accès à toutes les autres données privées de l’athlète."
+        ],
+        "examples": [
+          "Coach prescrit Bench 5×5 @100 kg ; athlète démarre ; coach passe la cible future à 102,5 kg : la séance active reste à 100, la prochaine démarre à 102,5.",
+          "Un exercice personnalisé du coach est visible/exécutable dans le programme géré mais l’athlète ne peut pas éditer la définition source.",
+          "L’athlète copie le programme géré : une nouvelle version personnelle apparaît et les futures modifications coach ne s’y propagent plus."
+        ],
+        "data": [
+          "source de prescription coach",
+          "affectation coach→athlète",
+          "versions synchronisées",
+          "état de l’affectation",
+          "provenance coach dans les snapshots de séance",
+          "exercices personnalisés coach visibles dans le périmètre de l’affectation"
+        ],
+        "dependencies": [
+          "LN-23 pour l’autorisation",
+          "LN-06 pour la frontière snapshot des séances",
+          "LN-21 pour copie/détachement",
+          "LN-20 et autres métadonnées structurées doivent être synchronisées sans perte"
+        ],
+        "attention": [
+          "ne jamais implémenter cela comme un programme personnel de l’athlète avec juste un flag caché",
+          "synchronisation atomique/versionnée pour éviter les états partiels",
+          "bien définir le sort des affectations quand la relation s’arrête",
+          "ne pas élargir tacitement les permissions coach aux performances privées"
         ]
       },
       "contractAvailable": true
