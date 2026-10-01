@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T19:22:02.595Z",
+  "publishedAt": "2026-10-01T19:22:46.427Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-61 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T19:21:57.410Z",
-    "nextTickAt": "2026-10-01T19:26:57.410Z",
+    "lastSuccessfulTickAt": "2026-10-01T19:22:40.896Z",
+    "nextTickAt": "2026-10-01T19:27:40.896Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "08e5044109c1e5c2422f7b8e1730d6ad96a66f17",
+    "mainSha": "fb088f348f14d69444c6730b53a6ae399218edfb",
     "lots": [
       {
         "id": "LN-00",
@@ -4052,7 +4052,7 @@
       {
         "id": "LN-61",
         "title": "Affectations coach et historique de versions",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Rendre les affectations LN-24 lisibles, traçables et faciles à faire évoluer.",
         "business": null,
         "contractAvailable": true,
@@ -4233,13 +4233,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 70,
+    "done": 71,
     "total": 90,
-    "percent": 78,
+    "percent": 79,
     "current": {
       "id": "LN-61",
       "title": "Affectations coach et historique de versions",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Rendre les affectations LN-24 lisibles, traçables et faciles à faire évoluer.",
       "business": null,
       "contractAvailable": true,
