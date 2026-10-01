@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T17:51:25.852Z",
+  "publishedAt": "2026-10-01T17:52:21.132Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "DONE",
-    "currentLot": null,
-    "nextLot": null,
-    "launchedAt": null,
-    "lastProgressAt": "2026-10-01T17:06:53.482Z",
-    "lastChatCheckAt": "2026-10-01T16:34:28.585Z",
-    "lastObservedMainSha": "13fccb00e09d5eae436612452b0fb321deba1c3e",
+    "status": "RUNNING",
+    "currentLot": "LN-53",
+    "nextLot": "LN-54",
+    "launchedAt": "2026-10-01T17:52:15.405Z",
+    "lastProgressAt": "2026-10-01T17:52:15.405Z",
+    "lastChatCheckAt": "2026-10-01T17:52:15.405Z",
+    "lastObservedMainSha": "28600994d094a7dfe09561c6d36c9b1adf2d1c20",
     "nudges": 0,
-    "lastMessage": "All LiftNote lots are DONE",
+    "lastMessage": "Launched LN-53; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T17:51:20.468Z",
-    "nextTickAt": "2026-10-01T17:56:20.468Z",
+    "lastSuccessfulTickAt": "2026-10-01T17:52:15.405Z",
+    "nextTickAt": "2026-10-01T17:57:15.405Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "f96ee4c73ff61c97604ad243805ff445cd0763a4",
+    "mainSha": "28600994d094a7dfe09561c6d36c9b1adf2d1c20",
     "lots": [
       {
         "id": "LN-00",
@@ -3980,263 +3980,279 @@
       {
         "id": "LN-53",
         "title": "LiftNote Design System v2",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Poser un système visuel LiftNote cohérent et réutilisable avant toute nouvelle expansion de surface.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-54",
         "title": "Navigation globale et architecture de l'information",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Rendre la navigation LiftNote prévisible, compacte et cohérente sur mobile et desktop.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-55",
         "title": "Aujourd'hui / dashboard d'entraînement",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Faire d’Aujourd’hui un vrai point d’entrée quotidien sans dashboard surchargé.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-56",
         "title": "Refonte UX/UI de la séance active",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Optimiser le cœur du produit pour la saisie rapide en salle avec une seule main.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-57",
         "title": "Refonte Programmes et séances modèles",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Clarifier Programmes → structure/bloc → séance et supprimer les ambiguïtés de contexte.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-58",
         "title": "Refonte Historique et Progression",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Unifier séances, exercices, records, tendances et filtres sans écrans incohérents.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-59",
         "title": "Audit accessibilité et qualité UX de bout en bout",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Fermer la phase UX par une passe systématique de cohérence, accessibilité et robustesse responsive.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-60",
         "title": "Workspace coach et cockpit des relations",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Donner au coach un vrai espace de travail au-dessus des fondations LN-23/LN-24.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-61",
         "title": "Affectations coach et historique de versions",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Rendre les affectations LN-24 lisibles, traçables et faciles à faire évoluer.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-62",
         "title": "Consignes coach et notes athlète distinctes",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Permettre les consignes coach sans écraser les notes privées de l’athlète.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-63",
         "title": "Feedback post-séance coach ↔ athlète",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Créer une boucle de retour courte et structurée après séance sans messagerie générale.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-64",
         "title": "Notifications de coaching utiles",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Notifier seulement les événements coach/athlète qui changent l’action suivante.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-65",
         "title": "Dashboard de revue de performance coach",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Donner au coach une vue synthétique des performances explicitement autorisées.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-66",
         "title": "Notes persistantes d'exercice et de setup",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Mémoriser réglages et repères pratiques sans les confondre avec les commentaires de série.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-67",
         "title": "Structure Programme → Bloc → Semaine → Séance",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Ajouter une vraie structure hebdomadaire aux blocs/versioning LN-27 sans casser l’historique.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-68",
         "title": "Règles de progression programmables",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Permettre d’exprimer une progression déterministe, explicable et éditable.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-69",
         "title": "Variantes de prescription par semaine",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Faire varier séries/reps/charge/tempo/effort sans dupliquer toute la séance.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-70",
         "title": "Planification datée et rappels de séances",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Ajouter une planification explicite pour savoir quoi faire aujourd’hui sans inventer une prochaine séance.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-71",
         "title": "e1RM et tendances de force",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Ajouter des estimations de force clairement dérivées sans les confondre avec les records réels.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-72",
         "title": "Tendances effort, charge et progression",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Croiser données objectives et RPE/RIR de façon descriptive et vérifiable.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-73",
         "title": "Export portable CSV et export de compte",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Donner à l’utilisateur une copie exploitable de ses données au-delà du PDF.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-74",
         "title": "Import/export structuré de programmes et templates",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Permettre un échange de fichiers déterministe en complément des codes de partage.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-75",
         "title": "Fondation Apple Health / Health Connect",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Préparer des échanges santé limités et consentis sans transformer LiftNote en dossier médical.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-76",
         "title": "Compagnons montres et wearables",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Définir puis livrer un premier compagnon wearable centré sur la séance active.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-77",
         "title": "Import IA depuis texte, image ou PDF",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Transformer un programme reçu en contenu structuré, toujours relu avant enregistrement.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-78",
         "title": "Résumé IA de progression traçable",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Résumer l’évolution à partir des données LiftNote sans masquer les faits sources.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-79",
         "title": "Analyse descriptive de tendances et plateaux",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Identifier des tendances observables sans prétendre établir une cause physiologique.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       },
       {
         "id": "LN-80",
         "title": "Assistant de création de programme",
-        "status": "PLANNED",
-        "goal": null,
+        "status": "TODO",
+        "goal": "Générer une proposition entièrement éditable et expliquée, jamais un coach autonome opaque.",
         "business": null,
         "contractAvailable": true,
-        "executionState": "planned"
+        "executionState": "executable"
       }
     ],
     "mismatches": []
   },
   "summary": {
     "done": 62,
-    "total": 62,
-    "percent": 100,
-    "current": null,
-    "next": null
+    "total": 90,
+    "percent": 69,
+    "current": {
+      "id": "LN-53",
+      "title": "LiftNote Design System v2",
+      "status": "TODO",
+      "goal": "Poser un système visuel LiftNote cohérent et réutilisable avant toute nouvelle expansion de surface.",
+      "business": null,
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-54",
+      "title": "Navigation globale et architecture de l'information",
+      "status": "TODO",
+      "goal": "Rendre la navigation LiftNote prévisible, compacte et cohérente sur mobile et desktop.",
+      "business": null,
+      "contractAvailable": true,
+      "executionState": "executable"
+    }
   }
 }
