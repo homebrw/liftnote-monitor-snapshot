@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T18:39:39.665Z",
+  "publishedAt": "2026-10-01T18:40:30.925Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-56",
-    "nextLot": "LN-57",
-    "launchedAt": "2026-10-01T18:28:42.254Z",
-    "lastProgressAt": "2026-10-01T18:38:07.529Z",
-    "lastChatCheckAt": "2026-10-01T18:28:42.254Z",
-    "lastObservedMainSha": "6515e3a697406f5590323925299d0c5ded79990e",
+    "currentLot": "LN-57",
+    "nextLot": "LN-58",
+    "launchedAt": "2026-10-01T18:40:25.452Z",
+    "lastProgressAt": "2026-10-01T18:40:25.452Z",
+    "lastChatCheckAt": "2026-10-01T18:40:25.452Z",
+    "lastObservedMainSha": "4e8241703c3ed01a43685920efe425dad8ae57a6",
     "nudges": 0,
-    "lastMessage": "main moved while LN-56 is active",
+    "lastMessage": "Launched LN-57; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T18:39:34.261Z",
-    "nextTickAt": "2026-10-01T18:44:34.261Z",
+    "lastSuccessfulTickAt": "2026-10-01T18:40:25.452Z",
+    "nextTickAt": "2026-10-01T18:45:25.452Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-44",
-        "completedAt": "2026-10-01T10:40:12.335Z",
-        "restartedAt": null,
-        "mainSha": "246f96927cde85ee2fc3bd8ed1a4ee6609fb52d8",
-        "reason": null
-      },
       {
         "lot": "LN-45",
         "completedAt": "2026-10-01T11:53:58.278Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "47df358e63585911e7915c4609c969dc73544153",
         "reason": null
+      },
+      {
+        "lot": "LN-56",
+        "completedAt": "2026-10-01T18:40:17.617Z",
+        "restartedAt": null,
+        "mainSha": "4e8241703c3ed01a43685920efe425dad8ae57a6",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "6515e3a697406f5590323925299d0c5ded79990e",
+    "mainSha": "4e8241703c3ed01a43685920efe425dad8ae57a6",
     "lots": [
       {
         "id": "LN-00",
@@ -4007,7 +4007,7 @@
       {
         "id": "LN-56",
         "title": "Refonte UX/UI de la séance active",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Optimiser le cœur du produit pour la saisie rapide en salle avec une seule main.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 65,
+    "done": 66,
     "total": 90,
-    "percent": 72,
+    "percent": 73,
     "current": {
-      "id": "LN-56",
-      "title": "Refonte UX/UI de la séance active",
+      "id": "LN-57",
+      "title": "Refonte Programmes et séances modèles",
       "status": "TODO",
-      "goal": "Optimiser le cœur du produit pour la saisie rapide en salle avec une seule main.",
+      "goal": "Clarifier Programmes → structure/bloc → séance et supprimer les ambiguïtés de contexte.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-57",
-      "title": "Refonte Programmes et séances modèles",
+      "id": "LN-58",
+      "title": "Refonte Historique et Progression",
       "status": "TODO",
-      "goal": "Clarifier Programmes → structure/bloc → séance et supprimer les ambiguïtés de contexte.",
+      "goal": "Unifier séances, exercices, records, tendances et filtres sans écrans incohérents.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
