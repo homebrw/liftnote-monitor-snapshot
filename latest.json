@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T19:06:17.632Z",
+  "publishedAt": "2026-10-01T19:07:15.207Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-59",
-    "nextLot": "LN-60",
-    "launchedAt": "2026-10-01T18:58:08.530Z",
-    "lastProgressAt": "2026-10-01T19:05:29.218Z",
-    "lastChatCheckAt": "2026-10-01T18:58:08.530Z",
-    "lastObservedMainSha": "fef8212a9f3ddc45d6176e2270a83afbe61f79ea",
+    "currentLot": "LN-60",
+    "nextLot": "LN-61",
+    "launchedAt": "2026-10-01T19:07:09.428Z",
+    "lastProgressAt": "2026-10-01T19:07:09.428Z",
+    "lastChatCheckAt": "2026-10-01T19:07:09.428Z",
+    "lastObservedMainSha": "953aebeec4d2bca1cfb1d62249f7f827bdbcf0ce",
     "nudges": 0,
-    "lastMessage": "main moved while LN-59 is active",
+    "lastMessage": "Launched LN-60; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T19:06:12.375Z",
-    "nextTickAt": "2026-10-01T19:11:12.375Z",
+    "lastSuccessfulTickAt": "2026-10-01T19:07:09.428Z",
+    "nextTickAt": "2026-10-01T19:12:09.428Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-47",
-        "completedAt": "2026-10-01T12:17:32.795Z",
-        "restartedAt": null,
-        "mainSha": "3e816b5e264dc92d08eb1e44d8ce4111ef2aae25",
-        "reason": null
-      },
       {
         "lot": "LN-48",
         "completedAt": "2026-10-01T12:36:07.735Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "59cabe5e9b154b7d7868ff0de9a37be671d0f439",
         "reason": null
+      },
+      {
+        "lot": "LN-59",
+        "completedAt": "2026-10-01T19:06:57.226Z",
+        "restartedAt": null,
+        "mainSha": "953aebeec4d2bca1cfb1d62249f7f827bdbcf0ce",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "fef8212a9f3ddc45d6176e2270a83afbe61f79ea",
+    "mainSha": "953aebeec4d2bca1cfb1d62249f7f827bdbcf0ce",
     "lots": [
       {
         "id": "LN-00",
@@ -4034,7 +4034,7 @@
       {
         "id": "LN-59",
         "title": "Audit accessibilité et qualité UX de bout en bout",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Fermer la phase UX par une passe systématique de cohérence, accessibilité et robustesse responsive.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 68,
+    "done": 69,
     "total": 90,
-    "percent": 76,
+    "percent": 77,
     "current": {
-      "id": "LN-59",
-      "title": "Audit accessibilité et qualité UX de bout en bout",
+      "id": "LN-60",
+      "title": "Workspace coach et cockpit des relations",
       "status": "TODO",
-      "goal": "Fermer la phase UX par une passe systématique de cohérence, accessibilité et robustesse responsive.",
+      "goal": "Donner au coach un vrai espace de travail au-dessus des fondations LN-23/LN-24.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-60",
-      "title": "Workspace coach et cockpit des relations",
+      "id": "LN-61",
+      "title": "Affectations coach et historique de versions",
       "status": "TODO",
-      "goal": "Donner au coach un vrai espace de travail au-dessus des fondations LN-23/LN-24.",
+      "goal": "Rendre les affectations LN-24 lisibles, traçables et faciles à faire évoluer.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
