@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T03:37:12.964Z",
+  "publishedAt": "2026-10-01T03:38:07.473Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-27",
-    "nextLot": "LN-28",
-    "launchedAt": "2026-10-01T03:17:21.981Z",
-    "lastProgressAt": "2026-10-01T03:17:21.981Z",
-    "lastChatCheckAt": "2026-10-01T03:17:21.981Z",
-    "lastObservedMainSha": "d0252f75794c5a1ae0c09b4e3c05f75a6016a97b",
+    "currentLot": "LN-28",
+    "nextLot": "LN-29",
+    "launchedAt": "2026-10-01T03:38:01.852Z",
+    "lastProgressAt": "2026-10-01T03:38:01.852Z",
+    "lastChatCheckAt": "2026-10-01T03:38:01.852Z",
+    "lastObservedMainSha": "cb55b865310c563f188fbff595c52109a8996aa2",
     "nudges": 0,
-    "lastMessage": "Launched LN-27; canonical chat persisted before prompt marker became visible",
+    "lastMessage": "Launched LN-28; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T03:37:07.833Z",
-    "nextTickAt": "2026-10-01T03:42:07.833Z",
+    "lastSuccessfulTickAt": "2026-10-01T03:38:01.852Z",
+    "nextTickAt": "2026-10-01T03:43:01.852Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-15B",
-        "completedAt": "2026-09-30T23:30:03.313Z",
-        "restartedAt": null,
-        "mainSha": "e2964fbf6a19ec4344f52882dc221d192ee14fe9",
-        "reason": null
-      },
       {
         "lot": "LN-15C",
         "completedAt": "2026-10-01T00:00:18.233Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "d0252f75794c5a1ae0c09b4e3c05f75a6016a97b",
         "reason": null
+      },
+      {
+        "lot": "LN-27",
+        "completedAt": "2026-10-01T03:37:52.697Z",
+        "restartedAt": null,
+        "mainSha": "cb55b865310c563f188fbff595c52109a8996aa2",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "d0252f75794c5a1ae0c09b4e3c05f75a6016a97b",
+    "mainSha": "cb55b865310c563f188fbff595c52109a8996aa2",
     "lots": [
       {
         "id": "LN-00",
@@ -2433,7 +2433,7 @@
       {
         "id": "LN-27",
         "title": "Program versioning and training cycles",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "support V1/V2, named blocks and deload phases while preserving lineage and the exact version used by historical sessions.",
         "business": {
           "summary": "Faire évoluer un programme en versions et blocs sans perdre sa continuité.",
@@ -3919,65 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 36,
+    "done": 37,
     "total": 62,
-    "percent": 58,
+    "percent": 60,
     "current": {
-      "id": "LN-27",
-      "title": "Program versioning and training cycles",
-      "status": "TODO",
-      "goal": "support V1/V2, named blocks and deload phases while preserving lineage and the exact version used by historical sessions.",
-      "business": {
-        "summary": "Faire évoluer un programme en versions et blocs sans perdre sa continuité.",
-        "why": "V1, V2, bloc de force, hypertrophie ou deload doivent former une même histoire plutôt qu'une suite de programmes sans lien.",
-        "builds": [
-          "versions et blocs nommés",
-          "un bloc courant",
-          "la conservation des versions précédentes",
-          "le rattachement des séances à la version exacte"
-        ],
-        "userImpact": [
-          "l'athlète comprend comment son programme évolue dans le temps"
-        ],
-        "notInThisLot": [
-          "pas d'algorithme automatique de périodisation"
-        ],
-        "doneWhen": [
-          "une nouvelle version ne réécrit jamais l'ancienne",
-          "chaque séance historique garde sa version source"
-        ],
-        "journey": [
-          "L’athlète duplique ou fait évoluer son programme vers une nouvelle version.",
-          "Il nomme et ordonne ses blocs, par exemple Bloc 1, Deload, Bloc 2.",
-          "Chaque séance historique reste rattachée à la version exacte utilisée."
-        ],
-        "rules": [
-          "Une nouvelle version ne réécrit jamais l’ancienne.",
-          "La lignée entre versions doit rester lisible.",
-          "Les règles de propriété coach/personnelle sont conservées lors du versioning."
-        ],
-        "examples": [
-          "PPL V1 devient PPL V2 sans perdre les séances réalisées sous V1.",
-          "Un deload existe comme bloc explicite plutôt que comme écrasement du programme courant."
-        ],
-        "data": [
-          "version de programme",
-          "bloc/cycle",
-          "ordre",
-          "provenance session→version"
-        ],
-        "dependencies": [
-          "LN-21 pour la duplication",
-          "LN-24 pour les programmes coachés"
-        ],
-        "attention": [
-          "éviter de multiplier les programmes sans lien",
-          "ne pas modifier l’historique quand le bloc courant change"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-28",
       "title": "Exercise favorites, recents and frequent picks",
       "status": "TODO",
@@ -4025,6 +3970,58 @@
         "attention": [
           "ne pas confondre fréquence et recommandation",
           "garder les classements privés"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-29",
+      "title": "Gym profiles and available equipment",
+      "status": "TODO",
+      "goal": "let athletes define locations/equipment profiles so exercise discovery and later substitutions can reflect what is actually available.",
+      "business": {
+        "summary": "Créer des profils de salle avec le matériel réellement disponible.",
+        "why": "Un Home Gym, une box CrossFit et une salle commerciale n'offrent pas les mêmes possibilités.",
+        "builds": [
+          "profils de salle nommés",
+          "liste du matériel par profil",
+          "profil courant pour la séance",
+          "filtrage/priorisation des exercices compatibles"
+        ],
+        "userImpact": [
+          "les choix d'exercices correspondent mieux au matériel disponible"
+        ],
+        "notInThisLot": [
+          "pas de géolocalisation obligatoire"
+        ],
+        "doneWhen": [
+          "changer de profil change le contexte de choix sans toucher aux programmes ni à l'historique"
+        ],
+        "journey": [
+          "L’athlète crée des profils comme Home Gym ou Basic-Fit.",
+          "Il indique le matériel disponible dans chaque profil.",
+          "Il choisit le profil courant pour filtrer ou prioriser les exercices compatibles."
+        ],
+        "rules": [
+          "Le profil de salle est facultatif.",
+          "Changer de profil ne modifie jamais programme ou historique.",
+          "Un exercice filtré n’est pas supprimé du catalogue."
+        ],
+        "examples": [
+          "Home Gym masque/priorise selon barre, rack et haltères présents.",
+          "Une séance peut temporairement utiliser un autre profil que le profil par défaut."
+        ],
+        "data": [
+          "profils de salle",
+          "inventaire d’équipement",
+          "profil courant/session"
+        ],
+        "dependencies": [
+          "métadonnées équipement LN-13B"
+        ],
+        "attention": [
+          "ne pas imposer la géolocalisation",
+          "préparer LN-50 sans faire de substitution automatique ici"
         ]
       },
       "contractAvailable": true
