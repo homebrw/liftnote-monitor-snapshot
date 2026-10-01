@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T17:05:30.531Z",
+  "publishedAt": "2026-10-01T17:06:14.579Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "CONSISTENCY_ERROR",
@@ -14,7 +14,7 @@
     "lastMessage": "LN-52 is DONE but completion invariants failed; next lot not launched.",
     "lastError": "LN-52 completion record does not identify a PR. LN-52 completion record does not record a merge SHA.",
     "lastSuccessfulTickAt": "2026-10-01T17:00:03.268Z",
-    "nextTickAt": "2026-10-01T17:10:24.637Z",
+    "nextTickAt": "2026-10-01T17:11:08.799Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "39de4c4672a2ac998364f33a438320465ae740ca",
+    "mainSha": "13fccb00e09d5eae436612452b0fb321deba1c3e",
     "lots": [
       {
         "id": "LN-00",
