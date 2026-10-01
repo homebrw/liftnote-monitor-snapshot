@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T13:00:36.363Z",
+  "publishedAt": "2026-10-01T13:01:32.969Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-49",
-    "nextLot": "LN-50",
-    "launchedAt": "2026-10-01T12:36:18.735Z",
-    "lastProgressAt": "2026-10-01T12:57:37.542Z",
-    "lastChatCheckAt": "2026-10-01T12:36:18.735Z",
-    "lastObservedMainSha": "e163d5d2580a632a67b033480ef2feab874f9302",
+    "currentLot": "LN-50",
+    "nextLot": "LN-51",
+    "launchedAt": "2026-10-01T13:01:27.366Z",
+    "lastProgressAt": "2026-10-01T13:01:27.366Z",
+    "lastChatCheckAt": "2026-10-01T13:01:27.366Z",
+    "lastObservedMainSha": "0eef64ce21f256c16a7d3f793f4727ec3bb1db7b",
     "nudges": 0,
-    "lastMessage": "main moved while LN-49 is active",
+    "lastMessage": "Launched LN-50; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T13:00:30.932Z",
-    "nextTickAt": "2026-10-01T13:05:30.932Z",
+    "lastSuccessfulTickAt": "2026-10-01T13:01:27.366Z",
+    "nextTickAt": "2026-10-01T13:06:27.366Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-37",
-        "completedAt": "2026-10-01T08:17:09.460Z",
-        "restartedAt": null,
-        "mainSha": "5ade74ef0bf252e6f6d14018179867f06548e37c",
-        "reason": null
-      },
       {
         "lot": "LN-38",
         "completedAt": "2026-10-01T08:25:19.107Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "15814d754d4697b52e799439478c098f393b98ff",
         "reason": null
+      },
+      {
+        "lot": "LN-49",
+        "completedAt": "2026-10-01T13:01:14.730Z",
+        "restartedAt": null,
+        "mainSha": "0eef64ce21f256c16a7d3f793f4727ec3bb1db7b",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "e163d5d2580a632a67b033480ef2feab874f9302",
+    "mainSha": "0eef64ce21f256c16a7d3f793f4727ec3bb1db7b",
     "lots": [
       {
         "id": "LN-00",
@@ -3621,7 +3621,7 @@
       {
         "id": "LN-49",
         "title": "Temporary exercise unavailability",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "let an athlete temporarily mark an exercise unavailable without deleting it or making medical claims.",
         "business": {
           "summary": "Pouvoir marquer temporairement un exercice comme indisponible.",
@@ -3919,65 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 58,
+    "done": 59,
     "total": 62,
-    "percent": 94,
+    "percent": 95,
     "current": {
-      "id": "LN-49",
-      "title": "Temporary exercise unavailability",
-      "status": "TODO",
-      "goal": "let an athlete temporarily mark an exercise unavailable without deleting it or making medical claims.",
-      "business": {
-        "summary": "Pouvoir marquer temporairement un exercice comme indisponible.",
-        "why": "Un athlète peut vouloir éviter provisoirement un mouvement sans le supprimer ni recevoir de conseil médical.",
-        "builds": [
-          "indisponibilité jusqu'à une date ou réactivation",
-          "note privée optionnelle",
-          "exclusion des suggestions courantes",
-          "avertissement dans les templates",
-          "réactivation simple"
-        ],
-        "userImpact": [
-          "LiftNote cesse de proposer temporairement un mouvement non souhaité"
-        ],
-        "notInThisLot": [
-          "aucun diagnostic ni conseil médical"
-        ],
-        "doneWhen": [
-          "l'historique reste intact",
-          "l'indisponibilité expire ou se retire proprement"
-        ],
-        "journey": [
-          "L’athlète marque un exercice indisponible jusqu’à une date ou réactivation manuelle.",
-          "LiftNote cesse de le proposer normalement.",
-          "Les templates existants affichent un avertissement sans être modifiés."
-        ],
-        "rules": [
-          "L’état est temporaire et non médical.",
-          "L’historique reste intact.",
-          "La note éventuelle est privée."
-        ],
-        "examples": [
-          "Bench indisponible jusqu’au 15 octobre.",
-          "Réactivation manuelle plus tôt sans toucher aux séances passées."
-        ],
-        "data": [
-          "état indisponible",
-          "date fin",
-          "note privée"
-        ],
-        "dependencies": [
-          "catalogue exercice",
-          "LN-50 alternatives"
-        ],
-        "attention": [
-          "pas de diagnostic",
-          "expiration prévisible selon fuseau/date"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-50",
       "title": "Exercise alternatives and substitution graph",
       "status": "TODO",
@@ -4030,6 +3975,97 @@
         "attention": [
           "ne pas transformer une alternative en recommandation médicale",
           "préserver la provenance prescrit/réalisé"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-51",
+      "title": "Full drop-set modeling and logging",
+      "status": "TODO",
+      "goal": "make drop sets a first-class grouped effort with ordered load/repetition stages rather than three unrelated ordinary sets.",
+      "business": {
+        "summary": "Enregistrer de vrais drop sets multi-paliers comme un seul effort structuré.",
+        "why": "Un drop set 100 kg → 80 kg → 60 kg n'est pas trois séries indépendantes : les paliers appartiennent à une même technique d'intensification et doivent rester groupés.",
+        "builds": [
+          "un drop set parent contenant plusieurs paliers ordonnés",
+          "une saisie mobile rapide des baisses de charge et répétitions",
+          "un repos déclenché seulement après le dernier palier",
+          "un historique groupé et corrigeable sans perdre la structure",
+          "des statistiques qui additionnent les vrais paliers sans double comptage"
+        ],
+        "userImpact": [
+          "l'athlète peut enfin consigner fidèlement ses drop sets au lieu de bricoler plusieurs séries normales"
+        ],
+        "notInThisLot": [
+          "pas encore de rest-pause, myo-reps ou cluster sets",
+          "pas de record personnel spécifique « meilleur drop set »"
+        ],
+        "doneWhen": [
+          "100 kg × 8 → 80 kg × 6 → 60 kg × 9 reste un seul drop set avec trois paliers",
+          "l'historique, le minuteur et le volume respectent cette structure"
+        ],
+        "journey": [
+          "Dans le modèle de séance, l’athlète peut prévoir qu’une série sera un drop set complet plutôt qu’une série classique.",
+          "Pendant la séance, il démarre le drop set depuis le même écran que les autres séries.",
+          "Il saisit le premier palier, par exemple 100 kg × 8.",
+          "Sans revenir à la liste générale, il ajoute immédiatement le palier suivant, par exemple 80 kg × 6.",
+          "Il peut ajouter autant de paliers que nécessaire, en corriger un ou en retirer un avant validation finale.",
+          "Le drop set reste affiché comme un seul bloc visuel avec ses paliers ordonnés.",
+          "Le repos programmé ne démarre qu’une fois l’ensemble du drop set terminé.",
+          "Après la séance, l’historique conserve le bloc complet exactement comme il a été exécuté."
+        ],
+        "rules": [
+          "Un drop set est un effort parent contenant au moins deux paliers ordonnés.",
+          "Chaque palier conserve ses propres valeurs réelles : charge, répétitions et autres métriques compatibles avec l’exercice.",
+          "Les paliers ne deviennent jamais des séries de travail indépendantes simplement parce qu’ils possèdent chacun une charge et des répétitions.",
+          "Le repos normal de la séance se situe après le drop set complet, pas automatiquement entre ses paliers.",
+          "Le parent sert à représenter la structure ; il ne doit pas ajouter une seconde valeur de volume aux volumes déjà calculés depuis les paliers.",
+          "Une modification future du template ne peut jamais changer le nombre de paliers ou les performances d’un drop set déjà réalisé.",
+          "Corriger un palier historique doit conserver son appartenance au même drop set et sa position dans l’ordre.",
+          "Supprimer le drop set entier supprime explicitement son bloc ; supprimer un seul palier ne doit jamais créer de palier orphelin.",
+          "La sémantique de charge reste celle du mouvement : charge classique, lest ajouté ou assistance restent distincts même dans un drop set.",
+          "La simple étiquette « drop set » créée par LN-26 n’est pas suffisante : LN-51 doit réellement modéliser la structure multi-paliers."
+        ],
+        "examples": [
+          "Développé couché : 100 kg × 8 → 80 kg × 6 → 60 kg × 9, affiché comme un seul drop set à trois paliers.",
+          "Élévations latérales : 12 kg × 12 → 8 kg × 10 → 5 kg × 15.",
+          "Leg extension : 70 kg × 10 → 55 kg × 8 ; l’athlète décide sur le moment de ne faire que deux paliers.",
+          "Après la séance, l’athlète corrige le second palier de 85 kg vers 80 kg : le bloc reste intact et les statistiques sont recalculées proprement.",
+          "Le coach partage un programme contenant un drop set : l’athlète voit la même structure dans sa prescription, puis son exécution est figée au démarrage de la séance."
+        ],
+        "data": [
+          "identifiant du drop set parent",
+          "identifiants des paliers enfants",
+          "ordre explicite des paliers",
+          "type de série hérité de LN-26",
+          "charge, répétitions et métriques propres à chaque palier",
+          "sémantique de charge de chaque performance",
+          "unités applicables",
+          "état de complétion du parent et des paliers",
+          "provenance template / séance / coach / import",
+          "données nécessaires aux corrections historiques et aux statistiques"
+        ],
+        "dependencies": [
+          "LN-06 pour figer la structure dans l’historique au démarrage de la séance",
+          "LN-07 pour la saisie active et le cycle de vie des séries",
+          "LN-08 pour le comportement du minuteur de repos",
+          "LN-11 pour les corrections d’historique",
+          "LN-20 pour distinguer charge classique, lest et assistance",
+          "LN-21/LN-22/LN-24 pour duplication, partage et programmes coachés",
+          "LN-26 pour le type de série drop set",
+          "LN-30 pour les unités",
+          "LN-35/LN-36 pour comparaisons et résumé de séance"
+        ],
+        "attention": [
+          "La saisie doit rester extrêmement rapide sur mobile : l’athlète est généralement sous fatigue entre les paliers.",
+          "Ne pas lancer automatiquement le minuteur de repos entre deux paliers.",
+          "Ne jamais compter deux fois le volume en additionnant un faux volume parent et les volumes des paliers.",
+          "Ne pas créer un nouveau record « meilleur drop set » sans contrat produit dédié.",
+          "Une étape peut éventuellement être éligible aux PR ordinaires uniquement si les règles de type de série le permettent explicitement.",
+          "Le modèle doit permettre la correction ou suppression d’un palier sans casser l’intégrité du parent.",
+          "Ne pas stocker toute la structure uniquement dans une note texte qui empêcherait les requêtes et corrections.",
+          "Rest-pause, myo-reps et cluster sets restent des techniques différentes et ne doivent pas être assimilées automatiquement aux drop sets."
         ]
       },
       "contractAvailable": true
