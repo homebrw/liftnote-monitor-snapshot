@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T13:24:23.936Z",
+  "publishedAt": "2026-10-01T13:30:15.053Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-50",
-    "nextLot": "LN-51",
-    "launchedAt": "2026-10-01T13:01:27.366Z",
-    "lastProgressAt": "2026-10-01T13:21:49.841Z",
-    "lastChatCheckAt": "2026-10-01T13:01:27.366Z",
-    "lastObservedMainSha": "9e38b4a16f8e57aaf0857f317a5b632291419f06",
+    "currentLot": "LN-51",
+    "nextLot": "LN-52",
+    "launchedAt": "2026-10-01T13:30:05.363Z",
+    "lastProgressAt": "2026-10-01T13:30:05.363Z",
+    "lastChatCheckAt": "2026-10-01T13:30:05.363Z",
+    "lastObservedMainSha": "890fd78e794b6e33f7b33037231aac03a515b811",
     "nudges": 0,
-    "lastMessage": "main moved while LN-50 is active",
+    "lastMessage": "Launched LN-51; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T13:24:13.671Z",
-    "nextTickAt": "2026-10-01T13:29:13.671Z",
+    "lastSuccessfulTickAt": "2026-10-01T13:30:05.363Z",
+    "nextTickAt": "2026-10-01T13:35:05.363Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-38",
-        "completedAt": "2026-10-01T08:25:19.107Z",
-        "restartedAt": null,
-        "mainSha": "6b57075dbfd8724bf2b6d28a86a65f75b885d50f",
-        "reason": null
-      },
       {
         "lot": "LN-39",
         "completedAt": "2026-10-01T08:33:27.685Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "0eef64ce21f256c16a7d3f793f4727ec3bb1db7b",
         "reason": null
+      },
+      {
+        "lot": "LN-50",
+        "completedAt": "2026-10-01T13:25:03.958Z",
+        "restartedAt": null,
+        "mainSha": "890fd78e794b6e33f7b33037231aac03a515b811",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "9e38b4a16f8e57aaf0857f317a5b632291419f06",
+    "mainSha": "890fd78e794b6e33f7b33037231aac03a515b811",
     "lots": [
       {
         "id": "LN-00",
@@ -3676,7 +3676,7 @@
       {
         "id": "LN-50",
         "title": "Exercise alternatives and substitution graph",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "associate meaningful alternatives and support one-off substitutions without merging distinct exercise histories.",
         "business": {
           "summary": "Associer des exercices alternatifs et permettre une substitution ponctuelle.",
@@ -3919,67 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 59,
+    "done": 60,
     "total": 62,
-    "percent": 95,
+    "percent": 97,
     "current": {
-      "id": "LN-50",
-      "title": "Exercise alternatives and substitution graph",
-      "status": "TODO",
-      "goal": "associate meaningful alternatives and support one-off substitutions without merging distinct exercise histories.",
-      "business": {
-        "summary": "Associer des exercices alternatifs et permettre une substitution ponctuelle.",
-        "why": "Une machine peut être occupée ou absente ; l'athlète doit pouvoir s'adapter sans casser son programme ni son historique.",
-        "builds": [
-          "graphe d'alternatives système et personnelles",
-          "alternatives depuis l'exercice ou la séance",
-          "substitution ponctuelle",
-          "traçabilité prévu vs réalisé",
-          "priorisation selon matériel et indisponibilités"
-        ],
-        "userImpact": [
-          "l'athlète adapte sa séance à la réalité de la salle tout en gardant un historique exact"
-        ],
-        "notInThisLot": [
-          "les alternatives ne fusionnent jamais les historiques",
-          "pas de recommandation médicale automatique"
-        ],
-        "doneWhen": [
-          "la séance enregistre ce qui était prévu et ce qui a été réellement fait",
-          "le template ne change que sur action explicite"
-        ],
-        "journey": [
-          "L’athlète voit qu’un exercice est indisponible ou impraticable.",
-          "LiftNote propose des alternatives pertinentes.",
-          "Il choisit une substitution ponctuelle pour la séance.",
-          "L’historique conserve le mouvement réellement réalisé sans changer le template sauf action explicite."
-        ],
-        "rules": [
-          "Une alternative n’est pas une équivalence parfaite.",
-          "Les historiques des exercices restent distincts.",
-          "Le template ne change que sur demande explicite."
-        ],
-        "examples": [
-          "Bench remplacé aujourd’hui par Dumbbell Bench.",
-          "Chest Press proposée parce que le profil de salle dispose de la machine."
-        ],
-        "data": [
-          "graphe alternatives",
-          "prescrit vs réalisé",
-          "contexte équipement/indisponibilité"
-        ],
-        "dependencies": [
-          "LN-29 profils de salle",
-          "LN-49 indisponibilité"
-        ],
-        "attention": [
-          "ne pas transformer une alternative en recommandation médicale",
-          "préserver la provenance prescrit/réalisé"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-51",
       "title": "Full drop-set modeling and logging",
       "status": "TODO",
@@ -4066,6 +4009,100 @@
           "Le modèle doit permettre la correction ou suppression d’un palier sans casser l’intégrité du parent.",
           "Ne pas stocker toute la structure uniquement dans une note texte qui empêcherait les requêtes et corrections.",
           "Rest-pause, myo-reps et cluster sets restent des techniques différentes et ne doivent pas être assimilées automatiquement aux drop sets."
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-52",
+      "title": "RPE / RIR perceived effort",
+      "status": "TODO",
+      "goal": "let athletes optionally record perceived effort using RPE or RIR, keep target effort distinct from actual reported effort, and preserve the original entered scale/value in history.",
+      "business": {
+        "summary": "Ajouter le RPE / RIR pour enregistrer à quel point chaque série a réellement été difficile.",
+        "why": "Deux séries identiques en charge et répétitions peuvent avoir une difficulté très différente. RPE/RIR apporte ce contexte sans remplacer les données objectives.",
+        "builds": [
+          "un choix utilisateur entre RIR, RPE ou aucun suivi d'effort",
+          "une saisie facultative et rapide après une série",
+          "la conservation exacte de la valeur et de l'échelle saisies",
+          "des objectifs RPE/RIR dans les prescriptions",
+          "l'affichage dans l'historique et les comparaisons compatibles",
+          "des synthèses descriptives lorsque suffisamment de données existent"
+        ],
+        "userImpact": [
+          "l'athlète peut voir qu'une même performance devient plus facile ou plus difficile au fil du temps"
+        ],
+        "notInThisLot": [
+          "pas de score automatique de fatigue ou récupération",
+          "pas d'ajustement automatique de charge basé sur le RPE/RIR"
+        ],
+        "doneWhen": [
+          "une série saisie RIR reste historiquement une saisie RIR même après changement de préférence",
+          "la cible prescrite et l'effort réellement ressenti restent deux données distinctes",
+          "une absence de RPE/RIR n'est jamais transformée en zéro"
+        ],
+        "journey": [
+          "Dans ses préférences, l’athlète choisit de saisir son effort en RIR, en RPE, ou de ne pas suivre l’effort perçu.",
+          "Lorsqu’il termine une série, LiftNote lui propose une saisie courte et facultative adaptée à sa préférence.",
+          "Avec RIR, il indique combien de répétitions propres il estime qu’il aurait encore pu effectuer.",
+          "Avec RPE, il indique la difficulté perçue sur l’échelle retenue par LiftNote.",
+          "L’écran de séance peut afficher simultanément une cible prescrite et la valeur réellement ressentie sans les confondre.",
+          "L’historique conserve exactement l’échelle et la valeur saisies ce jour-là.",
+          "Si l’utilisateur change plus tard de préférence de RIR vers RPE, ses anciennes séries ne sont pas réécrites.",
+          "Pendant une future séance, LiftNote peut comparer deux performances compatibles en ajoutant le contexte de difficulté ressentie.",
+          "Les résumés peuvent ensuite montrer des tendances descriptives lorsque suffisamment de valeurs ont été renseignées."
+        ],
+        "rules": [
+          "RPE/RIR est une donnée subjective déclarée par l’athlète, jamais une mesure objective du corps.",
+          "La valeur réellement saisie par l’athlète et l’échelle utilisée à ce moment sont conservées comme vérité historique.",
+          "Une conversion RPE ↔ RIR est seulement une valeur dérivée ; elle ne remplace jamais la saisie originale.",
+          "RIR 0 signifie que l’athlète estime ne plus avoir de répétition propre disponible ; l’absence de saisie ne signifie jamais RIR 0.",
+          "Une cible prescrite, par exemple RIR 2, et le résultat réellement déclaré, par exemple RIR 0, sont deux informations différentes.",
+          "Une série reste valide si l’athlète ne saisit aucun RPE/RIR, sauf future règle explicite d’un mode coach non incluse ici.",
+          "RPE/RIR complète la charge, les répétitions, la durée ou la distance mais ne remplace aucune métrique objective.",
+          "Un meilleur RPE/RIR ne crée jamais à lui seul un record personnel objectif.",
+          "Les statistiques ne mélangent jamais effort cible et effort réellement déclaré.",
+          "Les comparaisons d’effort ne sont montrées que lorsque les performances objectives sont suffisamment comparables."
+        ],
+        "examples": [
+          "100 kg × 5 · RIR 2 : l’athlète pense qu’il aurait encore pu effectuer environ deux répétitions propres.",
+          "102,5 kg × 5 · RPE 9 avec une cible RPE 8 : la prescription et le ressenti réel sont tous les deux conservés.",
+          "Deux séances à 100 kg × 5 : la première à RIR 1, la seconde à RIR 3. LiftNote peut signaler que la seconde a été ressentie comme plus facile, sans en faire automatiquement un PR.",
+          "Une série sans RPE/RIR reste une série complète et son champ effort reste simplement inconnu.",
+          "Un athlète utilisait RIR pendant six mois puis passe au RPE : l’historique des six premiers mois reste affiché en RIR."
+        ],
+        "data": [
+          "préférence utilisateur : RIR, RPE ou aucun suivi",
+          "échelle utilisée au moment de la saisie",
+          "valeur d’effort réellement saisie",
+          "cible d’effort éventuellement prescrite",
+          "échelle de la cible prescrite",
+          "équivalent RPE/RIR éventuellement dérivé pour affichage",
+          "lien avec la série ou le palier de performance concerné",
+          "date et provenance historique via la séance",
+          "valeur corrigée uniquement lorsque l’athlète modifie explicitement son ressenti déclaré"
+        ],
+        "dependencies": [
+          "LN-06/LN-07 pour la persistance et la saisie des performances",
+          "LN-09/LN-10 pour l’historique et les statistiques",
+          "LN-20 pour ne pas confondre effort perçu et sémantique de charge",
+          "LN-24 pour les cibles RPE/RIR éventuellement prescrites par un coach",
+          "LN-26 pour les types de séries",
+          "LN-34 pour les plages de répétitions et futures logiques de progression",
+          "LN-35 pour les comparaisons pendant l’entraînement",
+          "LN-36/LN-37 pour les résumés séance et période",
+          "LN-51 pour décider précisément où rattacher l’effort dans un drop set"
+        ],
+        "attention": [
+          "Ne jamais présenter un RPE/RIR comme une mesure physiologique objective ou issue d’un capteur.",
+          "Documenter clairement la correspondance retenue entre RPE et RIR et rappeler qu’elle reste approximative.",
+          "Conserver la saisie originale même si LiftNote affiche ensuite une conversion dans l’autre échelle.",
+          "Ne jamais transformer une valeur absente en zéro.",
+          "Ne pas créer de score de fatigue, de récupération ou de readiness dans ce lot.",
+          "Ne pas ajuster automatiquement les charges futures à partir du RPE/RIR dans ce lot.",
+          "Dans les drop sets, ne jamais recopier silencieusement un RPE/RIR saisi sur tous les paliers.",
+          "Choisir explicitement si l’effort d’un drop set v1 appartient aux paliers individuels ou au parent ; le modèle recommandé est le palier individuel.",
+          "Garder la saisie facultative et très rapide afin qu’elle n’alourdisse pas chaque série."
         ]
       },
       "contractAvailable": true
