@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T21:27:03.073Z",
+  "publishedAt": "2026-10-01T21:27:47.629Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-68 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T21:26:57.477Z",
-    "nextTickAt": "2026-10-01T21:31:57.477Z",
+    "lastSuccessfulTickAt": "2026-10-01T21:27:41.614Z",
+    "nextTickAt": "2026-10-01T21:32:41.614Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "9c2821f1a12e6e266ea2feef76e1c8a4cf98dc5c",
+    "mainSha": "ef7f155b44415b47388e52d3403634206a646a96",
     "lots": [
       {
         "id": "LN-00",
