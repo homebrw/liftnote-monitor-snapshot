@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:15:47.792Z",
+  "publishedAt": "2026-10-01T07:20:49.954Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "PAUSED",
-    "currentLot": null,
-    "nextLot": "LN-33",
-    "launchedAt": null,
-    "lastProgressAt": "2026-10-01T07:10:08.972Z",
-    "lastChatCheckAt": "2026-10-01T06:42:15.244Z",
+    "status": "RUNNING",
+    "currentLot": "LN-33",
+    "nextLot": "LN-34",
+    "launchedAt": "2026-10-01T07:20:44.526Z",
+    "lastProgressAt": "2026-10-01T07:20:44.526Z",
+    "lastChatCheckAt": "2026-10-01T07:20:44.526Z",
     "lastObservedMainSha": "a30a3ed2d473d801d2473cb0b08ce0de0e374ab4",
     "nudges": 0,
-    "lastMessage": "LN-32 completion detected; validating transition invariants",
+    "lastMessage": "Launched LN-33; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T07:10:08.972Z",
-    "nextTickAt": "2026-10-01T07:15:08.972Z",
-    "paused": true,
+    "lastSuccessfulTickAt": "2026-10-01T07:20:44.526Z",
+    "nextTickAt": "2026-10-01T07:25:44.526Z",
+    "paused": false,
     "pauseAfterCurrent": false,
     "history": [
       {
@@ -3922,8 +3922,7 @@
     "done": 42,
     "total": 62,
     "percent": 68,
-    "current": null,
-    "next": {
+    "current": {
       "id": "LN-33",
       "title": "Execution tempo prescriptions",
       "status": "TODO",
@@ -3972,6 +3971,60 @@
         "attention": [
           "ne pas prétendre vérifier automatiquement l’exécution",
           "gérer les notations invalides clairement"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-34",
+      "title": "Dynamic repetition ranges and progression readiness",
+      "status": "TODO",
+      "goal": "make ranges such as 3×8–12 first-class and surface deterministic readiness to increase load without automatically changing it.",
+      "business": {
+        "summary": "Rendre les plages de répétitions comme 3×8–12 réellement intelligentes.",
+        "why": "Une plage de reps sert souvent de règle de progression et doit pouvoir être évaluée.",
+        "builds": [
+          "bornes min/max explicites",
+          "affichage de la plage en séance",
+          "calcul de plage atteinte",
+          "signal déterministe de progression possible"
+        ],
+        "userImpact": [
+          "l'athlète sait quand l'objectif de répétitions est rempli"
+        ],
+        "notInThisLot": [
+          "pas d'augmentation automatique de charge"
+        ],
+        "doneWhen": [
+          "3×8–12 reste distinct de 3×10",
+          "une séance partielle ne déclenche pas un faux signal"
+        ],
+        "journey": [
+          "Le programme prescrit une plage, par exemple 3×8–12.",
+          "Pendant la séance, l’utilisateur voit la plage cible.",
+          "Après les séries, LiftNote indique de manière déterministe si le haut de plage a été atteint."
+        ],
+        "rules": [
+          "Une plage est différente d’une cible fixe.",
+          "Un travail partiel ou manqué ne déclenche pas un faux signal de progression.",
+          "La charge reste sous contrôle manuel dans ce lot."
+        ],
+        "examples": [
+          "3×12 atteint sur toutes les séries → signal prêt à progresser.",
+          "12/10/8 ne déclenche pas le même signal."
+        ],
+        "data": [
+          "rep min",
+          "rep max",
+          "résultat d’évaluation"
+        ],
+        "dependencies": [
+          "logger LN-07",
+          "progression future"
+        ],
+        "attention": [
+          "ne pas transformer le signal en auto-progression",
+          "documenter exactement la règle"
         ]
       },
       "contractAvailable": true
