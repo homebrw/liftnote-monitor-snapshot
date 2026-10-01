@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T09:37:56.951Z",
+  "publishedAt": "2026-10-01T09:38:59.220Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-42",
-    "nextLot": "LN-43",
-    "launchedAt": "2026-10-01T09:05:13.247Z",
-    "lastProgressAt": "2026-10-01T09:32:33.261Z",
-    "lastChatCheckAt": "2026-10-01T09:30:20.281Z",
-    "lastObservedMainSha": "fea47eeb193aefb7f6271ac55a46445fc1d247ca",
-    "nudges": 1,
-    "lastMessage": "main moved while LN-42 is active",
+    "currentLot": "LN-43",
+    "nextLot": "LN-44",
+    "launchedAt": "2026-10-01T09:38:52.245Z",
+    "lastProgressAt": "2026-10-01T09:38:52.245Z",
+    "lastChatCheckAt": "2026-10-01T09:38:52.245Z",
+    "lastObservedMainSha": "e64809973bd9bdadd88237a2071dc82dfc5d4dc3",
+    "nudges": 0,
+    "lastMessage": "Launched LN-43; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T09:37:51.770Z",
-    "nextTickAt": "2026-10-01T09:42:51.770Z",
+    "lastSuccessfulTickAt": "2026-10-01T09:38:52.245Z",
+    "nextTickAt": "2026-10-01T09:43:52.245Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-30",
-        "completedAt": "2026-10-01T05:46:44.744Z",
-        "restartedAt": null,
-        "mainSha": "bfa79a0c348711208be797610f637a7db1e1cf69",
-        "reason": null
-      },
       {
         "lot": "LN-31",
         "completedAt": "2026-10-01T06:42:06.347Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "b4930d633ef4574fd7265d76274d1bcff374aa5f",
         "reason": null
+      },
+      {
+        "lot": "LN-42",
+        "completedAt": "2026-10-01T09:38:34.845Z",
+        "restartedAt": null,
+        "mainSha": "e64809973bd9bdadd88237a2071dc82dfc5d4dc3",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "fea47eeb193aefb7f6271ac55a46445fc1d247ca",
+    "mainSha": "e64809973bd9bdadd88237a2071dc82dfc5d4dc3",
     "lots": [
       {
         "id": "LN-00",
@@ -3238,7 +3238,7 @@
       {
         "id": "LN-42",
         "title": "PDF export for programs and workouts",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "export a clean human-readable workout or complete program for printing or sharing outside LiftNote.",
         "business": {
           "summary": "Exporter une séance ou un programme en PDF lisible et imprimable.",
@@ -3919,65 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 51,
+    "done": 52,
     "total": 62,
-    "percent": 82,
+    "percent": 84,
     "current": {
-      "id": "LN-42",
-      "title": "PDF export for programs and workouts",
-      "status": "TODO",
-      "goal": "export a clean human-readable workout or complete program for printing or sharing outside LiftNote.",
-      "business": {
-        "summary": "Exporter une séance ou un programme en PDF lisible et imprimable.",
-        "why": "Un PDF permet de transmettre un programme à quelqu'un qui n'utilise pas LiftNote.",
-        "builds": [
-          "PDF d'une séance",
-          "PDF d'un programme complet",
-          "objectifs, repos, tempo et charges",
-          "exercices personnalisés",
-          "mise en page impression"
-        ],
-        "userImpact": [
-          "un programme peut être partagé hors de LiftNote facilement"
-        ],
-        "notInThisLot": [
-          "l'historique privé n'est pas inclus par défaut"
-        ],
-        "doneWhen": [
-          "le PDF représente fidèlement la version choisie",
-          "les programmes longs sont correctement paginés"
-        ],
-        "journey": [
-          "L’utilisateur choisit Exporter en PDF sur une séance ou un programme.",
-          "LiftNote génère un document lisible avec les prescriptions utiles.",
-          "Il peut l’imprimer ou le partager hors de l’application."
-        ],
-        "rules": [
-          "Le PDF correspond à la version sélectionnée.",
-          "Les permissions d’accès sont respectées.",
-          "L’historique privé n’est pas inclus par défaut."
-        ],
-        "examples": [
-          "Programme complet avec exercices, reps, repos et tempo.",
-          "Séance unique imprimable pour une utilisation hors ligne."
-        ],
-        "data": [
-          "snapshot exporté",
-          "métadonnées sûres",
-          "mise en page PDF"
-        ],
-        "dependencies": [
-          "LN-27 versioning",
-          "LN-30/LN-33 semantics"
-        ],
-        "attention": [
-          "pagination des programmes longs",
-          "ne pas exporter involontairement des données privées"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-43",
       "title": "Smart program and workout archiving",
       "status": "TODO",
@@ -4027,6 +3972,61 @@
         "attention": [
           "ne pas cacher un contenu encore actif par erreur",
           "restauration prévisible"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-44",
+      "title": "Trash and restore",
+      "status": "TODO",
+      "goal": "introduce recoverable deletion for programs, templates and custom exercises where safe.",
+      "business": {
+        "summary": "Ajouter une corbeille pour récupérer les suppressions accidentelles.",
+        "why": "Une mauvaise manipulation ne doit pas détruire immédiatement des contenus importants.",
+        "builds": [
+          "corbeille",
+          "date de suppression",
+          "restauration",
+          "règles de conservation et suppression définitive",
+          "protection de l'historique"
+        ],
+        "userImpact": [
+          "l'athlète peut corriger une suppression accidentelle"
+        ],
+        "notInThisLot": [
+          "pas de restauration qui contourne les droits"
+        ],
+        "doneWhen": [
+          "les éléments restent récupérables pendant la période prévue",
+          "la suppression définitive est explicite"
+        ],
+        "journey": [
+          "L’utilisateur supprime un programme/template/exercice custom compatible.",
+          "L’élément va dans la corbeille.",
+          "Il peut le restaurer avant suppression définitive."
+        ],
+        "rules": [
+          "La suppression définitive est explicite.",
+          "L’historique doit rester lisible.",
+          "Restaurer ne doit pas contourner les règles de propriété."
+        ],
+        "examples": [
+          "Template supprimé accidentellement puis restauré.",
+          "Exercice custom en corbeille dont l’ancien historique reste lisible."
+        ],
+        "data": [
+          "état corbeille",
+          "date suppression",
+          "rétention/restauration"
+        ],
+        "dependencies": [
+          "LN-43 archiving",
+          "modèle d’identité historique"
+        ],
+        "attention": [
+          "relations vers contenu supprimé",
+          "politique de rétention claire"
         ]
       },
       "contractAvailable": true
