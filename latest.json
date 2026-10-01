@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T18:27:56.673Z",
+  "publishedAt": "2026-10-01T18:28:48.181Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-55",
-    "nextLot": "LN-56",
-    "launchedAt": "2026-10-01T18:19:04.656Z",
-    "lastProgressAt": "2026-10-01T18:26:21.898Z",
-    "lastChatCheckAt": "2026-10-01T18:19:04.656Z",
-    "lastObservedMainSha": "961afcc4e5edd739065b086a1ab344f0f17aedf6",
+    "currentLot": "LN-56",
+    "nextLot": "LN-57",
+    "launchedAt": "2026-10-01T18:28:42.254Z",
+    "lastProgressAt": "2026-10-01T18:28:42.254Z",
+    "lastChatCheckAt": "2026-10-01T18:28:42.254Z",
+    "lastObservedMainSha": "47df358e63585911e7915c4609c969dc73544153",
     "nudges": 0,
-    "lastMessage": "main moved while LN-55 is active",
+    "lastMessage": "Launched LN-56; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T18:27:50.079Z",
-    "nextTickAt": "2026-10-01T18:32:50.079Z",
+    "lastSuccessfulTickAt": "2026-10-01T18:28:42.254Z",
+    "nextTickAt": "2026-10-01T18:33:42.254Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-43",
-        "completedAt": "2026-10-01T10:01:45.576Z",
-        "restartedAt": null,
-        "mainSha": "95bd11b046a5259e4bb513bcb2d23f82772c6f05",
-        "reason": null
-      },
       {
         "lot": "LN-44",
         "completedAt": "2026-10-01T10:40:12.335Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "21c28b791649703078271a36cb72eeda7c1507db",
         "reason": null
+      },
+      {
+        "lot": "LN-55",
+        "completedAt": "2026-10-01T18:28:35.682Z",
+        "restartedAt": null,
+        "mainSha": "47df358e63585911e7915c4609c969dc73544153",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "961afcc4e5edd739065b086a1ab344f0f17aedf6",
+    "mainSha": "47df358e63585911e7915c4609c969dc73544153",
     "lots": [
       {
         "id": "LN-00",
@@ -3998,7 +3998,7 @@
       {
         "id": "LN-55",
         "title": "Aujourd'hui / dashboard d'entraînement",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Faire d’Aujourd’hui un vrai point d’entrée quotidien sans dashboard surchargé.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 64,
+    "done": 65,
     "total": 90,
-    "percent": 71,
+    "percent": 72,
     "current": {
-      "id": "LN-55",
-      "title": "Aujourd'hui / dashboard d'entraînement",
+      "id": "LN-56",
+      "title": "Refonte UX/UI de la séance active",
       "status": "TODO",
-      "goal": "Faire d’Aujourd’hui un vrai point d’entrée quotidien sans dashboard surchargé.",
+      "goal": "Optimiser le cœur du produit pour la saisie rapide en salle avec une seule main.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-56",
-      "title": "Refonte UX/UI de la séance active",
+      "id": "LN-57",
+      "title": "Refonte Programmes et séances modèles",
       "status": "TODO",
-      "goal": "Optimiser le cœur du produit pour la saisie rapide en salle avec une seule main.",
+      "goal": "Clarifier Programmes → structure/bloc → séance et supprimer les ambiguïtés de contexte.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
