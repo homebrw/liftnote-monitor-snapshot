@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T08:24:40.616Z",
+  "publishedAt": "2026-10-01T08:25:33.916Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-38",
-    "nextLot": "LN-39",
-    "launchedAt": "2026-10-01T08:17:19.234Z",
-    "lastProgressAt": "2026-10-01T08:24:35.185Z",
-    "lastChatCheckAt": "2026-10-01T08:17:19.234Z",
-    "lastObservedMainSha": "08fbb08749233a18627328f3fc8d04015cacfb37",
+    "currentLot": "LN-39",
+    "nextLot": "LN-40",
+    "launchedAt": "2026-10-01T08:25:27.487Z",
+    "lastProgressAt": "2026-10-01T08:25:27.487Z",
+    "lastChatCheckAt": "2026-10-01T08:25:27.487Z",
+    "lastObservedMainSha": "6b57075dbfd8724bf2b6d28a86a65f75b885d50f",
     "nudges": 0,
-    "lastMessage": "main moved while LN-38 is active",
+    "lastMessage": "Launched LN-39; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T08:24:35.185Z",
-    "nextTickAt": "2026-10-01T08:29:35.185Z",
+    "lastSuccessfulTickAt": "2026-10-01T08:25:27.487Z",
+    "nextTickAt": "2026-10-01T08:30:27.487Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-26",
-        "completedAt": "2026-10-01T03:17:14.195Z",
-        "restartedAt": null,
-        "mainSha": "d0252f75794c5a1ae0c09b4e3c05f75a6016a97b",
-        "reason": null
-      },
       {
         "lot": "LN-27",
         "completedAt": "2026-10-01T03:37:52.697Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "5ade74ef0bf252e6f6d14018179867f06548e37c",
         "reason": null
+      },
+      {
+        "lot": "LN-38",
+        "completedAt": "2026-10-01T08:25:19.107Z",
+        "restartedAt": null,
+        "mainSha": "6b57075dbfd8724bf2b6d28a86a65f75b885d50f",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "928a417baf93f3186a83a52e8d9991963eb674c0",
+    "mainSha": "6b57075dbfd8724bf2b6d28a86a65f75b885d50f",
     "lots": [
       {
         "id": "LN-00",
@@ -3923,59 +3923,6 @@
     "total": 62,
     "percent": 77,
     "current": {
-      "id": "LN-38",
-      "title": "Training calendar and adherence heatmap",
-      "status": "DONE",
-      "goal": "show days trained in a calendar/heatmap and let the athlete open sessions behind each day.",
-      "business": {
-        "summary": "Afficher un calendrier et une heatmap des jours entraînés.",
-        "why": "La régularité se comprend mieux visuellement qu'avec une liste de séances.",
-        "builds": [
-          "calendrier mensuel",
-          "heatmap",
-          "accès aux séances d'un jour",
-          "gestion correcte des fuseaux et séances tardives"
-        ],
-        "userImpact": [
-          "l'athlète visualise immédiatement son rythme d'entraînement"
-        ],
-        "notInThisLot": [
-          "les jours de repos ne sont pas traités comme des échecs"
-        ],
-        "doneWhen": [
-          "chaque séance apparaît au bon jour local",
-          "les corrections d'historique mettent à jour la vue"
-        ],
-        "journey": [
-          "L’utilisateur ouvre le calendrier d’entraînement.",
-          "Les jours avec séances sont visibles dans une heatmap.",
-          "Un clic sur un jour ouvre la ou les séances correspondantes."
-        ],
-        "rules": [
-          "Les jours de repos sont neutres.",
-          "La date utilisée est la date locale pertinente pour l’athlète.",
-          "Les corrections d’historique mettent à jour le calendrier."
-        ],
-        "examples": [
-          "Deux séances le même jour sont distinguées.",
-          "Une séance tardive reste attachée au bon jour local."
-        ],
-        "data": [
-          "date locale de séance",
-          "nombre de séances/jour",
-          "liens vers sessions"
-        ],
-        "dependencies": [
-          "historique LN-11"
-        ],
-        "attention": [
-          "fuseaux horaires",
-          "ne pas présenter la heatmap comme score moral d’assiduité"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-39",
       "title": "Weekly volume by muscle group",
       "status": "TODO",
@@ -4024,6 +3971,58 @@
         "attention": [
           "ne pas inventer de muscles",
           "documenter le poids donné aux secondaires"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-40",
+      "title": "Muscle-distribution visualization",
+      "status": "TODO",
+      "goal": "visualize relative muscle emphasis in a program or training period without prescribing what the distribution should be.",
+      "business": {
+        "summary": "Visualiser la répartition musculaire d'un programme ou d'une période.",
+        "why": "La distribution est plus facile à comprendre graphiquement que dans un tableau brut.",
+        "builds": [
+          "visualisation par groupe musculaire",
+          "comparaisons de périodes ou versions",
+          "détail des exercices contributeurs",
+          "vocabulaire descriptif neutre"
+        ],
+        "userImpact": [
+          "l'athlète repère rapidement les zones plus ou moins représentées"
+        ],
+        "notInThisLot": [
+          "LiftNote ne juge pas automatiquement la répartition"
+        ],
+        "doneWhen": [
+          "la visualisation est entièrement explicable à partir des données sous-jacentes"
+        ],
+        "journey": [
+          "L’utilisateur ouvre une visualisation de répartition musculaire.",
+          "Il voit les contributions relatives d’une période ou d’un programme.",
+          "Il peut revenir aux exercices qui expliquent chaque zone."
+        ],
+        "rules": [
+          "La visualisation reste descriptive.",
+          "Les valeurs doivent pouvoir être expliquées par LN-39.",
+          "Les inconnus restent visibles comme inconnus."
+        ],
+        "examples": [
+          "Comparer Bloc 1 et Bloc 2 d’un programme.",
+          "Voir quels exercices contribuent au volume dos."
+        ],
+        "data": [
+          "distribution relative",
+          "contributions musculaires",
+          "liens exercices"
+        ],
+        "dependencies": [
+          "LN-39"
+        ],
+        "attention": [
+          "ne pas qualifier automatiquement une répartition de bonne ou mauvaise",
+          "éviter une précision visuelle supérieure à la qualité des données"
         ]
       },
       "contractAvailable": true
