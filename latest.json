@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T08:06:58.046Z",
+  "publishedAt": "2026-10-01T08:07:51.058Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-36",
-    "nextLot": "LN-37",
-    "launchedAt": "2026-10-01T07:58:38.938Z",
-    "lastProgressAt": "2026-10-01T08:05:25.473Z",
-    "lastChatCheckAt": "2026-10-01T07:58:38.938Z",
-    "lastObservedMainSha": "617d5dbdf7bc9b727e246b8b65f3f8989b60733f",
+    "currentLot": "LN-37",
+    "nextLot": "LN-38",
+    "launchedAt": "2026-10-01T08:07:45.763Z",
+    "lastProgressAt": "2026-10-01T08:07:45.763Z",
+    "lastChatCheckAt": "2026-10-01T08:07:45.763Z",
+    "lastObservedMainSha": "4960a77caf26400a4afc13230aa5bf89a8e27f45",
     "nudges": 0,
-    "lastMessage": "main moved while LN-36 is active",
+    "lastMessage": "Launched LN-37; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T08:06:53.028Z",
-    "nextTickAt": "2026-10-01T08:11:53.028Z",
+    "lastSuccessfulTickAt": "2026-10-01T08:07:45.763Z",
+    "nextTickAt": "2026-10-01T08:12:45.763Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-24",
-        "completedAt": "2026-10-01T02:52:17.796Z",
-        "restartedAt": null,
-        "mainSha": "8f5e12c35d9d1b269942f45e08c1891bfa9bbc88",
-        "reason": null
-      },
       {
         "lot": "LN-25",
         "completedAt": "2026-10-01T03:05:18.032Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "5382b444d19685746d43af56a1bf6c1e74c5781b",
         "reason": null
+      },
+      {
+        "lot": "LN-36",
+        "completedAt": "2026-10-01T08:07:36.486Z",
+        "restartedAt": null,
+        "mainSha": "4960a77caf26400a4afc13230aa5bf89a8e27f45",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "617d5dbdf7bc9b727e246b8b65f3f8989b60733f",
+    "mainSha": "4960a77caf26400a4afc13230aa5bf89a8e27f45",
     "lots": [
       {
         "id": "LN-00",
@@ -2913,7 +2913,7 @@
       {
         "id": "LN-36",
         "title": "End-of-workout summary",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "create a useful completion screen with duration, work completed, records, comparisons and notes.",
         "business": {
           "summary": "Créer un vrai résumé de fin de séance.",
@@ -3919,67 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 45,
+    "done": 46,
     "total": 62,
-    "percent": 73,
+    "percent": 74,
     "current": {
-      "id": "LN-36",
-      "title": "End-of-workout summary",
-      "status": "TODO",
-      "goal": "create a useful completion screen with duration, work completed, records, comparisons and notes.",
-      "business": {
-        "summary": "Créer un vrai résumé de fin de séance.",
-        "why": "La fin d'un entraînement est le bon moment pour résumer les faits marquants.",
-        "builds": [
-          "durée et exercices réalisés",
-          "volume lorsque pertinent",
-          "nouveaux records",
-          "comparaisons avec l'historique",
-          "notes et accès à l'historique"
-        ],
-        "userImpact": [
-          "l'athlète comprend immédiatement ce qu'il vient d'accomplir"
-        ],
-        "notInThisLot": [
-          "pas de volume inventé pour des exercices incompatibles"
-        ],
-        "doneWhen": [
-          "le résumé repose sur les données persistées",
-          "les records affichés sont validés"
-        ],
-        "journey": [
-          "L’utilisateur termine sa séance.",
-          "Un écran récapitule durée, exercices, travail réalisé et records.",
-          "Il peut consulter ses notes ou poursuivre vers l’historique."
-        ],
-        "rules": [
-          "Le résumé est dérivé des données persistées.",
-          "Les volumes non pertinents ne sont pas inventés.",
-          "Fermer le résumé ne modifie pas l’état terminé."
-        ],
-        "examples": [
-          "Résumé de 62 min avec 5 exercices et 1 nouveau PR validé.",
-          "Aucun tonnage affiché pour un mouvement où cette métrique n’a pas de sens."
-        ],
-        "data": [
-          "session terminée",
-          "durée",
-          "PR",
-          "deltas",
-          "notes"
-        ],
-        "dependencies": [
-          "LN-07C records",
-          "LN-35 comparaisons"
-        ],
-        "attention": [
-          "ne pas recalculer différemment de l’historique",
-          "éviter un écran trop chargé"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-37",
       "title": "Weekly and monthly training summaries",
       "status": "TODO",
@@ -4030,6 +3973,59 @@
         "attention": [
           "gérer correctement les bornes de semaine",
           "ne pas transformer une baisse en jugement automatique"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-38",
+      "title": "Training calendar and adherence heatmap",
+      "status": "TODO",
+      "goal": "show days trained in a calendar/heatmap and let the athlete open sessions behind each day.",
+      "business": {
+        "summary": "Afficher un calendrier et une heatmap des jours entraînés.",
+        "why": "La régularité se comprend mieux visuellement qu'avec une liste de séances.",
+        "builds": [
+          "calendrier mensuel",
+          "heatmap",
+          "accès aux séances d'un jour",
+          "gestion correcte des fuseaux et séances tardives"
+        ],
+        "userImpact": [
+          "l'athlète visualise immédiatement son rythme d'entraînement"
+        ],
+        "notInThisLot": [
+          "les jours de repos ne sont pas traités comme des échecs"
+        ],
+        "doneWhen": [
+          "chaque séance apparaît au bon jour local",
+          "les corrections d'historique mettent à jour la vue"
+        ],
+        "journey": [
+          "L’utilisateur ouvre le calendrier d’entraînement.",
+          "Les jours avec séances sont visibles dans une heatmap.",
+          "Un clic sur un jour ouvre la ou les séances correspondantes."
+        ],
+        "rules": [
+          "Les jours de repos sont neutres.",
+          "La date utilisée est la date locale pertinente pour l’athlète.",
+          "Les corrections d’historique mettent à jour le calendrier."
+        ],
+        "examples": [
+          "Deux séances le même jour sont distinguées.",
+          "Une séance tardive reste attachée au bon jour local."
+        ],
+        "data": [
+          "date locale de séance",
+          "nombre de séances/jour",
+          "liens vers sessions"
+        ],
+        "dependencies": [
+          "historique LN-11"
+        ],
+        "attention": [
+          "fuseaux horaires",
+          "ne pas présenter la heatmap comme score moral d’assiduité"
         ]
       },
       "contractAvailable": true
