@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T03:55:50.330Z",
+  "publishedAt": "2026-10-01T03:56:43.263Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "CONSISTENCY_ERROR",
-    "currentLot": "LN-28",
-    "nextLot": "LN-29",
-    "launchedAt": "2026-10-01T03:38:01.852Z",
-    "lastProgressAt": "2026-10-01T03:38:01.852Z",
-    "lastChatCheckAt": "2026-10-01T03:38:01.852Z",
-    "lastObservedMainSha": "cb55b865310c563f188fbff595c52109a8996aa2",
+    "status": "RUNNING",
+    "currentLot": "LN-29",
+    "nextLot": "LN-30",
+    "launchedAt": "2026-10-01T03:56:37.324Z",
+    "lastProgressAt": "2026-10-01T03:56:37.324Z",
+    "lastChatCheckAt": "2026-10-01T03:56:37.324Z",
+    "lastObservedMainSha": "5dab6f3f19e90025a953890bcadcbdbc2ac8c2e1",
     "nudges": 0,
-    "lastMessage": "LN-28 is DONE but completion invariants failed; next lot not launched.",
-    "lastError": "LN-28 completion record does not record a merge SHA.",
-    "lastSuccessfulTickAt": "2026-10-01T03:55:01.517Z",
-    "nextTickAt": "2026-10-01T04:00:44.850Z",
+    "lastMessage": "Launched LN-29; canonical chat persisted before prompt marker became visible",
+    "lastError": null,
+    "lastSuccessfulTickAt": "2026-10-01T03:56:37.324Z",
+    "nextTickAt": "2026-10-01T04:01:37.324Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-15C",
-        "completedAt": "2026-10-01T00:00:18.233Z",
-        "restartedAt": null,
-        "mainSha": "71e8543d6b7a2f5a70f3836fb57776e803be6ebb",
-        "reason": null
-      },
       {
         "lot": "LN-17",
         "completedAt": "2026-10-01T00:31:43.324Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "cb55b865310c563f188fbff595c52109a8996aa2",
         "reason": null
+      },
+      {
+        "lot": "LN-28",
+        "completedAt": "2026-10-01T03:56:28.353Z",
+        "restartedAt": null,
+        "mainSha": "5dab6f3f19e90025a953890bcadcbdbc2ac8c2e1",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "bc7080613b0134aea16e7bae017cb2ea21ea73b0",
+    "mainSha": "5dab6f3f19e90025a953890bcadcbdbc2ac8c2e1",
     "lots": [
       {
         "id": "LN-00",
@@ -3923,58 +3923,6 @@
     "total": 62,
     "percent": 61,
     "current": {
-      "id": "LN-28",
-      "title": "Exercise favorites, recents and frequent picks",
-      "status": "DONE",
-      "goal": "speed up exercise selection with athlete-specific favorites, recent exercises and frequently used exercises.",
-      "business": {
-        "summary": "Accélérer l'ajout d'exercices avec favoris, récents et exercices fréquents.",
-        "why": "Chercher dans tout le catalogue à chaque ajout est inutilement lent en salle.",
-        "builds": [
-          "favoris personnels",
-          "exercices récemment utilisés",
-          "exercices les plus fréquents",
-          "raccourcis dans les différents sélecteurs"
-        ],
-        "userImpact": [
-          "les mouvements habituels deviennent accessibles en quelques secondes"
-        ],
-        "notInThisLot": [
-          "pas de recommandation d'entraînement"
-        ],
-        "doneWhen": [
-          "les raccourcis sont privés, persistants et ne dupliquent jamais les exercices"
-        ],
-        "journey": [
-          "L’utilisateur ouvre un sélecteur d’exercices.",
-          "Ses favoris, récents et exercices fréquents apparaissent avant la recherche complète.",
-          "Il choisit rapidement un mouvement sans créer de nouvelle identité."
-        ],
-        "rules": [
-          "Favoris/récents/fréquents sont personnels à l’athlète.",
-          "Les exercices archivés ou indisponibles doivent être respectés.",
-          "Ces raccourcis ne dupliquent jamais l’exercice canonique."
-        ],
-        "examples": [
-          "Bench et Back Squat remontent comme exercices fréquents.",
-          "Un exercice favori archivé n’est plus proposé comme raccourci normal."
-        ],
-        "data": [
-          "favoris",
-          "usage récent",
-          "compteurs/fréquence"
-        ],
-        "dependencies": [
-          "catalogue canonique LN-02/LN-13B"
-        ],
-        "attention": [
-          "ne pas confondre fréquence et recommandation",
-          "garder les classements privés"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-29",
       "title": "Gym profiles and available equipment",
       "status": "TODO",
@@ -4022,6 +3970,60 @@
         "attention": [
           "ne pas imposer la géolocalisation",
           "préparer LN-50 sans faire de substitution automatique ici"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-30",
+      "title": "Measurement units across exercise tracking",
+      "status": "TODO",
+      "goal": "support kg/lb plus movement-specific duration, distance, calories and height semantics without losing historical meaning.",
+      "business": {
+        "summary": "Gérer proprement kg/lb et les autres unités : temps, distance, calories, hauteur.",
+        "why": "Un catalogue riche ne peut pas réduire toutes les performances à kg × répétitions.",
+        "builds": [
+          "kg et lb avec conversions stables",
+          "unités de durée",
+          "unités de distance",
+          "calories et hauteur lorsque pertinentes",
+          "préférences d'affichage sans réécrire les données"
+        ],
+        "userImpact": [
+          "chaque exercice utilise une mesure adaptée à ce qui est réellement réalisé"
+        ],
+        "notInThisLot": [
+          "pas de valeur numérique sans unité connue"
+        ],
+        "doneWhen": [
+          "changer d'unité d'affichage ne change pas la performance enregistrée",
+          "chaque métrique garde un sens explicite"
+        ],
+        "journey": [
+          "L’utilisateur choisit ses unités d’affichage.",
+          "LiftNote convertit kg/lb ou affiche durée, distance, calories ou hauteur selon le mouvement.",
+          "L’historique conserve toujours le sens et l’unité d’origine."
+        ],
+        "rules": [
+          "Une préférence d’affichage ne réécrit pas la valeur historique.",
+          "Toute métrique affichée possède une unité connue.",
+          "Les conversions sont déterministes et réversibles."
+        ],
+        "examples": [
+          "100 kg peut s’afficher en lb sans modifier la donnée canonique.",
+          "Farmer carry conserve mètres et charge au lieu d’un champ générique sans unité."
+        ],
+        "data": [
+          "unité canonique",
+          "préférence d’affichage",
+          "valeur convertie"
+        ],
+        "dependencies": [
+          "types de suivi des exercices"
+        ],
+        "attention": [
+          "éviter les arrondis destructifs",
+          "préserver les unités dans partage et coach"
         ]
       },
       "contractAvailable": true
