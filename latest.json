@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T22:39:13.259Z",
+  "publishedAt": "2026-10-01T22:40:05.279Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-82 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T22:39:03.978Z",
-    "nextTickAt": "2026-10-01T22:44:03.978Z",
+    "lastSuccessfulTickAt": "2026-10-01T22:39:55.699Z",
+    "nextTickAt": "2026-10-01T22:44:55.699Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "d2b1954866f3b2548b618498ffb3249aa4832b4d",
+    "mainSha": "d7a57dd230724229b9d473459d5fc718a22c0004",
     "lots": [
       {
         "id": "LN-00",
@@ -8731,7 +8731,7 @@
       {
         "id": "LN-82",
         "title": "UX Recovery & Cross-Lot Integration",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Implement the historical UX and cross-lot integration gaps proven by LN-81 without redesigning already-good workflows.",
         "business": {
           "phase": "Product Architecture",
@@ -8885,8 +8885,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "760",
+            "mergeSha": "826b4bc02b81f641636204606fa526d20126fefd"
           }
         },
         "contractAvailable": true,
@@ -16687,13 +16687,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 79,
+    "done": 80,
     "total": 126,
     "percent": 63,
     "current": {
       "id": "LN-82",
       "title": "UX Recovery & Cross-Lot Integration",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Implement the historical UX and cross-lot integration gaps proven by LN-81 without redesigning already-good workflows.",
       "business": {
         "phase": "Product Architecture",
@@ -16847,8 +16847,8 @@
           "TinyFish is prohibited."
         ],
         "completion": {
-          "pr": null,
-          "mergeSha": null
+          "pr": "760",
+          "mergeSha": "826b4bc02b81f641636204606fa526d20126fefd"
         }
       },
       "contractAvailable": true,
