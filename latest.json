@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T23:24:20.902Z",
+  "publishedAt": "2026-10-01T23:25:16.406Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-85 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T23:24:09.038Z",
-    "nextTickAt": "2026-10-01T23:29:09.038Z",
+    "lastSuccessfulTickAt": "2026-10-01T23:25:04.967Z",
+    "nextTickAt": "2026-10-01T23:30:04.967Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "95a570e1b8f0cf7ba6e3c71b4a71606d546a6d80",
+    "mainSha": "d4bee700c231a6b1cba1e661f29a64ee8e44bcf9",
     "lots": [
       {
         "id": "LN-00",
@@ -9233,7 +9233,7 @@
       {
         "id": "LN-85",
         "title": "Canonicalization & Deduplication v2",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Define and implement explicit merge/alias/variant/unresolved rules for exercise identity without corrupting history.",
         "business": {
           "phase": "Exercise Intelligence",
@@ -9387,8 +9387,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "770",
+            "mergeSha": "95a570e1b8f0cf7ba6e3c71b4a71606d546a6d80"
           }
         },
         "contractAvailable": true,
@@ -19179,13 +19179,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 82,
+    "done": 83,
     "total": 138,
-    "percent": 59,
+    "percent": 60,
     "current": {
       "id": "LN-85",
       "title": "Canonicalization & Deduplication v2",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Define and implement explicit merge/alias/variant/unresolved rules for exercise identity without corrupting history.",
       "business": {
         "phase": "Exercise Intelligence",
@@ -19339,8 +19339,8 @@
           "TinyFish is prohibited."
         ],
         "completion": {
-          "pr": null,
-          "mergeSha": null
+          "pr": "770",
+          "mergeSha": "95a570e1b8f0cf7ba6e3c71b4a71606d546a6d80"
         }
       },
       "contractAvailable": true,
