@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:57:50.637Z",
+  "publishedAt": "2026-10-01T07:58:45.315Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-35",
-    "nextLot": "LN-36",
-    "launchedAt": "2026-10-01T07:44:07.366Z",
-    "lastProgressAt": "2026-10-01T07:57:01.860Z",
-    "lastChatCheckAt": "2026-10-01T07:44:07.366Z",
-    "lastObservedMainSha": "e8f0319580fb17a61f8ec69baa8dd9f3a996ea0d",
+    "currentLot": "LN-36",
+    "nextLot": "LN-37",
+    "launchedAt": "2026-10-01T07:58:38.938Z",
+    "lastProgressAt": "2026-10-01T07:58:38.938Z",
+    "lastChatCheckAt": "2026-10-01T07:58:38.938Z",
+    "lastObservedMainSha": "5382b444d19685746d43af56a1bf6c1e74c5781b",
     "nudges": 0,
-    "lastMessage": "main moved while LN-35 is active",
+    "lastMessage": "Launched LN-36; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T07:57:45.092Z",
-    "nextTickAt": "2026-10-01T08:02:45.092Z",
+    "lastSuccessfulTickAt": "2026-10-01T07:58:38.938Z",
+    "nextTickAt": "2026-10-01T08:03:38.938Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-23",
-        "completedAt": "2026-10-01T02:28:38.735Z",
-        "restartedAt": null,
-        "mainSha": "92c28065bf75080e29e85317c5302a10c2ab5921",
-        "reason": null
-      },
       {
         "lot": "LN-24",
         "completedAt": "2026-10-01T02:52:17.796Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "1f29b9c8b7f095e0633b462bce70a8d19b628482",
         "reason": null
+      },
+      {
+        "lot": "LN-35",
+        "completedAt": "2026-10-01T07:58:30.319Z",
+        "restartedAt": null,
+        "mainSha": "5382b444d19685746d43af56a1bf6c1e74c5781b",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "e8f0319580fb17a61f8ec69baa8dd9f3a996ea0d",
+    "mainSha": "5382b444d19685746d43af56a1bf6c1e74c5781b",
     "lots": [
       {
         "id": "LN-00",
@@ -2860,7 +2860,7 @@
       {
         "id": "LN-35",
         "title": "In-workout comparison with previous performance",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "show meaningful live deltas against the relevant previous performance while the athlete is training.",
         "business": {
           "summary": "Comparer directement la séance en cours à la performance précédente.",
@@ -3919,63 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 44,
+    "done": 45,
     "total": 62,
-    "percent": 71,
+    "percent": 73,
     "current": {
-      "id": "LN-35",
-      "title": "In-workout comparison with previous performance",
-      "status": "TODO",
-      "goal": "show meaningful live deltas against the relevant previous performance while the athlete is training.",
-      "business": {
-        "summary": "Comparer directement la séance en cours à la performance précédente.",
-        "why": "Afficher uniquement l'ancienne valeur oblige encore à calculer mentalement l'écart.",
-        "builds": [
-          "deltas de charge, reps ou volume quand valides",
-          "mise à jour au fil des séries",
-          "valeur précédente toujours visible",
-          "garde-fous sur les comparaisons incompatibles"
-        ],
-        "userImpact": [
-          "l'athlète voit immédiatement s'il progresse"
-        ],
-        "notInThisLot": [
-          "pas de comparaison artificielle entre unités ou sémantiques incompatibles"
-        ],
-        "doneWhen": [
-          "chaque delta est explicable à partir des données brutes"
-        ],
-        "journey": [
-          "L’athlète arrive sur un exercice pendant sa séance.",
-          "LiftNote affiche la performance précédente pertinente.",
-          "Au fil des séries, les écarts valides apparaissent automatiquement."
-        ],
-        "rules": [
-          "Les comparaisons doivent respecter unités, type de série et sémantique de charge.",
-          "Le delta ne modifie aucune donnée sauvegardée.",
-          "La valeur brute précédente reste visible."
-        ],
-        "examples": [
-          "+2,5 kg à reps égales sur Bench.",
-          "+1 rep avec même lest ajouté sur tractions."
-        ],
-        "data": [
-          "performance précédente",
-          "delta calculé",
-          "contexte de compatibilité"
-        ],
-        "dependencies": [
-          "LN-09 historique",
-          "LN-20/LN-30/LN-31/LN-32 semantics"
-        ],
-        "attention": [
-          "ne pas afficher de delta trompeur",
-          "choisir la bonne séance de référence"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-36",
       "title": "End-of-workout summary",
       "status": "TODO",
@@ -4028,6 +3975,61 @@
         "attention": [
           "ne pas recalculer différemment de l’historique",
           "éviter un écran trop chargé"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-37",
+      "title": "Weekly and monthly training summaries",
+      "status": "TODO",
+      "goal": "summarize consistency and progress over useful periods without manual history analysis.",
+      "business": {
+        "summary": "Produire des bilans hebdomadaires et mensuels.",
+        "why": "Une séance isolée dit peu sur la régularité et la progression globale.",
+        "builds": [
+          "nombre de séances et fréquence",
+          "tendances de volume",
+          "exercices les plus travaillés",
+          "records obtenus",
+          "navigation semaine/mois"
+        ],
+        "userImpact": [
+          "l'athlète comprend rapidement son activité sur une période"
+        ],
+        "notInThisLot": [
+          "pas de prescription automatique"
+        ],
+        "doneWhen": [
+          "chaque indicateur indique sa période et son mode de calcul"
+        ],
+        "journey": [
+          "L’utilisateur ouvre son bilan semaine ou mois.",
+          "Il voit fréquence, séances, tendances et records sur la période.",
+          "Il navigue vers la période précédente ou suivante."
+        ],
+        "rules": [
+          "Chaque métrique indique sa période et sa définition.",
+          "Le contenu reste descriptif, pas prescriptif.",
+          "Les tracking types incompatibles utilisent des métriques adaptées."
+        ],
+        "examples": [
+          "4 séances cette semaine, 1 record validé.",
+          "Comparaison volume uniquement sur mouvements compatibles."
+        ],
+        "data": [
+          "agrégats semaine/mois",
+          "fréquence",
+          "records",
+          "tendances"
+        ],
+        "dependencies": [
+          "LN-10 statistiques",
+          "LN-36 résumé de séance"
+        ],
+        "attention": [
+          "gérer correctement les bornes de semaine",
+          "ne pas transformer une baisse en jugement automatique"
         ]
       },
       "contractAvailable": true
