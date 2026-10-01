@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T21:55:03.052Z",
+  "publishedAt": "2026-10-01T21:55:49.361Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-69",
     "nextLot": "LN-70",
     "launchedAt": "2026-10-01T21:31:29.619Z",
-    "lastProgressAt": "2026-10-01T21:31:29.619Z",
+    "lastProgressAt": "2026-10-01T21:55:42.824Z",
     "lastChatCheckAt": "2026-10-01T21:31:29.619Z",
-    "lastObservedMainSha": "2aa1a967015834ff591f89a392698fe744548967",
+    "lastObservedMainSha": "0b0cf78c334cfebdc7fa94cd43aa8fa79a6dc292",
     "nudges": 0,
-    "lastMessage": "Launched LN-69; canonical chat persisted before prompt marker became visible",
+    "lastMessage": "main moved while LN-69 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T21:54:57.204Z",
-    "nextTickAt": "2026-10-01T21:59:57.204Z",
+    "lastSuccessfulTickAt": "2026-10-01T21:55:42.824Z",
+    "nextTickAt": "2026-10-01T22:00:42.824Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "2aa1a967015834ff591f89a392698fe744548967",
+    "mainSha": "0b0cf78c334cfebdc7fa94cd43aa8fa79a6dc292",
     "lots": [
       {
         "id": "LN-00",
@@ -4122,19 +4122,91 @@
         "executionState": "executable"
       },
       {
-        "id": "LN-69",
-        "title": "Variantes de prescription par semaine",
+        "id": "LN-81",
+        "title": "Capability & UX Coverage Audit Gate",
         "status": "TODO",
-        "goal": "Faire varier séries/reps/charge/tempo/effort sans dupliquer toute la séance.",
+        "goal": "Verify shipped LN-00..LN-68 product paths and future LN-69..LN-80 contracts, classify A/B/C/D/E findings and produce the finite remediation ledger for LN-82.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
       },
       {
-        "id": "LN-70",
-        "title": "Planification datée et rappels de séances",
+        "id": "LN-82",
+        "title": "UX Recovery & Cross-Lot Integration",
         "status": "TODO",
-        "goal": "Ajouter une planification explicite pour savoir quoi faire aujourd’hui sans inventer une prochaine séance.",
+        "goal": "Implement only the historical UX/integration gaps proven by LN-81, preserving already-good primary workflows.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-83",
+        "title": "Exercise Knowledge Model v2",
+        "status": "TODO",
+        "goal": "Normalize bilingual, source-aware exercise knowledge while preserving LiftNote canonical identities and history.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-84",
+        "title": "Complete FR/EN System Exercise Localization",
+        "status": "TODO",
+        "goal": "Complete appropriate French product representation while preserving English/source traceability and custom-exercise ownership.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-85",
+        "title": "Canonicalization & Deduplication v2",
+        "status": "TODO",
+        "goal": "Provide explicit merge/alias/variant/unresolved/source-conflict rules without corrupting canonical identity.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-86",
+        "title": "Movement Families & Ontology",
+        "status": "TODO",
+        "goal": "Model conceptual movement families separately from concrete historical exercises.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-87",
+        "title": "Exercise Search & Discovery v2",
+        "status": "TODO",
+        "goal": "Use enriched knowledge, equipment, favorites and usage context for fast understandable discovery.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-88",
+        "title": "Exercise Detail v2",
+        "status": "TODO",
+        "goal": "Unify useful identity, instructions, media, anatomy, setup notes, history, PR/e1RM context, variants and alternatives with progressive disclosure.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-89",
+        "title": "Substitution Engine v2",
+        "status": "TODO",
+        "goal": "Make substitutions deterministic, explainable and contextual using alternatives, equipment and temporary availability while preserving histories.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-90",
+        "title": "Exercise Intelligence UX Gate",
+        "status": "TODO",
+        "goal": "Validate search → understand → select → execute → substitute → history → reuse as one coherent journey.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4143,7 +4215,52 @@
         "id": "LN-71",
         "title": "e1RM individualisé et tendances de force",
         "status": "TODO",
-        "goal": "Calculer l'e1RM et la courbe force-endurance à partir d'un modèle explicable qui part d'un prior populationnel lorsque les données sont rares puis devient progressivement individuel par athlète × exercice.",
+        "goal": "Deliver the evidence-based, versioned, uncertainty-aware athlete×exercise e1RM model defined by the current LN-71 contract and scientific basis.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-91",
+        "title": "Training Max & Performance References",
+        "status": "TODO",
+        "goal": "Introduce Training Max as a distinct editable reference from measured PR, e1RM and historical set performance.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-92",
+        "title": "Relative Prescriptions",
+        "status": "TODO",
+        "goal": "Support absolute load, %1RM, %e1RM, %Training Max, RPE and RIR as distinct structured prescriptions.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-93",
+        "title": "Advanced Per-Set Prescription",
+        "status": "TODO",
+        "goal": "Add structured per-set prescription and make the already-shipped LN-68 progression engine compatible with richer relative/per-set targets without creating a second engine.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-69",
+        "title": "Variantes de prescription par semaine",
+        "status": "TODO",
+        "goal": "Apply deterministic week-specific overrides on top of structured prescription and shipped progression metadata with clear inheritance/diff and immutable workout snapshots.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-70",
+        "title": "Planification datée et rappels de séances",
+        "status": "TODO",
+        "goal": "Make dated scheduling authoritative for Today, reschedule/cancel lifecycle and opt-in reminders.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4152,7 +4269,61 @@
         "id": "LN-72",
         "title": "Tendances effort, charge et progression",
         "status": "TODO",
-        "goal": "Croiser données objectives et RPE/RIR de façon descriptive et vérifiable.",
+        "goal": "Produce deterministic descriptive load/reps/volume/RPE-RIR trends with data sufficiency and source drill-down.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-94",
+        "title": "Programmable Deload & Recovery Weeks",
+        "status": "TODO",
+        "goal": "Turn deload/recovery intent into editable structured future prescription behavior without recovery diagnosis.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-95",
+        "title": "Planned vs Performed",
+        "status": "TODO",
+        "goal": "Persist/derive durable factual comparisons between prescribed and completed work, including substitutions and omissions.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-96",
+        "title": "Program Adherence",
+        "status": "TODO",
+        "goal": "Describe planned/completed/rescheduled/missed training without moralizing adherence or treating it as training quality.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-97",
+        "title": "Deterministic Next-Session Suggestions",
+        "status": "TODO",
+        "goal": "Compute explainable structured next-session suggestions from explicit rules and prior performance without generative AI.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-98",
+        "title": "Assisted Adaptation",
+        "status": "TODO",
+        "goal": "Let authorized athlete/coach review, edit, accept or reject proposed adaptations while preserving human control and lineage.",
+        "business": null,
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-99",
+        "title": "Programming UX Gate",
+        "status": "TODO",
+        "goal": "Validate create → structure → prescribe → schedule → execute → compare → adapt → analyze → next exposure.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4161,7 +4332,7 @@
         "id": "LN-73",
         "title": "Export portable CSV et export de compte",
         "status": "TODO",
-        "goal": "Donner à l’utilisateur une copie exploitable de ses données au-delà du PDF.",
+        "goal": "Provide versioned portable user-owned training/program data beyond PDF with correct provenance and authorization.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4170,7 +4341,7 @@
         "id": "LN-74",
         "title": "Import/export structuré de programmes et templates",
         "status": "TODO",
-        "goal": "Permettre un échange de fichiers déterministe en complément des codes de partage.",
+        "goal": "Provide a deterministic versioned rich program/template file format and safe preview before import.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4179,7 +4350,7 @@
         "id": "LN-75",
         "title": "Fondation Apple Health / Health Connect",
         "status": "TODO",
-        "goal": "Préparer des échanges santé limités et consentis sans transformer LiftNote en dossier médical.",
+        "goal": "Add optional consent-driven health exchange behind explicit privacy/data controls and non-medical boundaries.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4188,7 +4359,7 @@
         "id": "LN-76",
         "title": "Compagnons montres et wearables",
         "status": "TODO",
-        "goal": "Définir puis livrer un premier compagnon wearable centré sur la séance active.",
+        "goal": "Deliver a bounded active-workout wearable companion with idempotent sync and clear offline/support limits.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4197,7 +4368,7 @@
         "id": "LN-77",
         "title": "Import IA depuis texte, image ou PDF",
         "status": "TODO",
-        "goal": "Transformer un programme reçu en contenu structuré, toujours relu avant enregistrement.",
+        "goal": "Use document/image/text extraction → structured IR → canonical resolution → unresolved review → conflict validation → confirmed save.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4206,7 +4377,7 @@
         "id": "LN-78",
         "title": "Résumé IA de progression traçable",
         "status": "TODO",
-        "goal": "Résumer l’évolution à partir des données LiftNote sans masquer les faits sources.",
+        "goal": "Let AI summarize/explain deterministic LiftNote metrics and link claims to factual source data.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4215,7 +4386,7 @@
         "id": "LN-79",
         "title": "Analyse descriptive de tendances et plateaux",
         "status": "TODO",
-        "goal": "Identifier des tendances observables sans prétendre établir une cause physiologique.",
+        "goal": "Detect trends/plateaus deterministically, expose evidence, then optionally provide careful AI explanation.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4224,7 +4395,7 @@
         "id": "LN-80",
         "title": "Assistant de création de programme",
         "status": "TODO",
-        "goal": "Générer une proposition entièrement éditable et expliquée, jamais un coach autonome opaque.",
+        "goal": "Produce editable structured program proposals that pass deterministic domain validation and require explicit human confirmation.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
@@ -4234,13 +4405,13 @@
   },
   "summary": {
     "done": 78,
-    "total": 90,
-    "percent": 87,
+    "total": 109,
+    "percent": 72,
     "current": {
       "id": "LN-69",
       "title": "Variantes de prescription par semaine",
       "status": "TODO",
-      "goal": "Faire varier séries/reps/charge/tempo/effort sans dupliquer toute la séance.",
+      "goal": "Apply deterministic week-specific overrides on top of structured prescription and shipped progression metadata with clear inheritance/diff and immutable workout snapshots.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
@@ -4249,7 +4420,7 @@
       "id": "LN-70",
       "title": "Planification datée et rappels de séances",
       "status": "TODO",
-      "goal": "Ajouter une planification explicite pour savoir quoi faire aujourd’hui sans inventer une prochaine séance.",
+      "goal": "Make dated scheduling authoritative for Today, reschedule/cancel lifecycle and opt-in reminders.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
