@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T10:39:33.903Z",
+  "publishedAt": "2026-10-01T10:40:35.568Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-44",
-    "nextLot": "LN-45",
-    "launchedAt": "2026-10-01T10:14:37.300Z",
-    "lastProgressAt": "2026-10-01T10:33:07.761Z",
-    "lastChatCheckAt": "2026-10-01T10:14:37.300Z",
-    "lastObservedMainSha": "d57b187e91f4dd675ae03447b789d0b16766cdfc",
+    "currentLot": "LN-45",
+    "nextLot": "LN-46",
+    "launchedAt": "2026-10-01T10:40:29.621Z",
+    "lastProgressAt": "2026-10-01T10:40:29.621Z",
+    "lastChatCheckAt": "2026-10-01T10:40:29.621Z",
+    "lastObservedMainSha": "246f96927cde85ee2fc3bd8ed1a4ee6609fb52d8",
     "nudges": 0,
-    "lastMessage": "main moved while LN-44 is active",
+    "lastMessage": "Launched LN-45; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T10:39:28.266Z",
-    "nextTickAt": "2026-10-01T10:44:28.266Z",
+    "lastSuccessfulTickAt": "2026-10-01T10:40:29.621Z",
+    "nextTickAt": "2026-10-01T10:45:29.621Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-32",
-        "completedAt": "2026-10-01T07:10:08.971Z",
-        "restartedAt": null,
-        "mainSha": "a30a3ed2d473d801d2473cb0b08ce0de0e374ab4",
-        "reason": null
-      },
       {
         "lot": "LN-33",
         "completedAt": "2026-10-01T07:34:27.724Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "95bd11b046a5259e4bb513bcb2d23f82772c6f05",
         "reason": null
+      },
+      {
+        "lot": "LN-44",
+        "completedAt": "2026-10-01T10:40:12.335Z",
+        "restartedAt": null,
+        "mainSha": "246f96927cde85ee2fc3bd8ed1a4ee6609fb52d8",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "d57b187e91f4dd675ae03447b789d0b16766cdfc",
+    "mainSha": "246f96927cde85ee2fc3bd8ed1a4ee6609fb52d8",
     "lots": [
       {
         "id": "LN-00",
@@ -3347,7 +3347,7 @@
       {
         "id": "LN-44",
         "title": "Trash and restore",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "introduce recoverable deletion for programs, templates and custom exercises where safe.",
         "business": {
           "summary": "Ajouter une corbeille pour récupérer les suppressions accidentelles.",
@@ -3919,65 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 53,
+    "done": 54,
     "total": 62,
-    "percent": 85,
+    "percent": 87,
     "current": {
-      "id": "LN-44",
-      "title": "Trash and restore",
-      "status": "TODO",
-      "goal": "introduce recoverable deletion for programs, templates and custom exercises where safe.",
-      "business": {
-        "summary": "Ajouter une corbeille pour récupérer les suppressions accidentelles.",
-        "why": "Une mauvaise manipulation ne doit pas détruire immédiatement des contenus importants.",
-        "builds": [
-          "corbeille",
-          "date de suppression",
-          "restauration",
-          "règles de conservation et suppression définitive",
-          "protection de l'historique"
-        ],
-        "userImpact": [
-          "l'athlète peut corriger une suppression accidentelle"
-        ],
-        "notInThisLot": [
-          "pas de restauration qui contourne les droits"
-        ],
-        "doneWhen": [
-          "les éléments restent récupérables pendant la période prévue",
-          "la suppression définitive est explicite"
-        ],
-        "journey": [
-          "L’utilisateur supprime un programme/template/exercice custom compatible.",
-          "L’élément va dans la corbeille.",
-          "Il peut le restaurer avant suppression définitive."
-        ],
-        "rules": [
-          "La suppression définitive est explicite.",
-          "L’historique doit rester lisible.",
-          "Restaurer ne doit pas contourner les règles de propriété."
-        ],
-        "examples": [
-          "Template supprimé accidentellement puis restauré.",
-          "Exercice custom en corbeille dont l’ancien historique reste lisible."
-        ],
-        "data": [
-          "état corbeille",
-          "date suppression",
-          "rétention/restauration"
-        ],
-        "dependencies": [
-          "LN-43 archiving",
-          "modèle d’identité historique"
-        ],
-        "attention": [
-          "relations vers contenu supprimé",
-          "politique de rétention claire"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-45",
       "title": "Robust offline workout mode and resynchronization",
       "status": "TODO",
@@ -4029,6 +3974,60 @@
         "attention": [
           "ne pas dupliquer les sets",
           "tester refresh/background et reconnexion intermittente"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-46",
+      "title": "Workout lock / focus display",
+      "status": "TODO",
+      "goal": "reduce accidental actions during training and keep current set/rest/next action immediately readable.",
+      "business": {
+        "summary": "Créer un mode focus pendant la séance pour limiter les mauvaises manipulations.",
+        "why": "Entre deux séries, l'écran doit rester simple, lisible et sûr.",
+        "builds": [
+          "mode focus optionnel",
+          "gros contrôles pour la série courante",
+          "protection contre navigation/suppression accidentelle",
+          "minuteur toujours accessible",
+          "maintien d'écran éveillé quand possible"
+        ],
+        "userImpact": [
+          "l'utilisation entre deux efforts devient plus rapide et plus sûre"
+        ],
+        "notInThisLot": [
+          "le mode ne doit jamais piéger l'utilisateur"
+        ],
+        "doneWhen": [
+          "la saisie reste rapide",
+          "les fonctions non supportées se dégradent proprement"
+        ],
+        "journey": [
+          "L’utilisateur active le mode focus pendant la séance.",
+          "Les contrôles courants deviennent plus grands et les actions risquées sont protégées.",
+          "Il peut sortir explicitement du mode à tout moment."
+        ],
+        "rules": [
+          "Le mode focus est optionnel.",
+          "Il ne doit jamais piéger l’utilisateur.",
+          "Les fonctions non supportées par la plateforme se dégradent proprement."
+        ],
+        "examples": [
+          "Écran centré sur série courante + timer.",
+          "Wake lock utilisé seulement si disponible et sûr."
+        ],
+        "data": [
+          "préférence/état focus",
+          "capacité plateforme"
+        ],
+        "dependencies": [
+          "LN-14 ergonomie",
+          "LN-08 timer"
+        ],
+        "attention": [
+          "accessibilité de la sortie",
+          "ne pas masquer des actions nécessaires"
         ]
       },
       "contractAvailable": true
