@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T09:04:17.835Z",
+  "publishedAt": "2026-10-01T09:05:18.837Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-41",
-    "nextLot": "LN-42",
-    "launchedAt": "2026-10-01T08:46:50.462Z",
-    "lastProgressAt": "2026-10-01T09:04:12.563Z",
-    "lastChatCheckAt": "2026-10-01T08:46:50.462Z",
-    "lastObservedMainSha": "149ffa24880b67bde7000999cd2bbddb986cb7b0",
+    "currentLot": "LN-42",
+    "nextLot": "LN-43",
+    "launchedAt": "2026-10-01T09:05:13.247Z",
+    "lastProgressAt": "2026-10-01T09:05:13.247Z",
+    "lastChatCheckAt": "2026-10-01T09:05:13.247Z",
+    "lastObservedMainSha": "b4930d633ef4574fd7265d76274d1bcff374aa5f",
     "nudges": 0,
-    "lastMessage": "main moved while LN-41 is active",
+    "lastMessage": "Launched LN-42; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T09:04:12.563Z",
-    "nextTickAt": "2026-10-01T09:09:12.563Z",
+    "lastSuccessfulTickAt": "2026-10-01T09:05:13.247Z",
+    "nextTickAt": "2026-10-01T09:10:13.247Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-29",
-        "completedAt": "2026-10-01T04:11:20.109Z",
-        "restartedAt": null,
-        "mainSha": "62f7d4982794fa07fb16300fbb9e3a9bb994598d",
-        "reason": null
-      },
       {
         "lot": "LN-30",
         "completedAt": "2026-10-01T05:46:44.744Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "8c241dee088bd04fcaaff7141dac02509af78f91",
         "reason": null
+      },
+      {
+        "lot": "LN-41",
+        "completedAt": "2026-10-01T09:04:57.312Z",
+        "restartedAt": null,
+        "mainSha": "b4930d633ef4574fd7265d76274d1bcff374aa5f",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "149ffa24880b67bde7000999cd2bbddb986cb7b0",
+    "mainSha": "b4930d633ef4574fd7265d76274d1bcff374aa5f",
     "lots": [
       {
         "id": "LN-00",
@@ -3183,7 +3183,7 @@
       {
         "id": "LN-41",
         "title": "Advanced history search and filters",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "make large histories explorable by exercise, period, program, load, record status and notes.",
         "business": {
           "summary": "Rechercher et filtrer un historique devenu volumineux.",
@@ -3919,65 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 50,
+    "done": 51,
     "total": 62,
-    "percent": 81,
+    "percent": 82,
     "current": {
-      "id": "LN-41",
-      "title": "Advanced history search and filters",
-      "status": "TODO",
-      "goal": "make large histories explorable by exercise, period, program, load, record status and notes.",
-      "business": {
-        "summary": "Rechercher et filtrer un historique devenu volumineux.",
-        "why": "Après des mois ou années, une liste chronologique ne suffit plus.",
-        "builds": [
-          "filtres par exercice, période, programme et version",
-          "filtres de charge compatibles",
-          "filtre records",
-          "recherche dans les notes",
-          "combinaison et remise à zéro des filtres"
-        ],
-        "userImpact": [
-          "retrouver une performance précise devient rapide"
-        ],
-        "notInThisLot": [
-          "pas de mélange entre charges de sens différents"
-        ],
-        "doneWhen": [
-          "chaque résultat ouvre le bon contexte",
-          "les requêtes restent privées et performantes"
-        ],
-        "journey": [
-          "L’athlète ouvre un historique volumineux.",
-          "Il combine filtres exercice, période, programme, records ou notes.",
-          "Les résultats ouvrent directement la séance exacte."
-        ],
-        "rules": [
-          "Les requêtes restent limitées à l’athlète.",
-          "Les charges incompatibles ne sont pas aplaties en un filtre unique trompeur.",
-          "Les grands volumes sont paginés ou bornés."
-        ],
-        "examples": [
-          "Retrouver tous les PR Bench sur PPL V2.",
-          "Chercher le mot « douleur » dans ses notes privées sans exposer d’autres comptes."
-        ],
-        "data": [
-          "filtres",
-          "index/requêtes historique",
-          "pagination"
-        ],
-        "dependencies": [
-          "LN-11 historique",
-          "LN-20/LN-30 semantics"
-        ],
-        "attention": [
-          "performance des requêtes",
-          "respect strict de la confidentialité"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-42",
       "title": "PDF export for programs and workouts",
       "status": "TODO",
@@ -4028,6 +3973,60 @@
         "attention": [
           "pagination des programmes longs",
           "ne pas exporter involontairement des données privées"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-43",
+      "title": "Smart program and workout archiving",
+      "status": "TODO",
+      "goal": "keep inactive/finished content accessible without cluttering everyday lists.",
+      "business": {
+        "summary": "Archiver les programmes et séances qui ne servent plus au quotidien.",
+        "why": "Les anciens contenus restent utiles mais ne doivent pas encombrer l'interface courante.",
+        "builds": [
+          "archiver et restaurer",
+          "masquer les archives des listes actives",
+          "vue dédiée aux archives",
+          "conservation de l'historique et de la lignée"
+        ],
+        "userImpact": [
+          "l'interface reste propre sans supprimer les anciens programmes"
+        ],
+        "notInThisLot": [
+          "pas d'archivage destructif automatique"
+        ],
+        "doneWhen": [
+          "archiver ne supprime rien",
+          "un contenu archivé reste retrouvable"
+        ],
+        "journey": [
+          "L’utilisateur archive un programme terminé.",
+          "Il disparaît des listes actives.",
+          "Il reste consultable dans une vue Archives et peut être restauré."
+        ],
+        "rules": [
+          "Archiver n’est jamais supprimer.",
+          "L’historique et la lignée restent intacts.",
+          "Toute suggestion automatique d’archivage reste non destructive."
+        ],
+        "examples": [
+          "PPL été archivé mais toujours visible dans l’historique.",
+          "Réactiver un ancien programme en un geste."
+        ],
+        "data": [
+          "état archivé",
+          "date éventuelle",
+          "vue archive"
+        ],
+        "dependencies": [
+          "programmes persistés",
+          "LN-27 lineage"
+        ],
+        "attention": [
+          "ne pas cacher un contenu encore actif par erreur",
+          "restauration prévisible"
         ]
       },
       "contractAvailable": true
