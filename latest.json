@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T08:32:48.782Z",
+  "publishedAt": "2026-10-01T08:33:43.556Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-39",
-    "nextLot": "LN-40",
-    "launchedAt": "2026-10-01T08:25:27.487Z",
-    "lastProgressAt": "2026-10-01T08:32:00.329Z",
-    "lastChatCheckAt": "2026-10-01T08:25:27.487Z",
-    "lastObservedMainSha": "d5b7b2a78ad461ece8be230f1f3dd0615c8e9e9f",
+    "currentLot": "LN-40",
+    "nextLot": "LN-41",
+    "launchedAt": "2026-10-01T08:33:37.389Z",
+    "lastProgressAt": "2026-10-01T08:33:37.389Z",
+    "lastChatCheckAt": "2026-10-01T08:33:37.389Z",
+    "lastObservedMainSha": "bfbf6f0d6e757e4b5139e648776c57f948bbcd91",
     "nudges": 0,
-    "lastMessage": "main moved while LN-39 is active",
+    "lastMessage": "Launched LN-40; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T08:32:43.408Z",
-    "nextTickAt": "2026-10-01T08:37:43.408Z",
+    "lastSuccessfulTickAt": "2026-10-01T08:33:37.389Z",
+    "nextTickAt": "2026-10-01T08:38:37.389Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-27",
-        "completedAt": "2026-10-01T03:37:52.697Z",
-        "restartedAt": null,
-        "mainSha": "cb55b865310c563f188fbff595c52109a8996aa2",
-        "reason": null
-      },
       {
         "lot": "LN-28",
         "completedAt": "2026-10-01T03:56:28.353Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "6b57075dbfd8724bf2b6d28a86a65f75b885d50f",
         "reason": null
+      },
+      {
+        "lot": "LN-39",
+        "completedAt": "2026-10-01T08:33:27.685Z",
+        "restartedAt": null,
+        "mainSha": "bfbf6f0d6e757e4b5139e648776c57f948bbcd91",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "d5b7b2a78ad461ece8be230f1f3dd0615c8e9e9f",
+    "mainSha": "bfbf6f0d6e757e4b5139e648776c57f948bbcd91",
     "lots": [
       {
         "id": "LN-00",
@@ -3078,7 +3078,7 @@
       {
         "id": "LN-39",
         "title": "Weekly volume by muscle group",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "estimate weekly training exposure by muscle group from trusted primary/secondary muscle metadata.",
         "business": {
           "summary": "Estimer le volume de travail hebdomadaire par groupe musculaire.",
@@ -3919,63 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 48,
+    "done": 49,
     "total": 62,
-    "percent": 77,
+    "percent": 79,
     "current": {
-      "id": "LN-39",
-      "title": "Weekly volume by muscle group",
-      "status": "TODO",
-      "goal": "estimate weekly training exposure by muscle group from trusted primary/secondary muscle metadata.",
-      "business": {
-        "summary": "Estimer le volume de travail hebdomadaire par groupe musculaire.",
-        "why": "Le catalogue enrichi permet de décrire où se concentre l'entraînement.",
-        "builds": [
-          "muscles principaux et secondaires",
-          "règle documentée de comptage",
-          "séries/volumes estimés par muscle",
-          "filtres de période et programme"
-        ],
-        "userImpact": [
-          "l'athlète voit les groupes musculaires les plus sollicités"
-        ],
-        "notInThisLot": [
-          "pas de fausse précision pour les exercices mal renseignés"
-        ],
-        "doneWhen": [
-          "le calcul est déterministe et présenté comme une estimation",
-          "les inconnus restent inconnus"
-        ],
-        "journey": [
-          "LiftNote lit les muscles principaux/secondaires des exercices réalisés.",
-          "Il applique une règle documentée de contribution.",
-          "L’utilisateur consulte l’exposition estimée par groupe musculaire sur la semaine."
-        ],
-        "rules": [
-          "Le calcul est déterministe.",
-          "Le résultat est présenté comme une estimation.",
-          "Une métadonnée inconnue reste inconnue."
-        ],
-        "examples": [
-          "Pectoraux alimentés principalement par Bench/Chest Press.",
-          "Un exercice custom sans muscles connus apparaît comme contribution non classée."
-        ],
-        "data": [
-          "muscles exercice",
-          "sets/volume compatibles",
-          "contribution primaire/secondaire"
-        ],
-        "dependencies": [
-          "LN-13B métadonnées catalogue"
-        ],
-        "attention": [
-          "ne pas inventer de muscles",
-          "documenter le poids donné aux secondaires"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-40",
       "title": "Muscle-distribution visualization",
       "status": "TODO",
@@ -4023,6 +3970,61 @@
         "attention": [
           "ne pas qualifier automatiquement une répartition de bonne ou mauvaise",
           "éviter une précision visuelle supérieure à la qualité des données"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-41",
+      "title": "Advanced history search and filters",
+      "status": "TODO",
+      "goal": "make large histories explorable by exercise, period, program, load, record status and notes.",
+      "business": {
+        "summary": "Rechercher et filtrer un historique devenu volumineux.",
+        "why": "Après des mois ou années, une liste chronologique ne suffit plus.",
+        "builds": [
+          "filtres par exercice, période, programme et version",
+          "filtres de charge compatibles",
+          "filtre records",
+          "recherche dans les notes",
+          "combinaison et remise à zéro des filtres"
+        ],
+        "userImpact": [
+          "retrouver une performance précise devient rapide"
+        ],
+        "notInThisLot": [
+          "pas de mélange entre charges de sens différents"
+        ],
+        "doneWhen": [
+          "chaque résultat ouvre le bon contexte",
+          "les requêtes restent privées et performantes"
+        ],
+        "journey": [
+          "L’athlète ouvre un historique volumineux.",
+          "Il combine filtres exercice, période, programme, records ou notes.",
+          "Les résultats ouvrent directement la séance exacte."
+        ],
+        "rules": [
+          "Les requêtes restent limitées à l’athlète.",
+          "Les charges incompatibles ne sont pas aplaties en un filtre unique trompeur.",
+          "Les grands volumes sont paginés ou bornés."
+        ],
+        "examples": [
+          "Retrouver tous les PR Bench sur PPL V2.",
+          "Chercher le mot « douleur » dans ses notes privées sans exposer d’autres comptes."
+        ],
+        "data": [
+          "filtres",
+          "index/requêtes historique",
+          "pagination"
+        ],
+        "dependencies": [
+          "LN-11 historique",
+          "LN-20/LN-30 semantics"
+        ],
+        "attention": [
+          "performance des requêtes",
+          "respect strict de la confidentialité"
         ]
       },
       "contractAvailable": true
