@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T22:23:41.246Z",
+  "publishedAt": "2026-10-01T22:28:27.939Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-81",
-    "nextLot": "LN-82",
-    "launchedAt": "2026-10-01T22:15:13.076Z",
-    "lastProgressAt": "2026-10-01T22:23:31.744Z",
-    "lastChatCheckAt": "2026-10-01T22:15:13.076Z",
-    "lastObservedMainSha": "04648888d0253740a6f862139c5f3db8bb988bdb",
+    "currentLot": "LN-82",
+    "nextLot": "LN-83",
+    "launchedAt": "2026-10-01T22:28:17.362Z",
+    "lastProgressAt": "2026-10-01T22:28:17.362Z",
+    "lastChatCheckAt": "2026-10-01T22:28:17.362Z",
+    "lastObservedMainSha": "1e2832d8c7c47222274a6b9513e3509578aaab03",
     "nudges": 0,
-    "lastMessage": "main moved while LN-81 is active",
+    "lastMessage": "Launched LN-82; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T22:23:31.744Z",
-    "nextTickAt": "2026-10-01T22:28:31.744Z",
+    "lastSuccessfulTickAt": "2026-10-01T22:28:17.362Z",
+    "nextTickAt": "2026-10-01T22:33:17.362Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-58",
-        "completedAt": "2026-10-01T18:57:59.031Z",
-        "restartedAt": null,
-        "mainSha": "59cabe5e9b154b7d7868ff0de9a37be671d0f439",
-        "reason": null
-      },
       {
         "lot": "LN-59",
         "completedAt": "2026-10-01T19:06:57.226Z",
@@ -101,11 +94,18 @@
         "restartedAt": "2026-10-01T22:15:05.177Z",
         "mainSha": "4690d4b878fb3c142892e12c7a0362d90de2dd29",
         "reason": "roadmap_reordered"
+      },
+      {
+        "lot": "LN-81",
+        "completedAt": "2026-10-01T22:24:24.266Z",
+        "restartedAt": null,
+        "mainSha": "1e2832d8c7c47222274a6b9513e3509578aaab03",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "04648888d0253740a6f862139c5f3db8bb988bdb",
+    "mainSha": "1e2832d8c7c47222274a6b9513e3509578aaab03",
     "lots": [
       {
         "id": "LN-00",
@@ -8560,7 +8560,7 @@
       {
         "id": "LN-81",
         "title": "Capability & UX Coverage Audit Gate",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Convert the architecture baseline into a verified, code-and-UI-level capability coverage map before new product families expand.",
         "business": {
           "phase": "Product Architecture",
@@ -8721,8 +8721,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "758",
+            "mergeSha": "846451173b56b825f21f0e13eb408ccff06a5023"
           }
         },
         "contractAvailable": true,
@@ -16687,181 +16687,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 78,
+    "done": 79,
     "total": 126,
-    "percent": 62,
+    "percent": 63,
     "current": {
-      "id": "LN-81",
-      "title": "Capability & UX Coverage Audit Gate",
-      "status": "TODO",
-      "goal": "Convert the architecture baseline into a verified, code-and-UI-level capability coverage map before new product families expand.",
-      "business": {
-        "phase": "Product Architecture",
-        "summary": "Convert the architecture baseline into a verified, code-and-UI-level capability coverage map before new product families expand.",
-        "why": "LiftNote already has many durable backend/domain primitives. This gate prevents technically shipped capabilities from remaining undiscoverable, unactionable or disconnected from their natural user context.",
-        "builds": [
-          "verify every meaningful shipped capability against its real UI/product path",
-          "classify findings A/B/C/D/E using the baseline taxonomy",
-          "map discoverability, actionability, reversibility, history, offline, deep-link, localization and coach/athlete behavior",
-          "identify orphaned backend/data capabilities and unnatural entry points",
-          "produce an explicit remediation ledger for LN-82 and named future lots",
-          "verify that later deterministic engines can consume current facts without AI duplication"
-        ],
-        "userImpact": [
-          "audit natural entry points and contextual surfacing on phone first",
-          "record dead ends, overload and missing progressive disclosure rather than assuming every capability needs a dedicated screen",
-          "inspect accessibility and FR/EN coverage as product behavior, not only strings",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "audit natural entry points and contextual surfacing on phone first",
-          "record dead ends, overload and missing progressive disclosure rather than assuming every capability needs a dedicated screen",
-          "inspect accessibility and FR/EN coverage as product behavior, not only strings",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "audit authorization boundaries without broadening them",
-          "explicitly compare coach and athlete visibility for cross-user features",
-          "audit offline/sync only where a shipped capability can be used during or adjacent to an active workout",
-          "record which analytics/history surfaces consume each fact",
-          "record future AI consumers but keep deterministic/domain truth authoritative",
-          "identify import/export and auditability implications without implementing future lots"
-        ],
-        "examples": [],
-        "data": [
-          "documentation-first; schema changes are not expected",
-          "record concrete table/RPC/domain objects only as evidence for capability-to-surface mapping",
-          "do not rewrite historical completion truth"
-        ],
-        "dependencies": [
-          "Runs after LN-68, now DONE on authoritative main, and consumes every DONE capability from LN-00 through LN-68. It must also inspect the contracts for remaining LN-69 through LN-80 without implementing them."
-        ],
-        "attention": [
-          "audit authorization boundaries without broadening them",
-          "explicitly compare coach and athlete visibility for cross-user features",
-          "audit offline/sync only where a shipped capability can be used during or adjacent to an active workout",
-          "repository search across LiftNote routes/components/domain/persistence/tests/docs",
-          "cross-check DONE completion records against current code and UI",
-          "validate no roadmap/status mutation beyond this lot's required completion record when executed",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no product feature implementation",
-          "no visual redesign for its own sake",
-          "no expansion into social, nutrition, payments, medical diagnosis or generic chat"
-        ],
-        "doneWhen": [
-          "every meaningful LN-00..LN-68 capability has a documented product-path disposition",
-          "every finding is classified A/B/C/D/E and assigned to LN-82, a named future lot or explicit out-of-scope",
-          "no known shipped backend capability is left with an unexplained user-facing status",
-          "the remediation ledger is precise enough for LN-82 to execute without rediscovery"
-        ],
-        "ux": [
-          "audit natural entry points and contextual surfacing on phone first",
-          "record dead ends, overload and missing progressive disclosure rather than assuming every capability needs a dedicated screen",
-          "inspect accessibility and FR/EN coverage as product behavior, not only strings",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "audit authorization boundaries without broadening them",
-          "explicitly compare coach and athlete visibility for cross-user features",
-          "audit offline/sync only where a shipped capability can be used during or adjacent to an active workout"
-        ],
-        "implications": [
-          "record which analytics/history surfaces consume each fact",
-          "record future AI consumers but keep deterministic/domain truth authoritative",
-          "identify import/export and auditability implications without implementing future lots"
-        ],
-        "validation": [
-          "repository search across LiftNote routes/components/domain/persistence/tests/docs",
-          "cross-check DONE completion records against current code and UI",
-          "validate no roadmap/status mutation beyond this lot's required completion record when executed",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Product Architecture",
-        "objective": "Convert the architecture baseline into a verified, code-and-UI-level capability coverage map before new product families expand.",
-        "rationale": "LiftNote already has many durable backend/domain primitives. This gate prevents technically shipped capabilities from remaining undiscoverable, unactionable or disconnected from their natural user context.",
-        "dependencies": [
-          "Runs after LN-68, now DONE on authoritative main, and consumes every DONE capability from LN-00 through LN-68. It must also inspect the contracts for remaining LN-69 through LN-80 without implementing them."
-        ],
-        "scope": [
-          "verify every meaningful shipped capability against its real UI/product path",
-          "classify findings A/B/C/D/E using the baseline taxonomy",
-          "map discoverability, actionability, reversibility, history, offline, deep-link, localization and coach/athlete behavior",
-          "identify orphaned backend/data capabilities and unnatural entry points",
-          "produce an explicit remediation ledger for LN-82 and named future lots",
-          "verify that later deterministic engines can consume current facts without AI duplication"
-        ],
-        "exclusions": [
-          "no product feature implementation",
-          "no visual redesign for its own sake",
-          "no expansion into social, nutrition, payments, medical diagnosis or generic chat"
-        ],
-        "data": [
-          "documentation-first; schema changes are not expected",
-          "record concrete table/RPC/domain objects only as evidence for capability-to-surface mapping",
-          "do not rewrite historical completion truth"
-        ],
-        "ux": [
-          "audit natural entry points and contextual surfacing on phone first",
-          "record dead ends, overload and missing progressive disclosure rather than assuming every capability needs a dedicated screen",
-          "inspect accessibility and FR/EN coverage as product behavior, not only strings",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "audit authorization boundaries without broadening them",
-          "explicitly compare coach and athlete visibility for cross-user features",
-          "audit offline/sync only where a shipped capability can be used during or adjacent to an active workout"
-        ],
-        "implications": [
-          "record which analytics/history surfaces consume each fact",
-          "record future AI consumers but keep deterministic/domain truth authoritative",
-          "identify import/export and auditability implications without implementing future lots"
-        ],
-        "acceptance": [
-          "every meaningful LN-00..LN-68 capability has a documented product-path disposition",
-          "every finding is classified A/B/C/D/E and assigned to LN-82, a named future lot or explicit out-of-scope",
-          "no known shipped backend capability is left with an unexplained user-facing status",
-          "the remediation ledger is precise enough for LN-82 to execute without rediscovery"
-        ],
-        "validation": [
-          "repository search across LiftNote routes/components/domain/persistence/tests/docs",
-          "cross-check DONE completion records against current code and UI",
-          "validate no roadmap/status mutation beyond this lot's required completion record when executed",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-82",
       "title": "UX Recovery & Cross-Lot Integration",
       "status": "TODO",
@@ -17012,6 +16841,178 @@
           "focused tests for each repaired integration",
           "targeted lint/typecheck for touched LiftNote code",
           "browser/E2E only under the current repository gate policy; record what was actually run",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-83",
+      "title": "Exercise Knowledge Model v2",
+      "status": "TODO",
+      "goal": "Evolve the catalog into a normalized, bilingual, source-aware exercise knowledge system while preserving LiftNote canonical identity.",
+      "business": {
+        "phase": "Exercise Intelligence",
+        "summary": "Evolve the catalog into a normalized, bilingual, source-aware exercise knowledge system while preserving LiftNote canonical identity.",
+        "why": "Search, substitutions, analytics and AI import need one authoritative exercise model rather than duplicated source vocabularies.",
+        "builds": [
+          "LiftNote canonical identity plus multi-source provenance",
+          "canonical/source names and aliases",
+          "FR/EN description and structured-instruction fields",
+          "primary/secondary muscles, equipment, body region, mechanics and force/movement classification",
+          "tracking/load/unilateral semantics",
+          "variants, movement-family hooks and substitution relationships",
+          "media metadata without assuming media licensing",
+          "personal setup-note integration points and analytics-ready metadata"
+        ],
+        "userImpact": [
+          "knowledge enrichment must support existing picker/detail/workout surfaces without turning the active workout into an encyclopedia",
+          "metadata exposed later should be layered by relevance",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "knowledge enrichment must support existing picker/detail/workout surfaces without turning the active workout into an encyclopedia",
+          "metadata exposed later should be layered by relevance",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "system metadata remains readable under existing catalog rules; personal notes remain owner-private",
+          "coach custom exercises do not become system canonical rows implicitly",
+          "offline consumers must keep enough snapshot metadata to render existing workouts",
+          "becomes authoritative input for search, substitution, muscle analytics and AI canonical resolution",
+          "history stays anchored to canonical exercise ID; metadata evolution must not rewrite performance truth"
+        ],
+        "examples": [],
+        "data": [
+          "preserve existing LiftNote exercise IDs wherever possible",
+          "normalize source vocabularies into LiftNote-owned fields and enums",
+          "record provenance separately from canonical identity",
+          "migration/backfill must be deterministic, versioned and reversible enough to review"
+        ],
+        "dependencies": [
+          "Requires LN-82 DONE. Builds on LN-13B, LN-20, LN-29, LN-31, LN-32, LN-39, LN-50 and LN-66."
+        ],
+        "attention": [
+          "system metadata remains readable under existing catalog rules; personal notes remain owner-private",
+          "coach custom exercises do not become system canonical rows implicitly",
+          "offline consumers must keep enough snapshot metadata to render existing workouts",
+          "schema/type/domain tests for normalization and backward compatibility",
+          "migration dry-run and RLS checks if persistence changes",
+          "catalog import/source-license checks remain explicit and pinned",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no bulk source import solely for catalog size",
+          "no third-party media use without verified rights",
+          "no merging historical exercise identities because a source uses a different name",
+          "no user-custom exercise rewriting"
+        ],
+        "doneWhen": [
+          "one canonical exercise can carry multiple source mappings without duplicate identity",
+          "all required semantic fields have explicit ownership and null/unknown rules",
+          "migration preserves history and custom-exercise isolation",
+          "contracts for LN-84..LN-90 can consume the model without parallel schemas"
+        ],
+        "ux": [
+          "knowledge enrichment must support existing picker/detail/workout surfaces without turning the active workout into an encyclopedia",
+          "metadata exposed later should be layered by relevance",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "system metadata remains readable under existing catalog rules; personal notes remain owner-private",
+          "coach custom exercises do not become system canonical rows implicitly",
+          "offline consumers must keep enough snapshot metadata to render existing workouts"
+        ],
+        "implications": [
+          "becomes authoritative input for search, substitution, muscle analytics and AI canonical resolution",
+          "history stays anchored to canonical exercise ID; metadata evolution must not rewrite performance truth"
+        ],
+        "validation": [
+          "schema/type/domain tests for normalization and backward compatibility",
+          "migration dry-run and RLS checks if persistence changes",
+          "catalog import/source-license checks remain explicit and pinned",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Exercise Intelligence",
+        "objective": "Evolve the catalog into a normalized, bilingual, source-aware exercise knowledge system while preserving LiftNote canonical identity.",
+        "rationale": "Search, substitutions, analytics and AI import need one authoritative exercise model rather than duplicated source vocabularies.",
+        "dependencies": [
+          "Requires LN-82 DONE. Builds on LN-13B, LN-20, LN-29, LN-31, LN-32, LN-39, LN-50 and LN-66."
+        ],
+        "scope": [
+          "LiftNote canonical identity plus multi-source provenance",
+          "canonical/source names and aliases",
+          "FR/EN description and structured-instruction fields",
+          "primary/secondary muscles, equipment, body region, mechanics and force/movement classification",
+          "tracking/load/unilateral semantics",
+          "variants, movement-family hooks and substitution relationships",
+          "media metadata without assuming media licensing",
+          "personal setup-note integration points and analytics-ready metadata"
+        ],
+        "exclusions": [
+          "no bulk source import solely for catalog size",
+          "no third-party media use without verified rights",
+          "no merging historical exercise identities because a source uses a different name",
+          "no user-custom exercise rewriting"
+        ],
+        "data": [
+          "preserve existing LiftNote exercise IDs wherever possible",
+          "normalize source vocabularies into LiftNote-owned fields and enums",
+          "record provenance separately from canonical identity",
+          "migration/backfill must be deterministic, versioned and reversible enough to review"
+        ],
+        "ux": [
+          "knowledge enrichment must support existing picker/detail/workout surfaces without turning the active workout into an encyclopedia",
+          "metadata exposed later should be layered by relevance",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "system metadata remains readable under existing catalog rules; personal notes remain owner-private",
+          "coach custom exercises do not become system canonical rows implicitly",
+          "offline consumers must keep enough snapshot metadata to render existing workouts"
+        ],
+        "implications": [
+          "becomes authoritative input for search, substitution, muscle analytics and AI canonical resolution",
+          "history stays anchored to canonical exercise ID; metadata evolution must not rewrite performance truth"
+        ],
+        "acceptance": [
+          "one canonical exercise can carry multiple source mappings without duplicate identity",
+          "all required semantic fields have explicit ownership and null/unknown rules",
+          "migration preserves history and custom-exercise isolation",
+          "contracts for LN-84..LN-90 can consume the model without parallel schemas"
+        ],
+        "validation": [
+          "schema/type/domain tests for normalization and backward compatibility",
+          "migration dry-run and RLS checks if persistence changes",
+          "catalog import/source-license checks remain explicit and pinned",
           "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
           "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
           "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
