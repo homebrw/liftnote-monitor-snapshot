@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T20:39:34.706Z",
+  "publishedAt": "2026-10-01T20:40:18.682Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "Launched LN-67; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T20:39:29.414Z",
-    "nextTickAt": "2026-10-01T20:44:29.414Z",
+    "lastSuccessfulTickAt": "2026-10-01T20:40:13.386Z",
+    "nextTickAt": "2026-10-01T20:45:13.386Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
