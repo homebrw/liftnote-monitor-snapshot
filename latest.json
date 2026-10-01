@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T20:32:54.248Z",
+  "publishedAt": "2026-10-01T20:33:46.304Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-66",
-    "nextLot": "LN-67",
-    "launchedAt": "2026-10-01T20:17:30.548Z",
-    "lastProgressAt": "2026-10-01T20:31:20.712Z",
-    "lastChatCheckAt": "2026-10-01T20:17:30.548Z",
-    "lastObservedMainSha": "11e9b12fe2fba055b5b4645f35cb4e1fcc05b38d",
+    "currentLot": "LN-67",
+    "nextLot": "LN-68",
+    "launchedAt": "2026-10-01T20:33:40.582Z",
+    "lastProgressAt": "2026-10-01T20:33:40.582Z",
+    "lastChatCheckAt": "2026-10-01T20:33:40.582Z",
+    "lastObservedMainSha": "16f8ed9416080fdc275ad97911c86469ee4b3f1b",
     "nudges": 0,
-    "lastMessage": "main moved while LN-66 is active",
+    "lastMessage": "Launched LN-67; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T20:32:48.717Z",
-    "nextTickAt": "2026-10-01T20:37:48.717Z",
+    "lastSuccessfulTickAt": "2026-10-01T20:33:40.582Z",
+    "nextTickAt": "2026-10-01T20:38:40.582Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-54",
-        "completedAt": "2026-10-01T18:18:55.447Z",
-        "restartedAt": null,
-        "mainSha": "21c28b791649703078271a36cb72eeda7c1507db",
-        "reason": null
-      },
       {
         "lot": "LN-55",
         "completedAt": "2026-10-01T18:28:35.682Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "e18c74d09e90c3897aee767f136f2e85698cd35f",
         "reason": null
+      },
+      {
+        "lot": "LN-66",
+        "completedAt": "2026-10-01T20:33:32.059Z",
+        "restartedAt": null,
+        "mainSha": "16f8ed9416080fdc275ad97911c86469ee4b3f1b",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "11e9b12fe2fba055b5b4645f35cb4e1fcc05b38d",
+    "mainSha": "16f8ed9416080fdc275ad97911c86469ee4b3f1b",
     "lots": [
       {
         "id": "LN-00",
@@ -4097,7 +4097,7 @@
       {
         "id": "LN-66",
         "title": "Notes persistantes d'exercice et de setup",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Mémoriser réglages et repères pratiques sans les confondre avec les commentaires de série.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 75,
+    "done": 76,
     "total": 90,
-    "percent": 83,
+    "percent": 84,
     "current": {
-      "id": "LN-66",
-      "title": "Notes persistantes d'exercice et de setup",
+      "id": "LN-67",
+      "title": "Structure Programme → Bloc → Semaine → Séance",
       "status": "TODO",
-      "goal": "Mémoriser réglages et repères pratiques sans les confondre avec les commentaires de série.",
+      "goal": "Ajouter une vraie structure hebdomadaire aux blocs/versioning LN-27 sans casser l’historique.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-67",
-      "title": "Structure Programme → Bloc → Semaine → Séance",
+      "id": "LN-68",
+      "title": "Règles de progression programmables",
       "status": "TODO",
-      "goal": "Ajouter une vraie structure hebdomadaire aux blocs/versioning LN-27 sans casser l’historique.",
+      "goal": "Permettre d’exprimer une progression déterministe, explicable et éditable.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
