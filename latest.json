@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T08:23:55.740Z",
+  "publishedAt": "2026-10-01T08:24:40.616Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-38",
     "nextLot": "LN-39",
     "launchedAt": "2026-10-01T08:17:19.234Z",
-    "lastProgressAt": "2026-10-01T08:17:19.234Z",
+    "lastProgressAt": "2026-10-01T08:24:35.185Z",
     "lastChatCheckAt": "2026-10-01T08:17:19.234Z",
-    "lastObservedMainSha": "5ade74ef0bf252e6f6d14018179867f06548e37c",
+    "lastObservedMainSha": "08fbb08749233a18627328f3fc8d04015cacfb37",
     "nudges": 0,
-    "lastMessage": "Launched LN-38; canonical chat persisted before prompt marker became visible",
+    "lastMessage": "main moved while LN-38 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T08:23:50.656Z",
-    "nextTickAt": "2026-10-01T08:28:50.656Z",
+    "lastSuccessfulTickAt": "2026-10-01T08:24:35.185Z",
+    "nextTickAt": "2026-10-01T08:29:35.185Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "5ade74ef0bf252e6f6d14018179867f06548e37c",
+    "mainSha": "928a417baf93f3186a83a52e8d9991963eb674c0",
     "lots": [
       {
         "id": "LN-00",
@@ -3025,7 +3025,7 @@
       {
         "id": "LN-38",
         "title": "Training calendar and adherence heatmap",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "show days trained in a calendar/heatmap and let the athlete open sessions behind each day.",
         "business": {
           "summary": "Afficher un calendrier et une heatmap des jours entraînés.",
@@ -3919,13 +3919,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 47,
+    "done": 48,
     "total": 62,
-    "percent": 76,
+    "percent": 77,
     "current": {
       "id": "LN-38",
       "title": "Training calendar and adherence heatmap",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "show days trained in a calendar/heatmap and let the athlete open sessions behind each day.",
       "business": {
         "summary": "Afficher un calendrier et une heatmap des jours entraînés.",
