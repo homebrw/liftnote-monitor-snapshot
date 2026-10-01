@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T01:36:10.277Z",
+  "publishedAt": "2026-10-01T01:36:56.278Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "RUNNING",
+    "status": "CONSISTENCY_ERROR",
     "currentLot": "LN-20",
     "nextLot": "LN-21",
     "launchedAt": "2026-10-01T01:11:10.967Z",
@@ -11,10 +11,10 @@
     "lastChatCheckAt": "2026-10-01T01:11:10.967Z",
     "lastObservedMainSha": "663d1f020229f6ba9630a404b98e28550298bbf4",
     "nudges": 0,
-    "lastMessage": "Launched LN-20; canonical chat persisted before prompt marker became visible",
-    "lastError": null,
+    "lastMessage": "LN-20 is DONE but completion invariants failed; next lot not launched.",
+    "lastError": "LN-20 completion record does not record a merge SHA.",
     "lastSuccessfulTickAt": "2026-10-01T01:36:01.758Z",
-    "nextTickAt": "2026-10-01T01:41:01.758Z",
+    "nextTickAt": "2026-10-01T01:41:50.489Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
