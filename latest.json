@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T03:55:06.563Z",
+  "publishedAt": "2026-10-01T03:55:50.330Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "RUNNING",
+    "status": "CONSISTENCY_ERROR",
     "currentLot": "LN-28",
     "nextLot": "LN-29",
     "launchedAt": "2026-10-01T03:38:01.852Z",
@@ -11,10 +11,10 @@
     "lastChatCheckAt": "2026-10-01T03:38:01.852Z",
     "lastObservedMainSha": "cb55b865310c563f188fbff595c52109a8996aa2",
     "nudges": 0,
-    "lastMessage": "Launched LN-28; canonical chat persisted before prompt marker became visible",
-    "lastError": null,
+    "lastMessage": "LN-28 is DONE but completion invariants failed; next lot not launched.",
+    "lastError": "LN-28 completion record does not record a merge SHA.",
     "lastSuccessfulTickAt": "2026-10-01T03:55:01.517Z",
-    "nextTickAt": "2026-10-01T04:00:01.517Z",
+    "nextTickAt": "2026-10-01T04:00:44.850Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "cb55b865310c563f188fbff595c52109a8996aa2",
+    "mainSha": "bc7080613b0134aea16e7bae017cb2ea21ea73b0",
     "lots": [
       {
         "id": "LN-00",
@@ -2488,7 +2488,7 @@
       {
         "id": "LN-28",
         "title": "Exercise favorites, recents and frequent picks",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "speed up exercise selection with athlete-specific favorites, recent exercises and frequently used exercises.",
         "business": {
           "summary": "Accélérer l'ajout d'exercices avec favoris, récents et exercices fréquents.",
@@ -3919,13 +3919,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 37,
+    "done": 38,
     "total": 62,
-    "percent": 60,
+    "percent": 61,
     "current": {
       "id": "LN-28",
       "title": "Exercise favorites, recents and frequent picks",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "speed up exercise selection with athlete-specific favorites, recent exercises and frequently used exercises.",
       "business": {
         "summary": "Accélérer l'ajout d'exercices avec favoris, récents et exercices fréquents.",
