@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T00:31:03.565Z",
+  "publishedAt": "2026-10-01T00:33:06.376Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-17",
-    "nextLot": "LN-18",
-    "launchedAt": "2026-10-01T00:00:32.339Z",
-    "lastProgressAt": "2026-10-01T00:23:37.825Z",
-    "lastChatCheckAt": "2026-10-01T00:00:32.339Z",
-    "lastObservedMainSha": "f4615778d2109ab43fd5f9bc81ccb1611c5e72c6",
+    "currentLot": "LN-18",
+    "nextLot": "LN-19",
+    "launchedAt": "2026-10-01T00:33:00.155Z",
+    "lastProgressAt": "2026-10-01T00:33:00.155Z",
+    "lastChatCheckAt": "2026-10-01T00:33:00.155Z",
+    "lastObservedMainSha": "b1468f2d3226bbd93f7b0fa24373b93c14d69bac",
     "nudges": 0,
-    "lastMessage": "main moved while LN-17 is active",
+    "lastMessage": "Launched LN-18; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T00:30:58.475Z",
-    "nextTickAt": "2026-10-01T00:35:58.475Z",
+    "lastSuccessfulTickAt": "2026-10-01T00:33:00.155Z",
+    "nextTickAt": "2026-10-01T00:38:00.155Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-08",
-        "completedAt": "2026-09-30T11:45:17.128Z",
-        "restartedAt": null,
-        "mainSha": "6876a6d4e6afc2d920772d341f711ea89e43db7e",
-        "reason": null
-      },
       {
         "lot": "LN-09",
         "completedAt": "2026-09-30T11:54:20.815Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "71e8543d6b7a2f5a70f3836fb57776e803be6ebb",
         "reason": null
+      },
+      {
+        "lot": "LN-17",
+        "completedAt": "2026-10-01T00:31:43.324Z",
+        "restartedAt": null,
+        "mainSha": "b1468f2d3226bbd93f7b0fa24373b93c14d69bac",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "f4615778d2109ab43fd5f9bc81ccb1611c5e72c6",
+    "mainSha": "b1468f2d3226bbd93f7b0fa24373b93c14d69bac",
     "lots": [
       {
         "id": "LN-00",
@@ -1765,7 +1765,7 @@
       {
         "id": "LN-17",
         "title": "Superset and grouped-exercise blocks",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "introduce grouped exercise blocks after the MVP release gate, starting with supersets while keeping the model extensible to trisets/circuits.",
         "business": {
           "summary": "Ajouter les supersets et préparer un modèle extensible vers trisets et circuits.",
@@ -3919,70 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 26,
+    "done": 27,
     "total": 62,
-    "percent": 42,
+    "percent": 44,
     "current": {
-      "id": "LN-17",
-      "title": "Superset and grouped-exercise blocks",
-      "status": "TODO",
-      "goal": "introduce grouped exercise blocks after the MVP release gate, starting with supersets while keeping the model extensible to trisets/circuits.",
-      "business": {
-        "summary": "Ajouter les supersets et préparer un modèle extensible vers trisets et circuits.",
-        "why": "Les exercices groupés changent la logique d'ordre, de repos et de navigation ; Solo les introduit seulement après stabilisation du MVP.",
-        "builds": [
-          "groupement de deux exercices en superset",
-          "retour à des exercices indépendants",
-          "ordre A1 puis A2 puis repos",
-          "gestion des nombres de séries différents",
-          "conservation de l'historique et des records par exercice"
-        ],
-        "userImpact": [
-          "l'utilisateur peut exécuter naturellement des supersets sans perdre l'historique individuel de chaque mouvement"
-        ],
-        "notInThisLot": [
-          "le modèle doit rester générique pour pouvoir accueillir plus tard trisets et circuits"
-        ],
-        "doneWhen": [
-          "les séances classiques restent inchangées",
-          "les supersets s'exécutent et s'historisent correctement"
-        ],
-        "journey": [
-          "Dans une séance modèle, l’utilisateur sélectionne deux exercices et les regroupe en superset.",
-          "LiftNote les affiche comme A1/A2 ou équivalent.",
-          "Pendant la séance, l’ordre devient A1 → A2 → repos → tour suivant.",
-          "Les séries restent enregistrées individuellement sur chacun des deux exercices.",
-          "L’utilisateur peut ensuite retirer le groupement sans détruire les exercices."
-        ],
-        "rules": [
-          "Le modèle doit être générique pour pouvoir évoluer vers trisets/circuits.",
-          "Le groupement est snapshoté au démarrage de la séance.",
-          "L’historique et les records restent attachés aux exercices individuels.",
-          "Des nombres de séries différents doivent produire un ordre déterministe.",
-          "Les séances ordinaires non groupées doivent continuer à fonctionner exactement comme avant."
-        ],
-        "examples": [
-          "Bench Press A1 + Row A2 avec 4 tours et repos seulement après A2.",
-          "A1 possède 4 séries et A2 seulement 3 : le dernier passage doit suivre une règle explicite, pas un comportement implicite."
-        ],
-        "data": [
-          "métadonnées de bloc/groupe dans les templates",
-          "ordre au sein d’un bloc",
-          "snapshot de groupement dans la séance"
-        ],
-        "dependencies": [
-          "LN-07/LN-08 pour le flux de séance et repos",
-          "LN-06 pour snapshotter la structure"
-        ],
-        "attention": [
-          "éviter une table ou un modèle trop spécifique au mot « superset »",
-          "ne pas casser le timer de repos",
-          "préserver les requêtes d’historique par exercice"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-18",
       "title": "Plate calculator and sequence loading optimizer",
       "status": "TODO",
@@ -4042,6 +3982,71 @@
           "l’ordre physique des plaques compte",
           "ne pas appliquer ce calculateur aux valeurs d’assistance du LN-20",
           "documenter clairement la fonction de coût de l’optimiseur"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-19",
+      "title": "Automatic warm-up / ramp-up set generator",
+      "status": "TODO",
+      "goal": "generate deterministic, editable warm-up sets before a working load without using an LLM.",
+      "business": {
+        "summary": "Générer automatiquement des séries d'échauffement progressives avant la charge de travail.",
+        "why": "Solo aide à préparer une montée en charge cohérente sans utiliser d'IA générative opaque.",
+        "builds": [
+          "une rampe d'échauffement déterministe à partir de l'exercice et de la charge de travail",
+          "quelques séries de plus en plus lourdes avec moins de répétitions",
+          "adaptation entre travail lourd et travail à répétitions élevées",
+          "arrondi via le vrai calculateur de plaques",
+          "édition, suppression, régénération ou saut en un geste",
+          "distinction claire entre séries d'échauffement et séries de travail"
+        ],
+        "userImpact": [
+          "l'utilisateur obtient un échauffement prêt à suivre sans polluer ses statistiques de travail ni ses records"
+        ],
+        "notInThisLot": [
+          "aucune prétention à une recette universellement optimale",
+          "pas de dépendance à un LLM"
+        ],
+        "doneWhen": [
+          "la génération est explicable, modifiable et reproductible",
+          "les séries d'échauffement n'affectent pas les records ou volumes de travail"
+        ],
+        "journey": [
+          "Avant les séries de travail, l’utilisateur choisit « Ajouter l’échauffement ».",
+          "LiftNote calcule quelques paliers progressifs à partir de la barre, de la charge de travail et des répétitions prévues.",
+          "L’utilisateur voit la proposition directement dans la séance.",
+          "Il peut modifier, supprimer, ajouter, régénérer ou ignorer n’importe quel palier.",
+          "Les séries réalisées sont historisées comme échauffement et restent séparées des séries de travail."
+        ],
+        "rules": [
+          "La génération est déterministe : mêmes entrées, même proposition.",
+          "Pas de LLM ni d’appel réseau nécessaire.",
+          "Les répétitions diminuent généralement à mesure que la charge approche de la charge de travail.",
+          "Toutes les charges proposées passent par le vrai calculateur de plaques LN-18.",
+          "Les séries d’échauffement ne doivent pas polluer records ou volume de travail standard."
+        ],
+        "examples": [
+          "Bench 100 kg × 10 : proposition possible 20×10, 40×8, 60×5, 80×2-3 puis travail.",
+          "Pour un lourd 1-3 reps, une exposition finale proche de 90 % peut être ajoutée avec très peu de reps.",
+          "Après changement de barre, régénérer produit une rampe adaptée au nouveau matériel."
+        ],
+        "data": [
+          "type de série warmup/work",
+          "charge/reps proposées",
+          "barre et plaques disponibles",
+          "état accepté/modifié de la proposition"
+        ],
+        "dependencies": [
+          "LN-18 pour le snapping aux plaques réelles",
+          "LN-07 pour l’insertion dans la séance active",
+          "LN-20 devra reprendre toutes les hypothèses où « kg » signifie charge externe"
+        ],
+        "attention": [
+          "ne pas présenter l’heuristique comme physiologiquement optimale pour tout le monde",
+          "éviter les doublons après arrondi de plaques",
+          "garder chaque proposition modifiable"
         ]
       },
       "contractAvailable": true
