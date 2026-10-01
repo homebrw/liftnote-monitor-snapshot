@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T00:51:56.522Z",
+  "publishedAt": "2026-10-01T00:52:51.419Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-18",
-    "nextLot": "LN-19",
-    "launchedAt": "2026-10-01T00:33:00.155Z",
-    "lastProgressAt": "2026-10-01T00:49:35.631Z",
-    "lastChatCheckAt": "2026-10-01T00:33:00.155Z",
-    "lastObservedMainSha": "b57c6e3e24eb70189009a184deac26a11907147b",
+    "currentLot": "LN-19",
+    "nextLot": "LN-20",
+    "launchedAt": "2026-10-01T00:52:44.788Z",
+    "lastProgressAt": "2026-10-01T00:52:44.788Z",
+    "lastChatCheckAt": "2026-10-01T00:52:44.788Z",
+    "lastObservedMainSha": "98473b33a186d6b8f5283df4a8d25463e3c4aa22",
     "nudges": 0,
-    "lastMessage": "main moved while LN-18 is active",
+    "lastMessage": "Launched LN-19; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T00:51:50.209Z",
-    "nextTickAt": "2026-10-01T00:56:50.209Z",
+    "lastSuccessfulTickAt": "2026-10-01T00:52:44.788Z",
+    "nextTickAt": "2026-10-01T00:57:44.788Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-09",
-        "completedAt": "2026-09-30T11:54:20.815Z",
-        "restartedAt": null,
-        "mainSha": "9f5d41752855c7172063e1b34993e037357d625e",
-        "reason": null
-      },
       {
         "lot": "LN-10",
         "completedAt": "2026-09-30T12:02:54.000Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "b1468f2d3226bbd93f7b0fa24373b93c14d69bac",
         "reason": null
+      },
+      {
+        "lot": "LN-18",
+        "completedAt": "2026-10-01T00:52:35.295Z",
+        "restartedAt": null,
+        "mainSha": "98473b33a186d6b8f5283df4a8d25463e3c4aa22",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "b57c6e3e24eb70189009a184deac26a11907147b",
+    "mainSha": "98473b33a186d6b8f5283df4a8d25463e3c4aa22",
     "lots": [
       {
         "id": "LN-00",
@@ -1825,7 +1825,7 @@
       {
         "id": "LN-18",
         "title": "Plate calculator and sequence loading optimizer",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "turn target loads into practical plate loading instructions, including sequence-aware optimization that minimizes unnecessary heavy-plate handling across planned sets.",
         "business": {
           "summary": "Dire exactement quels disques charger sur la barre et optimiser les changements entre plusieurs séries.",
@@ -3919,74 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 27,
+    "done": 28,
     "total": 62,
-    "percent": 44,
+    "percent": 45,
     "current": {
-      "id": "LN-18",
-      "title": "Plate calculator and sequence loading optimizer",
-      "status": "TODO",
-      "goal": "turn target loads into practical plate loading instructions, including sequence-aware optimization that minimizes unnecessary heavy-plate handling across planned sets.",
-      "business": {
-        "summary": "Dire exactement quels disques charger sur la barre et optimiser les changements entre plusieurs séries.",
-        "why": "Une charge cible n'est utile que si elle se traduit rapidement en plaques concrètes dans une salle réelle.",
-        "builds": [
-          "poids de barre configurable",
-          "inventaire des disques disponibles",
-          "composition symétrique de la charge",
-          "solution la plus proche quand la charge exacte est impossible",
-          "optimisation d'une séquence pour éviter des manipulations inutiles",
-          "instructions de transition comme « retirer 5 kg de chaque côté »"
-        ],
-        "userImpact": [
-          "l'utilisateur passe moins de temps à calculer et manipuler ses disques entre les séries"
-        ],
-        "notInThisLot": [
-          "une modification de barre en cours de séance ne doit jamais réécrire les séries déjà terminées"
-        ],
-        "doneWhen": [
-          "les calculs respectent la symétrie, l'inventaire et l'ordre réel des plaques",
-          "les transitions sont compréhensibles en un coup d'œil"
-        ],
-        "journey": [
-          "L’utilisateur indique le poids de sa barre et les disques disponibles.",
-          "Pour une charge cible, LiftNote propose la composition de chaque côté.",
-          "Si la charge exacte est impossible, LiftNote propose la charge pratique la plus proche.",
-          "Sur une suite de séries, LiftNote optimise les changements de plaques entre charges.",
-          "L’interface indique des transitions concrètes plutôt que de forcer à recalculer toute la barre."
-        ],
-        "rules": [
-          "La barre doit rester symétrique.",
-          "L’inventaire configuré doit être respecté.",
-          "À solution équivalente, préférer les plaques lourdes aux combinaisons inutiles de petites plaques.",
-          "L’optimisation globale peut choisir une composition légèrement moins minimale sur une série si elle réduit fortement les manipulations suivantes.",
-          "Un changement de barre en cours de séance ne réécrit jamais les séries déjà terminées."
-        ],
-        "examples": [
-          "Pour 100 kg avec barre de 20 kg : afficher les plaques par côté dans l’ordre réel sur la manche.",
-          "Transition 100 → 90 kg : « retirer 5 kg de chaque côté » si cela correspond à la composition retenue.",
-          "Si 102,5 kg est impossible avec l’inventaire, proposer explicitement la charge réalisable la plus proche."
-        ],
-        "data": [
-          "poids de barre",
-          "dénominations de plaques",
-          "inventaire éventuel",
-          "composition par côté",
-          "séquence de charges prévues"
-        ],
-        "dependencies": [
-          "charges cibles issues des templates/séances",
-          "LN-19 consommera ce moteur pour arrondir les échauffements"
-        ],
-        "attention": [
-          "l’ordre physique des plaques compte",
-          "ne pas appliquer ce calculateur aux valeurs d’assistance du LN-20",
-          "documenter clairement la fonction de coût de l’optimiseur"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-19",
       "title": "Automatic warm-up / ramp-up set generator",
       "status": "TODO",
@@ -4047,6 +3983,78 @@
           "ne pas présenter l’heuristique comme physiologiquement optimale pour tout le monde",
           "éviter les doublons après arrondi de plaques",
           "garder chaque proposition modifiable"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-20",
+      "title": "Advanced load semantics: bodyweight, added load and assistance",
+      "status": "TODO",
+      "goal": "make load values semantically correct for ordinary external resistance, bodyweight-only work, added ballast and assistance/counterweight movements such as Gravitron pull-ups.",
+      "business": {
+        "summary": "Faire comprendre à LiftNote la différence entre une charge classique, le poids du corps, un lest ajouté et une assistance comme au Gravitron.",
+        "why": "Aujourd'hui, un simple nombre de kilos peut avoir des sens opposés. Sur un Gravitron, 30 kg signifie que la machine aide l'athlète ; sur des tractions lestées, +30 kg signifie au contraire qu'il porte davantage. Cette distinction doit être vraie partout dans le produit.",
+        "builds": [
+          "un sens explicite pour chaque charge : classique, poids du corps, lest ajouté ou assistance",
+          "des champs de saisie adaptés : « +20 kg » pour un lest, « 30 kg d’assistance » pour un Gravitron",
+          "des objectifs de séance qui conservent ce sens",
+          "un historique qui ne réinterprète jamais une ancienne performance",
+          "des records personnels dont le sens de progression est correct : plus de lest est meilleur, moins d’assistance est meilleur",
+          "des statistiques et suggestions qui refusent les comparaisons trompeuses entre ces catégories"
+        ],
+        "userImpact": [
+          "un athlète peut enfin suivre proprement tractions, dips lestés, Gravitron et autres mouvements assistés",
+          "les records et l'historique deviennent cohérents au lieu de considérer mécaniquement que « plus de kilos = mieux »",
+          "les séances affichent directement ce que signifie la valeur saisie"
+        ],
+        "notInThisLot": [
+          "pas de calcul biomécanique précis de la force réellement déplacée sur chaque machine",
+          "pas de modélisation des élastiques d'assistance",
+          "pas de RPE/RIR"
+        ],
+        "doneWhen": [
+          "30 kg d'assistance au Gravitron ne peut plus être confondu avec une charge externe de 30 kg",
+          "20 kg d'assistance peut être reconnu comme une meilleure performance que 30 kg d'assistance à répétitions égales",
+          "un lest +25 kg reste clairement distinct d'un poids total de 25 kg",
+          "les anciennes séances conservent leur interprétation historique"
+        ],
+        "journey": [
+          "L’utilisateur choisit un exercice qui accepte plusieurs modes de charge.",
+          "LiftNote lui propose explicitement Poids du corps, Lest ajouté ou Assistance selon le mouvement.",
+          "Il saisit par exemple « +20 kg » ou « 30 kg d’assistance » au lieu d’un nombre ambigu.",
+          "La séance conserve cette signification avec chaque série.",
+          "Historique, records et statistiques interprètent ensuite la performance selon le bon sens de progression."
+        ],
+        "rules": [
+          "Une valeur de charge doit toujours avoir une sémantique explicite lorsqu’elle peut être ambiguë.",
+          "Une assistance est saisie comme une magnitude positive ; l’utilisateur n’a pas à taper -30 kg.",
+          "À répétitions égales, moins d’assistance est meilleur ; plus de lest ajouté est meilleur.",
+          "Poids du corps, lest et assistance ne sont jamais comparés comme une seule échelle.",
+          "Les anciennes séances conservent le mode utilisé au moment de la performance.",
+          "Les suggestions RM classiques ne s’appliquent pas silencieusement à l’assistance."
+        ],
+        "examples": [
+          "Gravitron : 8 reps avec 20 kg d’assistance est une meilleure performance que 8 reps avec 30 kg.",
+          "Traction lestée : +25 kg × 5 bat +20 kg × 5.",
+          "Traction stricte poids du corps : 15 reps peut alimenter le record de reps maximales sans champ 0 kg.",
+          "Changer plus tard le template de « assistance » à « lest » ne réinterprète jamais les anciennes séries."
+        ],
+        "data": [
+          "mode de charge autorisé/défaut sur l’exercice",
+          "mode + magnitude dans les cibles de template",
+          "mode + magnitude snapshotés dans la séance et la performance",
+          "records/statistiques segmentés par sémantique"
+        ],
+        "dependencies": [
+          "LN-07B/C/D pour records et suggestions",
+          "LN-09/10 pour historique et statistiques",
+          "LN-18/19 pour éviter d’envoyer une assistance vers le calculateur de plaques"
+        ],
+        "attention": [
+          "migration des anciennes données sans deviner le mode à partir du nom de l’exercice",
+          "éviter les calculs de volume faux pour assistance/poids du corps",
+          "ne pas confondre charge ajoutée et charge totale corps + lest"
         ]
       },
       "contractAvailable": true
