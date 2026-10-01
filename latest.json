@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T23:59:35.986Z",
+  "publishedAt": "2026-10-01T00:00:40.426Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-15C",
-    "nextLot": "LN-17",
-    "launchedAt": null,
-    "lastProgressAt": "2026-09-30T23:58:43.364Z",
-    "lastChatCheckAt": null,
-    "lastObservedMainSha": "09803c5160a7ec067772166ad8ff021521cc2f96",
+    "currentLot": "LN-17",
+    "nextLot": "LN-18",
+    "launchedAt": "2026-10-01T00:00:32.339Z",
+    "lastProgressAt": "2026-10-01T00:00:32.339Z",
+    "lastChatCheckAt": "2026-10-01T00:00:32.339Z",
+    "lastObservedMainSha": "71e8543d6b7a2f5a70f3836fb57776e803be6ebb",
     "nudges": 0,
-    "lastMessage": "main moved while LN-15C is active",
+    "lastMessage": "Launched LN-17; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-09-30T23:59:28.353Z",
-    "nextTickAt": "2026-10-01T00:04:28.353Z",
+    "lastSuccessfulTickAt": "2026-10-01T00:00:32.339Z",
+    "nextTickAt": "2026-10-01T00:05:32.339Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-07D",
-        "completedAt": "2026-09-30T11:32:55.254Z",
-        "restartedAt": null,
-        "mainSha": "54a3d565bdf7f45fc4bdc31dc0fc8573652a9014",
-        "reason": null
-      },
       {
         "lot": "LN-08",
         "completedAt": "2026-09-30T11:45:17.128Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "e2964fbf6a19ec4344f52882dc221d192ee14fe9",
         "reason": null
+      },
+      {
+        "lot": "LN-15C",
+        "completedAt": "2026-10-01T00:00:18.233Z",
+        "restartedAt": null,
+        "mainSha": "71e8543d6b7a2f5a70f3836fb57776e803be6ebb",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "09803c5160a7ec067772166ad8ff021521cc2f96",
+    "mainSha": "71e8543d6b7a2f5a70f3836fb57776e803be6ebb",
     "lots": [
       {
         "id": "LN-00",
@@ -1659,7 +1659,7 @@
       {
         "id": "LN-15C",
         "title": "LiftNote user-facing product isolation cleanup",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "remove every user-visible claim, hint or marketing message that presents LiftNote's shared authentication/infrastructure with Unicorn Prog as a product feature.",
         "business": {
           "summary": "Retirer de LiftNote toute référence visible aux autres produits et aux choix d’infrastructure partagée.",
@@ -3919,116 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 25,
+    "done": 26,
     "total": 62,
-    "percent": 40,
+    "percent": 42,
     "current": {
-      "id": "LN-15C",
-      "title": "LiftNote user-facing product isolation cleanup",
-      "status": "TODO",
-      "goal": "remove every user-visible claim, hint or marketing message that presents LiftNote's shared authentication/infrastructure with Unicorn Prog as a product feature.",
-      "business": {
-        "summary": "Retirer de LiftNote toute référence visible aux autres produits et aux choix d’infrastructure partagée.",
-        "why": "La mutualisation technique n’est pas une fonctionnalité : pour l’utilisateur, LiftNote doit être présenté comme un produit autonome.",
-        "builds": [
-          "audit complet des textes marketing et de découverte",
-          "nettoyage des écrans connexion, inscription, compte et sécurité",
-          "audit des métadonnées, SEO, Open Graph, PWA, aide et messages d’erreur visibles",
-          "remplacement par des textes qui parlent uniquement de LiftNote",
-          "garde-fous de test empêchant le retour de formulations cross-produit"
-        ],
-        "userImpact": [
-          "l’utilisateur ne voit plus de mention de compte, identifiants, base ou authentification partagés avec un autre produit"
-        ],
-        "notInThisLot": [
-          "aucun changement de base de données",
-          "aucune séparation technique artificielle des comptes ou de l’infrastructure"
-        ],
-        "doneWhen": [
-          "toutes les surfaces utilisateur LiftNote sont autonomes dans leur discours et les parcours auth/passkey continuent de fonctionner"
-        ],
-        "journey": [
-          "Un visiteur arrive sur /liftnote/decouvrir et comprend immédiatement ce que LiftNote fait pour son entraînement, sans référence à un autre produit ou à une infrastructure commune.",
-          "Il parcourt les bénéfices, fonctionnalités, exemples, FAQ et appels à l’action ; chaque texte parle uniquement de LiftNote.",
-          "Il ouvre /liftnote/connexion et voit un parcours de connexion autonome, centré sur son compte LiftNote.",
-          "Il choisit email, Google ou passkey sans qu’aucune méthode soit présentée comme partagée avec un autre produit.",
-          "Il ouvre /liftnote/inscription et crée simplement son compte LiftNote ; aucun titre ou sous-texte ne parle de « deux produits ».",
-          "Si son email correspond déjà à une identité existante, le message lui propose simplement de se connecter, sans expliquer où cette identité a été créée.",
-          "Il utilise mot de passe oublié / réinitialisation et reste dans un parcours entièrement LiftNote.",
-          "Après connexion, il ouvre Compte/Sécurité et gère ses passkeys avec des libellés centrés sur la sécurité de son compte LiftNote.",
-          "Les erreurs, succès, toasts, confirmations et états vides restent eux aussi neutres sur l’architecture sous-jacente.",
-          "Lorsqu’il installe la PWA ou partage un lien, le manifest, les métadonnées, Open Graph et textes de partage restent strictement LiftNote.",
-          "Une navigation clavier ou lecteur d’écran ne révèle pas d’anciens libellés cross-produit cachés dans des aria-labels ou descriptions.",
-          "Une recherche finale du repository confirme que les références restantes à l’infrastructure commune sont limitées à la documentation ou au code technique interne."
-        ],
-        "rules": [
-          "La mutualisation technique reste autorisée mais doit être invisible sur toutes les surfaces utilisateur LiftNote.",
-          "Aucune mention de Unicorn Prog ou SPICY 200 sur une surface LiftNote destinée à l’utilisateur, sauf obligation légale explicite, documentée et vérifiée.",
-          "Aucune formulation « même compte », « mêmes identifiants », « deux produits », « compte partagé », « identité partagée », « Supabase partagé » ou équivalent.",
-          "Ne pas remplacer une formulation interdite par une formulation implicite du type « votre compte existant ailleurs fonctionne ici ».",
-          "Les textes doivent expliquer l’action utilisateur, le bénéfice ou l’état courant, jamais le backend.",
-          "Les messages d’erreur doivent rester actionnables sans révéler inutilement Supabase, un autre produit, le RP ID ou la topologie d’authentification.",
-          "Les passkeys sont présentées comme une méthode de connexion/sécurité LiftNote ; leur portée technique éventuelle reste interne.",
-          "Le nettoyage ne doit modifier ni auth.users, ni sessions, ni cookies, ni RLS, ni ownership, ni stockage métier.",
-          "Aucune migration ou duplication de compte ne doit être introduite pour résoudre un problème de wording.",
-          "Les documents techniques internes conservent les faits d’architecture nécessaires à la maintenance et à la sécurité.",
-          "Les textes de marketing, auth, compte, aide, erreurs, metadata et accessibilité sont tous dans le périmètre du lot.",
-          "Le test anti-régression doit cibler les sources user-facing sans interdire les références légitimes dans les contrats techniques.",
-          "Toute exception user-facing doit être rare, explicitement justifiée dans le completion record et liée à une obligation réelle.",
-          "Les changements de wording doivent préserver l’accessibilité, les intentions de formulaire et les redirections existantes."
-        ],
-        "examples": [
-          "Connexion : « Utilisez le même compte que sur Unicorn Prog » devient « Connectez-vous à LiftNote pour retrouver vos programmes et votre historique. »",
-          "Inscription : « Un compte. Deux produits. » devient « Créez votre compte LiftNote. »",
-          "Email déjà connu : « ce compte existe déjà » + lien vers connexion, sans indiquer dans quel produit il a été créé.",
-          "Passkey : « utilisable dans les deux produits » devient « Connectez-vous plus rapidement avec une passkey. »",
-          "Compte/Sécurité : « passkeys du compte partagé » devient simplement « Vos passkeys ».",
-          "Erreur fournisseur : un code Supabase brut est transformé en message utilisateur du type « Connexion impossible pour le moment. Réessayez ou utilisez une autre méthode. »",
-          "Open Graph : le titre et la description parlent du suivi de musculation LiftNote, jamais de l’écosystème Unicorn.",
-          "PWA : le nom court, la description d’installation et les raccourcis ne contiennent que la marque LiftNote.",
-          "FAQ : une question sur le compte explique comment se connecter/récupérer l’accès dans LiftNote, sans dévoiler l’architecture commune.",
-          "ARIA : un bouton visuellement correct mais portant encore « compte Unicorn » dans son aria-label doit être corrigé lui aussi."
-        ],
-        "data": [
-          "aucune nouvelle donnée métier",
-          "aucune migration attendue",
-          "aucun changement d’ownership ou de RLS",
-          "inventaire des fichiers/surfaces user-facing audités",
-          "inventaire des formulations interdites recherchées",
-          "liste des occurrences restantes classées internal-only",
-          "test automatisé anti-régression de copy",
-          "captures ou preuves QA des surfaces publiques/auth principales",
-          "preuve de fonctionnement connexion/inscription/récupération/passkey après réécriture",
-          "résultat de la recherche repository-wide finale"
-        ],
-        "dependencies": [
-          "LN-15 pour les parcours connexion, inscription, récupération et compte existants",
-          "LN-15B pour auditer la version finale des surfaces passkey et sécurité",
-          "README LiftNote pour la règle permanente « architecture interne, jamais argument produit »",
-          "BRAND.md pour maintenir une identité LiftNote autonome",
-          "layout/metadata/manifest LiftNote pour les surfaces non visibles directement dans le contenu de page",
-          "composants auth partagés : leur logique peut rester commune mais leurs textes rendus dans LiftNote doivent respecter l’isolation produit",
-          "LN-16 pour réutiliser le socle de QA navigateur/release déjà stabilisé",
-          "LN-17 ne peut démarrer qu’après clôture de ce nettoyage"
-        ],
-        "attention": [
-          "auditer metadata, manifest, Open Graph, PWA, aria-labels, descriptions, titles, toasts, erreurs, états vides, emails/redirect copy et textes de boutons",
-          "chercher les références hors du namespace LiftNote qui sont rendues par un layout ou composant partagé dans les routes LiftNote",
-          "ne pas se limiter aux occurrences exactes de « Unicorn Prog » : rechercher aussi les paraphrases de compte/identité/infrastructure partagée",
-          "ne pas supprimer une logique auth nécessaire sous prétexte de supprimer le texte qui l’expliquait",
-          "ne pas casser les scénarios anonymous-to-permanent ou comptes existants en simplifiant les messages",
-          "vérifier que les passkeys restent fonctionnelles après nettoyage du wording",
-          "préserver l’accessibilité et la clarté des formulaires après réécriture",
-          "éviter de faire apparaître des détails Supabase ou WebAuthn internes dans les messages d’erreur user-facing",
-          "vérifier les contenus mobiles avant desktop : plusieurs textes peuvent être tronqués ou dupliqués sur petit écran",
-          "contrôler aussi le code source rendu et les attributs accessibles, pas seulement le texte visible à l’œil",
-          "faire une recherche repository-wide finale avant DONE et classer explicitement chaque hit restant",
-          "documenter toute exception réelle plutôt que d’ajouter silencieusement une allowlist large au test de garde-fou"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-17",
       "title": "Superset and grouped-exercise blocks",
       "status": "TODO",
@@ -4084,6 +3978,70 @@
           "éviter une table ou un modèle trop spécifique au mot « superset »",
           "ne pas casser le timer de repos",
           "préserver les requêtes d’historique par exercice"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-18",
+      "title": "Plate calculator and sequence loading optimizer",
+      "status": "TODO",
+      "goal": "turn target loads into practical plate loading instructions, including sequence-aware optimization that minimizes unnecessary heavy-plate handling across planned sets.",
+      "business": {
+        "summary": "Dire exactement quels disques charger sur la barre et optimiser les changements entre plusieurs séries.",
+        "why": "Une charge cible n'est utile que si elle se traduit rapidement en plaques concrètes dans une salle réelle.",
+        "builds": [
+          "poids de barre configurable",
+          "inventaire des disques disponibles",
+          "composition symétrique de la charge",
+          "solution la plus proche quand la charge exacte est impossible",
+          "optimisation d'une séquence pour éviter des manipulations inutiles",
+          "instructions de transition comme « retirer 5 kg de chaque côté »"
+        ],
+        "userImpact": [
+          "l'utilisateur passe moins de temps à calculer et manipuler ses disques entre les séries"
+        ],
+        "notInThisLot": [
+          "une modification de barre en cours de séance ne doit jamais réécrire les séries déjà terminées"
+        ],
+        "doneWhen": [
+          "les calculs respectent la symétrie, l'inventaire et l'ordre réel des plaques",
+          "les transitions sont compréhensibles en un coup d'œil"
+        ],
+        "journey": [
+          "L’utilisateur indique le poids de sa barre et les disques disponibles.",
+          "Pour une charge cible, LiftNote propose la composition de chaque côté.",
+          "Si la charge exacte est impossible, LiftNote propose la charge pratique la plus proche.",
+          "Sur une suite de séries, LiftNote optimise les changements de plaques entre charges.",
+          "L’interface indique des transitions concrètes plutôt que de forcer à recalculer toute la barre."
+        ],
+        "rules": [
+          "La barre doit rester symétrique.",
+          "L’inventaire configuré doit être respecté.",
+          "À solution équivalente, préférer les plaques lourdes aux combinaisons inutiles de petites plaques.",
+          "L’optimisation globale peut choisir une composition légèrement moins minimale sur une série si elle réduit fortement les manipulations suivantes.",
+          "Un changement de barre en cours de séance ne réécrit jamais les séries déjà terminées."
+        ],
+        "examples": [
+          "Pour 100 kg avec barre de 20 kg : afficher les plaques par côté dans l’ordre réel sur la manche.",
+          "Transition 100 → 90 kg : « retirer 5 kg de chaque côté » si cela correspond à la composition retenue.",
+          "Si 102,5 kg est impossible avec l’inventaire, proposer explicitement la charge réalisable la plus proche."
+        ],
+        "data": [
+          "poids de barre",
+          "dénominations de plaques",
+          "inventaire éventuel",
+          "composition par côté",
+          "séquence de charges prévues"
+        ],
+        "dependencies": [
+          "charges cibles issues des templates/séances",
+          "LN-19 consommera ce moteur pour arrondir les échauffements"
+        ],
+        "attention": [
+          "l’ordre physique des plaques compte",
+          "ne pas appliquer ce calculateur aux valeurs d’assistance du LN-20",
+          "documenter clairement la fonction de coût de l’optimiseur"
         ]
       },
       "contractAvailable": true
