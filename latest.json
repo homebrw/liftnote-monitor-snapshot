@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T04:10:41.280Z",
+  "publishedAt": "2026-10-01T04:11:35.963Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-29",
-    "nextLot": "LN-30",
-    "launchedAt": "2026-10-01T03:56:37.324Z",
-    "lastProgressAt": "2026-10-01T03:56:37.324Z",
-    "lastChatCheckAt": "2026-10-01T03:56:37.324Z",
-    "lastObservedMainSha": "5dab6f3f19e90025a953890bcadcbdbc2ac8c2e1",
+    "currentLot": "LN-30",
+    "nextLot": "LN-31",
+    "launchedAt": "2026-10-01T04:11:30.118Z",
+    "lastProgressAt": "2026-10-01T04:11:30.118Z",
+    "lastChatCheckAt": "2026-10-01T04:11:30.118Z",
+    "lastObservedMainSha": "62f7d4982794fa07fb16300fbb9e3a9bb994598d",
     "nudges": 0,
-    "lastMessage": "Launched LN-29; canonical chat persisted before prompt marker became visible",
+    "lastMessage": "Launched LN-30; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T04:10:35.916Z",
-    "nextTickAt": "2026-10-01T04:15:35.916Z",
+    "lastSuccessfulTickAt": "2026-10-01T04:11:30.118Z",
+    "nextTickAt": "2026-10-01T04:16:30.118Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-17",
-        "completedAt": "2026-10-01T00:31:43.324Z",
-        "restartedAt": null,
-        "mainSha": "b1468f2d3226bbd93f7b0fa24373b93c14d69bac",
-        "reason": null
-      },
       {
         "lot": "LN-18",
         "completedAt": "2026-10-01T00:52:35.295Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "5dab6f3f19e90025a953890bcadcbdbc2ac8c2e1",
         "reason": null
+      },
+      {
+        "lot": "LN-29",
+        "completedAt": "2026-10-01T04:11:20.109Z",
+        "restartedAt": null,
+        "mainSha": "62f7d4982794fa07fb16300fbb9e3a9bb994598d",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "5dab6f3f19e90025a953890bcadcbdbc2ac8c2e1",
+    "mainSha": "62f7d4982794fa07fb16300fbb9e3a9bb994598d",
     "lots": [
       {
         "id": "LN-00",
@@ -2540,7 +2540,7 @@
       {
         "id": "LN-29",
         "title": "Gym profiles and available equipment",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "let athletes define locations/equipment profiles so exercise discovery and later substitutions can reflect what is actually available.",
         "business": {
           "summary": "Créer des profils de salle avec le matériel réellement disponible.",
@@ -3919,62 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 38,
+    "done": 39,
     "total": 62,
-    "percent": 61,
+    "percent": 63,
     "current": {
-      "id": "LN-29",
-      "title": "Gym profiles and available equipment",
-      "status": "TODO",
-      "goal": "let athletes define locations/equipment profiles so exercise discovery and later substitutions can reflect what is actually available.",
-      "business": {
-        "summary": "Créer des profils de salle avec le matériel réellement disponible.",
-        "why": "Un Home Gym, une box CrossFit et une salle commerciale n'offrent pas les mêmes possibilités.",
-        "builds": [
-          "profils de salle nommés",
-          "liste du matériel par profil",
-          "profil courant pour la séance",
-          "filtrage/priorisation des exercices compatibles"
-        ],
-        "userImpact": [
-          "les choix d'exercices correspondent mieux au matériel disponible"
-        ],
-        "notInThisLot": [
-          "pas de géolocalisation obligatoire"
-        ],
-        "doneWhen": [
-          "changer de profil change le contexte de choix sans toucher aux programmes ni à l'historique"
-        ],
-        "journey": [
-          "L’athlète crée des profils comme Home Gym ou Basic-Fit.",
-          "Il indique le matériel disponible dans chaque profil.",
-          "Il choisit le profil courant pour filtrer ou prioriser les exercices compatibles."
-        ],
-        "rules": [
-          "Le profil de salle est facultatif.",
-          "Changer de profil ne modifie jamais programme ou historique.",
-          "Un exercice filtré n’est pas supprimé du catalogue."
-        ],
-        "examples": [
-          "Home Gym masque/priorise selon barre, rack et haltères présents.",
-          "Une séance peut temporairement utiliser un autre profil que le profil par défaut."
-        ],
-        "data": [
-          "profils de salle",
-          "inventaire d’équipement",
-          "profil courant/session"
-        ],
-        "dependencies": [
-          "métadonnées équipement LN-13B"
-        ],
-        "attention": [
-          "ne pas imposer la géolocalisation",
-          "préparer LN-50 sans faire de substitution automatique ici"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-30",
       "title": "Measurement units across exercise tracking",
       "status": "TODO",
@@ -4024,6 +3972,59 @@
         "attention": [
           "éviter les arrondis destructifs",
           "préserver les unités dans partage et coach"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-31",
+      "title": "Unilateral exercise semantics",
+      "status": "TODO",
+      "goal": "distinguish reps per side from total reps and optionally track left/right separately where useful.",
+      "business": {
+        "summary": "Comprendre les exercices unilatéraux et la différence entre répétitions par côté et répétitions totales.",
+        "why": "10 fentes par jambe ne signifie pas la même chose que 10 répétitions au total.",
+        "builds": [
+          "sémantique par côté",
+          "objectifs du type 10 par jambe",
+          "saisie gauche/droite séparée lorsque pertinente",
+          "historique et statistiques compatibles"
+        ],
+        "userImpact": [
+          "les exercices unilatéraux sont enregistrés sans ambiguïté"
+        ],
+        "notInThisLot": [
+          "pas d'analyse médicale d'asymétrie"
+        ],
+        "doneWhen": [
+          "10 par côté ne devient jamais 10 total",
+          "les données gauche/droite restent identifiables"
+        ],
+        "journey": [
+          "L’utilisateur choisit un exercice unilatéral.",
+          "LiftNote indique clairement si la cible est par côté.",
+          "Il peut, lorsque pertinent, saisir gauche et droite séparément."
+        ],
+        "rules": [
+          "10 par côté ne signifie jamais 10 au total.",
+          "Les données gauche/droite restent identifiables.",
+          "Les exercices bilatéraux ne doivent pas être alourdis par cette UX."
+        ],
+        "examples": [
+          "Fentes 10 par jambe.",
+          "Curl unilatéral avec 10 reps gauche et 9 droite."
+        ],
+        "data": [
+          "sémantique bilatérale/unilatérale",
+          "reps par côté",
+          "valeurs gauche/droite"
+        ],
+        "dependencies": [
+          "LN-30 pour les unités et tracking semantics"
+        ],
+        "attention": [
+          "ne pas doubler artificiellement les volumes",
+          "garder l’interface compacte pendant la séance"
         ]
       },
       "contractAvailable": true
