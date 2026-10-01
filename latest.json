@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T20:55:39.301Z",
+  "publishedAt": "2026-10-01T20:56:24.062Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-67",
     "nextLot": "LN-68",
     "launchedAt": "2026-10-01T20:33:40.582Z",
-    "lastProgressAt": "2026-10-01T20:55:33.822Z",
+    "lastProgressAt": "2026-10-01T20:56:18.563Z",
     "lastChatCheckAt": "2026-10-01T20:33:40.582Z",
-    "lastObservedMainSha": "bfbab44d5f841f492823dab4dfc19495683e09ac",
+    "lastObservedMainSha": "d6d9f7c291790a6b88c93e3449bb248c14556825",
     "nudges": 0,
     "lastMessage": "main moved while LN-67 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T20:55:33.822Z",
-    "nextTickAt": "2026-10-01T21:00:33.822Z",
+    "lastSuccessfulTickAt": "2026-10-01T20:56:18.563Z",
+    "nextTickAt": "2026-10-01T21:01:18.563Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "bfbab44d5f841f492823dab4dfc19495683e09ac",
+    "mainSha": "d6d9f7c291790a6b88c93e3449bb248c14556825",
     "lots": [
       {
         "id": "LN-00",
@@ -4141,9 +4141,9 @@
       },
       {
         "id": "LN-71",
-        "title": "e1RM et tendances de force",
+        "title": "e1RM individualisé et tendances de force",
         "status": "TODO",
-        "goal": "Ajouter des estimations de force clairement dérivées sans les confondre avec les records réels.",
+        "goal": "Calculer l'e1RM et la courbe force-endurance à partir d'un modèle explicable qui part d'un prior populationnel lorsque les données sont rares puis devient progressivement individuel par athlète × exercice.",
         "business": null,
         "contractAvailable": true,
         "executionState": "executable"
