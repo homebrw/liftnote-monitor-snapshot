@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T04:20:27.655Z",
+  "publishedAt": "2026-10-01T04:21:11.735Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-30 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T04:20:21.161Z",
-    "nextTickAt": "2026-10-01T04:25:21.161Z",
+    "lastSuccessfulTickAt": "2026-10-01T04:21:06.771Z",
+    "nextTickAt": "2026-10-01T04:26:06.771Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
