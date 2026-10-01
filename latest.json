@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T10:01:04.359Z",
+  "publishedAt": "2026-10-01T10:14:43.904Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-43",
-    "nextLot": "LN-44",
-    "launchedAt": "2026-10-01T09:38:52.245Z",
-    "lastProgressAt": "2026-10-01T09:55:32.314Z",
-    "lastChatCheckAt": "2026-10-01T09:38:52.245Z",
-    "lastObservedMainSha": "4b8758f9f2f4c534880ca7cccbee6196af7660b7",
+    "currentLot": "LN-44",
+    "nextLot": "LN-45",
+    "launchedAt": "2026-10-01T10:14:37.300Z",
+    "lastProgressAt": "2026-10-01T10:14:37.300Z",
+    "lastChatCheckAt": "2026-10-01T10:14:37.300Z",
+    "lastObservedMainSha": "95bd11b046a5259e4bb513bcb2d23f82772c6f05",
     "nudges": 0,
-    "lastMessage": "main moved while LN-43 is active",
+    "lastMessage": "Launched LN-44; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T10:00:56.155Z",
-    "nextTickAt": "2026-10-01T10:05:56.155Z",
+    "lastSuccessfulTickAt": "2026-10-01T10:14:37.300Z",
+    "nextTickAt": "2026-10-01T10:19:37.300Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-31",
-        "completedAt": "2026-10-01T06:42:06.347Z",
-        "restartedAt": null,
-        "mainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
-        "reason": null
-      },
       {
         "lot": "LN-32",
         "completedAt": "2026-10-01T07:10:08.971Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "e64809973bd9bdadd88237a2071dc82dfc5d4dc3",
         "reason": null
+      },
+      {
+        "lot": "LN-43",
+        "completedAt": "2026-10-01T10:01:45.576Z",
+        "restartedAt": null,
+        "mainSha": "95bd11b046a5259e4bb513bcb2d23f82772c6f05",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "4b8758f9f2f4c534880ca7cccbee6196af7660b7",
+    "mainSha": "95bd11b046a5259e4bb513bcb2d23f82772c6f05",
     "lots": [
       {
         "id": "LN-00",
@@ -3293,7 +3293,7 @@
       {
         "id": "LN-43",
         "title": "Smart program and workout archiving",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "keep inactive/finished content accessible without cluttering everyday lists.",
         "business": {
           "summary": "Archiver les programmes et séances qui ne servent plus au quotidien.",
@@ -3919,64 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 52,
+    "done": 53,
     "total": 62,
-    "percent": 84,
+    "percent": 85,
     "current": {
-      "id": "LN-43",
-      "title": "Smart program and workout archiving",
-      "status": "TODO",
-      "goal": "keep inactive/finished content accessible without cluttering everyday lists.",
-      "business": {
-        "summary": "Archiver les programmes et séances qui ne servent plus au quotidien.",
-        "why": "Les anciens contenus restent utiles mais ne doivent pas encombrer l'interface courante.",
-        "builds": [
-          "archiver et restaurer",
-          "masquer les archives des listes actives",
-          "vue dédiée aux archives",
-          "conservation de l'historique et de la lignée"
-        ],
-        "userImpact": [
-          "l'interface reste propre sans supprimer les anciens programmes"
-        ],
-        "notInThisLot": [
-          "pas d'archivage destructif automatique"
-        ],
-        "doneWhen": [
-          "archiver ne supprime rien",
-          "un contenu archivé reste retrouvable"
-        ],
-        "journey": [
-          "L’utilisateur archive un programme terminé.",
-          "Il disparaît des listes actives.",
-          "Il reste consultable dans une vue Archives et peut être restauré."
-        ],
-        "rules": [
-          "Archiver n’est jamais supprimer.",
-          "L’historique et la lignée restent intacts.",
-          "Toute suggestion automatique d’archivage reste non destructive."
-        ],
-        "examples": [
-          "PPL été archivé mais toujours visible dans l’historique.",
-          "Réactiver un ancien programme en un geste."
-        ],
-        "data": [
-          "état archivé",
-          "date éventuelle",
-          "vue archive"
-        ],
-        "dependencies": [
-          "programmes persistés",
-          "LN-27 lineage"
-        ],
-        "attention": [
-          "ne pas cacher un contenu encore actif par erreur",
-          "restauration prévisible"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-44",
       "title": "Trash and restore",
       "status": "TODO",
@@ -4027,6 +3973,62 @@
         "attention": [
           "relations vers contenu supprimé",
           "politique de rétention claire"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-45",
+      "title": "Robust offline workout mode and resynchronization",
+      "status": "TODO",
+      "goal": "keep active workouts fully usable through poor/no network and synchronize safely later.",
+      "business": {
+        "summary": "Rendre une séance active utilisable sans réseau puis la resynchroniser.",
+        "why": "Le réseau est souvent médiocre en salle et ne doit jamais faire perdre des séries.",
+        "builds": [
+          "continuation hors ligne",
+          "sauvegarde locale durable",
+          "file de synchronisation",
+          "resynchronisation sans doublons",
+          "gestion explicite des conflits",
+          "états hors ligne/sync/erreur"
+        ],
+        "userImpact": [
+          "l'athlète peut terminer sa séance sans connexion et retrouver ensuite ses données"
+        ],
+        "notInThisLot": [
+          "aucune perte silencieuse en cas de conflit"
+        ],
+        "doneWhen": [
+          "une séance survit à une coupure réseau",
+          "la reconnexion ne crée pas de séries en double"
+        ],
+        "journey": [
+          "L’athlète perd le réseau pendant une séance.",
+          "Il continue à saisir et modifier ses séries localement.",
+          "Au retour du réseau, LiftNote resynchronise sans doublons et signale les conflits éventuels."
+        ],
+        "rules": [
+          "Les opérations locales doivent être durables.",
+          "La resynchronisation est idempotente.",
+          "Aucun conflit non résolu n’est masqué."
+        ],
+        "examples": [
+          "Trois séries saisies hors ligne puis synchronisées une seule fois.",
+          "Une modification concurrente produit un état explicite à résoudre."
+        ],
+        "data": [
+          "queue locale",
+          "opérations idempotentes",
+          "état sync/conflit"
+        ],
+        "dependencies": [
+          "LN-14 PWA/mobile",
+          "LN-07 session active"
+        ],
+        "attention": [
+          "ne pas dupliquer les sets",
+          "tester refresh/background et reconnexion intermittente"
         ]
       },
       "contractAvailable": true
