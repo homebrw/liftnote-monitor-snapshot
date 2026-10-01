@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T15:29:47.446Z",
+  "publishedAt": "2026-10-01T15:30:34.499Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "CONSISTENCY_ERROR",
@@ -14,7 +14,7 @@
     "lastMessage": "LN-51 is DONE but completion invariants failed; next lot not launched.",
     "lastError": "LN-51 completion record does not identify a PR. LN-51 completion record does not record a merge SHA.",
     "lastSuccessfulTickAt": "2026-10-01T14:02:24.313Z",
-    "nextTickAt": "2026-10-01T15:34:40.337Z",
+    "nextTickAt": "2026-10-01T15:35:27.749Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
