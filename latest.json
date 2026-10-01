@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T02:47:47.820Z",
+  "publishedAt": "2026-10-01T02:48:32.961Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-24",
     "nextLot": "LN-25",
     "launchedAt": "2026-10-01T02:28:47.051Z",
-    "lastProgressAt": "2026-10-01T02:28:47.051Z",
+    "lastProgressAt": "2026-10-01T02:48:27.351Z",
     "lastChatCheckAt": "2026-10-01T02:28:47.051Z",
-    "lastObservedMainSha": "92c28065bf75080e29e85317c5302a10c2ab5921",
+    "lastObservedMainSha": "b57b4fc719e1504c364ebf441b5012c9e8f6bdde",
     "nudges": 0,
-    "lastMessage": "Launched LN-24; canonical chat persisted before prompt marker became visible",
+    "lastMessage": "main moved while LN-24 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T02:47:40.949Z",
-    "nextTickAt": "2026-10-01T02:52:40.949Z",
+    "lastSuccessfulTickAt": "2026-10-01T02:48:27.351Z",
+    "nextTickAt": "2026-10-01T02:53:27.351Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "92c28065bf75080e29e85317c5302a10c2ab5921",
+    "mainSha": "b57b4fc719e1504c364ebf441b5012c9e8f6bdde",
     "lots": [
       {
         "id": "LN-00",
@@ -2243,7 +2243,7 @@
       {
         "id": "LN-24",
         "title": "Coach-managed programs and synchronized prescriptions",
-        "status": "TODO",
+        "status": "IN PROGRESS",
         "goal": "allow an authorized coach to assign/push a program or workout into an athlete account while keeping that prescription visibly coach-managed and synchronized.",
         "business": {
           "summary": "Permettre au coach de pousser un programme ou une séance sur le compte de l'athlète et de rester maître des modifications futures.",
@@ -3925,7 +3925,7 @@
     "current": {
       "id": "LN-24",
       "title": "Coach-managed programs and synchronized prescriptions",
-      "status": "TODO",
+      "status": "IN PROGRESS",
       "goal": "allow an authorized coach to assign/push a program or workout into an athlete account while keeping that prescription visibly coach-managed and synchronized.",
       "business": {
         "summary": "Permettre au coach de pousser un programme ou une séance sur le compte de l'athlète et de rester maître des modifications futures.",
