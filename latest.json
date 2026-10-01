@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T06:41:26.804Z",
+  "publishedAt": "2026-10-01T06:42:21.486Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-31",
-    "nextLot": "LN-32",
-    "launchedAt": "2026-10-01T05:46:51.167Z",
-    "lastProgressAt": "2026-10-01T06:41:21.411Z",
-    "lastChatCheckAt": "2026-10-01T06:37:38.527Z",
-    "lastObservedMainSha": "5146b59bdde400691d6ea0226fda86eeb60f137c",
-    "nudges": 1,
-    "lastMessage": "main moved while LN-31 is active",
+    "currentLot": "LN-32",
+    "nextLot": "LN-33",
+    "launchedAt": "2026-10-01T06:42:15.244Z",
+    "lastProgressAt": "2026-10-01T06:42:15.244Z",
+    "lastChatCheckAt": "2026-10-01T06:42:15.244Z",
+    "lastObservedMainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
+    "nudges": 0,
+    "lastMessage": "Launched LN-32; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T06:41:21.411Z",
-    "nextTickAt": "2026-10-01T06:46:21.411Z",
+    "lastSuccessfulTickAt": "2026-10-01T06:42:15.244Z",
+    "nextTickAt": "2026-10-01T06:47:15.244Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-19",
-        "completedAt": "2026-10-01T01:11:01.086Z",
-        "restartedAt": null,
-        "mainSha": "663d1f020229f6ba9630a404b98e28550298bbf4",
-        "reason": null
-      },
       {
         "lot": "LN-20",
         "completedAt": "2026-10-01T01:37:35.221Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "bfa79a0c348711208be797610f637a7db1e1cf69",
         "reason": null
+      },
+      {
+        "lot": "LN-31",
+        "completedAt": "2026-10-01T06:42:06.347Z",
+        "restartedAt": null,
+        "mainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "5146b59bdde400691d6ea0226fda86eeb60f137c",
+    "mainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
     "lots": [
       {
         "id": "LN-00",
@@ -2646,7 +2646,7 @@
       {
         "id": "LN-31",
         "title": "Unilateral exercise semantics",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "distinguish reps per side from total reps and optionally track left/right separately where useful.",
         "business": {
           "summary": "Comprendre les exercices unilatéraux et la différence entre répétitions par côté et répétitions totales.",
@@ -3919,63 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 40,
+    "done": 41,
     "total": 62,
-    "percent": 65,
+    "percent": 66,
     "current": {
-      "id": "LN-31",
-      "title": "Unilateral exercise semantics",
-      "status": "TODO",
-      "goal": "distinguish reps per side from total reps and optionally track left/right separately where useful.",
-      "business": {
-        "summary": "Comprendre les exercices unilatéraux et la différence entre répétitions par côté et répétitions totales.",
-        "why": "10 fentes par jambe ne signifie pas la même chose que 10 répétitions au total.",
-        "builds": [
-          "sémantique par côté",
-          "objectifs du type 10 par jambe",
-          "saisie gauche/droite séparée lorsque pertinente",
-          "historique et statistiques compatibles"
-        ],
-        "userImpact": [
-          "les exercices unilatéraux sont enregistrés sans ambiguïté"
-        ],
-        "notInThisLot": [
-          "pas d'analyse médicale d'asymétrie"
-        ],
-        "doneWhen": [
-          "10 par côté ne devient jamais 10 total",
-          "les données gauche/droite restent identifiables"
-        ],
-        "journey": [
-          "L’utilisateur choisit un exercice unilatéral.",
-          "LiftNote indique clairement si la cible est par côté.",
-          "Il peut, lorsque pertinent, saisir gauche et droite séparément."
-        ],
-        "rules": [
-          "10 par côté ne signifie jamais 10 au total.",
-          "Les données gauche/droite restent identifiables.",
-          "Les exercices bilatéraux ne doivent pas être alourdis par cette UX."
-        ],
-        "examples": [
-          "Fentes 10 par jambe.",
-          "Curl unilatéral avec 10 reps gauche et 9 droite."
-        ],
-        "data": [
-          "sémantique bilatérale/unilatérale",
-          "reps par côté",
-          "valeurs gauche/droite"
-        ],
-        "dependencies": [
-          "LN-30 pour les unités et tracking semantics"
-        ],
-        "attention": [
-          "ne pas doubler artificiellement les volumes",
-          "garder l’interface compacte pendant la séance"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-32",
       "title": "Timed, isometric and distance-based sets",
       "status": "TODO",
@@ -4025,6 +3972,59 @@
         "attention": [
           "ne pas comparer des tracking types incompatibles",
           "adapter les statistiques sans inventer de tonnage"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-33",
+      "title": "Execution tempo prescriptions",
+      "status": "TODO",
+      "goal": "support structured tempo guidance such as 3-1-X-1 in templates and active workouts.",
+      "business": {
+        "summary": "Ajouter le tempo d'exécution, par exemple 3-1-X-1, comme consigne structurée.",
+        "why": "Certains programmes prescrivent aussi la vitesse d'exécution.",
+        "builds": [
+          "tempo optionnel dans les templates",
+          "notation structurée",
+          "affichage en séance",
+          "conservation dans copies, partages et programmes coachés"
+        ],
+        "userImpact": [
+          "l'athlète voit la consigne de tempo au bon moment"
+        ],
+        "notInThisLot": [
+          "LiftNote ne prétend pas mesurer automatiquement le respect réel du tempo"
+        ],
+        "doneWhen": [
+          "le tempo historique ne change pas après modification du programme",
+          "la notation reste valide"
+        ],
+        "journey": [
+          "Le créateur d’une séance renseigne un tempo optionnel.",
+          "L’athlète voit la consigne pendant la séance.",
+          "Le tempo prescrit reste figé dans l’historique de la séance."
+        ],
+        "rules": [
+          "Le tempo est une prescription, pas une mesure automatique de performance.",
+          "La notation doit être validée.",
+          "Copies, partages et programmes coachés doivent conserver le tempo."
+        ],
+        "examples": [
+          "Squat 3-1-X-1 affiché au moment de la série.",
+          "Modifier le tempo du template plus tard ne change pas une séance passée."
+        ],
+        "data": [
+          "tempo structuré",
+          "snapshot de tempo"
+        ],
+        "dependencies": [
+          "LN-06 pour les snapshots",
+          "LN-22/LN-24 pour copie/sync"
+        ],
+        "attention": [
+          "ne pas prétendre vérifier automatiquement l’exécution",
+          "gérer les notations invalides clairement"
         ]
       },
       "contractAvailable": true
