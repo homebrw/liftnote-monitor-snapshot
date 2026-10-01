@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T22:40:05.279Z",
+  "publishedAt": "2026-10-01T22:42:23.102Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-82",
-    "nextLot": "LN-83",
-    "launchedAt": "2026-10-01T22:28:17.362Z",
-    "lastProgressAt": "2026-10-01T22:38:10.688Z",
-    "lastChatCheckAt": "2026-10-01T22:28:17.362Z",
-    "lastObservedMainSha": "d2b1954866f3b2548b618498ffb3249aa4832b4d",
+    "currentLot": "LN-83",
+    "nextLot": "LN-84",
+    "launchedAt": "2026-10-01T22:42:13.197Z",
+    "lastProgressAt": "2026-10-01T22:42:13.197Z",
+    "lastChatCheckAt": "2026-10-01T22:42:13.197Z",
+    "lastObservedMainSha": "d7a57dd230724229b9d473459d5fc718a22c0004",
     "nudges": 0,
-    "lastMessage": "main moved while LN-82 is active",
+    "lastMessage": "Launched LN-83; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T22:39:55.699Z",
-    "nextTickAt": "2026-10-01T22:44:55.699Z",
+    "lastSuccessfulTickAt": "2026-10-01T22:42:13.197Z",
+    "nextTickAt": "2026-10-01T22:47:13.197Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-59",
-        "completedAt": "2026-10-01T19:06:57.226Z",
-        "restartedAt": null,
-        "mainSha": "953aebeec4d2bca1cfb1d62249f7f827bdbcf0ce",
-        "reason": null
-      },
       {
         "lot": "LN-60",
         "completedAt": "2026-10-01T19:15:59.191Z",
@@ -100,6 +93,13 @@
         "completedAt": "2026-10-01T22:24:24.266Z",
         "restartedAt": null,
         "mainSha": "1e2832d8c7c47222274a6b9513e3509578aaab03",
+        "reason": null
+      },
+      {
+        "lot": "LN-82",
+        "completedAt": "2026-10-01T22:40:48.464Z",
+        "restartedAt": null,
+        "mainSha": "d7a57dd230724229b9d473459d5fc718a22c0004",
         "reason": null
       }
     ]
@@ -16691,170 +16691,6 @@
     "total": 126,
     "percent": 63,
     "current": {
-      "id": "LN-82",
-      "title": "UX Recovery & Cross-Lot Integration",
-      "status": "DONE",
-      "goal": "Implement the historical UX and cross-lot integration gaps proven by LN-81 without redesigning already-good workflows.",
-      "business": {
-        "phase": "Product Architecture",
-        "summary": "Implement the historical UX and cross-lot integration gaps proven by LN-81 without redesigning already-good workflows.",
-        "why": "The recovery lot closes product-path gaps before richer exercise and programming systems multiply them.",
-        "builds": [
-          "surface shipped capabilities at their natural entry points",
-          "close missing loading/empty/error/success/disabled states identified by LN-81",
-          "restore correction, undo/recovery or deep-link paths where a shipped capability otherwise dead-ends",
-          "repair coach/athlete visibility asymmetries and offline/context integrations identified by the audit",
-          "remove redundant or overloaded exposure using progressive disclosure"
-        ],
-        "userImpact": [
-          "treat the LN-81 remediation ledger as the finite scope",
-          "preserve fast Today/active-workout flows and avoid settings-page dumping",
-          "ensure advanced features remain reachable with minimal additional interaction",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "treat the LN-81 remediation ledger as the finite scope",
-          "preserve fast Today/active-workout flows and avoid settings-page dumping",
-          "ensure advanced features remain reachable with minimal additional interaction",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "do not broaden coach permissions to solve a UI gap",
-          "maintain account-scoped offline state and existing RLS/server authorization",
-          "negative authorization tests required for any cross-user surface changed",
-          "analytics/history must show corrected state coherently after any recovered action",
-          "future exercise/programming/AI lots should inherit clean product entry points instead of creating parallel ones"
-        ],
-        "examples": [],
-        "data": [
-          "prefer no new domain primitive; add persistence only if LN-81 proves an existing shipped capability cannot be completed otherwise",
-          "preserve immutable session/history truth and canonical IDs"
-        ],
-        "dependencies": [
-          "Requires LN-81 DONE and consumes its remediation ledger. It may touch multiple existing LiftNote surfaces only where the audit identified a concrete gap."
-        ],
-        "attention": [
-          "do not broaden coach permissions to solve a UI gap",
-          "maintain account-scoped offline state and existing RLS/server authorization",
-          "negative authorization tests required for any cross-user surface changed",
-          "focused tests for each repaired integration",
-          "targeted lint/typecheck for touched LiftNote code",
-          "browser/E2E only under the current repository gate policy; record what was actually run",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no speculative new feature family",
-          "no replacement design system",
-          "no implementation of future LN-67..LN-80 or LN-83+ capabilities unless strictly needed to expose already-shipped behavior"
-        ],
-        "doneWhen": [
-          "all LN-81 class-B findings are either fixed or explicitly reclassified with evidence",
-          "no repaired path introduces a UX dead end or overloads primary workout actions",
-          "mobile, accessibility and FR/EN behavior are coherent on touched surfaces",
-          "existing deterministic/history/security invariants remain intact"
-        ],
-        "ux": [
-          "treat the LN-81 remediation ledger as the finite scope",
-          "preserve fast Today/active-workout flows and avoid settings-page dumping",
-          "ensure advanced features remain reachable with minimal additional interaction",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "do not broaden coach permissions to solve a UI gap",
-          "maintain account-scoped offline state and existing RLS/server authorization",
-          "negative authorization tests required for any cross-user surface changed"
-        ],
-        "implications": [
-          "analytics/history must show corrected state coherently after any recovered action",
-          "future exercise/programming/AI lots should inherit clean product entry points instead of creating parallel ones"
-        ],
-        "validation": [
-          "focused tests for each repaired integration",
-          "targeted lint/typecheck for touched LiftNote code",
-          "browser/E2E only under the current repository gate policy; record what was actually run",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Product Architecture",
-        "objective": "Implement the historical UX and cross-lot integration gaps proven by LN-81 without redesigning already-good workflows.",
-        "rationale": "The recovery lot closes product-path gaps before richer exercise and programming systems multiply them.",
-        "dependencies": [
-          "Requires LN-81 DONE and consumes its remediation ledger. It may touch multiple existing LiftNote surfaces only where the audit identified a concrete gap."
-        ],
-        "scope": [
-          "surface shipped capabilities at their natural entry points",
-          "close missing loading/empty/error/success/disabled states identified by LN-81",
-          "restore correction, undo/recovery or deep-link paths where a shipped capability otherwise dead-ends",
-          "repair coach/athlete visibility asymmetries and offline/context integrations identified by the audit",
-          "remove redundant or overloaded exposure using progressive disclosure"
-        ],
-        "exclusions": [
-          "no speculative new feature family",
-          "no replacement design system",
-          "no implementation of future LN-67..LN-80 or LN-83+ capabilities unless strictly needed to expose already-shipped behavior"
-        ],
-        "data": [
-          "prefer no new domain primitive; add persistence only if LN-81 proves an existing shipped capability cannot be completed otherwise",
-          "preserve immutable session/history truth and canonical IDs"
-        ],
-        "ux": [
-          "treat the LN-81 remediation ledger as the finite scope",
-          "preserve fast Today/active-workout flows and avoid settings-page dumping",
-          "ensure advanced features remain reachable with minimal additional interaction",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "do not broaden coach permissions to solve a UI gap",
-          "maintain account-scoped offline state and existing RLS/server authorization",
-          "negative authorization tests required for any cross-user surface changed"
-        ],
-        "implications": [
-          "analytics/history must show corrected state coherently after any recovered action",
-          "future exercise/programming/AI lots should inherit clean product entry points instead of creating parallel ones"
-        ],
-        "acceptance": [
-          "all LN-81 class-B findings are either fixed or explicitly reclassified with evidence",
-          "no repaired path introduces a UX dead end or overloads primary workout actions",
-          "mobile, accessibility and FR/EN behavior are coherent on touched surfaces",
-          "existing deterministic/history/security invariants remain intact"
-        ],
-        "validation": [
-          "focused tests for each repaired integration",
-          "targeted lint/typecheck for touched LiftNote code",
-          "browser/E2E only under the current repository gate policy; record what was actually run",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": "760",
-          "mergeSha": "826b4bc02b81f641636204606fa526d20126fefd"
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-83",
       "title": "Exercise Knowledge Model v2",
       "status": "TODO",
@@ -17013,6 +16849,166 @@
           "schema/type/domain tests for normalization and backward compatibility",
           "migration dry-run and RLS checks if persistence changes",
           "catalog import/source-license checks remain explicit and pinned",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-84",
+      "title": "Complete FR/EN System Exercise Localization",
+      "status": "TODO",
+      "goal": "Give every appropriate system exercise a complete French product representation while preserving English/source traceability and searchability.",
+      "business": {
+        "phase": "Exercise Intelligence",
+        "summary": "Give every appropriate system exercise a complete French product representation while preserving English/source traceability and searchability.",
+        "why": "Partial localization creates inconsistent search, detail and coaching experiences and makes source data leak into the product.",
+        "builds": [
+          "complete FR names, aliases, descriptions, instructions and anatomy labels where product-owned/editorially permitted",
+          "preserve English canonical/source names and aliases for search/provenance",
+          "define localized UI labels for technical vocabularies",
+          "editorial completeness rules for future system imports"
+        ],
+        "userImpact": [
+          "French UI uses French product copy consistently while English aliases remain discoverable",
+          "fallback behavior must be explicit and non-jarring when a field is unavailable",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "French UI uses French product copy consistently while English aliases remain discoverable",
+          "fallback behavior must be explicit and non-jarring when a field is unavailable",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "no authorization change expected",
+          "custom exercises remain user-owned and untouched",
+          "offline snapshots keep historically necessary display names",
+          "search consumes both languages; exercise detail prefers locale while preserving source traceability",
+          "AI import may use multilingual aliases but cannot promote translations into canonical system truth"
+        ],
+        "examples": [],
+        "data": [
+          "localization fields remain attached to stable canonical system IDs",
+          "source refreshes preserve editorial French fields unless explicitly reviewed",
+          "track missing/unknown translations rather than silently falling back as if complete"
+        ],
+        "dependencies": [
+          "Requires LN-83 DONE and its normalized knowledge model."
+        ],
+        "attention": [
+          "no authorization change expected",
+          "custom exercises remain user-owned and untouched",
+          "offline snapshots keep historically necessary display names",
+          "catalog completeness tests across required localized fields",
+          "search regression tests for FR/EN aliases",
+          "source-license/notice checks for reused text",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "do not translate stable IDs, slugs or technical enum values",
+          "do not machine-translate user-created custom exercises as product truth",
+          "do not import unlicensed source text/media"
+        ],
+        "doneWhen": [
+          "all system exercises in the supported catalog meet the documented localization completeness threshold",
+          "English aliases remain searchable in French UI and vice versa where supported",
+          "custom exercises are not rewritten",
+          "licensing/attribution obligations remain satisfied"
+        ],
+        "ux": [
+          "French UI uses French product copy consistently while English aliases remain discoverable",
+          "fallback behavior must be explicit and non-jarring when a field is unavailable",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "no authorization change expected",
+          "custom exercises remain user-owned and untouched",
+          "offline snapshots keep historically necessary display names"
+        ],
+        "implications": [
+          "search consumes both languages; exercise detail prefers locale while preserving source traceability",
+          "AI import may use multilingual aliases but cannot promote translations into canonical system truth"
+        ],
+        "validation": [
+          "catalog completeness tests across required localized fields",
+          "search regression tests for FR/EN aliases",
+          "source-license/notice checks for reused text",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Exercise Intelligence",
+        "objective": "Give every appropriate system exercise a complete French product representation while preserving English/source traceability and searchability.",
+        "rationale": "Partial localization creates inconsistent search, detail and coaching experiences and makes source data leak into the product.",
+        "dependencies": [
+          "Requires LN-83 DONE and its normalized knowledge model."
+        ],
+        "scope": [
+          "complete FR names, aliases, descriptions, instructions and anatomy labels where product-owned/editorially permitted",
+          "preserve English canonical/source names and aliases for search/provenance",
+          "define localized UI labels for technical vocabularies",
+          "editorial completeness rules for future system imports"
+        ],
+        "exclusions": [
+          "do not translate stable IDs, slugs or technical enum values",
+          "do not machine-translate user-created custom exercises as product truth",
+          "do not import unlicensed source text/media"
+        ],
+        "data": [
+          "localization fields remain attached to stable canonical system IDs",
+          "source refreshes preserve editorial French fields unless explicitly reviewed",
+          "track missing/unknown translations rather than silently falling back as if complete"
+        ],
+        "ux": [
+          "French UI uses French product copy consistently while English aliases remain discoverable",
+          "fallback behavior must be explicit and non-jarring when a field is unavailable",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "no authorization change expected",
+          "custom exercises remain user-owned and untouched",
+          "offline snapshots keep historically necessary display names"
+        ],
+        "implications": [
+          "search consumes both languages; exercise detail prefers locale while preserving source traceability",
+          "AI import may use multilingual aliases but cannot promote translations into canonical system truth"
+        ],
+        "acceptance": [
+          "all system exercises in the supported catalog meet the documented localization completeness threshold",
+          "English aliases remain searchable in French UI and vice versa where supported",
+          "custom exercises are not rewritten",
+          "licensing/attribution obligations remain satisfied"
+        ],
+        "validation": [
+          "catalog completeness tests across required localized fields",
+          "search regression tests for FR/EN aliases",
+          "source-license/notice checks for reused text",
           "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
           "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
           "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
