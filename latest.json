@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:09:26.605Z",
+  "publishedAt": "2026-10-01T07:10:14.904Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "CONSISTENCY_ERROR",
-    "currentLot": "LN-32",
+    "status": "PAUSED",
+    "currentLot": null,
     "nextLot": "LN-33",
-    "launchedAt": "2026-10-01T06:42:15.244Z",
-    "lastProgressAt": "2026-10-01T06:42:15.244Z",
+    "launchedAt": null,
+    "lastProgressAt": "2026-10-01T07:10:08.972Z",
     "lastChatCheckAt": "2026-10-01T06:42:15.244Z",
-    "lastObservedMainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
+    "lastObservedMainSha": "a30a3ed2d473d801d2473cb0b08ce0de0e374ab4",
     "nudges": 0,
-    "lastMessage": "Lot/roadmap status mismatch detected; no dispatch performed.",
-    "lastError": "LN-32: lot=DONE, roadmap=TODO",
-    "lastSuccessfulTickAt": "2026-10-01T06:53:06.629Z",
-    "nextTickAt": "2026-10-01T07:14:21.444Z",
-    "paused": false,
-    "pauseAfterCurrent": true,
+    "lastMessage": "LN-32 completion detected; validating transition invariants",
+    "lastError": null,
+    "lastSuccessfulTickAt": "2026-10-01T07:10:08.972Z",
+    "nextTickAt": "2026-10-01T07:15:08.972Z",
+    "paused": true,
+    "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-20",
-        "completedAt": "2026-10-01T01:37:35.221Z",
-        "restartedAt": null,
-        "mainSha": "909d9a2692643caa2ba51354e4fda2cadace1f2a",
-        "reason": null
-      },
       {
         "lot": "LN-21",
         "completedAt": "2026-10-01T01:49:02.225Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
         "reason": null
+      },
+      {
+        "lot": "LN-32",
+        "completedAt": "2026-10-01T07:10:08.971Z",
+        "restartedAt": null,
+        "mainSha": "a30a3ed2d473d801d2473cb0b08ce0de0e374ab4",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "0ccdba69b809ec29ac1570e6f9f833191768ea50",
+    "mainSha": "a30a3ed2d473d801d2473cb0b08ce0de0e374ab4",
     "lots": [
       {
         "id": "LN-00",
@@ -3922,60 +3922,7 @@
     "done": 42,
     "total": 62,
     "percent": 68,
-    "current": {
-      "id": "LN-32",
-      "title": "Timed, isometric and distance-based sets",
-      "status": "DONE",
-      "goal": "track movements such as planks, dead hangs and farmer carries with the metric that actually matters instead of forcing weight × reps.",
-      "business": {
-        "summary": "Suivre correctement les séries basées sur le temps ou la distance.",
-        "why": "Plank, dead hang ou farmer carry ne doivent pas être forcés dans un modèle poids × reps.",
-        "builds": [
-          "séries en durée",
-          "séries en distance",
-          "combinaisons charge + durée ou distance",
-          "types de suivi cohérents entre template, séance et historique"
-        ],
-        "userImpact": [
-          "LiftNote couvre beaucoup plus de mouvements sans fausser les données"
-        ],
-        "notInThisLot": [
-          "pas de comparaison universelle entre tous les types d'exercices"
-        ],
-        "doneWhen": [
-          "un plank s'enregistre en secondes sans fausses reps",
-          "un farmer carry conserve distance, charge et unité"
-        ],
-        "journey": [
-          "L’utilisateur sélectionne un mouvement suivi au temps ou à la distance.",
-          "Le logger présente les bons champs au lieu d’imposer des répétitions.",
-          "Historique et comparaison utilisent ensuite la métrique réellement enregistrée."
-        ],
-        "rules": [
-          "Aucune fausse répétition n’est créée.",
-          "Le type de suivi définit les métriques requises.",
-          "La valeur et son unité restent intactes dans l’historique."
-        ],
-        "examples": [
-          "Plank enregistré 60 s.",
-          "Farmer carry enregistré 40 m avec 32 kg par main si le modèle le prévoit."
-        ],
-        "data": [
-          "durée",
-          "distance",
-          "charge combinée éventuelle",
-          "tracking type"
-        ],
-        "dependencies": [
-          "LN-30 pour les unités"
-        ],
-        "attention": [
-          "ne pas comparer des tracking types incompatibles",
-          "adapter les statistiques sans inventer de tonnage"
-        ]
-      },
-      "contractAvailable": true
-    },
+    "current": null,
     "next": {
       "id": "LN-33",
       "title": "Execution tempo prescriptions",
