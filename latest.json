@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T01:35:20.636Z",
+  "publishedAt": "2026-10-01T01:36:10.277Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "Launched LN-20; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T01:35:14.998Z",
-    "nextTickAt": "2026-10-01T01:40:14.998Z",
+    "lastSuccessfulTickAt": "2026-10-01T01:36:01.758Z",
+    "nextTickAt": "2026-10-01T01:41:01.758Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "663d1f020229f6ba9630a404b98e28550298bbf4",
+    "mainSha": "e13e270fc23eaf76166239af5f7f18a77bf2dcba",
     "lots": [
       {
         "id": "LN-00",
@@ -1954,7 +1954,7 @@
       {
         "id": "LN-20",
         "title": "Advanced load semantics: bodyweight, added load and assistance",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "make load values semantically correct for ordinary external resistance, bodyweight-only work, added ballast and assistance/counterweight movements such as Gravitron pull-ups.",
         "business": {
           "summary": "Faire comprendre à LiftNote la différence entre une charge classique, le poids du corps, un lest ajouté et une assistance comme au Gravitron.",
@@ -3919,13 +3919,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 29,
+    "done": 30,
     "total": 62,
-    "percent": 47,
+    "percent": 48,
     "current": {
       "id": "LN-20",
       "title": "Advanced load semantics: bodyweight, added load and assistance",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "make load values semantically correct for ordinary external resistance, bodyweight-only work, added ballast and assistance/counterweight movements such as Gravitron pull-ups.",
       "business": {
         "summary": "Faire comprendre à LiftNote la différence entre une charge classique, le poids du corps, un lest ajouté et une assistance comme au Gravitron.",
