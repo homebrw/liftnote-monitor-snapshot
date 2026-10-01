@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T01:10:22.431Z",
+  "publishedAt": "2026-10-01T01:11:17.318Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-19",
-    "nextLot": "LN-20",
-    "launchedAt": "2026-10-01T00:52:44.788Z",
-    "lastProgressAt": "2026-10-01T01:08:47.015Z",
-    "lastChatCheckAt": "2026-10-01T00:52:44.788Z",
-    "lastObservedMainSha": "b58e75464cfd2a324284aee0e66d91b1ef099c33",
+    "currentLot": "LN-20",
+    "nextLot": "LN-21",
+    "launchedAt": "2026-10-01T01:11:10.967Z",
+    "lastProgressAt": "2026-10-01T01:11:10.967Z",
+    "lastChatCheckAt": "2026-10-01T01:11:10.967Z",
+    "lastObservedMainSha": "663d1f020229f6ba9630a404b98e28550298bbf4",
     "nudges": 0,
-    "lastMessage": "main moved while LN-19 is active",
+    "lastMessage": "Launched LN-20; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T01:10:16.459Z",
-    "nextTickAt": "2026-10-01T01:15:16.459Z",
+    "lastSuccessfulTickAt": "2026-10-01T01:11:10.967Z",
+    "nextTickAt": "2026-10-01T01:16:10.967Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-10",
-        "completedAt": "2026-09-30T12:02:54.000Z",
-        "restartedAt": null,
-        "mainSha": "4a107377c397b70690279af49114e21c0081b3aa",
-        "reason": null
-      },
       {
         "lot": "LN-11",
         "completedAt": "2026-09-30T12:21:14.621Z",
@@ -100,6 +93,13 @@
         "completedAt": "2026-10-01T00:52:35.295Z",
         "restartedAt": null,
         "mainSha": "98473b33a186d6b8f5283df4a8d25463e3c4aa22",
+        "reason": null
+      },
+      {
+        "lot": "LN-19",
+        "completedAt": "2026-10-01T01:11:01.086Z",
+        "restartedAt": null,
+        "mainSha": "663d1f020229f6ba9630a404b98e28550298bbf4",
         "reason": null
       }
     ]
@@ -3923,71 +3923,6 @@
     "total": 62,
     "percent": 47,
     "current": {
-      "id": "LN-19",
-      "title": "Automatic warm-up / ramp-up set generator",
-      "status": "DONE",
-      "goal": "generate deterministic, editable warm-up sets before a working load without using an LLM.",
-      "business": {
-        "summary": "Générer automatiquement des séries d'échauffement progressives avant la charge de travail.",
-        "why": "Solo aide à préparer une montée en charge cohérente sans utiliser d'IA générative opaque.",
-        "builds": [
-          "une rampe d'échauffement déterministe à partir de l'exercice et de la charge de travail",
-          "quelques séries de plus en plus lourdes avec moins de répétitions",
-          "adaptation entre travail lourd et travail à répétitions élevées",
-          "arrondi via le vrai calculateur de plaques",
-          "édition, suppression, régénération ou saut en un geste",
-          "distinction claire entre séries d'échauffement et séries de travail"
-        ],
-        "userImpact": [
-          "l'utilisateur obtient un échauffement prêt à suivre sans polluer ses statistiques de travail ni ses records"
-        ],
-        "notInThisLot": [
-          "aucune prétention à une recette universellement optimale",
-          "pas de dépendance à un LLM"
-        ],
-        "doneWhen": [
-          "la génération est explicable, modifiable et reproductible",
-          "les séries d'échauffement n'affectent pas les records ou volumes de travail"
-        ],
-        "journey": [
-          "Avant les séries de travail, l’utilisateur choisit « Ajouter l’échauffement ».",
-          "LiftNote calcule quelques paliers progressifs à partir de la barre, de la charge de travail et des répétitions prévues.",
-          "L’utilisateur voit la proposition directement dans la séance.",
-          "Il peut modifier, supprimer, ajouter, régénérer ou ignorer n’importe quel palier.",
-          "Les séries réalisées sont historisées comme échauffement et restent séparées des séries de travail."
-        ],
-        "rules": [
-          "La génération est déterministe : mêmes entrées, même proposition.",
-          "Pas de LLM ni d’appel réseau nécessaire.",
-          "Les répétitions diminuent généralement à mesure que la charge approche de la charge de travail.",
-          "Toutes les charges proposées passent par le vrai calculateur de plaques LN-18.",
-          "Les séries d’échauffement ne doivent pas polluer records ou volume de travail standard."
-        ],
-        "examples": [
-          "Bench 100 kg × 10 : proposition possible 20×10, 40×8, 60×5, 80×2-3 puis travail.",
-          "Pour un lourd 1-3 reps, une exposition finale proche de 90 % peut être ajoutée avec très peu de reps.",
-          "Après changement de barre, régénérer produit une rampe adaptée au nouveau matériel."
-        ],
-        "data": [
-          "type de série warmup/work",
-          "charge/reps proposées",
-          "barre et plaques disponibles",
-          "état accepté/modifié de la proposition"
-        ],
-        "dependencies": [
-          "LN-18 pour le snapping aux plaques réelles",
-          "LN-07 pour l’insertion dans la séance active",
-          "LN-20 devra reprendre toutes les hypothèses où « kg » signifie charge externe"
-        ],
-        "attention": [
-          "ne pas présenter l’heuristique comme physiologiquement optimale pour tout le monde",
-          "éviter les doublons après arrondi de plaques",
-          "garder chaque proposition modifiable"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-20",
       "title": "Advanced load semantics: bodyweight, added load and assistance",
       "status": "TODO",
@@ -4055,6 +3990,75 @@
           "migration des anciennes données sans deviner le mode à partir du nom de l’exercice",
           "éviter les calculs de volume faux pour assistance/poids du corps",
           "ne pas confondre charge ajoutée et charge totale corps + lest"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-21",
+      "title": "Personal program and workout duplication",
+      "status": "TODO",
+      "goal": "let an athlete duplicate a personal program or workout into a fully independent copy, while creating a reusable deep-copy/materialization primitive for later cross-user import.",
+      "business": {
+        "summary": "Permettre de dupliquer un programme complet ou une séance pour créer une nouvelle version personnelle totalement indépendante.",
+        "why": "La duplication sert à créer rapidement une variante d'un programme sans reconstruire toutes les séances. Elle devient aussi la brique de copie fiable réutilisée plus tard pour les imports et pour sortir un programme du contrôle d'un coach.",
+        "builds": [
+          "un bouton de duplication d'un programme",
+          "un bouton de duplication d'une séance modèle",
+          "la copie complète des exercices, objectifs, repos, notes, supersets et autres paramètres de prescription",
+          "de nouveaux identifiants pour la copie afin qu'elle puisse évoluer indépendamment",
+          "une opération atomique qui évite les programmes à moitié copiés en cas d'erreur"
+        ],
+        "userImpact": [
+          "l'athlète peut partir d'un programme existant pour créer une variante sans toucher à l'original",
+          "il peut dupliquer une séance avant de la modifier",
+          "aucun historique de performances n'est artificiellement copié"
+        ],
+        "notInThisLot": [
+          "pas encore de partage avec un autre utilisateur",
+          "pas de synchronisation entre l'original et la copie",
+          "pas de copie des séances réalisées ou des records"
+        ],
+        "doneWhen": [
+          "modifier la copie ne change jamais l'original et inversement",
+          "tous les paramètres actuels de prescription survivent à la duplication",
+          "les exercices personnels de l'athlète restent les mêmes exercices et ne sont pas inutilement recréés"
+        ],
+        "journey": [
+          "L’athlète ouvre un programme ou une séance personnelle.",
+          "Il choisit « Dupliquer ».",
+          "LiftNote crée une nouvelle structure avec un nom de copie prévisible.",
+          "Tous les paramètres de prescription sont repris.",
+          "L’athlète modifie ensuite la copie sans aucun effet sur l’original."
+        ],
+        "rules": [
+          "Les nouveaux programmes/templates reçoivent de nouveaux identifiants.",
+          "Les exercices système et exercices personnels déjà possédés restent référencés ; ils ne sont pas clonés inutilement.",
+          "Aucune séance réalisée, performance, mesure corporelle ou record n’est copié.",
+          "L’opération doit être atomique : soit toute la copie existe, soit rien n’est créé.",
+          "Le mécanisme de copie doit être réutilisable par LN-22 et par le détachement coach LN-24."
+        ],
+        "examples": [
+          "Dupliquer « PPL hiver » en « PPL hiver — copie », puis en faire « PPL printemps ».",
+          "Dupliquer uniquement « Push A » dans le même programme puis modifier les répétitions.",
+          "Un superset et une cible « 30 kg d’assistance » doivent survivre à la copie."
+        ],
+        "data": [
+          "programme et métadonnées de prescription",
+          "séances modèles",
+          "ordre des exercices",
+          "targets, repos, notes, groupements et futures métadonnées structurées",
+          "mapping ancien ID → nouvel ID"
+        ],
+        "dependencies": [
+          "LN-05 pour la persistance programme/template",
+          "LN-17/LN-20 pour les champs avancés à copier",
+          "LN-22/LN-24 réutiliseront cette primitive"
+        ],
+        "attention": [
+          "éviter un code de copie qui oublie silencieusement un nouveau champ ajouté plus tard",
+          "gérer les noms déjà existants",
+          "garantir le rollback si une étape échoue"
         ]
       },
       "contractAvailable": true
