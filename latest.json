@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T14:02:29.952Z",
+  "publishedAt": "2026-10-01T14:03:16.486Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "RUNNING",
+    "status": "CONSISTENCY_ERROR",
     "currentLot": "LN-51",
     "nextLot": "LN-52",
     "launchedAt": "2026-10-01T13:30:05.363Z",
@@ -11,10 +11,10 @@
     "lastChatCheckAt": "2026-10-01T13:30:05.363Z",
     "lastObservedMainSha": "1a84e9dde5d51530c0f121e404c5c6b8320f8dbf",
     "nudges": 0,
-    "lastMessage": "main moved while LN-51 is active",
-    "lastError": null,
+    "lastMessage": "LN-51 is DONE but completion invariants failed; next lot not launched.",
+    "lastError": "LN-51 completion record does not identify a PR. LN-51 completion record does not record a merge SHA.",
     "lastSuccessfulTickAt": "2026-10-01T14:02:24.313Z",
-    "nextTickAt": "2026-10-01T14:07:24.313Z",
+    "nextTickAt": "2026-10-01T14:08:10.326Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "1a84e9dde5d51530c0f121e404c5c6b8320f8dbf",
+    "mainSha": "4176ec5f8b9b501e0a10f2f4129b4d563457a221",
     "lots": [
       {
         "id": "LN-00",
@@ -3733,7 +3733,7 @@
       {
         "id": "LN-51",
         "title": "Full drop-set modeling and logging",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "make drop sets a first-class grouped effort with ordered load/repetition stages rather than three unrelated ordinary sets.",
         "business": {
           "summary": "Enregistrer de vrais drop sets multi-paliers comme un seul effort structuré.",
@@ -3919,13 +3919,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 60,
+    "done": 61,
     "total": 62,
-    "percent": 97,
+    "percent": 98,
     "current": {
       "id": "LN-51",
       "title": "Full drop-set modeling and logging",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "make drop sets a first-class grouped effort with ordered load/repetition stages rather than three unrelated ordinary sets.",
       "business": {
         "summary": "Enregistrer de vrais drop sets multi-paliers comme un seul effort structuré.",
