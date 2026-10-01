@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T21:02:13.412Z",
+  "publishedAt": "2026-10-01T21:02:56.956Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "CONSISTENCY_ERROR",
@@ -14,7 +14,7 @@
     "lastMessage": "LN-67 is DONE but completion invariants failed; next lot not launched.",
     "lastError": "LN-67 has no Completion record section.",
     "lastSuccessfulTickAt": "2026-10-01T20:57:02.462Z",
-    "nextTickAt": "2026-10-01T21:07:08.204Z",
+    "nextTickAt": "2026-10-01T21:07:51.541Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
