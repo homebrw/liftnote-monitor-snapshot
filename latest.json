@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T03:04:38.955Z",
+  "publishedAt": "2026-10-01T03:05:33.205Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "CONSISTENCY_ERROR",
-    "currentLot": "LN-25",
-    "nextLot": "LN-26",
-    "launchedAt": "2026-10-01T02:52:26.568Z",
-    "lastProgressAt": "2026-10-01T03:03:48.479Z",
-    "lastChatCheckAt": "2026-10-01T02:52:26.568Z",
-    "lastObservedMainSha": "0a982d7a1d6a39edbba915859e1e118248a66d14",
+    "status": "RUNNING",
+    "currentLot": "LN-26",
+    "nextLot": "LN-27",
+    "launchedAt": "2026-10-01T03:05:27.219Z",
+    "lastProgressAt": "2026-10-01T03:05:27.219Z",
+    "lastChatCheckAt": "2026-10-01T03:05:27.219Z",
+    "lastObservedMainSha": "cff74bae4a74577751107c4c4f6fcdc20bb0be65",
     "nudges": 0,
-    "lastMessage": "Lot/roadmap status mismatch detected; no dispatch performed.",
-    "lastError": "LN-25: lot=TODO, roadmap=DONE",
-    "lastSuccessfulTickAt": "2026-10-01T03:03:48.479Z",
-    "nextTickAt": "2026-10-01T03:09:33.034Z",
+    "lastMessage": "Launched LN-26; canonical chat persisted before prompt marker became visible",
+    "lastError": null,
+    "lastSuccessfulTickAt": "2026-10-01T03:05:27.219Z",
+    "nextTickAt": "2026-10-01T03:10:27.219Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-16",
-        "completedAt": null,
-        "restartedAt": "2026-09-30T21:55:20.619Z",
-        "mainSha": "43e4e8e9d682887abd33d5b547056cfe903d59c4",
-        "reason": "manual_restart"
-      },
       {
         "lot": "LN-16",
         "completedAt": "2026-09-30T22:18:47.921Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "8f5e12c35d9d1b269942f45e08c1891bfa9bbc88",
         "reason": null
+      },
+      {
+        "lot": "LN-25",
+        "completedAt": "2026-10-01T03:05:18.032Z",
+        "restartedAt": null,
+        "mainSha": "cff74bae4a74577751107c4c4f6fcdc20bb0be65",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "1fc4021c5f494e3ef004f9e023e4aa2d28ae8c66",
+    "mainSha": "cff74bae4a74577751107c4c4f6fcdc20bb0be65",
     "lots": [
       {
         "id": "LN-00",
@@ -2326,7 +2326,7 @@
       {
         "id": "LN-25",
         "title": "Quick workout / free session",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "start an improvised workout without a program/template, build it while training, and optionally save its structure as a reusable template.",
         "business": {
           "summary": "Démarrer une séance libre sans programme ni modèle, puis éventuellement la transformer en séance réutilisable.",
@@ -3919,64 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 34,
+    "done": 35,
     "total": 62,
-    "percent": 55,
+    "percent": 56,
     "current": {
-      "id": "LN-25",
-      "title": "Quick workout / free session",
-      "status": "TODO",
-      "goal": "start an improvised workout without a program/template, build it while training, and optionally save its structure as a reusable template.",
-      "business": {
-        "summary": "Démarrer une séance libre sans programme ni modèle, puis éventuellement la transformer en séance réutilisable.",
-        "why": "Un entraînement réel n'est pas toujours planifié : vacances, séance accessoire, test ou envie du jour.",
-        "builds": [
-          "un bouton Séance libre / Quick workout",
-          "l'ajout et le réordonnancement d'exercices pendant la séance",
-          "la saisie normale des séries",
-          "la sauvegarde optionnelle comme template"
-        ],
-        "userImpact": [
-          "l'athlète peut commencer immédiatement et conserver un historique propre"
-        ],
-        "notInThisLot": [
-          "pas de génération automatique de séance"
-        ],
-        "doneWhen": [
-          "une séance peut être commencée et terminée sans template",
-          "la sauvegarde comme template ne modifie pas la séance passée"
-        ],
-        "journey": [
-          "L’athlète choisit Séance libre sans sélectionner de programme.",
-          "Il ajoute et ordonne ses exercices pendant l’entraînement.",
-          "Il termine la séance puis peut enregistrer sa structure comme modèle réutilisable."
-        ],
-        "rules": [
-          "Aucun programme ou template ne doit être requis pour démarrer.",
-          "La séance libre rejoint le même historique immuable que les séances planifiées.",
-          "Sauvegarder un template après coup ne modifie jamais la séance déjà réalisée."
-        ],
-        "examples": [
-          "Séance vacances créée à la volée puis conservée dans l’historique.",
-          "Une séance improvisée jambes devient ensuite un template personnel."
-        ],
-        "data": [
-          "session sans template source",
-          "exercices ajoutés pendant la session",
-          "template éventuellement créé après coup"
-        ],
-        "dependencies": [
-          "LN-07 pour la saisie active",
-          "LN-06 pour l’historique immuable"
-        ],
-        "attention": [
-          "ne pas créer un historique de seconde zone pour les séances libres",
-          "garder l’ajout d’exercice rapide en pleine séance"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-26",
       "title": "Explicit set types",
       "status": "TODO",
@@ -4025,6 +3971,61 @@
         "attention": [
           "ne pas ralentir le flux des séries ordinaires",
           "ne pas confondre classification drop set et mécanique multi-paliers complète"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-27",
+      "title": "Program versioning and training cycles",
+      "status": "TODO",
+      "goal": "support V1/V2, named blocks and deload phases while preserving lineage and the exact version used by historical sessions.",
+      "business": {
+        "summary": "Faire évoluer un programme en versions et blocs sans perdre sa continuité.",
+        "why": "V1, V2, bloc de force, hypertrophie ou deload doivent former une même histoire plutôt qu'une suite de programmes sans lien.",
+        "builds": [
+          "versions et blocs nommés",
+          "un bloc courant",
+          "la conservation des versions précédentes",
+          "le rattachement des séances à la version exacte"
+        ],
+        "userImpact": [
+          "l'athlète comprend comment son programme évolue dans le temps"
+        ],
+        "notInThisLot": [
+          "pas d'algorithme automatique de périodisation"
+        ],
+        "doneWhen": [
+          "une nouvelle version ne réécrit jamais l'ancienne",
+          "chaque séance historique garde sa version source"
+        ],
+        "journey": [
+          "L’athlète duplique ou fait évoluer son programme vers une nouvelle version.",
+          "Il nomme et ordonne ses blocs, par exemple Bloc 1, Deload, Bloc 2.",
+          "Chaque séance historique reste rattachée à la version exacte utilisée."
+        ],
+        "rules": [
+          "Une nouvelle version ne réécrit jamais l’ancienne.",
+          "La lignée entre versions doit rester lisible.",
+          "Les règles de propriété coach/personnelle sont conservées lors du versioning."
+        ],
+        "examples": [
+          "PPL V1 devient PPL V2 sans perdre les séances réalisées sous V1.",
+          "Un deload existe comme bloc explicite plutôt que comme écrasement du programme courant."
+        ],
+        "data": [
+          "version de programme",
+          "bloc/cycle",
+          "ordre",
+          "provenance session→version"
+        ],
+        "dependencies": [
+          "LN-21 pour la duplication",
+          "LN-24 pour les programmes coachés"
+        ],
+        "attention": [
+          "éviter de multiplier les programmes sans lien",
+          "ne pas modifier l’historique quand le bloc courant change"
         ]
       },
       "contractAvailable": true
