@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T16:32:23.057Z",
+  "publishedAt": "2026-10-01T16:34:33.749Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "CONSISTENCY_ERROR",
-    "currentLot": "LN-51",
-    "nextLot": "LN-52",
-    "launchedAt": "2026-10-01T13:30:05.363Z",
-    "lastProgressAt": "2026-10-01T13:58:38.849Z",
-    "lastChatCheckAt": "2026-10-01T13:30:05.363Z",
-    "lastObservedMainSha": "1a84e9dde5d51530c0f121e404c5c6b8320f8dbf",
+    "status": "RUNNING",
+    "currentLot": "LN-52",
+    "nextLot": null,
+    "launchedAt": "2026-10-01T16:34:28.585Z",
+    "lastProgressAt": "2026-10-01T16:34:28.585Z",
+    "lastChatCheckAt": "2026-10-01T16:34:28.585Z",
+    "lastObservedMainSha": "780c98720d4db334b424854d382b1a23890bcef7",
     "nudges": 0,
-    "lastMessage": "LN-51 is DONE but completion invariants failed; next lot not launched.",
-    "lastError": "LN-51 completion record does not identify a PR. LN-51 completion record does not record a merge SHA.",
-    "lastSuccessfulTickAt": "2026-10-01T14:02:24.313Z",
-    "nextTickAt": "2026-10-01T16:37:12.852Z",
+    "lastMessage": "Launched LN-52; canonical chat persisted before prompt marker became visible",
+    "lastError": null,
+    "lastSuccessfulTickAt": "2026-10-01T16:34:28.585Z",
+    "nextTickAt": "2026-10-01T16:39:28.585Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-39",
-        "completedAt": "2026-10-01T08:33:27.685Z",
-        "restartedAt": null,
-        "mainSha": "bfbf6f0d6e757e4b5139e648776c57f948bbcd91",
-        "reason": null
-      },
       {
         "lot": "LN-40",
         "completedAt": "2026-10-01T08:44:45.944Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "890fd78e794b6e33f7b33037231aac03a515b811",
         "reason": null
+      },
+      {
+        "lot": "LN-51",
+        "completedAt": "2026-10-01T16:33:02.026Z",
+        "restartedAt": null,
+        "mainSha": "780c98720d4db334b424854d382b1a23890bcef7",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "4176ec5f8b9b501e0a10f2f4129b4d563457a221",
+    "mainSha": "780c98720d4db334b424854d382b1a23890bcef7",
     "lots": [
       {
         "id": "LN-00",
@@ -3923,97 +3923,6 @@
     "total": 62,
     "percent": 98,
     "current": {
-      "id": "LN-51",
-      "title": "Full drop-set modeling and logging",
-      "status": "DONE",
-      "goal": "make drop sets a first-class grouped effort with ordered load/repetition stages rather than three unrelated ordinary sets.",
-      "business": {
-        "summary": "Enregistrer de vrais drop sets multi-paliers comme un seul effort structuré.",
-        "why": "Un drop set 100 kg → 80 kg → 60 kg n'est pas trois séries indépendantes : les paliers appartiennent à une même technique d'intensification et doivent rester groupés.",
-        "builds": [
-          "un drop set parent contenant plusieurs paliers ordonnés",
-          "une saisie mobile rapide des baisses de charge et répétitions",
-          "un repos déclenché seulement après le dernier palier",
-          "un historique groupé et corrigeable sans perdre la structure",
-          "des statistiques qui additionnent les vrais paliers sans double comptage"
-        ],
-        "userImpact": [
-          "l'athlète peut enfin consigner fidèlement ses drop sets au lieu de bricoler plusieurs séries normales"
-        ],
-        "notInThisLot": [
-          "pas encore de rest-pause, myo-reps ou cluster sets",
-          "pas de record personnel spécifique « meilleur drop set »"
-        ],
-        "doneWhen": [
-          "100 kg × 8 → 80 kg × 6 → 60 kg × 9 reste un seul drop set avec trois paliers",
-          "l'historique, le minuteur et le volume respectent cette structure"
-        ],
-        "journey": [
-          "Dans le modèle de séance, l’athlète peut prévoir qu’une série sera un drop set complet plutôt qu’une série classique.",
-          "Pendant la séance, il démarre le drop set depuis le même écran que les autres séries.",
-          "Il saisit le premier palier, par exemple 100 kg × 8.",
-          "Sans revenir à la liste générale, il ajoute immédiatement le palier suivant, par exemple 80 kg × 6.",
-          "Il peut ajouter autant de paliers que nécessaire, en corriger un ou en retirer un avant validation finale.",
-          "Le drop set reste affiché comme un seul bloc visuel avec ses paliers ordonnés.",
-          "Le repos programmé ne démarre qu’une fois l’ensemble du drop set terminé.",
-          "Après la séance, l’historique conserve le bloc complet exactement comme il a été exécuté."
-        ],
-        "rules": [
-          "Un drop set est un effort parent contenant au moins deux paliers ordonnés.",
-          "Chaque palier conserve ses propres valeurs réelles : charge, répétitions et autres métriques compatibles avec l’exercice.",
-          "Les paliers ne deviennent jamais des séries de travail indépendantes simplement parce qu’ils possèdent chacun une charge et des répétitions.",
-          "Le repos normal de la séance se situe après le drop set complet, pas automatiquement entre ses paliers.",
-          "Le parent sert à représenter la structure ; il ne doit pas ajouter une seconde valeur de volume aux volumes déjà calculés depuis les paliers.",
-          "Une modification future du template ne peut jamais changer le nombre de paliers ou les performances d’un drop set déjà réalisé.",
-          "Corriger un palier historique doit conserver son appartenance au même drop set et sa position dans l’ordre.",
-          "Supprimer le drop set entier supprime explicitement son bloc ; supprimer un seul palier ne doit jamais créer de palier orphelin.",
-          "La sémantique de charge reste celle du mouvement : charge classique, lest ajouté ou assistance restent distincts même dans un drop set.",
-          "La simple étiquette « drop set » créée par LN-26 n’est pas suffisante : LN-51 doit réellement modéliser la structure multi-paliers."
-        ],
-        "examples": [
-          "Développé couché : 100 kg × 8 → 80 kg × 6 → 60 kg × 9, affiché comme un seul drop set à trois paliers.",
-          "Élévations latérales : 12 kg × 12 → 8 kg × 10 → 5 kg × 15.",
-          "Leg extension : 70 kg × 10 → 55 kg × 8 ; l’athlète décide sur le moment de ne faire que deux paliers.",
-          "Après la séance, l’athlète corrige le second palier de 85 kg vers 80 kg : le bloc reste intact et les statistiques sont recalculées proprement.",
-          "Le coach partage un programme contenant un drop set : l’athlète voit la même structure dans sa prescription, puis son exécution est figée au démarrage de la séance."
-        ],
-        "data": [
-          "identifiant du drop set parent",
-          "identifiants des paliers enfants",
-          "ordre explicite des paliers",
-          "type de série hérité de LN-26",
-          "charge, répétitions et métriques propres à chaque palier",
-          "sémantique de charge de chaque performance",
-          "unités applicables",
-          "état de complétion du parent et des paliers",
-          "provenance template / séance / coach / import",
-          "données nécessaires aux corrections historiques et aux statistiques"
-        ],
-        "dependencies": [
-          "LN-06 pour figer la structure dans l’historique au démarrage de la séance",
-          "LN-07 pour la saisie active et le cycle de vie des séries",
-          "LN-08 pour le comportement du minuteur de repos",
-          "LN-11 pour les corrections d’historique",
-          "LN-20 pour distinguer charge classique, lest et assistance",
-          "LN-21/LN-22/LN-24 pour duplication, partage et programmes coachés",
-          "LN-26 pour le type de série drop set",
-          "LN-30 pour les unités",
-          "LN-35/LN-36 pour comparaisons et résumé de séance"
-        ],
-        "attention": [
-          "La saisie doit rester extrêmement rapide sur mobile : l’athlète est généralement sous fatigue entre les paliers.",
-          "Ne pas lancer automatiquement le minuteur de repos entre deux paliers.",
-          "Ne jamais compter deux fois le volume en additionnant un faux volume parent et les volumes des paliers.",
-          "Ne pas créer un nouveau record « meilleur drop set » sans contrat produit dédié.",
-          "Une étape peut éventuellement être éligible aux PR ordinaires uniquement si les règles de type de série le permettent explicitement.",
-          "Le modèle doit permettre la correction ou suppression d’un palier sans casser l’intégrité du parent.",
-          "Ne pas stocker toute la structure uniquement dans une note texte qui empêcherait les requêtes et corrections.",
-          "Rest-pause, myo-reps et cluster sets restent des techniques différentes et ne doivent pas être assimilées automatiquement aux drop sets."
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-52",
       "title": "RPE / RIR perceived effort",
       "status": "TODO",
@@ -4106,6 +4015,7 @@
         ]
       },
       "contractAvailable": true
-    }
+    },
+    "next": null
   }
 }
