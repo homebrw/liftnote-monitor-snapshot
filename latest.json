@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T21:26:18.396Z",
+  "publishedAt": "2026-10-01T21:27:03.073Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-68 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T21:26:12.574Z",
-    "nextTickAt": "2026-10-01T21:31:12.574Z",
+    "lastSuccessfulTickAt": "2026-10-01T21:26:57.477Z",
+    "nextTickAt": "2026-10-01T21:31:57.477Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
