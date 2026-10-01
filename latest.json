@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T23:26:23.304Z",
+  "publishedAt": "2026-10-01T23:27:19.115Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-86",
     "nextLot": "LN-117",
     "launchedAt": "2026-10-01T23:26:11.268Z",
-    "lastProgressAt": "2026-10-01T23:26:11.268Z",
+    "lastProgressAt": "2026-10-01T23:27:07.400Z",
     "lastChatCheckAt": "2026-10-01T23:26:11.268Z",
-    "lastObservedMainSha": "d4bee700c231a6b1cba1e661f29a64ee8e44bcf9",
+    "lastObservedMainSha": "f771c083e02c4033374e26890578c902566ad429",
     "nudges": 0,
-    "lastMessage": "Launched LN-86; canonical chat persisted before prompt marker became visible",
+    "lastMessage": "main moved while LN-86 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T23:26:11.269Z",
-    "nextTickAt": "2026-10-01T23:31:11.269Z",
+    "lastSuccessfulTickAt": "2026-10-01T23:27:07.400Z",
+    "nextTickAt": "2026-10-01T23:32:07.400Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "d4bee700c231a6b1cba1e661f29a64ee8e44bcf9",
+    "mainSha": "f771c083e02c4033374e26890578c902566ad429",
     "lots": [
       {
         "id": "LN-00",
@@ -17524,7 +17524,10 @@
             "Use a versioned WorkoutDraft between model extraction and persistence.",
             "Backend deterministically rejects unknown IDs, permits null/unresolved results, exposes ambiguity and never silently creates a system canonical exercise.",
             "Allow explicit custom-exercise creation only through the reviewed user flow; persist only after explicit confirmation.",
-            "Compress/resize images when reasonable and prefer transient processing unless the user explicitly chooses to retain the source image."
+            "Compress/resize images when reasonable and prefer transient processing unless the user explicitly chooses to retain the source image.",
+            "Direct pasted-text input must be sent to the configured Claude Haiku interpretation call as raw source text, together with the same compact canonical exercise catalog and supported protocol/unit vocabulary used to constrain image interpretation.",
+            "For pasted text there is no OCR/vision-reading stage: the source is already text. Haiku performs semantic workout interpretation/selection directly and returns the same versioned WorkoutDraft shape used by image/PDF AI import.",
+            "Do not replace the pasted-text AI interpretation step with regexes, local fuzzy parsing or a separate deterministic semantic parser. Deterministic code remains authoritative after the model call for ID validation, schema validation, conflict checks and persistence."
           ],
           "userImpact": [
             "flow is source → extraction → structured preview → resolve ambiguity → conflict review → confirm",
@@ -17535,7 +17538,9 @@
             "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
             "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System.",
             "Whiteboard ambiguity review must show the interpreted source text, selected canonical exercise when any, confidence/alternatives where useful, and a direct correction path.",
-            "The ordinary manual create/import path remains available when AI is unavailable, declined or inconclusive."
+            "The ordinary manual create/import path remains available when AI is unavailable, declined or inconclusive.",
+            "Pasted text follows the same reviewed AI-import family as a photo: source text → Haiku semantic interpretation → WorkoutDraft → deterministic validation → ambiguity review → explicit confirmation.",
+            "If AI is disabled/unavailable for pasted-text import, show an unavailable/retry/manual-create path; do not silently fall back to a weaker parser that could change semantics."
           ],
           "journey": [
             "flow is source → extraction → structured preview → resolve ambiguity → conflict review → confirm",
@@ -17546,7 +17551,9 @@
             "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
             "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System.",
             "Whiteboard ambiguity review must show the interpreted source text, selected canonical exercise when any, confidence/alternatives where useful, and a direct correction path.",
-            "The ordinary manual create/import path remains available when AI is unavailable, declined or inconclusive."
+            "The ordinary manual create/import path remains available when AI is unavailable, declined or inconclusive.",
+            "Pasted text follows the same reviewed AI-import family as a photo: source text → Haiku semantic interpretation → WorkoutDraft → deterministic validation → ambiguity review → explicit confirmation.",
+            "If AI is disabled/unavailable for pasted-text import, show an unavailable/retry/manual-create path; do not silently fall back to a weaker parser that could change semantics."
           ],
           "rules": [
             "uploaded documents are user-scoped and follow AI/privacy policy",
@@ -17554,6 +17561,7 @@
             "model transport cannot silently expand data scope",
             "Use minimal disclosure to the model provider: send only the image/document and compact domain context required for interpretation.",
             "Provider/model choice is configurable and evidence-driven; Claude Haiku is an initial implementation reference, not a domain authority.",
+            "For pasted text, send only the raw pasted workout text plus the compact domain context needed for interpretation; no image/OCR payload exists for this source type.",
             "saved content passes deterministic LN-74/LN-85/LN-109 logic",
             "future model improvements may improve extraction but never change identity rules"
           ],
@@ -17574,6 +17582,7 @@
             "model transport cannot silently expand data scope",
             "Use minimal disclosure to the model provider: send only the image/document and compact domain context required for interpretation.",
             "Provider/model choice is configurable and evidence-driven; Claude Haiku is an initial implementation reference, not a domain authority.",
+            "For pasted text, send only the raw pasted workout text plus the compact domain context needed for interpretation; no image/OCR payload exists for this source type.",
             "structured-output/parser fixtures",
             "ambiguous mapping tests",
             "model failure/partial recovery",
@@ -17581,14 +17590,17 @@
             "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
             "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
             "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-            "TinyFish is prohibited."
+            "TinyFish is prohibited.",
+            "pasted-text model-call fixture proving the raw text reaches Haiku directly, without OCR and without a separate semantic parser",
+            "equivalence fixtures comparing photo-derived and pasted-text-derived WorkoutDraft semantics for the same workout"
           ],
           "notInThisLot": [
             "silent save",
             "automatic creation of system canonical exercises",
             "opaque source mapping",
             "medical interpretation",
-            "LLM output as authoritative statistics"
+            "LLM output as authoritative statistics",
+            "a separate non-AI pasted-text semantic parser that bypasses Haiku and the common WorkoutDraft import path"
           ],
           "doneWhen": [
             "nothing persists before review/confirmation",
@@ -17596,7 +17608,9 @@
             "AI never silently expands system catalog",
             "accepted content becomes ordinary structured LiftNote data",
             "A representative board containing rounds plus KB swing, TRX row, DB thruster, plank and run resolves to existing canonical IDs/protocol fields or explicit unresolved items without silent canonical creation.",
-            "Catalog-constrained model output is backend-validated and user-confirmed before persistence."
+            "Catalog-constrained model output is backend-validated and user-confirmed before persistence.",
+            "A representative multiline pasted workout is actually sent to Haiku with the compact catalog/protocol context, produces the same WorkoutDraft contract as an equivalent photo, then passes deterministic backend validation and user review before persistence.",
+            "Equivalent source semantics supplied as photo versus already-readable pasted text converge on equivalent structured workout meaning, except for explicitly surfaced ambiguity."
           ],
           "ux": [
             "flow is source → extraction → structured preview → resolve ambiguity → conflict review → confirm",
@@ -17607,14 +17621,17 @@
             "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
             "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System.",
             "Whiteboard ambiguity review must show the interpreted source text, selected canonical exercise when any, confidence/alternatives where useful, and a direct correction path.",
-            "The ordinary manual create/import path remains available when AI is unavailable, declined or inconclusive."
+            "The ordinary manual create/import path remains available when AI is unavailable, declined or inconclusive.",
+            "Pasted text follows the same reviewed AI-import family as a photo: source text → Haiku semantic interpretation → WorkoutDraft → deterministic validation → ambiguity review → explicit confirmation.",
+            "If AI is disabled/unavailable for pasted-text import, show an unavailable/retry/manual-create path; do not silently fall back to a weaker parser that could change semantics."
           ],
           "security": [
             "uploaded documents are user-scoped and follow AI/privacy policy",
             "coach/private content cannot be imported outside authorization",
             "model transport cannot silently expand data scope",
             "Use minimal disclosure to the model provider: send only the image/document and compact domain context required for interpretation.",
-            "Provider/model choice is configurable and evidence-driven; Claude Haiku is an initial implementation reference, not a domain authority."
+            "Provider/model choice is configurable and evidence-driven; Claude Haiku is an initial implementation reference, not a domain authority.",
+            "For pasted text, send only the raw pasted workout text plus the compact domain context needed for interpretation; no image/OCR payload exists for this source type."
           ],
           "implications": [
             "saved content passes deterministic LN-74/LN-85/LN-109 logic",
@@ -17628,7 +17645,9 @@
             "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
             "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
             "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-            "TinyFish is prohibited."
+            "TinyFish is prohibited.",
+            "pasted-text model-call fixture proving the raw text reaches Haiku directly, without OCR and without a separate semantic parser",
+            "equivalence fixtures comparing photo-derived and pasted-text-derived WorkoutDraft semantics for the same workout"
           ]
         },
         "contract": {
@@ -17653,14 +17672,18 @@
             "Use a versioned WorkoutDraft between model extraction and persistence.",
             "Backend deterministically rejects unknown IDs, permits null/unresolved results, exposes ambiguity and never silently creates a system canonical exercise.",
             "Allow explicit custom-exercise creation only through the reviewed user flow; persist only after explicit confirmation.",
-            "Compress/resize images when reasonable and prefer transient processing unless the user explicitly chooses to retain the source image."
+            "Compress/resize images when reasonable and prefer transient processing unless the user explicitly chooses to retain the source image.",
+            "Direct pasted-text input must be sent to the configured Claude Haiku interpretation call as raw source text, together with the same compact canonical exercise catalog and supported protocol/unit vocabulary used to constrain image interpretation.",
+            "For pasted text there is no OCR/vision-reading stage: the source is already text. Haiku performs semantic workout interpretation/selection directly and returns the same versioned WorkoutDraft shape used by image/PDF AI import.",
+            "Do not replace the pasted-text AI interpretation step with regexes, local fuzzy parsing or a separate deterministic semantic parser. Deterministic code remains authoritative after the model call for ID validation, schema validation, conflict checks and persistence."
           ],
           "exclusions": [
             "silent save",
             "automatic creation of system canonical exercises",
             "opaque source mapping",
             "medical interpretation",
-            "LLM output as authoritative statistics"
+            "LLM output as authoritative statistics",
+            "a separate non-AI pasted-text semantic parser that bypasses Haiku and the common WorkoutDraft import path"
           ],
           "data": [
             "raw source, extracted candidate and final accepted objects remain distinct",
@@ -17676,14 +17699,17 @@
             "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
             "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System.",
             "Whiteboard ambiguity review must show the interpreted source text, selected canonical exercise when any, confidence/alternatives where useful, and a direct correction path.",
-            "The ordinary manual create/import path remains available when AI is unavailable, declined or inconclusive."
+            "The ordinary manual create/import path remains available when AI is unavailable, declined or inconclusive.",
+            "Pasted text follows the same reviewed AI-import family as a photo: source text → Haiku semantic interpretation → WorkoutDraft → deterministic validation → ambiguity review → explicit confirmation.",
+            "If AI is disabled/unavailable for pasted-text import, show an unavailable/retry/manual-create path; do not silently fall back to a weaker parser that could change semantics."
           ],
           "security": [
             "uploaded documents are user-scoped and follow AI/privacy policy",
             "coach/private content cannot be imported outside authorization",
             "model transport cannot silently expand data scope",
             "Use minimal disclosure to the model provider: send only the image/document and compact domain context required for interpretation.",
-            "Provider/model choice is configurable and evidence-driven; Claude Haiku is an initial implementation reference, not a domain authority."
+            "Provider/model choice is configurable and evidence-driven; Claude Haiku is an initial implementation reference, not a domain authority.",
+            "For pasted text, send only the raw pasted workout text plus the compact domain context needed for interpretation; no image/OCR payload exists for this source type."
           ],
           "implications": [
             "saved content passes deterministic LN-74/LN-85/LN-109 logic",
@@ -17695,7 +17721,9 @@
             "AI never silently expands system catalog",
             "accepted content becomes ordinary structured LiftNote data",
             "A representative board containing rounds plus KB swing, TRX row, DB thruster, plank and run resolves to existing canonical IDs/protocol fields or explicit unresolved items without silent canonical creation.",
-            "Catalog-constrained model output is backend-validated and user-confirmed before persistence."
+            "Catalog-constrained model output is backend-validated and user-confirmed before persistence.",
+            "A representative multiline pasted workout is actually sent to Haiku with the compact catalog/protocol context, produces the same WorkoutDraft contract as an equivalent photo, then passes deterministic backend validation and user review before persistence.",
+            "Equivalent source semantics supplied as photo versus already-readable pasted text converge on equivalent structured workout meaning, except for explicitly surfaced ambiguity."
           ],
           "validation": [
             "structured-output/parser fixtures",
@@ -17705,7 +17733,9 @@
             "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
             "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
             "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-            "TinyFish is prohibited."
+            "TinyFish is prohibited.",
+            "pasted-text model-call fixture proving the raw text reaches Haiku directly, without OCR and without a separate semantic parser",
+            "equivalence fixtures comparing photo-derived and pasted-text-derived WorkoutDraft semantics for the same workout"
           ],
           "completion": {
             "pr": null,
@@ -18582,7 +18612,8 @@
             "deterministic interoperability payload is versioned and testable independently from Haiku;",
             "imported text becomes authoritative only after structured review/validation/confirmation and ordinary persistence;",
             "canonical exercise identity, load semantics, set types, blocks and snapshots retain existing meanings;",
-            "no text round-trip may merge distinct exercise histories or rewrite completed sessions."
+            "no text round-trip may merge distinct exercise histories or rewrite completed sessions.",
+            "pasted-text and image inputs converge on the same versioned WorkoutDraft; source type/provenance differs, structured workout semantics do not get a separate text-only domain model"
           ],
           "dependencies": [
             "LN-74 structured program/template import/export;",
@@ -18612,7 +18643,9 @@
             "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
             "Use targeted tests first; migration/RLS tests for persistence/authorization.",
             "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-            "TinyFish is prohibited."
+            "TinyFish is prohibited.",
+            "mocked inbound Haiku call asserts the original pasted text is the model source and that the image/OCR path is not invoked",
+            "paired photo-vs-text semantic fixtures assert shared WorkoutDraft behavior"
           ],
           "notInThisLot": [
             "no Roxfit login, credential storage or API automation;",
@@ -18624,7 +18657,9 @@
             "no prose-only LiftNote workout that bypasses structured domain validation;",
             "no sharing of private performance/health data merely to improve wording;",
             "no autonomous program changes;",
-            "no guaranteed support for workout semantics LiftNote itself does not yet model."
+            "no guaranteed support for workout semantics LiftNote itself does not yet model.",
+            "no OCR step for already-readable pasted text",
+            "no regex/local deterministic workout parser used as the primary semantic interpreter for pasted text"
           ],
           "doneWhen": [
             "a user can open a structured workout/template and obtain one copyable high-fidelity Roxfit Hype-oriented description;",
@@ -18637,7 +18672,9 @@
             "ambiguity is visible and correctable;",
             "representative round-trip fixtures preserve every claimed supported semantic or explicitly flag loss;",
             "Roxfit compatibility is described from observed evidence, not asserted as an undocumented guarantee;",
-            "no direct Roxfit credentials/API integration is introduced."
+            "no direct Roxfit credentials/API integration is introduced.",
+            "the raw pasted workout text is verifiably sent to Haiku with compact catalog/protocol context and no OCR or separate semantic pre-parser",
+            "an equivalent workout supplied as pasted text and as a readable photo produces equivalent reviewed WorkoutDraft semantics within explicitly surfaced ambiguity"
           ],
           "ux": [
             "outbound export is reachable from the workout/template where the user naturally expects share/export actions;",
@@ -18679,7 +18716,9 @@
             "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
             "Use targeted tests first; migration/RLS tests for persistence/authorization.",
             "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-            "TinyFish is prohibited."
+            "TinyFish is prohibited.",
+            "mocked inbound Haiku call asserts the original pasted text is the model source and that the image/OCR path is not invoked",
+            "paired photo-vs-text semantic fixtures assert shared WorkoutDraft behavior"
           ]
         },
         "contract": {
@@ -18723,7 +18762,9 @@
             "no prose-only LiftNote workout that bypasses structured domain validation;",
             "no sharing of private performance/health data merely to improve wording;",
             "no autonomous program changes;",
-            "no guaranteed support for workout semantics LiftNote itself does not yet model."
+            "no guaranteed support for workout semantics LiftNote itself does not yet model.",
+            "no OCR step for already-readable pasted text",
+            "no regex/local deterministic workout parser used as the primary semantic interpreter for pasted text"
           ],
           "data": [
             "outbound text is a representation of a versioned structured source, never the source of truth;",
@@ -18731,7 +18772,8 @@
             "deterministic interoperability payload is versioned and testable independently from Haiku;",
             "imported text becomes authoritative only after structured review/validation/confirmation and ordinary persistence;",
             "canonical exercise identity, load semantics, set types, blocks and snapshots retain existing meanings;",
-            "no text round-trip may merge distinct exercise histories or rewrite completed sessions."
+            "no text round-trip may merge distinct exercise histories or rewrite completed sessions.",
+            "pasted-text and image inputs converge on the same versioned WorkoutDraft; source type/provenance differs, structured workout semantics do not get a separate text-only domain model"
           ],
           "ux": [
             "outbound export is reachable from the workout/template where the user naturally expects share/export actions;",
@@ -18770,7 +18812,9 @@
             "ambiguity is visible and correctable;",
             "representative round-trip fixtures preserve every claimed supported semantic or explicitly flag loss;",
             "Roxfit compatibility is described from observed evidence, not asserted as an undocumented guarantee;",
-            "no direct Roxfit credentials/API integration is introduced."
+            "no direct Roxfit credentials/API integration is introduced.",
+            "the raw pasted workout text is verifiably sent to Haiku with compact catalog/protocol context and no OCR or separate semantic pre-parser",
+            "an equivalent workout supplied as pasted text and as a readable photo produces equivalent reviewed WorkoutDraft semantics within explicitly surfaced ambiguity"
           ],
           "validation": [
             "deterministic interoperability-payload serialization tests;",
@@ -18786,7 +18830,9 @@
             "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
             "Use targeted tests first; migration/RLS tests for persistence/authorization.",
             "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-            "TinyFish is prohibited."
+            "TinyFish is prohibited.",
+            "mocked inbound Haiku call asserts the original pasted text is the model source and that the image/OCR path is not invoked",
+            "paired photo-vs-text semantic fixtures assert shared WorkoutDraft behavior"
           ],
           "completion": {
             "pr": null,
