@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T11:53:19.665Z",
+  "publishedAt": "2026-10-01T11:54:16.257Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-45",
-    "nextLot": "LN-46",
-    "launchedAt": "2026-10-01T10:40:29.621Z",
-    "lastProgressAt": "2026-10-01T11:50:22.988Z",
-    "lastChatCheckAt": "2026-10-01T11:31:19.003Z",
-    "lastObservedMainSha": "750df0e7d65d11526353d9c196b7381d29e76ce6",
-    "nudges": 2,
-    "lastMessage": "main moved while LN-45 is active",
+    "currentLot": "LN-46",
+    "nextLot": "LN-47",
+    "launchedAt": "2026-10-01T11:54:10.757Z",
+    "lastProgressAt": "2026-10-01T11:54:10.757Z",
+    "lastChatCheckAt": "2026-10-01T11:54:10.757Z",
+    "lastObservedMainSha": "b4adf2c2874a74de0ee78a4e5c6a73711a04132a",
+    "nudges": 0,
+    "lastMessage": "Launched LN-46; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T11:53:14.653Z",
-    "nextTickAt": "2026-10-01T11:58:14.653Z",
+    "lastSuccessfulTickAt": "2026-10-01T11:54:10.757Z",
+    "nextTickAt": "2026-10-01T11:59:10.757Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-33",
-        "completedAt": "2026-10-01T07:34:27.724Z",
-        "restartedAt": null,
-        "mainSha": "4de8bf7d0cf39460747286b31d19982498d0dc17",
-        "reason": null
-      },
       {
         "lot": "LN-34",
         "completedAt": "2026-10-01T07:43:56.813Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "246f96927cde85ee2fc3bd8ed1a4ee6609fb52d8",
         "reason": null
+      },
+      {
+        "lot": "LN-45",
+        "completedAt": "2026-10-01T11:53:58.278Z",
+        "restartedAt": null,
+        "mainSha": "b4adf2c2874a74de0ee78a4e5c6a73711a04132a",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "750df0e7d65d11526353d9c196b7381d29e76ce6",
+    "mainSha": "b4adf2c2874a74de0ee78a4e5c6a73711a04132a",
     "lots": [
       {
         "id": "LN-00",
@@ -3402,7 +3402,7 @@
       {
         "id": "LN-45",
         "title": "Robust offline workout mode and resynchronization",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "keep active workouts fully usable through poor/no network and synchronize safely later.",
         "business": {
           "summary": "Rendre une séance active utilisable sans réseau puis la resynchroniser.",
@@ -3919,66 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 54,
+    "done": 55,
     "total": 62,
-    "percent": 87,
+    "percent": 89,
     "current": {
-      "id": "LN-45",
-      "title": "Robust offline workout mode and resynchronization",
-      "status": "TODO",
-      "goal": "keep active workouts fully usable through poor/no network and synchronize safely later.",
-      "business": {
-        "summary": "Rendre une séance active utilisable sans réseau puis la resynchroniser.",
-        "why": "Le réseau est souvent médiocre en salle et ne doit jamais faire perdre des séries.",
-        "builds": [
-          "continuation hors ligne",
-          "sauvegarde locale durable",
-          "file de synchronisation",
-          "resynchronisation sans doublons",
-          "gestion explicite des conflits",
-          "états hors ligne/sync/erreur"
-        ],
-        "userImpact": [
-          "l'athlète peut terminer sa séance sans connexion et retrouver ensuite ses données"
-        ],
-        "notInThisLot": [
-          "aucune perte silencieuse en cas de conflit"
-        ],
-        "doneWhen": [
-          "une séance survit à une coupure réseau",
-          "la reconnexion ne crée pas de séries en double"
-        ],
-        "journey": [
-          "L’athlète perd le réseau pendant une séance.",
-          "Il continue à saisir et modifier ses séries localement.",
-          "Au retour du réseau, LiftNote resynchronise sans doublons et signale les conflits éventuels."
-        ],
-        "rules": [
-          "Les opérations locales doivent être durables.",
-          "La resynchronisation est idempotente.",
-          "Aucun conflit non résolu n’est masqué."
-        ],
-        "examples": [
-          "Trois séries saisies hors ligne puis synchronisées une seule fois.",
-          "Une modification concurrente produit un état explicite à résoudre."
-        ],
-        "data": [
-          "queue locale",
-          "opérations idempotentes",
-          "état sync/conflit"
-        ],
-        "dependencies": [
-          "LN-14 PWA/mobile",
-          "LN-07 session active"
-        ],
-        "attention": [
-          "ne pas dupliquer les sets",
-          "tester refresh/background et reconnexion intermittente"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-46",
       "title": "Workout lock / focus display",
       "status": "TODO",
@@ -4028,6 +3972,61 @@
         "attention": [
           "accessibilité de la sortie",
           "ne pas masquer des actions nécessaires"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-47",
+      "title": "Useful configurable notifications",
+      "status": "TODO",
+      "goal": "provide opt-in notifications for genuinely time-sensitive training events.",
+      "business": {
+        "summary": "Envoyer uniquement des notifications utiles et configurables.",
+        "why": "La fin du repos ou une séance prévue perdent leur intérêt si l'information arrive trop tard.",
+        "builds": [
+          "préférences de notifications",
+          "fin de repos",
+          "rappels de séance planifiée",
+          "rappels d'inactivité uniquement si activés",
+          "ouverture directe du bon écran"
+        ],
+        "userImpact": [
+          "l'athlète peut quitter l'écran sans rater les événements importants"
+        ],
+        "notInThisLot": [
+          "pas de notifications imposées ou intrusives"
+        ],
+        "doneWhen": [
+          "chaque notification respecte permission et préférence",
+          "la confidentialité écran verrouillé est prise en compte"
+        ],
+        "journey": [
+          "L’utilisateur choisit quelles notifications il souhaite.",
+          "LiftNote envoie par exemple une fin de repos ou un rappel planifié.",
+          "Le clic ouvre directement le bon écran."
+        ],
+        "rules": [
+          "Aucune notification sans permission et préférence.",
+          "Les rappels restent configurables et non intrusifs.",
+          "La confidentialité écran verrouillé est prise en compte."
+        ],
+        "examples": [
+          "Notification « repos terminé » liée au vrai timer.",
+          "Rappel d’inactivité désactivé par défaut sauf choix explicite."
+        ],
+        "data": [
+          "préférences notifications",
+          "événement source",
+          "deep link"
+        ],
+        "dependencies": [
+          "LN-08 timer",
+          "LN-48 deep links"
+        ],
+        "attention": [
+          "notifications obsolètes",
+          "contenu sensible affiché sur écran verrouillé"
         ]
       },
       "contractAvailable": true
