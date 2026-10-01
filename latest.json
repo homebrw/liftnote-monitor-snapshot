@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T21:30:43.279Z",
+  "publishedAt": "2026-10-01T21:31:35.724Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-68",
-    "nextLot": "LN-69",
-    "launchedAt": "2026-10-01T21:10:24.771Z",
-    "lastProgressAt": "2026-10-01T21:28:26.357Z",
-    "lastChatCheckAt": "2026-10-01T21:10:24.771Z",
-    "lastObservedMainSha": "ef7f155b44415b47388e52d3403634206a646a96",
+    "currentLot": "LN-69",
+    "nextLot": "LN-70",
+    "launchedAt": "2026-10-01T21:31:29.619Z",
+    "lastProgressAt": "2026-10-01T21:31:29.619Z",
+    "lastChatCheckAt": "2026-10-01T21:31:29.619Z",
+    "lastObservedMainSha": "2aa1a967015834ff591f89a392698fe744548967",
     "nudges": 0,
-    "lastMessage": "main moved while LN-68 is active",
+    "lastMessage": "Launched LN-69; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T21:30:38.132Z",
-    "nextTickAt": "2026-10-01T21:35:38.132Z",
+    "lastSuccessfulTickAt": "2026-10-01T21:31:29.619Z",
+    "nextTickAt": "2026-10-01T21:36:29.619Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-56",
-        "completedAt": "2026-10-01T18:40:17.617Z",
-        "restartedAt": null,
-        "mainSha": "4e8241703c3ed01a43685920efe425dad8ae57a6",
-        "reason": null
-      },
       {
         "lot": "LN-57",
         "completedAt": "2026-10-01T18:49:08.184Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "a930979b5c49536de0cc055f43083cc2326c4941",
         "reason": null
+      },
+      {
+        "lot": "LN-68",
+        "completedAt": "2026-10-01T21:31:21.580Z",
+        "restartedAt": null,
+        "mainSha": "2aa1a967015834ff591f89a392698fe744548967",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "ef7f155b44415b47388e52d3403634206a646a96",
+    "mainSha": "2aa1a967015834ff591f89a392698fe744548967",
     "lots": [
       {
         "id": "LN-00",
@@ -4115,7 +4115,7 @@
       {
         "id": "LN-68",
         "title": "Règles de progression programmables",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Permettre d’exprimer une progression déterministe, explicable et éditable.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 77,
+    "done": 78,
     "total": 90,
-    "percent": 86,
+    "percent": 87,
     "current": {
-      "id": "LN-68",
-      "title": "Règles de progression programmables",
+      "id": "LN-69",
+      "title": "Variantes de prescription par semaine",
       "status": "TODO",
-      "goal": "Permettre d’exprimer une progression déterministe, explicable et éditable.",
+      "goal": "Faire varier séries/reps/charge/tempo/effort sans dupliquer toute la séance.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-69",
-      "title": "Variantes de prescription par semaine",
+      "id": "LN-70",
+      "title": "Planification datée et rappels de séances",
       "status": "TODO",
-      "goal": "Faire varier séries/reps/charge/tempo/effort sans dupliquer toute la séance.",
+      "goal": "Ajouter une planification explicite pour savoir quoi faire aujourd’hui sans inventer une prochaine séance.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
