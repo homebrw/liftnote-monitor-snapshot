@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T04:34:28.206Z",
+  "publishedAt": "2026-10-01T04:35:12.880Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "RUNNING",
+    "status": "CONSISTENCY_ERROR",
     "currentLot": "LN-30",
     "nextLot": "LN-31",
     "launchedAt": "2026-10-01T04:11:30.118Z",
@@ -11,10 +11,10 @@
     "lastChatCheckAt": "2026-10-01T04:11:30.118Z",
     "lastObservedMainSha": "0873db079279b58cd4296ec9d0b51cd930f4ed8b",
     "nudges": 0,
-    "lastMessage": "main moved while LN-30 is active",
-    "lastError": null,
+    "lastMessage": "LN-30 is DONE but completion invariants failed; next lot not launched.",
+    "lastError": "LN-30 completion record does not record a merge SHA.",
     "lastSuccessfulTickAt": "2026-10-01T04:34:23.028Z",
-    "nextTickAt": "2026-10-01T04:39:23.028Z",
+    "nextTickAt": "2026-10-01T04:40:07.293Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "0873db079279b58cd4296ec9d0b51cd930f4ed8b",
+    "mainSha": "562d26ac7e418d38048fa909cc3f00bcab32c871",
     "lots": [
       {
         "id": "LN-00",
@@ -2592,7 +2592,7 @@
       {
         "id": "LN-30",
         "title": "Measurement units across exercise tracking",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "support kg/lb plus movement-specific duration, distance, calories and height semantics without losing historical meaning.",
         "business": {
           "summary": "Gérer proprement kg/lb et les autres unités : temps, distance, calories, hauteur.",
@@ -3919,13 +3919,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 39,
+    "done": 40,
     "total": 62,
-    "percent": 63,
+    "percent": 65,
     "current": {
       "id": "LN-30",
       "title": "Measurement units across exercise tracking",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "support kg/lb plus movement-specific duration, distance, calories and height semantics without losing historical meaning.",
       "business": {
         "summary": "Gérer proprement kg/lb et les autres unités : temps, distance, calories, hauteur.",
