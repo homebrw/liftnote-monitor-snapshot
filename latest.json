@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T12:35:29.112Z",
+  "publishedAt": "2026-10-01T12:36:24.906Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-48",
-    "nextLot": "LN-49",
-    "launchedAt": "2026-10-01T12:18:54.040Z",
-    "lastProgressAt": "2026-10-01T12:32:32.878Z",
-    "lastChatCheckAt": "2026-10-01T12:18:54.040Z",
-    "lastObservedMainSha": "080fdb434903b281a6b90a02a68dc34503ed34f4",
+    "currentLot": "LN-49",
+    "nextLot": "LN-50",
+    "launchedAt": "2026-10-01T12:36:18.735Z",
+    "lastProgressAt": "2026-10-01T12:36:18.735Z",
+    "lastChatCheckAt": "2026-10-01T12:36:18.735Z",
+    "lastObservedMainSha": "15814d754d4697b52e799439478c098f393b98ff",
     "nudges": 0,
-    "lastMessage": "main moved while LN-48 is active",
+    "lastMessage": "Launched LN-49; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T12:35:24.212Z",
-    "nextTickAt": "2026-10-01T12:40:24.212Z",
+    "lastSuccessfulTickAt": "2026-10-01T12:36:18.735Z",
+    "nextTickAt": "2026-10-01T12:41:18.735Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-36",
-        "completedAt": "2026-10-01T08:07:36.486Z",
-        "restartedAt": null,
-        "mainSha": "4960a77caf26400a4afc13230aa5bf89a8e27f45",
-        "reason": null
-      },
       {
         "lot": "LN-37",
         "completedAt": "2026-10-01T08:17:09.460Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "3e816b5e264dc92d08eb1e44d8ce4111ef2aae25",
         "reason": null
+      },
+      {
+        "lot": "LN-48",
+        "completedAt": "2026-10-01T12:36:07.735Z",
+        "restartedAt": null,
+        "mainSha": "15814d754d4697b52e799439478c098f393b98ff",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "080fdb434903b281a6b90a02a68dc34503ed34f4",
+    "mainSha": "15814d754d4697b52e799439478c098f393b98ff",
     "lots": [
       {
         "id": "LN-00",
@@ -3567,7 +3567,7 @@
       {
         "id": "LN-48",
         "title": "Deep links to LiftNote entities",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "create stable safe links to programs, workouts and exercises for notifications and future integrations.",
         "business": {
           "summary": "Créer des liens directs vers un programme, une séance ou un exercice.",
@@ -3919,64 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 57,
+    "done": 58,
     "total": 62,
-    "percent": 92,
+    "percent": 94,
     "current": {
-      "id": "LN-48",
-      "title": "Deep links to LiftNote entities",
-      "status": "TODO",
-      "goal": "create stable safe links to programs, workouts and exercises for notifications and future integrations.",
-      "business": {
-        "summary": "Créer des liens directs vers un programme, une séance ou un exercice.",
-        "why": "Notifications et futures intégrations doivent ouvrir directement le bon contenu.",
-        "builds": [
-          "routes stables par entité",
-          "retour au bon écran après connexion",
-          "gestion des contenus absents/archivés/interdits",
-          "identifiants sûrs"
-        ],
-        "userImpact": [
-          "un lien mène directement à la bonne page"
-        ],
-        "notInThisLot": [
-          "un lien ne donne jamais accès à un contenu non autorisé"
-        ],
-        "doneWhen": [
-          "la destination survit à la connexion",
-          "les liens invalides échouent proprement"
-        ],
-        "journey": [
-          "L’utilisateur ouvre un lien LiftNote.",
-          "S’il doit se connecter, il revient ensuite vers la destination demandée.",
-          "Le contenu s’ouvre seulement s’il est autorisé et encore disponible."
-        ],
-        "rules": [
-          "Un lien ne contourne jamais l’autorisation.",
-          "Les routes entités sont stables.",
-          "Les destinations manquantes/archivées échouent proprement."
-        ],
-        "examples": [
-          "Lien direct vers un exercice depuis une notification.",
-          "Lien vers programme privé refusé sans fuite de titre."
-        ],
-        "data": [
-          "route canonique",
-          "identifiant public/sûr",
-          "return-to auth"
-        ],
-        "dependencies": [
-          "LN-15 auth",
-          "LN-47 notifications"
-        ],
-        "attention": [
-          "éviter les fuites via messages d’erreur",
-          "préserver la destination à travers l’auth"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-49",
       "title": "Temporary exercise unavailability",
       "status": "TODO",
@@ -4027,6 +3973,63 @@
         "attention": [
           "pas de diagnostic",
           "expiration prévisible selon fuseau/date"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-50",
+      "title": "Exercise alternatives and substitution graph",
+      "status": "TODO",
+      "goal": "associate meaningful alternatives and support one-off substitutions without merging distinct exercise histories.",
+      "business": {
+        "summary": "Associer des exercices alternatifs et permettre une substitution ponctuelle.",
+        "why": "Une machine peut être occupée ou absente ; l'athlète doit pouvoir s'adapter sans casser son programme ni son historique.",
+        "builds": [
+          "graphe d'alternatives système et personnelles",
+          "alternatives depuis l'exercice ou la séance",
+          "substitution ponctuelle",
+          "traçabilité prévu vs réalisé",
+          "priorisation selon matériel et indisponibilités"
+        ],
+        "userImpact": [
+          "l'athlète adapte sa séance à la réalité de la salle tout en gardant un historique exact"
+        ],
+        "notInThisLot": [
+          "les alternatives ne fusionnent jamais les historiques",
+          "pas de recommandation médicale automatique"
+        ],
+        "doneWhen": [
+          "la séance enregistre ce qui était prévu et ce qui a été réellement fait",
+          "le template ne change que sur action explicite"
+        ],
+        "journey": [
+          "L’athlète voit qu’un exercice est indisponible ou impraticable.",
+          "LiftNote propose des alternatives pertinentes.",
+          "Il choisit une substitution ponctuelle pour la séance.",
+          "L’historique conserve le mouvement réellement réalisé sans changer le template sauf action explicite."
+        ],
+        "rules": [
+          "Une alternative n’est pas une équivalence parfaite.",
+          "Les historiques des exercices restent distincts.",
+          "Le template ne change que sur demande explicite."
+        ],
+        "examples": [
+          "Bench remplacé aujourd’hui par Dumbbell Bench.",
+          "Chest Press proposée parce que le profil de salle dispose de la machine."
+        ],
+        "data": [
+          "graphe alternatives",
+          "prescrit vs réalisé",
+          "contexte équipement/indisponibilité"
+        ],
+        "dependencies": [
+          "LN-29 profils de salle",
+          "LN-49 indisponibilité"
+        ],
+        "attention": [
+          "ne pas transformer une alternative en recommandation médicale",
+          "préserver la provenance prescrit/réalisé"
         ]
       },
       "contractAvailable": true
