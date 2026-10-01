@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T23:09:05.666Z",
+  "publishedAt": "2026-10-01T23:11:27.974Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-84",
-    "nextLot": "LN-85",
-    "launchedAt": "2026-10-01T22:57:37.651Z",
-    "lastProgressAt": "2026-10-01T23:07:53.300Z",
-    "lastChatCheckAt": "2026-10-01T22:57:37.651Z",
-    "lastObservedMainSha": "cf3d3c463033feb1ad9d2db5bf32045013e6c94c",
+    "currentLot": "LN-85",
+    "nextLot": "LN-86",
+    "launchedAt": "2026-10-01T23:11:14.740Z",
+    "lastProgressAt": "2026-10-01T23:11:14.740Z",
+    "lastChatCheckAt": "2026-10-01T23:11:14.740Z",
+    "lastObservedMainSha": "02b9e2c514f88614a35d65933a4f96a53270ecfa",
     "nudges": 0,
-    "lastMessage": "main moved while LN-84 is active",
+    "lastMessage": "Launched LN-85; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T23:08:54.758Z",
-    "nextTickAt": "2026-10-01T23:13:54.758Z",
+    "lastSuccessfulTickAt": "2026-10-01T23:11:14.740Z",
+    "nextTickAt": "2026-10-01T23:16:14.740Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-61",
-        "completedAt": "2026-10-01T19:23:24.674Z",
-        "restartedAt": null,
-        "mainSha": "fb088f348f14d69444c6730b53a6ae399218edfb",
-        "reason": null
-      },
       {
         "lot": "LN-62",
         "completedAt": "2026-10-01T19:32:58.967Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "121c254957c58db6a0fe678cfa6189e1daadee52",
         "reason": null
+      },
+      {
+        "lot": "LN-84",
+        "completedAt": "2026-10-01T23:09:49.516Z",
+        "restartedAt": null,
+        "mainSha": "02b9e2c514f88614a35d65933a4f96a53270ecfa",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "cf3d3c463033feb1ad9d2db5bf32045013e6c94c",
+    "mainSha": "02b9e2c514f88614a35d65933a4f96a53270ecfa",
     "lots": [
       {
         "id": "LN-00",
@@ -9067,7 +9067,7 @@
       {
         "id": "LN-84",
         "title": "Complete FR/EN System Exercise Localization",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Give every appropriate system exercise a complete French product representation while preserving English/source traceability and searchability.",
         "business": {
           "phase": "Exercise Intelligence",
@@ -9223,8 +9223,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "765",
+            "mergeSha": "cf3d3c463033feb1ad9d2db5bf32045013e6c94c"
           }
         },
         "contractAvailable": true,
@@ -18611,176 +18611,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 81,
+    "done": 82,
     "total": 136,
     "percent": 60,
     "current": {
-      "id": "LN-84",
-      "title": "Complete FR/EN System Exercise Localization",
-      "status": "TODO",
-      "goal": "Give every appropriate system exercise a complete French product representation while preserving English/source traceability and searchability.",
-      "business": {
-        "phase": "Exercise Intelligence",
-        "summary": "Give every appropriate system exercise a complete French product representation while preserving English/source traceability and searchability.",
-        "why": "Partial localization creates inconsistent search, detail and coaching experiences and makes source data leak into the product.",
-        "builds": [
-          "complete FR names, aliases, descriptions, instructions and anatomy labels where product-owned/editorially permitted",
-          "preserve English canonical/source names and aliases for search/provenance",
-          "define localized UI labels for technical vocabularies",
-          "editorial completeness rules for future system imports",
-          "Localization completeness applies to every system movement admitted by LN-118, including common Circuit / Conditioning aliases and abbreviations that are useful for search/AI recognition.",
-          "FR/EN aliases may come from reviewed source candidates, but product display copy must distinguish LiftNote editorial localization from source-owned text."
-        ],
-        "userImpact": [
-          "French UI uses French product copy consistently while English aliases remain discoverable",
-          "fallback behavior must be explicit and non-jarring when a field is unavailable",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "French UI uses French product copy consistently while English aliases remain discoverable",
-          "fallback behavior must be explicit and non-jarring when a field is unavailable",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "no authorization change expected",
-          "custom exercises remain user-owned and untouched",
-          "offline snapshots keep historically necessary display names",
-          "search consumes both languages; exercise detail prefers locale while preserving source traceability",
-          "AI import may use multilingual aliases but cannot promote translations into canonical system truth"
-        ],
-        "examples": [],
-        "data": [
-          "localization fields remain attached to stable canonical system IDs",
-          "source refreshes preserve editorial French fields unless explicitly reviewed",
-          "track missing/unknown translations rather than silently falling back as if complete"
-        ],
-        "dependencies": [
-          "Requires LN-83 DONE and its normalized knowledge model."
-        ],
-        "attention": [
-          "no authorization change expected",
-          "custom exercises remain user-owned and untouched",
-          "offline snapshots keep historically necessary display names",
-          "catalog completeness tests across required localized fields",
-          "search regression tests for FR/EN aliases",
-          "source-license/notice checks for reused text",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "do not translate stable IDs, slugs or technical enum values",
-          "do not machine-translate user-created custom exercises as product truth",
-          "do not import unlicensed source text/media"
-        ],
-        "doneWhen": [
-          "all system exercises in the supported catalog meet the documented localization completeness threshold",
-          "English aliases remain searchable in French UI and vice versa where supported",
-          "custom exercises are not rewritten",
-          "licensing/attribution obligations remain satisfied",
-          "Exercise Intelligence is not complete merely because localization columns exist: supported canonical movements must be understandable and searchable in both product languages at the quality level defined by the catalog audit."
-        ],
-        "ux": [
-          "French UI uses French product copy consistently while English aliases remain discoverable",
-          "fallback behavior must be explicit and non-jarring when a field is unavailable",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "no authorization change expected",
-          "custom exercises remain user-owned and untouched",
-          "offline snapshots keep historically necessary display names"
-        ],
-        "implications": [
-          "search consumes both languages; exercise detail prefers locale while preserving source traceability",
-          "AI import may use multilingual aliases but cannot promote translations into canonical system truth"
-        ],
-        "validation": [
-          "catalog completeness tests across required localized fields",
-          "search regression tests for FR/EN aliases",
-          "source-license/notice checks for reused text",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Exercise Intelligence",
-        "objective": "Give every appropriate system exercise a complete French product representation while preserving English/source traceability and searchability.",
-        "rationale": "Partial localization creates inconsistent search, detail and coaching experiences and makes source data leak into the product.",
-        "dependencies": [
-          "Requires LN-83 DONE and its normalized knowledge model."
-        ],
-        "scope": [
-          "complete FR names, aliases, descriptions, instructions and anatomy labels where product-owned/editorially permitted",
-          "preserve English canonical/source names and aliases for search/provenance",
-          "define localized UI labels for technical vocabularies",
-          "editorial completeness rules for future system imports",
-          "Localization completeness applies to every system movement admitted by LN-118, including common Circuit / Conditioning aliases and abbreviations that are useful for search/AI recognition.",
-          "FR/EN aliases may come from reviewed source candidates, but product display copy must distinguish LiftNote editorial localization from source-owned text."
-        ],
-        "exclusions": [
-          "do not translate stable IDs, slugs or technical enum values",
-          "do not machine-translate user-created custom exercises as product truth",
-          "do not import unlicensed source text/media"
-        ],
-        "data": [
-          "localization fields remain attached to stable canonical system IDs",
-          "source refreshes preserve editorial French fields unless explicitly reviewed",
-          "track missing/unknown translations rather than silently falling back as if complete"
-        ],
-        "ux": [
-          "French UI uses French product copy consistently while English aliases remain discoverable",
-          "fallback behavior must be explicit and non-jarring when a field is unavailable",
-          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
-          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
-          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "no authorization change expected",
-          "custom exercises remain user-owned and untouched",
-          "offline snapshots keep historically necessary display names"
-        ],
-        "implications": [
-          "search consumes both languages; exercise detail prefers locale while preserving source traceability",
-          "AI import may use multilingual aliases but cannot promote translations into canonical system truth"
-        ],
-        "acceptance": [
-          "all system exercises in the supported catalog meet the documented localization completeness threshold",
-          "English aliases remain searchable in French UI and vice versa where supported",
-          "custom exercises are not rewritten",
-          "licensing/attribution obligations remain satisfied",
-          "Exercise Intelligence is not complete merely because localization columns exist: supported canonical movements must be understandable and searchable in both product languages at the quality level defined by the catalog audit."
-        ],
-        "validation": [
-          "catalog completeness tests across required localized fields",
-          "search regression tests for FR/EN aliases",
-          "source-license/notice checks for reused text",
-          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
-          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
-          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-85",
       "title": "Canonicalization & Deduplication v2",
       "status": "TODO",
@@ -18931,6 +18765,165 @@
           "deterministic mapping fixtures and identity-preservation tests",
           "migration/backfill diff review if canonical mappings change",
           "license/provenance regression checks",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-86",
+      "title": "Movement Families & Ontology",
+      "status": "TODO",
+      "goal": "Model conceptual movement families separately from concrete exercise identity and historical performance.",
+      "business": {
+        "phase": "Exercise Intelligence",
+        "summary": "Model conceptual movement families separately from concrete exercise identity and historical performance.",
+        "why": "Programming, discovery and substitutions need concepts such as squat, hinge, horizontal push and vertical pull without collapsing distinct exercises.",
+        "builds": [
+          "LiftNote-owned movement-family taxonomy",
+          "many-to-one or many-to-many membership only where domain evidence requires it",
+          "hierarchy/labels for concepts such as squat, hinge, horizontal push, vertical push/pull and carry",
+          "explicit distinction between family membership, variant relation and substitution relation",
+          "curated mappings for supported system exercises",
+          "Extend the ontology enough to classify common conditioning patterns such as carries, crawls, jump/plyometric patterns, suspension patterns and core/isometric families where evidence supports them, without creating CrossFit-specific taxonomy.",
+          "Equipment family is evidence/context, not movement identity; TRX/suspension remains equipment/exercise semantics rather than a standalone modality."
+        ],
+        "userImpact": [
+          "family labels become progressive-disclosure filters/context, not mandatory jargon in every workout card",
+          "FR/EN labels are localized at the UI layer",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "family labels become progressive-disclosure filters/context, not mandatory jargon in every workout card",
+          "FR/EN labels are localized at the UI layer",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "no new cross-user access",
+          "custom exercise family assignment remains user-owned unless a later explicit workflow supports it",
+          "feeds exercise search, substitutions, program inspection and future deterministic rules",
+          "analytics may aggregate descriptively by family only with documented semantics"
+        ],
+        "examples": [],
+        "data": [
+          "family identifiers are stable LiftNote domain identifiers",
+          "exercise membership is metadata and may evolve without rewriting set history",
+          "unknown/unclassified is valid"
+        ],
+        "dependencies": [
+          "Requires LN-85 DONE and consumes LN-39/LN-40 anatomy metadata."
+        ],
+        "attention": [
+          "no new cross-user access",
+          "custom exercise family assignment remains user-owned unless a later explicit workflow supports it",
+          "taxonomy validation, duplicate-key and mapping tests",
+          "backward compatibility tests for existing exercise identities",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "do not merge exercise histories by family",
+          "do not claim biomechanical equivalence solely from shared family",
+          "no medical/injury ontology",
+          "no CrossFit- or Hyrox-specific competition/sport ontology solely to support common movements"
+        ],
+        "doneWhen": [
+          "family and concrete-exercise identity are structurally distinct",
+          "representative catalog mappings are reviewed and testable",
+          "search/substitution can consume family metadata without history merging"
+        ],
+        "ux": [
+          "family labels become progressive-disclosure filters/context, not mandatory jargon in every workout card",
+          "FR/EN labels are localized at the UI layer",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "no new cross-user access",
+          "custom exercise family assignment remains user-owned unless a later explicit workflow supports it"
+        ],
+        "implications": [
+          "feeds exercise search, substitutions, program inspection and future deterministic rules",
+          "analytics may aggregate descriptively by family only with documented semantics"
+        ],
+        "validation": [
+          "taxonomy validation, duplicate-key and mapping tests",
+          "backward compatibility tests for existing exercise identities",
+          "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
+          "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
+          "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Exercise Intelligence",
+        "objective": "Model conceptual movement families separately from concrete exercise identity and historical performance.",
+        "rationale": "Programming, discovery and substitutions need concepts such as squat, hinge, horizontal push and vertical pull without collapsing distinct exercises.",
+        "dependencies": [
+          "Requires LN-85 DONE and consumes LN-39/LN-40 anatomy metadata."
+        ],
+        "scope": [
+          "LiftNote-owned movement-family taxonomy",
+          "many-to-one or many-to-many membership only where domain evidence requires it",
+          "hierarchy/labels for concepts such as squat, hinge, horizontal push, vertical push/pull and carry",
+          "explicit distinction between family membership, variant relation and substitution relation",
+          "curated mappings for supported system exercises",
+          "Extend the ontology enough to classify common conditioning patterns such as carries, crawls, jump/plyometric patterns, suspension patterns and core/isometric families where evidence supports them, without creating CrossFit-specific taxonomy.",
+          "Equipment family is evidence/context, not movement identity; TRX/suspension remains equipment/exercise semantics rather than a standalone modality."
+        ],
+        "exclusions": [
+          "do not merge exercise histories by family",
+          "do not claim biomechanical equivalence solely from shared family",
+          "no medical/injury ontology",
+          "no CrossFit- or Hyrox-specific competition/sport ontology solely to support common movements"
+        ],
+        "data": [
+          "family identifiers are stable LiftNote domain identifiers",
+          "exercise membership is metadata and may evolve without rewriting set history",
+          "unknown/unclassified is valid"
+        ],
+        "ux": [
+          "family labels become progressive-disclosure filters/context, not mandatory jargon in every workout card",
+          "FR/EN labels are localized at the UI layer",
+          "Apply the permanent user-facing capability closure rule in ../EXECUTION_CONTRACT.md: technical existence alone is not completion.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced or infrequent controls.",
+          "Define loading, empty, error, success, disabled/unavailable and destructive/recovery states where applicable.",
+          "Mobile-first, accessible, FR/EN coherent and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "no new cross-user access",
+          "custom exercise family assignment remains user-owned unless a later explicit workflow supports it"
+        ],
+        "implications": [
+          "feeds exercise search, substitutions, program inspection and future deterministic rules",
+          "analytics may aggregate descriptively by family only with documented semantics"
+        ],
+        "acceptance": [
+          "family and concrete-exercise identity are structurally distinct",
+          "representative catalog mappings are reviewed and testable",
+          "search/substitution can consume family metadata without history merging"
+        ],
+        "validation": [
+          "taxonomy validation, duplicate-key and mapping tests",
+          "backward compatibility tests for existing exercise identities",
           "Inspect affected code, types, imports, tests and interfaces before the first push; GitHub Actions is the final safety net, not the debugging loop.",
           "Use targeted tests first; require migration/RLS tests for persistence or authorization changes.",
           "Require exact-head Vercel build/deployment evidence for code changes. Browser QA follows the current repository gate policy; READY is never browser QA.",
