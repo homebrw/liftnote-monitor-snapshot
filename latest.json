@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T12:16:54.810Z",
+  "publishedAt": "2026-10-01T12:18:59.843Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-47",
-    "nextLot": "LN-48",
-    "launchedAt": "2026-10-01T12:04:35.533Z",
-    "lastProgressAt": "2026-10-01T12:15:20.345Z",
-    "lastChatCheckAt": "2026-10-01T12:04:35.533Z",
-    "lastObservedMainSha": "cd8a789dea6fa362996d8c3dbc9685497ae53f57",
+    "currentLot": "LN-48",
+    "nextLot": "LN-49",
+    "launchedAt": "2026-10-01T12:18:54.040Z",
+    "lastProgressAt": "2026-10-01T12:18:54.040Z",
+    "lastChatCheckAt": "2026-10-01T12:18:54.040Z",
+    "lastObservedMainSha": "3e816b5e264dc92d08eb1e44d8ce4111ef2aae25",
     "nudges": 0,
-    "lastMessage": "main moved while LN-47 is active",
+    "lastMessage": "Launched LN-48; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T12:16:49.510Z",
-    "nextTickAt": "2026-10-01T12:21:49.510Z",
+    "lastSuccessfulTickAt": "2026-10-01T12:18:54.040Z",
+    "nextTickAt": "2026-10-01T12:23:54.040Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-35",
-        "completedAt": "2026-10-01T07:58:30.319Z",
-        "restartedAt": null,
-        "mainSha": "5382b444d19685746d43af56a1bf6c1e74c5781b",
-        "reason": null
-      },
       {
         "lot": "LN-36",
         "completedAt": "2026-10-01T08:07:36.486Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "27d8bf8c1ac712aa4e66afe2f9540c6690e12227",
         "reason": null
+      },
+      {
+        "lot": "LN-47",
+        "completedAt": "2026-10-01T12:17:32.795Z",
+        "restartedAt": null,
+        "mainSha": "3e816b5e264dc92d08eb1e44d8ce4111ef2aae25",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "cd8a789dea6fa362996d8c3dbc9685497ae53f57",
+    "mainSha": "3e816b5e264dc92d08eb1e44d8ce4111ef2aae25",
     "lots": [
       {
         "id": "LN-00",
@@ -3512,7 +3512,7 @@
       {
         "id": "LN-47",
         "title": "Useful configurable notifications",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "provide opt-in notifications for genuinely time-sensitive training events.",
         "business": {
           "summary": "Envoyer uniquement des notifications utiles et configurables.",
@@ -3919,65 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 56,
+    "done": 57,
     "total": 62,
-    "percent": 90,
+    "percent": 92,
     "current": {
-      "id": "LN-47",
-      "title": "Useful configurable notifications",
-      "status": "TODO",
-      "goal": "provide opt-in notifications for genuinely time-sensitive training events.",
-      "business": {
-        "summary": "Envoyer uniquement des notifications utiles et configurables.",
-        "why": "La fin du repos ou une séance prévue perdent leur intérêt si l'information arrive trop tard.",
-        "builds": [
-          "préférences de notifications",
-          "fin de repos",
-          "rappels de séance planifiée",
-          "rappels d'inactivité uniquement si activés",
-          "ouverture directe du bon écran"
-        ],
-        "userImpact": [
-          "l'athlète peut quitter l'écran sans rater les événements importants"
-        ],
-        "notInThisLot": [
-          "pas de notifications imposées ou intrusives"
-        ],
-        "doneWhen": [
-          "chaque notification respecte permission et préférence",
-          "la confidentialité écran verrouillé est prise en compte"
-        ],
-        "journey": [
-          "L’utilisateur choisit quelles notifications il souhaite.",
-          "LiftNote envoie par exemple une fin de repos ou un rappel planifié.",
-          "Le clic ouvre directement le bon écran."
-        ],
-        "rules": [
-          "Aucune notification sans permission et préférence.",
-          "Les rappels restent configurables et non intrusifs.",
-          "La confidentialité écran verrouillé est prise en compte."
-        ],
-        "examples": [
-          "Notification « repos terminé » liée au vrai timer.",
-          "Rappel d’inactivité désactivé par défaut sauf choix explicite."
-        ],
-        "data": [
-          "préférences notifications",
-          "événement source",
-          "deep link"
-        ],
-        "dependencies": [
-          "LN-08 timer",
-          "LN-48 deep links"
-        ],
-        "attention": [
-          "notifications obsolètes",
-          "contenu sensible affiché sur écran verrouillé"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-48",
       "title": "Deep links to LiftNote entities",
       "status": "TODO",
@@ -4027,6 +3972,61 @@
         "attention": [
           "éviter les fuites via messages d’erreur",
           "préserver la destination à travers l’auth"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-49",
+      "title": "Temporary exercise unavailability",
+      "status": "TODO",
+      "goal": "let an athlete temporarily mark an exercise unavailable without deleting it or making medical claims.",
+      "business": {
+        "summary": "Pouvoir marquer temporairement un exercice comme indisponible.",
+        "why": "Un athlète peut vouloir éviter provisoirement un mouvement sans le supprimer ni recevoir de conseil médical.",
+        "builds": [
+          "indisponibilité jusqu'à une date ou réactivation",
+          "note privée optionnelle",
+          "exclusion des suggestions courantes",
+          "avertissement dans les templates",
+          "réactivation simple"
+        ],
+        "userImpact": [
+          "LiftNote cesse de proposer temporairement un mouvement non souhaité"
+        ],
+        "notInThisLot": [
+          "aucun diagnostic ni conseil médical"
+        ],
+        "doneWhen": [
+          "l'historique reste intact",
+          "l'indisponibilité expire ou se retire proprement"
+        ],
+        "journey": [
+          "L’athlète marque un exercice indisponible jusqu’à une date ou réactivation manuelle.",
+          "LiftNote cesse de le proposer normalement.",
+          "Les templates existants affichent un avertissement sans être modifiés."
+        ],
+        "rules": [
+          "L’état est temporaire et non médical.",
+          "L’historique reste intact.",
+          "La note éventuelle est privée."
+        ],
+        "examples": [
+          "Bench indisponible jusqu’au 15 octobre.",
+          "Réactivation manuelle plus tôt sans toucher aux séances passées."
+        ],
+        "data": [
+          "état indisponible",
+          "date fin",
+          "note privée"
+        ],
+        "dependencies": [
+          "catalogue exercice",
+          "LN-50 alternatives"
+        ],
+        "attention": [
+          "pas de diagnostic",
+          "expiration prévisible selon fuseau/date"
         ]
       },
       "contractAvailable": true
