@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T06:52:26.835Z",
+  "publishedAt": "2026-10-01T07:01:05.107Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "RUNNING",
+    "status": "BLOCKED",
     "currentLot": "LN-32",
     "nextLot": "LN-33",
     "launchedAt": "2026-10-01T06:42:15.244Z",
@@ -11,10 +11,10 @@
     "lastChatCheckAt": "2026-10-01T06:42:15.244Z",
     "lastObservedMainSha": "3141d2d784c32504c971a30bbf6fc26326bec245",
     "nudges": 0,
-    "lastMessage": "Will pause after current lot",
-    "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T06:52:21.424Z",
-    "nextTickAt": "2026-10-01T06:57:21.424Z",
+    "lastMessage": "Watch tick failed",
+    "lastError": "Command failed: git fetch origin main --quiet\nfatal: unable to access 'https://github.com/homebrw/unicorn-cf-prog.git/': Could not resolve host: github.com\n",
+    "lastSuccessfulTickAt": "2026-10-01T06:53:06.629Z",
+    "nextTickAt": "2026-10-01T07:03:41.281Z",
     "paused": false,
     "pauseAfterCurrent": true,
     "history": [
