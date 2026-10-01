@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T01:09:37.461Z",
+  "publishedAt": "2026-10-01T01:10:22.431Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-19 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T01:09:31.326Z",
-    "nextTickAt": "2026-10-01T01:14:31.326Z",
+    "lastSuccessfulTickAt": "2026-10-01T01:10:16.459Z",
+    "nextTickAt": "2026-10-01T01:15:16.459Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "b58e75464cfd2a324284aee0e66d91b1ef099c33",
+    "mainSha": "663d1f020229f6ba9630a404b98e28550298bbf4",
     "lots": [
       {
         "id": "LN-00",
@@ -1889,7 +1889,7 @@
       {
         "id": "LN-19",
         "title": "Automatic warm-up / ramp-up set generator",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "generate deterministic, editable warm-up sets before a working load without using an LLM.",
         "business": {
           "summary": "Générer automatiquement des séries d'échauffement progressives avant la charge de travail.",
@@ -3919,13 +3919,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 28,
+    "done": 29,
     "total": 62,
-    "percent": 45,
+    "percent": 47,
     "current": {
       "id": "LN-19",
       "title": "Automatic warm-up / ramp-up set generator",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "generate deterministic, editable warm-up sets before a working load without using an LLM.",
       "business": {
         "summary": "Générer automatiquement des séries d'échauffement progressives avant la charge de travail.",
