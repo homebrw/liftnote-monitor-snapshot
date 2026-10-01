@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-01T23:22:24.166Z",
+  "publishedAt": "2026-10-01T23:23:21.718Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-85 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T23:22:13.171Z",
-    "nextTickAt": "2026-10-01T23:27:13.171Z",
+    "lastSuccessfulTickAt": "2026-10-01T23:23:10.657Z",
+    "nextTickAt": "2026-10-01T23:28:10.657Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "ba80d6e1b1c529b9dc920afc0bbb7aa2661a0bc7",
+    "mainSha": "95a570e1b8f0cf7ba6e3c71b4a71606d546a6d80",
     "lots": [
       {
         "id": "LN-00",
