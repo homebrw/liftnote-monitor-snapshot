@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T04:42:36.427Z",
+  "publishedAt": "2026-10-01T04:43:22.686Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "CONSISTENCY_ERROR",
@@ -14,7 +14,7 @@
     "lastMessage": "LN-30 is DONE but completion invariants failed; next lot not launched.",
     "lastError": "LN-30 completion record does not record a merge SHA.",
     "lastSuccessfulTickAt": "2026-10-01T04:34:23.028Z",
-    "nextTickAt": "2026-10-01T04:47:31.483Z",
+    "nextTickAt": "2026-10-01T04:48:16.649Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
