@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T19:15:18.988Z",
+  "publishedAt": "2026-10-01T19:16:13.217Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-60",
-    "nextLot": "LN-61",
-    "launchedAt": "2026-10-01T19:07:09.428Z",
-    "lastProgressAt": "2026-10-01T19:14:29.732Z",
-    "lastChatCheckAt": "2026-10-01T19:07:09.428Z",
-    "lastObservedMainSha": "d1bccb89763242e22a32a5617d8441845ffe888a",
+    "currentLot": "LN-61",
+    "nextLot": "LN-62",
+    "launchedAt": "2026-10-01T19:16:07.730Z",
+    "lastProgressAt": "2026-10-01T19:16:07.730Z",
+    "lastChatCheckAt": "2026-10-01T19:16:07.730Z",
+    "lastObservedMainSha": "3e2ad8ee9853f5a8fd3ced87703dcb4b2b11172b",
     "nudges": 0,
-    "lastMessage": "main moved while LN-60 is active",
+    "lastMessage": "Launched LN-61; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T19:15:13.381Z",
-    "nextTickAt": "2026-10-01T19:20:13.381Z",
+    "lastSuccessfulTickAt": "2026-10-01T19:16:07.730Z",
+    "nextTickAt": "2026-10-01T19:21:07.730Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-48",
-        "completedAt": "2026-10-01T12:36:07.735Z",
-        "restartedAt": null,
-        "mainSha": "15814d754d4697b52e799439478c098f393b98ff",
-        "reason": null
-      },
       {
         "lot": "LN-49",
         "completedAt": "2026-10-01T13:01:14.730Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "953aebeec4d2bca1cfb1d62249f7f827bdbcf0ce",
         "reason": null
+      },
+      {
+        "lot": "LN-60",
+        "completedAt": "2026-10-01T19:15:59.191Z",
+        "restartedAt": null,
+        "mainSha": "3e2ad8ee9853f5a8fd3ced87703dcb4b2b11172b",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "d1bccb89763242e22a32a5617d8441845ffe888a",
+    "mainSha": "3e2ad8ee9853f5a8fd3ced87703dcb4b2b11172b",
     "lots": [
       {
         "id": "LN-00",
@@ -4043,7 +4043,7 @@
       {
         "id": "LN-60",
         "title": "Workspace coach et cockpit des relations",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Donner au coach un vrai espace de travail au-dessus des fondations LN-23/LN-24.",
         "business": null,
         "contractAvailable": true,
@@ -4233,23 +4233,23 @@
     "mismatches": []
   },
   "summary": {
-    "done": 69,
+    "done": 70,
     "total": 90,
-    "percent": 77,
+    "percent": 78,
     "current": {
-      "id": "LN-60",
-      "title": "Workspace coach et cockpit des relations",
+      "id": "LN-61",
+      "title": "Affectations coach et historique de versions",
       "status": "TODO",
-      "goal": "Donner au coach un vrai espace de travail au-dessus des fondations LN-23/LN-24.",
+      "goal": "Rendre les affectations LN-24 lisibles, traçables et faciles à faire évoluer.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-61",
-      "title": "Affectations coach et historique de versions",
+      "id": "LN-62",
+      "title": "Consignes coach et notes athlète distinctes",
       "status": "TODO",
-      "goal": "Rendre les affectations LN-24 lisibles, traçables et faciles à faire évoluer.",
+      "goal": "Permettre les consignes coach sans écraser les notes privées de l’athlète.",
       "business": null,
       "contractAvailable": true,
       "executionState": "executable"
