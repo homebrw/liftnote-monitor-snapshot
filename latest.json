@@ -1,30 +1,23 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T02:51:36.145Z",
+  "publishedAt": "2026-10-01T02:52:33.468Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-24",
-    "nextLot": "LN-25",
-    "launchedAt": "2026-10-01T02:28:47.051Z",
-    "lastProgressAt": "2026-10-01T02:48:27.351Z",
-    "lastChatCheckAt": "2026-10-01T02:28:47.051Z",
-    "lastObservedMainSha": "b57b4fc719e1504c364ebf441b5012c9e8f6bdde",
+    "currentLot": "LN-25",
+    "nextLot": "LN-26",
+    "launchedAt": "2026-10-01T02:52:26.568Z",
+    "lastProgressAt": "2026-10-01T02:52:26.568Z",
+    "lastChatCheckAt": "2026-10-01T02:52:26.568Z",
+    "lastObservedMainSha": "8f5e12c35d9d1b269942f45e08c1891bfa9bbc88",
     "nudges": 0,
-    "lastMessage": "main moved while LN-24 is active",
+    "lastMessage": "Launched LN-25; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-01T02:51:30.588Z",
-    "nextTickAt": "2026-10-01T02:56:30.588Z",
+    "lastSuccessfulTickAt": "2026-10-01T02:52:26.568Z",
+    "nextTickAt": "2026-10-01T02:57:26.568Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-13B",
-        "completedAt": "2026-09-30T21:32:12.932Z",
-        "restartedAt": null,
-        "mainSha": "3862ec5c76f98c7ecd74cfcf2da6110aa1a86ebb",
-        "reason": null
-      },
       {
         "lot": "LN-16",
         "completedAt": null,
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "92c28065bf75080e29e85317c5302a10c2ab5921",
         "reason": null
+      },
+      {
+        "lot": "LN-24",
+        "completedAt": "2026-10-01T02:52:17.796Z",
+        "restartedAt": null,
+        "mainSha": "8f5e12c35d9d1b269942f45e08c1891bfa9bbc88",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "b57b4fc719e1504c364ebf441b5012c9e8f6bdde",
+    "mainSha": "8f5e12c35d9d1b269942f45e08c1891bfa9bbc88",
     "lots": [
       {
         "id": "LN-00",
@@ -2243,7 +2243,7 @@
       {
         "id": "LN-24",
         "title": "Coach-managed programs and synchronized prescriptions",
-        "status": "IN PROGRESS",
+        "status": "DONE",
         "goal": "allow an authorized coach to assign/push a program or workout into an athlete account while keeping that prescription visibly coach-managed and synchronized.",
         "business": {
           "summary": "Permettre au coach de pousser un programme ou une séance sur le compte de l'athlète et de rester maître des modifications futures.",
@@ -3919,93 +3919,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 33,
+    "done": 34,
     "total": 62,
-    "percent": 53,
+    "percent": 55,
     "current": {
-      "id": "LN-24",
-      "title": "Coach-managed programs and synchronized prescriptions",
-      "status": "IN PROGRESS",
-      "goal": "allow an authorized coach to assign/push a program or workout into an athlete account while keeping that prescription visibly coach-managed and synchronized.",
-      "business": {
-        "summary": "Permettre au coach de pousser un programme ou une séance sur le compte de l'athlète et de rester maître des modifications futures.",
-        "why": "Contrairement à un import par code, un programme coaché reste vivant : le coach en contrôle la prescription et ses changements doivent se synchroniser chez l'athlète sans réécrire les entraînements déjà commencés ou terminés.",
-        "builds": [
-          "l'affectation d'un programme complet ou d'une séance par un coach autorisé",
-          "un affichage explicite « Géré par votre coach » dans le compte de l'athlète",
-          "une prescription non modifiable directement par l'athlète",
-          "la synchronisation des changements futurs décidés par le coach",
-          "un versionnement qui évite les synchronisations partielles ou ambiguës",
-          "la conservation immuable des séances déjà démarrées ou terminées",
-          "la gestion des exercices personnalisés créés par le coach sans donner accès à ses autres données",
-          "une action permettant à l'athlète d'en faire une copie personnelle et de couper la synchronisation"
-        ],
-        "userImpact": [
-          "l'athlète sait immédiatement quels programmes sont personnels et lesquels sont pilotés par son coach",
-          "une modification du coach apparaît pour les prochaines séances sans changer l'historique",
-          "l'athlète peut exécuter normalement le programme et conserver ses performances dans son propre historique",
-          "s'il veut reprendre la main, il peut créer une copie personnelle indépendante"
-        ],
-        "notInThisLot": [
-          "pas encore de tableau de bord analytique complet pour le coach",
-          "pas de chat coach-athlète",
-          "pas de facturation, nutrition ou gestion de club",
-          "le coach n'obtient pas automatiquement accès à toutes les données privées de l'athlète"
-        ],
-        "doneWhen": [
-          "un contenu coaché est clairement identifiable et non éditable par l'athlète",
-          "les mises à jour du coach affectent les futures prescriptions",
-          "une séance déjà commencée reste figée même si le coach modifie le programme",
-          "la fin de la relation bloque les nouvelles modifications du coach sans supprimer l'historique",
-          "une copie personnelle se détache complètement de la synchronisation"
-        ],
-        "journey": [
-          "Le coach ouvre un athlète avec lequel il possède une relation active.",
-          "Il crée ou sélectionne une prescription puis l’affecte à cet athlète.",
-          "L’athlète voit le programme dans son compte avec l’indication « Géré par votre coach ».",
-          "Il peut consulter et exécuter la prescription, mais pas modifier sa définition.",
-          "Le coach change ensuite les prochaines cibles ; la vue gérée de l’athlète se met à jour.",
-          "Toute séance déjà démarrée garde cependant son snapshot d’origine.",
-          "L’athlète peut choisir « Copier dans mes programmes » pour obtenir une version personnelle qui ne sera plus synchronisée."
-        ],
-        "rules": [
-          "Seul un coach avec une relation LN-23 active peut créer ou modifier une affectation.",
-          "Le coach reste propriétaire/autorité de la prescription gérée.",
-          "L’athlète reste propriétaire de ses performances et de son historique d’exécution.",
-          "Une synchronisation ne modifie jamais une séance déjà commencée ou terminée.",
-          "Une rupture de relation bloque immédiatement les nouvelles modifications du coach.",
-          "Après rupture, la prescription existante devient figée en lecture seule jusqu’à copie personnelle ou archivage.",
-          "Le coach n’obtient pas automatiquement l’accès à toutes les autres données privées de l’athlète."
-        ],
-        "examples": [
-          "Coach prescrit Bench 5×5 @100 kg ; athlète démarre ; coach passe la cible future à 102,5 kg : la séance active reste à 100, la prochaine démarre à 102,5.",
-          "Un exercice personnalisé du coach est visible/exécutable dans le programme géré mais l’athlète ne peut pas éditer la définition source.",
-          "L’athlète copie le programme géré : une nouvelle version personnelle apparaît et les futures modifications coach ne s’y propagent plus."
-        ],
-        "data": [
-          "source de prescription coach",
-          "affectation coach→athlète",
-          "versions synchronisées",
-          "état de l’affectation",
-          "provenance coach dans les snapshots de séance",
-          "exercices personnalisés coach visibles dans le périmètre de l’affectation"
-        ],
-        "dependencies": [
-          "LN-23 pour l’autorisation",
-          "LN-06 pour la frontière snapshot des séances",
-          "LN-21 pour copie/détachement",
-          "LN-20 et autres métadonnées structurées doivent être synchronisées sans perte"
-        ],
-        "attention": [
-          "ne jamais implémenter cela comme un programme personnel de l’athlète avec juste un flag caché",
-          "synchronisation atomique/versionnée pour éviter les états partiels",
-          "bien définir le sort des affectations quand la relation s’arrête",
-          "ne pas élargir tacitement les permissions coach aux performances privées"
-        ]
-      },
-      "contractAvailable": true
-    },
-    "next": {
       "id": "LN-25",
       "title": "Quick workout / free session",
       "status": "TODO",
@@ -4055,6 +3972,59 @@
         "attention": [
           "ne pas créer un historique de seconde zone pour les séances libres",
           "garder l’ajout d’exercice rapide en pleine séance"
+        ]
+      },
+      "contractAvailable": true
+    },
+    "next": {
+      "id": "LN-26",
+      "title": "Explicit set types",
+      "status": "TODO",
+      "goal": "make warm-up, work, AMRAP, failure and drop-set classifications explicit so history, PRs and analytics do not treat every set identically.",
+      "business": {
+        "summary": "Donner un type explicite aux séries : travail, échauffement, AMRAP, échec et classification drop set.",
+        "why": "Toutes les séries n'ont pas la même signification et ne doivent pas alimenter records et statistiques de la même façon.",
+        "builds": [
+          "un type persistant par série",
+          "un affichage clair en séance et historique",
+          "des règles de PR/statistiques adaptées",
+          "l'alignement avec les échauffements générés"
+        ],
+        "userImpact": [
+          "l'historique reflète beaucoup mieux la vraie structure de l'entraînement"
+        ],
+        "notInThisLot": [
+          "pas encore la mécanique complète d'un drop set multi-paliers"
+        ],
+        "doneWhen": [
+          "un échauffement ne pollue plus les séries de travail",
+          "AMRAP et échec gardent leur sens dans le temps"
+        ],
+        "journey": [
+          "L’utilisateur choisit ou voit le type d’une série.",
+          "Il peut distinguer travail, échauffement, AMRAP, échec et drop set.",
+          "L’historique et les statistiques conservent cette signification."
+        ],
+        "rules": [
+          "Le type de série est persisté, pas seulement affiché.",
+          "Les échauffements ne doivent pas polluer les statistiques de travail ou les PR.",
+          "AMRAP et échec gardent leur sens après la séance."
+        ],
+        "examples": [
+          "Une série warm-up apparaît dans l’historique mais est exclue du volume de travail standard.",
+          "Une série AMRAP reste identifiable plusieurs mois plus tard."
+        ],
+        "data": [
+          "type de série",
+          "règles d’inclusion PR/statistiques"
+        ],
+        "dependencies": [
+          "LN-19 pour les warm-ups",
+          "LN-10 pour les statistiques"
+        ],
+        "attention": [
+          "ne pas ralentir le flux des séries ordinaires",
+          "ne pas confondre classification drop set et mécanique multi-paliers complète"
         ]
       },
       "contractAvailable": true
