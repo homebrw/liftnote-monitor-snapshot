@@ -1,33 +1,33 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T17:44:56.527Z",
+  "publishedAt": "2026-10-02T17:45:48.641Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "WAITING_GATE",
+    "status": "RUNNING",
     "currentLot": "LN-99",
     "nextLot": "LN-100",
     "launchedAt": "2026-10-02T16:31:31.612Z",
-    "lastProgressAt": "2026-10-02T17:38:16.831Z",
-    "lastChatCheckAt": "2026-10-02T17:38:16.828Z",
-    "lastObservedMainSha": "6878d86499845137efb2bc46a6ceb2f05510722b",
-    "nudges": 1,
-    "lastMessage": "LN-99: waiting for browser verification on PR #851.",
+    "lastProgressAt": "2026-10-02T17:45:41.444Z",
+    "lastChatCheckAt": "2026-10-02T17:45:41.442Z",
+    "lastObservedMainSha": "67ff0266c370aabb1c57dd3b085f0906607f4afb",
+    "nudges": 0,
+    "lastMessage": "main moved while LN-99 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T17:44:48.653Z",
-    "nextTickAt": "2026-10-02T17:49:48.653Z",
+    "lastSuccessfulTickAt": "2026-10-02T17:45:41.444Z",
+    "nextTickAt": "2026-10-02T17:50:41.444Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
       "lot": "LN-99",
       "type": "browser",
-      "mode": "pre_merge",
-      "phase": "waiting",
+      "mode": "post_merge",
+      "phase": "failed",
       "reason": null,
-      "prNumber": 851,
-      "headRef": "liftnote/ln-99-gate-fix",
-      "headSha": "075f68ce8488e37f49fd25221631d861b29d4594",
-      "runId": 37042271991,
-      "conclusion": null
+      "prNumber": null,
+      "headRef": "main",
+      "headSha": "150a310f36f576fc5d9d0ed361bd377bf5688a13",
+      "runId": 37038542151,
+      "conclusion": "failure"
     },
     "history": [
       {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "6878d86499845137efb2bc46a6ceb2f05510722b",
+    "mainSha": "67ff0266c370aabb1c57dd3b085f0906607f4afb",
     "lots": [
       {
         "id": "LN-00",
