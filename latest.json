@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T05:35:11.577Z",
+  "publishedAt": "2026-10-02T05:36:04.198Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "BLOCKED",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "LN-125 is BLOCKED on main; waiting for the documented blocker to clear.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T05:35:01.594Z",
-    "nextTickAt": "2026-10-02T05:40:01.594Z",
+    "lastSuccessfulTickAt": "2026-10-02T05:35:54.268Z",
+    "nextTickAt": "2026-10-02T05:40:54.268Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
