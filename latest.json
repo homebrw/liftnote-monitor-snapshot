@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T00:06:27.567Z",
+  "publishedAt": "2026-10-02T00:07:23.563Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-118",
     "nextLot": "LN-87",
     "launchedAt": "2026-10-01T23:55:22.429Z",
-    "lastProgressAt": "2026-10-02T00:04:27.867Z",
+    "lastProgressAt": "2026-10-02T00:07:11.443Z",
     "lastChatCheckAt": "2026-10-01T23:55:22.429Z",
-    "lastObservedMainSha": "3ae373b46f9a8c04766897c0d32c410fd50bb7ca",
+    "lastObservedMainSha": "b53332e71c685b55aea060a1579d8bf8458c179a",
     "nudges": 0,
     "lastMessage": "main moved while LN-118 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T00:06:17.721Z",
-    "nextTickAt": "2026-10-02T00:11:17.721Z",
+    "lastSuccessfulTickAt": "2026-10-02T00:07:11.443Z",
+    "nextTickAt": "2026-10-02T00:12:11.443Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "3ae373b46f9a8c04766897c0d32c410fd50bb7ca",
+    "mainSha": "b53332e71c685b55aea060a1579d8bf8458c179a",
     "lots": [
       {
         "id": "LN-00",
