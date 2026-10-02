@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T10:40:21.870Z",
+  "publishedAt": "2026-10-02T15:42:08.108Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-95",
-    "nextLot": "LN-96",
-    "launchedAt": "2026-10-02T10:18:17.739Z",
-    "lastProgressAt": "2026-10-02T10:35:21.030Z",
-    "lastChatCheckAt": "2026-10-02T10:18:17.739Z",
-    "lastObservedMainSha": "840dec350efd119543bb5152cfdbf2d855efcf23",
+    "currentLot": "LN-98",
+    "nextLot": "LN-99",
+    "launchedAt": "2026-10-02T15:41:59.513Z",
+    "lastProgressAt": "2026-10-02T15:41:59.513Z",
+    "lastChatCheckAt": "2026-10-02T15:41:59.513Z",
+    "lastObservedMainSha": "fb1637e4883d6304491bf5a4301c00bd8c175976",
     "nudges": 0,
-    "lastMessage": "main moved while LN-95 is active",
+    "lastMessage": "Launched LN-98; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T10:40:13.441Z",
-    "nextTickAt": "2026-10-02T10:45:13.441Z",
+    "lastSuccessfulTickAt": "2026-10-02T15:41:59.513Z",
+    "nextTickAt": "2026-10-02T15:46:59.513Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": "success"
     },
     "history": [
-      {
-        "lot": "LN-123",
-        "completedAt": "2026-10-02T04:45:53.812Z",
-        "restartedAt": null,
-        "mainSha": "4ff77f3ed891643e720e198dc94736673118440f",
-        "reason": null
-      },
       {
         "lot": "LN-125",
         "completedAt": "2026-10-02T06:22:10.924Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "094e9b80894a1e5eab8b2979ab51d9b5fab2d7f2",
         "reason": null
+      },
+      {
+        "lot": "LN-95",
+        "completedAt": "2026-10-02T15:40:43.917Z",
+        "restartedAt": null,
+        "mainSha": "fb1637e4883d6304491bf5a4301c00bd8c175976",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "840dec350efd119543bb5152cfdbf2d855efcf23",
+    "mainSha": "fb1637e4883d6304491bf5a4301c00bd8c175976",
     "lots": [
       {
         "id": "LN-00",
@@ -13499,7 +13499,7 @@
       {
         "id": "LN-95",
         "title": "Planned vs Performed",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Provide a durable model and UX comparing prescribed work with what was actually performed.",
         "business": {
           "phase": "Programming Engine",
@@ -13664,8 +13664,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "838",
+            "mergeSha": "840dec350efd119543bb5152cfdbf2d855efcf23"
           }
         },
         "contractAvailable": true,
@@ -13674,7 +13674,7 @@
       {
         "id": "LN-96",
         "title": "Program Adherence",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Describe how closely completed training followed the explicit plan without pretending adherence measures training quality.",
         "business": {
           "phase": "Programming Engine",
@@ -13834,8 +13834,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "840",
+            "mergeSha": "a78b98f21faadc3e5519e88e6c20321db5fb5366"
           }
         },
         "contractAvailable": true,
@@ -13844,7 +13844,7 @@
       {
         "id": "LN-126",
         "title": "Running Analytics & Performance History",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Provide explicit, deterministic Running analytics and performance history over structured Running sessions and trustworthy imported activity facts.",
         "business": {
           "phase": "Programming Engine",
@@ -14058,8 +14058,8 @@
             "Product-path checks for session history and Progression drill-down."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "842",
+            "mergeSha": "d00c82a560c36849c4ed746536add94b3309214c"
           }
         },
         "contractAvailable": true,
@@ -14068,7 +14068,7 @@
       {
         "id": "LN-97",
         "title": "Deterministic Next-Session Suggestions",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Compute explainable next-session suggestions from explicit progression rules and prior performance without generative AI.",
         "business": {
           "phase": "Programming Engine",
@@ -14226,8 +14226,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "844",
+            "mergeSha": "39c6a3216994d293640f3d994e72a7afc006c9d4"
           }
         },
         "contractAvailable": true,
@@ -19535,109 +19535,106 @@
     "mismatches": []
   },
   "summary": {
-    "done": 105,
+    "done": 109,
     "total": 138,
-    "percent": 76,
+    "percent": 79,
     "current": {
-      "id": "LN-95",
-      "title": "Planned vs Performed",
+      "id": "LN-98",
+      "title": "Assisted Adaptation",
       "status": "TODO",
-      "goal": "Provide a durable model and UX comparing prescribed work with what was actually performed.",
+      "goal": "Give athlete or coach a controlled workflow to review, edit, accept or reject explainable proposed programming adaptations.",
       "business": {
         "phase": "Programming Engine",
-        "summary": "Provide a durable model and UX comparing prescribed work with what was actually performed.",
-        "why": "Adaptation and coaching need a factual bridge between plan and execution, including substitutions, omissions and schedule changes.",
+        "summary": "Give athlete or coach a controlled workflow to review, edit, accept or reject explainable proposed programming adaptations.",
+        "why": "Useful automation should reduce repetitive programming work while preserving human authority over future prescriptions.",
         "builds": [
-          "compare planned and performed sets, reps, load/reference resolution, RPE/RIR and set type",
-          "represent omitted, added and substituted work explicitly",
-          "include schedule move/cancel context from LN-70",
-          "drill down from summary to raw plan/performance facts",
-          "define comparison semantics for incompatible tracking/load types",
-          "Running segment planned-vs-performed comparisons for compatible distance/duration/pace/recovery targets and actuals.",
-          "Circuit protocol planned-vs-performed comparisons for compatible structure, substitutions and typed score facts, without treating score as movement volume."
+          "adaptation review queue/context for deterministic proposals",
+          "side-by-side current vs proposed future prescription",
+          "edit before accept",
+          "accept/reject with provenance",
+          "coach-managed assignment versioning and athlete personal-program flows",
+          "clear stale-proposal behavior if source plan/performance changes"
         ],
         "userImpact": [
-          "show concise deviations first with drill-down to detail",
-          "neutral language: planned/performed, not pass/fail",
-          "make corrections flow through existing history correction semantics",
+          "review only when actionable; do not create a noisy feed",
+          "group related changes coherently",
+          "show consequences and affected future sessions before commit",
           "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
           "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
           "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
           "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
         ],
         "journey": [
-          "show concise deviations first with drill-down to detail",
-          "neutral language: planned/performed, not pass/fail",
-          "make corrections flow through existing history correction semantics",
+          "review only when actionable; do not create a noisy feed",
+          "group related changes coherently",
+          "show consequences and affected future sessions before commit",
           "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
           "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
           "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
           "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
         ],
         "rules": [
-          "coach visibility is limited to explicitly authorized performance scope",
-          "private notes stay private unless separately authorized",
-          "offline-synced results must converge before final comparison state claims certainty",
-          "LN-96 adherence and LN-97 suggestions consume this factual layer",
-          "coach queue/longitudinal views consume authorized comparisons",
-          "AI only summarizes facts generated here"
+          "only the authoritative editor may accept changes to a personal/coach source",
+          "athlete feedback/performance access follows explicit permissions",
+          "cross-user changes remain server-authorized",
+          "coach attention queue may later surface proposals needing coach action",
+          "AI can explain accepted/rejected options but user/coach remains decision-maker"
         ],
         "examples": [],
         "data": [
-          "store/derive stable linkage between planned set/exercise identity and performed result",
-          "preserve prescribed exercise and substitute identity",
-          "missing linkage remains explicit rather than guessed",
-          "Typed modality comparisons must reject or explicitly label incompatible plan/performance shapes rather than coercing them into strength-set semantics."
+          "proposal references source program/version, rule and evidence",
+          "acceptance creates normal versioned prescription state",
+          "stale or conflicting proposals cannot overwrite newer edits"
         ],
         "dependencies": [
-          "Requires LN-93 and LN-94 DONE and existing immutable session/performance snapshots."
+          "Requires LN-97 DONE, planned-vs-performed and coach ownership/versioning primitives."
         ],
         "attention": [
-          "coach visibility is limited to explicitly authorized performance scope",
-          "private notes stay private unless separately authorized",
-          "offline-synced results must converge before final comparison state claims certainty",
-          "comparison engine fixtures across load/tracking/effort semantics",
-          "history-correction and offline-sync regressions",
-          "coach permission tests for exposed comparison payloads",
+          "only the authoritative editor may accept changes to a personal/coach source",
+          "athlete feedback/performance access follows explicit permissions",
+          "cross-user changes remain server-authorized",
+          "state-machine tests for draft/stale/accepted/rejected",
+          "concurrency/version conflict tests",
+          "coach/athlete authorization and history immutability regressions",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
           "TinyFish is prohibited."
         ],
         "notInThisLot": [
-          "no single quality score",
-          "no assumption that any deviation is bad",
-          "no retroactive rewriting of prescription or performance"
+          "no autonomous activation",
+          "no bulk hidden changes",
+          "no medical/injury recommendation",
+          "no LLM-only adaptation without structured domain proposal"
         ],
         "doneWhen": [
-          "representative prescribed, omitted, added and substituted work compares correctly",
-          "targets and actuals are never conflated",
-          "source facts remain inspectable",
-          "corrections update derived comparisons deterministically"
+          "no proposal changes programming without explicit authorized acceptance",
+          "edits preserve structured semantics",
+          "stale/conflicting proposals fail safely",
+          "accepted changes are traceable in version history"
         ],
         "ux": [
-          "show concise deviations first with drill-down to detail",
-          "neutral language: planned/performed, not pass/fail",
-          "make corrections flow through existing history correction semantics",
+          "review only when actionable; do not create a noisy feed",
+          "group related changes coherently",
+          "show consequences and affected future sessions before commit",
           "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
           "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
           "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
           "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
         ],
         "security": [
-          "coach visibility is limited to explicitly authorized performance scope",
-          "private notes stay private unless separately authorized",
-          "offline-synced results must converge before final comparison state claims certainty"
+          "only the authoritative editor may accept changes to a personal/coach source",
+          "athlete feedback/performance access follows explicit permissions",
+          "cross-user changes remain server-authorized"
         ],
         "implications": [
-          "LN-96 adherence and LN-97 suggestions consume this factual layer",
-          "coach queue/longitudinal views consume authorized comparisons",
-          "AI only summarizes facts generated here"
+          "coach attention queue may later surface proposals needing coach action",
+          "AI can explain accepted/rejected options but user/coach remains decision-maker"
         ],
         "validation": [
-          "comparison engine fixtures across load/tracking/effort semantics",
-          "history-correction and offline-sync regressions",
-          "coach permission tests for exposed comparison payloads",
+          "state-machine tests for draft/stale/accepted/rejected",
+          "concurrency/version conflict tests",
+          "coach/athlete authorization and history immutability regressions",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
@@ -19646,60 +19643,58 @@
       },
       "contract": {
         "phase": "Programming Engine",
-        "objective": "Provide a durable model and UX comparing prescribed work with what was actually performed.",
-        "rationale": "Adaptation and coaching need a factual bridge between plan and execution, including substitutions, omissions and schedule changes.",
+        "objective": "Give athlete or coach a controlled workflow to review, edit, accept or reject explainable proposed programming adaptations.",
+        "rationale": "Useful automation should reduce repetitive programming work while preserving human authority over future prescriptions.",
         "dependencies": [
-          "Requires LN-93 and LN-94 DONE and existing immutable session/performance snapshots."
+          "Requires LN-97 DONE, planned-vs-performed and coach ownership/versioning primitives."
         ],
         "scope": [
-          "compare planned and performed sets, reps, load/reference resolution, RPE/RIR and set type",
-          "represent omitted, added and substituted work explicitly",
-          "include schedule move/cancel context from LN-70",
-          "drill down from summary to raw plan/performance facts",
-          "define comparison semantics for incompatible tracking/load types",
-          "Running segment planned-vs-performed comparisons for compatible distance/duration/pace/recovery targets and actuals.",
-          "Circuit protocol planned-vs-performed comparisons for compatible structure, substitutions and typed score facts, without treating score as movement volume."
+          "adaptation review queue/context for deterministic proposals",
+          "side-by-side current vs proposed future prescription",
+          "edit before accept",
+          "accept/reject with provenance",
+          "coach-managed assignment versioning and athlete personal-program flows",
+          "clear stale-proposal behavior if source plan/performance changes"
         ],
         "exclusions": [
-          "no single quality score",
-          "no assumption that any deviation is bad",
-          "no retroactive rewriting of prescription or performance"
+          "no autonomous activation",
+          "no bulk hidden changes",
+          "no medical/injury recommendation",
+          "no LLM-only adaptation without structured domain proposal"
         ],
         "data": [
-          "store/derive stable linkage between planned set/exercise identity and performed result",
-          "preserve prescribed exercise and substitute identity",
-          "missing linkage remains explicit rather than guessed",
-          "Typed modality comparisons must reject or explicitly label incompatible plan/performance shapes rather than coercing them into strength-set semantics."
+          "proposal references source program/version, rule and evidence",
+          "acceptance creates normal versioned prescription state",
+          "stale or conflicting proposals cannot overwrite newer edits"
         ],
         "ux": [
-          "show concise deviations first with drill-down to detail",
-          "neutral language: planned/performed, not pass/fail",
-          "make corrections flow through existing history correction semantics",
+          "review only when actionable; do not create a noisy feed",
+          "group related changes coherently",
+          "show consequences and affected future sessions before commit",
           "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
           "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
           "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
           "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
         ],
         "security": [
-          "coach visibility is limited to explicitly authorized performance scope",
-          "private notes stay private unless separately authorized",
-          "offline-synced results must converge before final comparison state claims certainty"
+          "only the authoritative editor may accept changes to a personal/coach source",
+          "athlete feedback/performance access follows explicit permissions",
+          "cross-user changes remain server-authorized"
         ],
         "implications": [
-          "LN-96 adherence and LN-97 suggestions consume this factual layer",
-          "coach queue/longitudinal views consume authorized comparisons",
-          "AI only summarizes facts generated here"
+          "coach attention queue may later surface proposals needing coach action",
+          "AI can explain accepted/rejected options but user/coach remains decision-maker"
         ],
         "acceptance": [
-          "representative prescribed, omitted, added and substituted work compares correctly",
-          "targets and actuals are never conflated",
-          "source facts remain inspectable",
-          "corrections update derived comparisons deterministically"
+          "no proposal changes programming without explicit authorized acceptance",
+          "edits preserve structured semantics",
+          "stale/conflicting proposals fail safely",
+          "accepted changes are traceable in version history"
         ],
         "validation": [
-          "comparison engine fixtures across load/tracking/effort semantics",
-          "history-correction and offline-sync regressions",
-          "coach permission tests for exposed comparison payloads",
+          "state-machine tests for draft/stale/accepted/rejected",
+          "concurrency/version conflict tests",
+          "coach/athlete authorization and history immutability regressions",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
@@ -19714,101 +19709,106 @@
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-96",
-      "title": "Program Adherence",
+      "id": "LN-99",
+      "title": "Programming UX Gate",
       "status": "TODO",
-      "goal": "Describe how closely completed training followed the explicit plan without pretending adherence measures training quality.",
+      "goal": "Validate the complete programming journey: create → structure → prescribe → schedule → execute → compare → adapt → analyze → program next exposure.",
       "business": {
         "phase": "Programming Engine",
-        "summary": "Describe how closely completed training followed the explicit plan without pretending adherence measures training quality.",
-        "why": "Athletes and coaches need reliable plan-execution context, but simplistic compliance scores can mislead.",
+        "summary": "Validate the complete programming journey: create → structure → prescribe → schedule → execute → compare → adapt → analyze → program next exposure.",
+        "why": "The programming engine is only complete when its structured concepts remain understandable across authoring and real workout use.",
         "builds": [
-          "transparent descriptive counts/rates for scheduled sessions and planned work where semantics support them",
-          "period filters and source drill-down",
-          "distinguish skipped/cancelled/rescheduled/modified/substituted states",
-          "exclude or separately label quick workouts and unplanned additions",
-          "neutral coach/athlete summaries under authorization",
-          "consume LN-124 finite-program lifecycle boundaries when calculating descriptive program adherence",
-          "support Running scheduled-session adherence and compatible structured segment/work facts without implying that higher adherence is better training",
-          "keep unplanned Circuit/class sessions distinct from scheduled-plan denominators unless explicitly attached to a planned occurrence"
+          "end-to-end personal programming scenarios from simple to advanced",
+          "relative/per-set prescription and Training Max comprehension",
+          "scheduled execution, deload, planned-vs-performed, adherence and adaptation",
+          "mobile and desktop editor ergonomics",
+          "empty/error/disabled/conflict/offline/deep-link behavior",
+          "close small family integration defects discovered by the gate",
+          "validate programming of Running and Circuit / Conditioning structures where the typed domain supports them, without forcing strength-only prescription fields",
+          "finite-program lifecycle, modality-specific performance references and Running analytics handoff",
+          "strength-only programming regression and progressive disclosure across modality-specific controls"
         ],
         "userImpact": [
-          "labels explain exactly what numerator/denominator means",
-          "drill-down to sessions rather than decorative percentages",
-          "no red/green moral judgment for deviations",
+          "simple programming must stay simple even though advanced controls exist",
+          "advanced controls should be discoverable without dominating first-use flows",
+          "compare/adapt actions must return users to a clear next step",
           "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
           "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
           "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
         ],
         "journey": [
-          "labels explain exactly what numerator/denominator means",
-          "drill-down to sessions rather than decorative percentages",
-          "no red/green moral judgment for deviations",
+          "simple programming must stay simple even though advanced controls exist",
+          "advanced controls should be discoverable without dominating first-use flows",
+          "compare/adapt actions must return users to a clear next step",
           "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
           "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
           "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
         ],
         "rules": [
-          "coach sees only athlete data covered by explicit performance permission",
-          "relationship revocation removes future coach access immediately",
-          "feeds coach attention only through meaningful configured events, not generic noncompliance alerts",
-          "AI summaries may quote deterministic adherence facts with their period and definition"
+          "validate personal vs coach-owned edit boundaries in representative flows",
+          "offline active workouts must not mutate source prescriptions",
+          "deep links cannot bypass authorization",
+          "confirms stable inputs for Coach Pro and AI assistant",
+          "record unresolved issues as explicit blockers/future work rather than waiving them"
         ],
         "examples": [],
         "data": [
-          "derive from explicit schedule + planned/performed facts where possible",
-          "define denominator rules and insufficient-data behavior",
-          "do not persist opaque scores when derivation can stay reproducible"
+          "verify version/snapshot/reproducibility invariants across the whole journey",
+          "no new schema unless a blocking family defect requires it"
         ],
         "dependencies": [
-          "Requires LN-95 DONE and dated scheduling from LN-70."
+          "LN-125 — Running & Conditioning UX Gate.",
+          "LN-124 — Finite Program Lifecycle.",
+          "LN-126 — Running Analytics & Performance History."
         ],
         "attention": [
-          "coach sees only athlete data covered by explicit performance permission",
-          "relationship revocation removes future coach access immediately",
-          "period/denominator fixtures",
-          "schedule-change and deload regressions",
-          "authorized coach payload tests",
+          "validate personal vs coach-owned edit boundaries in representative flows",
+          "offline active workouts must not mutate source prescriptions",
+          "deep links cannot bypass authorization",
+          "integration/E2E suite under current release-gate policy",
+          "mobile/desktop/accessibility matrix",
+          "serialization, snapshot, offline and authorization regression suite",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
           "TinyFish is prohibited."
         ],
         "notInThisLot": [
-          "no motivation/gamification score",
-          "no punishment for rest or deload",
-          "no claim that higher adherence implies better health or programming quality",
-          "no single cross-modality adherence/fitness score that hides modality-specific denominators or missing data"
+          "no new feature family",
+          "no visual redesign unrelated to a proven journey defect",
+          "no opaque AI programming"
         ],
         "doneWhen": [
-          "metrics are reproducible and definition-visible",
-          "reschedules/deloads are treated correctly",
-          "unplanned sessions do not distort planned adherence",
-          "insufficient data is stated plainly"
+          "representative beginner and advanced programming jobs complete without dead ends",
+          "planned and performed truth stay distinct",
+          "all accepted adaptations remain human-controlled and traceable",
+          "no critical a11y/localization/authorization defect remains",
+          "The gate demonstrates that advanced programming can consume Running/Circuit facts without exposing a universal engine or regressing simple strength programming."
         ],
         "ux": [
-          "labels explain exactly what numerator/denominator means",
-          "drill-down to sessions rather than decorative percentages",
-          "no red/green moral judgment for deviations",
+          "simple programming must stay simple even though advanced controls exist",
+          "advanced controls should be discoverable without dominating first-use flows",
+          "compare/adapt actions must return users to a clear next step",
           "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
           "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
           "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
         ],
         "security": [
-          "coach sees only athlete data covered by explicit performance permission",
-          "relationship revocation removes future coach access immediately"
+          "validate personal vs coach-owned edit boundaries in representative flows",
+          "offline active workouts must not mutate source prescriptions",
+          "deep links cannot bypass authorization"
         ],
         "implications": [
-          "feeds coach attention only through meaningful configured events, not generic noncompliance alerts",
-          "AI summaries may quote deterministic adherence facts with their period and definition"
+          "confirms stable inputs for Coach Pro and AI assistant",
+          "record unresolved issues as explicit blockers/future work rather than waiving them"
         ],
         "validation": [
-          "period/denominator fixtures",
-          "schedule-change and deload regressions",
-          "authorized coach payload tests",
+          "integration/E2E suite under current release-gate policy",
+          "mobile/desktop/accessibility matrix",
+          "serialization, snapshot, offline and authorization regression suite",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
@@ -19817,59 +19817,62 @@
       },
       "contract": {
         "phase": "Programming Engine",
-        "objective": "Describe how closely completed training followed the explicit plan without pretending adherence measures training quality.",
-        "rationale": "Athletes and coaches need reliable plan-execution context, but simplistic compliance scores can mislead.",
+        "objective": "Validate the complete programming journey: create → structure → prescribe → schedule → execute → compare → adapt → analyze → program next exposure.",
+        "rationale": "The programming engine is only complete when its structured concepts remain understandable across authoring and real workout use.",
         "dependencies": [
-          "Requires LN-95 DONE and dated scheduling from LN-70."
+          "LN-125 — Running & Conditioning UX Gate.",
+          "LN-124 — Finite Program Lifecycle.",
+          "LN-126 — Running Analytics & Performance History."
         ],
         "scope": [
-          "transparent descriptive counts/rates for scheduled sessions and planned work where semantics support them",
-          "period filters and source drill-down",
-          "distinguish skipped/cancelled/rescheduled/modified/substituted states",
-          "exclude or separately label quick workouts and unplanned additions",
-          "neutral coach/athlete summaries under authorization",
-          "consume LN-124 finite-program lifecycle boundaries when calculating descriptive program adherence",
-          "support Running scheduled-session adherence and compatible structured segment/work facts without implying that higher adherence is better training",
-          "keep unplanned Circuit/class sessions distinct from scheduled-plan denominators unless explicitly attached to a planned occurrence"
+          "end-to-end personal programming scenarios from simple to advanced",
+          "relative/per-set prescription and Training Max comprehension",
+          "scheduled execution, deload, planned-vs-performed, adherence and adaptation",
+          "mobile and desktop editor ergonomics",
+          "empty/error/disabled/conflict/offline/deep-link behavior",
+          "close small family integration defects discovered by the gate",
+          "validate programming of Running and Circuit / Conditioning structures where the typed domain supports them, without forcing strength-only prescription fields",
+          "finite-program lifecycle, modality-specific performance references and Running analytics handoff",
+          "strength-only programming regression and progressive disclosure across modality-specific controls"
         ],
         "exclusions": [
-          "no motivation/gamification score",
-          "no punishment for rest or deload",
-          "no claim that higher adherence implies better health or programming quality",
-          "no single cross-modality adherence/fitness score that hides modality-specific denominators or missing data"
+          "no new feature family",
+          "no visual redesign unrelated to a proven journey defect",
+          "no opaque AI programming"
         ],
         "data": [
-          "derive from explicit schedule + planned/performed facts where possible",
-          "define denominator rules and insufficient-data behavior",
-          "do not persist opaque scores when derivation can stay reproducible"
+          "verify version/snapshot/reproducibility invariants across the whole journey",
+          "no new schema unless a blocking family defect requires it"
         ],
         "ux": [
-          "labels explain exactly what numerator/denominator means",
-          "drill-down to sessions rather than decorative percentages",
-          "no red/green moral judgment for deviations",
+          "simple programming must stay simple even though advanced controls exist",
+          "advanced controls should be discoverable without dominating first-use flows",
+          "compare/adapt actions must return users to a clear next step",
           "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
           "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
           "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
         ],
         "security": [
-          "coach sees only athlete data covered by explicit performance permission",
-          "relationship revocation removes future coach access immediately"
+          "validate personal vs coach-owned edit boundaries in representative flows",
+          "offline active workouts must not mutate source prescriptions",
+          "deep links cannot bypass authorization"
         ],
         "implications": [
-          "feeds coach attention only through meaningful configured events, not generic noncompliance alerts",
-          "AI summaries may quote deterministic adherence facts with their period and definition"
+          "confirms stable inputs for Coach Pro and AI assistant",
+          "record unresolved issues as explicit blockers/future work rather than waiving them"
         ],
         "acceptance": [
-          "metrics are reproducible and definition-visible",
-          "reschedules/deloads are treated correctly",
-          "unplanned sessions do not distort planned adherence",
-          "insufficient data is stated plainly"
+          "representative beginner and advanced programming jobs complete without dead ends",
+          "planned and performed truth stay distinct",
+          "all accepted adaptations remain human-controlled and traceable",
+          "no critical a11y/localization/authorization defect remains",
+          "The gate demonstrates that advanced programming can consume Running/Circuit facts without exposing a universal engine or regressing simple strength programming."
         ],
         "validation": [
-          "period/denominator fixtures",
-          "schedule-change and deload regressions",
-          "authorized coach payload tests",
+          "integration/E2E suite under current release-gate policy",
+          "mobile/desktop/accessibility matrix",
+          "serialization, snapshot, offline and authorization regression suite",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
