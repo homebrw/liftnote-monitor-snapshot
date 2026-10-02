@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T00:29:19.504Z",
+  "publishedAt": "2026-10-02T00:30:11.708Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-87 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T00:29:10.296Z",
-    "nextTickAt": "2026-10-02T00:34:10.296Z",
+    "lastSuccessfulTickAt": "2026-10-02T00:30:01.804Z",
+    "nextTickAt": "2026-10-02T00:35:01.804Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "02d557dfda5a0a63bc6ac2e1a94631838c82c295",
+    "mainSha": "8ff5d280c2f810f6a06f3b049a4ebb59ea190143",
     "lots": [
       {
         "id": "LN-00",
@@ -9909,7 +9909,7 @@
       {
         "id": "LN-87",
         "title": "Exercise Search & Discovery v2",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Make the enriched exercise system fast to search and filter across language, anatomy, movement, equipment and personal context.",
         "business": {
           "phase": "Exercise Intelligence",
@@ -10081,8 +10081,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "784",
+            "mergeSha": "02d557dfda5a0a63bc6ac2e1a94631838c82c295"
           }
         },
         "contractAvailable": true,
@@ -19225,13 +19225,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 86,
+    "done": 87,
     "total": 138,
-    "percent": 62,
+    "percent": 63,
     "current": {
       "id": "LN-87",
       "title": "Exercise Search & Discovery v2",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Make the enriched exercise system fast to search and filter across language, anatomy, movement, equipment and personal context.",
       "business": {
         "phase": "Exercise Intelligence",
@@ -19403,8 +19403,8 @@
           "TinyFish is prohibited."
         ],
         "completion": {
-          "pr": null,
-          "mergeSha": null
+          "pr": "784",
+          "mergeSha": "02d557dfda5a0a63bc6ac2e1a94631838c82c295"
         }
       },
       "contractAvailable": true,
