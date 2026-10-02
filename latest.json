@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T22:18:20.354Z",
+  "publishedAt": "2026-10-02T22:19:15.403Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-73",
-    "nextLot": "LN-74",
-    "launchedAt": "2026-10-02T22:07:07.852Z",
-    "lastProgressAt": "2026-10-02T22:15:02.591Z",
-    "lastChatCheckAt": "2026-10-02T22:07:07.852Z",
-    "lastObservedMainSha": "4091a7a280254a7a5fe0e01b375f8c8fe1e912b2",
+    "currentLot": "LN-74",
+    "nextLot": "LN-107",
+    "launchedAt": "2026-10-02T22:19:07.759Z",
+    "lastProgressAt": "2026-10-02T22:19:07.759Z",
+    "lastChatCheckAt": "2026-10-02T22:19:07.759Z",
+    "lastObservedMainSha": "4f6ab8d755d7345362c111ceb73f16d7cdcd479d",
     "nudges": 0,
-    "lastMessage": "main moved while LN-73 is active",
+    "lastMessage": "Launched LN-74; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T22:18:12.408Z",
-    "nextTickAt": "2026-10-02T22:23:12.408Z",
+    "lastSuccessfulTickAt": "2026-10-02T22:19:07.759Z",
+    "nextTickAt": "2026-10-02T22:24:07.759Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-72",
-        "completedAt": "2026-10-02T09:52:18.814Z",
-        "restartedAt": null,
-        "mainSha": "05a8e9d8fd9d15b5c7826cf3d0aca4ec5a9336d5",
-        "reason": null
-      },
       {
         "lot": "LN-94",
         "completedAt": "2026-10-02T10:18:05.803Z",
@@ -112,6 +105,13 @@
         "completedAt": "2026-10-02T22:07:00.735Z",
         "restartedAt": null,
         "mainSha": "736a5567d5946c596fa1543153f78af5d9fc5c98",
+        "reason": null
+      },
+      {
+        "lot": "LN-73",
+        "completedAt": "2026-10-02T22:19:00.646Z",
+        "restartedAt": null,
+        "mainSha": "4f6ab8d755d7345362c111ceb73f16d7cdcd479d",
         "reason": null
       }
     ]
@@ -19539,171 +19539,6 @@
     "total": 138,
     "percent": 86,
     "current": {
-      "id": "LN-73",
-      "title": "Export portable CSV et export de compte",
-      "status": "DONE",
-      "goal": "Give users a portable documented export of their LiftNote data beyond print/PDF.",
-      "business": {
-        "phase": "Trust, Data & Privacy",
-        "summary": "Give users a portable documented export of their LiftNote data beyond print/PDF.",
-        "why": "Portability is a prerequisite for backup, privacy controls and trustworthy long-lived training history.",
-        "builds": [
-          "CSV session/set export",
-          "program/template export in documented portable representation",
-          "appropriate account metadata/version information",
-          "preserve units/load semantics/provenance",
-          "clear coach-managed versus athlete-owned boundaries"
-        ],
-        "userImpact": [
-          "export is reachable from natural data/privacy context",
-          "progress/success/error states",
-          "explain what is and is not included",
-          "large export remains usable on mobile",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "export is reachable from natural data/privacy context",
-          "progress/success/error states",
-          "explain what is and is not included",
-          "large export remains usable on mobile",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "server authorization verifies ownership/allowed cross-user data",
-          "coach source/private coach data is not exported merely because athlete can execute it",
-          "LN-74 structured import, LN-107 backup and LN-111 privacy center consume this foundation"
-        ],
-        "examples": [],
-        "data": [
-          "version export schemas",
-          "preserve stable identifiers where useful without leaking sensitive internals unnecessarily",
-          "include enough provenance to interpret historical facts outside LiftNote"
-        ],
-        "dependencies": [
-          "Immediate roadmap predecessor: LN-106.",
-          "Material dependencies: LN-42, LN-44, LN-99, LN-106."
-        ],
-        "attention": [
-          "server authorization verifies ownership/allowed cross-user data",
-          "coach source/private coach data is not exported merely because athlete can execute it",
-          "export schema/fixture tests",
-          "large-history tests",
-          "cross-user negative authorization tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "cloud backup tiers",
-          "export of unauthorized other-user data",
-          "opaque proprietary-only format"
-        ],
-        "doneWhen": [
-          "exports are readable outside LiftNote",
-          "units/provenance/history meaning survive export",
-          "zero unauthorized other-user data",
-          "format/version documented"
-        ],
-        "ux": [
-          "export is reachable from natural data/privacy context",
-          "progress/success/error states",
-          "explain what is and is not included",
-          "large export remains usable on mobile",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "server authorization verifies ownership/allowed cross-user data",
-          "coach source/private coach data is not exported merely because athlete can execute it"
-        ],
-        "implications": [
-          "LN-74 structured import, LN-107 backup and LN-111 privacy center consume this foundation"
-        ],
-        "validation": [
-          "export schema/fixture tests",
-          "large-history tests",
-          "cross-user negative authorization tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Trust, Data & Privacy",
-        "objective": "Give users a portable documented export of their LiftNote data beyond print/PDF.",
-        "rationale": "Portability is a prerequisite for backup, privacy controls and trustworthy long-lived training history.",
-        "dependencies": [
-          "Immediate roadmap predecessor: LN-106.",
-          "Material dependencies: LN-42, LN-44, LN-99, LN-106."
-        ],
-        "scope": [
-          "CSV session/set export",
-          "program/template export in documented portable representation",
-          "appropriate account metadata/version information",
-          "preserve units/load semantics/provenance",
-          "clear coach-managed versus athlete-owned boundaries"
-        ],
-        "exclusions": [
-          "cloud backup tiers",
-          "export of unauthorized other-user data",
-          "opaque proprietary-only format"
-        ],
-        "data": [
-          "version export schemas",
-          "preserve stable identifiers where useful without leaking sensitive internals unnecessarily",
-          "include enough provenance to interpret historical facts outside LiftNote"
-        ],
-        "ux": [
-          "export is reachable from natural data/privacy context",
-          "progress/success/error states",
-          "explain what is and is not included",
-          "large export remains usable on mobile",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "server authorization verifies ownership/allowed cross-user data",
-          "coach source/private coach data is not exported merely because athlete can execute it"
-        ],
-        "implications": [
-          "LN-74 structured import, LN-107 backup and LN-111 privacy center consume this foundation"
-        ],
-        "acceptance": [
-          "exports are readable outside LiftNote",
-          "units/provenance/history meaning survive export",
-          "zero unauthorized other-user data",
-          "format/version documented"
-        ],
-        "validation": [
-          "export schema/fixture tests",
-          "large-history tests",
-          "cross-user negative authorization tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": "873",
-          "mergeSha": "4091a7a280254a7a5fe0e01b375f8c8fe1e912b2"
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-74",
       "title": "Import/export structuré de programmes et templates",
       "status": "TODO",
@@ -19867,6 +19702,179 @@
           "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
           "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
           "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-107",
+      "title": "Backup & Restore",
+      "status": "TODO",
+      "goal": "Protect long-lived LiftNote training data beyond entity-level trash by defining restorable user backup snapshots.",
+      "business": {
+        "phase": "Trust, Data & Privacy",
+        "summary": "Protect long-lived LiftNote training data beyond entity-level trash by defining restorable user backup snapshots.",
+        "why": "Years of training history need a recovery mechanism distinct from CSV export and soft deletion.",
+        "builds": [
+          "define backup scope/version manifest for user-owned LiftNote data",
+          "create/download or otherwise retain restorable backup according to repository/product architecture",
+          "restore preview before write",
+          "restore into same account with identity/conflict rules",
+          "clear immutable/audited boundaries for completed history",
+          "recovery from partial failure"
+        ],
+        "userImpact": [
+          "backup state and last-success information understandable without technical jargon",
+          "restore requires preview/confirmation and reports what changed",
+          "failure leaves original data intact",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "backup state and last-success information understandable without technical jargon",
+          "restore requires preview/confirmation and reports what changed",
+          "failure leaves original data intact",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "backup retrieval requires authenticated owner",
+          "sensitive export material must not be exposed through public URLs/logs",
+          "restore never bypasses RLS/ownership checks",
+          "LN-108 integrity checks validate backup/restore results",
+          "LN-110 audit trail records restore operations",
+          "privacy center exposes backup/export controls later"
+        ],
+        "examples": [],
+        "data": [
+          "versioned backup format with canonical IDs/provenance/unit/load semantics",
+          "restore preserves immutable history and resolves current-state conflicts explicitly",
+          "coach-managed foreign-owned source data is represented only to the extent user-owned snapshots/provenance require"
+        ],
+        "dependencies": [
+          "Requires LN-73 and LN-74 DONE; reuses ownership/versioning/history semantics."
+        ],
+        "attention": [
+          "backup retrieval requires authenticated owner",
+          "sensitive export material must not be exposed through public URLs/logs",
+          "restore never bypasses RLS/ownership checks",
+          "round-trip fixture tests across representative account data",
+          "failure/rollback/conflict tests",
+          "RLS/security checks for backup access and restore",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no third-party paid backup service without explicit approval",
+          "no silent overwrite restore",
+          "no restoration of data the user never owned",
+          "no replacement for portable export"
+        ],
+        "doneWhen": [
+          "supported data can be restored without corrupting history",
+          "restore conflicts are explicit before destructive action",
+          "foreign/coach data boundaries are preserved",
+          "backup format/version is documented and testable"
+        ],
+        "ux": [
+          "backup state and last-success information understandable without technical jargon",
+          "restore requires preview/confirmation and reports what changed",
+          "failure leaves original data intact",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "backup retrieval requires authenticated owner",
+          "sensitive export material must not be exposed through public URLs/logs",
+          "restore never bypasses RLS/ownership checks"
+        ],
+        "implications": [
+          "LN-108 integrity checks validate backup/restore results",
+          "LN-110 audit trail records restore operations",
+          "privacy center exposes backup/export controls later"
+        ],
+        "validation": [
+          "round-trip fixture tests across representative account data",
+          "failure/rollback/conflict tests",
+          "RLS/security checks for backup access and restore",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Trust, Data & Privacy",
+        "objective": "Protect long-lived LiftNote training data beyond entity-level trash by defining restorable user backup snapshots.",
+        "rationale": "Years of training history need a recovery mechanism distinct from CSV export and soft deletion.",
+        "dependencies": [
+          "Requires LN-73 and LN-74 DONE; reuses ownership/versioning/history semantics."
+        ],
+        "scope": [
+          "define backup scope/version manifest for user-owned LiftNote data",
+          "create/download or otherwise retain restorable backup according to repository/product architecture",
+          "restore preview before write",
+          "restore into same account with identity/conflict rules",
+          "clear immutable/audited boundaries for completed history",
+          "recovery from partial failure"
+        ],
+        "exclusions": [
+          "no third-party paid backup service without explicit approval",
+          "no silent overwrite restore",
+          "no restoration of data the user never owned",
+          "no replacement for portable export"
+        ],
+        "data": [
+          "versioned backup format with canonical IDs/provenance/unit/load semantics",
+          "restore preserves immutable history and resolves current-state conflicts explicitly",
+          "coach-managed foreign-owned source data is represented only to the extent user-owned snapshots/provenance require"
+        ],
+        "ux": [
+          "backup state and last-success information understandable without technical jargon",
+          "restore requires preview/confirmation and reports what changed",
+          "failure leaves original data intact",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "backup retrieval requires authenticated owner",
+          "sensitive export material must not be exposed through public URLs/logs",
+          "restore never bypasses RLS/ownership checks"
+        ],
+        "implications": [
+          "LN-108 integrity checks validate backup/restore results",
+          "LN-110 audit trail records restore operations",
+          "privacy center exposes backup/export controls later"
+        ],
+        "acceptance": [
+          "supported data can be restored without corrupting history",
+          "restore conflicts are explicit before destructive action",
+          "foreign/coach data boundaries are preserved",
+          "backup format/version is documented and testable"
+        ],
+        "validation": [
+          "round-trip fixture tests across representative account data",
+          "failure/rollback/conflict tests",
+          "RLS/security checks for backup access and restore",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
           "TinyFish is prohibited."
         ],
         "completion": {
