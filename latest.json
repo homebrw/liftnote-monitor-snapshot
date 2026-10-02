@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T00:30:11.708Z",
+  "publishedAt": "2026-10-02T00:31:10.730Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-87",
-    "nextLot": "LN-88",
-    "launchedAt": "2026-10-02T00:17:13.088Z",
-    "lastProgressAt": "2026-10-02T00:28:14.564Z",
-    "lastChatCheckAt": "2026-10-02T00:17:13.088Z",
-    "lastObservedMainSha": "02d557dfda5a0a63bc6ac2e1a94631838c82c295",
+    "currentLot": "LN-88",
+    "nextLot": "LN-89",
+    "launchedAt": "2026-10-02T00:31:00.219Z",
+    "lastProgressAt": "2026-10-02T00:31:00.219Z",
+    "lastChatCheckAt": "2026-10-02T00:31:00.219Z",
+    "lastObservedMainSha": "8ff5d280c2f810f6a06f3b049a4ebb59ea190143",
     "nudges": 0,
-    "lastMessage": "main moved while LN-87 is active",
+    "lastMessage": "Launched LN-88; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T00:30:01.804Z",
-    "nextTickAt": "2026-10-02T00:35:01.804Z",
+    "lastSuccessfulTickAt": "2026-10-02T00:31:00.219Z",
+    "nextTickAt": "2026-10-02T00:36:00.219Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-66",
-        "completedAt": "2026-10-01T20:33:32.059Z",
-        "restartedAt": null,
-        "mainSha": "16f8ed9416080fdc275ad97911c86469ee4b3f1b",
-        "reason": null
-      },
       {
         "lot": "LN-67",
         "completedAt": "2026-10-01T21:10:14.856Z",
@@ -100,6 +93,13 @@
         "completedAt": "2026-10-02T00:16:26.823Z",
         "restartedAt": null,
         "mainSha": "bd679a40fd02029c52fd807e145077e3c5668917",
+        "reason": null
+      },
+      {
+        "lot": "LN-87",
+        "completedAt": "2026-10-02T00:30:53.822Z",
+        "restartedAt": null,
+        "mainSha": "8ff5d280c2f810f6a06f3b049a4ebb59ea190143",
         "reason": null
       }
     ]
@@ -19229,188 +19229,6 @@
     "total": 138,
     "percent": 63,
     "current": {
-      "id": "LN-87",
-      "title": "Exercise Search & Discovery v2",
-      "status": "DONE",
-      "goal": "Make the enriched exercise system fast to search and filter across language, anatomy, movement, equipment and personal context.",
-      "business": {
-        "phase": "Exercise Intelligence",
-        "summary": "Make the enriched exercise system fast to search and filter across language, anatomy, movement, equipment and personal context.",
-        "why": "A richer catalog only creates value if users can find the right movement quickly without learning the taxonomy.",
-        "builds": [
-          "search canonical names and aliases in FR/EN",
-          "filters for muscles, movement family, equipment and tracking type",
-          "contextual prioritization by current gym equipment",
-          "favorites, recent and frequent shortcuts",
-          "variant-aware results without duplicate noise",
-          "temporary-unavailability handling and clear reset/filter chips"
-        ],
-        "userImpact": [
-          "instant useful results on mobile with common actions before advanced filters",
-          "advanced filters live behind progressive disclosure",
-          "result cards expose just enough metadata to distinguish similar movements",
-          "no hidden unavailable result that leaves a template unexplained",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System.",
-          "Large-catalog progressive disclosure is mandatory: favorites/recent/frequent and ordinary name search stay primary; equipment/family/tracking filters stay secondary and resettable.",
-          "Search must handle the expanded Circuit catalog without a separate Circuit-only picker or mandatory modality taxonomy selection."
-        ],
-        "journey": [
-          "instant useful results on mobile with common actions before advanced filters",
-          "advanced filters live behind progressive disclosure",
-          "result cards expose just enough metadata to distinguish similar movements",
-          "no hidden unavailable result that leaves a template unexplained",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System.",
-          "Large-catalog progressive disclosure is mandatory: favorites/recent/frequent and ordinary name search stay primary; equipment/family/tracking filters stay secondary and resettable.",
-          "Search must handle the expanded Circuit catalog without a separate Circuit-only picker or mandatory modality taxonomy selection."
-        ],
-        "rules": [
-          "personal favorites/recents/availability remain account-scoped",
-          "coach custom exercises appear only in authorized assignment context",
-          "offline active-workout add/replace flows must degrade predictably",
-          "search output feeds template editing, quick workouts, substitution and AI-import resolution",
-          "selection always returns a stable exercise identity for history"
-        ],
-        "examples": [],
-        "data": [
-          "consume normalized knowledge fields; do not create parallel search identity",
-          "indexes/search representation may be added only after measuring current query needs",
-          "custom exercises remain in the same user-facing picker while preserving ownership"
-        ],
-        "dependencies": [
-          "LN-118 — curated Circuit / Conditioning canonical catalog expansion must be DONE before search/discovery is considered complete."
-        ],
-        "attention": [
-          "personal favorites/recents/availability remain account-scoped",
-          "coach custom exercises appear only in authorized assignment context",
-          "offline active-workout add/replace flows must degrade predictably",
-          "search relevance fixtures for aliases/languages/variants",
-          "performance sanity checks on realistic catalog volume",
-          "UI tests for filter composition, reset and empty states",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no AI ranking required",
-          "no opaque personalization score",
-          "no forced taxonomy selection before ordinary name search"
-        ],
-        "doneWhen": [
-          "FR and EN lookup finds the intended canonical movement",
-          "equipment/family/muscle filters compose predictably",
-          "favorites/recents remain fast and understandable",
-          "large-catalog interaction remains usable on phone",
-          "Representative kettlebell, suspension/TRX, bodyweight conditioning, core, ball, band, sandbag/rope/box/jump-rope/sled movements from LN-118 are discoverable through FR/EN names/aliases and relevant filters."
-        ],
-        "ux": [
-          "instant useful results on mobile with common actions before advanced filters",
-          "advanced filters live behind progressive disclosure",
-          "result cards expose just enough metadata to distinguish similar movements",
-          "no hidden unavailable result that leaves a template unexplained",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System.",
-          "Large-catalog progressive disclosure is mandatory: favorites/recent/frequent and ordinary name search stay primary; equipment/family/tracking filters stay secondary and resettable.",
-          "Search must handle the expanded Circuit catalog without a separate Circuit-only picker or mandatory modality taxonomy selection."
-        ],
-        "security": [
-          "personal favorites/recents/availability remain account-scoped",
-          "coach custom exercises appear only in authorized assignment context",
-          "offline active-workout add/replace flows must degrade predictably"
-        ],
-        "implications": [
-          "search output feeds template editing, quick workouts, substitution and AI-import resolution",
-          "selection always returns a stable exercise identity for history"
-        ],
-        "validation": [
-          "search relevance fixtures for aliases/languages/variants",
-          "performance sanity checks on realistic catalog volume",
-          "UI tests for filter composition, reset and empty states",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Exercise Intelligence",
-        "objective": "Make the enriched exercise system fast to search and filter across language, anatomy, movement, equipment and personal context.",
-        "rationale": "A richer catalog only creates value if users can find the right movement quickly without learning the taxonomy.",
-        "dependencies": [
-          "LN-118 — curated Circuit / Conditioning canonical catalog expansion must be DONE before search/discovery is considered complete."
-        ],
-        "scope": [
-          "search canonical names and aliases in FR/EN",
-          "filters for muscles, movement family, equipment and tracking type",
-          "contextual prioritization by current gym equipment",
-          "favorites, recent and frequent shortcuts",
-          "variant-aware results without duplicate noise",
-          "temporary-unavailability handling and clear reset/filter chips"
-        ],
-        "exclusions": [
-          "no AI ranking required",
-          "no opaque personalization score",
-          "no forced taxonomy selection before ordinary name search"
-        ],
-        "data": [
-          "consume normalized knowledge fields; do not create parallel search identity",
-          "indexes/search representation may be added only after measuring current query needs",
-          "custom exercises remain in the same user-facing picker while preserving ownership"
-        ],
-        "ux": [
-          "instant useful results on mobile with common actions before advanced filters",
-          "advanced filters live behind progressive disclosure",
-          "result cards expose just enough metadata to distinguish similar movements",
-          "no hidden unavailable result that leaves a template unexplained",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System.",
-          "Large-catalog progressive disclosure is mandatory: favorites/recent/frequent and ordinary name search stay primary; equipment/family/tracking filters stay secondary and resettable.",
-          "Search must handle the expanded Circuit catalog without a separate Circuit-only picker or mandatory modality taxonomy selection."
-        ],
-        "security": [
-          "personal favorites/recents/availability remain account-scoped",
-          "coach custom exercises appear only in authorized assignment context",
-          "offline active-workout add/replace flows must degrade predictably"
-        ],
-        "implications": [
-          "search output feeds template editing, quick workouts, substitution and AI-import resolution",
-          "selection always returns a stable exercise identity for history"
-        ],
-        "acceptance": [
-          "FR and EN lookup finds the intended canonical movement",
-          "equipment/family/muscle filters compose predictably",
-          "favorites/recents remain fast and understandable",
-          "large-catalog interaction remains usable on phone",
-          "Representative kettlebell, suspension/TRX, bodyweight conditioning, core, ball, band, sandbag/rope/box/jump-rope/sled movements from LN-118 are discoverable through FR/EN names/aliases and relevant filters."
-        ],
-        "validation": [
-          "search relevance fixtures for aliases/languages/variants",
-          "performance sanity checks on realistic catalog volume",
-          "UI tests for filter composition, reset and empty states",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": "784",
-          "mergeSha": "02d557dfda5a0a63bc6ac2e1a94631838c82c295"
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-88",
       "title": "Exercise Detail v2",
       "status": "TODO",
@@ -19581,6 +19399,183 @@
           "component/data composition tests",
           "deep-link and unauthorized-state tests",
           "accessibility tests for section navigation and media alternatives",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-89",
+      "title": "Substitution Engine v2",
+      "status": "TODO",
+      "goal": "Make substitutions contextual, explainable and identity-safe using movement, equipment, availability and existing alternative relationships.",
+      "business": {
+        "phase": "Exercise Intelligence",
+        "summary": "Make substitutions contextual, explainable and identity-safe using movement, equipment, availability and existing alternative relationships.",
+        "why": "LN-50 introduced alternatives; the richer knowledge model should improve prioritization without claiming exact equivalence.",
+        "builds": [
+          "deterministic candidate filtering by compatibility, equipment and availability",
+          "movement-family/variant metadata as evidence, not automatic equivalence",
+          "explanation of why each candidate is shown",
+          "one-off active-session substitution preserving prescribed and performed identities",
+          "context for personal vs coach-managed prescriptions",
+          "user-selected/personal alternatives retained as explicit signal",
+          "Rich metadata, movement-family links, variants/progressions/regressions and source-aware alternatives may support candidate explanation, but no single upstream relationship automatically becomes LiftNote substitution truth."
+        ],
+        "userImpact": [
+          "surface replacement at the natural blocked/unavailable exercise context",
+          "show a short ranked set first with reasons and deeper browse on demand",
+          "allow cancel/revert before completion where history remains coherent",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
+        ],
+        "journey": [
+          "surface replacement at the natural blocked/unavailable exercise context",
+          "show a short ranked set first with reasons and deeper browse on demand",
+          "allow cancel/revert before completion where history remains coherent",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
+        ],
+        "rules": [
+          "coach prescription remains coach-owned; athlete one-off substitution cannot mutate coach source",
+          "private unavailability reasons are not exposed to coach unless explicitly authorized",
+          "offline substitution uses only safely cached candidates/context",
+          "analytics distinguish prescribed from performed movement",
+          "future deterministic adaptation may consume substitutions as facts but must not infer motives",
+          "AI explanations may summarize deterministic reasons only"
+        ],
+        "examples": [],
+        "data": [
+          "preserve prescribed exercise ID and performed substitute ID in session provenance",
+          "rules consume existing equipment/unavailability facts",
+          "substitution preference may be personal data but cannot mutate canonical ontology"
+        ],
+        "dependencies": [
+          "Requires LN-83 through LN-88 DONE and builds on LN-29, LN-49 and LN-50."
+        ],
+        "attention": [
+          "coach prescription remains coach-owned; athlete one-off substitution cannot mutate coach source",
+          "private unavailability reasons are not exposed to coach unless explicitly authorized",
+          "offline substitution uses only safely cached candidates/context",
+          "rule-engine fixtures across equipment/load/tracking/family cases",
+          "snapshot/history tests for substitution provenance",
+          "coach authorization and offline regression tests",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no physiological/injury recommendation",
+          "no automatic replacement without user action",
+          "no merging histories or rewriting source templates by default",
+          "no opaque AI ranker"
+        ],
+        "doneWhen": [
+          "candidates are compatible and reasons inspectable",
+          "unavailable/equipment-incompatible movements are handled deterministically",
+          "session history preserves both intended and actual movement",
+          "user remains in control of replacement",
+          "Circuit / Conditioning substitutions reuse canonical exercise identities and equipment context without creating modality-specific duplicates."
+        ],
+        "ux": [
+          "surface replacement at the natural blocked/unavailable exercise context",
+          "show a short ranked set first with reasons and deeper browse on demand",
+          "allow cancel/revert before completion where history remains coherent",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
+        ],
+        "security": [
+          "coach prescription remains coach-owned; athlete one-off substitution cannot mutate coach source",
+          "private unavailability reasons are not exposed to coach unless explicitly authorized",
+          "offline substitution uses only safely cached candidates/context"
+        ],
+        "implications": [
+          "analytics distinguish prescribed from performed movement",
+          "future deterministic adaptation may consume substitutions as facts but must not infer motives",
+          "AI explanations may summarize deterministic reasons only"
+        ],
+        "validation": [
+          "rule-engine fixtures across equipment/load/tracking/family cases",
+          "snapshot/history tests for substitution provenance",
+          "coach authorization and offline regression tests",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Exercise Intelligence",
+        "objective": "Make substitutions contextual, explainable and identity-safe using movement, equipment, availability and existing alternative relationships.",
+        "rationale": "LN-50 introduced alternatives; the richer knowledge model should improve prioritization without claiming exact equivalence.",
+        "dependencies": [
+          "Requires LN-83 through LN-88 DONE and builds on LN-29, LN-49 and LN-50."
+        ],
+        "scope": [
+          "deterministic candidate filtering by compatibility, equipment and availability",
+          "movement-family/variant metadata as evidence, not automatic equivalence",
+          "explanation of why each candidate is shown",
+          "one-off active-session substitution preserving prescribed and performed identities",
+          "context for personal vs coach-managed prescriptions",
+          "user-selected/personal alternatives retained as explicit signal",
+          "Rich metadata, movement-family links, variants/progressions/regressions and source-aware alternatives may support candidate explanation, but no single upstream relationship automatically becomes LiftNote substitution truth."
+        ],
+        "exclusions": [
+          "no physiological/injury recommendation",
+          "no automatic replacement without user action",
+          "no merging histories or rewriting source templates by default",
+          "no opaque AI ranker"
+        ],
+        "data": [
+          "preserve prescribed exercise ID and performed substitute ID in session provenance",
+          "rules consume existing equipment/unavailability facts",
+          "substitution preference may be personal data but cannot mutate canonical ontology"
+        ],
+        "ux": [
+          "surface replacement at the natural blocked/unavailable exercise context",
+          "show a short ranked set first with reasons and deeper browse on demand",
+          "allow cancel/revert before completion where history remains coherent",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
+        ],
+        "security": [
+          "coach prescription remains coach-owned; athlete one-off substitution cannot mutate coach source",
+          "private unavailability reasons are not exposed to coach unless explicitly authorized",
+          "offline substitution uses only safely cached candidates/context"
+        ],
+        "implications": [
+          "analytics distinguish prescribed from performed movement",
+          "future deterministic adaptation may consume substitutions as facts but must not infer motives",
+          "AI explanations may summarize deterministic reasons only"
+        ],
+        "acceptance": [
+          "candidates are compatible and reasons inspectable",
+          "unavailable/equipment-incompatible movements are handled deterministically",
+          "session history preserves both intended and actual movement",
+          "user remains in control of replacement",
+          "Circuit / Conditioning substitutions reuse canonical exercise identities and equipment context without creating modality-specific duplicates."
+        ],
+        "validation": [
+          "rule-engine fixtures across equipment/load/tracking/family cases",
+          "snapshot/history tests for substitution provenance",
+          "coach authorization and offline regression tests",
           "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
           "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
           "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
