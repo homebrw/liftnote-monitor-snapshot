@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T22:06:19.527Z",
+  "publishedAt": "2026-10-02T22:07:15.997Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-106",
-    "nextLot": "LN-73",
-    "launchedAt": "2026-10-02T21:05:05.726Z",
-    "lastProgressAt": "2026-10-02T21:59:37.692Z",
-    "lastChatCheckAt": "2026-10-02T21:59:37.692Z",
-    "lastObservedMainSha": "a65c2dd09938838a2829037a408687efd5baad90",
+    "currentLot": "LN-73",
+    "nextLot": "LN-74",
+    "launchedAt": "2026-10-02T22:07:07.852Z",
+    "lastProgressAt": "2026-10-02T22:07:07.852Z",
+    "lastChatCheckAt": "2026-10-02T22:07:07.852Z",
+    "lastObservedMainSha": "736a5567d5946c596fa1543153f78af5d9fc5c98",
     "nudges": 0,
-    "lastMessage": "Clicked Try again",
+    "lastMessage": "Launched LN-73; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T22:06:11.684Z",
-    "nextTickAt": "2026-10-02T22:11:11.684Z",
+    "lastSuccessfulTickAt": "2026-10-02T22:07:07.852Z",
+    "nextTickAt": "2026-10-02T22:12:07.852Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-124",
-        "completedAt": "2026-10-02T09:36:48.045Z",
-        "restartedAt": null,
-        "mainSha": "70db10d5bd19b28fad59d653b620f16263a58f02",
-        "reason": null
-      },
       {
         "lot": "LN-72",
         "completedAt": "2026-10-02T09:52:18.814Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "87c5f242c4e9bcfb635625e91c71a6cec2efc57a",
         "reason": null
+      },
+      {
+        "lot": "LN-106",
+        "completedAt": "2026-10-02T22:07:00.735Z",
+        "restartedAt": null,
+        "mainSha": "736a5567d5946c596fa1543153f78af5d9fc5c98",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "a65c2dd09938838a2829037a408687efd5baad90",
+    "mainSha": "736a5567d5946c596fa1543153f78af5d9fc5c98",
     "lots": [
       {
         "id": "LN-00",
@@ -15613,7 +15613,7 @@
       {
         "id": "LN-106",
         "title": "Coach Pro UX Gate",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Validate both sides of the coaching relationship from athlete receipt through coach review and adaptation.",
         "business": {
           "phase": "Coach Pro",
@@ -15769,8 +15769,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "871",
+            "mergeSha": "a65c2dd09938838a2829037a408687efd5baad90"
           }
         },
         "contractAvailable": true,
@@ -19535,176 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 117,
+    "done": 118,
     "total": 138,
-    "percent": 85,
+    "percent": 86,
     "current": {
-      "id": "LN-106",
-      "title": "Coach Pro UX Gate",
-      "status": "TODO",
-      "goal": "Validate both sides of the coaching relationship from athlete receipt through coach review and adaptation.",
-      "business": {
-        "phase": "Coach Pro",
-        "summary": "Validate both sides of the coaching relationship from athlete receipt through coach review and adaptation.",
-        "why": "Coach Pro is complete only if scale features preserve consent, clarity and athlete usability.",
-        "builds": [
-          "coach journey: athlete → program → assign → monitor → review → adapt",
-          "athlete journey: receive → understand → execute → give feedback → understand updates",
-          "cohort/bulk/customization/attention/longitudinal integration",
-          "mobile coach and athlete checks, desktop coach density, accessibility, localization and deep links",
-          "close small family integration defects within scope"
-        ],
-        "userImpact": [
-          "athlete always understands who controls a prescription and what changed",
-          "coach sees actionable context without noisy feed behavior",
-          "advanced scale tools do not complicate one-athlete workflows",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "athlete always understands who controls a prescription and what changed",
-          "coach sees actionable context without noisy feed behavior",
-          "advanced scale tools do not complicate one-athlete workflows",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "cross-user RLS/server auth and revocation are gate-level blockers",
-          "test cohort/bulk paths cannot expand authorization",
-          "privacy boundaries for notes/performance remain explicit",
-          "confirms stable coach surfaces before trust/privacy center and AI",
-          "record unresolved issues as blockers/named future work"
-        ],
-        "examples": [],
-        "data": [
-          "verify source/assignment/version/override/history lineage across complete journeys",
-          "no schema unless needed to resolve a blocking coherence defect"
-        ],
-        "dependencies": [
-          "Requires LN-100 through LN-105 DONE plus LN-23/LN-24/LN-60..LN-65."
-        ],
-        "attention": [
-          "cross-user RLS/server auth and revocation are gate-level blockers",
-          "test cohort/bulk paths cannot expand authorization",
-          "privacy boundaries for notes/performance remain explicit",
-          "end-to-end coach/athlete authorization suite",
-          "browser E2E under current gate policy",
-          "mobile/desktop/accessibility and deep-link matrix",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no generic coach/athlete chat",
-          "no marketplace/payments",
-          "no new medical/recovery scoring",
-          "no unrelated redesign"
-        ],
-        "doneWhen": [
-          "both representative journeys complete without dead ends",
-          "relationship revocation and permissions behave coherently throughout",
-          "no coach feature silently captures athlete ownership",
-          "no critical a11y/localization/security defect remains"
-        ],
-        "ux": [
-          "athlete always understands who controls a prescription and what changed",
-          "coach sees actionable context without noisy feed behavior",
-          "advanced scale tools do not complicate one-athlete workflows",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "cross-user RLS/server auth and revocation are gate-level blockers",
-          "test cohort/bulk paths cannot expand authorization",
-          "privacy boundaries for notes/performance remain explicit"
-        ],
-        "implications": [
-          "confirms stable coach surfaces before trust/privacy center and AI",
-          "record unresolved issues as blockers/named future work"
-        ],
-        "validation": [
-          "end-to-end coach/athlete authorization suite",
-          "browser E2E under current gate policy",
-          "mobile/desktop/accessibility and deep-link matrix",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Coach Pro",
-        "objective": "Validate both sides of the coaching relationship from athlete receipt through coach review and adaptation.",
-        "rationale": "Coach Pro is complete only if scale features preserve consent, clarity and athlete usability.",
-        "dependencies": [
-          "Requires LN-100 through LN-105 DONE plus LN-23/LN-24/LN-60..LN-65."
-        ],
-        "scope": [
-          "coach journey: athlete → program → assign → monitor → review → adapt",
-          "athlete journey: receive → understand → execute → give feedback → understand updates",
-          "cohort/bulk/customization/attention/longitudinal integration",
-          "mobile coach and athlete checks, desktop coach density, accessibility, localization and deep links",
-          "close small family integration defects within scope"
-        ],
-        "exclusions": [
-          "no generic coach/athlete chat",
-          "no marketplace/payments",
-          "no new medical/recovery scoring",
-          "no unrelated redesign"
-        ],
-        "data": [
-          "verify source/assignment/version/override/history lineage across complete journeys",
-          "no schema unless needed to resolve a blocking coherence defect"
-        ],
-        "ux": [
-          "athlete always understands who controls a prescription and what changed",
-          "coach sees actionable context without noisy feed behavior",
-          "advanced scale tools do not complicate one-athlete workflows",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "cross-user RLS/server auth and revocation are gate-level blockers",
-          "test cohort/bulk paths cannot expand authorization",
-          "privacy boundaries for notes/performance remain explicit"
-        ],
-        "implications": [
-          "confirms stable coach surfaces before trust/privacy center and AI",
-          "record unresolved issues as blockers/named future work"
-        ],
-        "acceptance": [
-          "both representative journeys complete without dead ends",
-          "relationship revocation and permissions behave coherently throughout",
-          "no coach feature silently captures athlete ownership",
-          "no critical a11y/localization/security defect remains"
-        ],
-        "validation": [
-          "end-to-end coach/athlete authorization suite",
-          "browser E2E under current gate policy",
-          "mobile/desktop/accessibility and deep-link matrix",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-73",
       "title": "Export portable CSV et export de compte",
       "status": "TODO",
@@ -19856,6 +19690,180 @@
           "export schema/fixture tests",
           "large-history tests",
           "cross-user negative authorization tests",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-74",
+      "title": "Import/export structuré de programmes et templates",
+      "status": "TODO",
+      "goal": "Provide a versioned deterministic file format for programs/workout templates that preserves rich LiftNote semantics and supports safe preview before import.",
+      "business": {
+        "phase": "Trust, Data & Privacy",
+        "summary": "Provide a versioned deterministic file format for programs/workout templates that preserves rich LiftNote semantics and supports safe preview before import.",
+        "why": "Backup, conflict resolution and AI import need one structured materialization boundary instead of bespoke copy paths.",
+        "builds": [
+          "versioned program/workout schema",
+          "round-trip program/block/week/workout and structured per-set prescriptions",
+          "system canonical mapping plus custom exercise materialization",
+          "preview before write",
+          "validation of missing/unsupported fields",
+          "explicit mapping report and safe failure",
+          "preserve provenance without granting ownership"
+        ],
+        "userImpact": [
+          "show what will be created, mapped, unresolved or skipped before confirmation",
+          "invalid files have understandable correction paths",
+          "import is discoverable from Programs/Data without cluttering workout flow",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "show what will be created, mapped, unresolved or skipped before confirmation",
+          "invalid files have understandable correction paths",
+          "import is discoverable from Programs/Data without cluttering workout flow",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "import writes only into caller-authorized scope",
+          "coach-managed source cannot become editable athlete source without explicit copy semantics",
+          "untrusted files are validated server-side",
+          "LN-109 adds richer conflict resolution; LN-77 AI import emits the same structured intermediate representation",
+          "completed history is never rewritten by import"
+        ],
+        "examples": [],
+        "data": [
+          "preserve load semantics, units, set types, tempo, RPE/RIR and relative-reference semantics",
+          "unknown newer fields fail or degrade explicitly by version policy",
+          "materialization reuses LN-21/LN-22 primitives"
+        ],
+        "dependencies": [
+          "Immediate roadmap predecessor: LN-73.",
+          "Material dependencies: LN-21, LN-22, LN-73, LN-85, LN-93, LN-99."
+        ],
+        "attention": [
+          "import writes only into caller-authorized scope",
+          "coach-managed source cannot become editable athlete source without explicit copy semantics",
+          "untrusted files are validated server-side",
+          "schema/version fixtures",
+          "advanced prescription/load round-trip tests",
+          "malformed-file and cross-user security tests",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "OCR/AI extraction",
+          "live synchronization",
+          "name-only exercise merging",
+          "silent destructive overwrite"
+        ],
+        "doneWhen": [
+          "supported content round-trips without semantic loss",
+          "preview precedes persistence",
+          "invalid/unsupported data fails safely",
+          "canonical identity/provenance are respected"
+        ],
+        "ux": [
+          "show what will be created, mapped, unresolved or skipped before confirmation",
+          "invalid files have understandable correction paths",
+          "import is discoverable from Programs/Data without cluttering workout flow",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "import writes only into caller-authorized scope",
+          "coach-managed source cannot become editable athlete source without explicit copy semantics",
+          "untrusted files are validated server-side"
+        ],
+        "implications": [
+          "LN-109 adds richer conflict resolution; LN-77 AI import emits the same structured intermediate representation",
+          "completed history is never rewritten by import"
+        ],
+        "validation": [
+          "schema/version fixtures",
+          "advanced prescription/load round-trip tests",
+          "malformed-file and cross-user security tests",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Trust, Data & Privacy",
+        "objective": "Provide a versioned deterministic file format for programs/workout templates that preserves rich LiftNote semantics and supports safe preview before import.",
+        "rationale": "Backup, conflict resolution and AI import need one structured materialization boundary instead of bespoke copy paths.",
+        "dependencies": [
+          "Immediate roadmap predecessor: LN-73.",
+          "Material dependencies: LN-21, LN-22, LN-73, LN-85, LN-93, LN-99."
+        ],
+        "scope": [
+          "versioned program/workout schema",
+          "round-trip program/block/week/workout and structured per-set prescriptions",
+          "system canonical mapping plus custom exercise materialization",
+          "preview before write",
+          "validation of missing/unsupported fields",
+          "explicit mapping report and safe failure",
+          "preserve provenance without granting ownership"
+        ],
+        "exclusions": [
+          "OCR/AI extraction",
+          "live synchronization",
+          "name-only exercise merging",
+          "silent destructive overwrite"
+        ],
+        "data": [
+          "preserve load semantics, units, set types, tempo, RPE/RIR and relative-reference semantics",
+          "unknown newer fields fail or degrade explicitly by version policy",
+          "materialization reuses LN-21/LN-22 primitives"
+        ],
+        "ux": [
+          "show what will be created, mapped, unresolved or skipped before confirmation",
+          "invalid files have understandable correction paths",
+          "import is discoverable from Programs/Data without cluttering workout flow",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "import writes only into caller-authorized scope",
+          "coach-managed source cannot become editable athlete source without explicit copy semantics",
+          "untrusted files are validated server-side"
+        ],
+        "implications": [
+          "LN-109 adds richer conflict resolution; LN-77 AI import emits the same structured intermediate representation",
+          "completed history is never rewritten by import"
+        ],
+        "acceptance": [
+          "supported content round-trips without semantic loss",
+          "preview precedes persistence",
+          "invalid/unsupported data fails safely",
+          "canonical identity/provenance are respected"
+        ],
+        "validation": [
+          "schema/version fixtures",
+          "advanced prescription/load round-trip tests",
+          "malformed-file and cross-user security tests",
           "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
           "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
           "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
