@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T06:19:38.561Z",
+  "publishedAt": "2026-10-02T06:20:31.846Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 1,
     "lastMessage": "Browser gate run 36972542446 passed; worker resumed to finish LN-125.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T06:19:29.990Z",
-    "nextTickAt": "2026-10-02T06:24:29.990Z",
+    "lastSuccessfulTickAt": "2026-10-02T06:20:22.192Z",
+    "nextTickAt": "2026-10-02T06:25:22.192Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
