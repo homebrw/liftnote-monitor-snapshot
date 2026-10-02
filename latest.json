@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T01:43:06.385Z",
+  "publishedAt": "2026-10-02T01:44:02.750Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 1,
     "lastMessage": "main moved while LN-90 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T01:42:55.662Z",
-    "nextTickAt": "2026-10-02T01:47:55.662Z",
+    "lastSuccessfulTickAt": "2026-10-02T01:43:52.355Z",
+    "nextTickAt": "2026-10-02T01:48:52.355Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
