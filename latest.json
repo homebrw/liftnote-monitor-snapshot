@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T06:20:31.846Z",
+  "publishedAt": "2026-10-02T06:22:30.329Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-125",
-    "nextLot": "LN-71",
-    "launchedAt": "2026-10-02T04:46:50.338Z",
-    "lastProgressAt": "2026-10-02T06:19:29.738Z",
-    "lastChatCheckAt": "2026-10-02T06:19:29.738Z",
-    "lastObservedMainSha": "8cb00a53b982343212815568225617838b516406",
-    "nudges": 1,
-    "lastMessage": "Browser gate run 36972542446 passed; worker resumed to finish LN-125.",
+    "currentLot": "LN-91",
+    "nextLot": "LN-92",
+    "launchedAt": "2026-10-02T06:22:18.670Z",
+    "lastProgressAt": "2026-10-02T06:22:18.670Z",
+    "lastChatCheckAt": "2026-10-02T06:22:18.670Z",
+    "lastObservedMainSha": "8ac4aae590301e09f8a23709638a9aa301da00bc",
+    "nudges": 0,
+    "lastMessage": "Launched LN-91; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T06:20:22.192Z",
-    "nextTickAt": "2026-10-02T06:25:22.192Z",
+    "lastSuccessfulTickAt": "2026-10-02T06:22:18.670Z",
+    "nextTickAt": "2026-10-02T06:27:18.670Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": "success"
     },
     "history": [
-      {
-        "lot": "LN-86",
-        "completedAt": "2026-10-01T23:43:17.683Z",
-        "restartedAt": null,
-        "mainSha": "646577235ff6c04aeabe0fbd8750c55acbc62b9b",
-        "reason": null
-      },
       {
         "lot": "LN-117",
         "completedAt": "2026-10-01T23:55:12.753Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "4ff77f3ed891643e720e198dc94736673118440f",
         "reason": null
+      },
+      {
+        "lot": "LN-125",
+        "completedAt": "2026-10-02T06:22:10.924Z",
+        "restartedAt": null,
+        "mainSha": "8ac4aae590301e09f8a23709638a9aa301da00bc",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "8cb00a53b982343212815568225617838b516406",
+    "mainSha": "0a1f736200595dbb6580ea77dfd0895dc8a4e2c2",
     "lots": [
       {
         "id": "LN-00",
@@ -11733,7 +11733,7 @@
       {
         "id": "LN-125",
         "title": "Running & Conditioning UX Gate",
-        "status": "WAITING_GATE",
+        "status": "DONE",
         "goal": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
         "business": {
           "phase": "Running & Conditioning Core",
@@ -11909,8 +11909,8 @@
             "Vercel READY is build evidence, not interactive QA."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "803",
+            "mergeSha": "308086bcf4600986aa6b84746626b2d68dbaf28c"
           }
         },
         "contractAvailable": true,
@@ -11963,7 +11963,8 @@
           "examples": [],
           "data": [],
           "dependencies": [
-            "Immediate roadmap predecessor after architecture reordering: LN-125. Material dependencies: LN-07B, LN-07D, LN-10, LN-52, LN-58, and the Exercise Intelligence gate LN-90 for stable exercise identity/knowledge semantics."
+            "The completed LN-125 gate confirms that Running/Circuit performed facts remain typed modality facts rather than strength observations. LN-71 must exclude Circuit scores, Running distance/splits and other incompatible modality facts from e1RM evidence.",
+            "Strength evidence stays keyed to canonical exercise identity and immutable performed-session facts; reusable-block prescription provenance must never rewrite the historical performances used by the individualized model."
           ],
           "attention": [
             "run focused lint/type/tests before first push;",
@@ -12024,7 +12025,8 @@
           "objective": "Remplacer une estimation e1RM fondée uniquement sur une table générique/une performance source par un modèle explicable, versionné et progressivement individualisé par athlète × exercice, tout en conservant une séparation stricte entre record réellement réalisé et capacité estimée.",
           "rationale": null,
           "dependencies": [
-            "Immediate roadmap predecessor after architecture reordering: LN-125. Material dependencies: LN-07B, LN-07D, LN-10, LN-52, LN-58, and the Exercise Intelligence gate LN-90 for stable exercise identity/knowledge semantics."
+            "The completed LN-125 gate confirms that Running/Circuit performed facts remain typed modality facts rather than strength observations. LN-71 must exclude Circuit scores, Running distance/splits and other incompatible modality facts from e1RM evidence.",
+            "Strength evidence stays keyed to canonical exercise identity and immutable performed-session facts; reusable-block prescription provenance must never rewrite the historical performances used by the individualized model."
           ],
           "scope": [
             "individual curve per athlete × canonical exercise;",
@@ -12140,7 +12142,9 @@
             "offline active session uses snapshotted reference outcome, not a mutable live TM",
             "LN-92 relative prescriptions and LN-68 progression consume TM",
             "analytics may show TM changes separately from strength performance",
-            "AI may reference accepted TM but never fabricate it"
+            "AI may reference accepted TM but never fabricate it",
+            "LN-125 confirms that Strength PR/e1RM/TM semantics must remain isolated from Running/Circuit performance facts.",
+            "Running/Circuit references may be represented only through modality-specific eligibility and provenance; they must not be coerced into a Strength reference. Every resolved reference must retain an explainable source fact and modality-specific meaning."
           ],
           "examples": [],
           "data": [
@@ -12174,9 +12178,7 @@
           "doneWhen": [
             "PR/e1RM/TM are visibly and structurally distinct",
             "TM history is traceable and future changes do not rewrite past sessions",
-            "unsupported load semantics are rejected rather than coerced",
-            "Strength TM/PR/e1RM semantics remain unchanged while Running/Circuit references can be represented with their own eligibility/provenance rules.",
-            "Every resolved reference can explain its source fact and modality-specific meaning."
+            "unsupported load semantics are rejected rather than coerced"
           ],
           "ux": [
             "show current TM where prescriptions use it; keep full history secondary",
@@ -12195,7 +12197,9 @@
           "implications": [
             "LN-92 relative prescriptions and LN-68 progression consume TM",
             "analytics may show TM changes separately from strength performance",
-            "AI may reference accepted TM but never fabricate it"
+            "AI may reference accepted TM but never fabricate it",
+            "LN-125 confirms that Strength PR/e1RM/TM semantics must remain isolated from Running/Circuit performance facts.",
+            "Running/Circuit references may be represented only through modality-specific eligibility and provenance; they must not be coerced into a Strength reference. Every resolved reference must retain an explainable source fact and modality-specific meaning."
           ],
           "validation": [
             "domain tests for value history/effective reference selection",
@@ -12254,14 +12258,14 @@
           "implications": [
             "LN-92 relative prescriptions and LN-68 progression consume TM",
             "analytics may show TM changes separately from strength performance",
-            "AI may reference accepted TM but never fabricate it"
+            "AI may reference accepted TM but never fabricate it",
+            "LN-125 confirms that Strength PR/e1RM/TM semantics must remain isolated from Running/Circuit performance facts.",
+            "Running/Circuit references may be represented only through modality-specific eligibility and provenance; they must not be coerced into a Strength reference. Every resolved reference must retain an explainable source fact and modality-specific meaning."
           ],
           "acceptance": [
             "PR/e1RM/TM are visibly and structurally distinct",
             "TM history is traceable and future changes do not rewrite past sessions",
-            "unsupported load semantics are rejected rather than coerced",
-            "Strength TM/PR/e1RM semantics remain unchanged while Running/Circuit references can be represented with their own eligibility/provenance rules.",
-            "Every resolved reference can explain its source fact and modality-specific meaning."
+            "unsupported load semantics are rejected rather than coerced"
           ],
           "validation": [
             "domain tests for value history/effective reference selection",
@@ -19516,186 +19520,185 @@
     "mismatches": []
   },
   "summary": {
-    "done": 95,
+    "done": 96,
     "total": 138,
-    "percent": 69,
+    "percent": 70,
     "current": {
-      "id": "LN-125",
-      "title": "Running & Conditioning UX Gate",
-      "status": "WAITING_GATE",
-      "goal": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
+      "id": "LN-91",
+      "title": "Training Max & Performance References",
+      "status": "TODO",
+      "goal": "Introduce Training Max as a first-class, historical programming reference distinct from true PRs, e1RM and raw set performance.",
       "business": {
-        "phase": "Running & Conditioning Core",
-        "summary": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
-        "why": "A generic internal model is only successful if users never have to understand it. This gate verifies that the new domains are discoverable, fast and coherent without burdening strength-only users.",
+        "phase": "Programming Engine",
+        "summary": "Introduce Training Max as a first-class, historical programming reference distinct from true PRs, e1RM and raw set performance.",
+        "why": "Relative prescriptions need a stable user/coach-controlled reference rather than overloading records or estimates.",
         "builds": [
-          "End-to-end strength-only regression.",
-          "Running: discover/create → execute continuous and interval workout → correct → finish → history.",
-          "Circuit: discover/create → class-on-arrival/lightweight path → structured protocol live execution → score/history.",
-          "Mixed workout using canonical circuit movements and a running step.",
-          "Reusable athlete block insertion.",
-          "Mobile/desktop, FR/EN, accessibility, empty/error/unavailable/offline/recovery and deep-link checks.",
-          "Progressive-disclosure review: advanced modality controls stay out of ordinary flows until relevant.",
-          "Close small integration defects within this family when safe."
+          "Training Max per eligible exercise/reference context",
+          "effective dates/history of TM values",
+          "manual create/change with provenance",
+          "optional deterministic suggestion from eligible factual references, always requiring acceptance",
+          "clear distinction among PR, e1RM, TM and historical best set",
+          "Running reference pace or benchmark-time references when supported by explicit source sessions/results.",
+          "Circuit benchmark/result references for compatible protocol/template identity.",
+          "A shared reference interface only at the level that preserves modality-specific meaning, source/provenance, effective date and eligibility rules."
         ],
         "userImpact": [
-          "Complexity in the model, simplicity in the experience is the primary gate.",
-          "Strength-only user does not see unwanted Running/Circuit configuration.",
-          "“Courir” and “Circuit / conditioning” use familiar language and defaults.",
-          "Active screens adapt to the current domain without creating separate app silos.",
-          "Today/Programmes/Historique/Progression remain coherent navigation anchors."
+          "show current TM where prescriptions use it; keep full history secondary",
+          "explain source and effective date",
+          "editing must make downstream future-program impact understandable",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
         ],
         "journey": [
-          "Complexity in the model, simplicity in the experience is the primary gate.",
-          "Strength-only user does not see unwanted Running/Circuit configuration.",
-          "“Courir” and “Circuit / conditioning” use familiar language and defaults.",
-          "Active screens adapt to the current domain without creating separate app silos.",
-          "Today/Programmes/Historique/Progression remain coherent navigation anchors."
+          "show current TM where prescriptions use it; keep full history secondary",
+          "explain source and effective date",
+          "editing must make downstream future-program impact understandable",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
         ],
         "rules": [
-          "Validate athlete/coach visibility for new workout structures.",
-          "Verify no new cross-user read/write path.",
-          "Ensure health/location fields are not required merely to use Running.",
-          "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
-          "Confirm no duplicated split/round/score after sync.",
-          "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
-          "No opaque combined fitness score appears.",
-          "AI is not required for any core workflow."
+          "athlete owns personal TM; coach-managed TM/prescription semantics require explicit relationship authorization",
+          "ending coach access cannot delete athlete history",
+          "offline active session uses snapshotted reference outcome, not a mutable live TM",
+          "LN-92 relative prescriptions and LN-68 progression consume TM",
+          "analytics may show TM changes separately from strength performance",
+          "AI may reference accepted TM but never fabricate it",
+          "LN-125 confirms that Strength PR/e1RM/TM semantics must remain isolated from Running/Circuit performance facts.",
+          "Running/Circuit references may be represented only through modality-specific eligibility and provenance; they must not be coerced into a Strength reference. Every resolved reference must retain an explainable source fact and modality-specific meaning."
         ],
         "examples": [],
         "data": [
-          "Validate typed snapshots and canonical identities through real product paths.",
-          "Confirm no incompatible modality facts are merged in history/analytics.",
-          "Confirm source/ownership/provenance survives copy and reuse."
+          "persist TM as its own domain object/value history",
+          "record source/provenance when user accepts a suggestion",
+          "history changes do not rewrite prescriptions already snapshotted into sessions"
         ],
         "dependencies": [
-          "LN-119 through LN-123.",
-          "LN-87/LN-88/LN-89 exercise discovery/detail/substitution.",
-          "LN-55/LN-56/LN-57 shared Today/workout/program UX.",
-          "LN-45 offline recovery."
+          "Requires LN-67 DONE and LN-71 DONE. LN-71 is the immediate execution predecessor because e1RM must exist as a distinct factual reference before Training Max is introduced. Reuses validated PR and e1RM semantics without converting either into Training Max automatically."
         ],
         "attention": [
-          "Validate athlete/coach visibility for new workout structures.",
-          "Verify no new cross-user read/write path.",
-          "Ensure health/location fields are not required merely to use Running.",
-          "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
-          "Confirm no duplicated split/round/score after sync.",
-          "Browser/mobile interaction is mandatory for representative paths.",
-          "Accessibility keyboard/focus and touch-target checks.",
-          "Offline/background recovery scenarios.",
-          "Deterministic snapshot/identity assertions.",
-          "No TinyFish.",
-          "Vercel READY is build evidence, not interactive QA."
+          "athlete owns personal TM; coach-managed TM/prescription semantics require explicit relationship authorization",
+          "ending coach access cannot delete athlete history",
+          "offline active session uses snapshotted reference outcome, not a mutable live TM",
+          "domain tests for value history/effective reference selection",
+          "RLS/coach tests if cross-user TM management is supported",
+          "snapshot compatibility tests",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
         ],
         "notInThisLot": [
-          "New feature family.",
-          "CrossFit/Hyrox product layers.",
-          "Proprietary GPS/social functionality.",
-          "Running analytics beyond session facts.",
-          "Broad redesign unrelated to a proven multi-modality defect."
+          "no automatic hidden TM updates",
+          "no one-formula claim that TM equals e1RM",
+          "no unsupported assisted/bodyweight percentage model",
+          "no universal cross-modality performance number or opaque global fitness score",
+          "no fabrication of a race PR from an ineligible interval fragment",
+          "no comparison of incompatible Circuit protocols as equivalent"
         ],
         "doneWhen": [
-          "Representative Running and Circuit jobs complete with no dead end.",
-          "Strength regression remains closed.",
-          "Progressive disclosure prevents cross-modality clutter.",
-          "Offline/recovery path preserves exact performed facts.",
-          "FR/EN labels and accessibility are coherent.",
-          "Any unresolved blocking product-path defect is fixed or explicitly blocks advancement."
+          "PR/e1RM/TM are visibly and structurally distinct",
+          "TM history is traceable and future changes do not rewrite past sessions",
+          "unsupported load semantics are rejected rather than coerced"
         ],
         "ux": [
-          "Complexity in the model, simplicity in the experience is the primary gate.",
-          "Strength-only user does not see unwanted Running/Circuit configuration.",
-          "“Courir” and “Circuit / conditioning” use familiar language and defaults.",
-          "Active screens adapt to the current domain without creating separate app silos.",
-          "Today/Programmes/Historique/Progression remain coherent navigation anchors."
+          "show current TM where prescriptions use it; keep full history secondary",
+          "explain source and effective date",
+          "editing must make downstream future-program impact understandable",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
         ],
         "security": [
-          "Validate athlete/coach visibility for new workout structures.",
-          "Verify no new cross-user read/write path.",
-          "Ensure health/location fields are not required merely to use Running.",
-          "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
-          "Confirm no duplicated split/round/score after sync."
+          "athlete owns personal TM; coach-managed TM/prescription semantics require explicit relationship authorization",
+          "ending coach access cannot delete athlete history",
+          "offline active session uses snapshotted reference outcome, not a mutable live TM"
         ],
         "implications": [
-          "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
-          "No opaque combined fitness score appears.",
-          "AI is not required for any core workflow."
+          "LN-92 relative prescriptions and LN-68 progression consume TM",
+          "analytics may show TM changes separately from strength performance",
+          "AI may reference accepted TM but never fabricate it",
+          "LN-125 confirms that Strength PR/e1RM/TM semantics must remain isolated from Running/Circuit performance facts.",
+          "Running/Circuit references may be represented only through modality-specific eligibility and provenance; they must not be coerced into a Strength reference. Every resolved reference must retain an explainable source fact and modality-specific meaning."
         ],
         "validation": [
-          "Browser/mobile interaction is mandatory for representative paths.",
-          "Accessibility keyboard/focus and touch-target checks.",
-          "Offline/background recovery scenarios.",
-          "Deterministic snapshot/identity assertions.",
-          "No TinyFish.",
-          "Vercel READY is build evidence, not interactive QA."
+          "domain tests for value history/effective reference selection",
+          "RLS/coach tests if cross-user TM management is supported",
+          "snapshot compatibility tests",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
         ]
       },
       "contract": {
-        "phase": "Running & Conditioning Core",
-        "objective": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
-        "rationale": "A generic internal model is only successful if users never have to understand it. This gate verifies that the new domains are discoverable, fast and coherent without burdening strength-only users.",
+        "phase": "Programming Engine",
+        "objective": "Introduce Training Max as a first-class, historical programming reference distinct from true PRs, e1RM and raw set performance.",
+        "rationale": "Relative prescriptions need a stable user/coach-controlled reference rather than overloading records or estimates.",
         "dependencies": [
-          "LN-119 through LN-123.",
-          "LN-87/LN-88/LN-89 exercise discovery/detail/substitution.",
-          "LN-55/LN-56/LN-57 shared Today/workout/program UX.",
-          "LN-45 offline recovery."
+          "Requires LN-67 DONE and LN-71 DONE. LN-71 is the immediate execution predecessor because e1RM must exist as a distinct factual reference before Training Max is introduced. Reuses validated PR and e1RM semantics without converting either into Training Max automatically."
         ],
         "scope": [
-          "End-to-end strength-only regression.",
-          "Running: discover/create → execute continuous and interval workout → correct → finish → history.",
-          "Circuit: discover/create → class-on-arrival/lightweight path → structured protocol live execution → score/history.",
-          "Mixed workout using canonical circuit movements and a running step.",
-          "Reusable athlete block insertion.",
-          "Mobile/desktop, FR/EN, accessibility, empty/error/unavailable/offline/recovery and deep-link checks.",
-          "Progressive-disclosure review: advanced modality controls stay out of ordinary flows until relevant.",
-          "Close small integration defects within this family when safe."
+          "Training Max per eligible exercise/reference context",
+          "effective dates/history of TM values",
+          "manual create/change with provenance",
+          "optional deterministic suggestion from eligible factual references, always requiring acceptance",
+          "clear distinction among PR, e1RM, TM and historical best set",
+          "Running reference pace or benchmark-time references when supported by explicit source sessions/results.",
+          "Circuit benchmark/result references for compatible protocol/template identity.",
+          "A shared reference interface only at the level that preserves modality-specific meaning, source/provenance, effective date and eligibility rules."
         ],
         "exclusions": [
-          "New feature family.",
-          "CrossFit/Hyrox product layers.",
-          "Proprietary GPS/social functionality.",
-          "Running analytics beyond session facts.",
-          "Broad redesign unrelated to a proven multi-modality defect."
+          "no automatic hidden TM updates",
+          "no one-formula claim that TM equals e1RM",
+          "no unsupported assisted/bodyweight percentage model",
+          "no universal cross-modality performance number or opaque global fitness score",
+          "no fabrication of a race PR from an ineligible interval fragment",
+          "no comparison of incompatible Circuit protocols as equivalent"
         ],
         "data": [
-          "Validate typed snapshots and canonical identities through real product paths.",
-          "Confirm no incompatible modality facts are merged in history/analytics.",
-          "Confirm source/ownership/provenance survives copy and reuse."
+          "persist TM as its own domain object/value history",
+          "record source/provenance when user accepts a suggestion",
+          "history changes do not rewrite prescriptions already snapshotted into sessions"
         ],
         "ux": [
-          "Complexity in the model, simplicity in the experience is the primary gate.",
-          "Strength-only user does not see unwanted Running/Circuit configuration.",
-          "“Courir” and “Circuit / conditioning” use familiar language and defaults.",
-          "Active screens adapt to the current domain without creating separate app silos.",
-          "Today/Programmes/Historique/Progression remain coherent navigation anchors."
+          "show current TM where prescriptions use it; keep full history secondary",
+          "explain source and effective date",
+          "editing must make downstream future-program impact understandable",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
         ],
         "security": [
-          "Validate athlete/coach visibility for new workout structures.",
-          "Verify no new cross-user read/write path.",
-          "Ensure health/location fields are not required merely to use Running.",
-          "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
-          "Confirm no duplicated split/round/score after sync."
+          "athlete owns personal TM; coach-managed TM/prescription semantics require explicit relationship authorization",
+          "ending coach access cannot delete athlete history",
+          "offline active session uses snapshotted reference outcome, not a mutable live TM"
         ],
         "implications": [
-          "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
-          "No opaque combined fitness score appears.",
-          "AI is not required for any core workflow."
+          "LN-92 relative prescriptions and LN-68 progression consume TM",
+          "analytics may show TM changes separately from strength performance",
+          "AI may reference accepted TM but never fabricate it",
+          "LN-125 confirms that Strength PR/e1RM/TM semantics must remain isolated from Running/Circuit performance facts.",
+          "Running/Circuit references may be represented only through modality-specific eligibility and provenance; they must not be coerced into a Strength reference. Every resolved reference must retain an explainable source fact and modality-specific meaning."
         ],
         "acceptance": [
-          "Representative Running and Circuit jobs complete with no dead end.",
-          "Strength regression remains closed.",
-          "Progressive disclosure prevents cross-modality clutter.",
-          "Offline/recovery path preserves exact performed facts.",
-          "FR/EN labels and accessibility are coherent.",
-          "Any unresolved blocking product-path defect is fixed or explicitly blocks advancement."
+          "PR/e1RM/TM are visibly and structurally distinct",
+          "TM history is traceable and future changes do not rewrite past sessions",
+          "unsupported load semantics are rejected rather than coerced"
         ],
         "validation": [
-          "Browser/mobile interaction is mandatory for representative paths.",
-          "Accessibility keyboard/focus and touch-target checks.",
-          "Offline/background recovery scenarios.",
-          "Deterministic snapshot/identity assertions.",
-          "No TinyFish.",
-          "Vercel READY is build evidence, not interactive QA."
+          "domain tests for value history/effective reference selection",
+          "RLS/coach tests if cross-user TM management is supported",
+          "snapshot compatibility tests",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
         ],
         "completion": {
           "pr": null,
@@ -19706,177 +19709,158 @@
       "executionState": "executable"
     },
     "next": {
-      "id": "LN-71",
-      "title": "e1RM individualisé et tendances de force",
+      "id": "LN-92",
+      "title": "Relative Prescriptions",
       "status": "TODO",
-      "goal": "Remplacer une estimation e1RM fondée uniquement sur une table générique/une performance source par un modèle explicable, versionné et progressivement individualisé par athlète × exercice, tout en conservant une séparation stricte entre record réellement réalisé et capacité estimée.",
+      "goal": "Represent absolute load, %1RM, %e1RM, %Training Max, RPE and RIR as distinct structured prescription semantics.",
       "business": {
-        "phase": "Analytics",
-        "summary": "Remplacer une estimation e1RM fondée uniquement sur une table générique/une performance source par un modèle explicable, versionné et progressivement individualisé par athlète × exercice, tout en conservant une séparation stricte entre record réellement réalisé et capacité estimée.",
-        "why": null,
+        "phase": "Programming Engine",
+        "summary": "Represent absolute load, %1RM, %e1RM, %Training Max, RPE and RIR as distinct structured prescription semantics.",
+        "why": "Advanced programming needs explicit references; collapsing them into one numeric target destroys meaning and explainability.",
         "builds": [
-          "individual curve per athlete × canonical exercise;",
-          "sparse / hybrid / individualized evidence states;",
-          "e1RM derived from the fitted relationship;",
-          "derived 2RM/3RM/5RM/etc. only when the model and uncertainty support them;",
-          "support for compatible external/added-load semantics with explicit isolation rules;",
-          "explicit exclusion/handling for assisted load, warm-ups, invalidated performances, unsupported tracking types and incompatible set types;",
-          "true measured 1RM as a high-confidence observation/anchor without converting it into an \"estimated record\";",
-          "RIR-informed observations only through an explicit uncertainty-aware rule;",
-          "recency-aware current-strength estimate without rewriting historical PR truth;",
-          "uncertainty interval or other calibrated precision representation;",
-          "deterministic/reproducible model versioning.",
-          "temporal e1RM/strength trend;",
-          "separation of measured PRs and estimates everywhere;",
-          "drill-down from the estimate to the source performances;",
-          "secondary athlete-facing surface such as « Comment est calculé mon e1RM ? »;",
-          "show whether the estimate is population, hybrid or individualized;"
+          "structured prescription-reference type and value",
+          "absolute load, % validated 1RM, % e1RM, % Training Max, RPE and RIR",
+          "deterministic resolved target preview when the reference is available",
+          "missing/stale-reference behavior",
+          "duplication/share/import/coach/snapshot preservation"
         ],
         "userImpact": [
-          "extend shipped LiftNote; do not recreate completed capabilities;",
-          "mobile-first, accessible, approved black/charcoal + warm-orange + off-white identity;",
-          "define loading, empty, error, permission and unsupported states where relevant;",
-          "preserve immutable workout/session historical truth;",
-          "distinguish entered facts, derived metrics and recommendations;",
-          "avoid pseudo-scientific precision: estimates and uncertainty must be understandable to a non-statistician."
+          "show both prescription rule and resolved load when useful, with source reference accessible",
+          "missing reference offers a clear fix/change path instead of a broken workout",
+          "ordinary absolute-load users see no extra complexity",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
         ],
         "journey": [
-          "extend shipped LiftNote; do not recreate completed capabilities;",
-          "mobile-first, accessible, approved black/charcoal + warm-orange + off-white identity;",
-          "define loading, empty, error, permission and unsupported states where relevant;",
-          "preserve immutable workout/session historical truth;",
-          "distinguish entered facts, derived metrics and recommendations;",
-          "avoid pseudo-scientific precision: estimates and uncertainty must be understandable to a non-statistician."
+          "show both prescription rule and resolved load when useful, with source reference accessible",
+          "missing reference offers a clear fix/change path instead of a broken workout",
+          "ordinary absolute-load users see no extra complexity",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
         ],
-        "rules": [],
+        "rules": [
+          "coach-authored relative prescriptions follow managed-assignment authorization and versioning",
+          "athlete private performance references are exposed to coach only under existing explicit permission or via coach-owned prescription data",
+          "LN-93 per-set prescriptions, LN-68 progression and LN-95 planned-vs-performed consume structured semantics",
+          "AI program proposals must output these domain objects, not prose-only percentages"
+        ],
         "examples": [],
-        "data": [],
+        "data": [
+          "persist the chosen prescription semantics plus enough reference snapshot/provenance to reproduce a started workout",
+          "preserve user's original effort scale",
+          "version serialized formats used by copy/share/import"
+        ],
         "dependencies": [
-          "Immediate roadmap predecessor after architecture reordering: LN-125. Material dependencies: LN-07B, LN-07D, LN-10, LN-52, LN-58, and the Exercise Intelligence gate LN-90 for stable exercise identity/knowledge semantics."
+          "Requires LN-91 DONE and builds on LN-30 units, LN-52 effort and LN-71 estimates."
         ],
         "attention": [
-          "run focused lint/type/tests before first push;",
-          "migration/RLS tests when persistence/authorization changes;",
-          "exact-head Vercel build/deploy when repository policy requires it;",
-          "browser QA under current repository policy; TinyFish prohibited;",
-          "classify warnings: new lot warning (fix), relevant pre-existing (fix if safely in scope), unrelated pre-existing (record if material), benign tooling (explain);",
-          "GitHub Actions is the final safety net, not a push-driven debugger;",
-          "inspect any actual OpenAI/Codex/GitHub automated review but never claim such verification if no concrete check exists."
+          "coach-authored relative prescriptions follow managed-assignment authorization and versioning",
+          "athlete private performance references are exposed to coach only under existing explicit permission or via coach-owned prescription data",
+          "round-trip serialization/copy/share tests",
+          "deterministic resolution fixtures and unit/load-semantic tests",
+          "coach snapshot/RLS regressions",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
         ],
         "notInThisLot": [
-          "creating an objective PR from e1RM alone;",
-          "medical, diagnostic or injury-readiness conclusions;",
-          "opaque AI/LLM estimation;",
-          "automatic training-load changes purely because e1RM moved;",
-          "merging curves across distinct exercises;",
-          "serving copyrighted full texts without redistribution rights."
+          "no silent conversion among reference types",
+          "no auto-update of an already-started session when its reference changes",
+          "no percentage prescription for unsupported load semantics"
         ],
         "doneWhen": [
-          "e1RM is always explicitly labeled as an estimate, never as a measured record;",
-          "with multiple compatible observations, the model uses the observations jointly rather than simply choosing the closest RM bucket;",
-          "sparse data uses a documented population fallback/prior and is labeled as such;",
-          "sufficient compatible athlete data produces an exercise-specific individualized relationship;",
-          "RIR inputs retain lower/explicit uncertainty and never masquerade as direct failure observations;",
-          "historical PRs remain unchanged by recency/model recalculation;",
-          "uncertainty is surfaced without false precision;",
-          "athlete can inspect the calculation mode, source performances, model version and scientific references;",
-          "every evidence source has publication-status and licensing metadata;",
-          "retracted evidence cannot be active;",
-          "no full paper is bundled/served unless redistribution rights are documented;",
-          "calculations and transitions are unit-tested and reproducible for the recorded model version;",
-          "true PR behavior is preserved;",
-          "no regression outside lot scope;",
-          "authoritative lot and roadmap statuses remain consistent."
+          "all supported reference types round-trip without semantic loss",
+          "resolved values are deterministic and explainable",
+          "past sessions remain reproducible after reference changes",
+          "unsupported cases fail visibly and safely"
         ],
         "ux": [
-          "extend shipped LiftNote; do not recreate completed capabilities;",
-          "mobile-first, accessible, approved black/charcoal + warm-orange + off-white identity;",
-          "define loading, empty, error, permission and unsupported states where relevant;",
-          "preserve immutable workout/session historical truth;",
-          "distinguish entered facts, derived metrics and recommendations;",
-          "avoid pseudo-scientific precision: estimates and uncertainty must be understandable to a non-statistician."
+          "show both prescription rule and resolved load when useful, with source reference accessible",
+          "missing reference offers a clear fix/change path instead of a broken workout",
+          "ordinary absolute-load users see no extra complexity",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
         ],
-        "security": [],
-        "implications": [],
+        "security": [
+          "coach-authored relative prescriptions follow managed-assignment authorization and versioning",
+          "athlete private performance references are exposed to coach only under existing explicit permission or via coach-owned prescription data"
+        ],
+        "implications": [
+          "LN-93 per-set prescriptions, LN-68 progression and LN-95 planned-vs-performed consume structured semantics",
+          "AI program proposals must output these domain objects, not prose-only percentages"
+        ],
         "validation": [
-          "run focused lint/type/tests before first push;",
-          "migration/RLS tests when persistence/authorization changes;",
-          "exact-head Vercel build/deploy when repository policy requires it;",
-          "browser QA under current repository policy; TinyFish prohibited;",
-          "classify warnings: new lot warning (fix), relevant pre-existing (fix if safely in scope), unrelated pre-existing (record if material), benign tooling (explain);",
-          "GitHub Actions is the final safety net, not a push-driven debugger;",
-          "inspect any actual OpenAI/Codex/GitHub automated review but never claim such verification if no concrete check exists."
+          "round-trip serialization/copy/share tests",
+          "deterministic resolution fixtures and unit/load-semantic tests",
+          "coach snapshot/RLS regressions",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
         ]
       },
       "contract": {
-        "phase": "Analytics",
-        "objective": "Remplacer une estimation e1RM fondée uniquement sur une table générique/une performance source par un modèle explicable, versionné et progressivement individualisé par athlète × exercice, tout en conservant une séparation stricte entre record réellement réalisé et capacité estimée.",
-        "rationale": null,
+        "phase": "Programming Engine",
+        "objective": "Represent absolute load, %1RM, %e1RM, %Training Max, RPE and RIR as distinct structured prescription semantics.",
+        "rationale": "Advanced programming needs explicit references; collapsing them into one numeric target destroys meaning and explainability.",
         "dependencies": [
-          "Immediate roadmap predecessor after architecture reordering: LN-125. Material dependencies: LN-07B, LN-07D, LN-10, LN-52, LN-58, and the Exercise Intelligence gate LN-90 for stable exercise identity/knowledge semantics."
+          "Requires LN-91 DONE and builds on LN-30 units, LN-52 effort and LN-71 estimates."
         ],
         "scope": [
-          "individual curve per athlete × canonical exercise;",
-          "sparse / hybrid / individualized evidence states;",
-          "e1RM derived from the fitted relationship;",
-          "derived 2RM/3RM/5RM/etc. only when the model and uncertainty support them;",
-          "support for compatible external/added-load semantics with explicit isolation rules;",
-          "explicit exclusion/handling for assisted load, warm-ups, invalidated performances, unsupported tracking types and incompatible set types;",
-          "true measured 1RM as a high-confidence observation/anchor without converting it into an \"estimated record\";",
-          "RIR-informed observations only through an explicit uncertainty-aware rule;",
-          "recency-aware current-strength estimate without rewriting historical PR truth;",
-          "uncertainty interval or other calibrated precision representation;",
-          "deterministic/reproducible model versioning.",
-          "temporal e1RM/strength trend;",
-          "separation of measured PRs and estimates everywhere;",
-          "drill-down from the estimate to the source performances;",
-          "secondary athlete-facing surface such as « Comment est calculé mon e1RM ? »;",
-          "show whether the estimate is population, hybrid or individualized;"
+          "structured prescription-reference type and value",
+          "absolute load, % validated 1RM, % e1RM, % Training Max, RPE and RIR",
+          "deterministic resolved target preview when the reference is available",
+          "missing/stale-reference behavior",
+          "duplication/share/import/coach/snapshot preservation"
         ],
         "exclusions": [
-          "creating an objective PR from e1RM alone;",
-          "medical, diagnostic or injury-readiness conclusions;",
-          "opaque AI/LLM estimation;",
-          "automatic training-load changes purely because e1RM moved;",
-          "merging curves across distinct exercises;",
-          "serving copyrighted full texts without redistribution rights."
+          "no silent conversion among reference types",
+          "no auto-update of an already-started session when its reference changes",
+          "no percentage prescription for unsupported load semantics"
         ],
-        "data": [],
+        "data": [
+          "persist the chosen prescription semantics plus enough reference snapshot/provenance to reproduce a started workout",
+          "preserve user's original effort scale",
+          "version serialized formats used by copy/share/import"
+        ],
         "ux": [
-          "extend shipped LiftNote; do not recreate completed capabilities;",
-          "mobile-first, accessible, approved black/charcoal + warm-orange + off-white identity;",
-          "define loading, empty, error, permission and unsupported states where relevant;",
-          "preserve immutable workout/session historical truth;",
-          "distinguish entered facts, derived metrics and recommendations;",
-          "avoid pseudo-scientific precision: estimates and uncertainty must be understandable to a non-statistician."
+          "show both prescription rule and resolved load when useful, with source reference accessible",
+          "missing reference offers a clear fix/change path instead of a broken workout",
+          "ordinary absolute-load users see no extra complexity",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
         ],
-        "security": [],
-        "implications": [],
+        "security": [
+          "coach-authored relative prescriptions follow managed-assignment authorization and versioning",
+          "athlete private performance references are exposed to coach only under existing explicit permission or via coach-owned prescription data"
+        ],
+        "implications": [
+          "LN-93 per-set prescriptions, LN-68 progression and LN-95 planned-vs-performed consume structured semantics",
+          "AI program proposals must output these domain objects, not prose-only percentages"
+        ],
         "acceptance": [
-          "e1RM is always explicitly labeled as an estimate, never as a measured record;",
-          "with multiple compatible observations, the model uses the observations jointly rather than simply choosing the closest RM bucket;",
-          "sparse data uses a documented population fallback/prior and is labeled as such;",
-          "sufficient compatible athlete data produces an exercise-specific individualized relationship;",
-          "RIR inputs retain lower/explicit uncertainty and never masquerade as direct failure observations;",
-          "historical PRs remain unchanged by recency/model recalculation;",
-          "uncertainty is surfaced without false precision;",
-          "athlete can inspect the calculation mode, source performances, model version and scientific references;",
-          "every evidence source has publication-status and licensing metadata;",
-          "retracted evidence cannot be active;",
-          "no full paper is bundled/served unless redistribution rights are documented;",
-          "calculations and transitions are unit-tested and reproducible for the recorded model version;",
-          "true PR behavior is preserved;",
-          "no regression outside lot scope;",
-          "authoritative lot and roadmap statuses remain consistent."
+          "all supported reference types round-trip without semantic loss",
+          "resolved values are deterministic and explainable",
+          "past sessions remain reproducible after reference changes",
+          "unsupported cases fail visibly and safely"
         ],
         "validation": [
-          "run focused lint/type/tests before first push;",
-          "migration/RLS tests when persistence/authorization changes;",
-          "exact-head Vercel build/deploy when repository policy requires it;",
-          "browser QA under current repository policy; TinyFish prohibited;",
-          "classify warnings: new lot warning (fix), relevant pre-existing (fix if safely in scope), unrelated pre-existing (record if material), benign tooling (explain);",
-          "GitHub Actions is the final safety net, not a push-driven debugger;",
-          "inspect any actual OpenAI/Codex/GitHub automated review but never claim such verification if no concrete check exists."
+          "round-trip serialization/copy/share tests",
+          "deterministic resolution fixtures and unit/load-semantic tests",
+          "coach snapshot/RLS regressions",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
         ],
         "completion": {
           "pr": null,
