@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T17:51:39.344Z",
+  "publishedAt": "2026-10-02T17:52:28.441Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 1,
     "lastMessage": "Browser gate run 37043098051 failed; worker resumed to inspect and fix it.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T17:51:31.652Z",
-    "nextTickAt": "2026-10-02T17:56:31.652Z",
+    "lastSuccessfulTickAt": "2026-10-02T17:52:21.276Z",
+    "nextTickAt": "2026-10-02T17:57:21.276Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
