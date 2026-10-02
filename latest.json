@@ -1,22 +1,34 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T06:19:12.447Z",
+  "publishedAt": "2026-10-02T06:19:38.561Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "BLOCKED",
+    "status": "RUNNING",
     "currentLot": "LN-125",
     "nextLot": "LN-71",
     "launchedAt": "2026-10-02T04:46:50.338Z",
-    "lastProgressAt": "2026-10-02T06:13:49.963Z",
-    "lastChatCheckAt": "2026-10-02T04:46:50.338Z",
+    "lastProgressAt": "2026-10-02T06:19:29.738Z",
+    "lastChatCheckAt": "2026-10-02T06:19:29.738Z",
     "lastObservedMainSha": "8cb00a53b982343212815568225617838b516406",
-    "nudges": 0,
-    "lastMessage": "main moved while LN-125 is active",
+    "nudges": 1,
+    "lastMessage": "Browser gate run 36972542446 passed; worker resumed to finish LN-125.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T06:13:49.963Z",
-    "nextTickAt": "2026-10-02T06:18:49.963Z",
+    "lastSuccessfulTickAt": "2026-10-02T06:19:29.990Z",
+    "nextTickAt": "2026-10-02T06:24:29.990Z",
     "paused": false,
     "pauseAfterCurrent": false,
+    "gate": {
+      "lot": "LN-125",
+      "type": "browser",
+      "mode": "post_merge",
+      "phase": "passed",
+      "reason": null,
+      "prNumber": null,
+      "headRef": "main",
+      "headSha": "8cb00a53b982343212815568225617838b516406",
+      "runId": 36972542446,
+      "conclusion": "success"
+    },
     "history": [
       {
         "lot": "LN-86",
@@ -4442,7 +4454,7 @@
         "id": "LN-31",
         "title": "Unilateral exercise semantics",
         "status": "DONE",
-        "goal": "distinguish reps per side from total reps and optionally track left/right separately where useful.",
+        "goal": "Represent unilateral work correctly by distinguishing repetitions per side from total repetitions and, where useful, allowing left/right performance to be recorded separately.",
         "business": {
           "summary": "Comprendre les exercices unilatéraux et la différence entre répétitions par côté et répétitions totales.",
           "why": "10 fentes par jambe ne signifie pas la même chose que 10 répétitions au total.",
@@ -4494,8 +4506,36 @@
           "implications": [],
           "validation": []
         },
-        "contract": null,
-        "contractAvailable": false,
+        "contract": {
+          "phase": null,
+          "objective": "Represent unilateral work correctly by distinguishing repetitions per side from total repetitions and, where useful, allowing left/right performance to be recorded separately.",
+          "rationale": null,
+          "dependencies": [],
+          "scope": [
+            "mark exercises or prescriptions as bilateral, unilateral-per-side or side-specific tracking;",
+            "support targets such as 10 reps per side without interpreting them as 10 total;",
+            "optionally record left and right separately when asymmetry matters;",
+            "render concise active-workout inputs that do not double friction unnecessarily;",
+            "preserve side semantics in history/statistics and shared/coach prescriptions;"
+          ],
+          "exclusions": [
+            "unrelated backlog features not named by this contract;",
+            "broad AI-generated coaching or medical advice;",
+            "opportunistic redesign of other LiftNote lots;",
+            "changes to Unicorn Prog or SPICY 200 except where a shared platform dependency is unavoidable and explicitly validated."
+          ],
+          "data": [],
+          "ux": [],
+          "security": [],
+          "implications": [],
+          "acceptance": [],
+          "validation": [],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
         "executionState": "executable"
       },
       {
@@ -9554,6 +9594,12 @@
             "The audit must protect the future picker from catalog bloat by distinguishing canonical coverage from raw source row count."
           ],
           "rules": [
+            "No user-owned exercise content is exported to public sources.",
+            "No cross-user data is needed.",
+            "Source ingestion tooling must not widen RLS or ownership rules.",
+            "Audit artifacts must be reproducible from pinned local inputs after source acquisition.",
+            "A failed or unavailable upstream must not mutate production truth.",
+            "Re-running the audit against the same pinned inputs must produce stable dispositions.",
             "Canonical IDs and historical exercise identity remain unchanged.",
             "Coverage reporting is deterministic and inspectable.",
             "AI may not manufacture missing canonical technique facts or licensing conclusions.",
@@ -9578,6 +9624,12 @@
             "BACKLOG_NEW BN-005 / CO-009 provenance and source-review requirements."
           ],
           "attention": [
+            "No user-owned exercise content is exported to public sources.",
+            "No cross-user data is needed.",
+            "Source ingestion tooling must not widen RLS or ownership rules.",
+            "Audit artifacts must be reproducible from pinned local inputs after source acquisition.",
+            "A failed or unavailable upstream must not mutate production truth.",
+            "Re-running the audit against the same pinned inputs must produce stable dispositions.",
             "Deterministic audit rerun against pinned fixtures/snapshots.",
             "Duplicate-ID and duplicate-disposition checks.",
             "Source pin/license/provenance completeness checks.",
@@ -9606,7 +9658,14 @@
             "Outputs must be understandable by the next implementation agent and map directly to the later catalog expansion.",
             "The audit must protect the future picker from catalog bloat by distinguishing canonical coverage from raw source row count."
           ],
-          "security": [],
+          "security": [
+            "No user-owned exercise content is exported to public sources.",
+            "No cross-user data is needed.",
+            "Source ingestion tooling must not widen RLS or ownership rules.",
+            "Audit artifacts must be reproducible from pinned local inputs after source acquisition.",
+            "A failed or unavailable upstream must not mutate production truth.",
+            "Re-running the audit against the same pinned inputs must produce stable dispositions."
+          ],
           "implications": [
             "Canonical IDs and historical exercise identity remain unchanged.",
             "Coverage reporting is deterministic and inspectable.",
@@ -9665,7 +9724,14 @@
             "Outputs must be understandable by the next implementation agent and map directly to the later catalog expansion.",
             "The audit must protect the future picker from catalog bloat by distinguishing canonical coverage from raw source row count."
           ],
-          "security": [],
+          "security": [
+            "No user-owned exercise content is exported to public sources.",
+            "No cross-user data is needed.",
+            "Source ingestion tooling must not widen RLS or ownership rules.",
+            "Audit artifacts must be reproducible from pinned local inputs after source acquisition.",
+            "A failed or unavailable upstream must not mutate production truth.",
+            "Re-running the audit against the same pinned inputs must produce stable dispositions."
+          ],
           "implications": [
             "Canonical IDs and historical exercise identity remain unchanged.",
             "Coverage reporting is deterministic and inspectable.",
@@ -9729,6 +9795,13 @@
             "Exercise detail can disclose richer knowledge progressively; active workout remains concise."
           ],
           "rules": [
+            "Only system catalog data is globally managed.",
+            "Custom exercises remain account-owned.",
+            "Source ingestion cannot widen user data access.",
+            "Any editorial tooling must distinguish system-authorized mutation from athlete-owned content.",
+            "Imported catalog state must be migration/seed reproducible.",
+            "Partial import must fail safely or be transactionally recoverable.",
+            "Existing offline session snapshots continue to resolve historical IDs even after metadata enrichment.",
             "Historical performance stays attached to stable canonical identities.",
             "Circuit movement coverage improves deterministic search/substitution and later AI board import.",
             "No movement-level and protocol-level volume double counting is introduced here.",
@@ -9751,6 +9824,13 @@
             "LN-20/LN-30/LN-31/LN-32 — load, unit, unilateral and duration/distance semantics."
           ],
           "attention": [
+            "Only system catalog data is globally managed.",
+            "Custom exercises remain account-owned.",
+            "Source ingestion cannot widen user data access.",
+            "Any editorial tooling must distinguish system-authorized mutation from athlete-owned content.",
+            "Imported catalog state must be migration/seed reproducible.",
+            "Partial import must fail safely or be transactionally recoverable.",
+            "Existing offline session snapshots continue to resolve historical IDs even after metadata enrichment.",
             "Catalog identity/duplicate regression tests.",
             "Provenance and localization completeness checks.",
             "Tracking/load/unit compatibility tests.",
@@ -9783,7 +9863,15 @@
             "Strength-only users must not see Circuit complexity unless relevant.",
             "Exercise detail can disclose richer knowledge progressively; active workout remains concise."
           ],
-          "security": [],
+          "security": [
+            "Only system catalog data is globally managed.",
+            "Custom exercises remain account-owned.",
+            "Source ingestion cannot widen user data access.",
+            "Any editorial tooling must distinguish system-authorized mutation from athlete-owned content.",
+            "Imported catalog state must be migration/seed reproducible.",
+            "Partial import must fail safely or be transactionally recoverable.",
+            "Existing offline session snapshots continue to resolve historical IDs even after metadata enrichment."
+          ],
           "implications": [
             "Historical performance stays attached to stable canonical identities.",
             "Circuit movement coverage improves deterministic search/substitution and later AI board import.",
@@ -9845,7 +9933,15 @@
             "Strength-only users must not see Circuit complexity unless relevant.",
             "Exercise detail can disclose richer knowledge progressively; active workout remains concise."
           ],
-          "security": [],
+          "security": [
+            "Only system catalog data is globally managed.",
+            "Custom exercises remain account-owned.",
+            "Source ingestion cannot widen user data access.",
+            "Any editorial tooling must distinguish system-authorized mutation from athlete-owned content.",
+            "Imported catalog state must be migration/seed reproducible.",
+            "Partial import must fail safely or be transactionally recoverable.",
+            "Existing offline session snapshots continue to resolve historical IDs even after metadata enrichment."
+          ],
           "implications": [
             "Historical performance stays attached to stable canonical identities.",
             "Circuit movement coverage improves deterministic search/substitution and later AI board import.",
@@ -10625,6 +10721,13 @@
             "Today, Programmes, Historique and Progression remain shared product surfaces."
           ],
           "rules": [
+            "Existing athlete/coach ownership and RLS rules apply to new structured content.",
+            "Modality type never grants access.",
+            "Coach-managed snapshots retain source/assignment lineage.",
+            "Imported/shared content follows existing materialization rules.",
+            "Typed active-workout state is account-scoped and recoverable under LN-45 principles.",
+            "Resume logic must preserve block/step identity and immutable snapshot version.",
+            "Schema/version mismatch must surface a recoverable conflict rather than silently drop structure.",
             "Typed performed facts become inputs to modality-specific analytics later.",
             "Do not aggregate incompatible modalities into one opaque score.",
             "AI import later emits this structured vocabulary but remains non-authoritative until validation/confirmation.",
@@ -10650,6 +10753,13 @@
             "LN-118 — curated Circuit catalog expansion."
           ],
           "attention": [
+            "Existing athlete/coach ownership and RLS rules apply to new structured content.",
+            "Modality type never grants access.",
+            "Coach-managed snapshots retain source/assignment lineage.",
+            "Imported/shared content follows existing materialization rules.",
+            "Typed active-workout state is account-scoped and recoverable under LN-45 principles.",
+            "Resume logic must preserve block/step identity and immutable snapshot version.",
+            "Schema/version mismatch must surface a recoverable conflict rather than silently drop structure.",
             "Backward-compatibility fixtures for existing strength structures.",
             "Serialization/version round-trip tests.",
             "Snapshot immutability tests.",
@@ -10681,7 +10791,15 @@
             "Advanced block/protocol fields use progressive disclosure.",
             "Today, Programmes, Historique and Progression remain shared product surfaces."
           ],
-          "security": [],
+          "security": [
+            "Existing athlete/coach ownership and RLS rules apply to new structured content.",
+            "Modality type never grants access.",
+            "Coach-managed snapshots retain source/assignment lineage.",
+            "Imported/shared content follows existing materialization rules.",
+            "Typed active-workout state is account-scoped and recoverable under LN-45 principles.",
+            "Resume logic must preserve block/step identity and immutable snapshot version.",
+            "Schema/version mismatch must surface a recoverable conflict rather than silently drop structure."
+          ],
           "implications": [
             "Typed performed facts become inputs to modality-specific analytics later.",
             "Do not aggregate incompatible modalities into one opaque score.",
@@ -10744,7 +10862,15 @@
             "Advanced block/protocol fields use progressive disclosure.",
             "Today, Programmes, Historique and Progression remain shared product surfaces."
           ],
-          "security": [],
+          "security": [
+            "Existing athlete/coach ownership and RLS rules apply to new structured content.",
+            "Modality type never grants access.",
+            "Coach-managed snapshots retain source/assignment lineage.",
+            "Imported/shared content follows existing materialization rules.",
+            "Typed active-workout state is account-scoped and recoverable under LN-45 principles.",
+            "Resume logic must preserve block/step identity and immutable snapshot version.",
+            "Schema/version mismatch must surface a recoverable conflict rather than silently drop structure."
+          ],
           "implications": [
             "Typed performed facts become inputs to modality-specific analytics later.",
             "Do not aggregate incompatible modalities into one opaque score.",
@@ -10812,6 +10938,12 @@
             "Strength-only users do not encounter running controls unless they choose running."
           ],
           "rules": [
+            "Running workouts follow existing athlete/coach ownership and assignment authorization.",
+            "Health-derived data uses explicit source and later integration/privacy controls.",
+            "No location data is required for manual running support.",
+            "Manual running session state can resume offline.",
+            "Interval/repeat progress and captured splits are durable.",
+            "External source gaps do not invalidate manual session facts.",
             "Session facts are designed for LN-126 running analytics.",
             "Performance references may later resolve through LN-91.",
             "Planned/performed comparison later consumes these typed facts.",
@@ -10836,6 +10968,12 @@
             "LN-67 — program/week structure."
           ],
           "attention": [
+            "Running workouts follow existing athlete/coach ownership and assignment authorization.",
+            "Health-derived data uses explicit source and later integration/privacy controls.",
+            "No location data is required for manual running support.",
+            "Manual running session state can resume offline.",
+            "Interval/repeat progress and captured splits are durable.",
+            "External source gaps do not invalidate manual session facts.",
             "Deterministic pace/unit calculations.",
             "Repeat/segment serialization and snapshot tests.",
             "Correction/history invariance tests.",
@@ -10866,7 +11004,14 @@
             "Optional advanced HR/RPE fields remain secondary.",
             "Strength-only users do not encounter running controls unless they choose running."
           ],
-          "security": [],
+          "security": [
+            "Running workouts follow existing athlete/coach ownership and assignment authorization.",
+            "Health-derived data uses explicit source and later integration/privacy controls.",
+            "No location data is required for manual running support.",
+            "Manual running session state can resume offline.",
+            "Interval/repeat progress and captured splits are durable.",
+            "External source gaps do not invalidate manual session facts."
+          ],
           "implications": [
             "Session facts are designed for LN-126 running analytics.",
             "Performance references may later resolve through LN-91.",
@@ -10930,7 +11075,14 @@
             "Optional advanced HR/RPE fields remain secondary.",
             "Strength-only users do not encounter running controls unless they choose running."
           ],
-          "security": [],
+          "security": [
+            "Running workouts follow existing athlete/coach ownership and assignment authorization.",
+            "Health-derived data uses explicit source and later integration/privacy controls.",
+            "No location data is required for manual running support.",
+            "Manual running session state can resume offline.",
+            "Interval/repeat progress and captured splits are durable.",
+            "External source gaps do not invalidate manual session facts."
+          ],
           "implications": [
             "Session facts are designed for LN-126 running analytics.",
             "Performance references may later resolve through LN-91.",
@@ -10996,6 +11148,13 @@
             "Strength flow is unchanged."
           ],
           "rules": [
+            "Existing personal/coach ownership and RLS apply.",
+            "Class/gym labels do not create organization-wide access.",
+            "Coach-managed prescriptions keep source lineage.",
+            "Session notes/RPE follow existing privacy boundaries.",
+            "Structured Circuit drafts/snapshots remain usable offline.",
+            "A partially logged class can be resumed without changing already-recorded performed facts.",
+            "Live timer recovery is deferred to LN-122.",
             "Circuit protocol/result facts become benchmark/reference inputs later.",
             "Movement history retains canonical identity without merging unrelated circuit scores.",
             "AI board import later maps recognized movement IDs/protocol vocabulary into this domain.",
@@ -11019,6 +11178,13 @@
             "LN-26/LN-32 — set/tracking primitives."
           ],
           "attention": [
+            "Existing personal/coach ownership and RLS apply.",
+            "Class/gym labels do not create organization-wide access.",
+            "Coach-managed prescriptions keep source lineage.",
+            "Session notes/RPE follow existing privacy boundaries.",
+            "Structured Circuit drafts/snapshots remain usable offline.",
+            "A partially logged class can be resumed without changing already-recorded performed facts.",
+            "Live timer recovery is deferred to LN-122.",
             "Protocol serialization/version tests.",
             "Canonical exercise identity and mixed-step fixtures.",
             "Lightweight-session validation with intentionally missing movement detail.",
@@ -11048,7 +11214,15 @@
             "The ordinary manual logging path remains lightweight.",
             "Strength flow is unchanged."
           ],
-          "security": [],
+          "security": [
+            "Existing personal/coach ownership and RLS apply.",
+            "Class/gym labels do not create organization-wide access.",
+            "Coach-managed prescriptions keep source lineage.",
+            "Session notes/RPE follow existing privacy boundaries.",
+            "Structured Circuit drafts/snapshots remain usable offline.",
+            "A partially logged class can be resumed without changing already-recorded performed facts.",
+            "Live timer recovery is deferred to LN-122."
+          ],
           "implications": [
             "Circuit protocol/result facts become benchmark/reference inputs later.",
             "Movement history retains canonical identity without merging unrelated circuit scores.",
@@ -11108,7 +11282,15 @@
             "The ordinary manual logging path remains lightweight.",
             "Strength flow is unchanged."
           ],
-          "security": [],
+          "security": [
+            "Existing personal/coach ownership and RLS apply.",
+            "Class/gym labels do not create organization-wide access.",
+            "Coach-managed prescriptions keep source lineage.",
+            "Session notes/RPE follow existing privacy boundaries.",
+            "Structured Circuit drafts/snapshots remain usable offline.",
+            "A partially logged class can be resumed without changing already-recorded performed facts.",
+            "Live timer recovery is deferred to LN-122."
+          ],
           "implications": [
             "Circuit protocol/result facts become benchmark/reference inputs later.",
             "Movement history retains canonical identity without merging unrelated circuit scores.",
@@ -11175,6 +11357,13 @@
             "Ordinary strength active-workout UX remains unchanged."
           ],
           "rules": [
+            "Session state is account-scoped.",
+            "Coach-managed prescriptions cannot be silently rewritten by athlete result correction.",
+            "Score/history access follows existing session authorization.",
+            "Timer recovery works through backgrounding, temporary offline periods and app restart.",
+            "Resume reconstructs the protocol state from persisted anchors/events rather than relying on an in-memory countdown.",
+            "Conflict handling preserves the most recent valid user-confirmed progression and never duplicates a completed interval.",
+            "Offline completion syncs once with stable session/result identity.",
             "Structured scores can become performance references through LN-91.",
             "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
             "Planned-vs-performed later consumes protocol and movement facts.",
@@ -11198,6 +11387,13 @@
             "LN-89 — contextual substitution semantics where applicable."
           ],
           "attention": [
+            "Session state is account-scoped.",
+            "Coach-managed prescriptions cannot be silently rewritten by athlete result correction.",
+            "Score/history access follows existing session authorization.",
+            "Timer recovery works through backgrounding, temporary offline periods and app restart.",
+            "Resume reconstructs the protocol state from persisted anchors/events rather than relying on an in-memory countdown.",
+            "Conflict handling preserves the most recent valid user-confirmed progression and never duplicates a completed interval.",
+            "Offline completion syncs once with stable session/result identity.",
             "Deterministic timer-anchor tests with simulated background/offline elapsed time.",
             "State-machine transition/recovery tests.",
             "Score-shape and unfinished/capped fixtures.",
@@ -11230,7 +11426,15 @@
             "Recovery/correction paths are reachable without exposing state-machine jargon.",
             "Ordinary strength active-workout UX remains unchanged."
           ],
-          "security": [],
+          "security": [
+            "Session state is account-scoped.",
+            "Coach-managed prescriptions cannot be silently rewritten by athlete result correction.",
+            "Score/history access follows existing session authorization.",
+            "Timer recovery works through backgrounding, temporary offline periods and app restart.",
+            "Resume reconstructs the protocol state from persisted anchors/events rather than relying on an in-memory countdown.",
+            "Conflict handling preserves the most recent valid user-confirmed progression and never duplicates a completed interval.",
+            "Offline completion syncs once with stable session/result identity."
+          ],
           "implications": [
             "Structured scores can become performance references through LN-91.",
             "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
@@ -11294,7 +11498,15 @@
             "Recovery/correction paths are reachable without exposing state-machine jargon.",
             "Ordinary strength active-workout UX remains unchanged."
           ],
-          "security": [],
+          "security": [
+            "Session state is account-scoped.",
+            "Coach-managed prescriptions cannot be silently rewritten by athlete result correction.",
+            "Score/history access follows existing session authorization.",
+            "Timer recovery works through backgrounding, temporary offline periods and app restart.",
+            "Resume reconstructs the protocol state from persisted anchors/events rather than relying on an in-memory countdown.",
+            "Conflict handling preserves the most recent valid user-confirmed progression and never duplicates a completed interval.",
+            "Offline completion syncs once with stable session/result identity."
+          ],
           "implications": [
             "Structured scores can become performance references through LN-91.",
             "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
@@ -11358,6 +11570,13 @@
             "Archive/restore and naming conflicts have clear recovery."
           ],
           "rules": [
+            "Athlete library items are private to their owner.",
+            "Coach access is not granted merely because a coach relationship exists.",
+            "Later coach reuse must use coach-owned entities and authorization.",
+            "RLS must prevent cross-athlete reads/writes.",
+            "Local draft insertion can proceed offline when required source content is already available.",
+            "Sync uses stable IDs and avoids duplicate instantiation.",
+            "Archive/update conflicts do not invalidate already-instantiated workout copies.",
             "Library usage may be counted as product usage, not performance.",
             "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
             "AI import may later offer “save as reusable block” only after explicit user review."
@@ -11378,6 +11597,13 @@
             "SHARING_AND_COACHING.md."
           ],
           "attention": [
+            "Athlete library items are private to their owner.",
+            "Coach access is not granted merely because a coach relationship exists.",
+            "Later coach reuse must use coach-owned entities and authorization.",
+            "RLS must prevent cross-athlete reads/writes.",
+            "Local draft insertion can proceed offline when required source content is already available.",
+            "Sync uses stable IDs and avoids duplicate instantiation.",
+            "Archive/update conflicts do not invalidate already-instantiated workout copies.",
             "Copy/lineage/version round-trip tests.",
             "RLS negative tests across athletes.",
             "Strength/running/circuit serialization fixtures.",
@@ -11405,7 +11631,15 @@
             "Block type/language is inferred from content; users are not required to understand internal engine types.",
             "Archive/restore and naming conflicts have clear recovery."
           ],
-          "security": [],
+          "security": [
+            "Athlete library items are private to their owner.",
+            "Coach access is not granted merely because a coach relationship exists.",
+            "Later coach reuse must use coach-owned entities and authorization.",
+            "RLS must prevent cross-athlete reads/writes.",
+            "Local draft insertion can proceed offline when required source content is already available.",
+            "Sync uses stable IDs and avoids duplicate instantiation.",
+            "Archive/update conflicts do not invalidate already-instantiated workout copies."
+          ],
           "implications": [
             "Library usage may be counted as product usage, not performance.",
             "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
@@ -11459,7 +11693,15 @@
             "Block type/language is inferred from content; users are not required to understand internal engine types.",
             "Archive/restore and naming conflicts have clear recovery."
           ],
-          "security": [],
+          "security": [
+            "Athlete library items are private to their owner.",
+            "Coach access is not granted merely because a coach relationship exists.",
+            "Later coach reuse must use coach-owned entities and authorization.",
+            "RLS must prevent cross-athlete reads/writes.",
+            "Local draft insertion can proceed offline when required source content is already available.",
+            "Sync uses stable IDs and avoids duplicate instantiation.",
+            "Archive/update conflicts do not invalidate already-instantiated workout copies."
+          ],
           "implications": [
             "Library usage may be counted as product usage, not performance.",
             "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
@@ -11522,6 +11764,11 @@
             "Today/Programmes/Historique/Progression remain coherent navigation anchors."
           ],
           "rules": [
+            "Validate athlete/coach visibility for new workout structures.",
+            "Verify no new cross-user read/write path.",
+            "Ensure health/location fields are not required merely to use Running.",
+            "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
+            "Confirm no duplicated split/round/score after sync.",
             "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
             "No opaque combined fitness score appears.",
             "AI is not required for any core workflow."
@@ -11539,6 +11786,11 @@
             "LN-45 offline recovery."
           ],
           "attention": [
+            "Validate athlete/coach visibility for new workout structures.",
+            "Verify no new cross-user read/write path.",
+            "Ensure health/location fields are not required merely to use Running.",
+            "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
+            "Confirm no duplicated split/round/score after sync.",
             "Browser/mobile interaction is mandatory for representative paths.",
             "Accessibility keyboard/focus and touch-target checks.",
             "Offline/background recovery scenarios.",
@@ -11568,7 +11820,13 @@
             "Active screens adapt to the current domain without creating separate app silos.",
             "Today/Programmes/Historique/Progression remain coherent navigation anchors."
           ],
-          "security": [],
+          "security": [
+            "Validate athlete/coach visibility for new workout structures.",
+            "Verify no new cross-user read/write path.",
+            "Ensure health/location fields are not required merely to use Running.",
+            "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
+            "Confirm no duplicated split/round/score after sync."
+          ],
           "implications": [
             "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
             "No opaque combined fitness score appears.",
@@ -11622,7 +11880,13 @@
             "Active screens adapt to the current domain without creating separate app silos.",
             "Today/Programmes/Historique/Progression remain coherent navigation anchors."
           ],
-          "security": [],
+          "security": [
+            "Validate athlete/coach visibility for new workout structures.",
+            "Verify no new cross-user read/write path.",
+            "Ensure health/location fields are not required merely to use Running.",
+            "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
+            "Confirm no duplicated split/round/score after sync."
+          ],
           "implications": [
             "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
             "No opaque combined fitness score appears.",
@@ -12717,6 +12981,12 @@
             "Simple open-ended strength programs do not acquire extra required fields."
           ],
           "rules": [
+            "Only authorized owner/coach actions may change managed lifecycle fields.",
+            "Athlete cannot mutate coach-owned source program lifecycle outside existing assignment rules.",
+            "Lifecycle state never broadens access.",
+            "Lifecycle changes are conflict-aware and auditable.",
+            "Offline session completion can later update derived lifecycle after sync without changing the historical session.",
+            "Concurrent schedule/lifecycle edits resolve explicitly.",
             "LN-96 may use lifecycle boundaries for descriptive adherence denominators.",
             "Running analytics may segment a finite plan period without implying causality.",
             "AI may explain lifecycle context later but cannot silently complete/extend a program."
@@ -12737,6 +13007,12 @@
             "LN-27/LN-61 — versioning and coach-managed lineage."
           ],
           "attention": [
+            "Only authorized owner/coach actions may change managed lifecycle fields.",
+            "Athlete cannot mutate coach-owned source program lifecycle outside existing assignment rules.",
+            "Lifecycle state never broadens access.",
+            "Lifecycle changes are conflict-aware and auditable.",
+            "Offline session completion can later update derived lifecycle after sync without changing the historical session.",
+            "Concurrent schedule/lifecycle edits resolve explicitly.",
             "Lifecycle state-transition tests.",
             "Week/schedule boundary fixtures.",
             "Version/coach authorization tests.",
@@ -12763,7 +13039,14 @@
             "Today and calendar consume schedule truth from LN-70.",
             "Simple open-ended strength programs do not acquire extra required fields."
           ],
-          "security": [],
+          "security": [
+            "Only authorized owner/coach actions may change managed lifecycle fields.",
+            "Athlete cannot mutate coach-owned source program lifecycle outside existing assignment rules.",
+            "Lifecycle state never broadens access.",
+            "Lifecycle changes are conflict-aware and auditable.",
+            "Offline session completion can later update derived lifecycle after sync without changing the historical session.",
+            "Concurrent schedule/lifecycle edits resolve explicitly."
+          ],
           "implications": [
             "LN-96 may use lifecycle boundaries for descriptive adherence denominators.",
             "Running analytics may segment a finite plan period without implying causality.",
@@ -12816,7 +13099,14 @@
             "Today and calendar consume schedule truth from LN-70.",
             "Simple open-ended strength programs do not acquire extra required fields."
           ],
-          "security": [],
+          "security": [
+            "Only authorized owner/coach actions may change managed lifecycle fields.",
+            "Athlete cannot mutate coach-owned source program lifecycle outside existing assignment rules.",
+            "Lifecycle state never broadens access.",
+            "Lifecycle changes are conflict-aware and auditable.",
+            "Offline session completion can later update derived lifecycle after sync without changing the historical session.",
+            "Concurrent schedule/lifecycle edits resolve explicitly."
+          ],
           "implications": [
             "LN-96 may use lifecycle boundaries for descriptive adherence denominators.",
             "Running analytics may segment a finite plan period without implying causality.",
@@ -13571,6 +13861,12 @@
             "Metric explanations distinguish fact, deterministic derivation and recommendation."
           ],
           "rules": [
+            "Health/activity provenance follows LN-111 privacy controls when integrated.",
+            "Coach access follows existing authorized athlete-performance review boundaries.",
+            "Location traces, if ever available from an integration, are not required for these analytics and must not be exposed incidentally.",
+            "Analytics can compute from synced local session facts.",
+            "Partial external imports remain source-labeled and do not corrupt manual history.",
+            "Recompute is deterministic after correction/sync.",
             "This lot is deterministic analytics truth for Running.",
             "LN-79 may later describe trends/plateaus using these facts but cannot replace formulas.",
             "LN-78 may summarize only with source drill-down.",
@@ -13595,6 +13891,12 @@
             "LN-75 when external health/activity data is actually consumed; manual analytics must not depend on LN-75."
           ],
           "attention": [
+            "Health/activity provenance follows LN-111 privacy controls when integrated.",
+            "Coach access follows existing authorized athlete-performance review boundaries.",
+            "Location traces, if ever available from an integration, are not required for these analytics and must not be exposed incidentally.",
+            "Analytics can compute from synced local session facts.",
+            "Partial external imports remain source-labeled and do not corrupt manual history.",
+            "Recompute is deterministic after correction/sync.",
             "Formula/unit tests for pace, period totals, target deltas and repeat dispersion.",
             "PR/reference eligibility fixtures.",
             "Correction/recompute tests.",
@@ -13628,7 +13930,14 @@
             "Missing HR/GPS data does not make a manual run look incomplete.",
             "Metric explanations distinguish fact, deterministic derivation and recommendation."
           ],
-          "security": [],
+          "security": [
+            "Health/activity provenance follows LN-111 privacy controls when integrated.",
+            "Coach access follows existing authorized athlete-performance review boundaries.",
+            "Location traces, if ever available from an integration, are not required for these analytics and must not be exposed incidentally.",
+            "Analytics can compute from synced local session facts.",
+            "Partial external imports remain source-labeled and do not corrupt manual history.",
+            "Recompute is deterministic after correction/sync."
+          ],
           "implications": [
             "This lot is deterministic analytics truth for Running.",
             "LN-79 may later describe trends/plateaus using these facts but cannot replace formulas.",
@@ -13697,7 +14006,14 @@
             "Missing HR/GPS data does not make a manual run look incomplete.",
             "Metric explanations distinguish fact, deterministic derivation and recommendation."
           ],
-          "security": [],
+          "security": [
+            "Health/activity provenance follows LN-111 privacy controls when integrated.",
+            "Coach access follows existing authorized athlete-performance review boundaries.",
+            "Location traces, if ever available from an integration, are not required for these analytics and must not be exposed incidentally.",
+            "Analytics can compute from synced local session facts.",
+            "Partial external imports remain source-labeled and do not corrupt manual history.",
+            "Recompute is deterministic after correction/sync."
+          ],
           "implications": [
             "This lot is deterministic analytics truth for Running.",
             "LN-79 may later describe trends/plateaus using these facts but cannot replace formulas.",
@@ -19237,6 +19553,11 @@
           "Today/Programmes/Historique/Progression remain coherent navigation anchors."
         ],
         "rules": [
+          "Validate athlete/coach visibility for new workout structures.",
+          "Verify no new cross-user read/write path.",
+          "Ensure health/location fields are not required merely to use Running.",
+          "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
+          "Confirm no duplicated split/round/score after sync.",
           "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
           "No opaque combined fitness score appears.",
           "AI is not required for any core workflow."
@@ -19254,6 +19575,11 @@
           "LN-45 offline recovery."
         ],
         "attention": [
+          "Validate athlete/coach visibility for new workout structures.",
+          "Verify no new cross-user read/write path.",
+          "Ensure health/location fields are not required merely to use Running.",
+          "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
+          "Confirm no duplicated split/round/score after sync.",
           "Browser/mobile interaction is mandatory for representative paths.",
           "Accessibility keyboard/focus and touch-target checks.",
           "Offline/background recovery scenarios.",
@@ -19283,7 +19609,13 @@
           "Active screens adapt to the current domain without creating separate app silos.",
           "Today/Programmes/Historique/Progression remain coherent navigation anchors."
         ],
-        "security": [],
+        "security": [
+          "Validate athlete/coach visibility for new workout structures.",
+          "Verify no new cross-user read/write path.",
+          "Ensure health/location fields are not required merely to use Running.",
+          "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
+          "Confirm no duplicated split/round/score after sync."
+        ],
         "implications": [
           "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
           "No opaque combined fitness score appears.",
@@ -19337,7 +19669,13 @@
           "Active screens adapt to the current domain without creating separate app silos.",
           "Today/Programmes/Historique/Progression remain coherent navigation anchors."
         ],
-        "security": [],
+        "security": [
+          "Validate athlete/coach visibility for new workout structures.",
+          "Verify no new cross-user read/write path.",
+          "Ensure health/location fields are not required merely to use Running.",
+          "Validate resume of one running interval session and one Circuit timed session after interruption/offline.",
+          "Confirm no duplicated split/round/score after sync."
+        ],
         "implications": [
           "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
           "No opaque combined fitness score appears.",
