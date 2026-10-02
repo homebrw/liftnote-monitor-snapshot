@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T04:45:07.657Z",
+  "publishedAt": "2026-10-02T04:47:02.830Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-123",
-    "nextLot": "LN-125",
-    "launchedAt": "2026-10-02T04:18:27.307Z",
-    "lastProgressAt": "2026-10-02T04:41:19.044Z",
-    "lastChatCheckAt": "2026-10-02T04:18:27.307Z",
-    "lastObservedMainSha": "5aa02c45b93c01010058203b403bdd89c5873275",
+    "currentLot": "LN-125",
+    "nextLot": "LN-71",
+    "launchedAt": "2026-10-02T04:46:50.338Z",
+    "lastProgressAt": "2026-10-02T04:46:50.338Z",
+    "lastChatCheckAt": "2026-10-02T04:46:50.338Z",
+    "lastObservedMainSha": "4ff77f3ed891643e720e198dc94736673118440f",
     "nudges": 0,
-    "lastMessage": "main moved while LN-123 is active",
+    "lastMessage": "Launched LN-125; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T04:44:57.447Z",
-    "nextTickAt": "2026-10-02T04:49:57.447Z",
+    "lastSuccessfulTickAt": "2026-10-02T04:46:50.338Z",
+    "nextTickAt": "2026-10-02T04:51:50.338Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-85",
-        "completedAt": "2026-10-01T23:25:59.109Z",
-        "restartedAt": null,
-        "mainSha": "d4bee700c231a6b1cba1e661f29a64ee8e44bcf9",
-        "reason": null
-      },
       {
         "lot": "LN-86",
         "completedAt": "2026-10-01T23:43:17.683Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "e124dac11e1f5c3915ca29546da534a49423e8a6",
         "reason": null
+      },
+      {
+        "lot": "LN-123",
+        "completedAt": "2026-10-02T04:45:53.812Z",
+        "restartedAt": null,
+        "mainSha": "4ff77f3ed891643e720e198dc94736673118440f",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "5aa02c45b93c01010058203b403bdd89c5873275",
+    "mainSha": "4ff77f3ed891643e720e198dc94736673118440f",
     "lots": [
       {
         "id": "LN-00",
@@ -11358,7 +11358,7 @@
       {
         "id": "LN-123",
         "title": "Athlete Reusable Block Library",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Let an athlete save and reuse personal workout blocks across sessions using the same block primitives as the rest of LiftNote, without creating an incompatible template system.",
         "business": {
           "phase": "Running & Conditioning Core",
@@ -11509,8 +11509,8 @@
             "Mobile contextual-entry validation."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "801",
+            "mergeSha": "5aa02c45b93c01010058203b403bdd89c5873275"
           }
         },
         "contractAvailable": true,
@@ -19228,171 +19228,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 94,
+    "done": 95,
     "total": 138,
-    "percent": 68,
+    "percent": 69,
     "current": {
-      "id": "LN-123",
-      "title": "Athlete Reusable Block Library",
-      "status": "TODO",
-      "goal": "Let an athlete save and reuse personal workout blocks across sessions using the same block primitives as the rest of LiftNote, without creating an incompatible template system.",
-      "business": {
-        "phase": "Running & Conditioning Core",
-        "summary": "Let an athlete save and reuse personal workout blocks across sessions using the same block primitives as the rest of LiftNote, without creating an incompatible template system.",
-        "why": "Warm-ups, 10×400 m intervals, recurring conditioning circuits and common exercise groups are useful reusable units. Existing whole-workout duplication is too coarse, while LN-100 is intentionally coach-owned.",
-        "builds": [
-          "Athlete-owned reusable block templates for strength groups, running interval/recovery blocks and circuit structures.",
-          "Create/save from an eligible existing block or author directly.",
-          "Edit/archive/restore/duplicate personal block templates.",
-          "Insert into a workout as an independent instantiated copy with lineage back to the source template/version.",
-          "Preserve nested typed steps, prescriptions and modality semantics.",
-          "Keep the storage/domain primitive compatible with later coach-owned reusable templates while preserving ownership boundaries.",
-          "Surface recent/favorite personal blocks contextually without cluttering simple workout creation."
-        ],
-        "userImpact": [
-          "“Enregistrer comme bloc” and “Ajouter un bloc” are contextual actions, not a new top-level mini-app by default.",
-          "Simple users can ignore the feature entirely.",
-          "Block type/language is inferred from content; users are not required to understand internal engine types.",
-          "Archive/restore and naming conflicts have clear recovery."
-        ],
-        "journey": [
-          "“Enregistrer comme bloc” and “Ajouter un bloc” are contextual actions, not a new top-level mini-app by default.",
-          "Simple users can ignore the feature entirely.",
-          "Block type/language is inferred from content; users are not required to understand internal engine types.",
-          "Archive/restore and naming conflicts have clear recovery."
-        ],
-        "rules": [
-          "Library usage may be counted as product usage, not performance.",
-          "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
-          "AI import may later offer “save as reusable block” only after explicit user review."
-        ],
-        "examples": [],
-        "data": [
-          "Library item has athlete ownership, stable identity, version/update metadata and archive state.",
-          "Instantiation creates independent workout structure with source lineage, not a mutable pointer.",
-          "Canonical exercise IDs remain references inside copied movement steps.",
-          "Running/circuit typed payloads round-trip exactly.",
-          "Completed/started session snapshots never depend on mutable library state."
-        ],
-        "dependencies": [
-          "LN-119 through LN-122 — typed blocks and modality-specific structures.",
-          "LN-17 — existing grouped exercise blocks.",
-          "LN-21 — personal duplication ownership/deep-copy rules.",
-          "LN-57 — program/template UX.",
-          "SHARING_AND_COACHING.md."
-        ],
-        "attention": [
-          "Copy/lineage/version round-trip tests.",
-          "RLS negative tests across athletes.",
-          "Strength/running/circuit serialization fixtures.",
-          "Archive/restore and offline idempotency tests.",
-          "Mobile contextual-entry validation."
-        ],
-        "notInThisLot": [
-          "Public marketplace.",
-          "Shared global block library.",
-          "Coach ownership/assignment behavior; LN-100 owns coach library.",
-          "Live synchronization from a personal library item into already-created workouts.",
-          "Rewriting completed sessions when a library block changes."
-        ],
-        "doneWhen": [
-          "Athlete can save and reuse a warm-up, running interval block and circuit block.",
-          "Instantiated content is independent and preserves lineage.",
-          "Editing/archive of source does not alter existing workouts/sessions.",
-          "Cross-user authorization is denied.",
-          "LN-100 can later reuse compatible primitives without broadening athlete ownership.",
-          "Feature remains progressively disclosed."
-        ],
-        "ux": [
-          "“Enregistrer comme bloc” and “Ajouter un bloc” are contextual actions, not a new top-level mini-app by default.",
-          "Simple users can ignore the feature entirely.",
-          "Block type/language is inferred from content; users are not required to understand internal engine types.",
-          "Archive/restore and naming conflicts have clear recovery."
-        ],
-        "security": [],
-        "implications": [
-          "Library usage may be counted as product usage, not performance.",
-          "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
-          "AI import may later offer “save as reusable block” only after explicit user review."
-        ],
-        "validation": [
-          "Copy/lineage/version round-trip tests.",
-          "RLS negative tests across athletes.",
-          "Strength/running/circuit serialization fixtures.",
-          "Archive/restore and offline idempotency tests.",
-          "Mobile contextual-entry validation."
-        ]
-      },
-      "contract": {
-        "phase": "Running & Conditioning Core",
-        "objective": "Let an athlete save and reuse personal workout blocks across sessions using the same block primitives as the rest of LiftNote, without creating an incompatible template system.",
-        "rationale": "Warm-ups, 10×400 m intervals, recurring conditioning circuits and common exercise groups are useful reusable units. Existing whole-workout duplication is too coarse, while LN-100 is intentionally coach-owned.",
-        "dependencies": [
-          "LN-119 through LN-122 — typed blocks and modality-specific structures.",
-          "LN-17 — existing grouped exercise blocks.",
-          "LN-21 — personal duplication ownership/deep-copy rules.",
-          "LN-57 — program/template UX.",
-          "SHARING_AND_COACHING.md."
-        ],
-        "scope": [
-          "Athlete-owned reusable block templates for strength groups, running interval/recovery blocks and circuit structures.",
-          "Create/save from an eligible existing block or author directly.",
-          "Edit/archive/restore/duplicate personal block templates.",
-          "Insert into a workout as an independent instantiated copy with lineage back to the source template/version.",
-          "Preserve nested typed steps, prescriptions and modality semantics.",
-          "Keep the storage/domain primitive compatible with later coach-owned reusable templates while preserving ownership boundaries.",
-          "Surface recent/favorite personal blocks contextually without cluttering simple workout creation."
-        ],
-        "exclusions": [
-          "Public marketplace.",
-          "Shared global block library.",
-          "Coach ownership/assignment behavior; LN-100 owns coach library.",
-          "Live synchronization from a personal library item into already-created workouts.",
-          "Rewriting completed sessions when a library block changes."
-        ],
-        "data": [
-          "Library item has athlete ownership, stable identity, version/update metadata and archive state.",
-          "Instantiation creates independent workout structure with source lineage, not a mutable pointer.",
-          "Canonical exercise IDs remain references inside copied movement steps.",
-          "Running/circuit typed payloads round-trip exactly.",
-          "Completed/started session snapshots never depend on mutable library state."
-        ],
-        "ux": [
-          "“Enregistrer comme bloc” and “Ajouter un bloc” are contextual actions, not a new top-level mini-app by default.",
-          "Simple users can ignore the feature entirely.",
-          "Block type/language is inferred from content; users are not required to understand internal engine types.",
-          "Archive/restore and naming conflicts have clear recovery."
-        ],
-        "security": [],
-        "implications": [
-          "Library usage may be counted as product usage, not performance.",
-          "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
-          "AI import may later offer “save as reusable block” only after explicit user review."
-        ],
-        "acceptance": [
-          "Athlete can save and reuse a warm-up, running interval block and circuit block.",
-          "Instantiated content is independent and preserves lineage.",
-          "Editing/archive of source does not alter existing workouts/sessions.",
-          "Cross-user authorization is denied.",
-          "LN-100 can later reuse compatible primitives without broadening athlete ownership.",
-          "Feature remains progressively disclosed."
-        ],
-        "validation": [
-          "Copy/lineage/version round-trip tests.",
-          "RLS negative tests across athletes.",
-          "Strength/running/circuit serialization fixtures.",
-          "Archive/restore and offline idempotency tests.",
-          "Mobile contextual-entry validation."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-125",
       "title": "Running & Conditioning UX Gate",
       "status": "TODO",
@@ -19547,6 +19386,187 @@
           "Deterministic snapshot/identity assertions.",
           "No TinyFish.",
           "Vercel READY is build evidence, not interactive QA."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-71",
+      "title": "e1RM individualisé et tendances de force",
+      "status": "TODO",
+      "goal": "Remplacer une estimation e1RM fondée uniquement sur une table générique/une performance source par un modèle explicable, versionné et progressivement individualisé par athlète × exercice, tout en conservant une séparation stricte entre record réellement réalisé et capacité estimée.",
+      "business": {
+        "phase": "Analytics",
+        "summary": "Remplacer une estimation e1RM fondée uniquement sur une table générique/une performance source par un modèle explicable, versionné et progressivement individualisé par athlète × exercice, tout en conservant une séparation stricte entre record réellement réalisé et capacité estimée.",
+        "why": null,
+        "builds": [
+          "individual curve per athlete × canonical exercise;",
+          "sparse / hybrid / individualized evidence states;",
+          "e1RM derived from the fitted relationship;",
+          "derived 2RM/3RM/5RM/etc. only when the model and uncertainty support them;",
+          "support for compatible external/added-load semantics with explicit isolation rules;",
+          "explicit exclusion/handling for assisted load, warm-ups, invalidated performances, unsupported tracking types and incompatible set types;",
+          "true measured 1RM as a high-confidence observation/anchor without converting it into an \"estimated record\";",
+          "RIR-informed observations only through an explicit uncertainty-aware rule;",
+          "recency-aware current-strength estimate without rewriting historical PR truth;",
+          "uncertainty interval or other calibrated precision representation;",
+          "deterministic/reproducible model versioning.",
+          "temporal e1RM/strength trend;",
+          "separation of measured PRs and estimates everywhere;",
+          "drill-down from the estimate to the source performances;",
+          "secondary athlete-facing surface such as « Comment est calculé mon e1RM ? »;",
+          "show whether the estimate is population, hybrid or individualized;"
+        ],
+        "userImpact": [
+          "extend shipped LiftNote; do not recreate completed capabilities;",
+          "mobile-first, accessible, approved black/charcoal + warm-orange + off-white identity;",
+          "define loading, empty, error, permission and unsupported states where relevant;",
+          "preserve immutable workout/session historical truth;",
+          "distinguish entered facts, derived metrics and recommendations;",
+          "avoid pseudo-scientific precision: estimates and uncertainty must be understandable to a non-statistician."
+        ],
+        "journey": [
+          "extend shipped LiftNote; do not recreate completed capabilities;",
+          "mobile-first, accessible, approved black/charcoal + warm-orange + off-white identity;",
+          "define loading, empty, error, permission and unsupported states where relevant;",
+          "preserve immutable workout/session historical truth;",
+          "distinguish entered facts, derived metrics and recommendations;",
+          "avoid pseudo-scientific precision: estimates and uncertainty must be understandable to a non-statistician."
+        ],
+        "rules": [],
+        "examples": [],
+        "data": [],
+        "dependencies": [
+          "Immediate roadmap predecessor after architecture reordering: LN-125. Material dependencies: LN-07B, LN-07D, LN-10, LN-52, LN-58, and the Exercise Intelligence gate LN-90 for stable exercise identity/knowledge semantics."
+        ],
+        "attention": [
+          "run focused lint/type/tests before first push;",
+          "migration/RLS tests when persistence/authorization changes;",
+          "exact-head Vercel build/deploy when repository policy requires it;",
+          "browser QA under current repository policy; TinyFish prohibited;",
+          "classify warnings: new lot warning (fix), relevant pre-existing (fix if safely in scope), unrelated pre-existing (record if material), benign tooling (explain);",
+          "GitHub Actions is the final safety net, not a push-driven debugger;",
+          "inspect any actual OpenAI/Codex/GitHub automated review but never claim such verification if no concrete check exists."
+        ],
+        "notInThisLot": [
+          "creating an objective PR from e1RM alone;",
+          "medical, diagnostic or injury-readiness conclusions;",
+          "opaque AI/LLM estimation;",
+          "automatic training-load changes purely because e1RM moved;",
+          "merging curves across distinct exercises;",
+          "serving copyrighted full texts without redistribution rights."
+        ],
+        "doneWhen": [
+          "e1RM is always explicitly labeled as an estimate, never as a measured record;",
+          "with multiple compatible observations, the model uses the observations jointly rather than simply choosing the closest RM bucket;",
+          "sparse data uses a documented population fallback/prior and is labeled as such;",
+          "sufficient compatible athlete data produces an exercise-specific individualized relationship;",
+          "RIR inputs retain lower/explicit uncertainty and never masquerade as direct failure observations;",
+          "historical PRs remain unchanged by recency/model recalculation;",
+          "uncertainty is surfaced without false precision;",
+          "athlete can inspect the calculation mode, source performances, model version and scientific references;",
+          "every evidence source has publication-status and licensing metadata;",
+          "retracted evidence cannot be active;",
+          "no full paper is bundled/served unless redistribution rights are documented;",
+          "calculations and transitions are unit-tested and reproducible for the recorded model version;",
+          "true PR behavior is preserved;",
+          "no regression outside lot scope;",
+          "authoritative lot and roadmap statuses remain consistent."
+        ],
+        "ux": [
+          "extend shipped LiftNote; do not recreate completed capabilities;",
+          "mobile-first, accessible, approved black/charcoal + warm-orange + off-white identity;",
+          "define loading, empty, error, permission and unsupported states where relevant;",
+          "preserve immutable workout/session historical truth;",
+          "distinguish entered facts, derived metrics and recommendations;",
+          "avoid pseudo-scientific precision: estimates and uncertainty must be understandable to a non-statistician."
+        ],
+        "security": [],
+        "implications": [],
+        "validation": [
+          "run focused lint/type/tests before first push;",
+          "migration/RLS tests when persistence/authorization changes;",
+          "exact-head Vercel build/deploy when repository policy requires it;",
+          "browser QA under current repository policy; TinyFish prohibited;",
+          "classify warnings: new lot warning (fix), relevant pre-existing (fix if safely in scope), unrelated pre-existing (record if material), benign tooling (explain);",
+          "GitHub Actions is the final safety net, not a push-driven debugger;",
+          "inspect any actual OpenAI/Codex/GitHub automated review but never claim such verification if no concrete check exists."
+        ]
+      },
+      "contract": {
+        "phase": "Analytics",
+        "objective": "Remplacer une estimation e1RM fondée uniquement sur une table générique/une performance source par un modèle explicable, versionné et progressivement individualisé par athlète × exercice, tout en conservant une séparation stricte entre record réellement réalisé et capacité estimée.",
+        "rationale": null,
+        "dependencies": [
+          "Immediate roadmap predecessor after architecture reordering: LN-125. Material dependencies: LN-07B, LN-07D, LN-10, LN-52, LN-58, and the Exercise Intelligence gate LN-90 for stable exercise identity/knowledge semantics."
+        ],
+        "scope": [
+          "individual curve per athlete × canonical exercise;",
+          "sparse / hybrid / individualized evidence states;",
+          "e1RM derived from the fitted relationship;",
+          "derived 2RM/3RM/5RM/etc. only when the model and uncertainty support them;",
+          "support for compatible external/added-load semantics with explicit isolation rules;",
+          "explicit exclusion/handling for assisted load, warm-ups, invalidated performances, unsupported tracking types and incompatible set types;",
+          "true measured 1RM as a high-confidence observation/anchor without converting it into an \"estimated record\";",
+          "RIR-informed observations only through an explicit uncertainty-aware rule;",
+          "recency-aware current-strength estimate without rewriting historical PR truth;",
+          "uncertainty interval or other calibrated precision representation;",
+          "deterministic/reproducible model versioning.",
+          "temporal e1RM/strength trend;",
+          "separation of measured PRs and estimates everywhere;",
+          "drill-down from the estimate to the source performances;",
+          "secondary athlete-facing surface such as « Comment est calculé mon e1RM ? »;",
+          "show whether the estimate is population, hybrid or individualized;"
+        ],
+        "exclusions": [
+          "creating an objective PR from e1RM alone;",
+          "medical, diagnostic or injury-readiness conclusions;",
+          "opaque AI/LLM estimation;",
+          "automatic training-load changes purely because e1RM moved;",
+          "merging curves across distinct exercises;",
+          "serving copyrighted full texts without redistribution rights."
+        ],
+        "data": [],
+        "ux": [
+          "extend shipped LiftNote; do not recreate completed capabilities;",
+          "mobile-first, accessible, approved black/charcoal + warm-orange + off-white identity;",
+          "define loading, empty, error, permission and unsupported states where relevant;",
+          "preserve immutable workout/session historical truth;",
+          "distinguish entered facts, derived metrics and recommendations;",
+          "avoid pseudo-scientific precision: estimates and uncertainty must be understandable to a non-statistician."
+        ],
+        "security": [],
+        "implications": [],
+        "acceptance": [
+          "e1RM is always explicitly labeled as an estimate, never as a measured record;",
+          "with multiple compatible observations, the model uses the observations jointly rather than simply choosing the closest RM bucket;",
+          "sparse data uses a documented population fallback/prior and is labeled as such;",
+          "sufficient compatible athlete data produces an exercise-specific individualized relationship;",
+          "RIR inputs retain lower/explicit uncertainty and never masquerade as direct failure observations;",
+          "historical PRs remain unchanged by recency/model recalculation;",
+          "uncertainty is surfaced without false precision;",
+          "athlete can inspect the calculation mode, source performances, model version and scientific references;",
+          "every evidence source has publication-status and licensing metadata;",
+          "retracted evidence cannot be active;",
+          "no full paper is bundled/served unless redistribution rights are documented;",
+          "calculations and transitions are unit-tested and reproducible for the recorded model version;",
+          "true PR behavior is preserved;",
+          "no regression outside lot scope;",
+          "authoritative lot and roadmap statuses remain consistent."
+        ],
+        "validation": [
+          "run focused lint/type/tests before first push;",
+          "migration/RLS tests when persistence/authorization changes;",
+          "exact-head Vercel build/deploy when repository policy requires it;",
+          "browser QA under current repository policy; TinyFish prohibited;",
+          "classify warnings: new lot warning (fix), relevant pre-existing (fix if safely in scope), unrelated pre-existing (record if material), benign tooling (explain);",
+          "GitHub Actions is the final safety net, not a push-driven debugger;",
+          "inspect any actual OpenAI/Codex/GitHub automated review but never claim such verification if no concrete check exists."
         ],
         "completion": {
           "pr": null,
