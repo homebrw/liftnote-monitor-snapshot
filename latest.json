@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T05:58:36.901Z",
+  "publishedAt": "2026-10-02T05:59:29.667Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "BLOCKED",
     "currentLot": "LN-125",
     "nextLot": "LN-71",
     "launchedAt": "2026-10-02T04:46:50.338Z",
-    "lastProgressAt": "2026-10-02T04:46:50.338Z",
+    "lastProgressAt": "2026-10-02T05:59:20.079Z",
     "lastChatCheckAt": "2026-10-02T04:46:50.338Z",
-    "lastObservedMainSha": "308086bcf4600986aa6b84746626b2d68dbaf28c",
+    "lastObservedMainSha": "a040487b4e00fe5c13a8f7756447305f49caadaf",
     "nudges": 0,
-    "lastMessage": "LN-125 is BLOCKED on main; waiting for the documented blocker to clear.",
+    "lastMessage": "main moved while LN-125 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T05:58:26.398Z",
-    "nextTickAt": "2026-10-02T06:03:26.398Z",
+    "lastSuccessfulTickAt": "2026-10-02T05:59:20.079Z",
+    "nextTickAt": "2026-10-02T06:04:20.079Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "308086bcf4600986aa6b84746626b2d68dbaf28c",
+    "mainSha": "a040487b4e00fe5c13a8f7756447305f49caadaf",
     "lots": [
       {
         "id": "LN-00",
@@ -11519,7 +11519,7 @@
       {
         "id": "LN-125",
         "title": "Running & Conditioning UX Gate",
-        "status": "BLOCKED",
+        "status": "WAITING_GATE",
         "goal": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
         "business": {
           "phase": "Running & Conditioning Core",
@@ -19234,7 +19234,7 @@
     "current": {
       "id": "LN-125",
       "title": "Running & Conditioning UX Gate",
-      "status": "BLOCKED",
+      "status": "WAITING_GATE",
       "goal": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
       "business": {
         "phase": "Running & Conditioning Core",
