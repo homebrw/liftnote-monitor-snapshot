@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T00:50:42.368Z",
+  "publishedAt": "2026-10-02T00:51:45.373Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-88",
-    "nextLot": "LN-89",
-    "launchedAt": "2026-10-02T00:31:00.219Z",
-    "lastProgressAt": "2026-10-02T00:48:47.172Z",
-    "lastChatCheckAt": "2026-10-02T00:31:00.219Z",
-    "lastObservedMainSha": "f01d30b0c334726972fb232458f2e1fff796bcf0",
+    "currentLot": "LN-89",
+    "nextLot": "LN-90",
+    "launchedAt": "2026-10-02T00:51:34.800Z",
+    "lastProgressAt": "2026-10-02T00:51:34.800Z",
+    "lastChatCheckAt": "2026-10-02T00:51:34.800Z",
+    "lastObservedMainSha": "4600031486094fa46b83a90d0a34539f050b6f5e",
     "nudges": 0,
-    "lastMessage": "main moved while LN-88 is active",
+    "lastMessage": "Launched LN-89; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T00:50:31.897Z",
-    "nextTickAt": "2026-10-02T00:55:31.897Z",
+    "lastSuccessfulTickAt": "2026-10-02T00:51:34.800Z",
+    "nextTickAt": "2026-10-02T00:56:34.800Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-67",
-        "completedAt": "2026-10-01T21:10:14.856Z",
-        "restartedAt": null,
-        "mainSha": "a930979b5c49536de0cc055f43083cc2326c4941",
-        "reason": null
-      },
       {
         "lot": "LN-68",
         "completedAt": "2026-10-01T21:31:21.580Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "8ff5d280c2f810f6a06f3b049a4ebb59ea190143",
         "reason": null
+      },
+      {
+        "lot": "LN-88",
+        "completedAt": "2026-10-02T00:51:26.086Z",
+        "restartedAt": null,
+        "mainSha": "4600031486094fa46b83a90d0a34539f050b6f5e",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "f01d30b0c334726972fb232458f2e1fff796bcf0",
+    "mainSha": "4600031486094fa46b83a90d0a34539f050b6f5e",
     "lots": [
       {
         "id": "LN-00",
@@ -10091,7 +10091,7 @@
       {
         "id": "LN-88",
         "title": "Exercise Detail v2",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Create one coherent exercise detail experience that explains the movement and connects it to the athlete's actual training history.",
         "business": {
           "phase": "Exercise Intelligence",
@@ -10265,8 +10265,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "787",
+            "mergeSha": "f01d30b0c334726972fb232458f2e1fff796bcf0"
           }
         },
         "contractAvailable": true,
@@ -19225,194 +19225,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 87,
+    "done": 88,
     "total": 138,
-    "percent": 63,
+    "percent": 64,
     "current": {
-      "id": "LN-88",
-      "title": "Exercise Detail v2",
-      "status": "TODO",
-      "goal": "Create one coherent exercise detail experience that explains the movement and connects it to the athlete's actual training history.",
-      "business": {
-        "phase": "Exercise Intelligence",
-        "summary": "Create one coherent exercise detail experience that explains the movement and connects it to the athlete's actual training history.",
-        "why": "Identity, instructions, notes, records and history currently originate from different lots; the user needs one contextual surface without a data dump.",
-        "builds": [
-          "identity and localized description/instructions",
-          "media only from licensed/approved sources",
-          "anatomy, equipment, tracking/load and movement-family context",
-          "personal setup notes with their existing privacy boundary",
-          "history, validated PRs and e1RM where supported",
-          "variants and contextual alternatives",
-          "links into relevant program/template context",
-          "concise execution cues and common errors/pitfalls when editorially supportable and source/licensing-safe",
-          "meaningful progressions/regressions and variants with clear relationship semantics",
-          "explicit media availability/license/attribution state rather than assuming every exercise has an illustration"
-        ],
-        "userImpact": [
-          "progressive sections prioritize identity, history and immediate training usefulness",
-          "instructions/anatomy are secondary to logging context",
-          "clear paths to use the exercise in a program or inspect source history where authorized",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System.",
-          "Progressive exercise knowledge disclosure: active-workout context stays concise while detail view can reveal instructions, cues, pitfalls, anatomy, variants and provenance when useful."
-        ],
-        "journey": [
-          "progressive sections prioritize identity, history and immediate training usefulness",
-          "instructions/anatomy are secondary to logging context",
-          "clear paths to use the exercise in a program or inspect source history where authorized",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System.",
-          "Progressive exercise knowledge disclosure: active-workout context stays concise while detail view can reveal instructions, cues, pitfalls, anatomy, variants and provenance when useful."
-        ],
-        "rules": [
-          "private setup notes remain athlete-only",
-          "coach-managed custom definitions obey assignment authorization",
-          "offline detail may show cached safe data but must not invent freshness",
-          "provides source drill-down for analytics and future AI explanations",
-          "substitution links retain prescribed-vs-performed provenance"
-        ],
-        "examples": [],
-        "data": [
-          "read from existing authoritative exercise/history/PR/note primitives",
-          "metadata evolution does not rewrite historical snapshots",
-          "deep links use stable safe identifiers"
-        ],
-        "dependencies": [
-          "Requires LN-87 DONE and consumes LN-09, LN-58, LN-66, LN-71 and the LN-83 knowledge model."
-        ],
-        "attention": [
-          "private setup notes remain athlete-only",
-          "coach-managed custom definitions obey assignment authorization",
-          "offline detail may show cached safe data but must not invent freshness",
-          "component/data composition tests",
-          "deep-link and unauthorized-state tests",
-          "accessibility tests for section navigation and media alternatives",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no medical technique certification",
-          "no coach-private data leakage",
-          "no giant all-fields-at-once inspector",
-          "no history merge across variants/families"
-        ],
-        "doneWhen": [
-          "a user can understand, inspect history and reuse the exercise without navigating unrelated screens",
-          "PR/e1RM labels cannot be confused",
-          "variants/alternatives are clear but histories remain separate",
-          "mobile detail remains scannable",
-          "The supported catalog is materially enriched in product-visible detail; schema support alone does not count as Exercise Intelligence completion."
-        ],
-        "ux": [
-          "progressive sections prioritize identity, history and immediate training usefulness",
-          "instructions/anatomy are secondary to logging context",
-          "clear paths to use the exercise in a program or inspect source history where authorized",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System.",
-          "Progressive exercise knowledge disclosure: active-workout context stays concise while detail view can reveal instructions, cues, pitfalls, anatomy, variants and provenance when useful."
-        ],
-        "security": [
-          "private setup notes remain athlete-only",
-          "coach-managed custom definitions obey assignment authorization",
-          "offline detail may show cached safe data but must not invent freshness"
-        ],
-        "implications": [
-          "provides source drill-down for analytics and future AI explanations",
-          "substitution links retain prescribed-vs-performed provenance"
-        ],
-        "validation": [
-          "component/data composition tests",
-          "deep-link and unauthorized-state tests",
-          "accessibility tests for section navigation and media alternatives",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Exercise Intelligence",
-        "objective": "Create one coherent exercise detail experience that explains the movement and connects it to the athlete's actual training history.",
-        "rationale": "Identity, instructions, notes, records and history currently originate from different lots; the user needs one contextual surface without a data dump.",
-        "dependencies": [
-          "Requires LN-87 DONE and consumes LN-09, LN-58, LN-66, LN-71 and the LN-83 knowledge model."
-        ],
-        "scope": [
-          "identity and localized description/instructions",
-          "media only from licensed/approved sources",
-          "anatomy, equipment, tracking/load and movement-family context",
-          "personal setup notes with their existing privacy boundary",
-          "history, validated PRs and e1RM where supported",
-          "variants and contextual alternatives",
-          "links into relevant program/template context",
-          "concise execution cues and common errors/pitfalls when editorially supportable and source/licensing-safe",
-          "meaningful progressions/regressions and variants with clear relationship semantics",
-          "explicit media availability/license/attribution state rather than assuming every exercise has an illustration"
-        ],
-        "exclusions": [
-          "no medical technique certification",
-          "no coach-private data leakage",
-          "no giant all-fields-at-once inspector",
-          "no history merge across variants/families"
-        ],
-        "data": [
-          "read from existing authoritative exercise/history/PR/note primitives",
-          "metadata evolution does not rewrite historical snapshots",
-          "deep links use stable safe identifiers"
-        ],
-        "ux": [
-          "progressive sections prioritize identity, history and immediate training usefulness",
-          "instructions/anatomy are secondary to logging context",
-          "clear paths to use the exercise in a program or inspect source history where authorized",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System.",
-          "Progressive exercise knowledge disclosure: active-workout context stays concise while detail view can reveal instructions, cues, pitfalls, anatomy, variants and provenance when useful."
-        ],
-        "security": [
-          "private setup notes remain athlete-only",
-          "coach-managed custom definitions obey assignment authorization",
-          "offline detail may show cached safe data but must not invent freshness"
-        ],
-        "implications": [
-          "provides source drill-down for analytics and future AI explanations",
-          "substitution links retain prescribed-vs-performed provenance"
-        ],
-        "acceptance": [
-          "a user can understand, inspect history and reuse the exercise without navigating unrelated screens",
-          "PR/e1RM labels cannot be confused",
-          "variants/alternatives are clear but histories remain separate",
-          "mobile detail remains scannable",
-          "The supported catalog is materially enriched in product-visible detail; schema support alone does not count as Exercise Intelligence completion."
-        ],
-        "validation": [
-          "component/data composition tests",
-          "deep-link and unauthorized-state tests",
-          "accessibility tests for section navigation and media alternatives",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-89",
       "title": "Substitution Engine v2",
       "status": "TODO",
@@ -19576,6 +19392,174 @@
           "rule-engine fixtures across equipment/load/tracking/family cases",
           "snapshot/history tests for substitution provenance",
           "coach authorization and offline regression tests",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-90",
+      "title": "Exercise Intelligence UX Gate",
+      "status": "TODO",
+      "goal": "Validate the complete exercise journey as one product: search → understand → select → execute → substitute → inspect history → reuse.",
+      "business": {
+        "phase": "Exercise Intelligence",
+        "summary": "Validate the complete exercise journey as one product: search → understand → select → execute → substitute → inspect history → reuse.",
+        "why": "The family is not complete if its pieces work separately but users encounter dead ends, duplication or overload across the journey.",
+        "builds": [
+          "end-to-end product coherence audit of exercise discovery/detail/workout/substitution/history/reuse",
+          "close small integration defects discovered by the gate when safely within family scope",
+          "validate mobile, desktop, accessibility, FR/EN, deep links and representative offline states",
+          "verify canonical identity and source provenance remain understandable where needed",
+          "rerun/inspect the reproducible catalog coverage report across equipment family, movement family, tracking type, FR/EN completeness, media/license state, provenance completeness and unresolved/duplicate candidates",
+          "verify representative Circuit movement families are understandable, searchable and distinguishable",
+          "verify source/license/provenance information is sufficient for audit without exposing source jargon in ordinary UX"
+        ],
+        "userImpact": [
+          "treat this as an executable product gate, not screenshots-only review",
+          "validate progressive disclosure and absence of duplicated exercise surfaces",
+          "include empty/error/disabled and recovery paths",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
+        ],
+        "journey": [
+          "treat this as an executable product gate, not screenshots-only review",
+          "validate progressive disclosure and absence of duplicated exercise surfaces",
+          "include empty/error/disabled and recovery paths",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
+        ],
+        "rules": [
+          "exercise paths must respect private notes, custom ownership and coach assignment boundaries",
+          "test unauthorized deep links and revoked relationship context",
+          "confirm analytics and future AI have stable deterministic inputs",
+          "record unresolved issues as blockers or named future lots; do not silently waive them"
+        ],
+        "examples": [],
+        "data": [
+          "no new schema unless a blocker proves the family cannot meet acceptance without it",
+          "verify historical identity stability through all flows"
+        ],
+        "dependencies": [
+          "LN-117 and LN-118 must be DONE: the gate evaluates real audited Circuit catalog coverage, not only a richer schema around the former strength-heavy catalog."
+        ],
+        "attention": [
+          "exercise paths must respect private notes, custom ownership and coach assignment boundaries",
+          "test unauthorized deep links and revoked relationship context",
+          "targeted integration tests plus browser E2E under the current gate policy",
+          "representative mobile and desktop viewport review when browser gate is active",
+          "security/deep-link/offline regression matrix",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no unrelated visual redesign",
+          "no new programming engine",
+          "no new AI capability"
+        ],
+        "doneWhen": [
+          "representative user can complete the full exercise journey without an unexplained dead end",
+          "mobile primary flow stays fast despite richer knowledge",
+          "history and identity are preserved through substitution/reuse",
+          "no critical accessibility/localization/authorization defect remains in the family",
+          "Exercise Intelligence does not pass if rich fields exist technically but common supported movements remain shallow, unresolved or undiscoverable.",
+          "No arbitrary target count is required; remaining gaps must be explicit and reproducible from pinned inputs."
+        ],
+        "ux": [
+          "treat this as an executable product gate, not screenshots-only review",
+          "validate progressive disclosure and absence of duplicated exercise surfaces",
+          "include empty/error/disabled and recovery paths",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
+        ],
+        "security": [
+          "exercise paths must respect private notes, custom ownership and coach assignment boundaries",
+          "test unauthorized deep links and revoked relationship context"
+        ],
+        "implications": [
+          "confirm analytics and future AI have stable deterministic inputs",
+          "record unresolved issues as blockers or named future lots; do not silently waive them"
+        ],
+        "validation": [
+          "targeted integration tests plus browser E2E under the current gate policy",
+          "representative mobile and desktop viewport review when browser gate is active",
+          "security/deep-link/offline regression matrix",
+          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
+          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
+          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Exercise Intelligence",
+        "objective": "Validate the complete exercise journey as one product: search → understand → select → execute → substitute → inspect history → reuse.",
+        "rationale": "The family is not complete if its pieces work separately but users encounter dead ends, duplication or overload across the journey.",
+        "dependencies": [
+          "LN-117 and LN-118 must be DONE: the gate evaluates real audited Circuit catalog coverage, not only a richer schema around the former strength-heavy catalog."
+        ],
+        "scope": [
+          "end-to-end product coherence audit of exercise discovery/detail/workout/substitution/history/reuse",
+          "close small integration defects discovered by the gate when safely within family scope",
+          "validate mobile, desktop, accessibility, FR/EN, deep links and representative offline states",
+          "verify canonical identity and source provenance remain understandable where needed",
+          "rerun/inspect the reproducible catalog coverage report across equipment family, movement family, tracking type, FR/EN completeness, media/license state, provenance completeness and unresolved/duplicate candidates",
+          "verify representative Circuit movement families are understandable, searchable and distinguishable",
+          "verify source/license/provenance information is sufficient for audit without exposing source jargon in ordinary UX"
+        ],
+        "exclusions": [
+          "no unrelated visual redesign",
+          "no new programming engine",
+          "no new AI capability"
+        ],
+        "data": [
+          "no new schema unless a blocker proves the family cannot meet acceptance without it",
+          "verify historical identity stability through all flows"
+        ],
+        "ux": [
+          "treat this as an executable product gate, not screenshots-only review",
+          "validate progressive disclosure and absence of duplicated exercise surfaces",
+          "include empty/error/disabled and recovery paths",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
+        ],
+        "security": [
+          "exercise paths must respect private notes, custom ownership and coach assignment boundaries",
+          "test unauthorized deep links and revoked relationship context"
+        ],
+        "implications": [
+          "confirm analytics and future AI have stable deterministic inputs",
+          "record unresolved issues as blockers or named future lots; do not silently waive them"
+        ],
+        "acceptance": [
+          "representative user can complete the full exercise journey without an unexplained dead end",
+          "mobile primary flow stays fast despite richer knowledge",
+          "history and identity are preserved through substitution/reuse",
+          "no critical accessibility/localization/authorization defect remains in the family",
+          "Exercise Intelligence does not pass if rich fields exist technically but common supported movements remain shallow, unresolved or undiscoverable.",
+          "No arbitrary target count is required; remaining gaps must be explicit and reproducible from pinned inputs."
+        ],
+        "validation": [
+          "targeted integration tests plus browser E2E under the current gate policy",
+          "representative mobile and desktop viewport review when browser gate is active",
+          "security/deep-link/offline regression matrix",
           "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
           "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
           "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
