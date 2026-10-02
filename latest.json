@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T06:04:35.719Z",
+  "publishedAt": "2026-10-02T06:07:58.605Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "BLOCKED",
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "a040487b4e00fe5c13a8f7756447305f49caadaf",
+    "mainSha": "a303ee11ae777f5e1c0e7ab9440b80262ea2b87b",
     "lots": [
       {
         "id": "LN-00",
