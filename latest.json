@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T10:34:36.383Z",
+  "publishedAt": "2026-10-02T10:35:29.171Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-95",
     "nextLot": "LN-96",
     "launchedAt": "2026-10-02T10:18:17.739Z",
-    "lastProgressAt": "2026-10-02T10:18:17.739Z",
+    "lastProgressAt": "2026-10-02T10:35:21.030Z",
     "lastChatCheckAt": "2026-10-02T10:18:17.739Z",
-    "lastObservedMainSha": "094e9b80894a1e5eab8b2979ab51d9b5fab2d7f2",
+    "lastObservedMainSha": "840dec350efd119543bb5152cfdbf2d855efcf23",
     "nudges": 0,
-    "lastMessage": "Launched LN-95; canonical chat persisted before prompt marker became visible",
+    "lastMessage": "main moved while LN-95 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T10:34:29.060Z",
-    "nextTickAt": "2026-10-02T10:39:29.060Z",
+    "lastSuccessfulTickAt": "2026-10-02T10:35:21.030Z",
+    "nextTickAt": "2026-10-02T10:40:21.030Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "094e9b80894a1e5eab8b2979ab51d9b5fab2d7f2",
+    "mainSha": "840dec350efd119543bb5152cfdbf2d855efcf23",
     "lots": [
       {
         "id": "LN-00",
