@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T01:57:39.947Z",
+  "publishedAt": "2026-10-02T01:58:43.118Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-119",
-    "nextLot": "LN-120",
-    "launchedAt": "2026-10-02T01:44:53.638Z",
-    "lastProgressAt": "2026-10-02T01:55:41.994Z",
-    "lastChatCheckAt": "2026-10-02T01:44:53.638Z",
-    "lastObservedMainSha": "40ef33cf47f5e171d329eff1cb1a8d54a7f9396b",
+    "currentLot": "LN-120",
+    "nextLot": "LN-121",
+    "launchedAt": "2026-10-02T01:58:32.714Z",
+    "lastProgressAt": "2026-10-02T01:58:32.714Z",
+    "lastChatCheckAt": "2026-10-02T01:58:32.714Z",
+    "lastObservedMainSha": "663b9d8d5f5a36e9ce54f06bb3c7aaeb7920dbdb",
     "nudges": 0,
-    "lastMessage": "main moved while LN-119 is active",
+    "lastMessage": "Launched LN-120; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T01:57:29.990Z",
-    "nextTickAt": "2026-10-02T02:02:29.990Z",
+    "lastSuccessfulTickAt": "2026-10-02T01:58:32.714Z",
+    "nextTickAt": "2026-10-02T02:03:32.714Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-81",
-        "completedAt": "2026-10-01T22:24:24.266Z",
-        "restartedAt": null,
-        "mainSha": "1e2832d8c7c47222274a6b9513e3509578aaab03",
-        "reason": null
-      },
       {
         "lot": "LN-82",
         "completedAt": "2026-10-01T22:40:48.464Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "1ed00d086a4be875bfca08482439a10cadfcf255",
         "reason": null
+      },
+      {
+        "lot": "LN-119",
+        "completedAt": "2026-10-02T01:58:25.239Z",
+        "restartedAt": null,
+        "mainSha": "663b9d8d5f5a36e9ce54f06bb3c7aaeb7920dbdb",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "40ef33cf47f5e171d329eff1cb1a8d54a7f9396b",
+    "mainSha": "663b9d8d5f5a36e9ce54f06bb3c7aaeb7920dbdb",
     "lots": [
       {
         "id": "LN-00",
@@ -10623,7 +10623,7 @@
       {
         "id": "LN-119",
         "title": "Typed Workout Blocks & Modality Foundation",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Introduce the minimum additive workout-domain architecture needed for strength + running + circuit/conditioning while keeping the internal engine generic and the user experience modality-specific and simple.",
         "business": {
           "phase": "Running & Conditioning Core",
@@ -10797,8 +10797,8 @@
             "Targeted UI smoke checks only where this lot changes product paths."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "793",
+            "mergeSha": "40ef33cf47f5e171d329eff1cb1a8d54a7f9396b"
           }
         },
         "contractAvailable": true,
@@ -19228,194 +19228,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 90,
+    "done": 91,
     "total": 138,
-    "percent": 65,
+    "percent": 66,
     "current": {
-      "id": "LN-119",
-      "title": "Typed Workout Blocks & Modality Foundation",
-      "status": "TODO",
-      "goal": "Introduce the minimum additive workout-domain architecture needed for strength + running + circuit/conditioning while keeping the internal engine generic and the user experience modality-specific and simple.",
-      "business": {
-        "phase": "Running & Conditioning Core",
-        "summary": "Introduce the minimum additive workout-domain architecture needed for strength + running + circuit/conditioning while keeping the internal engine generic and the user experience modality-specific and simple.",
-        "why": "LiftNote must expand without turning into a visible universal-engine configuration tool. Running segments and circuit protocols have meanings that do not fit cleanly into strength-set fields. A shared block/step foundation can reduce duplication only if it preserves existing strength behavior and hides internal complexity.",
-        "builds": [
-          "A typed workout-block/step model that can represent strength, running and circuit/conditioning without re-encoding completed strength history.",
-          "Clear distinction between workout structure, planned targets, performed facts, and immutable started/completed snapshots.",
-          "Additive modality-specific payloads where a universal field would corrupt meaning.",
-          "Shared ordering and nesting rules sufficient for running repeats/recovery and circuit movement/protocol composition.",
-          "Versioned persistence/serialization compatible with duplication, sharing/import, coach assignment and future AI import.",
-          "Backward-compatible mapping of existing strength templates/sessions.",
-          "Product-facing modality labels/presets such as Courir and Circuit / conditioning without exposing abstract engine types."
-        ],
-        "userImpact": [
-          "Complexity in the model, simplicity in the experience.",
-          "A strength-only athlete continues to see the existing familiar flow.",
-          "Creation begins with concrete intent, not abstract type configuration.",
-          "Advanced block/protocol fields use progressive disclosure.",
-          "Today, Programmes, Historique and Progression remain shared product surfaces."
-        ],
-        "journey": [
-          "Complexity in the model, simplicity in the experience.",
-          "A strength-only athlete continues to see the existing familiar flow.",
-          "Creation begins with concrete intent, not abstract type configuration.",
-          "Advanced block/protocol fields use progressive disclosure.",
-          "Today, Programmes, Historique and Progression remain shared product surfaces."
-        ],
-        "rules": [
-          "Typed performed facts become inputs to modality-specific analytics later.",
-          "Do not aggregate incompatible modalities into one opaque score.",
-          "AI import later emits this structured vocabulary but remains non-authoritative until validation/confirmation.",
-          "Historical strength analytics remain stable."
-        ],
-        "examples": [],
-        "data": [
-          "Strength set semantics remain authoritative for strength blocks.",
-          "Running and circuit payloads may use distinct typed structures.",
-          "Canonical exercise IDs remain shared for circuit movements.",
-          "Running steps are not required to masquerade as canonical strength exercises.",
-          "Every started session snapshots the resolved typed structure it actually began with.",
-          "Schema/version fields support future import/export and migrations.",
-          "Unknown future modality payloads fail safely rather than being misread as strength."
-        ],
-        "dependencies": [
-          "LN-90 — Exercise Intelligence UX Gate.",
-          "LN-17 — shipped grouped exercise blocks.",
-          "LN-32 — shipped duration/distance tracking.",
-          "LN-45 — offline workout truth.",
-          "LN-56/LN-57 — active workout and program UX.",
-          "LN-67 — Program → Block → Week → Workout structure.",
-          "LN-118 — curated Circuit catalog expansion."
-        ],
-        "attention": [
-          "Backward-compatibility fixtures for existing strength structures.",
-          "Serialization/version round-trip tests.",
-          "Snapshot immutability tests.",
-          "Copy/share/import/coach contract tests for typed blocks.",
-          "RLS/ownership negative tests if persistence changes.",
-          "Offline resume fixture for typed state.",
-          "Targeted UI smoke checks only where this lot changes product paths."
-        ],
-        "notInThisLot": [
-          "Running analytics.",
-          "Circuit live timer/scoring implementation.",
-          "CrossFit or Hyrox product layers.",
-          "GPS/social/segments/maps.",
-          "Rewriting existing strength sessions into a new historical schema when not required.",
-          "A top-level mini-app per modality."
-        ],
-        "doneWhen": [
-          "Existing strength templates/sessions remain valid and behaviorally unchanged.",
-          "Representative running and circuit structures can be represented without abusing strength-only fields.",
-          "Snapshot, copy/share/import and coach lineage contracts have explicit compatibility paths.",
-          "Product surfaces can choose modality-specific controls while sharing navigation/history infrastructure.",
-          "Unknown/incompatible payloads fail explicitly.",
-          "No CrossFit/Hyrox layer is introduced."
-        ],
-        "ux": [
-          "Complexity in the model, simplicity in the experience.",
-          "A strength-only athlete continues to see the existing familiar flow.",
-          "Creation begins with concrete intent, not abstract type configuration.",
-          "Advanced block/protocol fields use progressive disclosure.",
-          "Today, Programmes, Historique and Progression remain shared product surfaces."
-        ],
-        "security": [],
-        "implications": [
-          "Typed performed facts become inputs to modality-specific analytics later.",
-          "Do not aggregate incompatible modalities into one opaque score.",
-          "AI import later emits this structured vocabulary but remains non-authoritative until validation/confirmation.",
-          "Historical strength analytics remain stable."
-        ],
-        "validation": [
-          "Backward-compatibility fixtures for existing strength structures.",
-          "Serialization/version round-trip tests.",
-          "Snapshot immutability tests.",
-          "Copy/share/import/coach contract tests for typed blocks.",
-          "RLS/ownership negative tests if persistence changes.",
-          "Offline resume fixture for typed state.",
-          "Targeted UI smoke checks only where this lot changes product paths."
-        ]
-      },
-      "contract": {
-        "phase": "Running & Conditioning Core",
-        "objective": "Introduce the minimum additive workout-domain architecture needed for strength + running + circuit/conditioning while keeping the internal engine generic and the user experience modality-specific and simple.",
-        "rationale": "LiftNote must expand without turning into a visible universal-engine configuration tool. Running segments and circuit protocols have meanings that do not fit cleanly into strength-set fields. A shared block/step foundation can reduce duplication only if it preserves existing strength behavior and hides internal complexity.",
-        "dependencies": [
-          "LN-90 — Exercise Intelligence UX Gate.",
-          "LN-17 — shipped grouped exercise blocks.",
-          "LN-32 — shipped duration/distance tracking.",
-          "LN-45 — offline workout truth.",
-          "LN-56/LN-57 — active workout and program UX.",
-          "LN-67 — Program → Block → Week → Workout structure.",
-          "LN-118 — curated Circuit catalog expansion."
-        ],
-        "scope": [
-          "A typed workout-block/step model that can represent strength, running and circuit/conditioning without re-encoding completed strength history.",
-          "Clear distinction between workout structure, planned targets, performed facts, and immutable started/completed snapshots.",
-          "Additive modality-specific payloads where a universal field would corrupt meaning.",
-          "Shared ordering and nesting rules sufficient for running repeats/recovery and circuit movement/protocol composition.",
-          "Versioned persistence/serialization compatible with duplication, sharing/import, coach assignment and future AI import.",
-          "Backward-compatible mapping of existing strength templates/sessions.",
-          "Product-facing modality labels/presets such as Courir and Circuit / conditioning without exposing abstract engine types."
-        ],
-        "exclusions": [
-          "Running analytics.",
-          "Circuit live timer/scoring implementation.",
-          "CrossFit or Hyrox product layers.",
-          "GPS/social/segments/maps.",
-          "Rewriting existing strength sessions into a new historical schema when not required.",
-          "A top-level mini-app per modality."
-        ],
-        "data": [
-          "Strength set semantics remain authoritative for strength blocks.",
-          "Running and circuit payloads may use distinct typed structures.",
-          "Canonical exercise IDs remain shared for circuit movements.",
-          "Running steps are not required to masquerade as canonical strength exercises.",
-          "Every started session snapshots the resolved typed structure it actually began with.",
-          "Schema/version fields support future import/export and migrations.",
-          "Unknown future modality payloads fail safely rather than being misread as strength."
-        ],
-        "ux": [
-          "Complexity in the model, simplicity in the experience.",
-          "A strength-only athlete continues to see the existing familiar flow.",
-          "Creation begins with concrete intent, not abstract type configuration.",
-          "Advanced block/protocol fields use progressive disclosure.",
-          "Today, Programmes, Historique and Progression remain shared product surfaces."
-        ],
-        "security": [],
-        "implications": [
-          "Typed performed facts become inputs to modality-specific analytics later.",
-          "Do not aggregate incompatible modalities into one opaque score.",
-          "AI import later emits this structured vocabulary but remains non-authoritative until validation/confirmation.",
-          "Historical strength analytics remain stable."
-        ],
-        "acceptance": [
-          "Existing strength templates/sessions remain valid and behaviorally unchanged.",
-          "Representative running and circuit structures can be represented without abusing strength-only fields.",
-          "Snapshot, copy/share/import and coach lineage contracts have explicit compatibility paths.",
-          "Product surfaces can choose modality-specific controls while sharing navigation/history infrastructure.",
-          "Unknown/incompatible payloads fail explicitly.",
-          "No CrossFit/Hyrox layer is introduced."
-        ],
-        "validation": [
-          "Backward-compatibility fixtures for existing strength structures.",
-          "Serialization/version round-trip tests.",
-          "Snapshot immutability tests.",
-          "Copy/share/import/coach contract tests for typed blocks.",
-          "RLS/ownership negative tests if persistence changes.",
-          "Offline resume fixture for typed state.",
-          "Targeted UI smoke checks only where this lot changes product paths."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-120",
       "title": "Structured Running Workout Domain",
       "status": "TODO",
@@ -19592,6 +19408,183 @@
           "Manual vs external-source provenance fixtures.",
           "Mobile product-path validation for one continuous and one interval workout.",
           "No expensive integration CI beyond changed namespaces."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-121",
+      "title": "Circuit / Conditioning Workout Domain",
+      "status": "TODO",
+      "goal": "Represent Circuit / Conditioning workouts as structured LiftNote sessions using canonical exercises and protocol semantics, with lightweight class logging when detailed movement capture is impractical.",
+      "business": {
+        "phase": "Running & Conditioning Core",
+        "summary": "Represent Circuit / Conditioning workouts as structured LiftNote sessions using canonical exercises and protocol semantics, with lightweight class logging when detailed movement capture is impractical.",
+        "why": "Circuit is more than grouped strength sets. Rounds, AMRAP, EMOM, For Time and work/rest structures need explicit protocol meaning, while common movements must continue to reuse the same canonical exercise identities and history.",
+        "builds": [
+          "Protocol structures for rounds, AMRAP, EMOM, For Time, interval work/rest and free/unstructured circuit.",
+          "Canonical exercise reuse for circuit movements with reps, duration, distance and/or load as appropriate.",
+          "TRX/suspension as equipment/exercise semantics, not a separate product architecture.",
+          "Mixed blocks that can include a running step where supported by LN-120.",
+          "Prescribed structure distinct from performed structure.",
+          "Substitution identity/provenance compatible with LN-50/LN-89 principles.",
+          "Lightweight discovered-on-arrival class logging with duration, RPE, notes and optional trustworthy HR/calories even when every movement is not manually encoded.",
+          "Reusable template/program representation."
+        ],
+        "userImpact": [
+          "Creation begins with familiar protocol choices or “Circuit libre”, not engine jargon.",
+          "Common defaults are fast; advanced timing/score options are progressive.",
+          "The athlete can start a class quickly when the board is only known on arrival.",
+          "The ordinary manual logging path remains lightweight.",
+          "Strength flow is unchanged."
+        ],
+        "journey": [
+          "Creation begins with familiar protocol choices or “Circuit libre”, not engine jargon.",
+          "Common defaults are fast; advanced timing/score options are progressive.",
+          "The athlete can start a class quickly when the board is only known on arrival.",
+          "The ordinary manual logging path remains lightweight.",
+          "Strength flow is unchanged."
+        ],
+        "rules": [
+          "Circuit protocol/result facts become benchmark/reference inputs later.",
+          "Movement history retains canonical identity without merging unrelated circuit scores.",
+          "AI board import later maps recognized movement IDs/protocol vocabulary into this domain.",
+          "No opaque global fitness score."
+        ],
+        "examples": [],
+        "data": [
+          "Protocol type and parameters are explicit versioned fields.",
+          "Protocol-level structure and movement-level steps are separate but linked.",
+          "Prescribed and performed structures are immutable snapshots once completed.",
+          "A lightweight class session may legitimately have protocol/session facts without exhaustive movement-level facts.",
+          "Unknown score is different from zero score.",
+          "Canonical exercise IDs remain shared with strength/history.",
+          "No automatic double counting between protocol-level result and movement-level volume."
+        ],
+        "dependencies": [
+          "LN-120 — structured Running domain for mixed sessions and run steps.",
+          "LN-119 — typed workout/modality foundation.",
+          "LN-118 — curated Circuit catalog.",
+          "LN-17 — grouped movements.",
+          "LN-26/LN-32 — set/tracking primitives."
+        ],
+        "attention": [
+          "Protocol serialization/version tests.",
+          "Canonical exercise identity and mixed-step fixtures.",
+          "Lightweight-session validation with intentionally missing movement detail.",
+          "Copy/share/import/coach snapshot compatibility tests.",
+          "RLS/ownership checks when persistence changes.",
+          "Mobile creation/history product-path validation."
+        ],
+        "notInThisLot": [
+          "Live protocol timer/state machine and structured scoring implementation; LN-122 owns that.",
+          "CrossFit Rx/scaled, judge/referee or competition engine.",
+          "Public leaderboard.",
+          "Hyrox-specific station/race product.",
+          "Duplicate “circuit exercise” identities for movements already canonical elsewhere."
+        ],
+        "doneWhen": [
+          "Rounds, AMRAP, EMOM, For Time, work/rest and free circuit can be represented.",
+          "Representative mixed Circuit with KB, TRX, DB, plank and run uses canonical identities and correct tracking semantics.",
+          "Lightweight class logging is possible without fabricating missing movement details.",
+          "Prescribed/performed structures and substitutions remain inspectable.",
+          "Strength and Running behavior is not regressed.",
+          "CrossFit/Hyrox-specific layers are absent."
+        ],
+        "ux": [
+          "Creation begins with familiar protocol choices or “Circuit libre”, not engine jargon.",
+          "Common defaults are fast; advanced timing/score options are progressive.",
+          "The athlete can start a class quickly when the board is only known on arrival.",
+          "The ordinary manual logging path remains lightweight.",
+          "Strength flow is unchanged."
+        ],
+        "security": [],
+        "implications": [
+          "Circuit protocol/result facts become benchmark/reference inputs later.",
+          "Movement history retains canonical identity without merging unrelated circuit scores.",
+          "AI board import later maps recognized movement IDs/protocol vocabulary into this domain.",
+          "No opaque global fitness score."
+        ],
+        "validation": [
+          "Protocol serialization/version tests.",
+          "Canonical exercise identity and mixed-step fixtures.",
+          "Lightweight-session validation with intentionally missing movement detail.",
+          "Copy/share/import/coach snapshot compatibility tests.",
+          "RLS/ownership checks when persistence changes.",
+          "Mobile creation/history product-path validation."
+        ]
+      },
+      "contract": {
+        "phase": "Running & Conditioning Core",
+        "objective": "Represent Circuit / Conditioning workouts as structured LiftNote sessions using canonical exercises and protocol semantics, with lightweight class logging when detailed movement capture is impractical.",
+        "rationale": "Circuit is more than grouped strength sets. Rounds, AMRAP, EMOM, For Time and work/rest structures need explicit protocol meaning, while common movements must continue to reuse the same canonical exercise identities and history.",
+        "dependencies": [
+          "LN-120 — structured Running domain for mixed sessions and run steps.",
+          "LN-119 — typed workout/modality foundation.",
+          "LN-118 — curated Circuit catalog.",
+          "LN-17 — grouped movements.",
+          "LN-26/LN-32 — set/tracking primitives."
+        ],
+        "scope": [
+          "Protocol structures for rounds, AMRAP, EMOM, For Time, interval work/rest and free/unstructured circuit.",
+          "Canonical exercise reuse for circuit movements with reps, duration, distance and/or load as appropriate.",
+          "TRX/suspension as equipment/exercise semantics, not a separate product architecture.",
+          "Mixed blocks that can include a running step where supported by LN-120.",
+          "Prescribed structure distinct from performed structure.",
+          "Substitution identity/provenance compatible with LN-50/LN-89 principles.",
+          "Lightweight discovered-on-arrival class logging with duration, RPE, notes and optional trustworthy HR/calories even when every movement is not manually encoded.",
+          "Reusable template/program representation."
+        ],
+        "exclusions": [
+          "Live protocol timer/state machine and structured scoring implementation; LN-122 owns that.",
+          "CrossFit Rx/scaled, judge/referee or competition engine.",
+          "Public leaderboard.",
+          "Hyrox-specific station/race product.",
+          "Duplicate “circuit exercise” identities for movements already canonical elsewhere."
+        ],
+        "data": [
+          "Protocol type and parameters are explicit versioned fields.",
+          "Protocol-level structure and movement-level steps are separate but linked.",
+          "Prescribed and performed structures are immutable snapshots once completed.",
+          "A lightweight class session may legitimately have protocol/session facts without exhaustive movement-level facts.",
+          "Unknown score is different from zero score.",
+          "Canonical exercise IDs remain shared with strength/history.",
+          "No automatic double counting between protocol-level result and movement-level volume."
+        ],
+        "ux": [
+          "Creation begins with familiar protocol choices or “Circuit libre”, not engine jargon.",
+          "Common defaults are fast; advanced timing/score options are progressive.",
+          "The athlete can start a class quickly when the board is only known on arrival.",
+          "The ordinary manual logging path remains lightweight.",
+          "Strength flow is unchanged."
+        ],
+        "security": [],
+        "implications": [
+          "Circuit protocol/result facts become benchmark/reference inputs later.",
+          "Movement history retains canonical identity without merging unrelated circuit scores.",
+          "AI board import later maps recognized movement IDs/protocol vocabulary into this domain.",
+          "No opaque global fitness score."
+        ],
+        "acceptance": [
+          "Rounds, AMRAP, EMOM, For Time, work/rest and free circuit can be represented.",
+          "Representative mixed Circuit with KB, TRX, DB, plank and run uses canonical identities and correct tracking semantics.",
+          "Lightweight class logging is possible without fabricating missing movement details.",
+          "Prescribed/performed structures and substitutions remain inspectable.",
+          "Strength and Running behavior is not regressed.",
+          "CrossFit/Hyrox-specific layers are absent."
+        ],
+        "validation": [
+          "Protocol serialization/version tests.",
+          "Canonical exercise identity and mixed-step fixtures.",
+          "Lightweight-session validation with intentionally missing movement detail.",
+          "Copy/share/import/coach snapshot compatibility tests.",
+          "RLS/ownership checks when persistence changes.",
+          "Mobile creation/history product-path validation."
         ],
         "completion": {
           "pr": null,
