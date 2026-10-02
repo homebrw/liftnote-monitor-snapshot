@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T01:36:54.881Z",
+  "publishedAt": "2026-10-02T01:37:47.608Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-90",
     "nextLot": "LN-119",
     "launchedAt": "2026-10-02T01:07:34.771Z",
-    "lastProgressAt": "2026-10-02T01:33:12.411Z",
+    "lastProgressAt": "2026-10-02T01:37:37.850Z",
     "lastChatCheckAt": "2026-10-02T01:33:12.411Z",
-    "lastObservedMainSha": "b5f2a1280d6359f08c1e26cdbfff1d0f7e65405c",
+    "lastObservedMainSha": "e29b1564ba50a30b955e15274028a1a8b345c80b",
     "nudges": 1,
-    "lastMessage": "Sent continuation nudge 1/3",
+    "lastMessage": "main moved while LN-90 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T01:36:45.535Z",
-    "nextTickAt": "2026-10-02T01:41:45.535Z",
+    "lastSuccessfulTickAt": "2026-10-02T01:37:37.850Z",
+    "nextTickAt": "2026-10-02T01:42:37.850Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "b5f2a1280d6359f08c1e26cdbfff1d0f7e65405c",
+    "mainSha": "e29b1564ba50a30b955e15274028a1a8b345c80b",
     "lots": [
       {
         "id": "LN-00",
@@ -10502,8 +10502,9 @@
           "attention": [
             "exercise paths must respect private notes, custom ownership and coach assignment boundaries",
             "test unauthorized deep links and revoked relationship context",
-            "targeted integration tests plus browser E2E under the current gate policy",
-            "representative mobile and desktop viewport review when browser gate is active",
+            "targeted integration tests plus committed browser E2E coverage for the complete journey",
+            "under the current explicit execution instruction, intermediate browser execution for LN-90 is deferred to the consolidated LN-116 release gate; this lot must not claim browser validation it did not perform",
+            "representative mobile and desktop scenarios remain encoded in Playwright so LN-116 can execute them unchanged or extend them",
             "security/deep-link/offline regression matrix",
             "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
             "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
@@ -10541,8 +10542,9 @@
             "record unresolved issues as blockers or named future lots; do not silently waive them"
           ],
           "validation": [
-            "targeted integration tests plus browser E2E under the current gate policy",
-            "representative mobile and desktop viewport review when browser gate is active",
+            "targeted integration tests plus committed browser E2E coverage for the complete journey",
+            "under the current explicit execution instruction, intermediate browser execution for LN-90 is deferred to the consolidated LN-116 release gate; this lot must not claim browser validation it did not perform",
+            "representative mobile and desktop scenarios remain encoded in Playwright so LN-116 can execute them unchanged or extend them",
             "security/deep-link/offline regression matrix",
             "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
             "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
@@ -10601,8 +10603,9 @@
             "No arbitrary target count is required; remaining gaps must be explicit and reproducible from pinned inputs."
           ],
           "validation": [
-            "targeted integration tests plus browser E2E under the current gate policy",
-            "representative mobile and desktop viewport review when browser gate is active",
+            "targeted integration tests plus committed browser E2E coverage for the complete journey",
+            "under the current explicit execution instruction, intermediate browser execution for LN-90 is deferred to the consolidated LN-116 release gate; this lot must not claim browser validation it did not perform",
+            "representative mobile and desktop scenarios remain encoded in Playwright so LN-116 can execute them unchanged or extend them",
             "security/deep-link/offline regression matrix",
             "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
             "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
@@ -19281,8 +19284,9 @@
         "attention": [
           "exercise paths must respect private notes, custom ownership and coach assignment boundaries",
           "test unauthorized deep links and revoked relationship context",
-          "targeted integration tests plus browser E2E under the current gate policy",
-          "representative mobile and desktop viewport review when browser gate is active",
+          "targeted integration tests plus committed browser E2E coverage for the complete journey",
+          "under the current explicit execution instruction, intermediate browser execution for LN-90 is deferred to the consolidated LN-116 release gate; this lot must not claim browser validation it did not perform",
+          "representative mobile and desktop scenarios remain encoded in Playwright so LN-116 can execute them unchanged or extend them",
           "security/deep-link/offline regression matrix",
           "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
           "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
@@ -19320,8 +19324,9 @@
           "record unresolved issues as blockers or named future lots; do not silently waive them"
         ],
         "validation": [
-          "targeted integration tests plus browser E2E under the current gate policy",
-          "representative mobile and desktop viewport review when browser gate is active",
+          "targeted integration tests plus committed browser E2E coverage for the complete journey",
+          "under the current explicit execution instruction, intermediate browser execution for LN-90 is deferred to the consolidated LN-116 release gate; this lot must not claim browser validation it did not perform",
+          "representative mobile and desktop scenarios remain encoded in Playwright so LN-116 can execute them unchanged or extend them",
           "security/deep-link/offline regression matrix",
           "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
           "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
@@ -19380,8 +19385,9 @@
           "No arbitrary target count is required; remaining gaps must be explicit and reproducible from pinned inputs."
         ],
         "validation": [
-          "targeted integration tests plus browser E2E under the current gate policy",
-          "representative mobile and desktop viewport review when browser gate is active",
+          "targeted integration tests plus committed browser E2E coverage for the complete journey",
+          "under the current explicit execution instruction, intermediate browser execution for LN-90 is deferred to the consolidated LN-116 release gate; this lot must not claim browser validation it did not perform",
+          "representative mobile and desktop scenarios remain encoded in Playwright so LN-116 can execute them unchanged or extend them",
           "security/deep-link/offline regression matrix",
           "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
           "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
