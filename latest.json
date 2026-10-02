@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T23:39:17.324Z",
+  "publishedAt": "2026-10-02T23:40:12.975Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-109",
-    "nextLot": "LN-110",
-    "launchedAt": "2026-10-02T23:06:11.761Z",
-    "lastProgressAt": "2026-10-02T23:35:56.836Z",
-    "lastChatCheckAt": "2026-10-02T23:31:55.938Z",
-    "lastObservedMainSha": "48233638f21d6bab1eafb3f5962db1000304e59d",
+    "currentLot": "LN-110",
+    "nextLot": "LN-111",
+    "launchedAt": "2026-10-02T23:40:04.693Z",
+    "lastProgressAt": "2026-10-02T23:40:04.693Z",
+    "lastChatCheckAt": "2026-10-02T23:40:04.693Z",
+    "lastObservedMainSha": "26f749fa0e8f24174241cc129904141f5ed5f45c",
     "nudges": 0,
-    "lastMessage": "main moved while LN-109 is active",
+    "lastMessage": "Launched LN-110; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T23:39:09.411Z",
-    "nextTickAt": "2026-10-02T23:44:09.411Z",
+    "lastSuccessfulTickAt": "2026-10-02T23:40:04.693Z",
+    "nextTickAt": "2026-10-02T23:45:04.693Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-99",
-        "completedAt": "2026-10-02T18:50:17.063Z",
-        "restartedAt": null,
-        "mainSha": "a9b947faf951606dda6b9ab7de15adaca2e3d85e",
-        "reason": null
-      },
       {
         "lot": "LN-100",
         "completedAt": "2026-10-02T19:16:41.540Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "6b40a84c69589b148964eae4054a09a9cb0985ac",
         "reason": null
+      },
+      {
+        "lot": "LN-109",
+        "completedAt": "2026-10-02T23:39:57.854Z",
+        "restartedAt": null,
+        "mainSha": "26f749fa0e8f24174241cc129904141f5ed5f45c",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "48233638f21d6bab1eafb3f5962db1000304e59d",
+    "mainSha": "26f749fa0e8f24174241cc129904141f5ed5f45c",
     "lots": [
       {
         "id": "LN-00",
@@ -16460,7 +16460,7 @@
       {
         "id": "LN-109",
         "title": "Import Validation & Conflict Resolution",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Provide a shared review/conflict layer for structured and future AI-assisted imports before ambiguous or destructive writes.",
         "business": {
           "phase": "Trust, Data & Privacy",
@@ -16621,8 +16621,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "882",
+            "mergeSha": "48233638f21d6bab1eafb3f5962db1000304e59d"
           }
         },
         "contractAvailable": true,
@@ -21131,181 +21131,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 122,
+    "done": 123,
     "total": 150,
-    "percent": 81,
+    "percent": 82,
     "current": {
-      "id": "LN-109",
-      "title": "Import Validation & Conflict Resolution",
-      "status": "TODO",
-      "goal": "Provide a shared review/conflict layer for structured and future AI-assisted imports before ambiguous or destructive writes.",
-      "business": {
-        "phase": "Trust, Data & Privacy",
-        "summary": "Provide a shared review/conflict layer for structured and future AI-assisted imports before ambiguous or destructive writes.",
-        "why": "LN-74 preview is a foundation; richer imports need consistent duplicate, exercise-resolution and ownership conflict semantics.",
-        "builds": [
-          "preflight validation for duplicates, unresolved exercises, ownership conflicts, existing-program collisions and unsupported fields",
-          "canonical exercise resolution using LN-85 outcomes",
-          "user choices: map existing, create allowed custom copy, rename/import separately, skip or cancel",
-          "conflict summary and deterministic write plan before confirmation",
-          "transactional apply/rollback and post-import integrity verification"
-        ],
-        "userImpact": [
-          "progressive review: blocking conflicts first, routine mappings collapsed",
-          "user can edit unresolved decisions before save",
-          "clear partial/unsupported result if input cannot be represented",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "progressive review: blocking conflicts first, routine mappings collapsed",
-          "user can edit unresolved decisions before save",
-          "clear partial/unsupported result if input cannot be represented",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "imports write only into authenticated user's permitted namespace",
-          "coach-owned data requires explicit authorized workflow",
-          "untrusted file content never changes authorization rules",
-          "LN-77 AI extraction feeds this layer rather than writing directly",
-          "LN-110 logs import operations; LN-108 validates post-import integrity",
-          "analytics/history consume imported data only once authoritative objects are created"
-        ],
-        "examples": [],
-        "data": [
-          "structured intermediate import plan with explicit mappings and conflict decisions",
-          "retain source/version/provenance and unit/load semantics",
-          "write only after confirmation and preserve import audit identity"
-        ],
-        "dependencies": [
-          "Requires LN-74, LN-85 and LN-108 DONE. It becomes a mandatory consumer boundary for LN-77 AI import."
-        ],
-        "attention": [
-          "imports write only into authenticated user's permitted namespace",
-          "coach-owned data requires explicit authorized workflow",
-          "untrusted file content never changes authorization rules",
-          "conflict-matrix fixtures",
-          "transaction/rollback and duplicate tests",
-          "security tests with malformed/untrusted/foreign-owner inputs",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no silent canonical system exercise creation",
-          "no name-only merge",
-          "no destructive import without preview",
-          "no AI authority over unresolved conflicts"
-        ],
-        "doneWhen": [
-          "ambiguous imports cannot silently write",
-          "exercise and ownership conflicts have explicit resolutions",
-          "confirmed plan applies deterministically or fails safely",
-          "post-import integrity is verifiable"
-        ],
-        "ux": [
-          "progressive review: blocking conflicts first, routine mappings collapsed",
-          "user can edit unresolved decisions before save",
-          "clear partial/unsupported result if input cannot be represented",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "imports write only into authenticated user's permitted namespace",
-          "coach-owned data requires explicit authorized workflow",
-          "untrusted file content never changes authorization rules"
-        ],
-        "implications": [
-          "LN-77 AI extraction feeds this layer rather than writing directly",
-          "LN-110 logs import operations; LN-108 validates post-import integrity",
-          "analytics/history consume imported data only once authoritative objects are created"
-        ],
-        "validation": [
-          "conflict-matrix fixtures",
-          "transaction/rollback and duplicate tests",
-          "security tests with malformed/untrusted/foreign-owner inputs",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Trust, Data & Privacy",
-        "objective": "Provide a shared review/conflict layer for structured and future AI-assisted imports before ambiguous or destructive writes.",
-        "rationale": "LN-74 preview is a foundation; richer imports need consistent duplicate, exercise-resolution and ownership conflict semantics.",
-        "dependencies": [
-          "Requires LN-74, LN-85 and LN-108 DONE. It becomes a mandatory consumer boundary for LN-77 AI import."
-        ],
-        "scope": [
-          "preflight validation for duplicates, unresolved exercises, ownership conflicts, existing-program collisions and unsupported fields",
-          "canonical exercise resolution using LN-85 outcomes",
-          "user choices: map existing, create allowed custom copy, rename/import separately, skip or cancel",
-          "conflict summary and deterministic write plan before confirmation",
-          "transactional apply/rollback and post-import integrity verification"
-        ],
-        "exclusions": [
-          "no silent canonical system exercise creation",
-          "no name-only merge",
-          "no destructive import without preview",
-          "no AI authority over unresolved conflicts"
-        ],
-        "data": [
-          "structured intermediate import plan with explicit mappings and conflict decisions",
-          "retain source/version/provenance and unit/load semantics",
-          "write only after confirmation and preserve import audit identity"
-        ],
-        "ux": [
-          "progressive review: blocking conflicts first, routine mappings collapsed",
-          "user can edit unresolved decisions before save",
-          "clear partial/unsupported result if input cannot be represented",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "imports write only into authenticated user's permitted namespace",
-          "coach-owned data requires explicit authorized workflow",
-          "untrusted file content never changes authorization rules"
-        ],
-        "implications": [
-          "LN-77 AI extraction feeds this layer rather than writing directly",
-          "LN-110 logs import operations; LN-108 validates post-import integrity",
-          "analytics/history consume imported data only once authoritative objects are created"
-        ],
-        "acceptance": [
-          "ambiguous imports cannot silently write",
-          "exercise and ownership conflicts have explicit resolutions",
-          "confirmed plan applies deterministically or fails safely",
-          "post-import integrity is verifiable"
-        ],
-        "validation": [
-          "conflict-matrix fixtures",
-          "transaction/rollback and duplicate tests",
-          "security tests with malformed/untrusted/foreign-owner inputs",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-110",
       "title": "Sensitive-Operation Audit Trail",
       "status": "TODO",
@@ -21465,6 +21294,181 @@
           "event-generation tests for supported operations",
           "tamper/authorization tests",
           "redaction tests for notes/secrets/unrelated data",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-111",
+      "title": "Privacy & Data-Control Center",
+      "status": "TODO",
+      "goal": "Give users an understandable place to control exports, deletion, coach relationships, health integrations and AI/data-use boundaries.",
+      "business": {
+        "phase": "Trust, Data & Privacy",
+        "summary": "Give users an understandable place to control exports, deletion, coach relationships, health integrations and AI/data-use boundaries.",
+        "why": "As LiftNote grows, users should be able to understand who can access which categories of their data without reading architecture docs.",
+        "builds": [
+          "central privacy/data-control overview with contextual deep links",
+          "portable export and backup controls",
+          "account/data deletion entry where supported, with destructive safeguards",
+          "coach relationship/access summaries and revocation paths",
+          "health/wearable permission overview once integrations exist",
+          "AI/data-use boundary controls once AI capabilities exist, without pretending future features are active",
+          "recent sensitive-operation/audit context where useful"
+        ],
+        "userImpact": [
+          "plain-language category-by-category access explanations",
+          "contextual actions close to their source with this center as overview",
+          "destructive actions require explicit confirmation and recovery information where possible",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "plain-language category-by-category access explanations",
+          "contextual actions close to their source with this center as overview",
+          "destructive actions require explicit confirmation and recovery information where possible",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "all permission changes are server-authorized",
+          "revocation takes effect at authoritative access boundaries, not just UI",
+          "never expose credentials, secrets or other users' data in the center",
+          "provides visible consent/control foundation before health/wearables and AI",
+          "audit trail can explain high-value changes",
+          "analytics must not depend on revoked integrations silently"
+        ],
+        "examples": [],
+        "data": [
+          "center is primarily an orchestration/view layer over authoritative permission/export/audit primitives",
+          "deletion semantics must document what is removed, retained for integrity or anonymized if applicable",
+          "avoid copying sensitive data into settings state"
+        ],
+        "dependencies": [
+          "Requires LN-107 through LN-110 DONE, LN-23 coach permissions and current account/security flows."
+        ],
+        "attention": [
+          "all permission changes are server-authorized",
+          "revocation takes effect at authoritative access boundaries, not just UI",
+          "never expose credentials, secrets or other users' data in the center",
+          "permission-state integration tests",
+          "destructive confirmation/deletion tests where supported",
+          "authorization and stale-state/browser tests under current gate policy",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no giant duplicate settings page",
+          "no policy/legal claims unsupported by implementation",
+          "no hidden consent bundling",
+          "no retention promise the system cannot enforce"
+        ],
+        "doneWhen": [
+          "user can determine which actor/integration can access each supported data category",
+          "revocation/export/deletion paths are discoverable and actionable",
+          "center reflects actual current state rather than marketing promises",
+          "no permission is only cosmetic"
+        ],
+        "ux": [
+          "plain-language category-by-category access explanations",
+          "contextual actions close to their source with this center as overview",
+          "destructive actions require explicit confirmation and recovery information where possible",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "all permission changes are server-authorized",
+          "revocation takes effect at authoritative access boundaries, not just UI",
+          "never expose credentials, secrets or other users' data in the center"
+        ],
+        "implications": [
+          "provides visible consent/control foundation before health/wearables and AI",
+          "audit trail can explain high-value changes",
+          "analytics must not depend on revoked integrations silently"
+        ],
+        "validation": [
+          "permission-state integration tests",
+          "destructive confirmation/deletion tests where supported",
+          "authorization and stale-state/browser tests under current gate policy",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Trust, Data & Privacy",
+        "objective": "Give users an understandable place to control exports, deletion, coach relationships, health integrations and AI/data-use boundaries.",
+        "rationale": "As LiftNote grows, users should be able to understand who can access which categories of their data without reading architecture docs.",
+        "dependencies": [
+          "Requires LN-107 through LN-110 DONE, LN-23 coach permissions and current account/security flows."
+        ],
+        "scope": [
+          "central privacy/data-control overview with contextual deep links",
+          "portable export and backup controls",
+          "account/data deletion entry where supported, with destructive safeguards",
+          "coach relationship/access summaries and revocation paths",
+          "health/wearable permission overview once integrations exist",
+          "AI/data-use boundary controls once AI capabilities exist, without pretending future features are active",
+          "recent sensitive-operation/audit context where useful"
+        ],
+        "exclusions": [
+          "no giant duplicate settings page",
+          "no policy/legal claims unsupported by implementation",
+          "no hidden consent bundling",
+          "no retention promise the system cannot enforce"
+        ],
+        "data": [
+          "center is primarily an orchestration/view layer over authoritative permission/export/audit primitives",
+          "deletion semantics must document what is removed, retained for integrity or anonymized if applicable",
+          "avoid copying sensitive data into settings state"
+        ],
+        "ux": [
+          "plain-language category-by-category access explanations",
+          "contextual actions close to their source with this center as overview",
+          "destructive actions require explicit confirmation and recovery information where possible",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "all permission changes are server-authorized",
+          "revocation takes effect at authoritative access boundaries, not just UI",
+          "never expose credentials, secrets or other users' data in the center"
+        ],
+        "implications": [
+          "provides visible consent/control foundation before health/wearables and AI",
+          "audit trail can explain high-value changes",
+          "analytics must not depend on revoked integrations silently"
+        ],
+        "acceptance": [
+          "user can determine which actor/integration can access each supported data category",
+          "revocation/export/deletion paths are discoverable and actionable",
+          "center reflects actual current state rather than marketing promises",
+          "no permission is only cosmetic"
+        ],
+        "validation": [
+          "permission-state integration tests",
+          "destructive confirmation/deletion tests where supported",
+          "authorization and stale-state/browser tests under current gate policy",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
