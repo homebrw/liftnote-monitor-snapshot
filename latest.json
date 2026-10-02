@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T18:36:27.743Z",
+  "publishedAt": "2026-10-02T18:37:17.579Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "WAITING_GATE",
@@ -13,20 +13,20 @@
     "nudges": 1,
     "lastMessage": "LN-99: waiting for browser verification on PR #856.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T18:36:19.628Z",
-    "nextTickAt": "2026-10-02T18:41:19.628Z",
+    "lastSuccessfulTickAt": "2026-10-02T18:37:10.200Z",
+    "nextTickAt": "2026-10-02T18:42:10.200Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
       "lot": "LN-99",
       "type": "browser",
       "mode": "pre_merge",
-      "phase": "missing",
-      "reason": "workflow_not_started",
+      "phase": "waiting",
+      "reason": null,
       "prNumber": 856,
       "headRef": "liftnote/ln-99-gate-fix",
       "headSha": "d334d7f33341d9fd2dab47d910807e1534ac6025",
-      "runId": null,
+      "runId": 37048561273,
       "conclusion": null
     },
     "history": [
