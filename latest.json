@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T01:06:46.230Z",
+  "publishedAt": "2026-10-02T01:07:45.539Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-89",
-    "nextLot": "LN-90",
-    "launchedAt": "2026-10-02T00:51:34.800Z",
-    "lastProgressAt": "2026-10-02T01:02:09.767Z",
-    "lastChatCheckAt": "2026-10-02T00:51:34.800Z",
-    "lastObservedMainSha": "9f94bc50e6ec3cc117790cd2a33bd21806b3d0ea",
+    "currentLot": "LN-90",
+    "nextLot": "LN-119",
+    "launchedAt": "2026-10-02T01:07:34.771Z",
+    "lastProgressAt": "2026-10-02T01:07:34.771Z",
+    "lastChatCheckAt": "2026-10-02T01:07:34.771Z",
+    "lastObservedMainSha": "b5f2a1280d6359f08c1e26cdbfff1d0f7e65405c",
     "nudges": 0,
-    "lastMessage": "main moved while LN-89 is active",
+    "lastMessage": "Launched LN-90; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T01:06:35.752Z",
-    "nextTickAt": "2026-10-02T01:11:35.752Z",
+    "lastSuccessfulTickAt": "2026-10-02T01:07:34.771Z",
+    "nextTickAt": "2026-10-02T01:12:34.771Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-68",
-        "completedAt": "2026-10-01T21:31:21.580Z",
-        "restartedAt": null,
-        "mainSha": "2aa1a967015834ff591f89a392698fe744548967",
-        "reason": null
-      },
       {
         "lot": "LN-69",
         "completedAt": null,
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "4600031486094fa46b83a90d0a34539f050b6f5e",
         "reason": null
+      },
+      {
+        "lot": "LN-89",
+        "completedAt": "2026-10-02T01:07:28.376Z",
+        "restartedAt": null,
+        "mainSha": "b5f2a1280d6359f08c1e26cdbfff1d0f7e65405c",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "9f94bc50e6ec3cc117790cd2a33bd21806b3d0ea",
+    "mainSha": "b5f2a1280d6359f08c1e26cdbfff1d0f7e65405c",
     "lots": [
       {
         "id": "LN-00",
@@ -10275,7 +10275,7 @@
       {
         "id": "LN-89",
         "title": "Substitution Engine v2",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Make substitutions contextual, explainable and identity-safe using movement, equipment, availability and existing alternative relationships.",
         "business": {
           "phase": "Exercise Intelligence",
@@ -10442,8 +10442,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "789",
+            "mergeSha": "9f94bc50e6ec3cc117790cd2a33bd21806b3d0ea"
           }
         },
         "contractAvailable": true,
@@ -19225,187 +19225,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 88,
+    "done": 89,
     "total": 138,
     "percent": 64,
     "current": {
-      "id": "LN-89",
-      "title": "Substitution Engine v2",
-      "status": "TODO",
-      "goal": "Make substitutions contextual, explainable and identity-safe using movement, equipment, availability and existing alternative relationships.",
-      "business": {
-        "phase": "Exercise Intelligence",
-        "summary": "Make substitutions contextual, explainable and identity-safe using movement, equipment, availability and existing alternative relationships.",
-        "why": "LN-50 introduced alternatives; the richer knowledge model should improve prioritization without claiming exact equivalence.",
-        "builds": [
-          "deterministic candidate filtering by compatibility, equipment and availability",
-          "movement-family/variant metadata as evidence, not automatic equivalence",
-          "explanation of why each candidate is shown",
-          "one-off active-session substitution preserving prescribed and performed identities",
-          "context for personal vs coach-managed prescriptions",
-          "user-selected/personal alternatives retained as explicit signal",
-          "Rich metadata, movement-family links, variants/progressions/regressions and source-aware alternatives may support candidate explanation, but no single upstream relationship automatically becomes LiftNote substitution truth."
-        ],
-        "userImpact": [
-          "surface replacement at the natural blocked/unavailable exercise context",
-          "show a short ranked set first with reasons and deeper browse on demand",
-          "allow cancel/revert before completion where history remains coherent",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
-        ],
-        "journey": [
-          "surface replacement at the natural blocked/unavailable exercise context",
-          "show a short ranked set first with reasons and deeper browse on demand",
-          "allow cancel/revert before completion where history remains coherent",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
-        ],
-        "rules": [
-          "coach prescription remains coach-owned; athlete one-off substitution cannot mutate coach source",
-          "private unavailability reasons are not exposed to coach unless explicitly authorized",
-          "offline substitution uses only safely cached candidates/context",
-          "analytics distinguish prescribed from performed movement",
-          "future deterministic adaptation may consume substitutions as facts but must not infer motives",
-          "AI explanations may summarize deterministic reasons only"
-        ],
-        "examples": [],
-        "data": [
-          "preserve prescribed exercise ID and performed substitute ID in session provenance",
-          "rules consume existing equipment/unavailability facts",
-          "substitution preference may be personal data but cannot mutate canonical ontology"
-        ],
-        "dependencies": [
-          "Requires LN-83 through LN-88 DONE and builds on LN-29, LN-49 and LN-50."
-        ],
-        "attention": [
-          "coach prescription remains coach-owned; athlete one-off substitution cannot mutate coach source",
-          "private unavailability reasons are not exposed to coach unless explicitly authorized",
-          "offline substitution uses only safely cached candidates/context",
-          "rule-engine fixtures across equipment/load/tracking/family cases",
-          "snapshot/history tests for substitution provenance",
-          "coach authorization and offline regression tests",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no physiological/injury recommendation",
-          "no automatic replacement without user action",
-          "no merging histories or rewriting source templates by default",
-          "no opaque AI ranker"
-        ],
-        "doneWhen": [
-          "candidates are compatible and reasons inspectable",
-          "unavailable/equipment-incompatible movements are handled deterministically",
-          "session history preserves both intended and actual movement",
-          "user remains in control of replacement",
-          "Circuit / Conditioning substitutions reuse canonical exercise identities and equipment context without creating modality-specific duplicates."
-        ],
-        "ux": [
-          "surface replacement at the natural blocked/unavailable exercise context",
-          "show a short ranked set first with reasons and deeper browse on demand",
-          "allow cancel/revert before completion where history remains coherent",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
-        ],
-        "security": [
-          "coach prescription remains coach-owned; athlete one-off substitution cannot mutate coach source",
-          "private unavailability reasons are not exposed to coach unless explicitly authorized",
-          "offline substitution uses only safely cached candidates/context"
-        ],
-        "implications": [
-          "analytics distinguish prescribed from performed movement",
-          "future deterministic adaptation may consume substitutions as facts but must not infer motives",
-          "AI explanations may summarize deterministic reasons only"
-        ],
-        "validation": [
-          "rule-engine fixtures across equipment/load/tracking/family cases",
-          "snapshot/history tests for substitution provenance",
-          "coach authorization and offline regression tests",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Exercise Intelligence",
-        "objective": "Make substitutions contextual, explainable and identity-safe using movement, equipment, availability and existing alternative relationships.",
-        "rationale": "LN-50 introduced alternatives; the richer knowledge model should improve prioritization without claiming exact equivalence.",
-        "dependencies": [
-          "Requires LN-83 through LN-88 DONE and builds on LN-29, LN-49 and LN-50."
-        ],
-        "scope": [
-          "deterministic candidate filtering by compatibility, equipment and availability",
-          "movement-family/variant metadata as evidence, not automatic equivalence",
-          "explanation of why each candidate is shown",
-          "one-off active-session substitution preserving prescribed and performed identities",
-          "context for personal vs coach-managed prescriptions",
-          "user-selected/personal alternatives retained as explicit signal",
-          "Rich metadata, movement-family links, variants/progressions/regressions and source-aware alternatives may support candidate explanation, but no single upstream relationship automatically becomes LiftNote substitution truth."
-        ],
-        "exclusions": [
-          "no physiological/injury recommendation",
-          "no automatic replacement without user action",
-          "no merging histories or rewriting source templates by default",
-          "no opaque AI ranker"
-        ],
-        "data": [
-          "preserve prescribed exercise ID and performed substitute ID in session provenance",
-          "rules consume existing equipment/unavailability facts",
-          "substitution preference may be personal data but cannot mutate canonical ontology"
-        ],
-        "ux": [
-          "surface replacement at the natural blocked/unavailable exercise context",
-          "show a short ranked set first with reasons and deeper browse on demand",
-          "allow cancel/revert before completion where history remains coherent",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
-        ],
-        "security": [
-          "coach prescription remains coach-owned; athlete one-off substitution cannot mutate coach source",
-          "private unavailability reasons are not exposed to coach unless explicitly authorized",
-          "offline substitution uses only safely cached candidates/context"
-        ],
-        "implications": [
-          "analytics distinguish prescribed from performed movement",
-          "future deterministic adaptation may consume substitutions as facts but must not infer motives",
-          "AI explanations may summarize deterministic reasons only"
-        ],
-        "acceptance": [
-          "candidates are compatible and reasons inspectable",
-          "unavailable/equipment-incompatible movements are handled deterministically",
-          "session history preserves both intended and actual movement",
-          "user remains in control of replacement",
-          "Circuit / Conditioning substitutions reuse canonical exercise identities and equipment context without creating modality-specific duplicates."
-        ],
-        "validation": [
-          "rule-engine fixtures across equipment/load/tracking/family cases",
-          "snapshot/history tests for substitution provenance",
-          "coach authorization and offline regression tests",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-90",
       "title": "Exercise Intelligence UX Gate",
       "status": "TODO",
@@ -19564,6 +19387,190 @@
           "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
           "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
           "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-119",
+      "title": "Typed Workout Blocks & Modality Foundation",
+      "status": "TODO",
+      "goal": "Introduce the minimum additive workout-domain architecture needed for strength + running + circuit/conditioning while keeping the internal engine generic and the user experience modality-specific and simple.",
+      "business": {
+        "phase": "Running & Conditioning Core",
+        "summary": "Introduce the minimum additive workout-domain architecture needed for strength + running + circuit/conditioning while keeping the internal engine generic and the user experience modality-specific and simple.",
+        "why": "LiftNote must expand without turning into a visible universal-engine configuration tool. Running segments and circuit protocols have meanings that do not fit cleanly into strength-set fields. A shared block/step foundation can reduce duplication only if it preserves existing strength behavior and hides internal complexity.",
+        "builds": [
+          "A typed workout-block/step model that can represent strength, running and circuit/conditioning without re-encoding completed strength history.",
+          "Clear distinction between workout structure, planned targets, performed facts, and immutable started/completed snapshots.",
+          "Additive modality-specific payloads where a universal field would corrupt meaning.",
+          "Shared ordering and nesting rules sufficient for running repeats/recovery and circuit movement/protocol composition.",
+          "Versioned persistence/serialization compatible with duplication, sharing/import, coach assignment and future AI import.",
+          "Backward-compatible mapping of existing strength templates/sessions.",
+          "Product-facing modality labels/presets such as Courir and Circuit / conditioning without exposing abstract engine types."
+        ],
+        "userImpact": [
+          "Complexity in the model, simplicity in the experience.",
+          "A strength-only athlete continues to see the existing familiar flow.",
+          "Creation begins with concrete intent, not abstract type configuration.",
+          "Advanced block/protocol fields use progressive disclosure.",
+          "Today, Programmes, Historique and Progression remain shared product surfaces."
+        ],
+        "journey": [
+          "Complexity in the model, simplicity in the experience.",
+          "A strength-only athlete continues to see the existing familiar flow.",
+          "Creation begins with concrete intent, not abstract type configuration.",
+          "Advanced block/protocol fields use progressive disclosure.",
+          "Today, Programmes, Historique and Progression remain shared product surfaces."
+        ],
+        "rules": [
+          "Typed performed facts become inputs to modality-specific analytics later.",
+          "Do not aggregate incompatible modalities into one opaque score.",
+          "AI import later emits this structured vocabulary but remains non-authoritative until validation/confirmation.",
+          "Historical strength analytics remain stable."
+        ],
+        "examples": [],
+        "data": [
+          "Strength set semantics remain authoritative for strength blocks.",
+          "Running and circuit payloads may use distinct typed structures.",
+          "Canonical exercise IDs remain shared for circuit movements.",
+          "Running steps are not required to masquerade as canonical strength exercises.",
+          "Every started session snapshots the resolved typed structure it actually began with.",
+          "Schema/version fields support future import/export and migrations.",
+          "Unknown future modality payloads fail safely rather than being misread as strength."
+        ],
+        "dependencies": [
+          "LN-90 — Exercise Intelligence UX Gate.",
+          "LN-17 — shipped grouped exercise blocks.",
+          "LN-32 — shipped duration/distance tracking.",
+          "LN-45 — offline workout truth.",
+          "LN-56/LN-57 — active workout and program UX.",
+          "LN-67 — Program → Block → Week → Workout structure.",
+          "LN-118 — curated Circuit catalog expansion."
+        ],
+        "attention": [
+          "Backward-compatibility fixtures for existing strength structures.",
+          "Serialization/version round-trip tests.",
+          "Snapshot immutability tests.",
+          "Copy/share/import/coach contract tests for typed blocks.",
+          "RLS/ownership negative tests if persistence changes.",
+          "Offline resume fixture for typed state.",
+          "Targeted UI smoke checks only where this lot changes product paths."
+        ],
+        "notInThisLot": [
+          "Running analytics.",
+          "Circuit live timer/scoring implementation.",
+          "CrossFit or Hyrox product layers.",
+          "GPS/social/segments/maps.",
+          "Rewriting existing strength sessions into a new historical schema when not required.",
+          "A top-level mini-app per modality."
+        ],
+        "doneWhen": [
+          "Existing strength templates/sessions remain valid and behaviorally unchanged.",
+          "Representative running and circuit structures can be represented without abusing strength-only fields.",
+          "Snapshot, copy/share/import and coach lineage contracts have explicit compatibility paths.",
+          "Product surfaces can choose modality-specific controls while sharing navigation/history infrastructure.",
+          "Unknown/incompatible payloads fail explicitly.",
+          "No CrossFit/Hyrox layer is introduced."
+        ],
+        "ux": [
+          "Complexity in the model, simplicity in the experience.",
+          "A strength-only athlete continues to see the existing familiar flow.",
+          "Creation begins with concrete intent, not abstract type configuration.",
+          "Advanced block/protocol fields use progressive disclosure.",
+          "Today, Programmes, Historique and Progression remain shared product surfaces."
+        ],
+        "security": [],
+        "implications": [
+          "Typed performed facts become inputs to modality-specific analytics later.",
+          "Do not aggregate incompatible modalities into one opaque score.",
+          "AI import later emits this structured vocabulary but remains non-authoritative until validation/confirmation.",
+          "Historical strength analytics remain stable."
+        ],
+        "validation": [
+          "Backward-compatibility fixtures for existing strength structures.",
+          "Serialization/version round-trip tests.",
+          "Snapshot immutability tests.",
+          "Copy/share/import/coach contract tests for typed blocks.",
+          "RLS/ownership negative tests if persistence changes.",
+          "Offline resume fixture for typed state.",
+          "Targeted UI smoke checks only where this lot changes product paths."
+        ]
+      },
+      "contract": {
+        "phase": "Running & Conditioning Core",
+        "objective": "Introduce the minimum additive workout-domain architecture needed for strength + running + circuit/conditioning while keeping the internal engine generic and the user experience modality-specific and simple.",
+        "rationale": "LiftNote must expand without turning into a visible universal-engine configuration tool. Running segments and circuit protocols have meanings that do not fit cleanly into strength-set fields. A shared block/step foundation can reduce duplication only if it preserves existing strength behavior and hides internal complexity.",
+        "dependencies": [
+          "LN-90 — Exercise Intelligence UX Gate.",
+          "LN-17 — shipped grouped exercise blocks.",
+          "LN-32 — shipped duration/distance tracking.",
+          "LN-45 — offline workout truth.",
+          "LN-56/LN-57 — active workout and program UX.",
+          "LN-67 — Program → Block → Week → Workout structure.",
+          "LN-118 — curated Circuit catalog expansion."
+        ],
+        "scope": [
+          "A typed workout-block/step model that can represent strength, running and circuit/conditioning without re-encoding completed strength history.",
+          "Clear distinction between workout structure, planned targets, performed facts, and immutable started/completed snapshots.",
+          "Additive modality-specific payloads where a universal field would corrupt meaning.",
+          "Shared ordering and nesting rules sufficient for running repeats/recovery and circuit movement/protocol composition.",
+          "Versioned persistence/serialization compatible with duplication, sharing/import, coach assignment and future AI import.",
+          "Backward-compatible mapping of existing strength templates/sessions.",
+          "Product-facing modality labels/presets such as Courir and Circuit / conditioning without exposing abstract engine types."
+        ],
+        "exclusions": [
+          "Running analytics.",
+          "Circuit live timer/scoring implementation.",
+          "CrossFit or Hyrox product layers.",
+          "GPS/social/segments/maps.",
+          "Rewriting existing strength sessions into a new historical schema when not required.",
+          "A top-level mini-app per modality."
+        ],
+        "data": [
+          "Strength set semantics remain authoritative for strength blocks.",
+          "Running and circuit payloads may use distinct typed structures.",
+          "Canonical exercise IDs remain shared for circuit movements.",
+          "Running steps are not required to masquerade as canonical strength exercises.",
+          "Every started session snapshots the resolved typed structure it actually began with.",
+          "Schema/version fields support future import/export and migrations.",
+          "Unknown future modality payloads fail safely rather than being misread as strength."
+        ],
+        "ux": [
+          "Complexity in the model, simplicity in the experience.",
+          "A strength-only athlete continues to see the existing familiar flow.",
+          "Creation begins with concrete intent, not abstract type configuration.",
+          "Advanced block/protocol fields use progressive disclosure.",
+          "Today, Programmes, Historique and Progression remain shared product surfaces."
+        ],
+        "security": [],
+        "implications": [
+          "Typed performed facts become inputs to modality-specific analytics later.",
+          "Do not aggregate incompatible modalities into one opaque score.",
+          "AI import later emits this structured vocabulary but remains non-authoritative until validation/confirmation.",
+          "Historical strength analytics remain stable."
+        ],
+        "acceptance": [
+          "Existing strength templates/sessions remain valid and behaviorally unchanged.",
+          "Representative running and circuit structures can be represented without abusing strength-only fields.",
+          "Snapshot, copy/share/import and coach lineage contracts have explicit compatibility paths.",
+          "Product surfaces can choose modality-specific controls while sharing navigation/history infrastructure.",
+          "Unknown/incompatible payloads fail explicitly.",
+          "No CrossFit/Hyrox layer is introduced."
+        ],
+        "validation": [
+          "Backward-compatibility fixtures for existing strength structures.",
+          "Serialization/version round-trip tests.",
+          "Snapshot immutability tests.",
+          "Copy/share/import/coach contract tests for typed blocks.",
+          "RLS/ownership negative tests if persistence changes.",
+          "Offline resume fixture for typed state.",
+          "Targeted UI smoke checks only where this lot changes product paths."
         ],
         "completion": {
           "pr": null,
