@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T19:32:49.563Z",
+  "publishedAt": "2026-10-02T19:33:43.807Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-101",
-    "nextLot": "LN-102",
-    "launchedAt": "2026-10-02T19:16:49.010Z",
-    "lastProgressAt": "2026-10-02T19:30:17.334Z",
-    "lastChatCheckAt": "2026-10-02T19:16:49.010Z",
-    "lastObservedMainSha": "dabe6e230638b23f5a021fbea321b6688e71f915",
+    "currentLot": "LN-102",
+    "nextLot": "LN-103",
+    "launchedAt": "2026-10-02T19:33:36.111Z",
+    "lastProgressAt": "2026-10-02T19:33:36.111Z",
+    "lastChatCheckAt": "2026-10-02T19:33:36.111Z",
+    "lastObservedMainSha": "51a8104ade24fd7bb40021e37b6265c97e99ab51",
     "nudges": 0,
-    "lastMessage": "main moved while LN-101 is active",
+    "lastMessage": "Launched LN-102; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T19:32:41.676Z",
-    "nextTickAt": "2026-10-02T19:37:41.676Z",
+    "lastSuccessfulTickAt": "2026-10-02T19:33:36.111Z",
+    "nextTickAt": "2026-10-02T19:38:36.111Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-91",
-        "completedAt": "2026-10-02T07:03:47.513Z",
-        "restartedAt": null,
-        "mainSha": "c2c30568ba57b83c5ed2fd8915b249c78ac51bd1",
-        "reason": null
-      },
       {
         "lot": "LN-92",
         "completedAt": "2026-10-02T07:31:40.116Z",
@@ -112,6 +105,13 @@
         "completedAt": "2026-10-02T19:16:41.540Z",
         "restartedAt": null,
         "mainSha": "ba4f38472d52e326cc9b0461891f5a770bcc612a",
+        "reason": null
+      },
+      {
+        "lot": "LN-101",
+        "completedAt": "2026-10-02T19:33:29.239Z",
+        "restartedAt": null,
+        "mainSha": "51a8104ade24fd7bb40021e37b6265c97e99ab51",
         "reason": null
       }
     ]
@@ -19539,177 +19539,6 @@
     "total": 138,
     "percent": 82,
     "current": {
-      "id": "LN-101",
-      "title": "Athlete Cohorts & Groups",
-      "status": "DONE",
-      "goal": "Allow coaches to organize authorized athletes into practical cohorts without changing per-athlete authorization.",
-      "business": {
-        "phase": "Coach Pro",
-        "summary": "Allow coaches to organize authorized athletes into practical cohorts without changing per-athlete authorization.",
-        "why": "Groups improve navigation and assignment workflows but must never become a shortcut around consent or permissions.",
-        "builds": [
-          "coach-owned named groups/cohorts",
-          "add/remove active athlete relationships from groups",
-          "athlete may belong to multiple groups",
-          "filter coach workspace/library assignment views by group",
-          "group lifecycle without changing athlete data ownership"
-        ],
-        "userImpact": [
-          "groups primarily reduce coach navigation friction",
-          "athlete-facing exposure only if it has a clear product benefit; do not invent club identity",
-          "empty and stale relationship states are explicit",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "groups primarily reduce coach navigation friction",
-          "athlete-facing exposure only if it has a clear product benefit; do not invent club identity",
-          "empty and stale relationship states are explicit",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "membership never grants access beyond the underlying relationship permissions",
-          "negative tests for unrelated coach/athlete access",
-          "no account enumeration through group tooling",
-          "LN-102 bulk assignment uses cohorts as selectors",
-          "attention queue may filter/group but stays event-driven",
-          "analytics remain per-athlete unless explicitly aggregated with safe semantics"
-        ],
-        "examples": [],
-        "data": [
-          "group membership references an existing authorized coach-athlete relationship, not arbitrary user IDs",
-          "ending a relationship invalidates active group membership safely",
-          "group deletion does not delete athlete or program data"
-        ],
-        "dependencies": [
-          "Requires LN-100 DONE and the LN-23 relationship model."
-        ],
-        "attention": [
-          "membership never grants access beyond the underlying relationship permissions",
-          "negative tests for unrelated coach/athlete access",
-          "no account enumeration through group tooling",
-          "RLS/server authorization tests",
-          "relationship-revocation cleanup tests",
-          "group membership CRUD/filter UI tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no team social feed",
-          "no group chat",
-          "no group-wide permission grant",
-          "no public roster"
-        ],
-        "doneWhen": [
-          "groups organize but never authorize",
-          "relationship revocation removes usable membership",
-          "same athlete can be organized in multiple groups without duplication",
-          "coach mobile workflow remains compact"
-        ],
-        "ux": [
-          "groups primarily reduce coach navigation friction",
-          "athlete-facing exposure only if it has a clear product benefit; do not invent club identity",
-          "empty and stale relationship states are explicit",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "membership never grants access beyond the underlying relationship permissions",
-          "negative tests for unrelated coach/athlete access",
-          "no account enumeration through group tooling"
-        ],
-        "implications": [
-          "LN-102 bulk assignment uses cohorts as selectors",
-          "attention queue may filter/group but stays event-driven",
-          "analytics remain per-athlete unless explicitly aggregated with safe semantics"
-        ],
-        "validation": [
-          "RLS/server authorization tests",
-          "relationship-revocation cleanup tests",
-          "group membership CRUD/filter UI tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Coach Pro",
-        "objective": "Allow coaches to organize authorized athletes into practical cohorts without changing per-athlete authorization.",
-        "rationale": "Groups improve navigation and assignment workflows but must never become a shortcut around consent or permissions.",
-        "dependencies": [
-          "Requires LN-100 DONE and the LN-23 relationship model."
-        ],
-        "scope": [
-          "coach-owned named groups/cohorts",
-          "add/remove active athlete relationships from groups",
-          "athlete may belong to multiple groups",
-          "filter coach workspace/library assignment views by group",
-          "group lifecycle without changing athlete data ownership"
-        ],
-        "exclusions": [
-          "no team social feed",
-          "no group chat",
-          "no group-wide permission grant",
-          "no public roster"
-        ],
-        "data": [
-          "group membership references an existing authorized coach-athlete relationship, not arbitrary user IDs",
-          "ending a relationship invalidates active group membership safely",
-          "group deletion does not delete athlete or program data"
-        ],
-        "ux": [
-          "groups primarily reduce coach navigation friction",
-          "athlete-facing exposure only if it has a clear product benefit; do not invent club identity",
-          "empty and stale relationship states are explicit",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "membership never grants access beyond the underlying relationship permissions",
-          "negative tests for unrelated coach/athlete access",
-          "no account enumeration through group tooling"
-        ],
-        "implications": [
-          "LN-102 bulk assignment uses cohorts as selectors",
-          "attention queue may filter/group but stays event-driven",
-          "analytics remain per-athlete unless explicitly aggregated with safe semantics"
-        ],
-        "acceptance": [
-          "groups organize but never authorize",
-          "relationship revocation removes usable membership",
-          "same athlete can be organized in multiple groups without duplication",
-          "coach mobile workflow remains compact"
-        ],
-        "validation": [
-          "RLS/server authorization tests",
-          "relationship-revocation cleanup tests",
-          "group membership CRUD/filter UI tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": "860",
-          "mergeSha": "dabe6e230638b23f5a021fbea321b6688e71f915"
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-102",
       "title": "Safe Bulk Assignment",
       "status": "TODO",
@@ -19867,6 +19696,177 @@
           "transaction/partial-failure tests",
           "per-recipient authorization matrix",
           "version/snapshot regression tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-103",
+      "title": "Per-Athlete Programming Customization",
+      "status": "TODO",
+      "goal": "Let a coach individualize a common assigned source while preserving lineage to the reusable template and athlete-specific history.",
+      "business": {
+        "phase": "Coach Pro",
+        "summary": "Let a coach individualize a common assigned source while preserving lineage to the reusable template and athlete-specific history.",
+        "why": "Scalable coaching needs common structure plus deliberate individual variation, not copy-paste forks that lose provenance.",
+        "builds": [
+          "athlete-specific overrides on assigned future programming",
+          "show inherited vs customized values",
+          "rebase/refresh behavior when common source changes",
+          "explicit conflict handling when source and athlete override touch the same field",
+          "remove/revert customization back to inherited source where safe"
+        ],
+        "userImpact": [
+          "coach sees what differs from cohort/common source without scanning every field",
+          "revert/inherit actions are explicit",
+          "athlete sees effective prescription, not internal merge mechanics, with coach provenance",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "coach sees what differs from cohort/common source without scanning every field",
+          "revert/inherit actions are explicit",
+          "athlete sees effective prescription, not internal merge mechanics, with coach provenance",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "only authorized coach/editor can change coach-managed overrides",
+          "athlete performance remains separate",
+          "relationship end freezes effective prescription under existing rules",
+          "attention/longitudinal views may show meaningful override decisions",
+          "planned-vs-performed compares against the resolved athlete-specific prescription",
+          "AI cannot merge conflicts autonomously"
+        ],
+        "examples": [],
+        "data": [
+          "store override lineage separately from common source where practical",
+          "assignment version resolves deterministic effective prescription",
+          "customization provenance remains inspectable"
+        ],
+        "dependencies": [
+          "Requires LN-102 DONE and programming-engine override/version semantics."
+        ],
+        "attention": [
+          "only authorized coach/editor can change coach-managed overrides",
+          "athlete performance remains separate",
+          "relationship end freezes effective prescription under existing rules",
+          "merge/override resolution fixtures",
+          "concurrency/version conflict tests",
+          "coach authorization and session snapshot regressions",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no athlete editing of coach-owned source",
+          "no silent conflict resolution",
+          "no retroactive rewrite of active/completed sessions",
+          "no implicit detach"
+        ],
+        "doneWhen": [
+          "common updates and individual overrides compose deterministically",
+          "conflicts are visible before commit",
+          "history snapshots stay exact",
+          "coach can return an override to inherited state safely"
+        ],
+        "ux": [
+          "coach sees what differs from cohort/common source without scanning every field",
+          "revert/inherit actions are explicit",
+          "athlete sees effective prescription, not internal merge mechanics, with coach provenance",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "only authorized coach/editor can change coach-managed overrides",
+          "athlete performance remains separate",
+          "relationship end freezes effective prescription under existing rules"
+        ],
+        "implications": [
+          "attention/longitudinal views may show meaningful override decisions",
+          "planned-vs-performed compares against the resolved athlete-specific prescription",
+          "AI cannot merge conflicts autonomously"
+        ],
+        "validation": [
+          "merge/override resolution fixtures",
+          "concurrency/version conflict tests",
+          "coach authorization and session snapshot regressions",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Coach Pro",
+        "objective": "Let a coach individualize a common assigned source while preserving lineage to the reusable template and athlete-specific history.",
+        "rationale": "Scalable coaching needs common structure plus deliberate individual variation, not copy-paste forks that lose provenance.",
+        "dependencies": [
+          "Requires LN-102 DONE and programming-engine override/version semantics."
+        ],
+        "scope": [
+          "athlete-specific overrides on assigned future programming",
+          "show inherited vs customized values",
+          "rebase/refresh behavior when common source changes",
+          "explicit conflict handling when source and athlete override touch the same field",
+          "remove/revert customization back to inherited source where safe"
+        ],
+        "exclusions": [
+          "no athlete editing of coach-owned source",
+          "no silent conflict resolution",
+          "no retroactive rewrite of active/completed sessions",
+          "no implicit detach"
+        ],
+        "data": [
+          "store override lineage separately from common source where practical",
+          "assignment version resolves deterministic effective prescription",
+          "customization provenance remains inspectable"
+        ],
+        "ux": [
+          "coach sees what differs from cohort/common source without scanning every field",
+          "revert/inherit actions are explicit",
+          "athlete sees effective prescription, not internal merge mechanics, with coach provenance",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "only authorized coach/editor can change coach-managed overrides",
+          "athlete performance remains separate",
+          "relationship end freezes effective prescription under existing rules"
+        ],
+        "implications": [
+          "attention/longitudinal views may show meaningful override decisions",
+          "planned-vs-performed compares against the resolved athlete-specific prescription",
+          "AI cannot merge conflicts autonomously"
+        ],
+        "acceptance": [
+          "common updates and individual overrides compose deterministically",
+          "conflicts are visible before commit",
+          "history snapshots stay exact",
+          "coach can return an override to inherited state safely"
+        ],
+        "validation": [
+          "merge/override resolution fixtures",
+          "concurrency/version conflict tests",
+          "coach authorization and session snapshot regressions",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
