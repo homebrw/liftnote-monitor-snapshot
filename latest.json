@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T07:54:28.851Z",
+  "publishedAt": "2026-10-02T07:55:28.746Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-93",
-    "nextLot": "LN-69",
-    "launchedAt": "2026-10-02T07:31:49.496Z",
-    "lastProgressAt": "2026-10-02T07:49:13.806Z",
-    "lastChatCheckAt": "2026-10-02T07:31:49.496Z",
-    "lastObservedMainSha": "d0dda37491be448665697575828ecb8d4df6ba8a",
+    "currentLot": "LN-69",
+    "nextLot": "LN-70",
+    "launchedAt": "2026-10-02T07:55:19.316Z",
+    "lastProgressAt": "2026-10-02T07:55:19.316Z",
+    "lastChatCheckAt": "2026-10-02T07:55:19.316Z",
+    "lastObservedMainSha": "4ce6777916e9301f266dc74c785e74aaa3ba7a68",
     "nudges": 0,
-    "lastMessage": "main moved while LN-93 is active",
+    "lastMessage": "Launched LN-69; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T07:54:20.686Z",
-    "nextTickAt": "2026-10-02T07:59:20.686Z",
+    "lastSuccessfulTickAt": "2026-10-02T07:55:19.316Z",
+    "nextTickAt": "2026-10-02T08:00:19.316Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": "success"
     },
     "history": [
-      {
-        "lot": "LN-89",
-        "completedAt": "2026-10-02T01:07:28.376Z",
-        "restartedAt": null,
-        "mainSha": "b5f2a1280d6359f08c1e26cdbfff1d0f7e65405c",
-        "reason": null
-      },
       {
         "lot": "LN-90",
         "completedAt": "2026-10-02T01:44:46.120Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "8c6664e487462394af39d9b8cee1550348edb6c8",
         "reason": null
+      },
+      {
+        "lot": "LN-93",
+        "completedAt": "2026-10-02T07:55:11.671Z",
+        "restartedAt": null,
+        "mainSha": "4ce6777916e9301f266dc74c785e74aaa3ba7a68",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "d0dda37491be448665697575828ecb8d4df6ba8a",
+    "mainSha": "4ce6777916e9301f266dc74c785e74aaa3ba7a68",
     "lots": [
       {
         "id": "LN-00",
@@ -12464,7 +12464,7 @@
       {
         "id": "LN-93",
         "title": "Advanced Per-Set Prescription",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Allow each planned set to carry its own structured reps, load/reference, effort, tempo, rest and set type where useful.",
         "business": {
           "phase": "Programming Engine",
@@ -12627,8 +12627,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "826",
+            "mergeSha": "d0dda37491be448665697575828ecb8d4df6ba8a"
           }
         },
         "contractAvailable": true,
@@ -19535,183 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 99,
+    "done": 100,
     "total": 138,
     "percent": 72,
     "current": {
-      "id": "LN-93",
-      "title": "Advanced Per-Set Prescription",
-      "status": "TODO",
-      "goal": "Allow each planned set to carry its own structured reps, load/reference, effort, tempo, rest and set type where useful.",
-      "business": {
-        "phase": "Programming Engine",
-        "summary": "Allow each planned set to carry its own structured reps, load/reference, effort, tempo, rest and set type where useful.",
-        "why": "Serious programs often vary set intent inside one exercise; one exercise-level target cannot represent warm-ups, top sets and back-offs cleanly.",
-        "builds": [
-          "ordered planned-set objects beneath a template exercise",
-          "per-set reps/range, absolute or relative load reference, RPE/RIR target, tempo, rest and set type",
-          "inheritance/defaults so ordinary prescriptions stay concise",
-          "copy/share/import/coach/version/snapshot compatibility",
-          "adapt shipped LN-68 progression rules to the richer per-set and relative-prescription model without replacing their historical semantics",
-          "editing/reordering without mutating completed history"
-        ],
-        "userImpact": [
-          "simple exercise-level defaults remain primary; per-set overrides expand on demand",
-          "show differences clearly without a spreadsheet-like mobile overload",
-          "active workout maps each performed set to its planned intent where possible",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "simple exercise-level defaults remain primary; per-set overrides expand on demand",
-          "show differences clearly without a spreadsheet-like mobile overload",
-          "active workout maps each performed set to its planned intent where possible",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "coach-managed per-set prescriptions remain coach-owned and versioned",
-          "athlete performance stays athlete-owned",
-          "offline active sessions rely on snapshot data, not live coach source",
-          "shipped LN-68 progression becomes compatible with explicit planned sets and LN-92 reference prescriptions through deterministic adapters",
-          "LN-95 planned-vs-performed depends on stable planned-set semantics",
-          "AI program assistant must emit these structured fields only when accepted by the user"
-        ],
-        "examples": [],
-        "data": [
-          "preserve stable planned-set ordering and identifiers where needed for comparisons",
-          "session start snapshots the resolved planned structure",
-          "version serialization to prevent older imports from dropping fields",
-          "preserve existing LN-68 rule IDs/steps and provide an explicit compatibility path when rules target exercise-level defaults versus specific planned sets"
-        ],
-        "dependencies": [
-          "Requires LN-92 DONE. It also consumes the already-shipped LN-68 progression metadata (progressionRule + progressionStep), LN-26 set types, LN-33 tempo, LN-52 RPE/RIR and existing snapshot semantics."
-        ],
-        "attention": [
-          "coach-managed per-set prescriptions remain coach-owned and versioned",
-          "athlete performance stays athlete-owned",
-          "offline active sessions rely on snapshot data, not live coach source",
-          "domain/serialization tests for inheritance and overrides",
-          "snapshot and copy/share/coach regressions",
-          "mobile interaction tests for add/reorder/remove and empty/error states",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no forced per-set complexity for simple 3×10 work",
-          "no second progression engine and no silent replacement of shipped LN-68 rule families",
-          "no free-form prose as authoritative structured prescription"
-        ],
-        "doneWhen": [
-          "simple and advanced prescriptions coexist",
-          "per-set semantics survive duplication/share/coach/snapshot round-trips",
-          "history cannot be rewritten by later plan edits",
-          "mobile editor remains usable"
-        ],
-        "ux": [
-          "simple exercise-level defaults remain primary; per-set overrides expand on demand",
-          "show differences clearly without a spreadsheet-like mobile overload",
-          "active workout maps each performed set to its planned intent where possible",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "coach-managed per-set prescriptions remain coach-owned and versioned",
-          "athlete performance stays athlete-owned",
-          "offline active sessions rely on snapshot data, not live coach source"
-        ],
-        "implications": [
-          "shipped LN-68 progression becomes compatible with explicit planned sets and LN-92 reference prescriptions through deterministic adapters",
-          "LN-95 planned-vs-performed depends on stable planned-set semantics",
-          "AI program assistant must emit these structured fields only when accepted by the user"
-        ],
-        "validation": [
-          "domain/serialization tests for inheritance and overrides",
-          "snapshot and copy/share/coach regressions",
-          "mobile interaction tests for add/reorder/remove and empty/error states",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Programming Engine",
-        "objective": "Allow each planned set to carry its own structured reps, load/reference, effort, tempo, rest and set type where useful.",
-        "rationale": "Serious programs often vary set intent inside one exercise; one exercise-level target cannot represent warm-ups, top sets and back-offs cleanly.",
-        "dependencies": [
-          "Requires LN-92 DONE. It also consumes the already-shipped LN-68 progression metadata (progressionRule + progressionStep), LN-26 set types, LN-33 tempo, LN-52 RPE/RIR and existing snapshot semantics."
-        ],
-        "scope": [
-          "ordered planned-set objects beneath a template exercise",
-          "per-set reps/range, absolute or relative load reference, RPE/RIR target, tempo, rest and set type",
-          "inheritance/defaults so ordinary prescriptions stay concise",
-          "copy/share/import/coach/version/snapshot compatibility",
-          "adapt shipped LN-68 progression rules to the richer per-set and relative-prescription model without replacing their historical semantics",
-          "editing/reordering without mutating completed history"
-        ],
-        "exclusions": [
-          "no forced per-set complexity for simple 3×10 work",
-          "no second progression engine and no silent replacement of shipped LN-68 rule families",
-          "no free-form prose as authoritative structured prescription"
-        ],
-        "data": [
-          "preserve stable planned-set ordering and identifiers where needed for comparisons",
-          "session start snapshots the resolved planned structure",
-          "version serialization to prevent older imports from dropping fields",
-          "preserve existing LN-68 rule IDs/steps and provide an explicit compatibility path when rules target exercise-level defaults versus specific planned sets"
-        ],
-        "ux": [
-          "simple exercise-level defaults remain primary; per-set overrides expand on demand",
-          "show differences clearly without a spreadsheet-like mobile overload",
-          "active workout maps each performed set to its planned intent where possible",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "coach-managed per-set prescriptions remain coach-owned and versioned",
-          "athlete performance stays athlete-owned",
-          "offline active sessions rely on snapshot data, not live coach source"
-        ],
-        "implications": [
-          "shipped LN-68 progression becomes compatible with explicit planned sets and LN-92 reference prescriptions through deterministic adapters",
-          "LN-95 planned-vs-performed depends on stable planned-set semantics",
-          "AI program assistant must emit these structured fields only when accepted by the user"
-        ],
-        "acceptance": [
-          "simple and advanced prescriptions coexist",
-          "per-set semantics survive duplication/share/coach/snapshot round-trips",
-          "history cannot be rewritten by later plan edits",
-          "mobile editor remains usable"
-        ],
-        "validation": [
-          "domain/serialization tests for inheritance and overrides",
-          "snapshot and copy/share/coach regressions",
-          "mobile interaction tests for add/reorder/remove and empty/error states",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-69",
       "title": "Variantes de prescription par semaine",
       "status": "TODO",
@@ -19868,6 +19695,172 @@
           "inheritance/diff fixtures",
           "serialization/materialization tests",
           "session snapshot regressions",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-70",
+      "title": "Planification datée et rappels de séances",
+      "status": "TODO",
+      "goal": "Make dated planning authoritative so Today and reminders reflect real schedule data instead of inventing a next workout.",
+      "business": {
+        "phase": "Programming Engine",
+        "summary": "Make dated planning authoritative so Today and reminders reflect real schedule data instead of inventing a next workout.",
+        "why": "Planned-vs-performed and adherence require an explicit schedule lifecycle before they can be meaningful.",
+        "builds": [
+          "schedule program/workout occurrence on a date",
+          "move, cancel and reschedule with explicit lifecycle state",
+          "Today consumes real schedule while prioritizing active session and preserving Quick workout",
+          "opt-in reminders follow current scheduled date",
+          "calendar/history integration",
+          "authorized coach-managed schedule behavior"
+        ],
+        "userImpact": [
+          "Today clearly separates scheduled, active and unscheduled/free options",
+          "move/cancel has clear confirmation/recovery semantics",
+          "no false next session when no schedule exists",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "Today clearly separates scheduled, active and unscheduled/free options",
+          "move/cancel has clear confirmation/recovery semantics",
+          "no false next session when no schedule exists",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "coach scheduling permission is explicit; assignment alone does not grant unrestricted calendar access",
+          "offline active workout continues from snapshot if schedule changes elsewhere",
+          "LN-95/LN-96 consume scheduling as factual intent",
+          "notifications reuse LN-47 permission/deep-link model"
+        ],
+        "examples": [],
+        "data": [
+          "scheduled occurrence identity is distinct from mutable template",
+          "reschedule/cancel state remains auditable for later adherence",
+          "timezone semantics are explicit"
+        ],
+        "dependencies": [
+          "Immediate roadmap predecessor: LN-69.",
+          "Material dependencies: LN-38, LN-47, LN-55, LN-67, LN-69."
+        ],
+        "attention": [
+          "coach scheduling permission is explicit; assignment alone does not grant unrestricted calendar access",
+          "offline active workout continues from snapshot if schedule changes elsewhere",
+          "schedule lifecycle/timezone tests",
+          "Today/deep-link notification regressions",
+          "coach authorization tests",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "bidirectional external calendar sync",
+          "real-time remote coaching",
+          "automatic scheduling from AI"
+        ],
+        "doneWhen": [
+          "Today is based on real schedule data",
+          "rescheduling never rewrites historical sessions",
+          "reminders follow authoritative date",
+          "timezone and duplicate-occurrence cases are correct"
+        ],
+        "ux": [
+          "Today clearly separates scheduled, active and unscheduled/free options",
+          "move/cancel has clear confirmation/recovery semantics",
+          "no false next session when no schedule exists",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach scheduling permission is explicit; assignment alone does not grant unrestricted calendar access",
+          "offline active workout continues from snapshot if schedule changes elsewhere"
+        ],
+        "implications": [
+          "LN-95/LN-96 consume scheduling as factual intent",
+          "notifications reuse LN-47 permission/deep-link model"
+        ],
+        "validation": [
+          "schedule lifecycle/timezone tests",
+          "Today/deep-link notification regressions",
+          "coach authorization tests",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Programming Engine",
+        "objective": "Make dated planning authoritative so Today and reminders reflect real schedule data instead of inventing a next workout.",
+        "rationale": "Planned-vs-performed and adherence require an explicit schedule lifecycle before they can be meaningful.",
+        "dependencies": [
+          "Immediate roadmap predecessor: LN-69.",
+          "Material dependencies: LN-38, LN-47, LN-55, LN-67, LN-69."
+        ],
+        "scope": [
+          "schedule program/workout occurrence on a date",
+          "move, cancel and reschedule with explicit lifecycle state",
+          "Today consumes real schedule while prioritizing active session and preserving Quick workout",
+          "opt-in reminders follow current scheduled date",
+          "calendar/history integration",
+          "authorized coach-managed schedule behavior"
+        ],
+        "exclusions": [
+          "bidirectional external calendar sync",
+          "real-time remote coaching",
+          "automatic scheduling from AI"
+        ],
+        "data": [
+          "scheduled occurrence identity is distinct from mutable template",
+          "reschedule/cancel state remains auditable for later adherence",
+          "timezone semantics are explicit"
+        ],
+        "ux": [
+          "Today clearly separates scheduled, active and unscheduled/free options",
+          "move/cancel has clear confirmation/recovery semantics",
+          "no false next session when no schedule exists",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach scheduling permission is explicit; assignment alone does not grant unrestricted calendar access",
+          "offline active workout continues from snapshot if schedule changes elsewhere"
+        ],
+        "implications": [
+          "LN-95/LN-96 consume scheduling as factual intent",
+          "notifications reuse LN-47 permission/deep-link model"
+        ],
+        "acceptance": [
+          "Today is based on real schedule data",
+          "rescheduling never rewrites historical sessions",
+          "reminders follow authoritative date",
+          "timezone and duplicate-occurrence cases are correct"
+        ],
+        "validation": [
+          "schedule lifecycle/timezone tests",
+          "Today/deep-link notification regressions",
+          "coach authorization tests",
           "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
           "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
           "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
