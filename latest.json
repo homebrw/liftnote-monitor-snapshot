@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T19:32:01.405Z",
+  "publishedAt": "2026-10-02T19:32:49.563Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-101 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T19:31:53.994Z",
-    "nextTickAt": "2026-10-02T19:36:53.994Z",
+    "lastSuccessfulTickAt": "2026-10-02T19:32:41.676Z",
+    "nextTickAt": "2026-10-02T19:37:41.676Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "dabe6e230638b23f5a021fbea321b6688e71f915",
+    "mainSha": "51a8104ade24fd7bb40021e37b6265c97e99ab51",
     "lots": [
       {
         "id": "LN-00",
@@ -14759,7 +14759,7 @@
       {
         "id": "LN-101",
         "title": "Athlete Cohorts & Groups",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Allow coaches to organize authorized athletes into practical cohorts without changing per-athlete authorization.",
         "business": {
           "phase": "Coach Pro",
@@ -14920,8 +14920,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "860",
+            "mergeSha": "dabe6e230638b23f5a021fbea321b6688e71f915"
           }
         },
         "contractAvailable": true,
@@ -19535,13 +19535,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 112,
+    "done": 113,
     "total": 138,
-    "percent": 81,
+    "percent": 82,
     "current": {
       "id": "LN-101",
       "title": "Athlete Cohorts & Groups",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Allow coaches to organize authorized athletes into practical cohorts without changing per-athlete authorization.",
       "business": {
         "phase": "Coach Pro",
@@ -19702,8 +19702,8 @@
           "TinyFish is prohibited."
         ],
         "completion": {
-          "pr": null,
-          "mergeSha": null
+          "pr": "860",
+          "mergeSha": "dabe6e230638b23f5a021fbea321b6688e71f915"
         }
       },
       "contractAvailable": true,
