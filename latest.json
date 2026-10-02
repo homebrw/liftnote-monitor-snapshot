@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T21:04:17.072Z",
+  "publishedAt": "2026-10-02T21:05:13.124Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-105",
-    "nextLot": "LN-106",
-    "launchedAt": "2026-10-02T20:41:16.860Z",
-    "lastProgressAt": "2026-10-02T21:00:59.635Z",
-    "lastChatCheckAt": "2026-10-02T20:41:16.860Z",
-    "lastObservedMainSha": "de88a4be2aa8b559a307c9d9b1b17afaaf46525b",
+    "currentLot": "LN-106",
+    "nextLot": "LN-73",
+    "launchedAt": "2026-10-02T21:05:05.726Z",
+    "lastProgressAt": "2026-10-02T21:05:05.726Z",
+    "lastChatCheckAt": "2026-10-02T21:05:05.726Z",
+    "lastObservedMainSha": "87c5f242c4e9bcfb635625e91c71a6cec2efc57a",
     "nudges": 0,
-    "lastMessage": "main moved while LN-105 is active",
+    "lastMessage": "Launched LN-106; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T21:04:09.708Z",
-    "nextTickAt": "2026-10-02T21:09:09.708Z",
+    "lastSuccessfulTickAt": "2026-10-02T21:05:05.726Z",
+    "nextTickAt": "2026-10-02T21:10:05.726Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-70",
-        "completedAt": "2026-10-02T09:09:30.255Z",
-        "restartedAt": null,
-        "mainSha": "40606c14212d834ab10a1611162535e7b3f76b13",
-        "reason": null
-      },
       {
         "lot": "LN-124",
         "completedAt": "2026-10-02T09:36:48.045Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "a11b3e3208b9320b910e5fe4418952ded21d968d",
         "reason": null
+      },
+      {
+        "lot": "LN-105",
+        "completedAt": "2026-10-02T21:04:58.292Z",
+        "restartedAt": null,
+        "mainSha": "87c5f242c4e9bcfb635625e91c71a6cec2efc57a",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "de88a4be2aa8b559a307c9d9b1b17afaaf46525b",
+    "mainSha": "87c5f242c4e9bcfb635625e91c71a6cec2efc57a",
     "lots": [
       {
         "id": "LN-00",
@@ -15443,7 +15443,7 @@
       {
         "id": "LN-105",
         "title": "Longitudinal Athlete View",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Give an authorized coach one coherent chronological context for programming, completed sessions, feedback, modifications, progression and coach decisions.",
         "business": {
           "phase": "Coach Pro",
@@ -15603,8 +15603,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "868",
+            "mergeSha": "de88a4be2aa8b559a307c9d9b1b17afaaf46525b"
           }
         },
         "contractAvailable": true,
@@ -19535,180 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 116,
+    "done": 117,
     "total": 138,
-    "percent": 84,
+    "percent": 85,
     "current": {
-      "id": "LN-105",
-      "title": "Longitudinal Athlete View",
-      "status": "TODO",
-      "goal": "Give an authorized coach one coherent chronological context for programming, completed sessions, feedback, modifications, progression and coach decisions.",
-      "business": {
-        "phase": "Coach Pro",
-        "summary": "Give an authorized coach one coherent chronological context for programming, completed sessions, feedback, modifications, progression and coach decisions.",
-        "why": "Reviewing an athlete over time should not require reconstructing context across unrelated screens.",
-        "builds": [
-          "authorized timeline of meaningful training/programming events",
-          "program/assignment version changes and athlete-specific customization",
-          "completed sessions and factual planned-vs-performed summaries",
-          "feedback and coach decisions/actions",
-          "progression references and drill-down to source objects",
-          "period/filter controls without exposing unrelated private data"
-        ],
-        "userImpact": [
-          "timeline groups meaningful changes and avoids every-set noise",
-          "coach can move from context to the exact actionable source",
-          "mobile supports scan/filter; desktop may use denser context",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "timeline groups meaningful changes and avoids every-set noise",
-          "coach can move from context to the exact actionable source",
-          "mobile supports scan/filter; desktop may use denser context",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "every event category requires its own existing explicit authorization",
-          "revocation immediately removes future access and unauthorized historical rendering",
-          "private athlete notes/setup remain excluded unless explicitly permitted",
-          "supports coach review/adaptation and future audit explanations",
-          "AI may summarize an authorized selected period but deterministic source events remain primary"
-        ],
-        "examples": [],
-        "data": [
-          "timeline is a projection over authoritative domain events where possible",
-          "preserve immutable source links and timestamps",
-          "avoid duplicating whole performance history into a new opaque event store"
-        ],
-        "dependencies": [
-          "Requires LN-104 DONE and consumes LN-61 versions, LN-63 feedback, LN-65 authorized performance, programming and planned-vs-performed facts."
-        ],
-        "attention": [
-          "every event category requires its own existing explicit authorization",
-          "revocation immediately removes future access and unauthorized historical rendering",
-          "private athlete notes/setup remain excluded unless explicitly permitted",
-          "authorization matrix across event categories",
-          "timeline ordering/filter/source-link tests",
-          "relationship-revocation and stale-cache regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no unrestricted athlete-data dossier",
-          "no medical timeline",
-          "no generic chat log",
-          "no inferred motives or health claims"
-        ],
-        "doneWhen": [
-          "coach can reconstruct key programming/performance/feedback context over time",
-          "all displayed facts drill down to authorized sources",
-          "no permission is broadened to fill timeline gaps",
-          "timeline remains readable at realistic history volume"
-        ],
-        "ux": [
-          "timeline groups meaningful changes and avoids every-set noise",
-          "coach can move from context to the exact actionable source",
-          "mobile supports scan/filter; desktop may use denser context",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "every event category requires its own existing explicit authorization",
-          "revocation immediately removes future access and unauthorized historical rendering",
-          "private athlete notes/setup remain excluded unless explicitly permitted"
-        ],
-        "implications": [
-          "supports coach review/adaptation and future audit explanations",
-          "AI may summarize an authorized selected period but deterministic source events remain primary"
-        ],
-        "validation": [
-          "authorization matrix across event categories",
-          "timeline ordering/filter/source-link tests",
-          "relationship-revocation and stale-cache regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Coach Pro",
-        "objective": "Give an authorized coach one coherent chronological context for programming, completed sessions, feedback, modifications, progression and coach decisions.",
-        "rationale": "Reviewing an athlete over time should not require reconstructing context across unrelated screens.",
-        "dependencies": [
-          "Requires LN-104 DONE and consumes LN-61 versions, LN-63 feedback, LN-65 authorized performance, programming and planned-vs-performed facts."
-        ],
-        "scope": [
-          "authorized timeline of meaningful training/programming events",
-          "program/assignment version changes and athlete-specific customization",
-          "completed sessions and factual planned-vs-performed summaries",
-          "feedback and coach decisions/actions",
-          "progression references and drill-down to source objects",
-          "period/filter controls without exposing unrelated private data"
-        ],
-        "exclusions": [
-          "no unrestricted athlete-data dossier",
-          "no medical timeline",
-          "no generic chat log",
-          "no inferred motives or health claims"
-        ],
-        "data": [
-          "timeline is a projection over authoritative domain events where possible",
-          "preserve immutable source links and timestamps",
-          "avoid duplicating whole performance history into a new opaque event store"
-        ],
-        "ux": [
-          "timeline groups meaningful changes and avoids every-set noise",
-          "coach can move from context to the exact actionable source",
-          "mobile supports scan/filter; desktop may use denser context",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "every event category requires its own existing explicit authorization",
-          "revocation immediately removes future access and unauthorized historical rendering",
-          "private athlete notes/setup remain excluded unless explicitly permitted"
-        ],
-        "implications": [
-          "supports coach review/adaptation and future audit explanations",
-          "AI may summarize an authorized selected period but deterministic source events remain primary"
-        ],
-        "acceptance": [
-          "coach can reconstruct key programming/performance/feedback context over time",
-          "all displayed facts drill down to authorized sources",
-          "no permission is broadened to fill timeline gaps",
-          "timeline remains readable at realistic history volume"
-        ],
-        "validation": [
-          "authorization matrix across event categories",
-          "timeline ordering/filter/source-link tests",
-          "relationship-revocation and stale-cache regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-106",
       "title": "Coach Pro UX Gate",
       "status": "TODO",
@@ -19864,6 +19694,171 @@
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-73",
+      "title": "Export portable CSV et export de compte",
+      "status": "TODO",
+      "goal": "Give users a portable documented export of their LiftNote data beyond print/PDF.",
+      "business": {
+        "phase": "Trust, Data & Privacy",
+        "summary": "Give users a portable documented export of their LiftNote data beyond print/PDF.",
+        "why": "Portability is a prerequisite for backup, privacy controls and trustworthy long-lived training history.",
+        "builds": [
+          "CSV session/set export",
+          "program/template export in documented portable representation",
+          "appropriate account metadata/version information",
+          "preserve units/load semantics/provenance",
+          "clear coach-managed versus athlete-owned boundaries"
+        ],
+        "userImpact": [
+          "export is reachable from natural data/privacy context",
+          "progress/success/error states",
+          "explain what is and is not included",
+          "large export remains usable on mobile",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "export is reachable from natural data/privacy context",
+          "progress/success/error states",
+          "explain what is and is not included",
+          "large export remains usable on mobile",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "server authorization verifies ownership/allowed cross-user data",
+          "coach source/private coach data is not exported merely because athlete can execute it",
+          "LN-74 structured import, LN-107 backup and LN-111 privacy center consume this foundation"
+        ],
+        "examples": [],
+        "data": [
+          "version export schemas",
+          "preserve stable identifiers where useful without leaking sensitive internals unnecessarily",
+          "include enough provenance to interpret historical facts outside LiftNote"
+        ],
+        "dependencies": [
+          "Immediate roadmap predecessor: LN-106.",
+          "Material dependencies: LN-42, LN-44, LN-99, LN-106."
+        ],
+        "attention": [
+          "server authorization verifies ownership/allowed cross-user data",
+          "coach source/private coach data is not exported merely because athlete can execute it",
+          "export schema/fixture tests",
+          "large-history tests",
+          "cross-user negative authorization tests",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "cloud backup tiers",
+          "export of unauthorized other-user data",
+          "opaque proprietary-only format"
+        ],
+        "doneWhen": [
+          "exports are readable outside LiftNote",
+          "units/provenance/history meaning survive export",
+          "zero unauthorized other-user data",
+          "format/version documented"
+        ],
+        "ux": [
+          "export is reachable from natural data/privacy context",
+          "progress/success/error states",
+          "explain what is and is not included",
+          "large export remains usable on mobile",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "server authorization verifies ownership/allowed cross-user data",
+          "coach source/private coach data is not exported merely because athlete can execute it"
+        ],
+        "implications": [
+          "LN-74 structured import, LN-107 backup and LN-111 privacy center consume this foundation"
+        ],
+        "validation": [
+          "export schema/fixture tests",
+          "large-history tests",
+          "cross-user negative authorization tests",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Trust, Data & Privacy",
+        "objective": "Give users a portable documented export of their LiftNote data beyond print/PDF.",
+        "rationale": "Portability is a prerequisite for backup, privacy controls and trustworthy long-lived training history.",
+        "dependencies": [
+          "Immediate roadmap predecessor: LN-106.",
+          "Material dependencies: LN-42, LN-44, LN-99, LN-106."
+        ],
+        "scope": [
+          "CSV session/set export",
+          "program/template export in documented portable representation",
+          "appropriate account metadata/version information",
+          "preserve units/load semantics/provenance",
+          "clear coach-managed versus athlete-owned boundaries"
+        ],
+        "exclusions": [
+          "cloud backup tiers",
+          "export of unauthorized other-user data",
+          "opaque proprietary-only format"
+        ],
+        "data": [
+          "version export schemas",
+          "preserve stable identifiers where useful without leaking sensitive internals unnecessarily",
+          "include enough provenance to interpret historical facts outside LiftNote"
+        ],
+        "ux": [
+          "export is reachable from natural data/privacy context",
+          "progress/success/error states",
+          "explain what is and is not included",
+          "large export remains usable on mobile",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "server authorization verifies ownership/allowed cross-user data",
+          "coach source/private coach data is not exported merely because athlete can execute it"
+        ],
+        "implications": [
+          "LN-74 structured import, LN-107 backup and LN-111 privacy center consume this foundation"
+        ],
+        "acceptance": [
+          "exports are readable outside LiftNote",
+          "units/provenance/history meaning survive export",
+          "zero unauthorized other-user data",
+          "format/version documented"
+        ],
+        "validation": [
+          "export schema/fixture tests",
+          "large-history tests",
+          "cross-user negative authorization tests",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
           "TinyFish is prohibited."
         ],
         "completion": {
