@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T20:40:26.887Z",
+  "publishedAt": "2026-10-02T20:41:24.428Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-104",
-    "nextLot": "LN-105",
-    "launchedAt": "2026-10-02T20:24:27.714Z",
-    "lastProgressAt": "2026-10-02T20:38:43.455Z",
-    "lastChatCheckAt": "2026-10-02T20:24:27.714Z",
-    "lastObservedMainSha": "7414719fed9902711b6c7e5dd090aee3d6a143a1",
+    "currentLot": "LN-105",
+    "nextLot": "LN-106",
+    "launchedAt": "2026-10-02T20:41:16.860Z",
+    "lastProgressAt": "2026-10-02T20:41:16.860Z",
+    "lastChatCheckAt": "2026-10-02T20:41:16.860Z",
+    "lastObservedMainSha": "a11b3e3208b9320b910e5fe4418952ded21d968d",
     "nudges": 0,
-    "lastMessage": "main moved while LN-104 is active",
+    "lastMessage": "Launched LN-105; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T20:40:18.854Z",
-    "nextTickAt": "2026-10-02T20:45:18.854Z",
+    "lastSuccessfulTickAt": "2026-10-02T20:41:16.860Z",
+    "nextTickAt": "2026-10-02T20:46:16.860Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-69",
-        "completedAt": "2026-10-02T08:18:27.019Z",
-        "restartedAt": null,
-        "mainSha": "f4f5d8d105c9ea13eb8890c6d3a641c938298063",
-        "reason": null
-      },
       {
         "lot": "LN-70",
         "completedAt": "2026-10-02T09:09:30.255Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "57d17a26fa12ec1818ade7c4178a85027638ea3e",
         "reason": null
+      },
+      {
+        "lot": "LN-104",
+        "completedAt": "2026-10-02T20:41:08.618Z",
+        "restartedAt": null,
+        "mainSha": "a11b3e3208b9320b910e5fe4418952ded21d968d",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "7414719fed9902711b6c7e5dd090aee3d6a143a1",
+    "mainSha": "a11b3e3208b9320b910e5fe4418952ded21d968d",
     "lots": [
       {
         "id": "LN-00",
@@ -15272,7 +15272,7 @@
       {
         "id": "LN-104",
         "title": "Coach Attention Queue",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Create a work-oriented inbox for coaching events that materially require review or action.",
         "business": {
           "phase": "Coach Pro",
@@ -15433,8 +15433,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "866",
+            "mergeSha": "7414719fed9902711b6c7e5dd090aee3d6a143a1"
           }
         },
         "contractAvailable": true,
@@ -19535,181 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 115,
+    "done": 116,
     "total": 138,
-    "percent": 83,
+    "percent": 84,
     "current": {
-      "id": "LN-104",
-      "title": "Coach Attention Queue",
-      "status": "TODO",
-      "goal": "Create a work-oriented inbox for coaching events that materially require review or action.",
-      "business": {
-        "phase": "Coach Pro",
-        "summary": "Create a work-oriented inbox for coaching events that materially require review or action.",
-        "why": "A coach needs to know where attention is useful without a noisy social/activity feed.",
-        "builds": [
-          "actionable events such as feedback requiring review, completed sessions configured for review, assignment failures, meaningful deviations and pending adaptation decisions",
-          "deterministic event generation/deduplication",
-          "read/dismiss/resolve states tied to domain action",
-          "filter by athlete/cohort/type and deep-link to source object",
-          "clear aging/stale handling"
-        ],
-        "userImpact": [
-          "prioritize actionability and scan speed on mobile/desktop",
-          "item explains why it exists and next action",
-          "empty queue should be useful, not gamified",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "prioritize actionability and scan speed on mobile/desktop",
-          "item explains why it exists and next action",
-          "empty queue should be useful, not gamified",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "queue contains only data coach is currently authorized to see",
-          "revocation removes inaccessible details immediately",
-          "sensitive private notes never become queue copy accidentally",
-          "longitudinal view provides deeper context from queue drill-down",
-          "deterministic thresholds/rules remain inspectable",
-          "AI summary may later condense queue facts but not create hidden events"
-        ],
-        "examples": [],
-        "data": [
-          "queue item references authoritative domain object/evidence",
-          "resolution state is separate from underlying athlete history",
-          "deduplicate repeated facts and expire invalidated events safely"
-        ],
-        "dependencies": [
-          "Requires LN-63 feedback, LN-64 notifications, LN-65 review dashboard, LN-95/96 and LN-103 DONE."
-        ],
-        "attention": [
-          "queue contains only data coach is currently authorized to see",
-          "revocation removes inaccessible details immediately",
-          "sensitive private notes never become queue copy accidentally",
-          "event generation/dedupe/state tests",
-          "authorization/revocation tests",
-          "deep-link and empty/error-state UI tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no generic social feed",
-          "no every-set event stream",
-          "no engagement spam",
-          "no autonomous severity score presented as fact"
-        ],
-        "doneWhen": [
-          "queue is bounded to meaningful coach work",
-          "every item deep-links to an authorized actionable context",
-          "duplicates/stale items are controlled",
-          "revoked relationships cannot leak cached detail"
-        ],
-        "ux": [
-          "prioritize actionability and scan speed on mobile/desktop",
-          "item explains why it exists and next action",
-          "empty queue should be useful, not gamified",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "queue contains only data coach is currently authorized to see",
-          "revocation removes inaccessible details immediately",
-          "sensitive private notes never become queue copy accidentally"
-        ],
-        "implications": [
-          "longitudinal view provides deeper context from queue drill-down",
-          "deterministic thresholds/rules remain inspectable",
-          "AI summary may later condense queue facts but not create hidden events"
-        ],
-        "validation": [
-          "event generation/dedupe/state tests",
-          "authorization/revocation tests",
-          "deep-link and empty/error-state UI tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Coach Pro",
-        "objective": "Create a work-oriented inbox for coaching events that materially require review or action.",
-        "rationale": "A coach needs to know where attention is useful without a noisy social/activity feed.",
-        "dependencies": [
-          "Requires LN-63 feedback, LN-64 notifications, LN-65 review dashboard, LN-95/96 and LN-103 DONE."
-        ],
-        "scope": [
-          "actionable events such as feedback requiring review, completed sessions configured for review, assignment failures, meaningful deviations and pending adaptation decisions",
-          "deterministic event generation/deduplication",
-          "read/dismiss/resolve states tied to domain action",
-          "filter by athlete/cohort/type and deep-link to source object",
-          "clear aging/stale handling"
-        ],
-        "exclusions": [
-          "no generic social feed",
-          "no every-set event stream",
-          "no engagement spam",
-          "no autonomous severity score presented as fact"
-        ],
-        "data": [
-          "queue item references authoritative domain object/evidence",
-          "resolution state is separate from underlying athlete history",
-          "deduplicate repeated facts and expire invalidated events safely"
-        ],
-        "ux": [
-          "prioritize actionability and scan speed on mobile/desktop",
-          "item explains why it exists and next action",
-          "empty queue should be useful, not gamified",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "queue contains only data coach is currently authorized to see",
-          "revocation removes inaccessible details immediately",
-          "sensitive private notes never become queue copy accidentally"
-        ],
-        "implications": [
-          "longitudinal view provides deeper context from queue drill-down",
-          "deterministic thresholds/rules remain inspectable",
-          "AI summary may later condense queue facts but not create hidden events"
-        ],
-        "acceptance": [
-          "queue is bounded to meaningful coach work",
-          "every item deep-links to an authorized actionable context",
-          "duplicates/stale items are controlled",
-          "revoked relationships cannot leak cached detail"
-        ],
-        "validation": [
-          "event generation/dedupe/state tests",
-          "authorization/revocation tests",
-          "deep-link and empty/error-state UI tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-105",
       "title": "Longitudinal Athlete View",
       "status": "TODO",
@@ -19866,6 +19695,172 @@
           "authorization matrix across event categories",
           "timeline ordering/filter/source-link tests",
           "relationship-revocation and stale-cache regressions",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-106",
+      "title": "Coach Pro UX Gate",
+      "status": "TODO",
+      "goal": "Validate both sides of the coaching relationship from athlete receipt through coach review and adaptation.",
+      "business": {
+        "phase": "Coach Pro",
+        "summary": "Validate both sides of the coaching relationship from athlete receipt through coach review and adaptation.",
+        "why": "Coach Pro is complete only if scale features preserve consent, clarity and athlete usability.",
+        "builds": [
+          "coach journey: athlete → program → assign → monitor → review → adapt",
+          "athlete journey: receive → understand → execute → give feedback → understand updates",
+          "cohort/bulk/customization/attention/longitudinal integration",
+          "mobile coach and athlete checks, desktop coach density, accessibility, localization and deep links",
+          "close small family integration defects within scope"
+        ],
+        "userImpact": [
+          "athlete always understands who controls a prescription and what changed",
+          "coach sees actionable context without noisy feed behavior",
+          "advanced scale tools do not complicate one-athlete workflows",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "athlete always understands who controls a prescription and what changed",
+          "coach sees actionable context without noisy feed behavior",
+          "advanced scale tools do not complicate one-athlete workflows",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "cross-user RLS/server auth and revocation are gate-level blockers",
+          "test cohort/bulk paths cannot expand authorization",
+          "privacy boundaries for notes/performance remain explicit",
+          "confirms stable coach surfaces before trust/privacy center and AI",
+          "record unresolved issues as blockers/named future work"
+        ],
+        "examples": [],
+        "data": [
+          "verify source/assignment/version/override/history lineage across complete journeys",
+          "no schema unless needed to resolve a blocking coherence defect"
+        ],
+        "dependencies": [
+          "Requires LN-100 through LN-105 DONE plus LN-23/LN-24/LN-60..LN-65."
+        ],
+        "attention": [
+          "cross-user RLS/server auth and revocation are gate-level blockers",
+          "test cohort/bulk paths cannot expand authorization",
+          "privacy boundaries for notes/performance remain explicit",
+          "end-to-end coach/athlete authorization suite",
+          "browser E2E under current gate policy",
+          "mobile/desktop/accessibility and deep-link matrix",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no generic coach/athlete chat",
+          "no marketplace/payments",
+          "no new medical/recovery scoring",
+          "no unrelated redesign"
+        ],
+        "doneWhen": [
+          "both representative journeys complete without dead ends",
+          "relationship revocation and permissions behave coherently throughout",
+          "no coach feature silently captures athlete ownership",
+          "no critical a11y/localization/security defect remains"
+        ],
+        "ux": [
+          "athlete always understands who controls a prescription and what changed",
+          "coach sees actionable context without noisy feed behavior",
+          "advanced scale tools do not complicate one-athlete workflows",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "cross-user RLS/server auth and revocation are gate-level blockers",
+          "test cohort/bulk paths cannot expand authorization",
+          "privacy boundaries for notes/performance remain explicit"
+        ],
+        "implications": [
+          "confirms stable coach surfaces before trust/privacy center and AI",
+          "record unresolved issues as blockers/named future work"
+        ],
+        "validation": [
+          "end-to-end coach/athlete authorization suite",
+          "browser E2E under current gate policy",
+          "mobile/desktop/accessibility and deep-link matrix",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Coach Pro",
+        "objective": "Validate both sides of the coaching relationship from athlete receipt through coach review and adaptation.",
+        "rationale": "Coach Pro is complete only if scale features preserve consent, clarity and athlete usability.",
+        "dependencies": [
+          "Requires LN-100 through LN-105 DONE plus LN-23/LN-24/LN-60..LN-65."
+        ],
+        "scope": [
+          "coach journey: athlete → program → assign → monitor → review → adapt",
+          "athlete journey: receive → understand → execute → give feedback → understand updates",
+          "cohort/bulk/customization/attention/longitudinal integration",
+          "mobile coach and athlete checks, desktop coach density, accessibility, localization and deep links",
+          "close small family integration defects within scope"
+        ],
+        "exclusions": [
+          "no generic coach/athlete chat",
+          "no marketplace/payments",
+          "no new medical/recovery scoring",
+          "no unrelated redesign"
+        ],
+        "data": [
+          "verify source/assignment/version/override/history lineage across complete journeys",
+          "no schema unless needed to resolve a blocking coherence defect"
+        ],
+        "ux": [
+          "athlete always understands who controls a prescription and what changed",
+          "coach sees actionable context without noisy feed behavior",
+          "advanced scale tools do not complicate one-athlete workflows",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "cross-user RLS/server auth and revocation are gate-level blockers",
+          "test cohort/bulk paths cannot expand authorization",
+          "privacy boundaries for notes/performance remain explicit"
+        ],
+        "implications": [
+          "confirms stable coach surfaces before trust/privacy center and AI",
+          "record unresolved issues as blockers/named future work"
+        ],
+        "acceptance": [
+          "both representative journeys complete without dead ends",
+          "relationship revocation and permissions behave coherently throughout",
+          "no coach feature silently captures athlete ownership",
+          "no critical a11y/localization/security defect remains"
+        ],
+        "validation": [
+          "end-to-end coach/athlete authorization suite",
+          "browser E2E under current gate policy",
+          "mobile/desktop/accessibility and deep-link matrix",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
