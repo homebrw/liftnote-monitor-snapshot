@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T19:48:42.989Z",
+  "publishedAt": "2026-10-02T19:49:37.704Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-102",
-    "nextLot": "LN-103",
-    "launchedAt": "2026-10-02T19:33:36.111Z",
-    "lastProgressAt": "2026-10-02T19:45:25.652Z",
-    "lastChatCheckAt": "2026-10-02T19:33:36.111Z",
-    "lastObservedMainSha": "4aa830fdb633245759b891c95449422ecafa547e",
+    "currentLot": "LN-103",
+    "nextLot": "LN-104",
+    "launchedAt": "2026-10-02T19:49:29.781Z",
+    "lastProgressAt": "2026-10-02T19:49:29.781Z",
+    "lastChatCheckAt": "2026-10-02T19:49:29.781Z",
+    "lastObservedMainSha": "a86b9c4b233618367b18f8175efaa96606e3c006",
     "nudges": 0,
-    "lastMessage": "main moved while LN-102 is active",
+    "lastMessage": "Launched LN-103; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T19:48:35.195Z",
-    "nextTickAt": "2026-10-02T19:53:35.195Z",
+    "lastSuccessfulTickAt": "2026-10-02T19:49:29.781Z",
+    "nextTickAt": "2026-10-02T19:54:29.781Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-92",
-        "completedAt": "2026-10-02T07:31:40.116Z",
-        "restartedAt": null,
-        "mainSha": "8c6664e487462394af39d9b8cee1550348edb6c8",
-        "reason": null
-      },
       {
         "lot": "LN-93",
         "completedAt": "2026-10-02T07:55:11.671Z",
@@ -112,6 +105,13 @@
         "completedAt": "2026-10-02T19:33:29.239Z",
         "restartedAt": null,
         "mainSha": "51a8104ade24fd7bb40021e37b6265c97e99ab51",
+        "reason": null
+      },
+      {
+        "lot": "LN-102",
+        "completedAt": "2026-10-02T19:49:23.220Z",
+        "restartedAt": null,
+        "mainSha": "a86b9c4b233618367b18f8175efaa96606e3c006",
         "reason": null
       }
     ]
@@ -19539,177 +19539,6 @@
     "total": 138,
     "percent": 83,
     "current": {
-      "id": "LN-102",
-      "title": "Safe Bulk Assignment",
-      "status": "DONE",
-      "goal": "Assign common structured programming to multiple authorized athletes safely while producing independent per-athlete managed assignments.",
-      "business": {
-        "phase": "Coach Pro",
-        "summary": "Assign common structured programming to multiple authorized athletes safely while producing independent per-athlete managed assignments.",
-        "why": "Bulk work saves coach time but must preserve the exact same authorization, version and history guarantees as one-by-one assignment.",
-        "builds": [
-          "select active athletes or an authorized cohort",
-          "preview common template/source and recipients before commit",
-          "create/update assignments transactionally or with explicit per-athlete result states",
-          "show partial failure safely if atomic all-or-nothing is not feasible",
-          "preserve per-athlete assignment/version lineage"
-        ],
-        "userImpact": [
-          "recipient preview and destructive/change confirmation",
-          "success/failure summary with retry only for failed recipients",
-          "advanced batch controls must not clutter ordinary single-athlete assignment",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "recipient preview and destructive/change confirmation",
-          "success/failure summary with retry only for failed recipients",
-          "advanced batch controls must not clutter ordinary single-athlete assignment",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "revalidate active relationship for every recipient server-side",
-          "no cohort membership as sole authorization proof",
-          "negative cross-user tests and revoked-relationship behavior mandatory",
-          "LN-103 customization must preserve source linkage after bulk assignment",
-          "LN-110 audit trail later consumes high-value bulk operation facts",
-          "attention queue may surface failed assignments"
-        ],
-        "examples": [],
-        "data": [
-          "each athlete receives an explicit managed assignment/version relationship",
-          "bulk operation gets auditable batch identity/result metadata where justified",
-          "source template remains coach-owned"
-        ],
-        "dependencies": [
-          "Requires LN-100 and LN-101 DONE plus LN-24/LN-61 managed assignment semantics."
-        ],
-        "attention": [
-          "revalidate active relationship for every recipient server-side",
-          "no cohort membership as sole authorization proof",
-          "negative cross-user tests and revoked-relationship behavior mandatory",
-          "transaction/partial-failure tests",
-          "per-recipient authorization matrix",
-          "version/snapshot regression tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no broadcast to unauthorized users",
-          "no one shared athlete-owned program row",
-          "no silent overwrite of personalized assignment changes",
-          "no messaging blast"
-        ],
-        "doneWhen": [
-          "bulk operation cannot bypass individual authorization",
-          "successful athlete assignments remain independently versioned",
-          "partial failures are visible and recoverable",
-          "no started/completed history is rewritten"
-        ],
-        "ux": [
-          "recipient preview and destructive/change confirmation",
-          "success/failure summary with retry only for failed recipients",
-          "advanced batch controls must not clutter ordinary single-athlete assignment",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "revalidate active relationship for every recipient server-side",
-          "no cohort membership as sole authorization proof",
-          "negative cross-user tests and revoked-relationship behavior mandatory"
-        ],
-        "implications": [
-          "LN-103 customization must preserve source linkage after bulk assignment",
-          "LN-110 audit trail later consumes high-value bulk operation facts",
-          "attention queue may surface failed assignments"
-        ],
-        "validation": [
-          "transaction/partial-failure tests",
-          "per-recipient authorization matrix",
-          "version/snapshot regression tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Coach Pro",
-        "objective": "Assign common structured programming to multiple authorized athletes safely while producing independent per-athlete managed assignments.",
-        "rationale": "Bulk work saves coach time but must preserve the exact same authorization, version and history guarantees as one-by-one assignment.",
-        "dependencies": [
-          "Requires LN-100 and LN-101 DONE plus LN-24/LN-61 managed assignment semantics."
-        ],
-        "scope": [
-          "select active athletes or an authorized cohort",
-          "preview common template/source and recipients before commit",
-          "create/update assignments transactionally or with explicit per-athlete result states",
-          "show partial failure safely if atomic all-or-nothing is not feasible",
-          "preserve per-athlete assignment/version lineage"
-        ],
-        "exclusions": [
-          "no broadcast to unauthorized users",
-          "no one shared athlete-owned program row",
-          "no silent overwrite of personalized assignment changes",
-          "no messaging blast"
-        ],
-        "data": [
-          "each athlete receives an explicit managed assignment/version relationship",
-          "bulk operation gets auditable batch identity/result metadata where justified",
-          "source template remains coach-owned"
-        ],
-        "ux": [
-          "recipient preview and destructive/change confirmation",
-          "success/failure summary with retry only for failed recipients",
-          "advanced batch controls must not clutter ordinary single-athlete assignment",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "revalidate active relationship for every recipient server-side",
-          "no cohort membership as sole authorization proof",
-          "negative cross-user tests and revoked-relationship behavior mandatory"
-        ],
-        "implications": [
-          "LN-103 customization must preserve source linkage after bulk assignment",
-          "LN-110 audit trail later consumes high-value bulk operation facts",
-          "attention queue may surface failed assignments"
-        ],
-        "acceptance": [
-          "bulk operation cannot bypass individual authorization",
-          "successful athlete assignments remain independently versioned",
-          "partial failures are visible and recoverable",
-          "no started/completed history is rewritten"
-        ],
-        "validation": [
-          "transaction/partial-failure tests",
-          "per-recipient authorization matrix",
-          "version/snapshot regression tests",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": "862",
-          "mergeSha": "4aa830fdb633245759b891c95449422ecafa547e"
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-103",
       "title": "Per-Athlete Programming Customization",
       "status": "TODO",
@@ -19867,6 +19696,177 @@
           "merge/override resolution fixtures",
           "concurrency/version conflict tests",
           "coach authorization and session snapshot regressions",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-104",
+      "title": "Coach Attention Queue",
+      "status": "TODO",
+      "goal": "Create a work-oriented inbox for coaching events that materially require review or action.",
+      "business": {
+        "phase": "Coach Pro",
+        "summary": "Create a work-oriented inbox for coaching events that materially require review or action.",
+        "why": "A coach needs to know where attention is useful without a noisy social/activity feed.",
+        "builds": [
+          "actionable events such as feedback requiring review, completed sessions configured for review, assignment failures, meaningful deviations and pending adaptation decisions",
+          "deterministic event generation/deduplication",
+          "read/dismiss/resolve states tied to domain action",
+          "filter by athlete/cohort/type and deep-link to source object",
+          "clear aging/stale handling"
+        ],
+        "userImpact": [
+          "prioritize actionability and scan speed on mobile/desktop",
+          "item explains why it exists and next action",
+          "empty queue should be useful, not gamified",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "prioritize actionability and scan speed on mobile/desktop",
+          "item explains why it exists and next action",
+          "empty queue should be useful, not gamified",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "queue contains only data coach is currently authorized to see",
+          "revocation removes inaccessible details immediately",
+          "sensitive private notes never become queue copy accidentally",
+          "longitudinal view provides deeper context from queue drill-down",
+          "deterministic thresholds/rules remain inspectable",
+          "AI summary may later condense queue facts but not create hidden events"
+        ],
+        "examples": [],
+        "data": [
+          "queue item references authoritative domain object/evidence",
+          "resolution state is separate from underlying athlete history",
+          "deduplicate repeated facts and expire invalidated events safely"
+        ],
+        "dependencies": [
+          "Requires LN-63 feedback, LN-64 notifications, LN-65 review dashboard, LN-95/96 and LN-103 DONE."
+        ],
+        "attention": [
+          "queue contains only data coach is currently authorized to see",
+          "revocation removes inaccessible details immediately",
+          "sensitive private notes never become queue copy accidentally",
+          "event generation/dedupe/state tests",
+          "authorization/revocation tests",
+          "deep-link and empty/error-state UI tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no generic social feed",
+          "no every-set event stream",
+          "no engagement spam",
+          "no autonomous severity score presented as fact"
+        ],
+        "doneWhen": [
+          "queue is bounded to meaningful coach work",
+          "every item deep-links to an authorized actionable context",
+          "duplicates/stale items are controlled",
+          "revoked relationships cannot leak cached detail"
+        ],
+        "ux": [
+          "prioritize actionability and scan speed on mobile/desktop",
+          "item explains why it exists and next action",
+          "empty queue should be useful, not gamified",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "queue contains only data coach is currently authorized to see",
+          "revocation removes inaccessible details immediately",
+          "sensitive private notes never become queue copy accidentally"
+        ],
+        "implications": [
+          "longitudinal view provides deeper context from queue drill-down",
+          "deterministic thresholds/rules remain inspectable",
+          "AI summary may later condense queue facts but not create hidden events"
+        ],
+        "validation": [
+          "event generation/dedupe/state tests",
+          "authorization/revocation tests",
+          "deep-link and empty/error-state UI tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Coach Pro",
+        "objective": "Create a work-oriented inbox for coaching events that materially require review or action.",
+        "rationale": "A coach needs to know where attention is useful without a noisy social/activity feed.",
+        "dependencies": [
+          "Requires LN-63 feedback, LN-64 notifications, LN-65 review dashboard, LN-95/96 and LN-103 DONE."
+        ],
+        "scope": [
+          "actionable events such as feedback requiring review, completed sessions configured for review, assignment failures, meaningful deviations and pending adaptation decisions",
+          "deterministic event generation/deduplication",
+          "read/dismiss/resolve states tied to domain action",
+          "filter by athlete/cohort/type and deep-link to source object",
+          "clear aging/stale handling"
+        ],
+        "exclusions": [
+          "no generic social feed",
+          "no every-set event stream",
+          "no engagement spam",
+          "no autonomous severity score presented as fact"
+        ],
+        "data": [
+          "queue item references authoritative domain object/evidence",
+          "resolution state is separate from underlying athlete history",
+          "deduplicate repeated facts and expire invalidated events safely"
+        ],
+        "ux": [
+          "prioritize actionability and scan speed on mobile/desktop",
+          "item explains why it exists and next action",
+          "empty queue should be useful, not gamified",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "queue contains only data coach is currently authorized to see",
+          "revocation removes inaccessible details immediately",
+          "sensitive private notes never become queue copy accidentally"
+        ],
+        "implications": [
+          "longitudinal view provides deeper context from queue drill-down",
+          "deterministic thresholds/rules remain inspectable",
+          "AI summary may later condense queue facts but not create hidden events"
+        ],
+        "acceptance": [
+          "queue is bounded to meaningful coach work",
+          "every item deep-links to an authorized actionable context",
+          "duplicates/stale items are controlled",
+          "revoked relationships cannot leak cached detail"
+        ],
+        "validation": [
+          "event generation/dedupe/state tests",
+          "authorization/revocation tests",
+          "deep-link and empty/error-state UI tests",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
