@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T06:14:00.870Z",
+  "publishedAt": "2026-10-02T06:19:12.447Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "BLOCKED",
@@ -4442,7 +4442,7 @@
         "id": "LN-31",
         "title": "Unilateral exercise semantics",
         "status": "DONE",
-        "goal": "Represent unilateral work correctly by distinguishing repetitions per side from total repetitions and, where useful, allowing left/right performance to be recorded separately.",
+        "goal": "distinguish reps per side from total reps and optionally track left/right separately where useful.",
         "business": {
           "summary": "Comprendre les exercices unilatéraux et la différence entre répétitions par côté et répétitions totales.",
           "why": "10 fentes par jambe ne signifie pas la même chose que 10 répétitions au total.",
@@ -4494,36 +4494,8 @@
           "implications": [],
           "validation": []
         },
-        "contract": {
-          "phase": null,
-          "objective": "Represent unilateral work correctly by distinguishing repetitions per side from total repetitions and, where useful, allowing left/right performance to be recorded separately.",
-          "rationale": null,
-          "dependencies": [],
-          "scope": [
-            "mark exercises or prescriptions as bilateral, unilateral-per-side or side-specific tracking;",
-            "support targets such as 10 reps per side without interpreting them as 10 total;",
-            "optionally record left and right separately when asymmetry matters;",
-            "render concise active-workout inputs that do not double friction unnecessarily;",
-            "preserve side semantics in history/statistics and shared/coach prescriptions;"
-          ],
-          "exclusions": [
-            "unrelated backlog features not named by this contract;",
-            "broad AI-generated coaching or medical advice;",
-            "opportunistic redesign of other LiftNote lots;",
-            "changes to Unicorn Prog or SPICY 200 except where a shared platform dependency is unavoidable and explicitly validated."
-          ],
-          "data": [],
-          "ux": [],
-          "security": [],
-          "implications": [],
-          "acceptance": [],
-          "validation": [],
-          "completion": {
-            "pr": null,
-            "mergeSha": null
-          }
-        },
-        "contractAvailable": true,
+        "contract": null,
+        "contractAvailable": false,
         "executionState": "executable"
       },
       {
