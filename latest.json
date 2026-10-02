@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T19:47:54.825Z",
+  "publishedAt": "2026-10-02T19:48:42.989Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-102 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T19:47:47.283Z",
-    "nextTickAt": "2026-10-02T19:52:47.283Z",
+    "lastSuccessfulTickAt": "2026-10-02T19:48:35.195Z",
+    "nextTickAt": "2026-10-02T19:53:35.195Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "4aa830fdb633245759b891c95449422ecafa547e",
+    "mainSha": "a86b9c4b233618367b18f8175efaa96606e3c006",
     "lots": [
       {
         "id": "LN-00",
@@ -14930,7 +14930,7 @@
       {
         "id": "LN-102",
         "title": "Safe Bulk Assignment",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Assign common structured programming to multiple authorized athletes safely while producing independent per-athlete managed assignments.",
         "business": {
           "phase": "Coach Pro",
@@ -15091,8 +15091,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "862",
+            "mergeSha": "4aa830fdb633245759b891c95449422ecafa547e"
           }
         },
         "contractAvailable": true,
@@ -19535,13 +19535,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 113,
+    "done": 114,
     "total": 138,
-    "percent": 82,
+    "percent": 83,
     "current": {
       "id": "LN-102",
       "title": "Safe Bulk Assignment",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Assign common structured programming to multiple authorized athletes safely while producing independent per-athlete managed assignments.",
       "business": {
         "phase": "Coach Pro",
@@ -19702,8 +19702,8 @@
           "TinyFish is prohibited."
         ],
         "completion": {
-          "pr": null,
-          "mergeSha": null
+          "pr": "862",
+          "mergeSha": "4aa830fdb633245759b891c95449422ecafa547e"
         }
       },
       "contractAvailable": true,
