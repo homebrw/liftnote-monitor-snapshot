@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T22:53:55.554Z",
+  "publishedAt": "2026-10-02T22:54:51.584Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-107",
-    "nextLot": "LN-108",
-    "launchedAt": "2026-10-02T22:36:05.816Z",
-    "lastProgressAt": "2026-10-02T22:52:13.150Z",
-    "lastChatCheckAt": "2026-10-02T22:36:05.816Z",
-    "lastObservedMainSha": "e7ccd6ad35c3aec51362e0b2df62b949ac76204b",
+    "currentLot": "LN-108",
+    "nextLot": "LN-109",
+    "launchedAt": "2026-10-02T22:54:43.986Z",
+    "lastProgressAt": "2026-10-02T22:54:43.986Z",
+    "lastChatCheckAt": "2026-10-02T22:54:43.986Z",
+    "lastObservedMainSha": "ff530d2ef4254ffd5a07b9eec46ffd1984b2b391",
     "nudges": 0,
-    "lastMessage": "main moved while LN-107 is active",
+    "lastMessage": "Launched LN-108; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T22:53:47.837Z",
-    "nextTickAt": "2026-10-02T22:58:47.837Z",
+    "lastSuccessfulTickAt": "2026-10-02T22:54:43.986Z",
+    "nextTickAt": "2026-10-02T22:59:43.986Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-95",
-        "completedAt": "2026-10-02T15:40:43.917Z",
-        "restartedAt": null,
-        "mainSha": "fb1637e4883d6304491bf5a4301c00bd8c175976",
-        "reason": null
-      },
       {
         "lot": "LN-98",
         "completedAt": "2026-10-02T16:31:24.649Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "66947ea989177fa6edf9e29b0afb86363f92bcd2",
         "reason": null
+      },
+      {
+        "lot": "LN-107",
+        "completedAt": "2026-10-02T22:54:37.443Z",
+        "restartedAt": null,
+        "mainSha": "ff530d2ef4254ffd5a07b9eec46ffd1984b2b391",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "e7ccd6ad35c3aec51362e0b2df62b949ac76204b",
+    "mainSha": "ff530d2ef4254ffd5a07b9eec46ffd1984b2b391",
     "lots": [
       {
         "id": "LN-00",
@@ -16118,7 +16118,7 @@
       {
         "id": "LN-107",
         "title": "Backup & Restore",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Protect long-lived LiftNote training data beyond entity-level trash by defining restorable user backup snapshots.",
         "business": {
           "phase": "Trust, Data & Privacy",
@@ -16281,8 +16281,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "878",
+            "mergeSha": "e7ccd6ad35c3aec51362e0b2df62b949ac76204b"
           }
         },
         "contractAvailable": true,
@@ -21131,183 +21131,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 120,
+    "done": 121,
     "total": 150,
-    "percent": 80,
+    "percent": 81,
     "current": {
-      "id": "LN-107",
-      "title": "Backup & Restore",
-      "status": "TODO",
-      "goal": "Protect long-lived LiftNote training data beyond entity-level trash by defining restorable user backup snapshots.",
-      "business": {
-        "phase": "Trust, Data & Privacy",
-        "summary": "Protect long-lived LiftNote training data beyond entity-level trash by defining restorable user backup snapshots.",
-        "why": "Years of training history need a recovery mechanism distinct from CSV export and soft deletion.",
-        "builds": [
-          "define backup scope/version manifest for user-owned LiftNote data",
-          "create/download or otherwise retain restorable backup according to repository/product architecture",
-          "restore preview before write",
-          "restore into same account with identity/conflict rules",
-          "clear immutable/audited boundaries for completed history",
-          "recovery from partial failure"
-        ],
-        "userImpact": [
-          "backup state and last-success information understandable without technical jargon",
-          "restore requires preview/confirmation and reports what changed",
-          "failure leaves original data intact",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "backup state and last-success information understandable without technical jargon",
-          "restore requires preview/confirmation and reports what changed",
-          "failure leaves original data intact",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "backup retrieval requires authenticated owner",
-          "sensitive export material must not be exposed through public URLs/logs",
-          "restore never bypasses RLS/ownership checks",
-          "LN-108 integrity checks validate backup/restore results",
-          "LN-110 audit trail records restore operations",
-          "privacy center exposes backup/export controls later"
-        ],
-        "examples": [],
-        "data": [
-          "versioned backup format with canonical IDs/provenance/unit/load semantics",
-          "restore preserves immutable history and resolves current-state conflicts explicitly",
-          "coach-managed foreign-owned source data is represented only to the extent user-owned snapshots/provenance require"
-        ],
-        "dependencies": [
-          "Requires LN-73 and LN-74 DONE; reuses ownership/versioning/history semantics."
-        ],
-        "attention": [
-          "backup retrieval requires authenticated owner",
-          "sensitive export material must not be exposed through public URLs/logs",
-          "restore never bypasses RLS/ownership checks",
-          "round-trip fixture tests across representative account data",
-          "failure/rollback/conflict tests",
-          "RLS/security checks for backup access and restore",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no third-party paid backup service without explicit approval",
-          "no silent overwrite restore",
-          "no restoration of data the user never owned",
-          "no replacement for portable export"
-        ],
-        "doneWhen": [
-          "supported data can be restored without corrupting history",
-          "restore conflicts are explicit before destructive action",
-          "foreign/coach data boundaries are preserved",
-          "backup format/version is documented and testable"
-        ],
-        "ux": [
-          "backup state and last-success information understandable without technical jargon",
-          "restore requires preview/confirmation and reports what changed",
-          "failure leaves original data intact",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "backup retrieval requires authenticated owner",
-          "sensitive export material must not be exposed through public URLs/logs",
-          "restore never bypasses RLS/ownership checks"
-        ],
-        "implications": [
-          "LN-108 integrity checks validate backup/restore results",
-          "LN-110 audit trail records restore operations",
-          "privacy center exposes backup/export controls later"
-        ],
-        "validation": [
-          "round-trip fixture tests across representative account data",
-          "failure/rollback/conflict tests",
-          "RLS/security checks for backup access and restore",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Trust, Data & Privacy",
-        "objective": "Protect long-lived LiftNote training data beyond entity-level trash by defining restorable user backup snapshots.",
-        "rationale": "Years of training history need a recovery mechanism distinct from CSV export and soft deletion.",
-        "dependencies": [
-          "Requires LN-73 and LN-74 DONE; reuses ownership/versioning/history semantics."
-        ],
-        "scope": [
-          "define backup scope/version manifest for user-owned LiftNote data",
-          "create/download or otherwise retain restorable backup according to repository/product architecture",
-          "restore preview before write",
-          "restore into same account with identity/conflict rules",
-          "clear immutable/audited boundaries for completed history",
-          "recovery from partial failure"
-        ],
-        "exclusions": [
-          "no third-party paid backup service without explicit approval",
-          "no silent overwrite restore",
-          "no restoration of data the user never owned",
-          "no replacement for portable export"
-        ],
-        "data": [
-          "versioned backup format with canonical IDs/provenance/unit/load semantics",
-          "restore preserves immutable history and resolves current-state conflicts explicitly",
-          "coach-managed foreign-owned source data is represented only to the extent user-owned snapshots/provenance require"
-        ],
-        "ux": [
-          "backup state and last-success information understandable without technical jargon",
-          "restore requires preview/confirmation and reports what changed",
-          "failure leaves original data intact",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "backup retrieval requires authenticated owner",
-          "sensitive export material must not be exposed through public URLs/logs",
-          "restore never bypasses RLS/ownership checks"
-        ],
-        "implications": [
-          "LN-108 integrity checks validate backup/restore results",
-          "LN-110 audit trail records restore operations",
-          "privacy center exposes backup/export controls later"
-        ],
-        "acceptance": [
-          "supported data can be restored without corrupting history",
-          "restore conflicts are explicit before destructive action",
-          "foreign/coach data boundaries are preserved",
-          "backup format/version is documented and testable"
-        ],
-        "validation": [
-          "round-trip fixture tests across representative account data",
-          "failure/rollback/conflict tests",
-          "RLS/security checks for backup access and restore",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-108",
       "title": "Data Integrity Center",
       "status": "TODO",
@@ -21463,6 +21290,177 @@
           "detector fixtures for each supported issue class",
           "repair idempotency/rollback tests",
           "offline/import/backup integration and RLS tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-109",
+      "title": "Import Validation & Conflict Resolution",
+      "status": "TODO",
+      "goal": "Provide a shared review/conflict layer for structured and future AI-assisted imports before ambiguous or destructive writes.",
+      "business": {
+        "phase": "Trust, Data & Privacy",
+        "summary": "Provide a shared review/conflict layer for structured and future AI-assisted imports before ambiguous or destructive writes.",
+        "why": "LN-74 preview is a foundation; richer imports need consistent duplicate, exercise-resolution and ownership conflict semantics.",
+        "builds": [
+          "preflight validation for duplicates, unresolved exercises, ownership conflicts, existing-program collisions and unsupported fields",
+          "canonical exercise resolution using LN-85 outcomes",
+          "user choices: map existing, create allowed custom copy, rename/import separately, skip or cancel",
+          "conflict summary and deterministic write plan before confirmation",
+          "transactional apply/rollback and post-import integrity verification"
+        ],
+        "userImpact": [
+          "progressive review: blocking conflicts first, routine mappings collapsed",
+          "user can edit unresolved decisions before save",
+          "clear partial/unsupported result if input cannot be represented",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "progressive review: blocking conflicts first, routine mappings collapsed",
+          "user can edit unresolved decisions before save",
+          "clear partial/unsupported result if input cannot be represented",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "imports write only into authenticated user's permitted namespace",
+          "coach-owned data requires explicit authorized workflow",
+          "untrusted file content never changes authorization rules",
+          "LN-77 AI extraction feeds this layer rather than writing directly",
+          "LN-110 logs import operations; LN-108 validates post-import integrity",
+          "analytics/history consume imported data only once authoritative objects are created"
+        ],
+        "examples": [],
+        "data": [
+          "structured intermediate import plan with explicit mappings and conflict decisions",
+          "retain source/version/provenance and unit/load semantics",
+          "write only after confirmation and preserve import audit identity"
+        ],
+        "dependencies": [
+          "Requires LN-74, LN-85 and LN-108 DONE. It becomes a mandatory consumer boundary for LN-77 AI import."
+        ],
+        "attention": [
+          "imports write only into authenticated user's permitted namespace",
+          "coach-owned data requires explicit authorized workflow",
+          "untrusted file content never changes authorization rules",
+          "conflict-matrix fixtures",
+          "transaction/rollback and duplicate tests",
+          "security tests with malformed/untrusted/foreign-owner inputs",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no silent canonical system exercise creation",
+          "no name-only merge",
+          "no destructive import without preview",
+          "no AI authority over unresolved conflicts"
+        ],
+        "doneWhen": [
+          "ambiguous imports cannot silently write",
+          "exercise and ownership conflicts have explicit resolutions",
+          "confirmed plan applies deterministically or fails safely",
+          "post-import integrity is verifiable"
+        ],
+        "ux": [
+          "progressive review: blocking conflicts first, routine mappings collapsed",
+          "user can edit unresolved decisions before save",
+          "clear partial/unsupported result if input cannot be represented",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "imports write only into authenticated user's permitted namespace",
+          "coach-owned data requires explicit authorized workflow",
+          "untrusted file content never changes authorization rules"
+        ],
+        "implications": [
+          "LN-77 AI extraction feeds this layer rather than writing directly",
+          "LN-110 logs import operations; LN-108 validates post-import integrity",
+          "analytics/history consume imported data only once authoritative objects are created"
+        ],
+        "validation": [
+          "conflict-matrix fixtures",
+          "transaction/rollback and duplicate tests",
+          "security tests with malformed/untrusted/foreign-owner inputs",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Trust, Data & Privacy",
+        "objective": "Provide a shared review/conflict layer for structured and future AI-assisted imports before ambiguous or destructive writes.",
+        "rationale": "LN-74 preview is a foundation; richer imports need consistent duplicate, exercise-resolution and ownership conflict semantics.",
+        "dependencies": [
+          "Requires LN-74, LN-85 and LN-108 DONE. It becomes a mandatory consumer boundary for LN-77 AI import."
+        ],
+        "scope": [
+          "preflight validation for duplicates, unresolved exercises, ownership conflicts, existing-program collisions and unsupported fields",
+          "canonical exercise resolution using LN-85 outcomes",
+          "user choices: map existing, create allowed custom copy, rename/import separately, skip or cancel",
+          "conflict summary and deterministic write plan before confirmation",
+          "transactional apply/rollback and post-import integrity verification"
+        ],
+        "exclusions": [
+          "no silent canonical system exercise creation",
+          "no name-only merge",
+          "no destructive import without preview",
+          "no AI authority over unresolved conflicts"
+        ],
+        "data": [
+          "structured intermediate import plan with explicit mappings and conflict decisions",
+          "retain source/version/provenance and unit/load semantics",
+          "write only after confirmation and preserve import audit identity"
+        ],
+        "ux": [
+          "progressive review: blocking conflicts first, routine mappings collapsed",
+          "user can edit unresolved decisions before save",
+          "clear partial/unsupported result if input cannot be represented",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "imports write only into authenticated user's permitted namespace",
+          "coach-owned data requires explicit authorized workflow",
+          "untrusted file content never changes authorization rules"
+        ],
+        "implications": [
+          "LN-77 AI extraction feeds this layer rather than writing directly",
+          "LN-110 logs import operations; LN-108 validates post-import integrity",
+          "analytics/history consume imported data only once authoritative objects are created"
+        ],
+        "acceptance": [
+          "ambiguous imports cannot silently write",
+          "exercise and ownership conflicts have explicit resolutions",
+          "confirmed plan applies deterministically or fails safely",
+          "post-import integrity is verifiable"
+        ],
+        "validation": [
+          "conflict-matrix fixtures",
+          "transaction/rollback and duplicate tests",
+          "security tests with malformed/untrusted/foreign-owner inputs",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
