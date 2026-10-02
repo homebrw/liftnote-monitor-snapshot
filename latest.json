@@ -1,33 +1,33 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T18:19:49.102Z",
+  "publishedAt": "2026-10-02T18:20:41.392Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "WAITING_GATE",
+    "status": "RUNNING",
     "currentLot": "LN-99",
     "nextLot": "LN-100",
     "launchedAt": "2026-10-02T16:31:31.612Z",
-    "lastProgressAt": "2026-10-02T18:13:56.283Z",
-    "lastChatCheckAt": "2026-10-02T18:13:56.281Z",
+    "lastProgressAt": "2026-10-02T18:20:33.849Z",
+    "lastChatCheckAt": "2026-10-02T18:20:33.849Z",
     "lastObservedMainSha": "8eabb93be429ee579edba485853f97ae3abf09dc",
     "nudges": 1,
-    "lastMessage": "LN-99: waiting for browser verification on PR #854.",
+    "lastMessage": "Browser gate run 37046228881 failed; worker resumed to inspect and fix it.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T18:19:42.178Z",
-    "nextTickAt": "2026-10-02T18:24:42.178Z",
+    "lastSuccessfulTickAt": "2026-10-02T18:20:33.852Z",
+    "nextTickAt": "2026-10-02T18:25:33.852Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
       "lot": "LN-99",
       "type": "browser",
       "mode": "pre_merge",
-      "phase": "waiting",
+      "phase": "failed",
       "reason": null,
       "prNumber": 854,
       "headRef": "liftnote/ln-99-gate-fix",
       "headSha": "b51991545af707daef959f1dd6270d3a55ebc870",
       "runId": 37046228881,
-      "conclusion": null
+      "conclusion": "failure"
     },
     "history": [
       {
