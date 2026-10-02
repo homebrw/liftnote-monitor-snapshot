@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T18:09:51.505Z",
+  "publishedAt": "2026-10-02T18:10:41.503Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "RUNNING",
+    "status": "WAITING_GATE",
     "currentLot": "LN-99",
     "nextLot": "LN-100",
     "launchedAt": "2026-10-02T16:31:31.612Z",
@@ -11,23 +11,23 @@
     "lastChatCheckAt": "2026-10-02T18:09:44.069Z",
     "lastObservedMainSha": "ce2e3bd09c253c210af87c9d29e662316c447210",
     "nudges": 1,
-    "lastMessage": "Browser gate run 37045037310 failed; worker resumed to inspect and fix it.",
+    "lastMessage": "LN-99: waiting for post-merge browser verification run 37045651973.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T18:09:44.071Z",
-    "nextTickAt": "2026-10-02T18:14:44.071Z",
+    "lastSuccessfulTickAt": "2026-10-02T18:10:33.441Z",
+    "nextTickAt": "2026-10-02T18:15:33.441Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
       "lot": "LN-99",
       "type": "browser",
-      "mode": "pre_merge",
-      "phase": "failed",
+      "mode": "post_merge",
+      "phase": "waiting",
       "reason": null,
-      "prNumber": 853,
-      "headRef": "liftnote/ln-99-gate-fix",
-      "headSha": "519b39e6a6e10056fc8057dcd25aa2c572b79dc7",
-      "runId": 37045037310,
-      "conclusion": "failure"
+      "prNumber": null,
+      "headRef": "main",
+      "headSha": "8eabb93be429ee579edba485853f97ae3abf09dc",
+      "runId": 37045651973,
+      "conclusion": null
     },
     "history": [
       {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "ce2e3bd09c253c210af87c9d29e662316c447210",
+    "mainSha": "8eabb93be429ee579edba485853f97ae3abf09dc",
     "lots": [
       {
         "id": "LN-00",
