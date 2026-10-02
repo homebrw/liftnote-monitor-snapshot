@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T03:01:03.688Z",
+  "publishedAt": "2026-10-02T03:02:04.338Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-121",
-    "nextLot": "LN-122",
-    "launchedAt": "2026-10-02T02:27:58.480Z",
-    "lastProgressAt": "2026-10-02T02:56:22.013Z",
-    "lastChatCheckAt": "2026-10-02T02:53:42.468Z",
-    "lastObservedMainSha": "96e08c62317f9282aed09f17a15baa564bf69732",
+    "currentLot": "LN-122",
+    "nextLot": "LN-123",
+    "launchedAt": "2026-10-02T03:01:53.827Z",
+    "lastProgressAt": "2026-10-02T03:01:53.827Z",
+    "lastChatCheckAt": "2026-10-02T03:01:53.827Z",
+    "lastObservedMainSha": "892ab52c46821321e4281163e114fd9bf90488b0",
     "nudges": 0,
-    "lastMessage": "main moved while LN-121 is active",
+    "lastMessage": "Launched LN-122; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T03:00:52.813Z",
-    "nextTickAt": "2026-10-02T03:05:52.813Z",
+    "lastSuccessfulTickAt": "2026-10-02T03:01:53.827Z",
+    "nextTickAt": "2026-10-02T03:06:53.827Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-83",
-        "completedAt": "2026-10-01T22:57:25.853Z",
-        "restartedAt": null,
-        "mainSha": "121c254957c58db6a0fe678cfa6189e1daadee52",
-        "reason": null
-      },
       {
         "lot": "LN-84",
         "completedAt": "2026-10-01T23:09:49.516Z",
@@ -100,6 +93,13 @@
         "completedAt": "2026-10-02T02:27:50.226Z",
         "restartedAt": null,
         "mainSha": "18f2ac425f3d17dcefcc69431e223f943a28bc57",
+        "reason": null
+      },
+      {
+        "lot": "LN-121",
+        "completedAt": "2026-10-02T03:01:46.268Z",
+        "restartedAt": null,
+        "mainSha": "892ab52c46821321e4281163e114fd9bf90488b0",
         "reason": null
       }
     ]
@@ -19232,183 +19232,6 @@
     "total": 138,
     "percent": 67,
     "current": {
-      "id": "LN-121",
-      "title": "Circuit / Conditioning Workout Domain",
-      "status": "DONE",
-      "goal": "Represent Circuit / Conditioning workouts as structured LiftNote sessions using canonical exercises and protocol semantics, with lightweight class logging when detailed movement capture is impractical.",
-      "business": {
-        "phase": "Running & Conditioning Core",
-        "summary": "Represent Circuit / Conditioning workouts as structured LiftNote sessions using canonical exercises and protocol semantics, with lightweight class logging when detailed movement capture is impractical.",
-        "why": "Circuit is more than grouped strength sets. Rounds, AMRAP, EMOM, For Time and work/rest structures need explicit protocol meaning, while common movements must continue to reuse the same canonical exercise identities and history.",
-        "builds": [
-          "Protocol structures for rounds, AMRAP, EMOM, For Time, interval work/rest and free/unstructured circuit.",
-          "Canonical exercise reuse for circuit movements with reps, duration, distance and/or load as appropriate.",
-          "TRX/suspension as equipment/exercise semantics, not a separate product architecture.",
-          "Mixed blocks that can include a running step where supported by LN-120.",
-          "Prescribed structure distinct from performed structure.",
-          "Substitution identity/provenance compatible with LN-50/LN-89 principles.",
-          "Lightweight discovered-on-arrival class logging with duration, RPE, notes and optional trustworthy HR/calories even when every movement is not manually encoded.",
-          "Reusable template/program representation."
-        ],
-        "userImpact": [
-          "Creation begins with familiar protocol choices or “Circuit libre”, not engine jargon.",
-          "Common defaults are fast; advanced timing/score options are progressive.",
-          "The athlete can start a class quickly when the board is only known on arrival.",
-          "The ordinary manual logging path remains lightweight.",
-          "Strength flow is unchanged."
-        ],
-        "journey": [
-          "Creation begins with familiar protocol choices or “Circuit libre”, not engine jargon.",
-          "Common defaults are fast; advanced timing/score options are progressive.",
-          "The athlete can start a class quickly when the board is only known on arrival.",
-          "The ordinary manual logging path remains lightweight.",
-          "Strength flow is unchanged."
-        ],
-        "rules": [
-          "Circuit protocol/result facts become benchmark/reference inputs later.",
-          "Movement history retains canonical identity without merging unrelated circuit scores.",
-          "AI board import later maps recognized movement IDs/protocol vocabulary into this domain.",
-          "No opaque global fitness score."
-        ],
-        "examples": [],
-        "data": [
-          "Protocol type and parameters are explicit versioned fields.",
-          "Protocol-level structure and movement-level steps are separate but linked.",
-          "Prescribed and performed structures are immutable snapshots once completed.",
-          "A lightweight class session may legitimately have protocol/session facts without exhaustive movement-level facts.",
-          "Unknown score is different from zero score.",
-          "Canonical exercise IDs remain shared with strength/history.",
-          "No automatic double counting between protocol-level result and movement-level volume."
-        ],
-        "dependencies": [
-          "LN-120 — structured Running domain for mixed sessions and run steps.",
-          "LN-119 — typed workout/modality foundation.",
-          "LN-118 — curated Circuit catalog.",
-          "LN-17 — grouped movements.",
-          "LN-26/LN-32 — set/tracking primitives."
-        ],
-        "attention": [
-          "Protocol serialization/version tests.",
-          "Canonical exercise identity and mixed-step fixtures.",
-          "Lightweight-session validation with intentionally missing movement detail.",
-          "Copy/share/import/coach snapshot compatibility tests.",
-          "RLS/ownership checks when persistence changes.",
-          "Mobile creation/history product-path validation."
-        ],
-        "notInThisLot": [
-          "Live protocol timer/state machine and structured scoring implementation; LN-122 owns that.",
-          "CrossFit Rx/scaled, judge/referee or competition engine.",
-          "Public leaderboard.",
-          "Hyrox-specific station/race product.",
-          "Duplicate “circuit exercise” identities for movements already canonical elsewhere."
-        ],
-        "doneWhen": [
-          "Rounds, AMRAP, EMOM, For Time, work/rest and free circuit can be represented.",
-          "Representative mixed Circuit with KB, TRX, DB, plank and run uses canonical identities and correct tracking semantics.",
-          "Lightweight class logging is possible without fabricating missing movement details.",
-          "Prescribed/performed structures and substitutions remain inspectable.",
-          "Strength and Running behavior is not regressed.",
-          "CrossFit/Hyrox-specific layers are absent."
-        ],
-        "ux": [
-          "Creation begins with familiar protocol choices or “Circuit libre”, not engine jargon.",
-          "Common defaults are fast; advanced timing/score options are progressive.",
-          "The athlete can start a class quickly when the board is only known on arrival.",
-          "The ordinary manual logging path remains lightweight.",
-          "Strength flow is unchanged."
-        ],
-        "security": [],
-        "implications": [
-          "Circuit protocol/result facts become benchmark/reference inputs later.",
-          "Movement history retains canonical identity without merging unrelated circuit scores.",
-          "AI board import later maps recognized movement IDs/protocol vocabulary into this domain.",
-          "No opaque global fitness score."
-        ],
-        "validation": [
-          "Protocol serialization/version tests.",
-          "Canonical exercise identity and mixed-step fixtures.",
-          "Lightweight-session validation with intentionally missing movement detail.",
-          "Copy/share/import/coach snapshot compatibility tests.",
-          "RLS/ownership checks when persistence changes.",
-          "Mobile creation/history product-path validation."
-        ]
-      },
-      "contract": {
-        "phase": "Running & Conditioning Core",
-        "objective": "Represent Circuit / Conditioning workouts as structured LiftNote sessions using canonical exercises and protocol semantics, with lightweight class logging when detailed movement capture is impractical.",
-        "rationale": "Circuit is more than grouped strength sets. Rounds, AMRAP, EMOM, For Time and work/rest structures need explicit protocol meaning, while common movements must continue to reuse the same canonical exercise identities and history.",
-        "dependencies": [
-          "LN-120 — structured Running domain for mixed sessions and run steps.",
-          "LN-119 — typed workout/modality foundation.",
-          "LN-118 — curated Circuit catalog.",
-          "LN-17 — grouped movements.",
-          "LN-26/LN-32 — set/tracking primitives."
-        ],
-        "scope": [
-          "Protocol structures for rounds, AMRAP, EMOM, For Time, interval work/rest and free/unstructured circuit.",
-          "Canonical exercise reuse for circuit movements with reps, duration, distance and/or load as appropriate.",
-          "TRX/suspension as equipment/exercise semantics, not a separate product architecture.",
-          "Mixed blocks that can include a running step where supported by LN-120.",
-          "Prescribed structure distinct from performed structure.",
-          "Substitution identity/provenance compatible with LN-50/LN-89 principles.",
-          "Lightweight discovered-on-arrival class logging with duration, RPE, notes and optional trustworthy HR/calories even when every movement is not manually encoded.",
-          "Reusable template/program representation."
-        ],
-        "exclusions": [
-          "Live protocol timer/state machine and structured scoring implementation; LN-122 owns that.",
-          "CrossFit Rx/scaled, judge/referee or competition engine.",
-          "Public leaderboard.",
-          "Hyrox-specific station/race product.",
-          "Duplicate “circuit exercise” identities for movements already canonical elsewhere."
-        ],
-        "data": [
-          "Protocol type and parameters are explicit versioned fields.",
-          "Protocol-level structure and movement-level steps are separate but linked.",
-          "Prescribed and performed structures are immutable snapshots once completed.",
-          "A lightweight class session may legitimately have protocol/session facts without exhaustive movement-level facts.",
-          "Unknown score is different from zero score.",
-          "Canonical exercise IDs remain shared with strength/history.",
-          "No automatic double counting between protocol-level result and movement-level volume."
-        ],
-        "ux": [
-          "Creation begins with familiar protocol choices or “Circuit libre”, not engine jargon.",
-          "Common defaults are fast; advanced timing/score options are progressive.",
-          "The athlete can start a class quickly when the board is only known on arrival.",
-          "The ordinary manual logging path remains lightweight.",
-          "Strength flow is unchanged."
-        ],
-        "security": [],
-        "implications": [
-          "Circuit protocol/result facts become benchmark/reference inputs later.",
-          "Movement history retains canonical identity without merging unrelated circuit scores.",
-          "AI board import later maps recognized movement IDs/protocol vocabulary into this domain.",
-          "No opaque global fitness score."
-        ],
-        "acceptance": [
-          "Rounds, AMRAP, EMOM, For Time, work/rest and free circuit can be represented.",
-          "Representative mixed Circuit with KB, TRX, DB, plank and run uses canonical identities and correct tracking semantics.",
-          "Lightweight class logging is possible without fabricating missing movement details.",
-          "Prescribed/performed structures and substitutions remain inspectable.",
-          "Strength and Running behavior is not regressed.",
-          "CrossFit/Hyrox-specific layers are absent."
-        ],
-        "validation": [
-          "Protocol serialization/version tests.",
-          "Canonical exercise identity and mixed-step fixtures.",
-          "Lightweight-session validation with intentionally missing movement detail.",
-          "Copy/share/import/coach snapshot compatibility tests.",
-          "RLS/ownership checks when persistence changes.",
-          "Mobile creation/history product-path validation."
-        ],
-        "completion": {
-          "pr": "797",
-          "mergeSha": "96e08c62317f9282aed09f17a15baa564bf69732"
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-122",
       "title": "Circuit Live Execution & Structured Scoring",
       "status": "TODO",
@@ -19587,6 +19410,167 @@
           "History immutability/correction tests.",
           "Representative mobile active-workout validation.",
           "Targeted LiftNote CI for changed code only."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-123",
+      "title": "Athlete Reusable Block Library",
+      "status": "TODO",
+      "goal": "Let an athlete save and reuse personal workout blocks across sessions using the same block primitives as the rest of LiftNote, without creating an incompatible template system.",
+      "business": {
+        "phase": "Running & Conditioning Core",
+        "summary": "Let an athlete save and reuse personal workout blocks across sessions using the same block primitives as the rest of LiftNote, without creating an incompatible template system.",
+        "why": "Warm-ups, 10×400 m intervals, recurring conditioning circuits and common exercise groups are useful reusable units. Existing whole-workout duplication is too coarse, while LN-100 is intentionally coach-owned.",
+        "builds": [
+          "Athlete-owned reusable block templates for strength groups, running interval/recovery blocks and circuit structures.",
+          "Create/save from an eligible existing block or author directly.",
+          "Edit/archive/restore/duplicate personal block templates.",
+          "Insert into a workout as an independent instantiated copy with lineage back to the source template/version.",
+          "Preserve nested typed steps, prescriptions and modality semantics.",
+          "Keep the storage/domain primitive compatible with later coach-owned reusable templates while preserving ownership boundaries.",
+          "Surface recent/favorite personal blocks contextually without cluttering simple workout creation."
+        ],
+        "userImpact": [
+          "“Enregistrer comme bloc” and “Ajouter un bloc” are contextual actions, not a new top-level mini-app by default.",
+          "Simple users can ignore the feature entirely.",
+          "Block type/language is inferred from content; users are not required to understand internal engine types.",
+          "Archive/restore and naming conflicts have clear recovery."
+        ],
+        "journey": [
+          "“Enregistrer comme bloc” and “Ajouter un bloc” are contextual actions, not a new top-level mini-app by default.",
+          "Simple users can ignore the feature entirely.",
+          "Block type/language is inferred from content; users are not required to understand internal engine types.",
+          "Archive/restore and naming conflicts have clear recovery."
+        ],
+        "rules": [
+          "Library usage may be counted as product usage, not performance.",
+          "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
+          "AI import may later offer “save as reusable block” only after explicit user review."
+        ],
+        "examples": [],
+        "data": [
+          "Library item has athlete ownership, stable identity, version/update metadata and archive state.",
+          "Instantiation creates independent workout structure with source lineage, not a mutable pointer.",
+          "Canonical exercise IDs remain references inside copied movement steps.",
+          "Running/circuit typed payloads round-trip exactly.",
+          "Completed/started session snapshots never depend on mutable library state."
+        ],
+        "dependencies": [
+          "LN-119 through LN-122 — typed blocks and modality-specific structures.",
+          "LN-17 — existing grouped exercise blocks.",
+          "LN-21 — personal duplication ownership/deep-copy rules.",
+          "LN-57 — program/template UX.",
+          "SHARING_AND_COACHING.md."
+        ],
+        "attention": [
+          "Copy/lineage/version round-trip tests.",
+          "RLS negative tests across athletes.",
+          "Strength/running/circuit serialization fixtures.",
+          "Archive/restore and offline idempotency tests.",
+          "Mobile contextual-entry validation."
+        ],
+        "notInThisLot": [
+          "Public marketplace.",
+          "Shared global block library.",
+          "Coach ownership/assignment behavior; LN-100 owns coach library.",
+          "Live synchronization from a personal library item into already-created workouts.",
+          "Rewriting completed sessions when a library block changes."
+        ],
+        "doneWhen": [
+          "Athlete can save and reuse a warm-up, running interval block and circuit block.",
+          "Instantiated content is independent and preserves lineage.",
+          "Editing/archive of source does not alter existing workouts/sessions.",
+          "Cross-user authorization is denied.",
+          "LN-100 can later reuse compatible primitives without broadening athlete ownership.",
+          "Feature remains progressively disclosed."
+        ],
+        "ux": [
+          "“Enregistrer comme bloc” and “Ajouter un bloc” are contextual actions, not a new top-level mini-app by default.",
+          "Simple users can ignore the feature entirely.",
+          "Block type/language is inferred from content; users are not required to understand internal engine types.",
+          "Archive/restore and naming conflicts have clear recovery."
+        ],
+        "security": [],
+        "implications": [
+          "Library usage may be counted as product usage, not performance.",
+          "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
+          "AI import may later offer “save as reusable block” only after explicit user review."
+        ],
+        "validation": [
+          "Copy/lineage/version round-trip tests.",
+          "RLS negative tests across athletes.",
+          "Strength/running/circuit serialization fixtures.",
+          "Archive/restore and offline idempotency tests.",
+          "Mobile contextual-entry validation."
+        ]
+      },
+      "contract": {
+        "phase": "Running & Conditioning Core",
+        "objective": "Let an athlete save and reuse personal workout blocks across sessions using the same block primitives as the rest of LiftNote, without creating an incompatible template system.",
+        "rationale": "Warm-ups, 10×400 m intervals, recurring conditioning circuits and common exercise groups are useful reusable units. Existing whole-workout duplication is too coarse, while LN-100 is intentionally coach-owned.",
+        "dependencies": [
+          "LN-119 through LN-122 — typed blocks and modality-specific structures.",
+          "LN-17 — existing grouped exercise blocks.",
+          "LN-21 — personal duplication ownership/deep-copy rules.",
+          "LN-57 — program/template UX.",
+          "SHARING_AND_COACHING.md."
+        ],
+        "scope": [
+          "Athlete-owned reusable block templates for strength groups, running interval/recovery blocks and circuit structures.",
+          "Create/save from an eligible existing block or author directly.",
+          "Edit/archive/restore/duplicate personal block templates.",
+          "Insert into a workout as an independent instantiated copy with lineage back to the source template/version.",
+          "Preserve nested typed steps, prescriptions and modality semantics.",
+          "Keep the storage/domain primitive compatible with later coach-owned reusable templates while preserving ownership boundaries.",
+          "Surface recent/favorite personal blocks contextually without cluttering simple workout creation."
+        ],
+        "exclusions": [
+          "Public marketplace.",
+          "Shared global block library.",
+          "Coach ownership/assignment behavior; LN-100 owns coach library.",
+          "Live synchronization from a personal library item into already-created workouts.",
+          "Rewriting completed sessions when a library block changes."
+        ],
+        "data": [
+          "Library item has athlete ownership, stable identity, version/update metadata and archive state.",
+          "Instantiation creates independent workout structure with source lineage, not a mutable pointer.",
+          "Canonical exercise IDs remain references inside copied movement steps.",
+          "Running/circuit typed payloads round-trip exactly.",
+          "Completed/started session snapshots never depend on mutable library state."
+        ],
+        "ux": [
+          "“Enregistrer comme bloc” and “Ajouter un bloc” are contextual actions, not a new top-level mini-app by default.",
+          "Simple users can ignore the feature entirely.",
+          "Block type/language is inferred from content; users are not required to understand internal engine types.",
+          "Archive/restore and naming conflicts have clear recovery."
+        ],
+        "security": [],
+        "implications": [
+          "Library usage may be counted as product usage, not performance.",
+          "Performance history remains on completed sessions/exercises/protocol results, never on the reusable source block itself.",
+          "AI import may later offer “save as reusable block” only after explicit user review."
+        ],
+        "acceptance": [
+          "Athlete can save and reuse a warm-up, running interval block and circuit block.",
+          "Instantiated content is independent and preserves lineage.",
+          "Editing/archive of source does not alter existing workouts/sessions.",
+          "Cross-user authorization is denied.",
+          "LN-100 can later reuse compatible primitives without broadening athlete ownership.",
+          "Feature remains progressively disclosed."
+        ],
+        "validation": [
+          "Copy/lineage/version round-trip tests.",
+          "RLS negative tests across athletes.",
+          "Strength/running/circuit serialization fixtures.",
+          "Archive/restore and offline idempotency tests.",
+          "Mobile contextual-entry validation."
         ],
         "completion": {
           "pr": null,
