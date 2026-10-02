@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T03:00:09.500Z",
+  "publishedAt": "2026-10-02T03:01:03.688Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-121 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T02:59:59.239Z",
-    "nextTickAt": "2026-10-02T03:04:59.239Z",
+    "lastSuccessfulTickAt": "2026-10-02T03:00:52.813Z",
+    "nextTickAt": "2026-10-02T03:05:52.813Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "96e08c62317f9282aed09f17a15baa564bf69732",
+    "mainSha": "892ab52c46821321e4281163e114fd9bf90488b0",
     "lots": [
       {
         "id": "LN-00",
@@ -10993,7 +10993,7 @@
       {
         "id": "LN-121",
         "title": "Circuit / Conditioning Workout Domain",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Represent Circuit / Conditioning workouts as structured LiftNote sessions using canonical exercises and protocol semantics, with lightweight class logging when detailed movement capture is impractical.",
         "business": {
           "phase": "Running & Conditioning Core",
@@ -11160,8 +11160,8 @@
             "Mobile creation/history product-path validation."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "797",
+            "mergeSha": "96e08c62317f9282aed09f17a15baa564bf69732"
           }
         },
         "contractAvailable": true,
@@ -19228,13 +19228,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 92,
+    "done": 93,
     "total": 138,
     "percent": 67,
     "current": {
       "id": "LN-121",
       "title": "Circuit / Conditioning Workout Domain",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Represent Circuit / Conditioning workouts as structured LiftNote sessions using canonical exercises and protocol semantics, with lightweight class logging when detailed movement capture is impractical.",
       "business": {
         "phase": "Running & Conditioning Core",
@@ -19401,8 +19401,8 @@
           "Mobile creation/history product-path validation."
         ],
         "completion": {
-          "pr": null,
-          "mergeSha": null
+          "pr": "797",
+          "mergeSha": "96e08c62317f9282aed09f17a15baa564bf69732"
         }
       },
       "contractAvailable": true,
