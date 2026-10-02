@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T04:43:15.484Z",
+  "publishedAt": "2026-10-02T04:44:14.060Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-123 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T04:43:05.655Z",
-    "nextTickAt": "2026-10-02T04:48:05.655Z",
+    "lastSuccessfulTickAt": "2026-10-02T04:44:01.443Z",
+    "nextTickAt": "2026-10-02T04:49:01.443Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
