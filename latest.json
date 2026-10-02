@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T23:35:15.882Z",
+  "publishedAt": "2026-10-02T23:36:04.597Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
     "currentLot": "LN-109",
     "nextLot": "LN-110",
     "launchedAt": "2026-10-02T23:06:11.761Z",
-    "lastProgressAt": "2026-10-02T23:31:55.938Z",
+    "lastProgressAt": "2026-10-02T23:35:56.836Z",
     "lastChatCheckAt": "2026-10-02T23:31:55.938Z",
-    "lastObservedMainSha": "6b40a84c69589b148964eae4054a09a9cb0985ac",
+    "lastObservedMainSha": "48233638f21d6bab1eafb3f5962db1000304e59d",
     "nudges": 0,
-    "lastMessage": "ChatGPT platform verification in progress; no retry or prompt resubmission",
+    "lastMessage": "main moved while LN-109 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T23:35:08.177Z",
-    "nextTickAt": "2026-10-02T23:40:08.177Z",
+    "lastSuccessfulTickAt": "2026-10-02T23:35:56.836Z",
+    "nextTickAt": "2026-10-02T23:40:56.836Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "6b40a84c69589b148964eae4054a09a9cb0985ac",
+    "mainSha": "48233638f21d6bab1eafb3f5962db1000304e59d",
     "lots": [
       {
         "id": "LN-00",
