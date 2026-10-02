@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T18:49:35.620Z",
+  "publishedAt": "2026-10-02T18:50:31.956Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "WAITING_GATE",
-    "currentLot": "LN-99",
-    "nextLot": "LN-100",
-    "launchedAt": "2026-10-02T16:31:31.612Z",
-    "lastProgressAt": "2026-10-02T18:46:13.856Z",
-    "lastChatCheckAt": "2026-10-02T18:46:13.854Z",
-    "lastObservedMainSha": "ed27f5b1c72419e8424eaec07f8455b58453f1a7",
-    "nudges": 1,
-    "lastMessage": "LN-99: waiting for browser verification on PR #857.",
+    "status": "RUNNING",
+    "currentLot": "LN-100",
+    "nextLot": "LN-101",
+    "launchedAt": "2026-10-02T18:50:24.071Z",
+    "lastProgressAt": "2026-10-02T18:50:24.071Z",
+    "lastChatCheckAt": "2026-10-02T18:50:24.071Z",
+    "lastObservedMainSha": "a9b947faf951606dda6b9ab7de15adaca2e3d85e",
+    "nudges": 0,
+    "lastMessage": "Launched LN-100; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T18:49:28.268Z",
-    "nextTickAt": "2026-10-02T18:54:28.268Z",
+    "lastSuccessfulTickAt": "2026-10-02T18:50:24.071Z",
+    "nextTickAt": "2026-10-02T18:55:24.071Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-91",
-        "completedAt": null,
-        "restartedAt": "2026-10-02T06:22:44.965Z",
-        "mainSha": "0a1f736200595dbb6580ea77dfd0895dc8a4e2c2",
-        "reason": "roadmap_reordered"
-      },
       {
         "lot": "LN-71",
         "completedAt": "2026-10-02T06:41:36.165Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "d03858aaf6ba2d4be7610c1bed0b2b091f3bc210",
         "reason": null
+      },
+      {
+        "lot": "LN-99",
+        "completedAt": "2026-10-02T18:50:17.063Z",
+        "restartedAt": null,
+        "mainSha": "a9b947faf951606dda6b9ab7de15adaca2e3d85e",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "ed27f5b1c72419e8424eaec07f8455b58453f1a7",
+    "mainSha": "a9b947faf951606dda6b9ab7de15adaca2e3d85e",
     "lots": [
       {
         "id": "LN-00",
@@ -14406,7 +14406,7 @@
       {
         "id": "LN-99",
         "title": "Programming UX Gate",
-        "status": "WAITING_GATE",
+        "status": "DONE",
         "goal": "Validate the complete programming journey: create → structure → prescribe → schedule → execute → compare → adapt → analyze → program next exposure.",
         "business": {
           "phase": "Programming Engine",
@@ -14574,8 +14574,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "856",
+            "mergeSha": "ed27f5b1c72419e8424eaec07f8455b58453f1a7"
           }
         },
         "contractAvailable": true,
@@ -19535,188 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 110,
+    "done": 111,
     "total": 138,
     "percent": 80,
     "current": {
-      "id": "LN-99",
-      "title": "Programming UX Gate",
-      "status": "WAITING_GATE",
-      "goal": "Validate the complete programming journey: create → structure → prescribe → schedule → execute → compare → adapt → analyze → program next exposure.",
-      "business": {
-        "phase": "Programming Engine",
-        "summary": "Validate the complete programming journey: create → structure → prescribe → schedule → execute → compare → adapt → analyze → program next exposure.",
-        "why": "The programming engine is only complete when its structured concepts remain understandable across authoring and real workout use.",
-        "builds": [
-          "end-to-end personal programming scenarios from simple to advanced",
-          "relative/per-set prescription and Training Max comprehension",
-          "scheduled execution, deload, planned-vs-performed, adherence and adaptation",
-          "mobile and desktop editor ergonomics",
-          "empty/error/disabled/conflict/offline/deep-link behavior",
-          "close small family integration defects discovered by the gate",
-          "validate programming of Running and Circuit / Conditioning structures where the typed domain supports them, without forcing strength-only prescription fields",
-          "finite-program lifecycle, modality-specific performance references and Running analytics handoff",
-          "strength-only programming regression and progressive disclosure across modality-specific controls"
-        ],
-        "userImpact": [
-          "simple programming must stay simple even though advanced controls exist",
-          "advanced controls should be discoverable without dominating first-use flows",
-          "compare/adapt actions must return users to a clear next step",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "simple programming must stay simple even though advanced controls exist",
-          "advanced controls should be discoverable without dominating first-use flows",
-          "compare/adapt actions must return users to a clear next step",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "validate personal vs coach-owned edit boundaries in representative flows",
-          "offline active workouts must not mutate source prescriptions",
-          "deep links cannot bypass authorization",
-          "confirms stable inputs for Coach Pro and AI assistant",
-          "record unresolved issues as explicit blockers/future work rather than waiving them"
-        ],
-        "examples": [],
-        "data": [
-          "verify version/snapshot/reproducibility invariants across the whole journey",
-          "no new schema unless a blocking family defect requires it"
-        ],
-        "dependencies": [
-          "LN-125 — Running & Conditioning UX Gate.",
-          "LN-124 — Finite Program Lifecycle.",
-          "LN-126 — Running Analytics & Performance History."
-        ],
-        "attention": [
-          "validate personal vs coach-owned edit boundaries in representative flows",
-          "offline active workouts must not mutate source prescriptions",
-          "deep links cannot bypass authorization",
-          "integration/E2E suite under current release-gate policy",
-          "mobile/desktop/accessibility matrix",
-          "serialization, snapshot, offline and authorization regression suite",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no new feature family",
-          "no visual redesign unrelated to a proven journey defect",
-          "no opaque AI programming"
-        ],
-        "doneWhen": [
-          "representative beginner and advanced programming jobs complete without dead ends",
-          "planned and performed truth stay distinct",
-          "all accepted adaptations remain human-controlled and traceable",
-          "no critical a11y/localization/authorization defect remains",
-          "The gate demonstrates that advanced programming can consume Running/Circuit facts without exposing a universal engine or regressing simple strength programming."
-        ],
-        "ux": [
-          "simple programming must stay simple even though advanced controls exist",
-          "advanced controls should be discoverable without dominating first-use flows",
-          "compare/adapt actions must return users to a clear next step",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "validate personal vs coach-owned edit boundaries in representative flows",
-          "offline active workouts must not mutate source prescriptions",
-          "deep links cannot bypass authorization"
-        ],
-        "implications": [
-          "confirms stable inputs for Coach Pro and AI assistant",
-          "record unresolved issues as explicit blockers/future work rather than waiving them"
-        ],
-        "validation": [
-          "integration/E2E suite under current release-gate policy",
-          "mobile/desktop/accessibility matrix",
-          "serialization, snapshot, offline and authorization regression suite",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Programming Engine",
-        "objective": "Validate the complete programming journey: create → structure → prescribe → schedule → execute → compare → adapt → analyze → program next exposure.",
-        "rationale": "The programming engine is only complete when its structured concepts remain understandable across authoring and real workout use.",
-        "dependencies": [
-          "LN-125 — Running & Conditioning UX Gate.",
-          "LN-124 — Finite Program Lifecycle.",
-          "LN-126 — Running Analytics & Performance History."
-        ],
-        "scope": [
-          "end-to-end personal programming scenarios from simple to advanced",
-          "relative/per-set prescription and Training Max comprehension",
-          "scheduled execution, deload, planned-vs-performed, adherence and adaptation",
-          "mobile and desktop editor ergonomics",
-          "empty/error/disabled/conflict/offline/deep-link behavior",
-          "close small family integration defects discovered by the gate",
-          "validate programming of Running and Circuit / Conditioning structures where the typed domain supports them, without forcing strength-only prescription fields",
-          "finite-program lifecycle, modality-specific performance references and Running analytics handoff",
-          "strength-only programming regression and progressive disclosure across modality-specific controls"
-        ],
-        "exclusions": [
-          "no new feature family",
-          "no visual redesign unrelated to a proven journey defect",
-          "no opaque AI programming"
-        ],
-        "data": [
-          "verify version/snapshot/reproducibility invariants across the whole journey",
-          "no new schema unless a blocking family defect requires it"
-        ],
-        "ux": [
-          "simple programming must stay simple even though advanced controls exist",
-          "advanced controls should be discoverable without dominating first-use flows",
-          "compare/adapt actions must return users to a clear next step",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "validate personal vs coach-owned edit boundaries in representative flows",
-          "offline active workouts must not mutate source prescriptions",
-          "deep links cannot bypass authorization"
-        ],
-        "implications": [
-          "confirms stable inputs for Coach Pro and AI assistant",
-          "record unresolved issues as explicit blockers/future work rather than waiving them"
-        ],
-        "acceptance": [
-          "representative beginner and advanced programming jobs complete without dead ends",
-          "planned and performed truth stay distinct",
-          "all accepted adaptations remain human-controlled and traceable",
-          "no critical a11y/localization/authorization defect remains",
-          "The gate demonstrates that advanced programming can consume Running/Circuit facts without exposing a universal engine or regressing simple strength programming."
-        ],
-        "validation": [
-          "integration/E2E suite under current release-gate policy",
-          "mobile/desktop/accessibility matrix",
-          "serialization, snapshot, offline and authorization regression suite",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-100",
       "title": "Coach Reusable Template Library",
       "status": "TODO",
@@ -19878,6 +19700,177 @@
           "RLS/cross-user tests for coach library isolation",
           "lineage/version snapshot tests",
           "UI tests for create/edit/archive/assign states",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-101",
+      "title": "Athlete Cohorts & Groups",
+      "status": "TODO",
+      "goal": "Allow coaches to organize authorized athletes into practical cohorts without changing per-athlete authorization.",
+      "business": {
+        "phase": "Coach Pro",
+        "summary": "Allow coaches to organize authorized athletes into practical cohorts without changing per-athlete authorization.",
+        "why": "Groups improve navigation and assignment workflows but must never become a shortcut around consent or permissions.",
+        "builds": [
+          "coach-owned named groups/cohorts",
+          "add/remove active athlete relationships from groups",
+          "athlete may belong to multiple groups",
+          "filter coach workspace/library assignment views by group",
+          "group lifecycle without changing athlete data ownership"
+        ],
+        "userImpact": [
+          "groups primarily reduce coach navigation friction",
+          "athlete-facing exposure only if it has a clear product benefit; do not invent club identity",
+          "empty and stale relationship states are explicit",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "groups primarily reduce coach navigation friction",
+          "athlete-facing exposure only if it has a clear product benefit; do not invent club identity",
+          "empty and stale relationship states are explicit",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "membership never grants access beyond the underlying relationship permissions",
+          "negative tests for unrelated coach/athlete access",
+          "no account enumeration through group tooling",
+          "LN-102 bulk assignment uses cohorts as selectors",
+          "attention queue may filter/group but stays event-driven",
+          "analytics remain per-athlete unless explicitly aggregated with safe semantics"
+        ],
+        "examples": [],
+        "data": [
+          "group membership references an existing authorized coach-athlete relationship, not arbitrary user IDs",
+          "ending a relationship invalidates active group membership safely",
+          "group deletion does not delete athlete or program data"
+        ],
+        "dependencies": [
+          "Requires LN-100 DONE and the LN-23 relationship model."
+        ],
+        "attention": [
+          "membership never grants access beyond the underlying relationship permissions",
+          "negative tests for unrelated coach/athlete access",
+          "no account enumeration through group tooling",
+          "RLS/server authorization tests",
+          "relationship-revocation cleanup tests",
+          "group membership CRUD/filter UI tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no team social feed",
+          "no group chat",
+          "no group-wide permission grant",
+          "no public roster"
+        ],
+        "doneWhen": [
+          "groups organize but never authorize",
+          "relationship revocation removes usable membership",
+          "same athlete can be organized in multiple groups without duplication",
+          "coach mobile workflow remains compact"
+        ],
+        "ux": [
+          "groups primarily reduce coach navigation friction",
+          "athlete-facing exposure only if it has a clear product benefit; do not invent club identity",
+          "empty and stale relationship states are explicit",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "membership never grants access beyond the underlying relationship permissions",
+          "negative tests for unrelated coach/athlete access",
+          "no account enumeration through group tooling"
+        ],
+        "implications": [
+          "LN-102 bulk assignment uses cohorts as selectors",
+          "attention queue may filter/group but stays event-driven",
+          "analytics remain per-athlete unless explicitly aggregated with safe semantics"
+        ],
+        "validation": [
+          "RLS/server authorization tests",
+          "relationship-revocation cleanup tests",
+          "group membership CRUD/filter UI tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Coach Pro",
+        "objective": "Allow coaches to organize authorized athletes into practical cohorts without changing per-athlete authorization.",
+        "rationale": "Groups improve navigation and assignment workflows but must never become a shortcut around consent or permissions.",
+        "dependencies": [
+          "Requires LN-100 DONE and the LN-23 relationship model."
+        ],
+        "scope": [
+          "coach-owned named groups/cohorts",
+          "add/remove active athlete relationships from groups",
+          "athlete may belong to multiple groups",
+          "filter coach workspace/library assignment views by group",
+          "group lifecycle without changing athlete data ownership"
+        ],
+        "exclusions": [
+          "no team social feed",
+          "no group chat",
+          "no group-wide permission grant",
+          "no public roster"
+        ],
+        "data": [
+          "group membership references an existing authorized coach-athlete relationship, not arbitrary user IDs",
+          "ending a relationship invalidates active group membership safely",
+          "group deletion does not delete athlete or program data"
+        ],
+        "ux": [
+          "groups primarily reduce coach navigation friction",
+          "athlete-facing exposure only if it has a clear product benefit; do not invent club identity",
+          "empty and stale relationship states are explicit",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "membership never grants access beyond the underlying relationship permissions",
+          "negative tests for unrelated coach/athlete access",
+          "no account enumeration through group tooling"
+        ],
+        "implications": [
+          "LN-102 bulk assignment uses cohorts as selectors",
+          "attention queue may filter/group but stays event-driven",
+          "analytics remain per-athlete unless explicitly aggregated with safe semantics"
+        ],
+        "acceptance": [
+          "groups organize but never authorize",
+          "relationship revocation removes usable membership",
+          "same athlete can be organized in multiple groups without duplication",
+          "coach mobile workflow remains compact"
+        ],
+        "validation": [
+          "RLS/server authorization tests",
+          "relationship-revocation cleanup tests",
+          "group membership CRUD/filter UI tests",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
