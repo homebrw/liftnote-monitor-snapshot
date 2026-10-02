@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T04:17:34.276Z",
+  "publishedAt": "2026-10-02T04:18:36.768Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-122",
-    "nextLot": "LN-123",
-    "launchedAt": "2026-10-02T03:01:53.827Z",
-    "lastProgressAt": "2026-10-02T04:14:46.974Z",
-    "lastChatCheckAt": "2026-10-02T04:14:46.974Z",
-    "lastObservedMainSha": "701b7089afcea6414c712602ffe15f4d367673c3",
+    "currentLot": "LN-123",
+    "nextLot": "LN-125",
+    "launchedAt": "2026-10-02T04:18:27.307Z",
+    "lastProgressAt": "2026-10-02T04:18:27.307Z",
+    "lastChatCheckAt": "2026-10-02T04:18:27.307Z",
+    "lastObservedMainSha": "e124dac11e1f5c3915ca29546da534a49423e8a6",
     "nudges": 0,
-    "lastMessage": "Clicked Try again",
+    "lastMessage": "Launched LN-123; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T04:17:24.773Z",
-    "nextTickAt": "2026-10-02T04:22:24.773Z",
+    "lastSuccessfulTickAt": "2026-10-02T04:18:27.307Z",
+    "nextTickAt": "2026-10-02T04:23:27.307Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-84",
-        "completedAt": "2026-10-01T23:09:49.516Z",
-        "restartedAt": null,
-        "mainSha": "02b9e2c514f88614a35d65933a4f96a53270ecfa",
-        "reason": null
-      },
       {
         "lot": "LN-85",
         "completedAt": "2026-10-01T23:25:59.109Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "892ab52c46821321e4281163e114fd9bf90488b0",
         "reason": null
+      },
+      {
+        "lot": "LN-122",
+        "completedAt": "2026-10-02T04:18:16.963Z",
+        "restartedAt": null,
+        "mainSha": "e124dac11e1f5c3915ca29546da534a49423e8a6",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "701b7089afcea6414c712602ffe15f4d367673c3",
+    "mainSha": "e124dac11e1f5c3915ca29546da534a49423e8a6",
     "lots": [
       {
         "id": "LN-00",
@@ -11170,7 +11170,7 @@
       {
         "id": "LN-122",
         "title": "Circuit Live Execution & Structured Scoring",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Deliver protocol-level live execution, timer/recovery behavior and structured Circuit / Conditioning results without forcing every action through ordinary strength-set logging.",
         "business": {
           "phase": "Running & Conditioning Core",
@@ -11348,8 +11348,8 @@
             "Targeted LiftNote CI for changed code only."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "799",
+            "mergeSha": "701b7089afcea6414c712602ffe15f4d367673c3"
           }
         },
         "contractAvailable": true,
@@ -19228,198 +19228,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 93,
+    "done": 94,
     "total": 138,
-    "percent": 67,
+    "percent": 68,
     "current": {
-      "id": "LN-122",
-      "title": "Circuit Live Execution & Structured Scoring",
-      "status": "TODO",
-      "goal": "Deliver protocol-level live execution, timer/recovery behavior and structured Circuit / Conditioning results without forcing every action through ordinary strength-set logging.",
-      "business": {
-        "phase": "Running & Conditioning Core",
-        "summary": "Deliver protocol-level live execution, timer/recovery behavior and structured Circuit / Conditioning results without forcing every action through ordinary strength-set logging.",
-        "why": "A Circuit workout becomes usable only when LiftNote understands what is happening now: round, movement, interval, work/rest state and score. The active model must remain recoverable, correctable and offline-safe.",
-        "builds": [
-          "Live state for current round/total rounds, current movement, interval number and next transition.",
-          "Work/rest countdown or elapsed timer according to protocol.",
-          "AMRAP countdown with rounds + extra reps result.",
-          "EMOM/interval automatic transition where safe, with explicit manual correction/skip.",
-          "For Time elapsed timing and completion result; time-cap representation only when explicitly configured.",
-          "Generic work/rest circuit pause/resume/restart/correction semantics.",
-          "Optional round/interval splits where captured.",
-          "Structured final results: completion time, rounds + reps, rounds completed, total reps, and distance/calories only when those are the actual protocol score.",
-          "Preserve protocol, prescribed structure, performed structure, substitutions, score, duration, RPE/notes and relevant splits in immutable history.",
-          "Previous-result comparison only for compatible benchmark/template identity."
-        ],
-        "userImpact": [
-          "Active screen shows only what matters now: timer, current movement/target, round/interval and next transition.",
-          "Safe one-tap advance/completion where appropriate.",
-          "Pause/resume is obvious and reversible.",
-          "Recovery/correction paths are reachable without exposing state-machine jargon.",
-          "Ordinary strength active-workout UX remains unchanged."
-        ],
-        "journey": [
-          "Active screen shows only what matters now: timer, current movement/target, round/interval and next transition.",
-          "Safe one-tap advance/completion where appropriate.",
-          "Pause/resume is obvious and reversible.",
-          "Recovery/correction paths are reachable without exposing state-machine jargon.",
-          "Ordinary strength active-workout UX remains unchanged."
-        ],
-        "rules": [
-          "Structured scores can become performance references through LN-91.",
-          "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
-          "Planned-vs-performed later consumes protocol and movement facts.",
-          "AI import may author a protocol draft but cannot become live-state authority."
-        ],
-        "examples": [],
-        "data": [
-          "Live state is transient/recoverable state distinct from completed immutable result.",
-          "Timer state records enough anchors to recover after app backgrounding/restart without inventing elapsed time.",
-          "Corrections are explicit events/updates and do not silently rewrite already-completed history.",
-          "Protocol score has a typed shape per compatible protocol.",
-          "“Unfinished/capped” is distinct from a completed result and from missing data.",
-          "Movement-level performed facts and protocol-level score have explicit aggregation boundaries."
-        ],
-        "dependencies": [
-          "LN-121 — Circuit / Conditioning domain and protocol structures.",
-          "LN-08 — existing rest-timer foundations.",
-          "LN-35/LN-36 — previous performance and workout completion summary.",
-          "LN-45 — offline workout recovery.",
-          "LN-56 — active-workout UX.",
-          "LN-89 — contextual substitution semantics where applicable."
-        ],
-        "attention": [
-          "Deterministic timer-anchor tests with simulated background/offline elapsed time.",
-          "State-machine transition/recovery tests.",
-          "Score-shape and unfinished/capped fixtures.",
-          "Sync idempotency tests.",
-          "History immutability/correction tests.",
-          "Representative mobile active-workout validation.",
-          "Targeted LiftNote CI for changed code only."
-        ],
-        "notInThisLot": [
-          "Public leaderboard.",
-          "Judge/referee workflow.",
-          "CrossFit Rx/scaled/competition engine.",
-          "Assuming every circuit has a score.",
-          "Opaque readiness or fitness score.",
-          "Double-counting protocol score and movement-level volume."
-        ],
-        "doneWhen": [
-          "Rounds, AMRAP, EMOM, For Time and work/rest representative sessions execute end-to-end.",
-          "Pause/resume/background/offline recovery preserves correct timer and progression state.",
-          "Manual correction does not corrupt immutable completed history.",
-          "Structured score is protocol-appropriate and inspectable.",
-          "Protocol-level and movement-level metrics are not double counted.",
-          "A no-score/free circuit remains valid.",
-          "Product path remains lightweight on mobile."
-        ],
-        "ux": [
-          "Active screen shows only what matters now: timer, current movement/target, round/interval and next transition.",
-          "Safe one-tap advance/completion where appropriate.",
-          "Pause/resume is obvious and reversible.",
-          "Recovery/correction paths are reachable without exposing state-machine jargon.",
-          "Ordinary strength active-workout UX remains unchanged."
-        ],
-        "security": [],
-        "implications": [
-          "Structured scores can become performance references through LN-91.",
-          "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
-          "Planned-vs-performed later consumes protocol and movement facts.",
-          "AI import may author a protocol draft but cannot become live-state authority."
-        ],
-        "validation": [
-          "Deterministic timer-anchor tests with simulated background/offline elapsed time.",
-          "State-machine transition/recovery tests.",
-          "Score-shape and unfinished/capped fixtures.",
-          "Sync idempotency tests.",
-          "History immutability/correction tests.",
-          "Representative mobile active-workout validation.",
-          "Targeted LiftNote CI for changed code only."
-        ]
-      },
-      "contract": {
-        "phase": "Running & Conditioning Core",
-        "objective": "Deliver protocol-level live execution, timer/recovery behavior and structured Circuit / Conditioning results without forcing every action through ordinary strength-set logging.",
-        "rationale": "A Circuit workout becomes usable only when LiftNote understands what is happening now: round, movement, interval, work/rest state and score. The active model must remain recoverable, correctable and offline-safe.",
-        "dependencies": [
-          "LN-121 — Circuit / Conditioning domain and protocol structures.",
-          "LN-08 — existing rest-timer foundations.",
-          "LN-35/LN-36 — previous performance and workout completion summary.",
-          "LN-45 — offline workout recovery.",
-          "LN-56 — active-workout UX.",
-          "LN-89 — contextual substitution semantics where applicable."
-        ],
-        "scope": [
-          "Live state for current round/total rounds, current movement, interval number and next transition.",
-          "Work/rest countdown or elapsed timer according to protocol.",
-          "AMRAP countdown with rounds + extra reps result.",
-          "EMOM/interval automatic transition where safe, with explicit manual correction/skip.",
-          "For Time elapsed timing and completion result; time-cap representation only when explicitly configured.",
-          "Generic work/rest circuit pause/resume/restart/correction semantics.",
-          "Optional round/interval splits where captured.",
-          "Structured final results: completion time, rounds + reps, rounds completed, total reps, and distance/calories only when those are the actual protocol score.",
-          "Preserve protocol, prescribed structure, performed structure, substitutions, score, duration, RPE/notes and relevant splits in immutable history.",
-          "Previous-result comparison only for compatible benchmark/template identity."
-        ],
-        "exclusions": [
-          "Public leaderboard.",
-          "Judge/referee workflow.",
-          "CrossFit Rx/scaled/competition engine.",
-          "Assuming every circuit has a score.",
-          "Opaque readiness or fitness score.",
-          "Double-counting protocol score and movement-level volume."
-        ],
-        "data": [
-          "Live state is transient/recoverable state distinct from completed immutable result.",
-          "Timer state records enough anchors to recover after app backgrounding/restart without inventing elapsed time.",
-          "Corrections are explicit events/updates and do not silently rewrite already-completed history.",
-          "Protocol score has a typed shape per compatible protocol.",
-          "“Unfinished/capped” is distinct from a completed result and from missing data.",
-          "Movement-level performed facts and protocol-level score have explicit aggregation boundaries."
-        ],
-        "ux": [
-          "Active screen shows only what matters now: timer, current movement/target, round/interval and next transition.",
-          "Safe one-tap advance/completion where appropriate.",
-          "Pause/resume is obvious and reversible.",
-          "Recovery/correction paths are reachable without exposing state-machine jargon.",
-          "Ordinary strength active-workout UX remains unchanged."
-        ],
-        "security": [],
-        "implications": [
-          "Structured scores can become performance references through LN-91.",
-          "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
-          "Planned-vs-performed later consumes protocol and movement facts.",
-          "AI import may author a protocol draft but cannot become live-state authority."
-        ],
-        "acceptance": [
-          "Rounds, AMRAP, EMOM, For Time and work/rest representative sessions execute end-to-end.",
-          "Pause/resume/background/offline recovery preserves correct timer and progression state.",
-          "Manual correction does not corrupt immutable completed history.",
-          "Structured score is protocol-appropriate and inspectable.",
-          "Protocol-level and movement-level metrics are not double counted.",
-          "A no-score/free circuit remains valid.",
-          "Product path remains lightweight on mobile."
-        ],
-        "validation": [
-          "Deterministic timer-anchor tests with simulated background/offline elapsed time.",
-          "State-machine transition/recovery tests.",
-          "Score-shape and unfinished/capped fixtures.",
-          "Sync idempotency tests.",
-          "History immutability/correction tests.",
-          "Representative mobile active-workout validation.",
-          "Targeted LiftNote CI for changed code only."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-123",
       "title": "Athlete Reusable Block Library",
       "status": "TODO",
@@ -19571,6 +19383,170 @@
           "Strength/running/circuit serialization fixtures.",
           "Archive/restore and offline idempotency tests.",
           "Mobile contextual-entry validation."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-125",
+      "title": "Running & Conditioning UX Gate",
+      "status": "TODO",
+      "goal": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
+      "business": {
+        "phase": "Running & Conditioning Core",
+        "summary": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
+        "why": "A generic internal model is only successful if users never have to understand it. This gate verifies that the new domains are discoverable, fast and coherent without burdening strength-only users.",
+        "builds": [
+          "End-to-end strength-only regression.",
+          "Running: discover/create → execute continuous and interval workout → correct → finish → history.",
+          "Circuit: discover/create → class-on-arrival/lightweight path → structured protocol live execution → score/history.",
+          "Mixed workout using canonical circuit movements and a running step.",
+          "Reusable athlete block insertion.",
+          "Mobile/desktop, FR/EN, accessibility, empty/error/unavailable/offline/recovery and deep-link checks.",
+          "Progressive-disclosure review: advanced modality controls stay out of ordinary flows until relevant.",
+          "Close small integration defects within this family when safe."
+        ],
+        "userImpact": [
+          "Complexity in the model, simplicity in the experience is the primary gate.",
+          "Strength-only user does not see unwanted Running/Circuit configuration.",
+          "“Courir” and “Circuit / conditioning” use familiar language and defaults.",
+          "Active screens adapt to the current domain without creating separate app silos.",
+          "Today/Programmes/Historique/Progression remain coherent navigation anchors."
+        ],
+        "journey": [
+          "Complexity in the model, simplicity in the experience is the primary gate.",
+          "Strength-only user does not see unwanted Running/Circuit configuration.",
+          "“Courir” and “Circuit / conditioning” use familiar language and defaults.",
+          "Active screens adapt to the current domain without creating separate app silos.",
+          "Today/Programmes/Historique/Progression remain coherent navigation anchors."
+        ],
+        "rules": [
+          "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
+          "No opaque combined fitness score appears.",
+          "AI is not required for any core workflow."
+        ],
+        "examples": [],
+        "data": [
+          "Validate typed snapshots and canonical identities through real product paths.",
+          "Confirm no incompatible modality facts are merged in history/analytics.",
+          "Confirm source/ownership/provenance survives copy and reuse."
+        ],
+        "dependencies": [
+          "LN-119 through LN-123.",
+          "LN-87/LN-88/LN-89 exercise discovery/detail/substitution.",
+          "LN-55/LN-56/LN-57 shared Today/workout/program UX.",
+          "LN-45 offline recovery."
+        ],
+        "attention": [
+          "Browser/mobile interaction is mandatory for representative paths.",
+          "Accessibility keyboard/focus and touch-target checks.",
+          "Offline/background recovery scenarios.",
+          "Deterministic snapshot/identity assertions.",
+          "No TinyFish.",
+          "Vercel READY is build evidence, not interactive QA."
+        ],
+        "notInThisLot": [
+          "New feature family.",
+          "CrossFit/Hyrox product layers.",
+          "Proprietary GPS/social functionality.",
+          "Running analytics beyond session facts.",
+          "Broad redesign unrelated to a proven multi-modality defect."
+        ],
+        "doneWhen": [
+          "Representative Running and Circuit jobs complete with no dead end.",
+          "Strength regression remains closed.",
+          "Progressive disclosure prevents cross-modality clutter.",
+          "Offline/recovery path preserves exact performed facts.",
+          "FR/EN labels and accessibility are coherent.",
+          "Any unresolved blocking product-path defect is fixed or explicitly blocks advancement."
+        ],
+        "ux": [
+          "Complexity in the model, simplicity in the experience is the primary gate.",
+          "Strength-only user does not see unwanted Running/Circuit configuration.",
+          "“Courir” and “Circuit / conditioning” use familiar language and defaults.",
+          "Active screens adapt to the current domain without creating separate app silos.",
+          "Today/Programmes/Historique/Progression remain coherent navigation anchors."
+        ],
+        "security": [],
+        "implications": [
+          "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
+          "No opaque combined fitness score appears.",
+          "AI is not required for any core workflow."
+        ],
+        "validation": [
+          "Browser/mobile interaction is mandatory for representative paths.",
+          "Accessibility keyboard/focus and touch-target checks.",
+          "Offline/background recovery scenarios.",
+          "Deterministic snapshot/identity assertions.",
+          "No TinyFish.",
+          "Vercel READY is build evidence, not interactive QA."
+        ]
+      },
+      "contract": {
+        "phase": "Running & Conditioning Core",
+        "objective": "Validate strength + running + circuit/conditioning as one simple LiftNote product before advanced Programming Engine work consumes the new modality primitives.",
+        "rationale": "A generic internal model is only successful if users never have to understand it. This gate verifies that the new domains are discoverable, fast and coherent without burdening strength-only users.",
+        "dependencies": [
+          "LN-119 through LN-123.",
+          "LN-87/LN-88/LN-89 exercise discovery/detail/substitution.",
+          "LN-55/LN-56/LN-57 shared Today/workout/program UX.",
+          "LN-45 offline recovery."
+        ],
+        "scope": [
+          "End-to-end strength-only regression.",
+          "Running: discover/create → execute continuous and interval workout → correct → finish → history.",
+          "Circuit: discover/create → class-on-arrival/lightweight path → structured protocol live execution → score/history.",
+          "Mixed workout using canonical circuit movements and a running step.",
+          "Reusable athlete block insertion.",
+          "Mobile/desktop, FR/EN, accessibility, empty/error/unavailable/offline/recovery and deep-link checks.",
+          "Progressive-disclosure review: advanced modality controls stay out of ordinary flows until relevant.",
+          "Close small integration defects within this family when safe."
+        ],
+        "exclusions": [
+          "New feature family.",
+          "CrossFit/Hyrox product layers.",
+          "Proprietary GPS/social functionality.",
+          "Running analytics beyond session facts.",
+          "Broad redesign unrelated to a proven multi-modality defect."
+        ],
+        "data": [
+          "Validate typed snapshots and canonical identities through real product paths.",
+          "Confirm no incompatible modality facts are merged in history/analytics.",
+          "Confirm source/ownership/provenance survives copy and reuse."
+        ],
+        "ux": [
+          "Complexity in the model, simplicity in the experience is the primary gate.",
+          "Strength-only user does not see unwanted Running/Circuit configuration.",
+          "“Courir” and “Circuit / conditioning” use familiar language and defaults.",
+          "Active screens adapt to the current domain without creating separate app silos.",
+          "Today/Programmes/Historique/Progression remain coherent navigation anchors."
+        ],
+        "security": [],
+        "implications": [
+          "Confirm clean handoff facts exist for LN-91/LN-95/LN-126.",
+          "No opaque combined fitness score appears.",
+          "AI is not required for any core workflow."
+        ],
+        "acceptance": [
+          "Representative Running and Circuit jobs complete with no dead end.",
+          "Strength regression remains closed.",
+          "Progressive disclosure prevents cross-modality clutter.",
+          "Offline/recovery path preserves exact performed facts.",
+          "FR/EN labels and accessibility are coherent.",
+          "Any unresolved blocking product-path defect is fixed or explicitly blocks advancement."
+        ],
+        "validation": [
+          "Browser/mobile interaction is mandatory for representative paths.",
+          "Accessibility keyboard/focus and touch-target checks.",
+          "Offline/background recovery scenarios.",
+          "Deterministic snapshot/identity assertions.",
+          "No TinyFish.",
+          "Vercel READY is build evidence, not interactive QA."
         ],
         "completion": {
           "pr": null,
