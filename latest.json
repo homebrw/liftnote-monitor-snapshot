@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T08:17:44.689Z",
+  "publishedAt": "2026-10-02T08:18:49.001Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-69",
-    "nextLot": "LN-70",
-    "launchedAt": "2026-10-02T07:55:19.316Z",
-    "lastProgressAt": "2026-10-02T08:14:54.732Z",
-    "lastChatCheckAt": "2026-10-02T07:55:19.316Z",
-    "lastObservedMainSha": "f7f665a32e61e26a57e3329e47509b5ddfa6125b",
+    "currentLot": "LN-70",
+    "nextLot": "LN-124",
+    "launchedAt": "2026-10-02T08:18:37.853Z",
+    "lastProgressAt": "2026-10-02T08:18:37.853Z",
+    "lastChatCheckAt": "2026-10-02T08:18:37.853Z",
+    "lastObservedMainSha": "f4f5d8d105c9ea13eb8890c6d3a641c938298063",
     "nudges": 0,
-    "lastMessage": "main moved while LN-69 is active",
+    "lastMessage": "Launched LN-70; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T08:17:34.734Z",
-    "nextTickAt": "2026-10-02T08:22:34.734Z",
+    "lastSuccessfulTickAt": "2026-10-02T08:18:37.853Z",
+    "nextTickAt": "2026-10-02T08:23:37.853Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": "success"
     },
     "history": [
-      {
-        "lot": "LN-90",
-        "completedAt": "2026-10-02T01:44:46.120Z",
-        "restartedAt": null,
-        "mainSha": "1ed00d086a4be875bfca08482439a10cadfcf255",
-        "reason": null
-      },
       {
         "lot": "LN-119",
         "completedAt": "2026-10-02T01:58:25.239Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "4ce6777916e9301f266dc74c785e74aaa3ba7a68",
         "reason": null
+      },
+      {
+        "lot": "LN-69",
+        "completedAt": "2026-10-02T08:18:27.019Z",
+        "restartedAt": null,
+        "mainSha": "f4f5d8d105c9ea13eb8890c6d3a641c938298063",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "f7f665a32e61e26a57e3329e47509b5ddfa6125b",
+    "mainSha": "f4f5d8d105c9ea13eb8890c6d3a641c938298063",
     "lots": [
       {
         "id": "LN-00",
@@ -12637,7 +12637,7 @@
       {
         "id": "LN-69",
         "title": "Variantes de prescription par semaine",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Allow week-specific prescription variants without duplicating an entire workout while preserving deterministic inheritance and snapshots.",
         "business": {
           "phase": "Programming Engine",
@@ -12797,8 +12797,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "828",
+            "mergeSha": "f7f665a32e61e26a57e3329e47509b5ddfa6125b"
           }
         },
         "contractAvailable": true,
@@ -19535,180 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 100,
+    "done": 101,
     "total": 138,
-    "percent": 72,
+    "percent": 73,
     "current": {
-      "id": "LN-69",
-      "title": "Variantes de prescription par semaine",
-      "status": "TODO",
-      "goal": "Allow week-specific prescription variants without duplicating an entire workout while preserving deterministic inheritance and snapshots.",
-      "business": {
-        "phase": "Programming Engine",
-        "summary": "Allow week-specific prescription variants without duplicating an entire workout while preserving deterministic inheritance and snapshots.",
-        "why": "Programs need controlled week-to-week variation on top of a structured per-set prescription model.",
-        "builds": [
-          "week-level overrides for set/reps/load/reference/effort/tempo/rest/set type",
-          "inheritance from base workout",
-          "effective-prescription preview and diff",
-          "copy/share/import/coach compatibility",
-          "snapshot effective prescription when workout starts"
-        ],
-        "userImpact": [
-          "default view shows effective week prescription",
-          "advanced diff distinguishes inherited versus overridden values",
-          "editing one week makes scope explicit before save",
-          "mobile UI avoids spreadsheet-like density",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "default view shows effective week prescription",
-          "advanced diff distinguishes inherited versus overridden values",
-          "editing one week makes scope explicit before save",
-          "mobile UI avoids spreadsheet-like density",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "coach-managed overrides follow source ownership/version rules",
-          "offline session uses resolved snapshot",
-          "consumed by scheduling, planned-vs-performed and AI proposals",
-          "analytics keep planned target distinct from performed fact"
-        ],
-        "examples": [],
-        "data": [
-          "consume shipped LN-68 progressionRule / progressionStep as base-prescription metadata after LN-93 has made those rules compatible with structured per-set/relative prescriptions",
-          "base prescription and override remain separately identifiable",
-          "inheritance resolution is deterministic/versioned",
-          "new structured fields must round-trip through copy/serialization",
-          "started/completed session snapshots remain immutable"
-        ],
-        "dependencies": [
-          "Immediate roadmap predecessor: LN-93.",
-          "Material dependencies: LN-33, LN-52, LN-67, LN-68, LN-92, LN-93."
-        ],
-        "attention": [
-          "coach-managed overrides follow source ownership/version rules",
-          "offline session uses resolved snapshot",
-          "inheritance/diff fixtures",
-          "serialization/materialization tests",
-          "session snapshot regressions",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "AI programming",
-          "silent cascading mutation",
-          "duplicating full workouts solely for a small weekly difference"
-        ],
-        "doneWhen": [
-          "weekly differences are visible and deterministic",
-          "inheritance survives duplication/share/coach flows",
-          "future override edits never rewrite history"
-        ],
-        "ux": [
-          "default view shows effective week prescription",
-          "advanced diff distinguishes inherited versus overridden values",
-          "editing one week makes scope explicit before save",
-          "mobile UI avoids spreadsheet-like density",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "coach-managed overrides follow source ownership/version rules",
-          "offline session uses resolved snapshot"
-        ],
-        "implications": [
-          "consumed by scheduling, planned-vs-performed and AI proposals",
-          "analytics keep planned target distinct from performed fact"
-        ],
-        "validation": [
-          "inheritance/diff fixtures",
-          "serialization/materialization tests",
-          "session snapshot regressions",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Programming Engine",
-        "objective": "Allow week-specific prescription variants without duplicating an entire workout while preserving deterministic inheritance and snapshots.",
-        "rationale": "Programs need controlled week-to-week variation on top of a structured per-set prescription model.",
-        "dependencies": [
-          "Immediate roadmap predecessor: LN-93.",
-          "Material dependencies: LN-33, LN-52, LN-67, LN-68, LN-92, LN-93."
-        ],
-        "scope": [
-          "week-level overrides for set/reps/load/reference/effort/tempo/rest/set type",
-          "inheritance from base workout",
-          "effective-prescription preview and diff",
-          "copy/share/import/coach compatibility",
-          "snapshot effective prescription when workout starts"
-        ],
-        "exclusions": [
-          "AI programming",
-          "silent cascading mutation",
-          "duplicating full workouts solely for a small weekly difference"
-        ],
-        "data": [
-          "consume shipped LN-68 progressionRule / progressionStep as base-prescription metadata after LN-93 has made those rules compatible with structured per-set/relative prescriptions",
-          "base prescription and override remain separately identifiable",
-          "inheritance resolution is deterministic/versioned",
-          "new structured fields must round-trip through copy/serialization",
-          "started/completed session snapshots remain immutable"
-        ],
-        "ux": [
-          "default view shows effective week prescription",
-          "advanced diff distinguishes inherited versus overridden values",
-          "editing one week makes scope explicit before save",
-          "mobile UI avoids spreadsheet-like density",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "coach-managed overrides follow source ownership/version rules",
-          "offline session uses resolved snapshot"
-        ],
-        "implications": [
-          "consumed by scheduling, planned-vs-performed and AI proposals",
-          "analytics keep planned target distinct from performed fact"
-        ],
-        "acceptance": [
-          "weekly differences are visible and deterministic",
-          "inheritance survives duplication/share/coach flows",
-          "future override edits never rewrite history"
-        ],
-        "validation": [
-          "inheritance/diff fixtures",
-          "serialization/materialization tests",
-          "session snapshot regressions",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-70",
       "title": "Planification datée et rappels de séances",
       "status": "TODO",
@@ -19865,6 +19695,189 @@
           "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
           "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
           "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-124",
+      "title": "Finite Program Lifecycle",
+      "status": "TODO",
+      "goal": "Add explicit optional finite-duration program lifecycle semantics on top of existing weeks and dated scheduling, without inventing redundant program types.",
+      "business": {
+        "phase": "Programming Engine",
+        "summary": "Add explicit optional finite-duration program lifecycle semantics on top of existing weeks and dated scheduling, without inventing redundant program types.",
+        "why": "An 8-week 10 km preparation or 6-week strength block should be able to communicate a bounded lifecycle and completion state. Existing ordered weeks and dated occurrences provide much of the structure, but they do not by themselves define the product semantics of a finite program.",
+        "builds": [
+          "Optional bounded-program semantics based on explicit planned structure/dates rather than hard personal/coached/shared program types.",
+          "Start boundary and expected/end boundary where the program is intentionally finite.",
+          "Derived or explicit completion lifecycle with deterministic rules and an auditable manual override when needed.",
+          "Clear behavior for late start, reschedule, extension, early stop and version replacement.",
+          "Preserve ownership/provenance independently from lifecycle.",
+          "Feed completion/adherence context to LN-95/LN-96 without defining training quality."
+        ],
+        "userImpact": [
+          "Users see ordinary concepts such as “8 semaines”, dates and “programme terminé”, not lifecycle engine jargon.",
+          "Completion/resume/extend actions explain consequences before mutation.",
+          "Today and calendar consume schedule truth from LN-70.",
+          "Simple open-ended strength programs do not acquire extra required fields."
+        ],
+        "journey": [
+          "Users see ordinary concepts such as “8 semaines”, dates and “programme terminé”, not lifecycle engine jargon.",
+          "Completion/resume/extend actions explain consequences before mutation.",
+          "Today and calendar consume schedule truth from LN-70.",
+          "Simple open-ended strength programs do not acquire extra required fields."
+        ],
+        "rules": [
+          "Only authorized owner/coach actions may change managed lifecycle fields.",
+          "Athlete cannot mutate coach-owned source program lifecycle outside existing assignment rules.",
+          "Lifecycle state never broadens access.",
+          "Lifecycle changes are conflict-aware and auditable.",
+          "Offline session completion can later update derived lifecycle after sync without changing the historical session.",
+          "Concurrent schedule/lifecycle edits resolve explicitly.",
+          "LN-96 may use lifecycle boundaries for descriptive adherence denominators.",
+          "Running analytics may segment a finite plan period without implying causality.",
+          "AI may explain lifecycle context later but cannot silently complete/extend a program."
+        ],
+        "examples": [],
+        "data": [
+          "Finite lifecycle is optional; open-ended programs remain valid.",
+          "Boundaries are explicit facts or deterministic derivations from authoritative schedule/week structure.",
+          "Completion reason/state is distinguishable from archive/deletion.",
+          "Version changes preserve historical lifecycle of prior versions.",
+          "Coach-managed source/assignment lineage remains separate.",
+          "Started/completed workout snapshots are never rewritten."
+        ],
+        "dependencies": [
+          "LN-67 — ordered optional weeks.",
+          "LN-69 — week-specific prescription variants.",
+          "LN-70 — authoritative dated schedule lifecycle.",
+          "LN-27/LN-61 — versioning and coach-managed lineage."
+        ],
+        "attention": [
+          "Only authorized owner/coach actions may change managed lifecycle fields.",
+          "Athlete cannot mutate coach-owned source program lifecycle outside existing assignment rules.",
+          "Lifecycle state never broadens access.",
+          "Lifecycle changes are conflict-aware and auditable.",
+          "Offline session completion can later update derived lifecycle after sync without changing the historical session.",
+          "Concurrent schedule/lifecycle edits resolve explicitly.",
+          "Lifecycle state-transition tests.",
+          "Week/schedule boundary fixtures.",
+          "Version/coach authorization tests.",
+          "Offline/concurrent update conflict tests.",
+          "Regression test ensuring open-ended programs remain unchanged."
+        ],
+        "notInThisLot": [
+          "Subscription/access expiry.",
+          "Marketplace purchase duration.",
+          "Automatic program generation.",
+          "Hard enum categories such as personal/group/fixed solely to mirror another product.",
+          "Claiming a finite program is successful because it was completed."
+        ],
+        "doneWhen": [
+          "Finite and open-ended programs coexist.",
+          "An 8-week program can expose start/end/completion meaning without a redundant program-type taxonomy.",
+          "Reschedule/extension/early-stop cases are explicit and historically traceable.",
+          "Ownership/version/snapshot rules remain intact.",
+          "LN-95/LN-96 receive unambiguous lifecycle facts."
+        ],
+        "ux": [
+          "Users see ordinary concepts such as “8 semaines”, dates and “programme terminé”, not lifecycle engine jargon.",
+          "Completion/resume/extend actions explain consequences before mutation.",
+          "Today and calendar consume schedule truth from LN-70.",
+          "Simple open-ended strength programs do not acquire extra required fields."
+        ],
+        "security": [
+          "Only authorized owner/coach actions may change managed lifecycle fields.",
+          "Athlete cannot mutate coach-owned source program lifecycle outside existing assignment rules.",
+          "Lifecycle state never broadens access.",
+          "Lifecycle changes are conflict-aware and auditable.",
+          "Offline session completion can later update derived lifecycle after sync without changing the historical session.",
+          "Concurrent schedule/lifecycle edits resolve explicitly."
+        ],
+        "implications": [
+          "LN-96 may use lifecycle boundaries for descriptive adherence denominators.",
+          "Running analytics may segment a finite plan period without implying causality.",
+          "AI may explain lifecycle context later but cannot silently complete/extend a program."
+        ],
+        "validation": [
+          "Lifecycle state-transition tests.",
+          "Week/schedule boundary fixtures.",
+          "Version/coach authorization tests.",
+          "Offline/concurrent update conflict tests.",
+          "Regression test ensuring open-ended programs remain unchanged."
+        ]
+      },
+      "contract": {
+        "phase": "Programming Engine",
+        "objective": "Add explicit optional finite-duration program lifecycle semantics on top of existing weeks and dated scheduling, without inventing redundant program types.",
+        "rationale": "An 8-week 10 km preparation or 6-week strength block should be able to communicate a bounded lifecycle and completion state. Existing ordered weeks and dated occurrences provide much of the structure, but they do not by themselves define the product semantics of a finite program.",
+        "dependencies": [
+          "LN-67 — ordered optional weeks.",
+          "LN-69 — week-specific prescription variants.",
+          "LN-70 — authoritative dated schedule lifecycle.",
+          "LN-27/LN-61 — versioning and coach-managed lineage."
+        ],
+        "scope": [
+          "Optional bounded-program semantics based on explicit planned structure/dates rather than hard personal/coached/shared program types.",
+          "Start boundary and expected/end boundary where the program is intentionally finite.",
+          "Derived or explicit completion lifecycle with deterministic rules and an auditable manual override when needed.",
+          "Clear behavior for late start, reschedule, extension, early stop and version replacement.",
+          "Preserve ownership/provenance independently from lifecycle.",
+          "Feed completion/adherence context to LN-95/LN-96 without defining training quality."
+        ],
+        "exclusions": [
+          "Subscription/access expiry.",
+          "Marketplace purchase duration.",
+          "Automatic program generation.",
+          "Hard enum categories such as personal/group/fixed solely to mirror another product.",
+          "Claiming a finite program is successful because it was completed."
+        ],
+        "data": [
+          "Finite lifecycle is optional; open-ended programs remain valid.",
+          "Boundaries are explicit facts or deterministic derivations from authoritative schedule/week structure.",
+          "Completion reason/state is distinguishable from archive/deletion.",
+          "Version changes preserve historical lifecycle of prior versions.",
+          "Coach-managed source/assignment lineage remains separate.",
+          "Started/completed workout snapshots are never rewritten."
+        ],
+        "ux": [
+          "Users see ordinary concepts such as “8 semaines”, dates and “programme terminé”, not lifecycle engine jargon.",
+          "Completion/resume/extend actions explain consequences before mutation.",
+          "Today and calendar consume schedule truth from LN-70.",
+          "Simple open-ended strength programs do not acquire extra required fields."
+        ],
+        "security": [
+          "Only authorized owner/coach actions may change managed lifecycle fields.",
+          "Athlete cannot mutate coach-owned source program lifecycle outside existing assignment rules.",
+          "Lifecycle state never broadens access.",
+          "Lifecycle changes are conflict-aware and auditable.",
+          "Offline session completion can later update derived lifecycle after sync without changing the historical session.",
+          "Concurrent schedule/lifecycle edits resolve explicitly."
+        ],
+        "implications": [
+          "LN-96 may use lifecycle boundaries for descriptive adherence denominators.",
+          "Running analytics may segment a finite plan period without implying causality.",
+          "AI may explain lifecycle context later but cannot silently complete/extend a program."
+        ],
+        "acceptance": [
+          "Finite and open-ended programs coexist.",
+          "An 8-week program can expose start/end/completion meaning without a redundant program-type taxonomy.",
+          "Reschedule/extension/early-stop cases are explicit and historically traceable.",
+          "Ownership/version/snapshot rules remain intact.",
+          "LN-95/LN-96 receive unambiguous lifecycle facts."
+        ],
+        "validation": [
+          "Lifecycle state-transition tests.",
+          "Week/schedule boundary fixtures.",
+          "Version/coach authorization tests.",
+          "Offline/concurrent update conflict tests.",
+          "Regression test ensuring open-ended programs remain unchanged."
         ],
         "completion": {
           "pr": null,
