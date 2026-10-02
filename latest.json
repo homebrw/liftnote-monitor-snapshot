@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T07:30:56.945Z",
+  "publishedAt": "2026-10-02T07:32:01.196Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-92",
-    "nextLot": "LN-93",
-    "launchedAt": "2026-10-02T07:03:56.359Z",
-    "lastProgressAt": "2026-10-02T07:27:24.074Z",
-    "lastChatCheckAt": "2026-10-02T07:03:56.359Z",
-    "lastObservedMainSha": "c504b168616843c24cda401208b603146f92717c",
+    "currentLot": "LN-93",
+    "nextLot": "LN-69",
+    "launchedAt": "2026-10-02T07:31:49.496Z",
+    "lastProgressAt": "2026-10-02T07:31:49.496Z",
+    "lastChatCheckAt": "2026-10-02T07:31:49.496Z",
+    "lastObservedMainSha": "8c6664e487462394af39d9b8cee1550348edb6c8",
     "nudges": 0,
-    "lastMessage": "main moved while LN-92 is active",
+    "lastMessage": "Launched LN-93; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T07:30:48.168Z",
-    "nextTickAt": "2026-10-02T07:35:48.168Z",
+    "lastSuccessfulTickAt": "2026-10-02T07:31:49.496Z",
+    "nextTickAt": "2026-10-02T07:36:49.496Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": "success"
     },
     "history": [
-      {
-        "lot": "LN-88",
-        "completedAt": "2026-10-02T00:51:26.086Z",
-        "restartedAt": null,
-        "mainSha": "4600031486094fa46b83a90d0a34539f050b6f5e",
-        "reason": null
-      },
       {
         "lot": "LN-89",
         "completedAt": "2026-10-02T01:07:28.376Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "c2c30568ba57b83c5ed2fd8915b249c78ac51bd1",
         "reason": null
+      },
+      {
+        "lot": "LN-92",
+        "completedAt": "2026-10-02T07:31:40.116Z",
+        "restartedAt": null,
+        "mainSha": "8c6664e487462394af39d9b8cee1550348edb6c8",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "c504b168616843c24cda401208b603146f92717c",
+    "mainSha": "8c6664e487462394af39d9b8cee1550348edb6c8",
     "lots": [
       {
         "id": "LN-00",
@@ -12302,7 +12302,7 @@
       {
         "id": "LN-92",
         "title": "Relative Prescriptions",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Represent absolute load, %1RM, %e1RM, %Training Max, RPE and RIR as distinct structured prescription semantics.",
         "business": {
           "phase": "Programming Engine",
@@ -12454,8 +12454,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "824",
+            "mergeSha": "c504b168616843c24cda401208b603146f92717c"
           }
         },
         "contractAvailable": true,
@@ -19535,172 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 98,
+    "done": 99,
     "total": 138,
-    "percent": 71,
+    "percent": 72,
     "current": {
-      "id": "LN-92",
-      "title": "Relative Prescriptions",
-      "status": "TODO",
-      "goal": "Represent absolute load, %1RM, %e1RM, %Training Max, RPE and RIR as distinct structured prescription semantics.",
-      "business": {
-        "phase": "Programming Engine",
-        "summary": "Represent absolute load, %1RM, %e1RM, %Training Max, RPE and RIR as distinct structured prescription semantics.",
-        "why": "Advanced programming needs explicit references; collapsing them into one numeric target destroys meaning and explainability.",
-        "builds": [
-          "structured prescription-reference type and value",
-          "absolute load, % validated 1RM, % e1RM, % Training Max, RPE and RIR",
-          "deterministic resolved target preview when the reference is available",
-          "missing/stale-reference behavior",
-          "duplication/share/import/coach/snapshot preservation"
-        ],
-        "userImpact": [
-          "show both prescription rule and resolved load when useful, with source reference accessible",
-          "missing reference offers a clear fix/change path instead of a broken workout",
-          "ordinary absolute-load users see no extra complexity",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
-        ],
-        "journey": [
-          "show both prescription rule and resolved load when useful, with source reference accessible",
-          "missing reference offers a clear fix/change path instead of a broken workout",
-          "ordinary absolute-load users see no extra complexity",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
-        ],
-        "rules": [
-          "coach-authored relative prescriptions follow managed-assignment authorization and versioning",
-          "athlete private performance references are exposed to coach only under existing explicit permission or via coach-owned prescription data",
-          "LN-93 per-set prescriptions, LN-68 progression and LN-95 planned-vs-performed consume structured semantics",
-          "AI program proposals must output these domain objects, not prose-only percentages"
-        ],
-        "examples": [],
-        "data": [
-          "persist the chosen prescription semantics plus enough reference snapshot/provenance to reproduce a started workout",
-          "preserve user's original effort scale",
-          "version serialized formats used by copy/share/import"
-        ],
-        "dependencies": [
-          "Requires LN-91 DONE and builds on LN-30 units, LN-52 effort and LN-71 estimates."
-        ],
-        "attention": [
-          "coach-authored relative prescriptions follow managed-assignment authorization and versioning",
-          "athlete private performance references are exposed to coach only under existing explicit permission or via coach-owned prescription data",
-          "round-trip serialization/copy/share tests",
-          "deterministic resolution fixtures and unit/load-semantic tests",
-          "coach snapshot/RLS regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no silent conversion among reference types",
-          "no auto-update of an already-started session when its reference changes",
-          "no percentage prescription for unsupported load semantics"
-        ],
-        "doneWhen": [
-          "all supported reference types round-trip without semantic loss",
-          "resolved values are deterministic and explainable",
-          "past sessions remain reproducible after reference changes",
-          "unsupported cases fail visibly and safely"
-        ],
-        "ux": [
-          "show both prescription rule and resolved load when useful, with source reference accessible",
-          "missing reference offers a clear fix/change path instead of a broken workout",
-          "ordinary absolute-load users see no extra complexity",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
-        ],
-        "security": [
-          "coach-authored relative prescriptions follow managed-assignment authorization and versioning",
-          "athlete private performance references are exposed to coach only under existing explicit permission or via coach-owned prescription data"
-        ],
-        "implications": [
-          "LN-93 per-set prescriptions, LN-68 progression and LN-95 planned-vs-performed consume structured semantics",
-          "AI program proposals must output these domain objects, not prose-only percentages"
-        ],
-        "validation": [
-          "round-trip serialization/copy/share tests",
-          "deterministic resolution fixtures and unit/load-semantic tests",
-          "coach snapshot/RLS regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Programming Engine",
-        "objective": "Represent absolute load, %1RM, %e1RM, %Training Max, RPE and RIR as distinct structured prescription semantics.",
-        "rationale": "Advanced programming needs explicit references; collapsing them into one numeric target destroys meaning and explainability.",
-        "dependencies": [
-          "Requires LN-91 DONE and builds on LN-30 units, LN-52 effort and LN-71 estimates."
-        ],
-        "scope": [
-          "structured prescription-reference type and value",
-          "absolute load, % validated 1RM, % e1RM, % Training Max, RPE and RIR",
-          "deterministic resolved target preview when the reference is available",
-          "missing/stale-reference behavior",
-          "duplication/share/import/coach/snapshot preservation"
-        ],
-        "exclusions": [
-          "no silent conversion among reference types",
-          "no auto-update of an already-started session when its reference changes",
-          "no percentage prescription for unsupported load semantics"
-        ],
-        "data": [
-          "persist the chosen prescription semantics plus enough reference snapshot/provenance to reproduce a started workout",
-          "preserve user's original effort scale",
-          "version serialized formats used by copy/share/import"
-        ],
-        "ux": [
-          "show both prescription rule and resolved load when useful, with source reference accessible",
-          "missing reference offers a clear fix/change path instead of a broken workout",
-          "ordinary absolute-load users see no extra complexity",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible and use progressive disclosure for advanced capabilities.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and consistent with the LiftNote Design System."
-        ],
-        "security": [
-          "coach-authored relative prescriptions follow managed-assignment authorization and versioning",
-          "athlete private performance references are exposed to coach only under existing explicit permission or via coach-owned prescription data"
-        ],
-        "implications": [
-          "LN-93 per-set prescriptions, LN-68 progression and LN-95 planned-vs-performed consume structured semantics",
-          "AI program proposals must output these domain objects, not prose-only percentages"
-        ],
-        "acceptance": [
-          "all supported reference types round-trip without semantic loss",
-          "resolved values are deterministic and explainable",
-          "past sessions remain reproducible after reference changes",
-          "unsupported cases fail visibly and safely"
-        ],
-        "validation": [
-          "round-trip serialization/copy/share tests",
-          "deterministic resolution fixtures and unit/load-semantic tests",
-          "coach snapshot/RLS regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; Actions is a final safety net.",
-          "Use targeted tests first; migration/RLS tests when persistence or authorization changes.",
-          "Exact-head Vercel build/deployment is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-93",
       "title": "Advanced Per-Set Prescription",
       "status": "TODO",
@@ -19863,6 +19701,176 @@
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-69",
+      "title": "Variantes de prescription par semaine",
+      "status": "TODO",
+      "goal": "Allow week-specific prescription variants without duplicating an entire workout while preserving deterministic inheritance and snapshots.",
+      "business": {
+        "phase": "Programming Engine",
+        "summary": "Allow week-specific prescription variants without duplicating an entire workout while preserving deterministic inheritance and snapshots.",
+        "why": "Programs need controlled week-to-week variation on top of a structured per-set prescription model.",
+        "builds": [
+          "week-level overrides for set/reps/load/reference/effort/tempo/rest/set type",
+          "inheritance from base workout",
+          "effective-prescription preview and diff",
+          "copy/share/import/coach compatibility",
+          "snapshot effective prescription when workout starts"
+        ],
+        "userImpact": [
+          "default view shows effective week prescription",
+          "advanced diff distinguishes inherited versus overridden values",
+          "editing one week makes scope explicit before save",
+          "mobile UI avoids spreadsheet-like density",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "default view shows effective week prescription",
+          "advanced diff distinguishes inherited versus overridden values",
+          "editing one week makes scope explicit before save",
+          "mobile UI avoids spreadsheet-like density",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "coach-managed overrides follow source ownership/version rules",
+          "offline session uses resolved snapshot",
+          "consumed by scheduling, planned-vs-performed and AI proposals",
+          "analytics keep planned target distinct from performed fact"
+        ],
+        "examples": [],
+        "data": [
+          "consume shipped LN-68 progressionRule / progressionStep as base-prescription metadata after LN-93 has made those rules compatible with structured per-set/relative prescriptions",
+          "base prescription and override remain separately identifiable",
+          "inheritance resolution is deterministic/versioned",
+          "new structured fields must round-trip through copy/serialization",
+          "started/completed session snapshots remain immutable"
+        ],
+        "dependencies": [
+          "Immediate roadmap predecessor: LN-93.",
+          "Material dependencies: LN-33, LN-52, LN-67, LN-68, LN-92, LN-93."
+        ],
+        "attention": [
+          "coach-managed overrides follow source ownership/version rules",
+          "offline session uses resolved snapshot",
+          "inheritance/diff fixtures",
+          "serialization/materialization tests",
+          "session snapshot regressions",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "AI programming",
+          "silent cascading mutation",
+          "duplicating full workouts solely for a small weekly difference"
+        ],
+        "doneWhen": [
+          "weekly differences are visible and deterministic",
+          "inheritance survives duplication/share/coach flows",
+          "future override edits never rewrite history"
+        ],
+        "ux": [
+          "default view shows effective week prescription",
+          "advanced diff distinguishes inherited versus overridden values",
+          "editing one week makes scope explicit before save",
+          "mobile UI avoids spreadsheet-like density",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach-managed overrides follow source ownership/version rules",
+          "offline session uses resolved snapshot"
+        ],
+        "implications": [
+          "consumed by scheduling, planned-vs-performed and AI proposals",
+          "analytics keep planned target distinct from performed fact"
+        ],
+        "validation": [
+          "inheritance/diff fixtures",
+          "serialization/materialization tests",
+          "session snapshot regressions",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Programming Engine",
+        "objective": "Allow week-specific prescription variants without duplicating an entire workout while preserving deterministic inheritance and snapshots.",
+        "rationale": "Programs need controlled week-to-week variation on top of a structured per-set prescription model.",
+        "dependencies": [
+          "Immediate roadmap predecessor: LN-93.",
+          "Material dependencies: LN-33, LN-52, LN-67, LN-68, LN-92, LN-93."
+        ],
+        "scope": [
+          "week-level overrides for set/reps/load/reference/effort/tempo/rest/set type",
+          "inheritance from base workout",
+          "effective-prescription preview and diff",
+          "copy/share/import/coach compatibility",
+          "snapshot effective prescription when workout starts"
+        ],
+        "exclusions": [
+          "AI programming",
+          "silent cascading mutation",
+          "duplicating full workouts solely for a small weekly difference"
+        ],
+        "data": [
+          "consume shipped LN-68 progressionRule / progressionStep as base-prescription metadata after LN-93 has made those rules compatible with structured per-set/relative prescriptions",
+          "base prescription and override remain separately identifiable",
+          "inheritance resolution is deterministic/versioned",
+          "new structured fields must round-trip through copy/serialization",
+          "started/completed session snapshots remain immutable"
+        ],
+        "ux": [
+          "default view shows effective week prescription",
+          "advanced diff distinguishes inherited versus overridden values",
+          "editing one week makes scope explicit before save",
+          "mobile UI avoids spreadsheet-like density",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
+          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
+          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach-managed overrides follow source ownership/version rules",
+          "offline session uses resolved snapshot"
+        ],
+        "implications": [
+          "consumed by scheduling, planned-vs-performed and AI proposals",
+          "analytics keep planned target distinct from performed fact"
+        ],
+        "acceptance": [
+          "weekly differences are visible and deterministic",
+          "inheritance survives duplication/share/coach flows",
+          "future override edits never rewrite history"
+        ],
+        "validation": [
+          "inheritance/diff fixtures",
+          "serialization/materialization tests",
+          "session snapshot regressions",
+          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
+          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
+          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
           "TinyFish is prohibited."
         ],
         "completion": {
