@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T10:17:24.798Z",
+  "publishedAt": "2026-10-02T10:18:25.612Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-94",
-    "nextLot": "LN-95",
-    "launchedAt": "2026-10-02T09:52:27.231Z",
-    "lastProgressAt": "2026-10-02T10:12:30.599Z",
-    "lastChatCheckAt": "2026-10-02T09:52:27.231Z",
-    "lastObservedMainSha": "209f1ec2f6410b320b5e9c218c8543fc57b5a890",
+    "currentLot": "LN-95",
+    "nextLot": "LN-96",
+    "launchedAt": "2026-10-02T10:18:17.739Z",
+    "lastProgressAt": "2026-10-02T10:18:17.739Z",
+    "lastChatCheckAt": "2026-10-02T10:18:17.739Z",
+    "lastObservedMainSha": "094e9b80894a1e5eab8b2979ab51d9b5fab2d7f2",
     "nudges": 0,
-    "lastMessage": "main moved while LN-94 is active",
+    "lastMessage": "Launched LN-95; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T10:17:16.270Z",
-    "nextTickAt": "2026-10-02T10:22:16.270Z",
+    "lastSuccessfulTickAt": "2026-10-02T10:18:17.739Z",
+    "nextTickAt": "2026-10-02T10:23:17.739Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": "success"
     },
     "history": [
-      {
-        "lot": "LN-122",
-        "completedAt": "2026-10-02T04:18:16.963Z",
-        "restartedAt": null,
-        "mainSha": "e124dac11e1f5c3915ca29546da534a49423e8a6",
-        "reason": null
-      },
       {
         "lot": "LN-123",
         "completedAt": "2026-10-02T04:45:53.812Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "05a8e9d8fd9d15b5c7826cf3d0aca4ec5a9336d5",
         "reason": null
+      },
+      {
+        "lot": "LN-94",
+        "completedAt": "2026-10-02T10:18:05.803Z",
+        "restartedAt": null,
+        "mainSha": "094e9b80894a1e5eab8b2979ab51d9b5fab2d7f2",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "209f1ec2f6410b320b5e9c218c8543fc57b5a890",
+    "mainSha": "094e9b80894a1e5eab8b2979ab51d9b5fab2d7f2",
     "lots": [
       {
         "id": "LN-00",
@@ -13330,7 +13330,7 @@
       {
         "id": "LN-94",
         "title": "Programmable Deload & Recovery Weeks",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Turn existing block/deload concepts into explicit, structured, reviewable programming behavior.",
         "business": {
           "phase": "Programming Engine",
@@ -13489,8 +13489,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "836",
+            "mergeSha": "209f1ec2f6410b320b5e9c218c8543fc57b5a890"
           }
         },
         "contractAvailable": true,
@@ -19535,179 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 104,
+    "done": 105,
     "total": 138,
-    "percent": 75,
+    "percent": 76,
     "current": {
-      "id": "LN-94",
-      "title": "Programmable Deload & Recovery Weeks",
-      "status": "TODO",
-      "goal": "Turn existing block/deload concepts into explicit, structured, reviewable programming behavior.",
-      "business": {
-        "phase": "Programming Engine",
-        "summary": "Turn existing block/deload concepts into explicit, structured, reviewable programming behavior.",
-        "why": "LN-27 can name a deload block, but future planning needs deterministic changes to volume/intensity or exercise targets without hidden magic.",
-        "builds": [
-          "mark planned weeks/blocks as deload/recovery intent",
-          "structured rule-based adjustments to applicable set count, rep/load/relative target or effort targets",
-          "preview before activation",
-          "manual override and explicit cancellation",
-          "coach-managed and personal programming compatibility"
-        ],
-        "userImpact": [
-          "show why a week differs from baseline and what will change",
-          "keep day-to-day workout logging visually unchanged once prescription is resolved",
-          "provide an obvious path to override or revert future deload settings",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "show why a week differs from baseline and what will change",
-          "keep day-to-day workout logging visually unchanged once prescription is resolved",
-          "provide an obvious path to override or revert future deload settings",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "coach deload changes use existing managed-assignment authorization/versioning",
-          "athlete overrides must not mutate coach source unless the model explicitly supports it",
-          "offline sessions use already-resolved snapshot",
-          "planned-vs-performed treats deload plan as normal explicit prescription context",
-          "adherence must not penalize lower deload volume as failure",
-          "AI may explain but not decide hidden recovery changes"
-        ],
-        "examples": [],
-        "data": [
-          "deload intent/rules belong to program structure, not completed workout history",
-          "started sessions snapshot the resolved prescription",
-          "record provenance of manual vs rule-produced future change"
-        ],
-        "dependencies": [
-          "Requires LN-67, LN-68, LN-69, LN-70 and LN-72 DONE plus structured prescriptions from LN-93."
-        ],
-        "attention": [
-          "coach deload changes use existing managed-assignment authorization/versioning",
-          "athlete overrides must not mutate coach source unless the model explicitly supports it",
-          "offline sessions use already-resolved snapshot",
-          "rule resolution tests across set/load/effort semantics",
-          "snapshot/versioning regressions",
-          "coach authorization tests where applicable",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no medical recovery diagnosis",
-          "no proprietary readiness score",
-          "no automatic deload insertion without a configured rule or user/coach acceptance"
-        ],
-        "doneWhen": [
-          "deload changes are structured, previewable and reversible",
-          "history remains immutable",
-          "personal and coach programming retain provenance",
-          "no pseudo-medical claim is introduced"
-        ],
-        "ux": [
-          "show why a week differs from baseline and what will change",
-          "keep day-to-day workout logging visually unchanged once prescription is resolved",
-          "provide an obvious path to override or revert future deload settings",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "coach deload changes use existing managed-assignment authorization/versioning",
-          "athlete overrides must not mutate coach source unless the model explicitly supports it",
-          "offline sessions use already-resolved snapshot"
-        ],
-        "implications": [
-          "planned-vs-performed treats deload plan as normal explicit prescription context",
-          "adherence must not penalize lower deload volume as failure",
-          "AI may explain but not decide hidden recovery changes"
-        ],
-        "validation": [
-          "rule resolution tests across set/load/effort semantics",
-          "snapshot/versioning regressions",
-          "coach authorization tests where applicable",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Programming Engine",
-        "objective": "Turn existing block/deload concepts into explicit, structured, reviewable programming behavior.",
-        "rationale": "LN-27 can name a deload block, but future planning needs deterministic changes to volume/intensity or exercise targets without hidden magic.",
-        "dependencies": [
-          "Requires LN-67, LN-68, LN-69, LN-70 and LN-72 DONE plus structured prescriptions from LN-93."
-        ],
-        "scope": [
-          "mark planned weeks/blocks as deload/recovery intent",
-          "structured rule-based adjustments to applicable set count, rep/load/relative target or effort targets",
-          "preview before activation",
-          "manual override and explicit cancellation",
-          "coach-managed and personal programming compatibility"
-        ],
-        "exclusions": [
-          "no medical recovery diagnosis",
-          "no proprietary readiness score",
-          "no automatic deload insertion without a configured rule or user/coach acceptance"
-        ],
-        "data": [
-          "deload intent/rules belong to program structure, not completed workout history",
-          "started sessions snapshot the resolved prescription",
-          "record provenance of manual vs rule-produced future change"
-        ],
-        "ux": [
-          "show why a week differs from baseline and what will change",
-          "keep day-to-day workout logging visually unchanged once prescription is resolved",
-          "provide an obvious path to override or revert future deload settings",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "coach deload changes use existing managed-assignment authorization/versioning",
-          "athlete overrides must not mutate coach source unless the model explicitly supports it",
-          "offline sessions use already-resolved snapshot"
-        ],
-        "implications": [
-          "planned-vs-performed treats deload plan as normal explicit prescription context",
-          "adherence must not penalize lower deload volume as failure",
-          "AI may explain but not decide hidden recovery changes"
-        ],
-        "acceptance": [
-          "deload changes are structured, previewable and reversible",
-          "history remains immutable",
-          "personal and coach programming retain provenance",
-          "no pseudo-medical claim is introduced"
-        ],
-        "validation": [
-          "rule resolution tests across set/load/effort semantics",
-          "snapshot/versioning regressions",
-          "coach authorization tests where applicable",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-95",
       "title": "Planned vs Performed",
       "status": "TODO",
@@ -19869,6 +19700,176 @@
           "comparison engine fixtures across load/tracking/effort semantics",
           "history-correction and offline-sync regressions",
           "coach permission tests for exposed comparison payloads",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-96",
+      "title": "Program Adherence",
+      "status": "TODO",
+      "goal": "Describe how closely completed training followed the explicit plan without pretending adherence measures training quality.",
+      "business": {
+        "phase": "Programming Engine",
+        "summary": "Describe how closely completed training followed the explicit plan without pretending adherence measures training quality.",
+        "why": "Athletes and coaches need reliable plan-execution context, but simplistic compliance scores can mislead.",
+        "builds": [
+          "transparent descriptive counts/rates for scheduled sessions and planned work where semantics support them",
+          "period filters and source drill-down",
+          "distinguish skipped/cancelled/rescheduled/modified/substituted states",
+          "exclude or separately label quick workouts and unplanned additions",
+          "neutral coach/athlete summaries under authorization",
+          "consume LN-124 finite-program lifecycle boundaries when calculating descriptive program adherence",
+          "support Running scheduled-session adherence and compatible structured segment/work facts without implying that higher adherence is better training",
+          "keep unplanned Circuit/class sessions distinct from scheduled-plan denominators unless explicitly attached to a planned occurrence"
+        ],
+        "userImpact": [
+          "labels explain exactly what numerator/denominator means",
+          "drill-down to sessions rather than decorative percentages",
+          "no red/green moral judgment for deviations",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "labels explain exactly what numerator/denominator means",
+          "drill-down to sessions rather than decorative percentages",
+          "no red/green moral judgment for deviations",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "coach sees only athlete data covered by explicit performance permission",
+          "relationship revocation removes future coach access immediately",
+          "feeds coach attention only through meaningful configured events, not generic noncompliance alerts",
+          "AI summaries may quote deterministic adherence facts with their period and definition"
+        ],
+        "examples": [],
+        "data": [
+          "derive from explicit schedule + planned/performed facts where possible",
+          "define denominator rules and insufficient-data behavior",
+          "do not persist opaque scores when derivation can stay reproducible"
+        ],
+        "dependencies": [
+          "Requires LN-95 DONE and dated scheduling from LN-70."
+        ],
+        "attention": [
+          "coach sees only athlete data covered by explicit performance permission",
+          "relationship revocation removes future coach access immediately",
+          "period/denominator fixtures",
+          "schedule-change and deload regressions",
+          "authorized coach payload tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no motivation/gamification score",
+          "no punishment for rest or deload",
+          "no claim that higher adherence implies better health or programming quality",
+          "no single cross-modality adherence/fitness score that hides modality-specific denominators or missing data"
+        ],
+        "doneWhen": [
+          "metrics are reproducible and definition-visible",
+          "reschedules/deloads are treated correctly",
+          "unplanned sessions do not distort planned adherence",
+          "insufficient data is stated plainly"
+        ],
+        "ux": [
+          "labels explain exactly what numerator/denominator means",
+          "drill-down to sessions rather than decorative percentages",
+          "no red/green moral judgment for deviations",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach sees only athlete data covered by explicit performance permission",
+          "relationship revocation removes future coach access immediately"
+        ],
+        "implications": [
+          "feeds coach attention only through meaningful configured events, not generic noncompliance alerts",
+          "AI summaries may quote deterministic adherence facts with their period and definition"
+        ],
+        "validation": [
+          "period/denominator fixtures",
+          "schedule-change and deload regressions",
+          "authorized coach payload tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Programming Engine",
+        "objective": "Describe how closely completed training followed the explicit plan without pretending adherence measures training quality.",
+        "rationale": "Athletes and coaches need reliable plan-execution context, but simplistic compliance scores can mislead.",
+        "dependencies": [
+          "Requires LN-95 DONE and dated scheduling from LN-70."
+        ],
+        "scope": [
+          "transparent descriptive counts/rates for scheduled sessions and planned work where semantics support them",
+          "period filters and source drill-down",
+          "distinguish skipped/cancelled/rescheduled/modified/substituted states",
+          "exclude or separately label quick workouts and unplanned additions",
+          "neutral coach/athlete summaries under authorization",
+          "consume LN-124 finite-program lifecycle boundaries when calculating descriptive program adherence",
+          "support Running scheduled-session adherence and compatible structured segment/work facts without implying that higher adherence is better training",
+          "keep unplanned Circuit/class sessions distinct from scheduled-plan denominators unless explicitly attached to a planned occurrence"
+        ],
+        "exclusions": [
+          "no motivation/gamification score",
+          "no punishment for rest or deload",
+          "no claim that higher adherence implies better health or programming quality",
+          "no single cross-modality adherence/fitness score that hides modality-specific denominators or missing data"
+        ],
+        "data": [
+          "derive from explicit schedule + planned/performed facts where possible",
+          "define denominator rules and insufficient-data behavior",
+          "do not persist opaque scores when derivation can stay reproducible"
+        ],
+        "ux": [
+          "labels explain exactly what numerator/denominator means",
+          "drill-down to sessions rather than decorative percentages",
+          "no red/green moral judgment for deviations",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach sees only athlete data covered by explicit performance permission",
+          "relationship revocation removes future coach access immediately"
+        ],
+        "implications": [
+          "feeds coach attention only through meaningful configured events, not generic noncompliance alerts",
+          "AI summaries may quote deterministic adherence facts with their period and definition"
+        ],
+        "acceptance": [
+          "metrics are reproducible and definition-visible",
+          "reschedules/deloads are treated correctly",
+          "unplanned sessions do not distort planned adherence",
+          "insufficient data is stated plainly"
+        ],
+        "validation": [
+          "period/denominator fixtures",
+          "schedule-change and deload regressions",
+          "authorized coach payload tests",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
