@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T05:53:09.220Z",
+  "publishedAt": "2026-10-02T05:54:07.895Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "BLOCKED",
@@ -9,12 +9,12 @@
     "launchedAt": "2026-10-02T04:46:50.338Z",
     "lastProgressAt": "2026-10-02T04:46:50.338Z",
     "lastChatCheckAt": "2026-10-02T04:46:50.338Z",
-    "lastObservedMainSha": "2f6bea3315d9aa74e28df780049b24c69b95fae6",
+    "lastObservedMainSha": "308086bcf4600986aa6b84746626b2d68dbaf28c",
     "nudges": 0,
     "lastMessage": "LN-125 is BLOCKED on main; waiting for the documented blocker to clear.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T05:52:58.282Z",
-    "nextTickAt": "2026-10-02T05:57:58.282Z",
+    "lastSuccessfulTickAt": "2026-10-02T05:53:56.365Z",
+    "nextTickAt": "2026-10-02T05:58:56.365Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
@@ -105,7 +105,7 @@
     ]
   },
   "remote": {
-    "mainSha": "2f6bea3315d9aa74e28df780049b24c69b95fae6",
+    "mainSha": "308086bcf4600986aa6b84746626b2d68dbaf28c",
     "lots": [
       {
         "id": "LN-00",
