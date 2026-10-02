@@ -1,30 +1,23 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T02:27:05.395Z",
+  "publishedAt": "2026-10-02T02:28:10.211Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-120",
-    "nextLot": "LN-121",
-    "launchedAt": "2026-10-02T01:58:32.714Z",
-    "lastProgressAt": "2026-10-02T02:23:22.740Z",
-    "lastChatCheckAt": "2026-10-02T01:58:32.714Z",
-    "lastObservedMainSha": "9b8a174a5ce7406aea12b47f7fb0c7a69114703e",
+    "currentLot": "LN-121",
+    "nextLot": "LN-122",
+    "launchedAt": "2026-10-02T02:27:58.480Z",
+    "lastProgressAt": "2026-10-02T02:27:58.480Z",
+    "lastChatCheckAt": "2026-10-02T02:27:58.480Z",
+    "lastObservedMainSha": "18f2ac425f3d17dcefcc69431e223f943a28bc57",
     "nudges": 0,
-    "lastMessage": "main moved while LN-120 is active",
+    "lastMessage": "Launched LN-121; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T02:26:55.618Z",
-    "nextTickAt": "2026-10-02T02:31:55.618Z",
+    "lastSuccessfulTickAt": "2026-10-02T02:27:58.480Z",
+    "nextTickAt": "2026-10-02T02:32:58.480Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "history": [
-      {
-        "lot": "LN-82",
-        "completedAt": "2026-10-01T22:40:48.464Z",
-        "restartedAt": null,
-        "mainSha": "d7a57dd230724229b9d473459d5fc718a22c0004",
-        "reason": null
-      },
       {
         "lot": "LN-83",
         "completedAt": "2026-10-01T22:57:25.853Z",
@@ -101,11 +94,18 @@
         "restartedAt": null,
         "mainSha": "663b9d8d5f5a36e9ce54f06bb3c7aaeb7920dbdb",
         "reason": null
+      },
+      {
+        "lot": "LN-120",
+        "completedAt": "2026-10-02T02:27:50.226Z",
+        "restartedAt": null,
+        "mainSha": "18f2ac425f3d17dcefcc69431e223f943a28bc57",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "9b8a174a5ce7406aea12b47f7fb0c7a69114703e",
+    "mainSha": "18f2ac425f3d17dcefcc69431e223f943a28bc57",
     "lots": [
       {
         "id": "LN-00",
@@ -10807,7 +10807,7 @@
       {
         "id": "LN-120",
         "title": "Structured Running Workout Domain",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Make LiftNote capable of prescribing, executing and preserving structured running workouts without forcing running meaning into strength-set semantics.",
         "business": {
           "phase": "Running & Conditioning Core",
@@ -10983,8 +10983,8 @@
             "No expensive integration CI beyond changed namespaces."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "795",
+            "mergeSha": "9b8a174a5ce7406aea12b47f7fb0c7a69114703e"
           }
         },
         "contractAvailable": true,
@@ -19228,196 +19228,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 91,
+    "done": 92,
     "total": 138,
-    "percent": 66,
+    "percent": 67,
     "current": {
-      "id": "LN-120",
-      "title": "Structured Running Workout Domain",
-      "status": "TODO",
-      "goal": "Make LiftNote capable of prescribing, executing and preserving structured running workouts without forcing running meaning into strength-set semantics.",
-      "business": {
-        "phase": "Running & Conditioning Core",
-        "summary": "Make LiftNote capable of prescribing, executing and preserving structured running workouts without forcing running meaning into strength-set semantics.",
-        "why": "Runners need intervals, pace, recovery, warm-up and long-run structure to remain meaningful through planning, execution and history. The goal is a training notebook for running, not a Strava clone.",
-        "builds": [
-          "Continuous/easy running.",
-          "Interval/fractionné sessions with repeat count.",
-          "Tempo/threshold-style sessions.",
-          "Long runs.",
-          "Warm-up, work, recovery and cool-down segment roles.",
-          "Track, road/outdoor/trail and treadmill context where useful.",
-          "Structured targets/results for distance, duration, pace, repeat count, recovery duration/distance, heart-rate target/zone when supported by trustworthy data, RPE, and target-versus-actual facts.",
-          "Manual running execution that remains useful without a wearable.",
-          "Segment-level correction and immutable completed history.",
-          "Reuse inside programs/templates and mixed workouts."
-        ],
-        "userImpact": [
-          "Quick creation offers common running structures without asking users to configure engine primitives.",
-          "A representative interval session like 15 min warm-up → 6×800 m @ target pace / 2 min recovery → 10 min cool-down is easy to author and execute.",
-          "Active view emphasizes current segment, target, elapsed/remaining context and next transition.",
-          "Optional advanced HR/RPE fields remain secondary.",
-          "Strength-only users do not encounter running controls unless they choose running."
-        ],
-        "journey": [
-          "Quick creation offers common running structures without asking users to configure engine primitives.",
-          "A representative interval session like 15 min warm-up → 6×800 m @ target pace / 2 min recovery → 10 min cool-down is easy to author and execute.",
-          "Active view emphasizes current segment, target, elapsed/remaining context and next transition.",
-          "Optional advanced HR/RPE fields remain secondary.",
-          "Strength-only users do not encounter running controls unless they choose running."
-        ],
-        "rules": [
-          "Session facts are designed for LN-126 running analytics.",
-          "Performance references may later resolve through LN-91.",
-          "Planned/performed comparison later consumes these typed facts.",
-          "AI import may create a reviewed running draft only after this domain exists."
-        ],
-        "examples": [],
-        "data": [
-          "Pace is derived deterministically from compatible distance/time facts and stored/displayed with explicit unit semantics where appropriate.",
-          "Planned target and performed result are distinct.",
-          "Repeat groups preserve individual split identity.",
-          "Recovery may be time- or distance-based.",
-          "HR target/zone and observed HR facts carry source/provenance when available.",
-          "Treadmill/manual and wearable-imported facts remain distinguishable.",
-          "Historical edits follow existing correction/audit rules."
-        ],
-        "dependencies": [
-          "LN-119 — typed workout/modality foundation.",
-          "LN-30 — units.",
-          "LN-32 — duration/distance tracking.",
-          "LN-45 — offline recovery.",
-          "LN-52 — RPE/RIR factual effort.",
-          "LN-67 — program/week structure."
-        ],
-        "attention": [
-          "Deterministic pace/unit calculations.",
-          "Repeat/segment serialization and snapshot tests.",
-          "Correction/history invariance tests.",
-          "Offline resume tests.",
-          "Manual vs external-source provenance fixtures.",
-          "Mobile product-path validation for one continuous and one interval workout.",
-          "No expensive integration CI beyond changed namespaces."
-        ],
-        "notInThisLot": [
-          "Proprietary GPS recording/navigation/maps.",
-          "Social feed, segments, leaderboards or Strava clone behavior.",
-          "Medical interpretation of heart rate.",
-          "Automatic race prediction.",
-          "Running analytics beyond the minimum session facts needed here; dedicated analytics is LN-126."
-        ],
-        "doneWhen": [
-          "Continuous, interval, tempo/threshold-style, long-run, warm-up/recovery/cool-down patterns are representable.",
-          "Target and actual pace/distance/duration are distinct and inspectable.",
-          "Repeat/split history is immutable after completion except through explicit correction.",
-          "Manual/treadmill sessions remain first-class without wearables.",
-          "No strength-set field is overloaded in a way that changes its meaning.",
-          "Product paths exist from Today/program/template to running execution and history."
-        ],
-        "ux": [
-          "Quick creation offers common running structures without asking users to configure engine primitives.",
-          "A representative interval session like 15 min warm-up → 6×800 m @ target pace / 2 min recovery → 10 min cool-down is easy to author and execute.",
-          "Active view emphasizes current segment, target, elapsed/remaining context and next transition.",
-          "Optional advanced HR/RPE fields remain secondary.",
-          "Strength-only users do not encounter running controls unless they choose running."
-        ],
-        "security": [],
-        "implications": [
-          "Session facts are designed for LN-126 running analytics.",
-          "Performance references may later resolve through LN-91.",
-          "Planned/performed comparison later consumes these typed facts.",
-          "AI import may create a reviewed running draft only after this domain exists."
-        ],
-        "validation": [
-          "Deterministic pace/unit calculations.",
-          "Repeat/segment serialization and snapshot tests.",
-          "Correction/history invariance tests.",
-          "Offline resume tests.",
-          "Manual vs external-source provenance fixtures.",
-          "Mobile product-path validation for one continuous and one interval workout.",
-          "No expensive integration CI beyond changed namespaces."
-        ]
-      },
-      "contract": {
-        "phase": "Running & Conditioning Core",
-        "objective": "Make LiftNote capable of prescribing, executing and preserving structured running workouts without forcing running meaning into strength-set semantics.",
-        "rationale": "Runners need intervals, pace, recovery, warm-up and long-run structure to remain meaningful through planning, execution and history. The goal is a training notebook for running, not a Strava clone.",
-        "dependencies": [
-          "LN-119 — typed workout/modality foundation.",
-          "LN-30 — units.",
-          "LN-32 — duration/distance tracking.",
-          "LN-45 — offline recovery.",
-          "LN-52 — RPE/RIR factual effort.",
-          "LN-67 — program/week structure."
-        ],
-        "scope": [
-          "Continuous/easy running.",
-          "Interval/fractionné sessions with repeat count.",
-          "Tempo/threshold-style sessions.",
-          "Long runs.",
-          "Warm-up, work, recovery and cool-down segment roles.",
-          "Track, road/outdoor/trail and treadmill context where useful.",
-          "Structured targets/results for distance, duration, pace, repeat count, recovery duration/distance, heart-rate target/zone when supported by trustworthy data, RPE, and target-versus-actual facts.",
-          "Manual running execution that remains useful without a wearable.",
-          "Segment-level correction and immutable completed history.",
-          "Reuse inside programs/templates and mixed workouts."
-        ],
-        "exclusions": [
-          "Proprietary GPS recording/navigation/maps.",
-          "Social feed, segments, leaderboards or Strava clone behavior.",
-          "Medical interpretation of heart rate.",
-          "Automatic race prediction.",
-          "Running analytics beyond the minimum session facts needed here; dedicated analytics is LN-126."
-        ],
-        "data": [
-          "Pace is derived deterministically from compatible distance/time facts and stored/displayed with explicit unit semantics where appropriate.",
-          "Planned target and performed result are distinct.",
-          "Repeat groups preserve individual split identity.",
-          "Recovery may be time- or distance-based.",
-          "HR target/zone and observed HR facts carry source/provenance when available.",
-          "Treadmill/manual and wearable-imported facts remain distinguishable.",
-          "Historical edits follow existing correction/audit rules."
-        ],
-        "ux": [
-          "Quick creation offers common running structures without asking users to configure engine primitives.",
-          "A representative interval session like 15 min warm-up → 6×800 m @ target pace / 2 min recovery → 10 min cool-down is easy to author and execute.",
-          "Active view emphasizes current segment, target, elapsed/remaining context and next transition.",
-          "Optional advanced HR/RPE fields remain secondary.",
-          "Strength-only users do not encounter running controls unless they choose running."
-        ],
-        "security": [],
-        "implications": [
-          "Session facts are designed for LN-126 running analytics.",
-          "Performance references may later resolve through LN-91.",
-          "Planned/performed comparison later consumes these typed facts.",
-          "AI import may create a reviewed running draft only after this domain exists."
-        ],
-        "acceptance": [
-          "Continuous, interval, tempo/threshold-style, long-run, warm-up/recovery/cool-down patterns are representable.",
-          "Target and actual pace/distance/duration are distinct and inspectable.",
-          "Repeat/split history is immutable after completion except through explicit correction.",
-          "Manual/treadmill sessions remain first-class without wearables.",
-          "No strength-set field is overloaded in a way that changes its meaning.",
-          "Product paths exist from Today/program/template to running execution and history."
-        ],
-        "validation": [
-          "Deterministic pace/unit calculations.",
-          "Repeat/segment serialization and snapshot tests.",
-          "Correction/history invariance tests.",
-          "Offline resume tests.",
-          "Manual vs external-source provenance fixtures.",
-          "Mobile product-path validation for one continuous and one interval workout.",
-          "No expensive integration CI beyond changed namespaces."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-121",
       "title": "Circuit / Conditioning Workout Domain",
       "status": "TODO",
@@ -19585,6 +19399,194 @@
           "Copy/share/import/coach snapshot compatibility tests.",
           "RLS/ownership checks when persistence changes.",
           "Mobile creation/history product-path validation."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-122",
+      "title": "Circuit Live Execution & Structured Scoring",
+      "status": "TODO",
+      "goal": "Deliver protocol-level live execution, timer/recovery behavior and structured Circuit / Conditioning results without forcing every action through ordinary strength-set logging.",
+      "business": {
+        "phase": "Running & Conditioning Core",
+        "summary": "Deliver protocol-level live execution, timer/recovery behavior and structured Circuit / Conditioning results without forcing every action through ordinary strength-set logging.",
+        "why": "A Circuit workout becomes usable only when LiftNote understands what is happening now: round, movement, interval, work/rest state and score. The active model must remain recoverable, correctable and offline-safe.",
+        "builds": [
+          "Live state for current round/total rounds, current movement, interval number and next transition.",
+          "Work/rest countdown or elapsed timer according to protocol.",
+          "AMRAP countdown with rounds + extra reps result.",
+          "EMOM/interval automatic transition where safe, with explicit manual correction/skip.",
+          "For Time elapsed timing and completion result; time-cap representation only when explicitly configured.",
+          "Generic work/rest circuit pause/resume/restart/correction semantics.",
+          "Optional round/interval splits where captured.",
+          "Structured final results: completion time, rounds + reps, rounds completed, total reps, and distance/calories only when those are the actual protocol score.",
+          "Preserve protocol, prescribed structure, performed structure, substitutions, score, duration, RPE/notes and relevant splits in immutable history.",
+          "Previous-result comparison only for compatible benchmark/template identity."
+        ],
+        "userImpact": [
+          "Active screen shows only what matters now: timer, current movement/target, round/interval and next transition.",
+          "Safe one-tap advance/completion where appropriate.",
+          "Pause/resume is obvious and reversible.",
+          "Recovery/correction paths are reachable without exposing state-machine jargon.",
+          "Ordinary strength active-workout UX remains unchanged."
+        ],
+        "journey": [
+          "Active screen shows only what matters now: timer, current movement/target, round/interval and next transition.",
+          "Safe one-tap advance/completion where appropriate.",
+          "Pause/resume is obvious and reversible.",
+          "Recovery/correction paths are reachable without exposing state-machine jargon.",
+          "Ordinary strength active-workout UX remains unchanged."
+        ],
+        "rules": [
+          "Structured scores can become performance references through LN-91.",
+          "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
+          "Planned-vs-performed later consumes protocol and movement facts.",
+          "AI import may author a protocol draft but cannot become live-state authority."
+        ],
+        "examples": [],
+        "data": [
+          "Live state is transient/recoverable state distinct from completed immutable result.",
+          "Timer state records enough anchors to recover after app backgrounding/restart without inventing elapsed time.",
+          "Corrections are explicit events/updates and do not silently rewrite already-completed history.",
+          "Protocol score has a typed shape per compatible protocol.",
+          "“Unfinished/capped” is distinct from a completed result and from missing data.",
+          "Movement-level performed facts and protocol-level score have explicit aggregation boundaries."
+        ],
+        "dependencies": [
+          "LN-121 — Circuit / Conditioning domain and protocol structures.",
+          "LN-08 — existing rest-timer foundations.",
+          "LN-35/LN-36 — previous performance and workout completion summary.",
+          "LN-45 — offline workout recovery.",
+          "LN-56 — active-workout UX.",
+          "LN-89 — contextual substitution semantics where applicable."
+        ],
+        "attention": [
+          "Deterministic timer-anchor tests with simulated background/offline elapsed time.",
+          "State-machine transition/recovery tests.",
+          "Score-shape and unfinished/capped fixtures.",
+          "Sync idempotency tests.",
+          "History immutability/correction tests.",
+          "Representative mobile active-workout validation.",
+          "Targeted LiftNote CI for changed code only."
+        ],
+        "notInThisLot": [
+          "Public leaderboard.",
+          "Judge/referee workflow.",
+          "CrossFit Rx/scaled/competition engine.",
+          "Assuming every circuit has a score.",
+          "Opaque readiness or fitness score.",
+          "Double-counting protocol score and movement-level volume."
+        ],
+        "doneWhen": [
+          "Rounds, AMRAP, EMOM, For Time and work/rest representative sessions execute end-to-end.",
+          "Pause/resume/background/offline recovery preserves correct timer and progression state.",
+          "Manual correction does not corrupt immutable completed history.",
+          "Structured score is protocol-appropriate and inspectable.",
+          "Protocol-level and movement-level metrics are not double counted.",
+          "A no-score/free circuit remains valid.",
+          "Product path remains lightweight on mobile."
+        ],
+        "ux": [
+          "Active screen shows only what matters now: timer, current movement/target, round/interval and next transition.",
+          "Safe one-tap advance/completion where appropriate.",
+          "Pause/resume is obvious and reversible.",
+          "Recovery/correction paths are reachable without exposing state-machine jargon.",
+          "Ordinary strength active-workout UX remains unchanged."
+        ],
+        "security": [],
+        "implications": [
+          "Structured scores can become performance references through LN-91.",
+          "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
+          "Planned-vs-performed later consumes protocol and movement facts.",
+          "AI import may author a protocol draft but cannot become live-state authority."
+        ],
+        "validation": [
+          "Deterministic timer-anchor tests with simulated background/offline elapsed time.",
+          "State-machine transition/recovery tests.",
+          "Score-shape and unfinished/capped fixtures.",
+          "Sync idempotency tests.",
+          "History immutability/correction tests.",
+          "Representative mobile active-workout validation.",
+          "Targeted LiftNote CI for changed code only."
+        ]
+      },
+      "contract": {
+        "phase": "Running & Conditioning Core",
+        "objective": "Deliver protocol-level live execution, timer/recovery behavior and structured Circuit / Conditioning results without forcing every action through ordinary strength-set logging.",
+        "rationale": "A Circuit workout becomes usable only when LiftNote understands what is happening now: round, movement, interval, work/rest state and score. The active model must remain recoverable, correctable and offline-safe.",
+        "dependencies": [
+          "LN-121 — Circuit / Conditioning domain and protocol structures.",
+          "LN-08 — existing rest-timer foundations.",
+          "LN-35/LN-36 — previous performance and workout completion summary.",
+          "LN-45 — offline workout recovery.",
+          "LN-56 — active-workout UX.",
+          "LN-89 — contextual substitution semantics where applicable."
+        ],
+        "scope": [
+          "Live state for current round/total rounds, current movement, interval number and next transition.",
+          "Work/rest countdown or elapsed timer according to protocol.",
+          "AMRAP countdown with rounds + extra reps result.",
+          "EMOM/interval automatic transition where safe, with explicit manual correction/skip.",
+          "For Time elapsed timing and completion result; time-cap representation only when explicitly configured.",
+          "Generic work/rest circuit pause/resume/restart/correction semantics.",
+          "Optional round/interval splits where captured.",
+          "Structured final results: completion time, rounds + reps, rounds completed, total reps, and distance/calories only when those are the actual protocol score.",
+          "Preserve protocol, prescribed structure, performed structure, substitutions, score, duration, RPE/notes and relevant splits in immutable history.",
+          "Previous-result comparison only for compatible benchmark/template identity."
+        ],
+        "exclusions": [
+          "Public leaderboard.",
+          "Judge/referee workflow.",
+          "CrossFit Rx/scaled/competition engine.",
+          "Assuming every circuit has a score.",
+          "Opaque readiness or fitness score.",
+          "Double-counting protocol score and movement-level volume."
+        ],
+        "data": [
+          "Live state is transient/recoverable state distinct from completed immutable result.",
+          "Timer state records enough anchors to recover after app backgrounding/restart without inventing elapsed time.",
+          "Corrections are explicit events/updates and do not silently rewrite already-completed history.",
+          "Protocol score has a typed shape per compatible protocol.",
+          "“Unfinished/capped” is distinct from a completed result and from missing data.",
+          "Movement-level performed facts and protocol-level score have explicit aggregation boundaries."
+        ],
+        "ux": [
+          "Active screen shows only what matters now: timer, current movement/target, round/interval and next transition.",
+          "Safe one-tap advance/completion where appropriate.",
+          "Pause/resume is obvious and reversible.",
+          "Recovery/correction paths are reachable without exposing state-machine jargon.",
+          "Ordinary strength active-workout UX remains unchanged."
+        ],
+        "security": [],
+        "implications": [
+          "Structured scores can become performance references through LN-91.",
+          "Compatible prior benchmark results can feed comparison without merging unrelated circuits.",
+          "Planned-vs-performed later consumes protocol and movement facts.",
+          "AI import may author a protocol draft but cannot become live-state authority."
+        ],
+        "acceptance": [
+          "Rounds, AMRAP, EMOM, For Time and work/rest representative sessions execute end-to-end.",
+          "Pause/resume/background/offline recovery preserves correct timer and progression state.",
+          "Manual correction does not corrupt immutable completed history.",
+          "Structured score is protocol-appropriate and inspectable.",
+          "Protocol-level and movement-level metrics are not double counted.",
+          "A no-score/free circuit remains valid.",
+          "Product path remains lightweight on mobile."
+        ],
+        "validation": [
+          "Deterministic timer-anchor tests with simulated background/offline elapsed time.",
+          "State-machine transition/recovery tests.",
+          "Score-shape and unfinished/capped fixtures.",
+          "Sync idempotency tests.",
+          "History immutability/correction tests.",
+          "Representative mobile active-workout validation.",
+          "Targeted LiftNote CI for changed code only."
         ],
         "completion": {
           "pr": null,
