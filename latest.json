@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T22:17:31.968Z",
+  "publishedAt": "2026-10-02T22:18:20.354Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-73 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T22:17:24.640Z",
-    "nextTickAt": "2026-10-02T22:22:24.640Z",
+    "lastSuccessfulTickAt": "2026-10-02T22:18:12.408Z",
+    "nextTickAt": "2026-10-02T22:23:12.408Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "4091a7a280254a7a5fe0e01b375f8c8fe1e912b2",
+    "mainSha": "4f6ab8d755d7345362c111ceb73f16d7cdcd479d",
     "lots": [
       {
         "id": "LN-00",
@@ -15779,7 +15779,7 @@
       {
         "id": "LN-73",
         "title": "Export portable CSV et export de compte",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Give users a portable documented export of their LiftNote data beyond print/PDF.",
         "business": {
           "phase": "Trust, Data & Privacy",
@@ -15934,8 +15934,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "873",
+            "mergeSha": "4091a7a280254a7a5fe0e01b375f8c8fe1e912b2"
           }
         },
         "contractAvailable": true,
@@ -19535,13 +19535,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 118,
+    "done": 119,
     "total": 138,
     "percent": 86,
     "current": {
       "id": "LN-73",
       "title": "Export portable CSV et export de compte",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Give users a portable documented export of their LiftNote data beyond print/PDF.",
       "business": {
         "phase": "Trust, Data & Privacy",
@@ -19696,8 +19696,8 @@
           "TinyFish is prohibited."
         ],
         "completion": {
-          "pr": null,
-          "mergeSha": null
+          "pr": "873",
+          "mergeSha": "4091a7a280254a7a5fe0e01b375f8c8fe1e912b2"
         }
       },
       "contractAvailable": true,
