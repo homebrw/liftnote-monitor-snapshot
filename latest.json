@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T16:30:44.353Z",
+  "publishedAt": "2026-10-02T16:31:39.337Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-98",
-    "nextLot": "LN-99",
-    "launchedAt": "2026-10-02T15:41:59.513Z",
-    "lastProgressAt": "2026-10-02T16:25:52.893Z",
-    "lastChatCheckAt": "2026-10-02T16:07:34.554Z",
-    "lastObservedMainSha": "082a64ea7c805c835a415568ba15ade3d09632d7",
-    "nudges": 1,
-    "lastMessage": "main moved while LN-98 is active",
+    "currentLot": "LN-99",
+    "nextLot": "LN-100",
+    "launchedAt": "2026-10-02T16:31:31.612Z",
+    "lastProgressAt": "2026-10-02T16:31:31.612Z",
+    "lastChatCheckAt": "2026-10-02T16:31:31.612Z",
+    "lastObservedMainSha": "d03858aaf6ba2d4be7610c1bed0b2b091f3bc210",
+    "nudges": 0,
+    "lastMessage": "Launched LN-99; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T16:30:37.386Z",
-    "nextTickAt": "2026-10-02T16:35:37.386Z",
+    "lastSuccessfulTickAt": "2026-10-02T16:31:31.612Z",
+    "nextTickAt": "2026-10-02T16:36:31.612Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": "success"
     },
     "history": [
-      {
-        "lot": "LN-125",
-        "completedAt": "2026-10-02T06:22:10.924Z",
-        "restartedAt": null,
-        "mainSha": "8ac4aae590301e09f8a23709638a9aa301da00bc",
-        "reason": null
-      },
       {
         "lot": "LN-91",
         "completedAt": null,
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "fb1637e4883d6304491bf5a4301c00bd8c175976",
         "reason": null
+      },
+      {
+        "lot": "LN-98",
+        "completedAt": "2026-10-02T16:31:24.649Z",
+        "restartedAt": null,
+        "mainSha": "d03858aaf6ba2d4be7610c1bed0b2b091f3bc210",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "082a64ea7c805c835a415568ba15ade3d09632d7",
+    "mainSha": "d03858aaf6ba2d4be7610c1bed0b2b091f3bc210",
     "lots": [
       {
         "id": "LN-00",
@@ -14236,7 +14236,7 @@
       {
         "id": "LN-98",
         "title": "Assisted Adaptation",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Give athlete or coach a controlled workflow to review, edit, accept or reject explainable proposed programming adaptations.",
         "business": {
           "phase": "Programming Engine",
@@ -14396,8 +14396,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "846",
+            "mergeSha": "082a64ea7c805c835a415568ba15ade3d09632d7"
           }
         },
         "contractAvailable": true,
@@ -19535,180 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 109,
+    "done": 110,
     "total": 138,
-    "percent": 79,
+    "percent": 80,
     "current": {
-      "id": "LN-98",
-      "title": "Assisted Adaptation",
-      "status": "TODO",
-      "goal": "Give athlete or coach a controlled workflow to review, edit, accept or reject explainable proposed programming adaptations.",
-      "business": {
-        "phase": "Programming Engine",
-        "summary": "Give athlete or coach a controlled workflow to review, edit, accept or reject explainable proposed programming adaptations.",
-        "why": "Useful automation should reduce repetitive programming work while preserving human authority over future prescriptions.",
-        "builds": [
-          "adaptation review queue/context for deterministic proposals",
-          "side-by-side current vs proposed future prescription",
-          "edit before accept",
-          "accept/reject with provenance",
-          "coach-managed assignment versioning and athlete personal-program flows",
-          "clear stale-proposal behavior if source plan/performance changes"
-        ],
-        "userImpact": [
-          "review only when actionable; do not create a noisy feed",
-          "group related changes coherently",
-          "show consequences and affected future sessions before commit",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "review only when actionable; do not create a noisy feed",
-          "group related changes coherently",
-          "show consequences and affected future sessions before commit",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "only the authoritative editor may accept changes to a personal/coach source",
-          "athlete feedback/performance access follows explicit permissions",
-          "cross-user changes remain server-authorized",
-          "coach attention queue may later surface proposals needing coach action",
-          "AI can explain accepted/rejected options but user/coach remains decision-maker"
-        ],
-        "examples": [],
-        "data": [
-          "proposal references source program/version, rule and evidence",
-          "acceptance creates normal versioned prescription state",
-          "stale or conflicting proposals cannot overwrite newer edits"
-        ],
-        "dependencies": [
-          "Requires LN-97 DONE, planned-vs-performed and coach ownership/versioning primitives."
-        ],
-        "attention": [
-          "only the authoritative editor may accept changes to a personal/coach source",
-          "athlete feedback/performance access follows explicit permissions",
-          "cross-user changes remain server-authorized",
-          "state-machine tests for draft/stale/accepted/rejected",
-          "concurrency/version conflict tests",
-          "coach/athlete authorization and history immutability regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no autonomous activation",
-          "no bulk hidden changes",
-          "no medical/injury recommendation",
-          "no LLM-only adaptation without structured domain proposal"
-        ],
-        "doneWhen": [
-          "no proposal changes programming without explicit authorized acceptance",
-          "edits preserve structured semantics",
-          "stale/conflicting proposals fail safely",
-          "accepted changes are traceable in version history"
-        ],
-        "ux": [
-          "review only when actionable; do not create a noisy feed",
-          "group related changes coherently",
-          "show consequences and affected future sessions before commit",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "only the authoritative editor may accept changes to a personal/coach source",
-          "athlete feedback/performance access follows explicit permissions",
-          "cross-user changes remain server-authorized"
-        ],
-        "implications": [
-          "coach attention queue may later surface proposals needing coach action",
-          "AI can explain accepted/rejected options but user/coach remains decision-maker"
-        ],
-        "validation": [
-          "state-machine tests for draft/stale/accepted/rejected",
-          "concurrency/version conflict tests",
-          "coach/athlete authorization and history immutability regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Programming Engine",
-        "objective": "Give athlete or coach a controlled workflow to review, edit, accept or reject explainable proposed programming adaptations.",
-        "rationale": "Useful automation should reduce repetitive programming work while preserving human authority over future prescriptions.",
-        "dependencies": [
-          "Requires LN-97 DONE, planned-vs-performed and coach ownership/versioning primitives."
-        ],
-        "scope": [
-          "adaptation review queue/context for deterministic proposals",
-          "side-by-side current vs proposed future prescription",
-          "edit before accept",
-          "accept/reject with provenance",
-          "coach-managed assignment versioning and athlete personal-program flows",
-          "clear stale-proposal behavior if source plan/performance changes"
-        ],
-        "exclusions": [
-          "no autonomous activation",
-          "no bulk hidden changes",
-          "no medical/injury recommendation",
-          "no LLM-only adaptation without structured domain proposal"
-        ],
-        "data": [
-          "proposal references source program/version, rule and evidence",
-          "acceptance creates normal versioned prescription state",
-          "stale or conflicting proposals cannot overwrite newer edits"
-        ],
-        "ux": [
-          "review only when actionable; do not create a noisy feed",
-          "group related changes coherently",
-          "show consequences and affected future sessions before commit",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "only the authoritative editor may accept changes to a personal/coach source",
-          "athlete feedback/performance access follows explicit permissions",
-          "cross-user changes remain server-authorized"
-        ],
-        "implications": [
-          "coach attention queue may later surface proposals needing coach action",
-          "AI can explain accepted/rejected options but user/coach remains decision-maker"
-        ],
-        "acceptance": [
-          "no proposal changes programming without explicit authorized acceptance",
-          "edits preserve structured semantics",
-          "stale/conflicting proposals fail safely",
-          "accepted changes are traceable in version history"
-        ],
-        "validation": [
-          "state-machine tests for draft/stale/accepted/rejected",
-          "concurrency/version conflict tests",
-          "coach/athlete authorization and history immutability regressions",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-99",
       "title": "Programming UX Gate",
       "status": "TODO",
@@ -19873,6 +19703,181 @@
           "integration/E2E suite under current release-gate policy",
           "mobile/desktop/accessibility matrix",
           "serialization, snapshot, offline and authorization regression suite",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-100",
+      "title": "Coach Reusable Template Library",
+      "status": "TODO",
+      "goal": "Give coaches reusable coach-owned workout, block and program templates with clear lineage into assignments.",
+      "business": {
+        "phase": "Coach Pro",
+        "summary": "Give coaches reusable coach-owned workout, block and program templates with clear lineage into assignments.",
+        "why": "Scaling coaching should reuse structured programming instead of cloning ad hoc prescriptions per athlete.",
+        "builds": [
+          "coach-owned reusable workout templates",
+          "coach-owned block/program templates using current programming structure",
+          "create/edit/archive/duplicate library items",
+          "assign from library while preserving source ownership and assignment lineage",
+          "version-safe future updates without rewriting athlete history",
+          "coach-owned reusable blocks may contain supported strength, Running and Circuit / Conditioning typed structures once their prerequisite domains are DONE."
+        ],
+        "userImpact": [
+          "coach library is a work surface, not mixed into athlete personal programs",
+          "fast create-from-existing and assign actions",
+          "clear source/template/version status with progressive detail",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "coach library is a work surface, not mixed into athlete personal programs",
+          "fast create-from-existing and assign actions",
+          "clear source/template/version status with progressive detail",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "coach can only read/write own library",
+          "assignment to an athlete still requires active relationship and server authorization",
+          "athlete sees only assigned content, not the coach's whole library",
+          "bulk assignment and per-athlete customization consume template lineage",
+          "coach longitudinal view can later show source/version provenance",
+          "AI cannot silently create or publish coach templates"
+        ],
+        "examples": [],
+        "data": [
+          "explicit coach template ownership and lineage to assignments",
+          "reuse existing serialization/versioning primitives where possible",
+          "historical athlete sessions remain snapshots independent of later library edits"
+        ],
+        "dependencies": [
+          "LN-123 provides compatible reusable block serialization/lineage primitives; LN-100 may reuse them technically but must preserve separate coach ownership and authorization."
+        ],
+        "attention": [
+          "coach can only read/write own library",
+          "assignment to an athlete still requires active relationship and server authorization",
+          "athlete sees only assigned content, not the coach's whole library",
+          "RLS/cross-user tests for coach library isolation",
+          "lineage/version snapshot tests",
+          "UI tests for create/edit/archive/assign states",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no public marketplace",
+          "no payments",
+          "no athlete ownership transfer on assignment",
+          "no generic content library shared outside authorized coach workflows",
+          "no conversion of athlete-owned LN-123 library items into coach-owned content without explicit copy/materialization and authorization"
+        ],
+        "doneWhen": [
+          "one coach template can safely feed multiple assignments",
+          "library edits never rewrite started/completed athlete sessions",
+          "ownership/provenance are visible and enforceable",
+          "archive does not destroy assigned history"
+        ],
+        "ux": [
+          "coach library is a work surface, not mixed into athlete personal programs",
+          "fast create-from-existing and assign actions",
+          "clear source/template/version status with progressive detail",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach can only read/write own library",
+          "assignment to an athlete still requires active relationship and server authorization",
+          "athlete sees only assigned content, not the coach's whole library"
+        ],
+        "implications": [
+          "bulk assignment and per-athlete customization consume template lineage",
+          "coach longitudinal view can later show source/version provenance",
+          "AI cannot silently create or publish coach templates"
+        ],
+        "validation": [
+          "RLS/cross-user tests for coach library isolation",
+          "lineage/version snapshot tests",
+          "UI tests for create/edit/archive/assign states",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Coach Pro",
+        "objective": "Give coaches reusable coach-owned workout, block and program templates with clear lineage into assignments.",
+        "rationale": "Scaling coaching should reuse structured programming instead of cloning ad hoc prescriptions per athlete.",
+        "dependencies": [
+          "LN-123 provides compatible reusable block serialization/lineage primitives; LN-100 may reuse them technically but must preserve separate coach ownership and authorization."
+        ],
+        "scope": [
+          "coach-owned reusable workout templates",
+          "coach-owned block/program templates using current programming structure",
+          "create/edit/archive/duplicate library items",
+          "assign from library while preserving source ownership and assignment lineage",
+          "version-safe future updates without rewriting athlete history",
+          "coach-owned reusable blocks may contain supported strength, Running and Circuit / Conditioning typed structures once their prerequisite domains are DONE."
+        ],
+        "exclusions": [
+          "no public marketplace",
+          "no payments",
+          "no athlete ownership transfer on assignment",
+          "no generic content library shared outside authorized coach workflows",
+          "no conversion of athlete-owned LN-123 library items into coach-owned content without explicit copy/materialization and authorization"
+        ],
+        "data": [
+          "explicit coach template ownership and lineage to assignments",
+          "reuse existing serialization/versioning primitives where possible",
+          "historical athlete sessions remain snapshots independent of later library edits"
+        ],
+        "ux": [
+          "coach library is a work surface, not mixed into athlete personal programs",
+          "fast create-from-existing and assign actions",
+          "clear source/template/version status with progressive detail",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach can only read/write own library",
+          "assignment to an athlete still requires active relationship and server authorization",
+          "athlete sees only assigned content, not the coach's whole library"
+        ],
+        "implications": [
+          "bulk assignment and per-athlete customization consume template lineage",
+          "coach longitudinal view can later show source/version provenance",
+          "AI cannot silently create or publish coach templates"
+        ],
+        "acceptance": [
+          "one coach template can safely feed multiple assignments",
+          "library edits never rewrite started/completed athlete sessions",
+          "ownership/provenance are visible and enforceable",
+          "archive does not destroy assigned history"
+        ],
+        "validation": [
+          "RLS/cross-user tests for coach library isolation",
+          "lineage/version snapshot tests",
+          "UI tests for create/edit/archive/assign states",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
