@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T17:57:22.579Z",
+  "publishedAt": "2026-10-02T17:58:11.334Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "WAITING_GATE",
@@ -13,8 +13,8 @@
     "nudges": 1,
     "lastMessage": "LN-99: waiting for browser verification on PR #852.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T17:57:15.166Z",
-    "nextTickAt": "2026-10-02T18:02:15.166Z",
+    "lastSuccessfulTickAt": "2026-10-02T17:58:03.874Z",
+    "nextTickAt": "2026-10-02T18:03:03.874Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
