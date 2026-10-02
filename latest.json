@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T22:35:09.262Z",
+  "publishedAt": "2026-10-02T22:36:13.641Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-74",
-    "nextLot": "LN-107",
-    "launchedAt": "2026-10-02T22:19:07.759Z",
-    "lastProgressAt": "2026-10-02T22:32:37.599Z",
-    "lastChatCheckAt": "2026-10-02T22:19:07.759Z",
-    "lastObservedMainSha": "4ac36b8df46e3f0349cfc9572043af81bbf2129a",
+    "currentLot": "LN-107",
+    "nextLot": "LN-108",
+    "launchedAt": "2026-10-02T22:36:05.816Z",
+    "lastProgressAt": "2026-10-02T22:36:05.816Z",
+    "lastChatCheckAt": "2026-10-02T22:36:05.816Z",
+    "lastObservedMainSha": "66947ea989177fa6edf9e29b0afb86363f92bcd2",
     "nudges": 0,
-    "lastMessage": "main moved while LN-74 is active",
+    "lastMessage": "Launched LN-107; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T22:35:01.477Z",
-    "nextTickAt": "2026-10-02T22:40:01.477Z",
+    "lastSuccessfulTickAt": "2026-10-02T22:36:05.816Z",
+    "nextTickAt": "2026-10-02T22:41:05.816Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-94",
-        "completedAt": "2026-10-02T10:18:05.803Z",
-        "restartedAt": null,
-        "mainSha": "094e9b80894a1e5eab8b2979ab51d9b5fab2d7f2",
-        "reason": null
-      },
       {
         "lot": "LN-95",
         "completedAt": "2026-10-02T15:40:43.917Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "4f6ab8d755d7345362c111ceb73f16d7cdcd479d",
         "reason": null
+      },
+      {
+        "lot": "LN-74",
+        "completedAt": "2026-10-02T22:35:50.665Z",
+        "restartedAt": null,
+        "mainSha": "66947ea989177fa6edf9e29b0afb86363f92bcd2",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "4ac36b8df46e3f0349cfc9572043af81bbf2129a",
+    "mainSha": "66947ea989177fa6edf9e29b0afb86363f92bcd2",
     "lots": [
       {
         "id": "LN-00",
@@ -15944,7 +15944,7 @@
       {
         "id": "LN-74",
         "title": "Import/export structuré de programmes et templates",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Provide a versioned deterministic file format for programs/workout templates that preserves rich LiftNote semantics and supports safe preview before import.",
         "business": {
           "phase": "Trust, Data & Privacy",
@@ -16108,8 +16108,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "876",
+            "mergeSha": "4ac36b8df46e3f0349cfc9572043af81bbf2129a"
           }
         },
         "contractAvailable": true,
@@ -19535,184 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 119,
+    "done": 120,
     "total": 138,
-    "percent": 86,
+    "percent": 87,
     "current": {
-      "id": "LN-74",
-      "title": "Import/export structuré de programmes et templates",
-      "status": "TODO",
-      "goal": "Provide a versioned deterministic file format for programs/workout templates that preserves rich LiftNote semantics and supports safe preview before import.",
-      "business": {
-        "phase": "Trust, Data & Privacy",
-        "summary": "Provide a versioned deterministic file format for programs/workout templates that preserves rich LiftNote semantics and supports safe preview before import.",
-        "why": "Backup, conflict resolution and AI import need one structured materialization boundary instead of bespoke copy paths.",
-        "builds": [
-          "versioned program/workout schema",
-          "round-trip program/block/week/workout and structured per-set prescriptions",
-          "system canonical mapping plus custom exercise materialization",
-          "preview before write",
-          "validation of missing/unsupported fields",
-          "explicit mapping report and safe failure",
-          "preserve provenance without granting ownership"
-        ],
-        "userImpact": [
-          "show what will be created, mapped, unresolved or skipped before confirmation",
-          "invalid files have understandable correction paths",
-          "import is discoverable from Programs/Data without cluttering workout flow",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "show what will be created, mapped, unresolved or skipped before confirmation",
-          "invalid files have understandable correction paths",
-          "import is discoverable from Programs/Data without cluttering workout flow",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "import writes only into caller-authorized scope",
-          "coach-managed source cannot become editable athlete source without explicit copy semantics",
-          "untrusted files are validated server-side",
-          "LN-109 adds richer conflict resolution; LN-77 AI import emits the same structured intermediate representation",
-          "completed history is never rewritten by import"
-        ],
-        "examples": [],
-        "data": [
-          "preserve load semantics, units, set types, tempo, RPE/RIR and relative-reference semantics",
-          "unknown newer fields fail or degrade explicitly by version policy",
-          "materialization reuses LN-21/LN-22 primitives"
-        ],
-        "dependencies": [
-          "Immediate roadmap predecessor: LN-73.",
-          "Material dependencies: LN-21, LN-22, LN-73, LN-85, LN-93, LN-99."
-        ],
-        "attention": [
-          "import writes only into caller-authorized scope",
-          "coach-managed source cannot become editable athlete source without explicit copy semantics",
-          "untrusted files are validated server-side",
-          "schema/version fixtures",
-          "advanced prescription/load round-trip tests",
-          "malformed-file and cross-user security tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "OCR/AI extraction",
-          "live synchronization",
-          "name-only exercise merging",
-          "silent destructive overwrite"
-        ],
-        "doneWhen": [
-          "supported content round-trips without semantic loss",
-          "preview precedes persistence",
-          "invalid/unsupported data fails safely",
-          "canonical identity/provenance are respected"
-        ],
-        "ux": [
-          "show what will be created, mapped, unresolved or skipped before confirmation",
-          "invalid files have understandable correction paths",
-          "import is discoverable from Programs/Data without cluttering workout flow",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "import writes only into caller-authorized scope",
-          "coach-managed source cannot become editable athlete source without explicit copy semantics",
-          "untrusted files are validated server-side"
-        ],
-        "implications": [
-          "LN-109 adds richer conflict resolution; LN-77 AI import emits the same structured intermediate representation",
-          "completed history is never rewritten by import"
-        ],
-        "validation": [
-          "schema/version fixtures",
-          "advanced prescription/load round-trip tests",
-          "malformed-file and cross-user security tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Trust, Data & Privacy",
-        "objective": "Provide a versioned deterministic file format for programs/workout templates that preserves rich LiftNote semantics and supports safe preview before import.",
-        "rationale": "Backup, conflict resolution and AI import need one structured materialization boundary instead of bespoke copy paths.",
-        "dependencies": [
-          "Immediate roadmap predecessor: LN-73.",
-          "Material dependencies: LN-21, LN-22, LN-73, LN-85, LN-93, LN-99."
-        ],
-        "scope": [
-          "versioned program/workout schema",
-          "round-trip program/block/week/workout and structured per-set prescriptions",
-          "system canonical mapping plus custom exercise materialization",
-          "preview before write",
-          "validation of missing/unsupported fields",
-          "explicit mapping report and safe failure",
-          "preserve provenance without granting ownership"
-        ],
-        "exclusions": [
-          "OCR/AI extraction",
-          "live synchronization",
-          "name-only exercise merging",
-          "silent destructive overwrite"
-        ],
-        "data": [
-          "preserve load semantics, units, set types, tempo, RPE/RIR and relative-reference semantics",
-          "unknown newer fields fail or degrade explicitly by version policy",
-          "materialization reuses LN-21/LN-22 primitives"
-        ],
-        "ux": [
-          "show what will be created, mapped, unresolved or skipped before confirmation",
-          "invalid files have understandable correction paths",
-          "import is discoverable from Programs/Data without cluttering workout flow",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "import writes only into caller-authorized scope",
-          "coach-managed source cannot become editable athlete source without explicit copy semantics",
-          "untrusted files are validated server-side"
-        ],
-        "implications": [
-          "LN-109 adds richer conflict resolution; LN-77 AI import emits the same structured intermediate representation",
-          "completed history is never rewritten by import"
-        ],
-        "acceptance": [
-          "supported content round-trips without semantic loss",
-          "preview precedes persistence",
-          "invalid/unsupported data fails safely",
-          "canonical identity/provenance are respected"
-        ],
-        "validation": [
-          "schema/version fixtures",
-          "advanced prescription/load round-trip tests",
-          "malformed-file and cross-user security tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-107",
       "title": "Backup & Restore",
       "status": "TODO",
@@ -19872,6 +19698,175 @@
           "round-trip fixture tests across representative account data",
           "failure/rollback/conflict tests",
           "RLS/security checks for backup access and restore",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-108",
+      "title": "Data Integrity Center",
+      "status": "TODO",
+      "goal": "Detect and explain meaningful data-integrity problems without exposing internal database noise to ordinary users.",
+      "business": {
+        "phase": "Trust, Data & Privacy",
+        "summary": "Detect and explain meaningful data-integrity problems without exposing internal database noise to ordinary users.",
+        "why": "Offline sync, imports, versions and long-lived history create states that should be diagnosable before they become silent corruption.",
+        "builds": [
+          "deterministic checks for broken references, incomplete imports, inconsistent session lifecycle, sync conflicts, invalid historical relationships and orphaned entities where safely detectable",
+          "severity/actionability classification",
+          "user-facing Data Integrity Center for issues the user can understand or act on",
+          "repair/retry/defer paths where deterministic and safe",
+          "internal-only diagnostic detail separated from product copy"
+        ],
+        "userImpact": [
+          "show only actionable/meaningful issues by default",
+          "group technical duplicates into one user problem",
+          "provide clear resolved/ignored/retry states",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "show only actionable/meaningful issues by default",
+          "group technical duplicates into one user problem",
+          "provide clear resolved/ignored/retry states",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "user only sees integrity findings for authorized data",
+          "coach cannot gain new athlete access via diagnostics",
+          "diagnostic payloads avoid secrets and unrelated account metadata",
+          "offline/import/backup workflows can deep-link to relevant integrity findings",
+          "LN-110 may record high-value repair actions",
+          "AI may explain a deterministic finding but not invent or auto-repair it"
+        ],
+        "examples": [],
+        "data": [
+          "checks read authoritative stores and produce derived issue records/results",
+          "repairs preserve auditability and history",
+          "detectors are versioned/testable so the same state has explainable output"
+        ],
+        "dependencies": [
+          "Requires LN-107 DONE and consumes LN-45 offline/sync plus import/version/history primitives."
+        ],
+        "attention": [
+          "user only sees integrity findings for authorized data",
+          "coach cannot gain new athlete access via diagnostics",
+          "diagnostic payloads avoid secrets and unrelated account metadata",
+          "detector fixtures for each supported issue class",
+          "repair idempotency/rollback tests",
+          "offline/import/backup integration and RLS tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no automatic destructive repair without explicit safe rule/confirmation",
+          "no exposure of raw SQL/internal IDs unless necessary for support/debug export",
+          "no fake all-good claim when checks are incomplete"
+        ],
+        "doneWhen": [
+          "representative corruption/incomplete states are detected deterministically",
+          "normal healthy accounts are not flooded with noise",
+          "repair paths cannot rewrite immutable truth silently",
+          "authorization remains intact"
+        ],
+        "ux": [
+          "show only actionable/meaningful issues by default",
+          "group technical duplicates into one user problem",
+          "provide clear resolved/ignored/retry states",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "user only sees integrity findings for authorized data",
+          "coach cannot gain new athlete access via diagnostics",
+          "diagnostic payloads avoid secrets and unrelated account metadata"
+        ],
+        "implications": [
+          "offline/import/backup workflows can deep-link to relevant integrity findings",
+          "LN-110 may record high-value repair actions",
+          "AI may explain a deterministic finding but not invent or auto-repair it"
+        ],
+        "validation": [
+          "detector fixtures for each supported issue class",
+          "repair idempotency/rollback tests",
+          "offline/import/backup integration and RLS tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Trust, Data & Privacy",
+        "objective": "Detect and explain meaningful data-integrity problems without exposing internal database noise to ordinary users.",
+        "rationale": "Offline sync, imports, versions and long-lived history create states that should be diagnosable before they become silent corruption.",
+        "dependencies": [
+          "Requires LN-107 DONE and consumes LN-45 offline/sync plus import/version/history primitives."
+        ],
+        "scope": [
+          "deterministic checks for broken references, incomplete imports, inconsistent session lifecycle, sync conflicts, invalid historical relationships and orphaned entities where safely detectable",
+          "severity/actionability classification",
+          "user-facing Data Integrity Center for issues the user can understand or act on",
+          "repair/retry/defer paths where deterministic and safe",
+          "internal-only diagnostic detail separated from product copy"
+        ],
+        "exclusions": [
+          "no automatic destructive repair without explicit safe rule/confirmation",
+          "no exposure of raw SQL/internal IDs unless necessary for support/debug export",
+          "no fake all-good claim when checks are incomplete"
+        ],
+        "data": [
+          "checks read authoritative stores and produce derived issue records/results",
+          "repairs preserve auditability and history",
+          "detectors are versioned/testable so the same state has explainable output"
+        ],
+        "ux": [
+          "show only actionable/meaningful issues by default",
+          "group technical duplicates into one user problem",
+          "provide clear resolved/ignored/retry states",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "user only sees integrity findings for authorized data",
+          "coach cannot gain new athlete access via diagnostics",
+          "diagnostic payloads avoid secrets and unrelated account metadata"
+        ],
+        "implications": [
+          "offline/import/backup workflows can deep-link to relevant integrity findings",
+          "LN-110 may record high-value repair actions",
+          "AI may explain a deterministic finding but not invent or auto-repair it"
+        ],
+        "acceptance": [
+          "representative corruption/incomplete states are detected deterministically",
+          "normal healthy accounts are not flooded with noise",
+          "repair paths cannot rewrite immutable truth silently",
+          "authorization remains intact"
+        ],
+        "validation": [
+          "detector fixtures for each supported issue class",
+          "repair idempotency/rollback tests",
+          "offline/import/backup integration and RLS tests",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
