@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T09:51:37.645Z",
+  "publishedAt": "2026-10-02T09:52:35.868Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-72",
-    "nextLot": "LN-94",
-    "launchedAt": "2026-10-02T09:37:01.501Z",
-    "lastProgressAt": "2026-10-02T09:48:13.644Z",
-    "lastChatCheckAt": "2026-10-02T09:37:01.501Z",
-    "lastObservedMainSha": "a8775bddbf9a8c9a466d1611316bc023c452e396",
+    "currentLot": "LN-94",
+    "nextLot": "LN-95",
+    "launchedAt": "2026-10-02T09:52:27.231Z",
+    "lastProgressAt": "2026-10-02T09:52:27.231Z",
+    "lastChatCheckAt": "2026-10-02T09:52:27.231Z",
+    "lastObservedMainSha": "05a8e9d8fd9d15b5c7826cf3d0aca4ec5a9336d5",
     "nudges": 0,
-    "lastMessage": "main moved while LN-72 is active",
+    "lastMessage": "Launched LN-94; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T09:51:29.887Z",
-    "nextTickAt": "2026-10-02T09:56:29.887Z",
+    "lastSuccessfulTickAt": "2026-10-02T09:52:27.231Z",
+    "nextTickAt": "2026-10-02T09:57:27.231Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": "success"
     },
     "history": [
-      {
-        "lot": "LN-121",
-        "completedAt": "2026-10-02T03:01:46.268Z",
-        "restartedAt": null,
-        "mainSha": "892ab52c46821321e4281163e114fd9bf90488b0",
-        "reason": null
-      },
       {
         "lot": "LN-122",
         "completedAt": "2026-10-02T04:18:16.963Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "70db10d5bd19b28fad59d653b620f16263a58f02",
         "reason": null
+      },
+      {
+        "lot": "LN-72",
+        "completedAt": "2026-10-02T09:52:18.814Z",
+        "restartedAt": null,
+        "mainSha": "05a8e9d8fd9d15b5c7826cf3d0aca4ec5a9336d5",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "a8775bddbf9a8c9a466d1611316bc023c452e396",
+    "mainSha": "05a8e9d8fd9d15b5c7826cf3d0aca4ec5a9336d5",
     "lots": [
       {
         "id": "LN-00",
@@ -13156,7 +13156,7 @@
       {
         "id": "LN-72",
         "title": "Tendances effort, charge et progression",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Produce deterministic descriptive trends combining objective performance with reported RPE/RIR when enough comparable data exists.",
         "business": {
           "phase": "Programming Engine",
@@ -13320,8 +13320,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "834",
+            "mergeSha": "a8775bddbf9a8c9a466d1611316bc023c452e396"
           }
         },
         "contractAvailable": true,
@@ -19535,184 +19535,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 103,
+    "done": 104,
     "total": 138,
     "percent": 75,
     "current": {
-      "id": "LN-72",
-      "title": "Tendances effort, charge et progression",
-      "status": "TODO",
-      "goal": "Produce deterministic descriptive trends combining objective performance with reported RPE/RIR when enough comparable data exists.",
-      "business": {
-        "phase": "Programming Engine",
-        "summary": "Produce deterministic descriptive trends combining objective performance with reported RPE/RIR when enough comparable data exists.",
-        "why": "Trend facts must be reproducible domain outputs before any AI explanation.",
-        "builds": [
-          "load/reps/volume trends where semantics permit",
-          "RPE/RIR context with data sufficiency thresholds",
-          "individualized e1RM context from LN-71",
-          "period comparisons",
-          "explicit missing/incompatible data states",
-          "source drill-down",
-          "planned target versus actual effort kept distinct"
-        ],
-        "userImpact": [
-          "show only interpretable metrics for selected exercise/period",
-          "expose sufficiency and source rows",
-          "avoid decorative charts",
-          "make estimate versus observed fact visually clear",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "show only interpretable metrics for selected exercise/period",
-          "expose sufficiency and source rows",
-          "avoid decorative charts",
-          "make estimate versus observed fact visually clear",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "coach access remains bounded by LN-65 performance permission",
-          "private notes remain excluded",
-          "feeds planned-vs-performed/adherence and AI summary/plateau explanation",
-          "never becomes autonomous progression authority"
-        ],
-        "examples": [],
-        "data": [
-          "derive from immutable performance facts and original entered effort values",
-          "do not merge incompatible load semantics/set types",
-          "aggregation definitions are documented and versioned"
-        ],
-        "dependencies": [
-          "Immediate roadmap predecessor: LN-124.",
-          "Material dependencies: LN-37, LN-52, LN-58, LN-70, LN-71."
-        ],
-        "attention": [
-          "coach access remains bounded by LN-65 performance permission",
-          "private notes remain excluded",
-          "aggregation fixtures across units/load/set types",
-          "period/timezone tests",
-          "coach permission tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "fatigue/readiness score",
-          "physiological causal claims",
-          "automatic prescription changes",
-          "LLM-calculated authoritative metrics"
-        ],
-        "doneWhen": [
-          "calculations reproduce from source facts",
-          "target effort is not confused with actual effort",
-          "insufficient data yields no fabricated trend",
-          "LN-71 uncertainty remains visible when relevant"
-        ],
-        "ux": [
-          "show only interpretable metrics for selected exercise/period",
-          "expose sufficiency and source rows",
-          "avoid decorative charts",
-          "make estimate versus observed fact visually clear",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "coach access remains bounded by LN-65 performance permission",
-          "private notes remain excluded"
-        ],
-        "implications": [
-          "feeds planned-vs-performed/adherence and AI summary/plateau explanation",
-          "never becomes autonomous progression authority"
-        ],
-        "validation": [
-          "aggregation fixtures across units/load/set types",
-          "period/timezone tests",
-          "coach permission tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Programming Engine",
-        "objective": "Produce deterministic descriptive trends combining objective performance with reported RPE/RIR when enough comparable data exists.",
-        "rationale": "Trend facts must be reproducible domain outputs before any AI explanation.",
-        "dependencies": [
-          "Immediate roadmap predecessor: LN-124.",
-          "Material dependencies: LN-37, LN-52, LN-58, LN-70, LN-71."
-        ],
-        "scope": [
-          "load/reps/volume trends where semantics permit",
-          "RPE/RIR context with data sufficiency thresholds",
-          "individualized e1RM context from LN-71",
-          "period comparisons",
-          "explicit missing/incompatible data states",
-          "source drill-down",
-          "planned target versus actual effort kept distinct"
-        ],
-        "exclusions": [
-          "fatigue/readiness score",
-          "physiological causal claims",
-          "automatic prescription changes",
-          "LLM-calculated authoritative metrics"
-        ],
-        "data": [
-          "derive from immutable performance facts and original entered effort values",
-          "do not merge incompatible load semantics/set types",
-          "aggregation definitions are documented and versioned"
-        ],
-        "ux": [
-          "show only interpretable metrics for selected exercise/period",
-          "expose sufficiency and source rows",
-          "avoid decorative charts",
-          "make estimate versus observed fact visually clear",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary workout actions immediately accessible; progressively disclose advanced configuration.",
-          "Cover applicable loading, empty, error, success, unavailable/disabled, confirmation and recovery states.",
-          "Mobile-first, accessible, FR/EN coherent, deep-link aware and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "coach access remains bounded by LN-65 performance permission",
-          "private notes remain excluded"
-        ],
-        "implications": [
-          "feeds planned-vs-performed/adherence and AI summary/plateau explanation",
-          "never becomes autonomous progression authority"
-        ],
-        "acceptance": [
-          "calculations reproduce from source facts",
-          "target effort is not confused with actual effort",
-          "insufficient data yields no fabricated trend",
-          "LN-71 uncertainty remains visible when relevant"
-        ],
-        "validation": [
-          "aggregation fixtures across units/load/set types",
-          "period/timezone tests",
-          "coach permission tests",
-          "Inspect affected code/types/imports/tests/interfaces before the first implementation push.",
-          "GitHub Actions is the final safety net, not the debugging loop; batch coherent fixes before another push.",
-          "Exact-head Vercel READY is build/deploy evidence for code changes, never browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-94",
       "title": "Programmable Deload & Recovery Weeks",
       "status": "TODO",
@@ -19868,6 +19694,181 @@
           "rule resolution tests across set/load/effort semantics",
           "snapshot/versioning regressions",
           "coach authorization tests where applicable",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-95",
+      "title": "Planned vs Performed",
+      "status": "TODO",
+      "goal": "Provide a durable model and UX comparing prescribed work with what was actually performed.",
+      "business": {
+        "phase": "Programming Engine",
+        "summary": "Provide a durable model and UX comparing prescribed work with what was actually performed.",
+        "why": "Adaptation and coaching need a factual bridge between plan and execution, including substitutions, omissions and schedule changes.",
+        "builds": [
+          "compare planned and performed sets, reps, load/reference resolution, RPE/RIR and set type",
+          "represent omitted, added and substituted work explicitly",
+          "include schedule move/cancel context from LN-70",
+          "drill down from summary to raw plan/performance facts",
+          "define comparison semantics for incompatible tracking/load types",
+          "Running segment planned-vs-performed comparisons for compatible distance/duration/pace/recovery targets and actuals.",
+          "Circuit protocol planned-vs-performed comparisons for compatible structure, substitutions and typed score facts, without treating score as movement volume."
+        ],
+        "userImpact": [
+          "show concise deviations first with drill-down to detail",
+          "neutral language: planned/performed, not pass/fail",
+          "make corrections flow through existing history correction semantics",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "show concise deviations first with drill-down to detail",
+          "neutral language: planned/performed, not pass/fail",
+          "make corrections flow through existing history correction semantics",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "coach visibility is limited to explicitly authorized performance scope",
+          "private notes stay private unless separately authorized",
+          "offline-synced results must converge before final comparison state claims certainty",
+          "LN-96 adherence and LN-97 suggestions consume this factual layer",
+          "coach queue/longitudinal views consume authorized comparisons",
+          "AI only summarizes facts generated here"
+        ],
+        "examples": [],
+        "data": [
+          "store/derive stable linkage between planned set/exercise identity and performed result",
+          "preserve prescribed exercise and substitute identity",
+          "missing linkage remains explicit rather than guessed",
+          "Typed modality comparisons must reject or explicitly label incompatible plan/performance shapes rather than coercing them into strength-set semantics."
+        ],
+        "dependencies": [
+          "Requires LN-93 and LN-94 DONE and existing immutable session/performance snapshots."
+        ],
+        "attention": [
+          "coach visibility is limited to explicitly authorized performance scope",
+          "private notes stay private unless separately authorized",
+          "offline-synced results must converge before final comparison state claims certainty",
+          "comparison engine fixtures across load/tracking/effort semantics",
+          "history-correction and offline-sync regressions",
+          "coach permission tests for exposed comparison payloads",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no single quality score",
+          "no assumption that any deviation is bad",
+          "no retroactive rewriting of prescription or performance"
+        ],
+        "doneWhen": [
+          "representative prescribed, omitted, added and substituted work compares correctly",
+          "targets and actuals are never conflated",
+          "source facts remain inspectable",
+          "corrections update derived comparisons deterministically"
+        ],
+        "ux": [
+          "show concise deviations first with drill-down to detail",
+          "neutral language: planned/performed, not pass/fail",
+          "make corrections flow through existing history correction semantics",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach visibility is limited to explicitly authorized performance scope",
+          "private notes stay private unless separately authorized",
+          "offline-synced results must converge before final comparison state claims certainty"
+        ],
+        "implications": [
+          "LN-96 adherence and LN-97 suggestions consume this factual layer",
+          "coach queue/longitudinal views consume authorized comparisons",
+          "AI only summarizes facts generated here"
+        ],
+        "validation": [
+          "comparison engine fixtures across load/tracking/effort semantics",
+          "history-correction and offline-sync regressions",
+          "coach permission tests for exposed comparison payloads",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Programming Engine",
+        "objective": "Provide a durable model and UX comparing prescribed work with what was actually performed.",
+        "rationale": "Adaptation and coaching need a factual bridge between plan and execution, including substitutions, omissions and schedule changes.",
+        "dependencies": [
+          "Requires LN-93 and LN-94 DONE and existing immutable session/performance snapshots."
+        ],
+        "scope": [
+          "compare planned and performed sets, reps, load/reference resolution, RPE/RIR and set type",
+          "represent omitted, added and substituted work explicitly",
+          "include schedule move/cancel context from LN-70",
+          "drill down from summary to raw plan/performance facts",
+          "define comparison semantics for incompatible tracking/load types",
+          "Running segment planned-vs-performed comparisons for compatible distance/duration/pace/recovery targets and actuals.",
+          "Circuit protocol planned-vs-performed comparisons for compatible structure, substitutions and typed score facts, without treating score as movement volume."
+        ],
+        "exclusions": [
+          "no single quality score",
+          "no assumption that any deviation is bad",
+          "no retroactive rewriting of prescription or performance"
+        ],
+        "data": [
+          "store/derive stable linkage between planned set/exercise identity and performed result",
+          "preserve prescribed exercise and substitute identity",
+          "missing linkage remains explicit rather than guessed",
+          "Typed modality comparisons must reject or explicitly label incompatible plan/performance shapes rather than coercing them into strength-set semantics."
+        ],
+        "ux": [
+          "show concise deviations first with drill-down to detail",
+          "neutral language: planned/performed, not pass/fail",
+          "make corrections flow through existing history correction semantics",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary workout actions immediately accessible; use progressive disclosure for advanced capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "coach visibility is limited to explicitly authorized performance scope",
+          "private notes stay private unless separately authorized",
+          "offline-synced results must converge before final comparison state claims certainty"
+        ],
+        "implications": [
+          "LN-96 adherence and LN-97 suggestions consume this factual layer",
+          "coach queue/longitudinal views consume authorized comparisons",
+          "AI only summarizes facts generated here"
+        ],
+        "acceptance": [
+          "representative prescribed, omitted, added and substituted work compares correctly",
+          "targets and actuals are never conflated",
+          "source facts remain inspectable",
+          "corrections update derived comparisons deterministically"
+        ],
+        "validation": [
+          "comparison engine fixtures across load/tracking/effort semantics",
+          "history-correction and offline-sync regressions",
+          "coach permission tests for exposed comparison payloads",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
