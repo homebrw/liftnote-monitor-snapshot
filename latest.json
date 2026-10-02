@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T22:37:01.435Z",
+  "publishedAt": "2026-10-02T22:37:50.051Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "Launched LN-107; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T22:36:53.912Z",
-    "nextTickAt": "2026-10-02T22:41:53.912Z",
+    "lastSuccessfulTickAt": "2026-10-02T22:37:41.397Z",
+    "nextTickAt": "2026-10-02T22:42:41.397Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "66947ea989177fa6edf9e29b0afb86363f92bcd2",
+    "mainSha": "914226a05b8e401b8637564bc8062c219a30aae2",
     "lots": [
       {
         "id": "LN-00",
@@ -19328,10 +19328,10 @@
         "id": "LN-116",
         "title": "Release Gate v2",
         "status": "TODO",
-        "goal": "Run the final technical and interactive release gate against the completed LiftNote architecture.",
+        "goal": "Run the first consolidated technical and interactive release checkpoint against the completed functional LiftNote architecture before terminal hardening.",
         "business": {
           "phase": "Final Product Coherence",
-          "summary": "Run the final technical and interactive release gate against the completed LiftNote architecture.",
+          "summary": "Run the first consolidated technical and interactive release checkpoint against the completed functional LiftNote architecture before terminal hardening.",
           "why": "Deployment success alone is not evidence that a mobile-first, cross-user, offline-capable product works interactively.",
           "builds": [
             "browser E2E for representative product jobs",
@@ -19412,7 +19412,7 @@
             "interactive browser evidence exists separately from deployment evidence",
             "known nonblocking debt is documented with owner/disposition",
             "measurable goals and workout text interoperability pass their blocking semantic/privacy journeys",
-            "roadmap can state complete only after factual completion record and merge evidence",
+            "this first checkpoint can state DONE only after factual completion record and merge evidence; roadmap completion remains reserved for LN-140",
             "Promoted Strength + Running + Circuit / Conditioning release paths pass on the exact release head; CrossFit and Hyrox remain explicitly out of current scope."
           ],
           "ux": [
@@ -19450,7 +19450,7 @@
         },
         "contract": {
           "phase": "Final Product Coherence",
-          "objective": "Run the final technical and interactive release gate against the completed LiftNote architecture.",
+          "objective": "Run the first consolidated technical and interactive release checkpoint against the completed functional LiftNote architecture before terminal hardening.",
           "rationale": "Deployment success alone is not evidence that a mobile-first, cross-user, offline-capable product works interactively.",
           "dependencies": [
             "Requires LN-115 DONE with no unresolved critical blocker."
@@ -19506,7 +19506,7 @@
             "interactive browser evidence exists separately from deployment evidence",
             "known nonblocking debt is documented with owner/disposition",
             "measurable goals and workout text interoperability pass their blocking semantic/privacy journeys",
-            "roadmap can state complete only after factual completion record and merge evidence",
+            "this first checkpoint can state DONE only after factual completion record and merge evidence; roadmap completion remains reserved for LN-140",
             "Promoted Strength + Running + Circuit / Conditioning release paths pass on the exact release head; CrossFit and Hyrox remain explicitly out of current scope."
           ],
           "validation": [
@@ -19530,14 +19530,1610 @@
         },
         "contractAvailable": true,
         "executionState": "executable"
+      },
+      {
+        "id": "LN-129",
+        "title": "Production Observability & Diagnostics",
+        "status": "TODO",
+        "goal": "Make LiftNote diagnosable in production without exposing user-sensitive data.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Make LiftNote diagnosable in production without exposing user-sensitive data.",
+          "why": "The final product needs enough evidence to distinguish product, network, auth, backend, migration and synchronization failures while keeping telemetry proportionate and privacy-safe.",
+          "builds": [
+            "Audit client, server, RPC/data-access, offline/sync, import and AI failure surfaces.",
+            "Define structured log/event shapes with severity, category, bounded context and correlation/request identifiers where useful.",
+            "Capture useful technical timings for slow or failed operations without turning this lot into full APM.",
+            "Introduce privacy-safe diagnostics/support bundle only if it materially improves troubleshooting.",
+            "Define explicit classification for product, network, auth, backend, migration and synchronization failures.",
+            "Centralize redaction/minimization rules for personal, training, health, prompt and credential data.",
+            "Reuse existing runtime/platform observability before adding any external provider."
+          ],
+          "userImpact": [
+            "Errors shown to users remain understandable and actionable; raw internals stay behind diagnostic detail.",
+            "Support/export surfaces use progressive disclosure and never expose secrets.",
+            "Mobile and desktop must expose equivalent recovery/support paths where applicable."
+          ],
+          "journey": [
+            "Errors shown to users remain understandable and actionable; raw internals stay behind diagnostic detail.",
+            "Support/export surfaces use progressive disclosure and never expose secrets.",
+            "Mobile and desktop must expose equivalent recovery/support paths where applicable."
+          ],
+          "rules": [
+            "Telemetry must not alter history, progression or AI outputs.",
+            "AI diagnostics record provider/model/status/provenance only to the minimum needed; prompt content is excluded by default.",
+            "Operational timing data is not presented as athlete performance data."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-116 is DONE and remains the first release checkpoint.",
+            "All product families exercised by LN-115/LN-116 are stable enough to instrument rather than redesign."
+          ],
+          "attention": [
+            "Static audit of existing logging and error paths.",
+            "Targeted unit/integration tests for classification, correlation and redaction.",
+            "Failure fixtures for RPC, auth, network, sync/import and AI.",
+            "Inspect generated diagnostics for PII/training-data leakage.",
+            "Run proportionate targeted tests; no expensive CI solely for documentation."
+          ],
+          "notInThisLot": [
+            "No expensive observability platform or vendor migration without demonstrated need.",
+            "No retention of raw workout/health/prompt payloads just for debugging.",
+            "No general analytics redesign.",
+            "No user-facing feature family."
+          ],
+          "doneWhen": [
+            "Representative failures from each required category can be distinguished from diagnostic evidence.",
+            "Logs/events are structured and correlation is available across at least one end-to-end request path where relevant.",
+            "Sensitive fields are demonstrably redacted/minimized in tests.",
+            "No external paid observability dependency is introduced without documented necessity.",
+            "Any support bundle is bounded, explicit and privacy-safe."
+          ],
+          "ux": [
+            "Errors shown to users remain understandable and actionable; raw internals stay behind diagnostic detail.",
+            "Support/export surfaces use progressive disclosure and never expose secrets.",
+            "Mobile and desktop must expose equivalent recovery/support paths where applicable."
+          ],
+          "security": [],
+          "implications": [
+            "Telemetry must not alter history, progression or AI outputs.",
+            "AI diagnostics record provider/model/status/provenance only to the minimum needed; prompt content is excluded by default.",
+            "Operational timing data is not presented as athlete performance data."
+          ],
+          "validation": [
+            "Static audit of existing logging and error paths.",
+            "Targeted unit/integration tests for classification, correlation and redaction.",
+            "Failure fixtures for RPC, auth, network, sync/import and AI.",
+            "Inspect generated diagnostics for PII/training-data leakage.",
+            "Run proportionate targeted tests; no expensive CI solely for documentation."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Make LiftNote diagnosable in production without exposing user-sensitive data.",
+          "rationale": "The final product needs enough evidence to distinguish product, network, auth, backend, migration and synchronization failures while keeping telemetry proportionate and privacy-safe.",
+          "dependencies": [
+            "LN-116 is DONE and remains the first release checkpoint.",
+            "All product families exercised by LN-115/LN-116 are stable enough to instrument rather than redesign."
+          ],
+          "scope": [
+            "Audit client, server, RPC/data-access, offline/sync, import and AI failure surfaces.",
+            "Define structured log/event shapes with severity, category, bounded context and correlation/request identifiers where useful.",
+            "Capture useful technical timings for slow or failed operations without turning this lot into full APM.",
+            "Introduce privacy-safe diagnostics/support bundle only if it materially improves troubleshooting.",
+            "Define explicit classification for product, network, auth, backend, migration and synchronization failures.",
+            "Centralize redaction/minimization rules for personal, training, health, prompt and credential data.",
+            "Reuse existing runtime/platform observability before adding any external provider."
+          ],
+          "exclusions": [
+            "No expensive observability platform or vendor migration without demonstrated need.",
+            "No retention of raw workout/health/prompt payloads just for debugging.",
+            "No general analytics redesign.",
+            "No user-facing feature family."
+          ],
+          "data": [],
+          "ux": [
+            "Errors shown to users remain understandable and actionable; raw internals stay behind diagnostic detail.",
+            "Support/export surfaces use progressive disclosure and never expose secrets.",
+            "Mobile and desktop must expose equivalent recovery/support paths where applicable."
+          ],
+          "security": [],
+          "implications": [
+            "Telemetry must not alter history, progression or AI outputs.",
+            "AI diagnostics record provider/model/status/provenance only to the minimum needed; prompt content is excluded by default.",
+            "Operational timing data is not presented as athlete performance data."
+          ],
+          "acceptance": [
+            "Representative failures from each required category can be distinguished from diagnostic evidence.",
+            "Logs/events are structured and correlation is available across at least one end-to-end request path where relevant.",
+            "Sensitive fields are demonstrably redacted/minimized in tests.",
+            "No external paid observability dependency is introduced without documented necessity.",
+            "Any support bundle is bounded, explicit and privacy-safe."
+          ],
+          "validation": [
+            "Static audit of existing logging and error paths.",
+            "Targeted unit/integration tests for classification, correlation and redaction.",
+            "Failure fixtures for RPC, auth, network, sync/import and AI.",
+            "Inspect generated diagnostics for PII/training-data leakage.",
+            "Run proportionate targeted tests; no expensive CI solely for documentation."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-130",
+        "title": "Error Recovery & Resilience",
+        "status": "TODO",
+        "goal": "Ensure normal and temporary failures do not create product dead ends.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Ensure normal and temporary failures do not create product dead ends.",
+          "why": "A mature training product must recover from transient infrastructure, session and stale-resource failures without hiding real problems or losing user work.",
+          "builds": [
+            "Audit and close error-boundary coverage at meaningful product boundaries.",
+            "Provide explicit safe retry where operations are retryable and prevent retry where it could duplicate destructive writes.",
+            "Handle network loss/recovery, temporary Supabase unavailability and degraded/unavailable states.",
+            "Handle session expiry/revocation with safe reauthentication and return to the interrupted context when valid.",
+            "Handle stale/deleted/version-changed resources and permission changes between read and action.",
+            "Verify refresh/reload recovery for active and draft workflows.",
+            "Surface recovery choices instead of swallowing failures."
+          ],
+          "userImpact": [
+            "Every critical error state provides a next action: retry, refresh, reauthenticate, return, discard or contact support as appropriate.",
+            "Recovery preserves the user's context when safe.",
+            "Error boundaries remain local enough that one failure does not unnecessarily blank the whole app."
+          ],
+          "journey": [
+            "Every critical error state provides a next action: retry, refresh, reauthenticate, return, discard or contact support as appropriate.",
+            "Recovery preserves the user's context when safe.",
+            "Error boundaries remain local enough that one failure does not unnecessarily blank the whole app."
+          ],
+          "rules": [
+            "Recovery must not fabricate analytics/history events.",
+            "AI/import failures preserve source/review state only when privacy and existing contracts allow it.",
+            "Recovered actions must not double-count usage or history."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-129 diagnostics are available to classify and inspect failures."
+          ],
+          "attention": [
+            "Fault-injection tests around data access and mutations.",
+            "Session-expiry/revocation and permission-change tests.",
+            "Refresh/reload and offline/online recovery tests.",
+            "Targeted browser tests for key dead-end paths where product behavior cannot be proven below UI level."
+          ],
+          "notInThisLot": [
+            "No blanket automatic retry for all mutations.",
+            "No replacement of the synchronization architecture.",
+            "No generic redesign of every error message.",
+            "No fake success state while backend state is unknown."
+          ],
+          "doneWhen": [
+            "Representative network, auth, backend, stale-resource and permission-change scenarios end in a clear recoverable state.",
+            "Refresh/reload does not silently discard recoverable active work.",
+            "Retry cannot duplicate a critical write in covered flows.",
+            "Known unrecoverable cases are explicit and diagnostic."
+          ],
+          "ux": [
+            "Every critical error state provides a next action: retry, refresh, reauthenticate, return, discard or contact support as appropriate.",
+            "Recovery preserves the user's context when safe.",
+            "Error boundaries remain local enough that one failure does not unnecessarily blank the whole app."
+          ],
+          "security": [],
+          "implications": [
+            "Recovery must not fabricate analytics/history events.",
+            "AI/import failures preserve source/review state only when privacy and existing contracts allow it.",
+            "Recovered actions must not double-count usage or history."
+          ],
+          "validation": [
+            "Fault-injection tests around data access and mutations.",
+            "Session-expiry/revocation and permission-change tests.",
+            "Refresh/reload and offline/online recovery tests.",
+            "Targeted browser tests for key dead-end paths where product behavior cannot be proven below UI level."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Ensure normal and temporary failures do not create product dead ends.",
+          "rationale": "A mature training product must recover from transient infrastructure, session and stale-resource failures without hiding real problems or losing user work.",
+          "dependencies": [
+            "LN-129 diagnostics are available to classify and inspect failures."
+          ],
+          "scope": [
+            "Audit and close error-boundary coverage at meaningful product boundaries.",
+            "Provide explicit safe retry where operations are retryable and prevent retry where it could duplicate destructive writes.",
+            "Handle network loss/recovery, temporary Supabase unavailability and degraded/unavailable states.",
+            "Handle session expiry/revocation with safe reauthentication and return to the interrupted context when valid.",
+            "Handle stale/deleted/version-changed resources and permission changes between read and action.",
+            "Verify refresh/reload recovery for active and draft workflows.",
+            "Surface recovery choices instead of swallowing failures."
+          ],
+          "exclusions": [
+            "No blanket automatic retry for all mutations.",
+            "No replacement of the synchronization architecture.",
+            "No generic redesign of every error message.",
+            "No fake success state while backend state is unknown."
+          ],
+          "data": [],
+          "ux": [
+            "Every critical error state provides a next action: retry, refresh, reauthenticate, return, discard or contact support as appropriate.",
+            "Recovery preserves the user's context when safe.",
+            "Error boundaries remain local enough that one failure does not unnecessarily blank the whole app."
+          ],
+          "security": [],
+          "implications": [
+            "Recovery must not fabricate analytics/history events.",
+            "AI/import failures preserve source/review state only when privacy and existing contracts allow it.",
+            "Recovered actions must not double-count usage or history."
+          ],
+          "acceptance": [
+            "Representative network, auth, backend, stale-resource and permission-change scenarios end in a clear recoverable state.",
+            "Refresh/reload does not silently discard recoverable active work.",
+            "Retry cannot duplicate a critical write in covered flows.",
+            "Known unrecoverable cases are explicit and diagnostic."
+          ],
+          "validation": [
+            "Fault-injection tests around data access and mutations.",
+            "Session-expiry/revocation and permission-change tests.",
+            "Refresh/reload and offline/online recovery tests.",
+            "Targeted browser tests for key dead-end paths where product behavior cannot be proven below UI level."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-131",
+        "title": "Concurrency, Idempotency & Multi-device Safety",
+        "status": "TODO",
+        "goal": "Prevent duplicate writes, stale writes and silent corruption under real concurrency.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Prevent duplicate writes, stale writes and silent corruption under real concurrency.",
+          "why": "Double submits, retries, multiple tabs/devices and coach-athlete edits are normal production conditions; correctness must not depend on a single sequential browser.",
+          "builds": [
+            "Audit double-click/double-submit and replay behavior for critical mutations.",
+            "Add or enforce idempotency for mutations where replay could create duplicate domain facts.",
+            "Protect against out-of-order responses overwriting newer state.",
+            "Test multi-tab and multi-device edits on mutable plans/templates/goals and active workflows where supported.",
+            "Enforce optimistic concurrency/version checks for stale edits.",
+            "Exercise coach and athlete concurrent changes across managed objects.",
+            "Ensure obsolete versions fail explicitly rather than silently overwriting newer state."
+          ],
+          "userImpact": [
+            "Conflict UI explains what changed and offers refresh/reapply choices where feasible.",
+            "Submit controls prevent accidental duplicates but correctness must still be server-side.",
+            "Multi-device conflict handling stays understandable on mobile."
+          ],
+          "journey": [
+            "Conflict UI explains what changed and offers refresh/reapply choices where feasible.",
+            "Submit controls prevent accidental duplicates but correctness must still be server-side.",
+            "Multi-device conflict handling stays understandable on mobile."
+          ],
+          "rules": [
+            "Duplicate/replayed requests do not duplicate history, PR, scoring or AI/import effects.",
+            "Conflict resolution records provenance where existing audit models require it.",
+            "Analytics count committed facts once."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-130 recovery semantics are defined.",
+            "Existing versioning/offline/sync primitives are reused."
+          ],
+          "attention": [
+            "Concurrency fixtures and parallel mutation tests.",
+            "Replay/idempotency tests for critical writes.",
+            "Stale-version/optimistic-concurrency tests.",
+            "Multi-tab/device browser tests for representative flows.",
+            "Negative authorization races."
+          ],
+          "notInThisLot": [
+            "No distributed-locking platform without demonstrated need.",
+            "No broad rewrite of persistence APIs.",
+            "No collaborative live-editing feature.",
+            "No silent last-write-wins for versioned critical objects unless already documented and safe."
+          ],
+          "doneWhen": [
+            "Covered critical mutations are idempotent or demonstrably safe under replay.",
+            "A stale version cannot silently overwrite a newer authoritative version.",
+            "Out-of-order responses cannot regress visible authoritative state.",
+            "Representative multi-tab/device and coach-athlete races are tested."
+          ],
+          "ux": [
+            "Conflict UI explains what changed and offers refresh/reapply choices where feasible.",
+            "Submit controls prevent accidental duplicates but correctness must still be server-side.",
+            "Multi-device conflict handling stays understandable on mobile."
+          ],
+          "security": [],
+          "implications": [
+            "Duplicate/replayed requests do not duplicate history, PR, scoring or AI/import effects.",
+            "Conflict resolution records provenance where existing audit models require it.",
+            "Analytics count committed facts once."
+          ],
+          "validation": [
+            "Concurrency fixtures and parallel mutation tests.",
+            "Replay/idempotency tests for critical writes.",
+            "Stale-version/optimistic-concurrency tests.",
+            "Multi-tab/device browser tests for representative flows.",
+            "Negative authorization races."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Prevent duplicate writes, stale writes and silent corruption under real concurrency.",
+          "rationale": "Double submits, retries, multiple tabs/devices and coach-athlete edits are normal production conditions; correctness must not depend on a single sequential browser.",
+          "dependencies": [
+            "LN-130 recovery semantics are defined.",
+            "Existing versioning/offline/sync primitives are reused."
+          ],
+          "scope": [
+            "Audit double-click/double-submit and replay behavior for critical mutations.",
+            "Add or enforce idempotency for mutations where replay could create duplicate domain facts.",
+            "Protect against out-of-order responses overwriting newer state.",
+            "Test multi-tab and multi-device edits on mutable plans/templates/goals and active workflows where supported.",
+            "Enforce optimistic concurrency/version checks for stale edits.",
+            "Exercise coach and athlete concurrent changes across managed objects.",
+            "Ensure obsolete versions fail explicitly rather than silently overwriting newer state."
+          ],
+          "exclusions": [
+            "No distributed-locking platform without demonstrated need.",
+            "No broad rewrite of persistence APIs.",
+            "No collaborative live-editing feature.",
+            "No silent last-write-wins for versioned critical objects unless already documented and safe."
+          ],
+          "data": [],
+          "ux": [
+            "Conflict UI explains what changed and offers refresh/reapply choices where feasible.",
+            "Submit controls prevent accidental duplicates but correctness must still be server-side.",
+            "Multi-device conflict handling stays understandable on mobile."
+          ],
+          "security": [],
+          "implications": [
+            "Duplicate/replayed requests do not duplicate history, PR, scoring or AI/import effects.",
+            "Conflict resolution records provenance where existing audit models require it.",
+            "Analytics count committed facts once."
+          ],
+          "acceptance": [
+            "Covered critical mutations are idempotent or demonstrably safe under replay.",
+            "A stale version cannot silently overwrite a newer authoritative version.",
+            "Out-of-order responses cannot regress visible authoritative state.",
+            "Representative multi-tab/device and coach-athlete races are tested."
+          ],
+          "validation": [
+            "Concurrency fixtures and parallel mutation tests.",
+            "Replay/idempotency tests for critical writes.",
+            "Stale-version/optimistic-concurrency tests.",
+            "Multi-tab/device browser tests for representative flows.",
+            "Negative authorization races."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-132",
+        "title": "Database & Data-access Performance Audit",
+        "status": "TODO",
+        "goal": "Keep Supabase/Postgres data access efficient at realistic LiftNote volume.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Keep Supabase/Postgres data access efficient at realistic LiftNote volume.",
+          "why": "The product now contains long histories, richer catalogs, coach portfolios and analytics. Performance must be proven from actual query behavior, not assumed.",
+          "builds": [
+            "Inventory high-volume queries and RPCs for N+1 behavior, unbounded reads and avoidable round trips.",
+            "Verify pagination/limits for histories, catalogs, sessions, programs/templates and coach athlete lists.",
+            "Inspect index coverage and RLS-sensitive access paths.",
+            "Profile representative large-history, large-catalog, many-session and many-athlete scenarios.",
+            "Inspect analytical query plans where useful.",
+            "Optimize only measured or demonstrably poor paths and preserve semantics."
+          ],
+          "userImpact": [
+            "Loading and pagination states remain understandable; performance work must not remove needed context.",
+            "Large datasets remain navigable on mobile and desktop.",
+            "No user-visible truncation without explicit pagination/continuation."
+          ],
+          "journey": [
+            "Loading and pagination states remain understandable; performance work must not remove needed context.",
+            "Large datasets remain navigable on mobile and desktop.",
+            "No user-visible truncation without explicit pagination/continuation."
+          ],
+          "rules": [
+            "Analytics formulas and history results remain identical before/after optimization.",
+            "AI/catalog resolution receives the same authoritative data, only more efficiently.",
+            "Performance instrumentation stays separate from athlete metrics."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-131 correctness guarantees are stable enough to profile without changing semantics."
+          ],
+          "attention": [
+            "Static data-access inventory.",
+            "Representative seeded-volume tests.",
+            "EXPLAIN/ANALYZE or equivalent plan inspection where justified and privacy-safe.",
+            "Regression tests proving result equivalence.",
+            "Targeted migration/RLS validation for any index/RPC changes."
+          ],
+          "notInThisLot": [
+            "No speculative database redesign.",
+            "No denormalization without measured benefit and integrity analysis.",
+            "No removal/weakening of RLS for performance.",
+            "No arbitrary index proliferation."
+          ],
+          "doneWhen": [
+            "No identified critical path performs avoidable N+1 or unbounded full-history reads at realistic scale.",
+            "Required indexes/limits are backed by query evidence.",
+            "Representative coach/history/catalog loads meet documented reasonable budgets or have explicit residual limits.",
+            "RLS remains enforced and tested."
+          ],
+          "ux": [
+            "Loading and pagination states remain understandable; performance work must not remove needed context.",
+            "Large datasets remain navigable on mobile and desktop.",
+            "No user-visible truncation without explicit pagination/continuation."
+          ],
+          "security": [],
+          "implications": [
+            "Analytics formulas and history results remain identical before/after optimization.",
+            "AI/catalog resolution receives the same authoritative data, only more efficiently.",
+            "Performance instrumentation stays separate from athlete metrics."
+          ],
+          "validation": [
+            "Static data-access inventory.",
+            "Representative seeded-volume tests.",
+            "EXPLAIN/ANALYZE or equivalent plan inspection where justified and privacy-safe.",
+            "Regression tests proving result equivalence.",
+            "Targeted migration/RLS validation for any index/RPC changes."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Keep Supabase/Postgres data access efficient at realistic LiftNote volume.",
+          "rationale": "The product now contains long histories, richer catalogs, coach portfolios and analytics. Performance must be proven from actual query behavior, not assumed.",
+          "dependencies": [
+            "LN-131 correctness guarantees are stable enough to profile without changing semantics."
+          ],
+          "scope": [
+            "Inventory high-volume queries and RPCs for N+1 behavior, unbounded reads and avoidable round trips.",
+            "Verify pagination/limits for histories, catalogs, sessions, programs/templates and coach athlete lists.",
+            "Inspect index coverage and RLS-sensitive access paths.",
+            "Profile representative large-history, large-catalog, many-session and many-athlete scenarios.",
+            "Inspect analytical query plans where useful.",
+            "Optimize only measured or demonstrably poor paths and preserve semantics."
+          ],
+          "exclusions": [
+            "No speculative database redesign.",
+            "No denormalization without measured benefit and integrity analysis.",
+            "No removal/weakening of RLS for performance.",
+            "No arbitrary index proliferation."
+          ],
+          "data": [],
+          "ux": [
+            "Loading and pagination states remain understandable; performance work must not remove needed context.",
+            "Large datasets remain navigable on mobile and desktop.",
+            "No user-visible truncation without explicit pagination/continuation."
+          ],
+          "security": [],
+          "implications": [
+            "Analytics formulas and history results remain identical before/after optimization.",
+            "AI/catalog resolution receives the same authoritative data, only more efficiently.",
+            "Performance instrumentation stays separate from athlete metrics."
+          ],
+          "acceptance": [
+            "No identified critical path performs avoidable N+1 or unbounded full-history reads at realistic scale.",
+            "Required indexes/limits are backed by query evidence.",
+            "Representative coach/history/catalog loads meet documented reasonable budgets or have explicit residual limits.",
+            "RLS remains enforced and tested."
+          ],
+          "validation": [
+            "Static data-access inventory.",
+            "Representative seeded-volume tests.",
+            "EXPLAIN/ANALYZE or equivalent plan inspection where justified and privacy-safe.",
+            "Regression tests proving result equivalence.",
+            "Targeted migration/RLS validation for any index/RPC changes."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-133",
+        "title": "Frontend & Runtime Performance",
+        "status": "TODO",
+        "goal": "Make LiftNote fast and fluid on real mobile and desktop workloads.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Make LiftNote fast and fluid on real mobile and desktop workloads.",
+          "why": "Database efficiency alone does not prevent slow startup, waterfalls, duplicate requests, oversized bundles or rendering stalls.",
+          "builds": [
+            "Measure initial and subsequent route/workout loads on representative mobile and desktop conditions.",
+            "Audit bundle/client-JS cost, data waterfalls and redundant requests.",
+            "Apply lazy loading/code splitting where it improves measured experience.",
+            "Audit navigation transitions, long lists, catalogs, large histories and media rendering.",
+            "Inspect unnecessary re-rendering and expensive derived work.",
+            "Test slow-network behavior and caching interactions.",
+            "Use virtualization only when measurements justify it.",
+            "Define realistic measurable budgets for key flows."
+          ],
+          "userImpact": [
+            "Primary actions stay immediately responsive and loading states are explicit.",
+            "Long content remains scrollable/searchable without jank.",
+            "Slow network shows progressive/degraded states rather than frozen UI."
+          ],
+          "journey": [
+            "Primary actions stay immediately responsive and loading states are explicit.",
+            "Long content remains scrollable/searchable without jank.",
+            "Slow network shows progressive/degraded states rather than frozen UI."
+          ],
+          "rules": [
+            "Optimization must not alter analytics/history/AI semantics.",
+            "Measure technical latency separately from workout timing.",
+            "AI/media lazy loading must preserve fallback states."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-132 has removed/identified backend bottlenecks so frontend measurements are meaningful."
+          ],
+          "attention": [
+            "Bundle/build analysis where available.",
+            "Browser performance traces for key flows.",
+            "Network request-count/waterfall assertions.",
+            "Large-list/history fixtures.",
+            "Regression comparison against recorded baseline."
+          ],
+          "notInThisLot": [
+            "No framework migration.",
+            "No premature virtualization everywhere.",
+            "No visual simplification that removes needed product information merely to improve a metric.",
+            "No speculative micro-optimization without evidence."
+          ],
+          "doneWhen": [
+            "Key routes/active workout meet documented realistic budgets or have evidence-backed exceptions.",
+            "No significant redundant fetch/waterfall remains on audited critical flows.",
+            "Large history/catalog scenarios remain responsive.",
+            "Slow-network behavior remains usable and recoverable."
+          ],
+          "ux": [
+            "Primary actions stay immediately responsive and loading states are explicit.",
+            "Long content remains scrollable/searchable without jank.",
+            "Slow network shows progressive/degraded states rather than frozen UI."
+          ],
+          "security": [],
+          "implications": [
+            "Optimization must not alter analytics/history/AI semantics.",
+            "Measure technical latency separately from workout timing.",
+            "AI/media lazy loading must preserve fallback states."
+          ],
+          "validation": [
+            "Bundle/build analysis where available.",
+            "Browser performance traces for key flows.",
+            "Network request-count/waterfall assertions.",
+            "Large-list/history fixtures.",
+            "Regression comparison against recorded baseline."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Make LiftNote fast and fluid on real mobile and desktop workloads.",
+          "rationale": "Database efficiency alone does not prevent slow startup, waterfalls, duplicate requests, oversized bundles or rendering stalls.",
+          "dependencies": [
+            "LN-132 has removed/identified backend bottlenecks so frontend measurements are meaningful."
+          ],
+          "scope": [
+            "Measure initial and subsequent route/workout loads on representative mobile and desktop conditions.",
+            "Audit bundle/client-JS cost, data waterfalls and redundant requests.",
+            "Apply lazy loading/code splitting where it improves measured experience.",
+            "Audit navigation transitions, long lists, catalogs, large histories and media rendering.",
+            "Inspect unnecessary re-rendering and expensive derived work.",
+            "Test slow-network behavior and caching interactions.",
+            "Use virtualization only when measurements justify it.",
+            "Define realistic measurable budgets for key flows."
+          ],
+          "exclusions": [
+            "No framework migration.",
+            "No premature virtualization everywhere.",
+            "No visual simplification that removes needed product information merely to improve a metric.",
+            "No speculative micro-optimization without evidence."
+          ],
+          "data": [],
+          "ux": [
+            "Primary actions stay immediately responsive and loading states are explicit.",
+            "Long content remains scrollable/searchable without jank.",
+            "Slow network shows progressive/degraded states rather than frozen UI."
+          ],
+          "security": [],
+          "implications": [
+            "Optimization must not alter analytics/history/AI semantics.",
+            "Measure technical latency separately from workout timing.",
+            "AI/media lazy loading must preserve fallback states."
+          ],
+          "acceptance": [
+            "Key routes/active workout meet documented realistic budgets or have evidence-backed exceptions.",
+            "No significant redundant fetch/waterfall remains on audited critical flows.",
+            "Large history/catalog scenarios remain responsive.",
+            "Slow-network behavior remains usable and recoverable."
+          ],
+          "validation": [
+            "Bundle/build analysis where available.",
+            "Browser performance traces for key flows.",
+            "Network request-count/waterfall assertions.",
+            "Large-list/history fixtures.",
+            "Regression comparison against recorded baseline."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-134",
+        "title": "PWA, Offline & Sync Resilience",
+        "status": "TODO",
+        "goal": "Make PWA updates, offline recovery and synchronization robust under hostile but realistic scenarios.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Make PWA updates, offline recovery and synchronization robust under hostile but realistic scenarios.",
+          "why": "An active workout is a high-value mutable session; deploys, stale assets, app kills and reconnection must never cause silent loss.",
+          "builds": [
+            "Audit service-worker update and cache invalidation behavior.",
+            "Test new app version during an active workout and stale chunk/asset recovery.",
+            "Exercise offline → close/reload → reopen → resume.",
+            "Exercise background/foreground and crash/kill/reopen.",
+            "Test partial synchronization, out-of-order operations and reconnect conflicts.",
+            "Verify deploys cannot silently strand an active session on incompatible cached code/data.",
+            "Reuse the existing synchronization primitives; harden rather than fork them."
+          ],
+          "userImpact": [
+            "Update-required/degraded/conflict states are explicit and preserve a safe path back to training.",
+            "Resume after reload/reopen returns to the correct session and step.",
+            "Users can distinguish locally saved, syncing, synced and failed states where relevant."
+          ],
+          "journey": [
+            "Update-required/degraded/conflict states are explicit and preserve a safe path back to training.",
+            "Resume after reload/reopen returns to the correct session and step.",
+            "Users can distinguish locally saved, syncing, synced and failed states where relevant."
+          ],
+          "rules": [
+            "No workout/history fact is double-counted after replay.",
+            "Analytics only consume committed canonical facts.",
+            "AI unavailable offline remains explicit; no fabricated fallback interpretation."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-130/131 recovery and idempotency guarantees.",
+            "Existing LN-45/LN-55..57 offline/sync primitives."
+          ],
+          "attention": [
+            "Service-worker/cache tests.",
+            "Browser scenarios covering offline/reload/reopen/update.",
+            "Replay/order/conflict tests tied to LN-131 guarantees.",
+            "Account-switch cache isolation tests.",
+            "Exact-head browser verification for scenarios that depend on real PWA behavior."
+          ],
+          "notInThisLot": [
+            "No second offline database/sync engine.",
+            "No forced always-online requirement for flows already promised offline.",
+            "No silent cache reset that loses unsynced work.",
+            "No broad PWA rewrite without proven defect."
+          ],
+          "doneWhen": [
+            "No silent session loss in required offline/kill/reopen/update scenarios.",
+            "Reconnect/replay is idempotent in covered flows.",
+            "Stale chunks/assets recover without dead-end reload loops.",
+            "Conflict behavior is deterministic and visible."
+          ],
+          "ux": [
+            "Update-required/degraded/conflict states are explicit and preserve a safe path back to training.",
+            "Resume after reload/reopen returns to the correct session and step.",
+            "Users can distinguish locally saved, syncing, synced and failed states where relevant."
+          ],
+          "security": [],
+          "implications": [
+            "No workout/history fact is double-counted after replay.",
+            "Analytics only consume committed canonical facts.",
+            "AI unavailable offline remains explicit; no fabricated fallback interpretation."
+          ],
+          "validation": [
+            "Service-worker/cache tests.",
+            "Browser scenarios covering offline/reload/reopen/update.",
+            "Replay/order/conflict tests tied to LN-131 guarantees.",
+            "Account-switch cache isolation tests.",
+            "Exact-head browser verification for scenarios that depend on real PWA behavior."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Make PWA updates, offline recovery and synchronization robust under hostile but realistic scenarios.",
+          "rationale": "An active workout is a high-value mutable session; deploys, stale assets, app kills and reconnection must never cause silent loss.",
+          "dependencies": [
+            "LN-130/131 recovery and idempotency guarantees.",
+            "Existing LN-45/LN-55..57 offline/sync primitives."
+          ],
+          "scope": [
+            "Audit service-worker update and cache invalidation behavior.",
+            "Test new app version during an active workout and stale chunk/asset recovery.",
+            "Exercise offline → close/reload → reopen → resume.",
+            "Exercise background/foreground and crash/kill/reopen.",
+            "Test partial synchronization, out-of-order operations and reconnect conflicts.",
+            "Verify deploys cannot silently strand an active session on incompatible cached code/data.",
+            "Reuse the existing synchronization primitives; harden rather than fork them."
+          ],
+          "exclusions": [
+            "No second offline database/sync engine.",
+            "No forced always-online requirement for flows already promised offline.",
+            "No silent cache reset that loses unsynced work.",
+            "No broad PWA rewrite without proven defect."
+          ],
+          "data": [],
+          "ux": [
+            "Update-required/degraded/conflict states are explicit and preserve a safe path back to training.",
+            "Resume after reload/reopen returns to the correct session and step.",
+            "Users can distinguish locally saved, syncing, synced and failed states where relevant."
+          ],
+          "security": [],
+          "implications": [
+            "No workout/history fact is double-counted after replay.",
+            "Analytics only consume committed canonical facts.",
+            "AI unavailable offline remains explicit; no fabricated fallback interpretation."
+          ],
+          "acceptance": [
+            "No silent session loss in required offline/kill/reopen/update scenarios.",
+            "Reconnect/replay is idempotent in covered flows.",
+            "Stale chunks/assets recover without dead-end reload loops.",
+            "Conflict behavior is deterministic and visible."
+          ],
+          "validation": [
+            "Service-worker/cache tests.",
+            "Browser scenarios covering offline/reload/reopen/update.",
+            "Replay/order/conflict tests tied to LN-131 guarantees.",
+            "Account-switch cache isolation tests.",
+            "Exact-head browser verification for scenarios that depend on real PWA behavior."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-135",
+        "title": "Security & Abuse Hardening",
+        "status": "TODO",
+        "goal": "Perform final security and abuse hardening beyond the mere presence of RLS.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Perform final security and abuse hardening beyond the mere presence of RLS.",
+          "why": "LiftNote now exposes auth/passkeys, sharing, coach access, imports/uploads, AI and deep links; the final release must validate negative cases and realistic abuse boundaries.",
+          "builds": [
+            "Create/update a LiftNote-specific threat model covering auth/session/passkeys, RPC/endpoints, sharing, imports/uploads, AI and coach/athlete boundaries.",
+            "Run negative authorization tests for owner, coach, athlete and unrelated-user access.",
+            "Audit share codes, redirects/deep links and session transitions for guessing/leakage/open redirect risks.",
+            "Validate payload size/type limits for imports/uploads/AI requests.",
+            "Assess concrete bruteforce/abuse surfaces and add rate limiting only where justified.",
+            "Audit production secrets/config exposure and diagnostic telemetry for private data leakage.",
+            "Test cross-user data isolation through direct API/RPC paths, not only UI."
+          ],
+          "userImpact": [
+            "Security failures are understandable without exposing sensitive internal detail.",
+            "Revoked/expired links return safe recovery paths.",
+            "Progressive disclosure keeps security controls accessible but not intrusive."
+          ],
+          "journey": [
+            "Security failures are understandable without exposing sensitive internal detail.",
+            "Revoked/expired links return safe recovery paths.",
+            "Progressive disclosure keeps security controls accessible but not intrusive."
+          ],
+          "rules": [
+            "Security controls do not alter training analytics/history semantics.",
+            "AI safety/privacy boundaries remain deterministic and auditable.",
+            "Abuse telemetry stays operational, not athlete-facing scoring."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-134 stable PWA/offline behavior.",
+            "LN-129 privacy-safe diagnostics."
+          ],
+          "attention": [
+            "Threat-model review against code and routes.",
+            "RLS/RPC/API negative tests.",
+            "Malformed/oversized payload tests.",
+            "Redirect/deep-link tests.",
+            "Secret/log scanning of representative failures.",
+            "Targeted browser auth/passkey checks where UI round-trip matters."
+          ],
+          "notInThisLot": [
+            "No complete auth rewrite.",
+            "No security theater controls without threat evidence.",
+            "No CAPTCHA/rate limit everywhere by default.",
+            "No weakening UX for low-risk paths without justification."
+          ],
+          "doneWhen": [
+            "Threat model covers all required surfaces and maps each material risk to existing/new controls.",
+            "Negative authorization suite proves unrelated users cannot read/write protected data.",
+            "Payload/redirect/share-code abuse scenarios fail safely.",
+            "No secret/private payload leakage is found in logs/telemetry."
+          ],
+          "ux": [
+            "Security failures are understandable without exposing sensitive internal detail.",
+            "Revoked/expired links return safe recovery paths.",
+            "Progressive disclosure keeps security controls accessible but not intrusive."
+          ],
+          "security": [],
+          "implications": [
+            "Security controls do not alter training analytics/history semantics.",
+            "AI safety/privacy boundaries remain deterministic and auditable.",
+            "Abuse telemetry stays operational, not athlete-facing scoring."
+          ],
+          "validation": [
+            "Threat-model review against code and routes.",
+            "RLS/RPC/API negative tests.",
+            "Malformed/oversized payload tests.",
+            "Redirect/deep-link tests.",
+            "Secret/log scanning of representative failures.",
+            "Targeted browser auth/passkey checks where UI round-trip matters."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Perform final security and abuse hardening beyond the mere presence of RLS.",
+          "rationale": "LiftNote now exposes auth/passkeys, sharing, coach access, imports/uploads, AI and deep links; the final release must validate negative cases and realistic abuse boundaries.",
+          "dependencies": [
+            "LN-134 stable PWA/offline behavior.",
+            "LN-129 privacy-safe diagnostics."
+          ],
+          "scope": [
+            "Create/update a LiftNote-specific threat model covering auth/session/passkeys, RPC/endpoints, sharing, imports/uploads, AI and coach/athlete boundaries.",
+            "Run negative authorization tests for owner, coach, athlete and unrelated-user access.",
+            "Audit share codes, redirects/deep links and session transitions for guessing/leakage/open redirect risks.",
+            "Validate payload size/type limits for imports/uploads/AI requests.",
+            "Assess concrete bruteforce/abuse surfaces and add rate limiting only where justified.",
+            "Audit production secrets/config exposure and diagnostic telemetry for private data leakage.",
+            "Test cross-user data isolation through direct API/RPC paths, not only UI."
+          ],
+          "exclusions": [
+            "No complete auth rewrite.",
+            "No security theater controls without threat evidence.",
+            "No CAPTCHA/rate limit everywhere by default.",
+            "No weakening UX for low-risk paths without justification."
+          ],
+          "data": [],
+          "ux": [
+            "Security failures are understandable without exposing sensitive internal detail.",
+            "Revoked/expired links return safe recovery paths.",
+            "Progressive disclosure keeps security controls accessible but not intrusive."
+          ],
+          "security": [],
+          "implications": [
+            "Security controls do not alter training analytics/history semantics.",
+            "AI safety/privacy boundaries remain deterministic and auditable.",
+            "Abuse telemetry stays operational, not athlete-facing scoring."
+          ],
+          "acceptance": [
+            "Threat model covers all required surfaces and maps each material risk to existing/new controls.",
+            "Negative authorization suite proves unrelated users cannot read/write protected data.",
+            "Payload/redirect/share-code abuse scenarios fail safely.",
+            "No secret/private payload leakage is found in logs/telemetry."
+          ],
+          "validation": [
+            "Threat-model review against code and routes.",
+            "RLS/RPC/API negative tests.",
+            "Malformed/oversized payload tests.",
+            "Redirect/deep-link tests.",
+            "Secret/log scanning of representative failures.",
+            "Targeted browser auth/passkey checks where UI round-trip matters."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-136",
+        "title": "Migration, Backup & Data-Recovery Hardening",
+        "status": "TODO",
+        "goal": "Stress-test existing migration, export/import, backup/restore and recovery capabilities without rebuilding them.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Stress-test existing migration, export/import, backup/restore and recovery capabilities without rebuilding them.",
+          "why": "Data portability and recovery are only trustworthy when interrupted, repeated and conflicting scenarios preserve integrity and provenance.",
+          "builds": [
+            "Test migrations from historically supported states and reconcile repository migrations with the real Supabase state.",
+            "Test interrupted and replayed migration/backfill behavior.",
+            "Exercise rollback or roll-forward strategies where each migration family supports them.",
+            "Test partial restore, conflicting data and recovery after failure.",
+            "Verify export/import/backup/restore round trips preserve canonical identity, lineage and immutable history.",
+            "Detect and reject silent corruption or unsupported downgrade paths."
+          ],
+          "userImpact": [
+            "Partial/failed restore states explain what happened and what can be retried.",
+            "Users do not see technical migration jargon unless necessary for support.",
+            "Recovery never claims success before integrity checks pass."
+          ],
+          "journey": [
+            "Partial/failed restore states explain what happened and what can be retried.",
+            "Users do not see technical migration jargon unless necessary for support.",
+            "Recovery never claims success before integrity checks pass."
+          ],
+          "rules": [
+            "History/progression and provenance remain identical after supported round trips.",
+            "AI/import provenance is preserved and never upgraded to measured fact.",
+            "Failed/replayed operations do not duplicate analytics facts."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-135 security boundaries are stable.",
+            "Existing LN-73, LN-74, LN-107, LN-108, LN-109 and LN-110 capabilities are authoritative."
+          ],
+          "attention": [
+            "Migration fixture matrix.",
+            "Replay/interruption tests.",
+            "Backup/restore and export/import round-trip tests.",
+            "Integrity checksums/counts/semantic comparisons where appropriate.",
+            "Connected Supabase migration/RLS validation when changes are introduced."
+          ],
+          "notInThisLot": [
+            "No reconstruction of LN-73/74/107/108/109/110 features.",
+            "No new backup product family.",
+            "No destructive production rollback experiment without a safe isolated fixture.",
+            "No mutation of historical source facts merely to make restore pass."
+          ],
+          "doneWhen": [
+            "Supported historical migration fixtures reach the current schema deterministically.",
+            "Interrupted/replayed backfills do not corrupt or duplicate data.",
+            "Backup/export → restore/import preserves required identity, provenance and immutable history.",
+            "Repository and real Supabase migration state are reconciled with no unexplained drift."
+          ],
+          "ux": [
+            "Partial/failed restore states explain what happened and what can be retried.",
+            "Users do not see technical migration jargon unless necessary for support.",
+            "Recovery never claims success before integrity checks pass."
+          ],
+          "security": [],
+          "implications": [
+            "History/progression and provenance remain identical after supported round trips.",
+            "AI/import provenance is preserved and never upgraded to measured fact.",
+            "Failed/replayed operations do not duplicate analytics facts."
+          ],
+          "validation": [
+            "Migration fixture matrix.",
+            "Replay/interruption tests.",
+            "Backup/restore and export/import round-trip tests.",
+            "Integrity checksums/counts/semantic comparisons where appropriate.",
+            "Connected Supabase migration/RLS validation when changes are introduced."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Stress-test existing migration, export/import, backup/restore and recovery capabilities without rebuilding them.",
+          "rationale": "Data portability and recovery are only trustworthy when interrupted, repeated and conflicting scenarios preserve integrity and provenance.",
+          "dependencies": [
+            "LN-135 security boundaries are stable.",
+            "Existing LN-73, LN-74, LN-107, LN-108, LN-109 and LN-110 capabilities are authoritative."
+          ],
+          "scope": [
+            "Test migrations from historically supported states and reconcile repository migrations with the real Supabase state.",
+            "Test interrupted and replayed migration/backfill behavior.",
+            "Exercise rollback or roll-forward strategies where each migration family supports them.",
+            "Test partial restore, conflicting data and recovery after failure.",
+            "Verify export/import/backup/restore round trips preserve canonical identity, lineage and immutable history.",
+            "Detect and reject silent corruption or unsupported downgrade paths."
+          ],
+          "exclusions": [
+            "No reconstruction of LN-73/74/107/108/109/110 features.",
+            "No new backup product family.",
+            "No destructive production rollback experiment without a safe isolated fixture.",
+            "No mutation of historical source facts merely to make restore pass."
+          ],
+          "data": [],
+          "ux": [
+            "Partial/failed restore states explain what happened and what can be retried.",
+            "Users do not see technical migration jargon unless necessary for support.",
+            "Recovery never claims success before integrity checks pass."
+          ],
+          "security": [],
+          "implications": [
+            "History/progression and provenance remain identical after supported round trips.",
+            "AI/import provenance is preserved and never upgraded to measured fact.",
+            "Failed/replayed operations do not duplicate analytics facts."
+          ],
+          "acceptance": [
+            "Supported historical migration fixtures reach the current schema deterministically.",
+            "Interrupted/replayed backfills do not corrupt or duplicate data.",
+            "Backup/export → restore/import preserves required identity, provenance and immutable history.",
+            "Repository and real Supabase migration state are reconciled with no unexplained drift."
+          ],
+          "validation": [
+            "Migration fixture matrix.",
+            "Replay/interruption tests.",
+            "Backup/restore and export/import round-trip tests.",
+            "Integrity checksums/counts/semantic comparisons where appropriate.",
+            "Connected Supabase migration/RLS validation when changes are introduced."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-137",
+        "title": "Quality, Accessibility & Localization Sweep",
+        "status": "TODO",
+        "goal": "Run a systematic cross-product quality, accessibility and localization sweep.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Run a systematic cross-product quality, accessibility and localization sweep.",
+          "why": "The final product must be usable with keyboard/screen reader/touch and consistently correct in FR/EN, units, dates and sports formats—not just functionally complete.",
+          "builds": [
+            "Build a critical-test matrix and identify material coverage gaps across unit, integration, RLS and E2E.",
+            "Consolidate redundant tests only when coverage remains explicit.",
+            "Audit keyboard navigation, focus order/restoration, screen-reader semantics, contrast, reduced motion and touch target sizes.",
+            "Audit dialogs, forms, timers, live regions and destructive actions.",
+            "Audit FR/EN completeness, plurals, dynamic errors and terminology consistency.",
+            "Audit dates, times, timezones, numbers, kg/lb, distance, pace and sport-specific formatting."
+          ],
+          "userImpact": [
+            "All critical flows are keyboard/touch reachable and focus behavior is predictable.",
+            "Dynamic states are announced appropriately without excessive noise.",
+            "FR/EN and unit formatting stay coherent on mobile and desktop."
+          ],
+          "journey": [
+            "All critical flows are keyboard/touch reachable and focus behavior is predictable.",
+            "Dynamic states are announced appropriately without excessive noise.",
+            "FR/EN and unit formatting stay coherent on mobile and desktop."
+          ],
+          "rules": [
+            "Localized formatting changes presentation only, not canonical analytics/history.",
+            "Pace/distance/unit conversion remains deterministic and tested.",
+            "AI-generated content follows existing locale/privacy boundaries."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-136 data integrity is stable."
+          ],
+          "attention": [
+            "Automated accessibility checks plus manual/browser keyboard/focus scenarios.",
+            "Localization snapshot/fixture tests.",
+            "Timezone/unit/pace matrices.",
+            "Review of test inventory and targeted additions.",
+            "No claim of screen-reader quality from automation alone."
+          ],
+          "notInThisLot": [
+            "No wholesale UI rewrite.",
+            "No replacement of the i18n stack without demonstrated defect.",
+            "No test-count optimization as a goal by itself.",
+            "No accessibility claim based only on automated scanning."
+          ],
+          "doneWhen": [
+            "No material untranslated/partially translated surface remains in audited critical paths.",
+            "Critical keyboard/focus/screen-reader/touch defects are fixed.",
+            "Dates/timezones/units/sport formats pass representative FR/EN matrices.",
+            "Critical test gaps are closed or explicitly dispositioned."
+          ],
+          "ux": [
+            "All critical flows are keyboard/touch reachable and focus behavior is predictable.",
+            "Dynamic states are announced appropriately without excessive noise.",
+            "FR/EN and unit formatting stay coherent on mobile and desktop."
+          ],
+          "security": [],
+          "implications": [
+            "Localized formatting changes presentation only, not canonical analytics/history.",
+            "Pace/distance/unit conversion remains deterministic and tested.",
+            "AI-generated content follows existing locale/privacy boundaries."
+          ],
+          "validation": [
+            "Automated accessibility checks plus manual/browser keyboard/focus scenarios.",
+            "Localization snapshot/fixture tests.",
+            "Timezone/unit/pace matrices.",
+            "Review of test inventory and targeted additions.",
+            "No claim of screen-reader quality from automation alone."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Run a systematic cross-product quality, accessibility and localization sweep.",
+          "rationale": "The final product must be usable with keyboard/screen reader/touch and consistently correct in FR/EN, units, dates and sports formats—not just functionally complete.",
+          "dependencies": [
+            "LN-136 data integrity is stable."
+          ],
+          "scope": [
+            "Build a critical-test matrix and identify material coverage gaps across unit, integration, RLS and E2E.",
+            "Consolidate redundant tests only when coverage remains explicit.",
+            "Audit keyboard navigation, focus order/restoration, screen-reader semantics, contrast, reduced motion and touch target sizes.",
+            "Audit dialogs, forms, timers, live regions and destructive actions.",
+            "Audit FR/EN completeness, plurals, dynamic errors and terminology consistency.",
+            "Audit dates, times, timezones, numbers, kg/lb, distance, pace and sport-specific formatting."
+          ],
+          "exclusions": [
+            "No wholesale UI rewrite.",
+            "No replacement of the i18n stack without demonstrated defect.",
+            "No test-count optimization as a goal by itself.",
+            "No accessibility claim based only on automated scanning."
+          ],
+          "data": [],
+          "ux": [
+            "All critical flows are keyboard/touch reachable and focus behavior is predictable.",
+            "Dynamic states are announced appropriately without excessive noise.",
+            "FR/EN and unit formatting stay coherent on mobile and desktop."
+          ],
+          "security": [],
+          "implications": [
+            "Localized formatting changes presentation only, not canonical analytics/history.",
+            "Pace/distance/unit conversion remains deterministic and tested.",
+            "AI-generated content follows existing locale/privacy boundaries."
+          ],
+          "acceptance": [
+            "No material untranslated/partially translated surface remains in audited critical paths.",
+            "Critical keyboard/focus/screen-reader/touch defects are fixed.",
+            "Dates/timezones/units/sport formats pass representative FR/EN matrices.",
+            "Critical test gaps are closed or explicitly dispositioned."
+          ],
+          "validation": [
+            "Automated accessibility checks plus manual/browser keyboard/focus scenarios.",
+            "Localization snapshot/fixture tests.",
+            "Timezone/unit/pace matrices.",
+            "Review of test inventory and targeted additions.",
+            "No claim of screen-reader quality from automation alone."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-138",
+        "title": "Codebase & Product Polish",
+        "status": "TODO",
+        "goal": "Perform the last evidence-based cleanup of product and code before the final audit.",
+        "business": {
+          "phase": "Final Hardening",
+          "summary": "Perform the last evidence-based cleanup of product and code before the final audit.",
+          "why": "After many lots, small inconsistencies and obsolete paths create maintenance cost and product roughness. Cleanup is justified only by concrete debt, bug, risk or inconsistency.",
+          "builds": [
+            "Fix demonstrated Design System inconsistencies, responsive issues, spacing/hierarchy and loading/empty/error/success states.",
+            "Review destructive confirmations and redundant interactions.",
+            "Remove proven dead code, obsolete prototypes/paths, stale APIs/types, unused imports/dependencies and actionable lint/TypeScript warnings.",
+            "Consolidate concrete duplications that create maintenance or behavior risk.",
+            "Split files/responsibilities only when current size/ownership materially impairs safe change.",
+            "Document every non-trivial cleanup with the concrete debt or defect it resolves."
+          ],
+          "userImpact": [
+            "Polish keeps Today and active workout simple and fast.",
+            "Responsive/loading/empty/error states are coherent across the product.",
+            "Advanced controls remain progressively disclosed."
+          ],
+          "journey": [
+            "Polish keeps Today and active workout simple and fast.",
+            "Responsive/loading/empty/error states are coherent across the product.",
+            "Advanced controls remain progressively disclosed."
+          ],
+          "rules": [
+            "Analytics/history/AI behavior remains semantically unchanged unless a demonstrated defect is fixed.",
+            "Any behavior fix receives a regression test.",
+            "No cleanup silently changes metric formulas."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-137 quality/accessibility/localization findings are available."
+          ],
+          "attention": [
+            "Targeted lint/type/tests for touched code.",
+            "Dead-code/dependency checks using repository-supported tooling.",
+            "Responsive browser spot checks for touched surfaces.",
+            "Regression tests for behavior-affecting fixes.",
+            "git diff --check."
+          ],
+          "notInThisLot": [
+            "No mass aesthetic refactor.",
+            "No framework/state-management rewrite.",
+            "No speculative abstraction.",
+            "No new major feature family.",
+            "No changing behavior solely to make code look cleaner."
+          ],
+          "doneWhen": [
+            "Each meaningful change maps to a documented defect/debt/risk.",
+            "No known high-impact lint/type/dead-code/product-state inconsistency remains in LiftNote scope.",
+            "Critical responsive/loading/empty/error/destructive states are coherent.",
+            "No mass refactor unrelated to demonstrated need is included."
+          ],
+          "ux": [
+            "Polish keeps Today and active workout simple and fast.",
+            "Responsive/loading/empty/error states are coherent across the product.",
+            "Advanced controls remain progressively disclosed."
+          ],
+          "security": [],
+          "implications": [
+            "Analytics/history/AI behavior remains semantically unchanged unless a demonstrated defect is fixed.",
+            "Any behavior fix receives a regression test.",
+            "No cleanup silently changes metric formulas."
+          ],
+          "validation": [
+            "Targeted lint/type/tests for touched code.",
+            "Dead-code/dependency checks using repository-supported tooling.",
+            "Responsive browser spot checks for touched surfaces.",
+            "Regression tests for behavior-affecting fixes.",
+            "git diff --check."
+          ]
+        },
+        "contract": {
+          "phase": "Final Hardening",
+          "objective": "Perform the last evidence-based cleanup of product and code before the final audit.",
+          "rationale": "After many lots, small inconsistencies and obsolete paths create maintenance cost and product roughness. Cleanup is justified only by concrete debt, bug, risk or inconsistency.",
+          "dependencies": [
+            "LN-137 quality/accessibility/localization findings are available."
+          ],
+          "scope": [
+            "Fix demonstrated Design System inconsistencies, responsive issues, spacing/hierarchy and loading/empty/error/success states.",
+            "Review destructive confirmations and redundant interactions.",
+            "Remove proven dead code, obsolete prototypes/paths, stale APIs/types, unused imports/dependencies and actionable lint/TypeScript warnings.",
+            "Consolidate concrete duplications that create maintenance or behavior risk.",
+            "Split files/responsibilities only when current size/ownership materially impairs safe change.",
+            "Document every non-trivial cleanup with the concrete debt or defect it resolves."
+          ],
+          "exclusions": [
+            "No mass aesthetic refactor.",
+            "No framework/state-management rewrite.",
+            "No speculative abstraction.",
+            "No new major feature family.",
+            "No changing behavior solely to make code look cleaner."
+          ],
+          "data": [],
+          "ux": [
+            "Polish keeps Today and active workout simple and fast.",
+            "Responsive/loading/empty/error states are coherent across the product.",
+            "Advanced controls remain progressively disclosed."
+          ],
+          "security": [],
+          "implications": [
+            "Analytics/history/AI behavior remains semantically unchanged unless a demonstrated defect is fixed.",
+            "Any behavior fix receives a regression test.",
+            "No cleanup silently changes metric formulas."
+          ],
+          "acceptance": [
+            "Each meaningful change maps to a documented defect/debt/risk.",
+            "No known high-impact lint/type/dead-code/product-state inconsistency remains in LiftNote scope.",
+            "Critical responsive/loading/empty/error/destructive states are coherent.",
+            "No mass refactor unrelated to demonstrated need is included."
+          ],
+          "validation": [
+            "Targeted lint/type/tests for touched code.",
+            "Dead-code/dependency checks using repository-supported tooling.",
+            "Responsive browser spot checks for touched surfaces.",
+            "Regression tests for behavior-affecting fixes.",
+            "git diff --check."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-139",
+        "title": "Final Product Coherence Audit",
+        "status": "TODO",
+        "goal": "Re-audit the complete product after LN-129 through LN-138 and block certification on any unresolved major defect.",
+        "business": {
+          "phase": "Terminal Audit",
+          "summary": "Re-audit the complete product after LN-129 through LN-138 and block certification on any unresolved major defect.",
+          "why": "LN-115 validated the functional product before final hardening. This second audit proves that resilience, performance, security, accessibility and polish still compose into one coherent product.",
+          "builds": [
+            "Replay independent athlete, advanced athlete, coached athlete and coach journeys.",
+            "Cover Strength, Running and Circuit/Conditioning product paths.",
+            "Cover programming, history/progression, goals, import/export, backup/restore, AI and wearable/integration paths that actually exist.",
+            "Cover offline/sync, multi-device, error recovery, observability, privacy/security and performance.",
+            "Cover accessibility, FR/EN and mobile/desktop coherence.",
+            "Fix small demonstrated integration defects discovered during the audit.",
+            "Classify any unresolved major defect as blocking LN-140."
+          ],
+          "userImpact": [
+            "Representative journeys start from natural entry points and end without dead ends.",
+            "Progressive disclosure remains valid after hardening features.",
+            "Mobile/desktop differences are intentional and not missing capability."
+          ],
+          "journey": [
+            "Representative journeys start from natural entry points and end without dead ends.",
+            "Progressive disclosure remains valid after hardening features.",
+            "Mobile/desktop differences are intentional and not missing capability."
+          ],
+          "rules": [
+            "Derived metrics/goals remain traceable to facts.",
+            "AI remains bounded and unavailable/fallback states are coherent.",
+            "Audit does not create new analytics facts merely by testing."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-138 and all preceding lots are DONE.",
+            "LN-115 remains historical first coherence checkpoint, not replaced."
+          ],
+          "attention": [
+            "Managed browser/mobile gate is mandatory.",
+            "Replay representative E2E journeys on exact-head deployment.",
+            "Targeted RLS/security/offline/performance/accessibility/localization checks informed by LN-129..138.",
+            "Use WAITING_GATE while managed browser evidence is pending; Vercel READY is not browser QA.",
+            "TinyFish is prohibited."
+          ],
+          "notInThisLot": [
+            "No new major feature family.",
+            "No speculative redesign.",
+            "No weakening of gate criteria to reach DONE.",
+            "No reimplementation of prior lots."
+          ],
+          "doneWhen": [
+            "All required personas/modalities and cross-cutting concerns pass without major unresolved defect.",
+            "Any small defect fixed is covered by regression evidence.",
+            "Every major unresolved defect blocks LN-140 with explicit record.",
+            "Audit evidence identifies the exact commit/build tested."
+          ],
+          "ux": [
+            "Representative journeys start from natural entry points and end without dead ends.",
+            "Progressive disclosure remains valid after hardening features.",
+            "Mobile/desktop differences are intentional and not missing capability."
+          ],
+          "security": [],
+          "implications": [
+            "Derived metrics/goals remain traceable to facts.",
+            "AI remains bounded and unavailable/fallback states are coherent.",
+            "Audit does not create new analytics facts merely by testing."
+          ],
+          "validation": [
+            "Managed browser/mobile gate is mandatory.",
+            "Replay representative E2E journeys on exact-head deployment.",
+            "Targeted RLS/security/offline/performance/accessibility/localization checks informed by LN-129..138.",
+            "Use WAITING_GATE while managed browser evidence is pending; Vercel READY is not browser QA.",
+            "TinyFish is prohibited."
+          ]
+        },
+        "contract": {
+          "phase": "Terminal Audit",
+          "objective": "Re-audit the complete product after LN-129 through LN-138 and block certification on any unresolved major defect.",
+          "rationale": "LN-115 validated the functional product before final hardening. This second audit proves that resilience, performance, security, accessibility and polish still compose into one coherent product.",
+          "dependencies": [
+            "LN-138 and all preceding lots are DONE.",
+            "LN-115 remains historical first coherence checkpoint, not replaced."
+          ],
+          "scope": [
+            "Replay independent athlete, advanced athlete, coached athlete and coach journeys.",
+            "Cover Strength, Running and Circuit/Conditioning product paths.",
+            "Cover programming, history/progression, goals, import/export, backup/restore, AI and wearable/integration paths that actually exist.",
+            "Cover offline/sync, multi-device, error recovery, observability, privacy/security and performance.",
+            "Cover accessibility, FR/EN and mobile/desktop coherence.",
+            "Fix small demonstrated integration defects discovered during the audit.",
+            "Classify any unresolved major defect as blocking LN-140."
+          ],
+          "exclusions": [
+            "No new major feature family.",
+            "No speculative redesign.",
+            "No weakening of gate criteria to reach DONE.",
+            "No reimplementation of prior lots."
+          ],
+          "data": [],
+          "ux": [
+            "Representative journeys start from natural entry points and end without dead ends.",
+            "Progressive disclosure remains valid after hardening features.",
+            "Mobile/desktop differences are intentional and not missing capability."
+          ],
+          "security": [],
+          "implications": [
+            "Derived metrics/goals remain traceable to facts.",
+            "AI remains bounded and unavailable/fallback states are coherent.",
+            "Audit does not create new analytics facts merely by testing."
+          ],
+          "acceptance": [
+            "All required personas/modalities and cross-cutting concerns pass without major unresolved defect.",
+            "Any small defect fixed is covered by regression evidence.",
+            "Every major unresolved defect blocks LN-140 with explicit record.",
+            "Audit evidence identifies the exact commit/build tested."
+          ],
+          "validation": [
+            "Managed browser/mobile gate is mandatory.",
+            "Replay representative E2E journeys on exact-head deployment.",
+            "Targeted RLS/security/offline/performance/accessibility/localization checks informed by LN-129..138.",
+            "Use WAITING_GATE while managed browser evidence is pending; Vercel READY is not browser QA.",
+            "TinyFish is prohibited."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
+      },
+      {
+        "id": "LN-140",
+        "title": "Final Release Certification",
+        "status": "TODO",
+        "goal": "Certify the exact final LiftNote commit as releasable and terminate the roadmap only after every blocking gate passes.",
+        "business": {
+          "phase": "Final Certification",
+          "summary": "Certify the exact final LiftNote commit as releasable and terminate the roadmap only after every blocking gate passes.",
+          "why": "LN-116 was the first release checkpoint for the functional product. LN-140 is the terminal certification after all hardening and the second coherence audit.",
+          "builds": [
+            "Run relevant lint, type and complete LiftNote test suites.",
+            "Run real browser E2E on mobile and desktop.",
+            "Run accessibility keyboard/focus and applicable screen-reader checks.",
+            "Run RLS/auth/coach negative tests and security abuse checks.",
+            "Run offline/sync, multi-device, concurrency and idempotency gates.",
+            "Run import/export, backup/restore, data-integrity and migration/backfill gates.",
+            "Run deep-link/auth round trips, FR/EN, date/timezone/unit and realistic-load checks.",
+            "Run runtime/frontend/database performance checks against final budgets.",
+            "Run PWA update/cache/stale-asset behavior.",
+            "Run AI unavailable/fallback/privacy cases.",
+            "Verify exact-head Vercel deployment, production smoke checks and production observability.",
+            "Verify no known blocking debt remains."
+          ],
+          "userImpact": [
+            "Production smoke and browser journeys use natural product paths.",
+            "Mobile/desktop, locale and degraded-state behavior are included.",
+            "Failure messaging and recovery are part of certification, not optional extras."
+          ],
+          "journey": [
+            "Production smoke and browser journeys use natural product paths.",
+            "Mobile/desktop, locale and degraded-state behavior are included.",
+            "Failure messaging and recovery are part of certification, not optional extras."
+          ],
+          "rules": [
+            "Analytics/history/goal outputs on final head match deterministic source facts.",
+            "No duplicate facts under replay/concurrency.",
+            "AI remains non-authoritative where contracts require deterministic confirmation."
+          ],
+          "examples": [],
+          "data": [],
+          "dependencies": [
+            "LN-139 is DONE with no unresolved major blocking defect.",
+            "Every preceding roadmap lot is DONE."
+          ],
+          "attention": [
+            "Use the repository's managed browser gate; WAITING_GATE while pending.",
+            "Run complete LiftNote validation plus shared/global CI only if shared code changed.",
+            "Record exact-head deployment, browser run IDs, security/RLS/offline/concurrency/migration/performance evidence.",
+            "Re-run affected gates after every certification fix.",
+            "TinyFish is prohibited."
+          ],
+          "notInThisLot": [
+            "No new feature development except fixes required to pass certification.",
+            "No waiver of a blocking gate without changing the roadmap contract explicitly.",
+            "No treating Vercel READY as browser QA.",
+            "No TinyFish."
+          ],
+          "doneWhen": [
+            "Every listed blocking gate passes on the exact final head or on evidence explicitly tied to an unchanged relevant subsystem.",
+            "Exact-head deployment is READY and separate browser evidence passes.",
+            "Production smoke and observability are verified.",
+            "No unresolved blocking security, integrity, offline, migration, accessibility or performance debt remains.",
+            "DELIVERY_PLAN identifies LN-140 as terminal and END follows it."
+          ],
+          "ux": [
+            "Production smoke and browser journeys use natural product paths.",
+            "Mobile/desktop, locale and degraded-state behavior are included.",
+            "Failure messaging and recovery are part of certification, not optional extras."
+          ],
+          "security": [],
+          "implications": [
+            "Analytics/history/goal outputs on final head match deterministic source facts.",
+            "No duplicate facts under replay/concurrency.",
+            "AI remains non-authoritative where contracts require deterministic confirmation."
+          ],
+          "validation": [
+            "Use the repository's managed browser gate; WAITING_GATE while pending.",
+            "Run complete LiftNote validation plus shared/global CI only if shared code changed.",
+            "Record exact-head deployment, browser run IDs, security/RLS/offline/concurrency/migration/performance evidence.",
+            "Re-run affected gates after every certification fix.",
+            "TinyFish is prohibited."
+          ]
+        },
+        "contract": {
+          "phase": "Final Certification",
+          "objective": "Certify the exact final LiftNote commit as releasable and terminate the roadmap only after every blocking gate passes.",
+          "rationale": "LN-116 was the first release checkpoint for the functional product. LN-140 is the terminal certification after all hardening and the second coherence audit.",
+          "dependencies": [
+            "LN-139 is DONE with no unresolved major blocking defect.",
+            "Every preceding roadmap lot is DONE."
+          ],
+          "scope": [
+            "Run relevant lint, type and complete LiftNote test suites.",
+            "Run real browser E2E on mobile and desktop.",
+            "Run accessibility keyboard/focus and applicable screen-reader checks.",
+            "Run RLS/auth/coach negative tests and security abuse checks.",
+            "Run offline/sync, multi-device, concurrency and idempotency gates.",
+            "Run import/export, backup/restore, data-integrity and migration/backfill gates.",
+            "Run deep-link/auth round trips, FR/EN, date/timezone/unit and realistic-load checks.",
+            "Run runtime/frontend/database performance checks against final budgets.",
+            "Run PWA update/cache/stale-asset behavior.",
+            "Run AI unavailable/fallback/privacy cases.",
+            "Verify exact-head Vercel deployment, production smoke checks and production observability.",
+            "Verify no known blocking debt remains."
+          ],
+          "exclusions": [
+            "No new feature development except fixes required to pass certification.",
+            "No waiver of a blocking gate without changing the roadmap contract explicitly.",
+            "No treating Vercel READY as browser QA.",
+            "No TinyFish."
+          ],
+          "data": [],
+          "ux": [
+            "Production smoke and browser journeys use natural product paths.",
+            "Mobile/desktop, locale and degraded-state behavior are included.",
+            "Failure messaging and recovery are part of certification, not optional extras."
+          ],
+          "security": [],
+          "implications": [
+            "Analytics/history/goal outputs on final head match deterministic source facts.",
+            "No duplicate facts under replay/concurrency.",
+            "AI remains non-authoritative where contracts require deterministic confirmation."
+          ],
+          "acceptance": [
+            "Every listed blocking gate passes on the exact final head or on evidence explicitly tied to an unchanged relevant subsystem.",
+            "Exact-head deployment is READY and separate browser evidence passes.",
+            "Production smoke and observability are verified.",
+            "No unresolved blocking security, integrity, offline, migration, accessibility or performance debt remains.",
+            "DELIVERY_PLAN identifies LN-140 as terminal and END follows it."
+          ],
+          "validation": [
+            "Use the repository's managed browser gate; WAITING_GATE while pending.",
+            "Run complete LiftNote validation plus shared/global CI only if shared code changed.",
+            "Record exact-head deployment, browser run IDs, security/RLS/offline/concurrency/migration/performance evidence.",
+            "Re-run affected gates after every certification fix.",
+            "TinyFish is prohibited."
+          ],
+          "completion": {
+            "pr": null,
+            "mergeSha": null
+          }
+        },
+        "contractAvailable": true,
+        "executionState": "executable"
       }
     ],
     "mismatches": []
   },
   "summary": {
     "done": 120,
-    "total": 138,
-    "percent": 87,
+    "total": 150,
+    "percent": 80,
     "current": {
       "id": "LN-107",
       "title": "Backup & Restore",
