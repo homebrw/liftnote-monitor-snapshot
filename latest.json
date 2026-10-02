@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T18:43:52.594Z",
+  "publishedAt": "2026-10-02T18:44:40.453Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "WAITING_GATE",
@@ -13,8 +13,8 @@
     "nudges": 1,
     "lastMessage": "LN-99: waiting for post-merge browser verification run 37049177790.",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T18:43:45.857Z",
-    "nextTickAt": "2026-10-02T18:48:45.857Z",
+    "lastSuccessfulTickAt": "2026-10-02T18:44:33.592Z",
+    "nextTickAt": "2026-10-02T18:49:33.592Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
