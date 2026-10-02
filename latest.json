@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T17:34:21.765Z",
+  "publishedAt": "2026-10-02T17:35:09.516Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "Clicked Try again",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T17:34:14.449Z",
-    "nextTickAt": "2026-10-02T17:39:14.449Z",
+    "lastSuccessfulTickAt": "2026-10-02T17:35:02.088Z",
+    "nextTickAt": "2026-10-02T17:40:02.088Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
