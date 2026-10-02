@@ -1,33 +1,33 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-02T18:34:45.539Z",
+  "publishedAt": "2026-10-02T18:35:37.801Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
-    "status": "WAITING_GATE",
+    "status": "RUNNING",
     "currentLot": "LN-99",
     "nextLot": "LN-100",
     "launchedAt": "2026-10-02T16:31:31.612Z",
-    "lastProgressAt": "2026-10-02T18:31:21.101Z",
-    "lastChatCheckAt": "2026-10-02T18:31:21.101Z",
-    "lastObservedMainSha": "d9c0eb1f78352530ed8a777ddf6b3cc10e959593",
+    "lastProgressAt": "2026-10-02T18:35:30.644Z",
+    "lastChatCheckAt": "2026-10-02T18:35:30.641Z",
+    "lastObservedMainSha": "b2883d4f72de16d6c05e38fe35a06d5fb2692fc5",
     "nudges": 1,
-    "lastMessage": "LN-99: waiting for post-merge browser verification run 37048104458.",
+    "lastMessage": "main moved while LN-99 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-02T18:34:38.569Z",
-    "nextTickAt": "2026-10-02T18:39:38.569Z",
+    "lastSuccessfulTickAt": "2026-10-02T18:35:30.644Z",
+    "nextTickAt": "2026-10-02T18:40:30.644Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
       "lot": "LN-99",
       "type": "browser",
       "mode": "post_merge",
-      "phase": "waiting",
+      "phase": "failed",
       "reason": null,
       "prNumber": null,
       "headRef": "main",
       "headSha": "b2883d4f72de16d6c05e38fe35a06d5fb2692fc5",
       "runId": 37048104458,
-      "conclusion": null
+      "conclusion": "failure"
     },
     "history": [
       {
