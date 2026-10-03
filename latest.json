@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-03T00:21:32.484Z",
+  "publishedAt": "2026-10-03T00:22:27.544Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-111",
-    "nextLot": "LN-112",
-    "launchedAt": "2026-10-03T00:05:20.377Z",
-    "lastProgressAt": "2026-10-03T00:18:12.341Z",
-    "lastChatCheckAt": "2026-10-03T00:05:20.377Z",
-    "lastObservedMainSha": "328584bf3cf60a674199cddc35862a028cba4383",
+    "currentLot": "LN-112",
+    "nextLot": "LN-113",
+    "launchedAt": "2026-10-03T00:22:19.671Z",
+    "lastProgressAt": "2026-10-03T00:22:19.671Z",
+    "lastChatCheckAt": "2026-10-03T00:22:19.671Z",
+    "lastObservedMainSha": "30fa0d0549ec65a5fd7914ed3035fb7ab811b8e0",
     "nudges": 0,
-    "lastMessage": "main moved while LN-111 is active",
+    "lastMessage": "Launched LN-112; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-03T00:21:24.654Z",
-    "nextTickAt": "2026-10-03T00:26:24.654Z",
+    "lastSuccessfulTickAt": "2026-10-03T00:22:19.671Z",
+    "nextTickAt": "2026-10-03T00:27:19.671Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-101",
-        "completedAt": "2026-10-02T19:33:29.239Z",
-        "restartedAt": null,
-        "mainSha": "51a8104ade24fd7bb40021e37b6265c97e99ab51",
-        "reason": null
-      },
       {
         "lot": "LN-102",
         "completedAt": "2026-10-02T19:49:23.220Z",
@@ -112,6 +105,13 @@
         "completedAt": "2026-10-03T00:05:03.720Z",
         "restartedAt": null,
         "mainSha": "03b35b648a8b149465b44d838dbacf0e7692f00d",
+        "reason": null
+      },
+      {
+        "lot": "LN-111",
+        "completedAt": "2026-10-03T00:22:12.860Z",
+        "restartedAt": null,
+        "mainSha": "30fa0d0549ec65a5fd7914ed3035fb7ab811b8e0",
         "reason": null
       }
     ]
@@ -21135,181 +21135,6 @@
     "total": 150,
     "percent": 83,
     "current": {
-      "id": "LN-111",
-      "title": "Privacy & Data-Control Center",
-      "status": "DONE",
-      "goal": "Give users an understandable place to control exports, deletion, coach relationships, health integrations and AI/data-use boundaries.",
-      "business": {
-        "phase": "Trust, Data & Privacy",
-        "summary": "Give users an understandable place to control exports, deletion, coach relationships, health integrations and AI/data-use boundaries.",
-        "why": "As LiftNote grows, users should be able to understand who can access which categories of their data without reading architecture docs.",
-        "builds": [
-          "central privacy/data-control overview with contextual deep links",
-          "portable export and backup controls",
-          "account/data deletion entry where supported, with destructive safeguards",
-          "coach relationship/access summaries and revocation paths",
-          "health/wearable permission overview once integrations exist",
-          "AI/data-use boundary controls once AI capabilities exist, without pretending future features are active",
-          "recent sensitive-operation/audit context where useful"
-        ],
-        "userImpact": [
-          "plain-language category-by-category access explanations",
-          "contextual actions close to their source with this center as overview",
-          "destructive actions require explicit confirmation and recovery information where possible",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "plain-language category-by-category access explanations",
-          "contextual actions close to their source with this center as overview",
-          "destructive actions require explicit confirmation and recovery information where possible",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "all permission changes are server-authorized",
-          "revocation takes effect at authoritative access boundaries, not just UI",
-          "never expose credentials, secrets or other users' data in the center",
-          "provides visible consent/control foundation before health/wearables and AI",
-          "audit trail can explain high-value changes",
-          "analytics must not depend on revoked integrations silently"
-        ],
-        "examples": [],
-        "data": [
-          "center is primarily an orchestration/view layer over authoritative permission/export/audit primitives",
-          "deletion semantics must document what is removed, retained for integrity or anonymized if applicable",
-          "avoid copying sensitive data into settings state"
-        ],
-        "dependencies": [
-          "Requires LN-107 through LN-110 DONE, LN-23 coach permissions and current account/security flows."
-        ],
-        "attention": [
-          "all permission changes are server-authorized",
-          "revocation takes effect at authoritative access boundaries, not just UI",
-          "never expose credentials, secrets or other users' data in the center",
-          "permission-state integration tests",
-          "destructive confirmation/deletion tests where supported",
-          "authorization and stale-state/browser tests under current gate policy",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no giant duplicate settings page",
-          "no policy/legal claims unsupported by implementation",
-          "no hidden consent bundling",
-          "no retention promise the system cannot enforce"
-        ],
-        "doneWhen": [
-          "user can determine which actor/integration can access each supported data category",
-          "revocation/export/deletion paths are discoverable and actionable",
-          "center reflects actual current state rather than marketing promises",
-          "no permission is only cosmetic"
-        ],
-        "ux": [
-          "plain-language category-by-category access explanations",
-          "contextual actions close to their source with this center as overview",
-          "destructive actions require explicit confirmation and recovery information where possible",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "all permission changes are server-authorized",
-          "revocation takes effect at authoritative access boundaries, not just UI",
-          "never expose credentials, secrets or other users' data in the center"
-        ],
-        "implications": [
-          "provides visible consent/control foundation before health/wearables and AI",
-          "audit trail can explain high-value changes",
-          "analytics must not depend on revoked integrations silently"
-        ],
-        "validation": [
-          "permission-state integration tests",
-          "destructive confirmation/deletion tests where supported",
-          "authorization and stale-state/browser tests under current gate policy",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Trust, Data & Privacy",
-        "objective": "Give users an understandable place to control exports, deletion, coach relationships, health integrations and AI/data-use boundaries.",
-        "rationale": "As LiftNote grows, users should be able to understand who can access which categories of their data without reading architecture docs.",
-        "dependencies": [
-          "Requires LN-107 through LN-110 DONE, LN-23 coach permissions and current account/security flows."
-        ],
-        "scope": [
-          "central privacy/data-control overview with contextual deep links",
-          "portable export and backup controls",
-          "account/data deletion entry where supported, with destructive safeguards",
-          "coach relationship/access summaries and revocation paths",
-          "health/wearable permission overview once integrations exist",
-          "AI/data-use boundary controls once AI capabilities exist, without pretending future features are active",
-          "recent sensitive-operation/audit context where useful"
-        ],
-        "exclusions": [
-          "no giant duplicate settings page",
-          "no policy/legal claims unsupported by implementation",
-          "no hidden consent bundling",
-          "no retention promise the system cannot enforce"
-        ],
-        "data": [
-          "center is primarily an orchestration/view layer over authoritative permission/export/audit primitives",
-          "deletion semantics must document what is removed, retained for integrity or anonymized if applicable",
-          "avoid copying sensitive data into settings state"
-        ],
-        "ux": [
-          "plain-language category-by-category access explanations",
-          "contextual actions close to their source with this center as overview",
-          "destructive actions require explicit confirmation and recovery information where possible",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "all permission changes are server-authorized",
-          "revocation takes effect at authoritative access boundaries, not just UI",
-          "never expose credentials, secrets or other users' data in the center"
-        ],
-        "implications": [
-          "provides visible consent/control foundation before health/wearables and AI",
-          "audit trail can explain high-value changes",
-          "analytics must not depend on revoked integrations silently"
-        ],
-        "acceptance": [
-          "user can determine which actor/integration can access each supported data category",
-          "revocation/export/deletion paths are discoverable and actionable",
-          "center reflects actual current state rather than marketing promises",
-          "no permission is only cosmetic"
-        ],
-        "validation": [
-          "permission-state integration tests",
-          "destructive confirmation/deletion tests where supported",
-          "authorization and stale-state/browser tests under current gate policy",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": "887",
-          "mergeSha": "328584bf3cf60a674199cddc35862a028cba4383"
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-112",
       "title": "Training Profile & Declared Goals",
       "status": "TODO",
@@ -21460,6 +21285,166 @@
           "domain/profile CRUD tests",
           "localization/accessibility tests",
           "authorization tests for any coach-visible subset",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-113",
+      "title": "Training Preferences",
+      "status": "TODO",
+      "goal": "Centralize only durable training preferences while keeping contextual settings near the action that needs them.",
+      "business": {
+        "phase": "Personalization & Onboarding",
+        "summary": "Centralize only durable training preferences while keeping contextual settings near the action that needs them.",
+        "why": "Units, timer behavior, logging defaults, available days and session duration can reduce friction, but a giant settings screen would harm discoverability.",
+        "builds": [
+          "preferences such as target session duration, available days, equipment context, units, timer defaults and logging preferences where current product behavior can consume them",
+          "define global default vs session/context override precedence",
+          "contextual edit entry points with a concise settings overview",
+          "migration from existing scattered preferences without changing meaning"
+        ],
+        "userImpact": [
+          "settings appear where users need them and are also discoverable from a compact overview",
+          "defaults can be overridden without hunting through settings",
+          "mobile controls avoid dense forms",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "settings appear where users need them and are also discoverable from a compact overview",
+          "defaults can be overridden without hunting through settings",
+          "mobile controls avoid dense forms",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "preferences are user-private unless explicitly needed in authorized coach prescription context",
+          "offline active session retains required local defaults/overrides",
+          "onboarding can initialize preferences; programming suggestions use only explicit relevant preferences",
+          "AI assistant receives declared constraints only when invoked/authorized"
+        ],
+        "examples": [],
+        "data": [
+          "one authoritative preference source per concept",
+          "preserve historical unit/load truth; preferences affect display/future defaults only",
+          "session overrides snapshot when needed"
+        ],
+        "dependencies": [
+          "Requires LN-112 DONE and reuses LN-08 timer, LN-29 gym profiles and LN-30 units."
+        ],
+        "attention": [
+          "preferences are user-private unless explicitly needed in authorized coach prescription context",
+          "offline active session retains required local defaults/overrides",
+          "preference precedence and migration tests",
+          "unit/timer/gym-profile regressions",
+          "mobile form accessibility tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no preference field without a concrete consumer",
+          "no opaque behavioral personalization",
+          "no duplicated settings with conflicting authority"
+        ],
+        "doneWhen": [
+          "each preference has a documented consumer and precedence rule",
+          "no historical data is rewritten by a preference change",
+          "contextual and settings entry points remain consistent",
+          "no giant catch-all page is created"
+        ],
+        "ux": [
+          "settings appear where users need them and are also discoverable from a compact overview",
+          "defaults can be overridden without hunting through settings",
+          "mobile controls avoid dense forms",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "preferences are user-private unless explicitly needed in authorized coach prescription context",
+          "offline active session retains required local defaults/overrides"
+        ],
+        "implications": [
+          "onboarding can initialize preferences; programming suggestions use only explicit relevant preferences",
+          "AI assistant receives declared constraints only when invoked/authorized"
+        ],
+        "validation": [
+          "preference precedence and migration tests",
+          "unit/timer/gym-profile regressions",
+          "mobile form accessibility tests",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Personalization & Onboarding",
+        "objective": "Centralize only durable training preferences while keeping contextual settings near the action that needs them.",
+        "rationale": "Units, timer behavior, logging defaults, available days and session duration can reduce friction, but a giant settings screen would harm discoverability.",
+        "dependencies": [
+          "Requires LN-112 DONE and reuses LN-08 timer, LN-29 gym profiles and LN-30 units."
+        ],
+        "scope": [
+          "preferences such as target session duration, available days, equipment context, units, timer defaults and logging preferences where current product behavior can consume them",
+          "define global default vs session/context override precedence",
+          "contextual edit entry points with a concise settings overview",
+          "migration from existing scattered preferences without changing meaning"
+        ],
+        "exclusions": [
+          "no preference field without a concrete consumer",
+          "no opaque behavioral personalization",
+          "no duplicated settings with conflicting authority"
+        ],
+        "data": [
+          "one authoritative preference source per concept",
+          "preserve historical unit/load truth; preferences affect display/future defaults only",
+          "session overrides snapshot when needed"
+        ],
+        "ux": [
+          "settings appear where users need them and are also discoverable from a compact overview",
+          "defaults can be overridden without hunting through settings",
+          "mobile controls avoid dense forms",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "preferences are user-private unless explicitly needed in authorized coach prescription context",
+          "offline active session retains required local defaults/overrides"
+        ],
+        "implications": [
+          "onboarding can initialize preferences; programming suggestions use only explicit relevant preferences",
+          "AI assistant receives declared constraints only when invoked/authorized"
+        ],
+        "acceptance": [
+          "each preference has a documented consumer and precedence rule",
+          "no historical data is rewritten by a preference change",
+          "contextual and settings entry points remain consistent",
+          "no giant catch-all page is created"
+        ],
+        "validation": [
+          "preference precedence and migration tests",
+          "unit/timer/gym-profile regressions",
+          "mobile form accessibility tests",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
