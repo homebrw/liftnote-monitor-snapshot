@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-03T00:04:20.065Z",
+  "publishedAt": "2026-10-03T00:05:28.533Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
-    "currentLot": "LN-110",
-    "nextLot": "LN-111",
-    "launchedAt": "2026-10-02T23:40:04.693Z",
-    "lastProgressAt": "2026-10-03T00:01:00.583Z",
-    "lastChatCheckAt": "2026-10-02T23:40:04.693Z",
-    "lastObservedMainSha": "7b9841b5e5bf1a484ce251bab79de1bfd1bd3a24",
+    "currentLot": "LN-111",
+    "nextLot": "LN-112",
+    "launchedAt": "2026-10-03T00:05:20.377Z",
+    "lastProgressAt": "2026-10-03T00:05:20.377Z",
+    "lastChatCheckAt": "2026-10-03T00:05:20.377Z",
+    "lastObservedMainSha": "03b35b648a8b149465b44d838dbacf0e7692f00d",
     "nudges": 0,
-    "lastMessage": "main moved while LN-110 is active",
+    "lastMessage": "Launched LN-111; canonical chat persisted before prompt marker became visible",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-03T00:04:12.449Z",
-    "nextTickAt": "2026-10-03T00:09:12.449Z",
+    "lastSuccessfulTickAt": "2026-10-03T00:05:20.377Z",
+    "nextTickAt": "2026-10-03T00:10:20.377Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -30,13 +30,6 @@
       "conclusion": null
     },
     "history": [
-      {
-        "lot": "LN-100",
-        "completedAt": "2026-10-02T19:16:41.540Z",
-        "restartedAt": null,
-        "mainSha": "ba4f38472d52e326cc9b0461891f5a770bcc612a",
-        "reason": null
-      },
       {
         "lot": "LN-101",
         "completedAt": "2026-10-02T19:33:29.239Z",
@@ -113,11 +106,18 @@
         "restartedAt": null,
         "mainSha": "26f749fa0e8f24174241cc129904141f5ed5f45c",
         "reason": null
+      },
+      {
+        "lot": "LN-110",
+        "completedAt": "2026-10-03T00:05:03.720Z",
+        "restartedAt": null,
+        "mainSha": "03b35b648a8b149465b44d838dbacf0e7692f00d",
+        "reason": null
       }
     ]
   },
   "remote": {
-    "mainSha": "7b9841b5e5bf1a484ce251bab79de1bfd1bd3a24",
+    "mainSha": "03b35b648a8b149465b44d838dbacf0e7692f00d",
     "lots": [
       {
         "id": "LN-00",
@@ -16631,7 +16631,7 @@
       {
         "id": "LN-110",
         "title": "Sensitive-Operation Audit Trail",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Record appropriate high-value state changes without turning ordinary workout logging into an unusable audit log.",
         "business": {
           "phase": "Trust, Data & Privacy",
@@ -16794,8 +16794,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "885",
+            "mergeSha": "7b9841b5e5bf1a484ce251bab79de1bfd1bd3a24"
           }
         },
         "contractAvailable": true,
@@ -21131,183 +21131,10 @@
     "mismatches": []
   },
   "summary": {
-    "done": 123,
+    "done": 124,
     "total": 150,
-    "percent": 82,
+    "percent": 83,
     "current": {
-      "id": "LN-110",
-      "title": "Sensitive-Operation Audit Trail",
-      "status": "TODO",
-      "goal": "Record appropriate high-value state changes without turning ordinary workout logging into an unusable audit log.",
-      "business": {
-        "phase": "Trust, Data & Privacy",
-        "summary": "Record appropriate high-value state changes without turning ordinary workout logging into an unusable audit log.",
-        "why": "Cross-user coaching, imports and restore/ownership operations need traceability beyond generic timestamps.",
-        "builds": [
-          "audit coach assignment/relationship-sensitive changes where justified",
-          "ownership/detach events",
-          "bulk assignment and per-athlete customization changes",
-          "imports and restore operations",
-          "important data-integrity repairs",
-          "actor, target, operation type, timestamp and bounded before/after/reference metadata"
-        ],
-        "userImpact": [
-          "surface audit history only in contexts where it helps explain a sensitive change",
-          "plain-language event summaries with drill-down as authorized",
-          "advanced detail stays secondary",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "journey": [
-          "surface audit history only in contexts where it helps explain a sensitive change",
-          "plain-language event summaries with drill-down as authorized",
-          "advanced detail stays secondary",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "rules": [
-          "audit visibility follows ownership/relationship/privacy rules",
-          "events themselves must not leak revoked athlete data",
-          "server-side creation for sensitive operations; client cannot forge authoritative actor identity",
-          "privacy center uses audit facts to explain recent high-value access/changes",
-          "coach longitudinal view may link authorized coach decisions",
-          "AI may summarize selected authorized audit facts but cannot rewrite them"
-        ],
-        "examples": [],
-        "data": [
-          "append-oriented audit events with stable operation vocabulary",
-          "store references/minimal metadata rather than duplicating whole sensitive objects",
-          "retention/export policy documented"
-        ],
-        "dependencies": [
-          "Requires LN-109 DONE and consumes coach assignment/version, import and backup/restore primitives."
-        ],
-        "attention": [
-          "audit visibility follows ownership/relationship/privacy rules",
-          "events themselves must not leak revoked athlete data",
-          "server-side creation for sensitive operations; client cannot forge authoritative actor identity",
-          "event-generation tests for supported operations",
-          "tamper/authorization tests",
-          "redaction tests for notes/secrets/unrelated data",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "notInThisLot": [
-          "no logging of every ordinary set entry",
-          "no secret/token/raw private note capture",
-          "no user-facing surveillance feed",
-          "no mutable audit records masquerading as immutable evidence"
-        ],
-        "doneWhen": [
-          "named sensitive operations produce traceable events",
-          "ordinary set logging does not flood the trail",
-          "events cannot broaden access or leak sensitive payloads",
-          "retention/export semantics are documented"
-        ],
-        "ux": [
-          "surface audit history only in contexts where it helps explain a sensitive change",
-          "plain-language event summaries with drill-down as authorized",
-          "advanced detail stays secondary",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "audit visibility follows ownership/relationship/privacy rules",
-          "events themselves must not leak revoked athlete data",
-          "server-side creation for sensitive operations; client cannot forge authoritative actor identity"
-        ],
-        "implications": [
-          "privacy center uses audit facts to explain recent high-value access/changes",
-          "coach longitudinal view may link authorized coach decisions",
-          "AI may summarize selected authorized audit facts but cannot rewrite them"
-        ],
-        "validation": [
-          "event-generation tests for supported operations",
-          "tamper/authorization tests",
-          "redaction tests for notes/secrets/unrelated data",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ]
-      },
-      "contract": {
-        "phase": "Trust, Data & Privacy",
-        "objective": "Record appropriate high-value state changes without turning ordinary workout logging into an unusable audit log.",
-        "rationale": "Cross-user coaching, imports and restore/ownership operations need traceability beyond generic timestamps.",
-        "dependencies": [
-          "Requires LN-109 DONE and consumes coach assignment/version, import and backup/restore primitives."
-        ],
-        "scope": [
-          "audit coach assignment/relationship-sensitive changes where justified",
-          "ownership/detach events",
-          "bulk assignment and per-athlete customization changes",
-          "imports and restore operations",
-          "important data-integrity repairs",
-          "actor, target, operation type, timestamp and bounded before/after/reference metadata"
-        ],
-        "exclusions": [
-          "no logging of every ordinary set entry",
-          "no secret/token/raw private note capture",
-          "no user-facing surveillance feed",
-          "no mutable audit records masquerading as immutable evidence"
-        ],
-        "data": [
-          "append-oriented audit events with stable operation vocabulary",
-          "store references/minimal metadata rather than duplicating whole sensitive objects",
-          "retention/export policy documented"
-        ],
-        "ux": [
-          "surface audit history only in contexts where it helps explain a sensitive change",
-          "plain-language event summaries with drill-down as authorized",
-          "advanced detail stays secondary",
-          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
-          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
-          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
-          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
-        ],
-        "security": [
-          "audit visibility follows ownership/relationship/privacy rules",
-          "events themselves must not leak revoked athlete data",
-          "server-side creation for sensitive operations; client cannot forge authoritative actor identity"
-        ],
-        "implications": [
-          "privacy center uses audit facts to explain recent high-value access/changes",
-          "coach longitudinal view may link authorized coach decisions",
-          "AI may summarize selected authorized audit facts but cannot rewrite them"
-        ],
-        "acceptance": [
-          "named sensitive operations produce traceable events",
-          "ordinary set logging does not flood the trail",
-          "events cannot broaden access or leak sensitive payloads",
-          "retention/export semantics are documented"
-        ],
-        "validation": [
-          "event-generation tests for supported operations",
-          "tamper/authorization tests",
-          "redaction tests for notes/secrets/unrelated data",
-          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
-          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
-          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
-          "TinyFish is prohibited."
-        ],
-        "completion": {
-          "pr": null,
-          "mergeSha": null
-        }
-      },
-      "contractAvailable": true,
-      "executionState": "executable"
-    },
-    "next": {
       "id": "LN-111",
       "title": "Privacy & Data-Control Center",
       "status": "TODO",
@@ -21469,6 +21296,170 @@
           "permission-state integration tests",
           "destructive confirmation/deletion tests where supported",
           "authorization and stale-state/browser tests under current gate policy",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "completion": {
+          "pr": null,
+          "mergeSha": null
+        }
+      },
+      "contractAvailable": true,
+      "executionState": "executable"
+    },
+    "next": {
+      "id": "LN-112",
+      "title": "Training Profile & Declared Goals",
+      "status": "TODO",
+      "goal": "Let users declare useful training goals and context without turning LiftNote into a diagnostic authority.",
+      "business": {
+        "phase": "Personalization & Onboarding",
+        "summary": "Let users declare useful training goals and context without turning LiftNote into a diagnostic authority.",
+        "why": "Programming, onboarding and search can adapt presentation when user intent is explicit rather than inferred.",
+        "builds": [
+          "small structured set of non-medical declared training goals/preferences",
+          "edit/change history only where it materially affects explainability",
+          "optional coach-visible subset only with explicit product authorization",
+          "context hooks for onboarding/programming/search without automatic prescription"
+        ],
+        "userImpact": [
+          "ask only when a goal improves a concrete next step",
+          "editable later from contextual/profile surface",
+          "avoid a long onboarding questionnaire",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "journey": [
+          "ask only when a goal improves a concrete next step",
+          "editable later from contextual/profile surface",
+          "avoid a long onboarding questionnaire",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "rules": [
+          "private by default; coach visibility must be explicit and bounded",
+          "no health integration data silently promoted into declared goals",
+          "adaptive onboarding and program assistant may use declared goals as explicit constraints",
+          "analytics may filter/contextualize but not judge goal attainment without defined metrics"
+        ],
+        "examples": [],
+        "data": [
+          "declared goals are user-owned editable profile facts",
+          "use stable enums/structured values only where product behavior consumes them",
+          "unknown/none is valid"
+        ],
+        "dependencies": [
+          "Requires LN-111 DONE so profile use remains transparent and controllable."
+        ],
+        "attention": [
+          "private by default; coach visibility must be explicit and bounded",
+          "no health integration data silently promoted into declared goals",
+          "domain/profile CRUD tests",
+          "localization/accessibility tests",
+          "authorization tests for any coach-visible subset",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ],
+        "notInThisLot": [
+          "no medical diagnosis",
+          "no injury diagnosis",
+          "no claim about what a user should do",
+          "no personality/engagement profiling",
+          "no inferred goals from behavior presented as user truth"
+        ],
+        "doneWhen": [
+          "goals are optional, understandable and editable",
+          "no feature treats an inferred value as declared truth",
+          "profile does not block workout logging",
+          "coach access is explicit if introduced"
+        ],
+        "ux": [
+          "ask only when a goal improves a concrete next step",
+          "editable later from contextual/profile surface",
+          "avoid a long onboarding questionnaire",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "private by default; coach visibility must be explicit and bounded",
+          "no health integration data silently promoted into declared goals"
+        ],
+        "implications": [
+          "adaptive onboarding and program assistant may use declared goals as explicit constraints",
+          "analytics may filter/contextualize but not judge goal attainment without defined metrics"
+        ],
+        "validation": [
+          "domain/profile CRUD tests",
+          "localization/accessibility tests",
+          "authorization tests for any coach-visible subset",
+          "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
+          "Use targeted tests first; migration/RLS tests for persistence/authorization.",
+          "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
+          "TinyFish is prohibited."
+        ]
+      },
+      "contract": {
+        "phase": "Personalization & Onboarding",
+        "objective": "Let users declare useful training goals and context without turning LiftNote into a diagnostic authority.",
+        "rationale": "Programming, onboarding and search can adapt presentation when user intent is explicit rather than inferred.",
+        "dependencies": [
+          "Requires LN-111 DONE so profile use remains transparent and controllable."
+        ],
+        "scope": [
+          "small structured set of non-medical declared training goals/preferences",
+          "edit/change history only where it materially affects explainability",
+          "optional coach-visible subset only with explicit product authorization",
+          "context hooks for onboarding/programming/search without automatic prescription"
+        ],
+        "exclusions": [
+          "no medical diagnosis",
+          "no injury diagnosis",
+          "no claim about what a user should do",
+          "no personality/engagement profiling",
+          "no inferred goals from behavior presented as user truth"
+        ],
+        "data": [
+          "declared goals are user-owned editable profile facts",
+          "use stable enums/structured values only where product behavior consumes them",
+          "unknown/none is valid"
+        ],
+        "ux": [
+          "ask only when a goal improves a concrete next step",
+          "editable later from contextual/profile surface",
+          "avoid a long onboarding questionnaire",
+          "Apply the permanent user-facing capability closure rule from ../EXECUTION_CONTRACT.md.",
+          "Keep primary work immediately accessible; use progressive disclosure for advanced/infrequent capability.",
+          "Cover applicable loading, empty, error, success, disabled/unavailable, destructive and recovery states.",
+          "Mobile-first, accessible, localized and compatible with the LiftNote Design System."
+        ],
+        "security": [
+          "private by default; coach visibility must be explicit and bounded",
+          "no health integration data silently promoted into declared goals"
+        ],
+        "implications": [
+          "adaptive onboarding and program assistant may use declared goals as explicit constraints",
+          "analytics may filter/contextualize but not judge goal attainment without defined metrics"
+        ],
+        "acceptance": [
+          "goals are optional, understandable and editable",
+          "no feature treats an inferred value as declared truth",
+          "profile does not block workout logging",
+          "coach access is explicit if introduced"
+        ],
+        "validation": [
+          "domain/profile CRUD tests",
+          "localization/accessibility tests",
+          "authorization tests for any coach-visible subset",
           "Inspect code/types/imports/tests/interfaces before first push; GitHub Actions is the final safety net.",
           "Use targeted tests first; migration/RLS tests for persistence/authorization.",
           "Exact-head Vercel build/deployment evidence is required for code changes; READY is not browser QA.",
