@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "publishedAt": "2026-10-03T00:20:44.245Z",
+  "publishedAt": "2026-10-03T00:21:32.484Z",
   "publisher": "liftnote-local-orchestrator",
   "state": {
     "status": "RUNNING",
@@ -13,8 +13,8 @@
     "nudges": 0,
     "lastMessage": "main moved while LN-111 is active",
     "lastError": null,
-    "lastSuccessfulTickAt": "2026-10-03T00:20:36.332Z",
-    "nextTickAt": "2026-10-03T00:25:36.332Z",
+    "lastSuccessfulTickAt": "2026-10-03T00:21:24.654Z",
+    "nextTickAt": "2026-10-03T00:26:24.654Z",
     "paused": false,
     "pauseAfterCurrent": false,
     "gate": {
@@ -117,7 +117,7 @@
     ]
   },
   "remote": {
-    "mainSha": "328584bf3cf60a674199cddc35862a028cba4383",
+    "mainSha": "30fa0d0549ec65a5fd7914ed3035fb7ab811b8e0",
     "lots": [
       {
         "id": "LN-00",
@@ -16804,7 +16804,7 @@
       {
         "id": "LN-111",
         "title": "Privacy & Data-Control Center",
-        "status": "TODO",
+        "status": "DONE",
         "goal": "Give users an understandable place to control exports, deletion, coach relationships, health integrations and AI/data-use boundaries.",
         "business": {
           "phase": "Trust, Data & Privacy",
@@ -16969,8 +16969,8 @@
             "TinyFish is prohibited."
           ],
           "completion": {
-            "pr": null,
-            "mergeSha": null
+            "pr": "887",
+            "mergeSha": "328584bf3cf60a674199cddc35862a028cba4383"
           }
         },
         "contractAvailable": true,
@@ -21131,13 +21131,13 @@
     "mismatches": []
   },
   "summary": {
-    "done": 124,
+    "done": 125,
     "total": 150,
     "percent": 83,
     "current": {
       "id": "LN-111",
       "title": "Privacy & Data-Control Center",
-      "status": "TODO",
+      "status": "DONE",
       "goal": "Give users an understandable place to control exports, deletion, coach relationships, health integrations and AI/data-use boundaries.",
       "business": {
         "phase": "Trust, Data & Privacy",
@@ -21302,8 +21302,8 @@
           "TinyFish is prohibited."
         ],
         "completion": {
-          "pr": null,
-          "mergeSha": null
+          "pr": "887",
+          "mergeSha": "328584bf3cf60a674199cddc35862a028cba4383"
         }
       },
       "contractAvailable": true,
