@@ -15,18 +15,21 @@ Sanitized public snapshots for the LiftNote autonomous monitor.
 
 ## Status — 2026-10-06: private (decided by the owner)
 
-The repository was set to **private** at the owner's request. With the current code:
+The repository was set to **private** at the owner's request. Since `homebrw/unicorn-cf-prog#1009`, publishing
+is also **opt-in**: without `LIFTNOTE_MONITOR_SNAPSHOT_ENABLED=1`, the orchestrator makes no git/GitHub call to
+this repo at all and can never recreate it. So:
 
-- the publisher refuses to write to a private repo, so snapshots stop. The orchestrator logs
-  `Remote monitor publish skipped` and keeps running lots;
-- it will **not** recreate a public copy while this private repo exists;
+- no new snapshots are written here;
+- if the opt-in is set while the repo is private, the publisher refuses to write and logs
+  `Remote monitor publish skipped`, without blocking lots;
 - `/liftnote/monitor` can no longer read the snapshot, because it reads without authentication.
 
 ## If you want to change this later
 
-- **Re-enable the remote monitor:** set the repo back to public, or change the app to read it through an
-  authenticated server route.
-- **Delete it:** also stop or disable the publisher, otherwise the next orchestrator pass recreates it as public.
+- **Re-enable the remote monitor:** set `LIFTNOTE_MONITOR_SNAPSHOT_ENABLED=1` on the PC running the orchestrator
+  **and** set the repo back to public, or change the app to read it through an authenticated server route.
+- **Delete it:** safe while the opt-in is unset. If the opt-in is set later and the repo is missing, the first
+  publish recreates it as **public**.
 
 Full decision log: `docs/liftnote/LOCAL_ORCHESTRATOR.md` → "Snapshot repository — status and decision log"
 in `homebrw/unicorn-cf-prog`.
